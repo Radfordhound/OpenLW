@@ -21,6 +21,11 @@ public:
         if (instance) delete instance;
         instance = inst;
     }
+
+    inline bool IsInitialized() const noexcept
+    {
+        return (instance != nullptr);
+    }
 };
 
 template <typename T>
