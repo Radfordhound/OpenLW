@@ -22,7 +22,7 @@ public:
         instance = inst;
     }
 
-    inline static bool IsInitialized() const noexcept
+    inline static bool IsInitialized() noexcept
     {
         return (instance != nullptr);
     }
