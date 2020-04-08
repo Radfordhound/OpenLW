@@ -20,11 +20,14 @@ void Application::Initialize()
 {
     InitializeBasic();
     fnd::InitSingletons();
+    
     game = CreateGame(*this);
-    // TODO
+    game->Config(*this);
+
     InitializeMain();
     InitializeCommon();
-    // TODO
+
+    game->OnSetup(*this);
 }
 
 void Application::InitializeCommon()
