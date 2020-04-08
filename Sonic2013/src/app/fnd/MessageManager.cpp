@@ -47,5 +47,18 @@ void MessageManager::Update()
 {
     // TODO
 }
+
+static void* MessageManager_init()
+{
+    // TODO
+    return nullptr;
+}
+
+static void MessageManager_destroy()
+{
+    // TODO
+}
+
+DEFINE_SINGLETON(MessageManager);
 }
 }

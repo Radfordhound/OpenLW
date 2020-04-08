@@ -20,5 +20,18 @@ void RenderManager::Setup(const SetupInfo& setupInfo)
 {
     // TODO
 }
+
+static void* RenderManager_init()
+{
+    // TODO
+    return nullptr;
+}
+
+static void RenderManager_destroy()
+{
+    // TODO
+}
+
+DEFINE_SINGLETON(RenderManager);
 }
 }

@@ -1,6 +1,6 @@
 #pragma once
-#include "csl/fnd/Singleton.h"
 #include "../fnd/ReferencedObject.h"
+#include "../fnd/Singleton.h"
 
 namespace app
 {
@@ -8,6 +8,8 @@ namespace gfx
 {
 struct RenderManager : public fnd::ReferencedObject, public csl::fnd::Singleton<RenderManager>
 {
+    DECLARE_SINGLETON
+
     // TODO: Data Members
 
     class SetupInfo

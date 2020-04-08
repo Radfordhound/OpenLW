@@ -1,6 +1,6 @@
 #pragma once
 #include "../fnd/ReferencedObject.h"
-#include "csl/fnd/Singleton.h"
+#include "../fnd/Singleton.h"
 
 namespace app
 {
@@ -8,6 +8,8 @@ namespace hid
 {
 class DeviceManager : public fnd::ReferencedObject, public csl::fnd::Singleton<DeviceManager>
 {
+    DECLARE_SINGLETON
+
     struct Impl;
     Impl* impl = nullptr;
 

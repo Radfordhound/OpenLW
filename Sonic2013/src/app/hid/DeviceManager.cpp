@@ -35,5 +35,18 @@ void DeviceManager::Poll(float param_1)
         // TODO
     }
 }
+
+static void* DeviceManager_init()
+{
+    // TODO
+    return nullptr;
+}
+
+static void DeviceManager_destroy()
+{
+    // TODO
+}
+
+DEFINE_SINGLETON(DeviceManager);
 }
 }

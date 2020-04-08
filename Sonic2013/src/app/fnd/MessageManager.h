@@ -1,6 +1,6 @@
 #pragma once
-#include "csl/fnd/Singleton.h"
 #include "ReferencedObject.h"
+#include "Singleton.h"
 
 namespace app
 {
@@ -11,6 +11,8 @@ class CActor;
 
 class MessageManager : public ReferencedObject, public csl::fnd::Singleton<MessageManager>
 {
+    DECLARE_SINGLETON
+
     // TODO: Data Members
 
     /*

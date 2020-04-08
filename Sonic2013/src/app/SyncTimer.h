@@ -1,6 +1,6 @@
 #pragma once
-#include "fnd/Singleton.h"
 #include "fnd/ReferencedObject.h"
+#include "fnd/Singleton.h"
 
 namespace app
 {
