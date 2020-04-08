@@ -53,5 +53,5 @@ static void SyncTimer_destroy()
     // TODO
 }
 
-DEFINE_SINGLETON(SyncTimer);
+DEFINE_SINGLETON_INIT(SyncTimer);
 }

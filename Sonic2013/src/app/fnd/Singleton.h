@@ -1,8 +1,8 @@
 #pragma once
 #include "csl/fnd/Singleton.h"
 
-#define DECLARE_SINGLETON static fnd::SingletonInitNode singletonInitNode;
-#define DEFINE_SINGLETON(type) fnd::SingletonInitNode type::singletonInitNode = \
+#define DECLARE_SINGLETON_INIT static fnd::SingletonInitNode singletonInitNode;
+#define DEFINE_SINGLETON_INIT(type) fnd::SingletonInitNode type::singletonInitNode = \
     fnd::SingletonInitNode(type##_init, type##_destroy, reinterpret_cast<void**>(&instance))
 
 namespace app

@@ -6,7 +6,7 @@ namespace app
 {
 class SyncTimer : public fnd::ReferencedObject, public csl::fnd::Singleton<SyncTimer>
 {
-    DECLARE_SINGLETON
+    DECLARE_SINGLETON_INIT
 
     // TODO: Data Members
 

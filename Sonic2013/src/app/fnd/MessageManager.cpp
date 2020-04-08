@@ -59,6 +59,6 @@ static void MessageManager_destroy()
     // TODO
 }
 
-DEFINE_SINGLETON(MessageManager);
+DEFINE_SINGLETON_INIT(MessageManager);
 }
 }

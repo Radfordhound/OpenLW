@@ -47,6 +47,6 @@ static void DeviceManager_destroy()
     // TODO
 }
 
-DEFINE_SINGLETON(DeviceManager);
+DEFINE_SINGLETON_INIT(DeviceManager);
 }
 }

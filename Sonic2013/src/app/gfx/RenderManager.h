@@ -8,7 +8,7 @@ namespace gfx
 {
 struct RenderManager : public fnd::ReferencedObject, public csl::fnd::Singleton<RenderManager>
 {
-    DECLARE_SINGLETON
+    DECLARE_SINGLETON_INIT
 
     // TODO: Data Members
 

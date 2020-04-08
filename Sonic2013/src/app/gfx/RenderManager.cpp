@@ -32,6 +32,6 @@ static void RenderManager_destroy()
     // TODO
 }
 
-DEFINE_SINGLETON(RenderManager);
+DEFINE_SINGLETON_INIT(RenderManager);
 }
 }

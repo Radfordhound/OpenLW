@@ -8,7 +8,7 @@ namespace hid
 {
 class DeviceManager : public fnd::ReferencedObject, public csl::fnd::Singleton<DeviceManager>
 {
-    DECLARE_SINGLETON
+    DECLARE_SINGLETON_INIT
 
     struct Impl;
     Impl* impl = nullptr;

@@ -11,7 +11,7 @@ class CActor;
 
 class MessageManager : public ReferencedObject, public csl::fnd::Singleton<MessageManager>
 {
-    DECLARE_SINGLETON
+    DECLARE_SINGLETON_INIT
 
     // TODO: Data Members
 
