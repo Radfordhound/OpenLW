@@ -15,6 +15,12 @@ public:
     {
         return instance;
     }
+
+    inline void ReplaceInstance(T* inst) noexcept
+    {
+        if (instance) delete instance;
+        instance = inst;
+    }
 };
 
 template <typename T>
