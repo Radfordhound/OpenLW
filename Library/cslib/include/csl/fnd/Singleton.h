@@ -16,13 +16,13 @@ public:
         return instance;
     }
 
-    inline void ReplaceInstance(T* inst) noexcept
+    inline static void ReplaceInstance(T* inst) noexcept
     {
         if (instance) delete instance;
         instance = inst;
     }
 
-    inline bool IsInitialized() const noexcept
+    inline static bool IsInitialized() const noexcept
     {
         return (instance != nullptr);
     }
