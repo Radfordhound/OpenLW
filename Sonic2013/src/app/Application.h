@@ -10,6 +10,8 @@ class Application // size == 276??
 protected:
     fnd::SUpdateInfo updateInfo;
     // TODO: Data Members
+    const char* rootDirectory = nullptr;
+    // TODO: Data Members
     void* gfxInstHandle = nullptr;
     void* gfxDeviceHandle = nullptr;
     // TODO: Data Members
