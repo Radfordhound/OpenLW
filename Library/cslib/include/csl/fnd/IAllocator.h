@@ -35,6 +35,12 @@ struct IAllocator
         @remarks Calling Free on memory not allocated using this allocator's Alloc is undefined behavior.
     */
     virtual void Free(void* ptr) = 0;
+
+    template<typename T>
+    inline T* Create()
+    {
+        return new (this) T();
+    }
 };
 }
 }
