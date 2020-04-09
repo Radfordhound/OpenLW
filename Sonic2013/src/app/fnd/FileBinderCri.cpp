@@ -1,11 +1,14 @@
 #include "FileBinderCri.h"
+#include "FileSystem.h"
+#include "file/FileHelpers.h"
+#include <cstring>
 
 namespace app
 {
 namespace fnd
 {
-    FileBinderCri::FileBinderCri(csl::fnd::IAllocator* allocator, std::size_t param_2) :
-        allocator(allocator), binder(nullptr), ids(param_2, allocator)
+    FileBinderCri::FileBinderCri(csl::fnd::IAllocator* allocator, std::size_t idCapacity) :
+        allocator(allocator), binder(nullptr), boundIDs(idCapacity, allocator)
     {
         criFsBinder_Create(&binder);
     }
@@ -22,8 +25,25 @@ namespace fnd
 
     unsigned int FileBinderCri::BindCpk(const char* filePath, int priority, bool param_3)
     {
-        // TODO
-        return 0;
+        CriFsBinderId bindId;
+        char buf[256];
+
+        if (!param_3)
+        {
+            std::strcpy(buf, FileSystem::GetInstance()->RootDirectory);
+        }
+
+        std::strcpy(buf, filePath);
+        file::ConvertPath(buf);
+        criFsBinder_BindCpk(binder, nullptr, buf, nullptr, 0, &bindId);
+
+        if (bindId)
+        {
+            criFsBinder_SetPriority(bindId, priority);
+            // TODO: boundIDs.push_back(bindId);
+        }
+
+        return bindId;
     }
 
     unsigned int FileBinderCri::BindDirectory(const char* filePath, int priority, bool param_3)

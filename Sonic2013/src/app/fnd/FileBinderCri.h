@@ -3,14 +3,6 @@
 #include "csl/ut/MoveArray.h"
 
 #include "cri_file_system.h" // TODO: Replace Criware with legit open-source library!!
-//#pragma comment(linker, "/include:_criFsBinder_Create")
-//#pragma comment(linker, "/include:_criFsBinder_Destroy")
-//#pragma comment(linker, "/include:_criFsBinder_Unbind")
-//#pragma comment(linker, "/include:_criFsBinder_GetStatus")
-//#pragma comment(linker, "/include:_criFsBinder_Find")
-//#pragma comment(linker, "/include:_criFsBinder_GetFileSize")
-//#pragma comment(linker, "/include:_criFsBinder_SetCurrentDirectory")
-//#pragma comment(linker, "/include:_criFsBinder_GetBinderIdInfo")
 
 namespace csl
 {
@@ -28,14 +20,14 @@ class FileBinderCri : public FileBinder
 {
     csl::fnd::IAllocator* allocator;
     CriFsBinderHn binder;
-    csl::ut::MoveArray<unsigned int> ids;
+    csl::ut::MoveArray<unsigned int> boundIDs;
 
 public:
     /*
         @brief Constructor for FileBinderCri.
         <b>Wii U: TODO, PC: TODO</b>
     */
-    FileBinderCri(csl::fnd::IAllocator* allocator, std::size_t param_2);
+    FileBinderCri(csl::fnd::IAllocator* allocator, std::size_t idCapacity);
 
     /*
         @brief Destructor for FileBinderCri.
