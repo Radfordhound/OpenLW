@@ -21,9 +21,9 @@ public:
     //}
 
     /* <b>Wii U: TODO, PC: TODO</b> */
-    inline void AddRef() // TODO: Does this function even exist??! I'm just guessing here lol
+    inline void AddRef()
     {
-        ++refCount;
+        if (size) ++refCount;
     }
 
     /* <b>Wii U: 0x02185188, PC: 0x0048d460</b> */
