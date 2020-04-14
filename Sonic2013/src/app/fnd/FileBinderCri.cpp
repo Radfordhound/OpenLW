@@ -25,7 +25,7 @@ namespace fnd
 
     unsigned int FileBinderCri::BindCpk(const char* filePath, int priority, bool param_3)
     {
-        CriFsBinderId bindId;
+        CriFsBinderId bindID;
         char buf[256];
 
         if (!param_3)
@@ -35,15 +35,15 @@ namespace fnd
 
         std::strcpy(buf, filePath);
         file::ConvertPath(buf);
-        criFsBinder_BindCpk(binder, nullptr, buf, nullptr, 0, &bindId);
+        criFsBinder_BindCpk(binder, nullptr, buf, nullptr, 0, &bindID);
 
-        if (bindId)
+        if (bindID)
         {
-            criFsBinder_SetPriority(bindId, priority);
-            // TODO: boundIDs.push_back(bindId);
+            criFsBinder_SetPriority(bindID, priority);
+            boundIDs.push_back(bindID);
         }
 
-        return bindId;
+        return bindID;
     }
 
     unsigned int FileBinderCri::BindDirectory(const char* filePath, int priority, bool param_3)
