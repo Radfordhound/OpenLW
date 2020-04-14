@@ -12,7 +12,7 @@ namespace fnd
 struct SingletonInitNode
 {
     void* (*Init)();
-    void (*Destroy)();
+    void (*Destroy)(void* ptr);
     SingletonInitNode* PrevNode;
     void** InstPtr;
 
@@ -21,7 +21,7 @@ struct SingletonInitNode
 
     inline SingletonInitNode() = default;
     inline SingletonInitNode(void* (*init)(),
-        void (*destroy)(), void** instPtr) : PrevNode(CurNode)
+        void (*destroy)(void* ptr), void** instPtr) : PrevNode(CurNode)
     {
         CurNode = this;
         Init = init;

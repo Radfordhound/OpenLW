@@ -27,7 +27,7 @@ static void* RenderManager_init()
     return nullptr;
 }
 
-static void RenderManager_destroy()
+static void RenderManager_destroy(void* ptr)
 {
     // TODO
 }

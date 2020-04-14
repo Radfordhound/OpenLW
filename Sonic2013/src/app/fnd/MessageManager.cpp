@@ -54,7 +54,7 @@ static void* MessageManager_init()
     return nullptr;
 }
 
-static void MessageManager_destroy()
+static void MessageManager_destroy(void* ptr)
 {
     // TODO
 }

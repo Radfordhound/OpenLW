@@ -48,7 +48,7 @@ static void* SyncTimer_init()
     return nullptr;
 }
 
-static void SyncTimer_destroy()
+static void SyncTimer_destroy(void* ptr)
 {
     // TODO
 }

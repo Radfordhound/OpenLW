@@ -42,7 +42,7 @@ static void* DeviceManager_init()
     return nullptr;
 }
 
-static void DeviceManager_destroy()
+static void DeviceManager_destroy(void* ptr)
 {
     // TODO
 }
