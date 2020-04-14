@@ -10,7 +10,7 @@ enum class AllocatorID
     UkZero = 0,
     UkOne = 1,
     UkTwo = 2,
-    Debug = 3 // TODO: Is this right??
+    Debug = 3
 };
 
 struct IAllocator
@@ -40,6 +40,16 @@ struct IAllocator
     inline T* Create()
     {
         return new (this) T();
+    }
+
+    template<typename T>
+    inline void Delete(T* obj) // TODO: Does this function even actually exist??
+    {
+        if (obj)
+        {
+            obj->~T();
+            Free(obj);
+        }
     }
 };
 }
