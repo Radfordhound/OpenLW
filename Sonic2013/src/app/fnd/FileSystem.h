@@ -26,8 +26,6 @@ public:
     FILE_SYSTEM_FLAG Flags = static_cast<FILE_SYSTEM_FLAG>(
         FILE_SYSTEM_FLAG_USE_CPK | FILE_SYSTEM_FLAG_UK2);
 
-    // TODO: Data Members (Actually I think there aren't any more here)
-
     struct Info // size == 8
     {
         const char* RootDirectory = nullptr;

@@ -93,7 +93,7 @@ void Application::InitializeMain()
     CreateDevice();
 
     // TODO
-    fnd::FileSystem::GetInstance()->ReplaceInstance(
+    fnd::FileSystem::ReplaceInstance(
         allocator->Create<fnd::FileSystemCri>());
 
     // TODO
@@ -101,6 +101,8 @@ void Application::InitializeMain()
 
 void Application::ShutdownMain()
 {
+    // TODO
+    fnd::FileSystem::ReplaceInstance(nullptr);
     // TODO
     DestroyDevice();
     // TODO

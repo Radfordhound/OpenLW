@@ -9,7 +9,7 @@ namespace fnd
 class FileSystemCri : public FileSystem // size = 0x118
 {
 public:
-    FileBinderCri* Binder; // TODO: Is this actually part of FileSystem??
+    FileBinderCri* Binder;
 
     /*
         @brief Constructor for FileSystemCri.

@@ -20,6 +20,8 @@ FileSystemCri::FileSystemCri()
 FileSystemCri::~FileSystemCri()
 {
     // TODO
+
+    allocator->Delete(Binder);
 }
 
 void FileSystemCri::Update()
