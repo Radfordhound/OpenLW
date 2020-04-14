@@ -1,5 +1,6 @@
 #pragma once
 #include "../fnd/IAllocator.h"
+#include <cstring>
 
 namespace csl
 {
@@ -8,32 +9,105 @@ namespace ut
 template<typename T>
 class MoveArray
 {
-    void* data = nullptr;
+    T* data = nullptr;
     std::size_t count = 0;
-    std::size_t capacity = 0;
+    std::size_t meta = 0;
     fnd::IAllocator* allocator = nullptr;
+
+    constexpr static std::size_t metaBitCount = (sizeof(std::size_t) << 3);
+    constexpr static std::size_t metaNoFreeFlag = (1 << (metaBitCount - 1));
+    constexpr static std::size_t metaCapacityMask = ~metaNoFreeFlag;
     
+    inline T* AllocateMemory(std::size_t count)
+    {
+        return (count) ? static_cast<T*>(allocator->Alloc(sizeof(T) * count)) : nullptr;
+    }
+
+    inline std::size_t capacity() const noexcept
+    {
+        return (meta & metaCapacityMask);
+    }
+
+    inline std::size_t dontFree() const noexcept
+    {
+        return (meta & metaNoFreeFlag);
+    }
+
 public:
     inline MoveArray() = default;
+    inline MoveArray(fnd::IAllocator* allocator) : allocator(allocator) {}
+
     inline MoveArray(std::size_t capacity, fnd::IAllocator* allocator) :
-        allocator(allocator), data(), capacity(capacity) {}
+        allocator(allocator)
+    {
+        data = AllocateMemory(capacity);
+        meta = capacity;
+    }
 
     inline ~MoveArray()
     {
-        // TODO: What's actually going on with this bitwise and?? This isn't 64-bit compatible!!
-        if ((capacity & 0x80000000) == 0 && allocator && data)
+        if (!dontFree() && allocator && data)
         {
             allocator->Free(data);
         }
-        // TODO
     }
 
-    inline void* AllocateMemory(std::size_t count)
+    inline bool empty() const noexcept
     {
-        return (count) ? allocator->Alloc(count * sizeof(T)) : nullptr;
+        return (count == 0);
     }
 
-    // TODO
+    inline std::size_t size() const noexcept
+    {
+        return count;
+    }
+
+    inline void clear()
+    {
+        if (!count) count = 0;
+    }
+
+    inline void reserve(std::size_t count)
+    {
+        if (capacity() < this->count)
+        {
+            T* buf = AllocateMemory(count);
+            if (this->count)
+            {
+                std::memcpy(buf, data, count * sizeof(T));
+            }
+
+            if (!dontFree() && allocator && data)
+            {
+                allocator->Free(data);
+            }
+
+            data = buf;
+            meta = count;
+        }
+    }
+
+    inline void resize(std::size_t count)
+    {
+        reserve(count);
+        this->count = count;
+    }
+
+    inline void pop_back()
+    {
+        --count;
+    }
+
+    inline void push_back(const T& value)
+    {
+        std::size_t cap = capacity();
+        if (count > cap)
+        {
+            reserve((cap) ? cap * 2 : 1);
+        }
+
+        data[count++] = value;
+    }
 };
 }
 }
