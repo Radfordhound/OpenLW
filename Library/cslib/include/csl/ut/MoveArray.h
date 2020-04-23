@@ -34,6 +34,9 @@ class MoveArray
     }
 
 public:
+    using const_iterator = const T*;
+    using iterator = T*;
+
     inline MoveArray() = default;
     inline MoveArray(fnd::IAllocator* allocator) : allocator(allocator) {}
 
@@ -112,6 +115,37 @@ public:
     inline void push_back_unchecked(const T& value)
     {
         data[count++] = value;
+    }
+
+    inline const_iterator begin() const
+    {
+        return data;
+    }
+
+    inline iterator begin()
+    {
+        return data;
+    }
+
+    inline const_iterator end() const
+    {
+        return data + count;
+    }
+
+    inline iterator end()
+    {
+        return data + count;
+    }
+
+    inline iterator erase(const_iterator pos)
+    {
+        --count;
+        for (iterator it = const_cast<iterator>(pos); it != (data + count); ++it)
+        {
+            *it = it[1];
+        }
+
+        return const_cast<iterator>(pos);
     }
 };
 }
