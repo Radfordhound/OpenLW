@@ -4,13 +4,14 @@ namespace csl
 {
 namespace fnd
 {
-void StrLcpy(char* dst, const char* src, std::size_t len)
+void StrLcpy(char* dst, const char* src, std::size_t bufLen)
 {
-    if (len != 1)
+    if (bufLen != 1)
     {
-        for (std::size_t i = 0; i < len - 1; ++i)
+        for (std::size_t i = 0; i < bufLen - 1; ++i)
         {
             *dst++ = *src++;
+            if (*src == '\0') break;
         }
     }
     
