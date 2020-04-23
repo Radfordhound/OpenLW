@@ -108,6 +108,11 @@ public:
 
         data[count++] = value;
     }
+
+    inline void push_back_unchecked(const T& value)
+    {
+        data[count++] = value;
+    }
 };
 }
 }
