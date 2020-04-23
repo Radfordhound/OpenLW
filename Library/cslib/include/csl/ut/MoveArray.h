@@ -23,11 +23,6 @@ class MoveArray
         return (count) ? static_cast<T*>(allocator->Alloc(sizeof(T) * count)) : nullptr;
     }
 
-    inline std::size_t capacity() const noexcept
-    {
-        return (meta & metaCapacityMask);
-    }
-
     inline std::size_t dontFree() const noexcept
     {
         return (meta & metaNoFreeFlag);
@@ -63,6 +58,11 @@ public:
     inline std::size_t size() const noexcept
     {
         return count;
+    }
+
+    inline std::size_t capacity() const noexcept
+    {
+        return (meta & metaCapacityMask);
     }
 
     inline void clear()
