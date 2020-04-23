@@ -96,6 +96,11 @@ public:
         this->count = count;
     }
 
+    inline void resize_unchecked(std::size_t count)
+    {
+        this->count = count;
+    }
+
     inline void pop_back()
     {
         --count;
