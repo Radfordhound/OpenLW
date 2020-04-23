@@ -175,6 +175,12 @@ public:
 
         return const_cast<iterator>(pos);
     }
+
+    inline void erase_unstable(const_iterator pos)
+    {
+        if (pos == (data + --count)) return;
+        *pos = data[count];
+    }
 };
 }
 }
