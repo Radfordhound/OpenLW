@@ -1,6 +1,7 @@
 #pragma once
 #include "../fnd/IAllocator.h"
 #include <cstring>
+#include <iterator>
 
 namespace csl
 {
@@ -31,6 +32,8 @@ class MoveArray
 public:
     using const_iterator = const T*;
     using iterator = T*;
+    using reverse_iterator = std::reverse_iterator<T*>;
+    using const_reverse_iterator = const std::reverse_iterator<T*>;
 
     inline MoveArray() = default;
     inline MoveArray(fnd::IAllocator* allocator) : allocator(allocator) {}
@@ -140,6 +143,26 @@ public:
     inline iterator end()
     {
         return data + count;
+    }
+
+    inline reverse_iterator rbegin() noexcept
+    {
+        return data + count;
+    }
+
+    inline const_reverse_iterator rbegin() const noexcept
+    {
+        return data + count;
+    }
+
+    inline reverse_iterator rend() noexcept
+    {
+        return data;
+    }
+
+    inline const_reverse_iterator rend() const noexcept
+    {
+        return data;
     }
 
     inline iterator erase(const_iterator pos)
