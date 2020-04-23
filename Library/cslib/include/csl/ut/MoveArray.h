@@ -181,6 +181,27 @@ public:
         if (pos == (data + --count)) return;
         *pos = data[count];
     }
+
+    inline void swap(MoveArray<T>& other)
+    {
+        if (&other != this)
+        {
+            std::size_t tmpCount = count;
+            std::size_t tmpMeta = meta;
+            fnd::IAllocator* tmpAllocator = allocator;
+            T* tmpData = data;
+
+            count = other.count;
+            meta = other.meta;
+            allocator = other.allocator;
+            data = other.data;
+
+            other.count = tmpCount;
+            other.meta = tmpMeta;
+            other.allocator = tmpAllocator;
+            other.data = tmpData;
+        }
+    }
 };
 }
 }
