@@ -12,12 +12,12 @@ class MoveArray
 {
     T* data = nullptr;
     std::size_t count = 0;
-    std::size_t meta = 0;
+    std::size_t capacityAndFlags = 0;
     fnd::IAllocator* allocator = nullptr;
 
-    constexpr static std::size_t metaBitCount = (sizeof(std::size_t) << 3);
-    constexpr static std::size_t metaNoFreeFlag = (1 << (metaBitCount - 1));
-    constexpr static std::size_t metaCapacityMask = ~metaNoFreeFlag;
+    constexpr static std::size_t CapacityBitCount = (sizeof(capacityAndFlags) << 3);
+    constexpr static std::size_t NoFreeFlag = (1 << (CapacityBitCount - 1));
+    constexpr static std::size_t CapacityMask = ~NoFreeFlag;
     
     inline T* AllocateMemory(std::size_t count)
     {
@@ -26,7 +26,7 @@ class MoveArray
 
     inline std::size_t dontFree() const noexcept
     {
-        return (meta & metaNoFreeFlag);
+        return (capacityAndFlags & NoFreeFlag);
     }
 
 public:
@@ -42,7 +42,7 @@ public:
         allocator(allocator)
     {
         data = AllocateMemory(capacity);
-        meta = capacity;
+        capacityAndFlags = capacity;
     }
 
     inline ~MoveArray()
@@ -65,7 +65,7 @@ public:
 
     inline std::size_t capacity() const noexcept
     {
-        return (meta & metaCapacityMask);
+        return (capacityAndFlags & CapacityMask);
     }
 
     inline void clear()
@@ -89,7 +89,7 @@ public:
             }
 
             data = buf;
-            meta = count;
+            capacityAndFlags = count;
         }
     }
 
@@ -187,17 +187,17 @@ public:
         if (&other != this)
         {
             std::size_t tmpCount = count;
-            std::size_t tmpMeta = meta;
+            std::size_t tmpCapacity = capacityAndFlags;
             fnd::IAllocator* tmpAllocator = allocator;
             T* tmpData = data;
 
             count = other.count;
-            meta = other.meta;
+            capacityAndFlags = other.tmpCapacity;
             allocator = other.allocator;
             data = other.data;
 
             other.count = tmpCount;
-            other.meta = tmpMeta;
+            other.tmpCapacity = tmpCapacity;
             other.allocator = tmpAllocator;
             other.data = tmpData;
         }
