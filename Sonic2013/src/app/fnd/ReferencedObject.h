@@ -15,10 +15,10 @@ protected:
 
 public:
     // TODO: Does ReferencedObject have a constructor?
-    //inline ReferencedObject()
-    //{
-    //    ++refCount;
-    //}
+    inline ReferencedObject()
+    {
+        //++refCount;
+    }
 
     /* <b>Wii U: TODO, PC: TODO</b> */
     inline void AddRef()
@@ -29,9 +29,9 @@ public:
     /* <b>Wii U: 0x02185188, PC: 0x0048d460</b> */
     inline void Release()
     {
-        if (!size && --refCount == 0)
+        if (size && --refCount == 0)
         {
-            delete this; // TODO: Is this correct?
+            delete this;
         }
     }
 
