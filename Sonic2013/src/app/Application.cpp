@@ -141,7 +141,10 @@ void Application::Draw()
 void Application::Shutdown()
 {
     // TODO
+    ShutdownCommon();
     ShutdownMain();
+    // TODO
+    fnd::DestroySingletons();
     // TODO
 }
 

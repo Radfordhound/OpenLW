@@ -30,6 +30,10 @@ struct SingletonInitNode
     }
 };
 
+/* <b>Wii U: 0x02185574, PC: 0x0048d520</b> */
 void InitSingletons();
+
+/* <b>Wii U: 0x0218570c, PC: 0x0048d6c0</b> */
+void DestroySingletons();
 }
 }
