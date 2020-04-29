@@ -147,22 +147,22 @@ public:
 
     inline reverse_iterator rbegin() noexcept
     {
-        return data + count;
+        return reverse_iterator(data + count);
     }
 
     inline const_reverse_iterator rbegin() const noexcept
     {
-        return data + count;
+        return const_reverse_iterator(data + count);
     }
 
     inline reverse_iterator rend() noexcept
     {
-        return data;
+        return reverse_iterator(data);
     }
 
     inline const_reverse_iterator rend() const noexcept
     {
-        return data;
+        return const_reverse_iterator(data);
     }
 
     inline iterator erase(const_iterator pos)
