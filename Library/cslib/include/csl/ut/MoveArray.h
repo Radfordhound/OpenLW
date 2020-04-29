@@ -10,6 +10,7 @@ namespace ut
 template<typename T>
 class MoveArray
 {
+protected:
     T* data = nullptr;
     std::size_t count = 0;
     std::size_t capacityAndFlags = 0;
@@ -28,6 +29,10 @@ class MoveArray
     {
         return (capacityAndFlags & NoFreeFlag);
     }
+
+    inline MoveArray(T* data, std::size_t count, std::size_t capacityAndFlags,
+        fnd::IAllocator* allocator) : data(data), count(count),
+        capacityAndFlags(capacityAndFlags), allocator(allocator) {}
 
 public:
     using const_iterator = const T*;
