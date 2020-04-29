@@ -202,6 +202,16 @@ public:
             other.data = tmpData;
         }
     }
+
+    inline const T& operator[] (std::size_t index) const
+    {
+        return data[index];
+    }
+
+    inline T& operator[] (std::size_t index)
+    {
+        return data[index];
+    }
 };
 }
 }
