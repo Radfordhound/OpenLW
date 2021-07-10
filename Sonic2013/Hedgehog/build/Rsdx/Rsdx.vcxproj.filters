@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{dc1f3b53-cc36-4647-9307-9cb842cefd70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeapMemory">
+      <UniqueIdentifier>{432a52ca-67d6-4115-ae84-50104ef3a900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Device">
+      <UniqueIdentifier>{f75bf747-6510-4aaf-8791-d3c453f75c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Stream">
+      <UniqueIdentifier>{2aee1fe6-2ac8-40c0-b074-b57e1b134f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Shader">
+      <UniqueIdentifier>{e6cd3a05-360d-4fdf-9c65-920f1914a804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeapMemory\Allocator">
+      <UniqueIdentifier>{d1e6bbbc-e3ad-4a77-a36d-e8a674edf284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{8d2d3ef0-8505-49a3-9636-b564799dc516}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\System\RsdxObject.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Graphics\Device\RsdxDevCore.cpp">
+      <Filter>Graphics\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Graphics\Device\RsdxDevice.cpp">
+      <Filter>Graphics\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="source\HeapMemory\hhRsdxMemoryUtil.cpp">
+      <Filter>HeapMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\HeapMemory\Allocator\hhRsdxMemoryMain.cpp">
+      <Filter>HeapMemory\Allocator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\RsdxAtomic.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\RsdxEvent.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\RsdxThread.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxObject.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevCore.h">
+      <Filter>Graphics\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevice.h">
+      <Filter>Graphics\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\HeapMemory\Allocator\hhRsdxMemoryMain.h">
+      <Filter>HeapMemory\Allocator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\HeapMemory\hhRsdxMemoryUtil.h">
+      <Filter>HeapMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxAtomic.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxThread.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxEvent.h">
+      <Filter>System</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

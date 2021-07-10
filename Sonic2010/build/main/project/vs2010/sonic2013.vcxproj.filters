@@ -1,0 +1,989 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{f9fb15d2-20a0-4418-ab44-ac0a330de2eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{0d06f5ba-f04d-4811-8512-ab73db179aee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug\VariableEditor">
+      <UniqueIdentifier>{f8f64ced-5ba5-40e4-8066-fc7a236f2e21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dev">
+      <UniqueIdentifier>{c53992df-157f-4798-a45e-06ee46c02281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dev\event">
+      <UniqueIdentifier>{0b15390e-278b-49fb-ab50-0c0a7d6fe04f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dev\seteditor">
+      <UniqueIdentifier>{c77b928d-83ce-449f-b4ec-06aa08454962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dev\viewer">
+      <UniqueIdentifier>{51d218e2-ec0f-4cb1-9f0f-92bdfeca19eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dev\seteditor\editparam">
+      <UniqueIdentifier>{310f096d-f22b-472d-b8fd-c47fdde26e75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dev\seteditor\menu">
+      <UniqueIdentifier>{5db1f09a-6984-44cc-a6b5-5688121fdac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dev\seteditor\menuitem">
+      <UniqueIdentifier>{edcf773d-040e-4f36-a33d-1e6dcfc61e58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect">
+      <UniqueIdentifier>{ca50f9e9-6071-412f-83ca-cc479824b63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect\Primitive">
+      <UniqueIdentifier>{b442b515-eb79-4de4-9b6d-dff6578176ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{91959583-8b29-4a27-b3c3-60e5abc98d9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\cafe">
+      <UniqueIdentifier>{9c812968-5741-49ef-9681-b5015adca4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\cafe\ErrorViewer">
+      <UniqueIdentifier>{e6c4773e-1c4b-4dff-a423-a154f810c10d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\classes">
+      <UniqueIdentifier>{1ac8af69-bc0e-4b9d-bce5-5437b4f67da0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\goc">
+      <UniqueIdentifier>{92b24871-366b-464a-a979-1284cb6503e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\goc\hud">
+      <UniqueIdentifier>{9b23b84e-e786-47f0-a082-7ae580ac907c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\goc\persistence">
+      <UniqueIdentifier>{e1ac63fc-068e-46c3-8644-483746d27c75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HUD">
+      <UniqueIdentifier>{48e097a9-9282-4ba9-82ab-7766fa061c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{64929b10-e4ba-4aec-9a2a-ff3a7de3807c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss">
+      <UniqueIdentifier>{b2c1375d-5e9b-4d42-b44b-505f1f3594a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Camera">
+      <UniqueIdentifier>{77fa471a-cd29-45e2-a627-d668afa2e9dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\classes">
+      <UniqueIdentifier>{ce775c8c-2c00-4c3b-b09e-cac5cb880c3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Common">
+      <UniqueIdentifier>{d7de52fd-8471-4114-b4f8-7064e567fd06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy">
+      <UniqueIdentifier>{539e0265-6fde-40eb-b472-558110c3e2b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage">
+      <UniqueIdentifier>{6b4452a0-6e9f-4e8e-881f-afbc99778c01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character">
+      <UniqueIdentifier>{cfe9b854-3caa-47f2-9ba9-27100c756d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\goc">
+      <UniqueIdentifier>{e11bf9da-7d2c-424b-8aa9-e41bfd453985}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossDragonMaster">
+      <UniqueIdentifier>{c9fa6f77-66d1-4666-8566-6b0189a7dc0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossFruitMaster">
+      <UniqueIdentifier>{73e33ef7-0236-4029-bfbc-0110d8f7d7e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossGanmenMaster">
+      <UniqueIdentifier>{c35fcc10-220e-48c5-8518-e3a2847fd2d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossOwlMaster">
+      <UniqueIdentifier>{5c462285-0dee-4b18-b177-5744f4bf6d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossPopoesMaster">
+      <UniqueIdentifier>{6ab4103e-c134-430f-a7f1-fc9ed00eed59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossDragonMaster">
+      <UniqueIdentifier>{201e5824-fa17-4fda-9718-bb464754d661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossFruitMaster">
+      <UniqueIdentifier>{6e9fda1f-03f6-4cd8-b6ed-d8aa2137b124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossGanmenMaster">
+      <UniqueIdentifier>{dd06c7b3-ba50-41c7-a445-4ade1f3d0364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossMoonMaster">
+      <UniqueIdentifier>{f6838382-3f93-4a08-9c5e-a40975aaa03d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossOwlMaster">
+      <UniqueIdentifier>{a2686f2d-2ae0-4e27-a757-5b9ce03d737d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossPopoesMaster">
+      <UniqueIdentifier>{6ed48a2d-795a-448e-b891-4e0330fbd01f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\lastBoss">
+      <UniqueIdentifier>{e8f1f3f7-fd02-430a-8aac-99fbc27c30fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\midBossDragonMaster">
+      <UniqueIdentifier>{216a4ed1-e650-4d15-8886-badec96d272a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\midBossMoonMaster">
+      <UniqueIdentifier>{9d18f59d-5a9f-4e39-ac06-b3ad20cf3f16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\midBossOwlMaster">
+      <UniqueIdentifier>{763643cb-c812-4cd4-a203-37bdb5bb0592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\midBossPopoesMaster">
+      <UniqueIdentifier>{6374409e-c896-4356-8a39-e683c2e7d539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\rushBossFruitMaster">
+      <UniqueIdentifier>{9bd61eb6-995a-4500-9996-8bb99b4da0c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\rushBossGanmenMaster">
+      <UniqueIdentifier>{a5a742cc-422b-4ded-b8c4-9295720948e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\rushBossMoonMaster">
+      <UniqueIdentifier>{14833673-9ffc-49f5-96b5-c1430f78842e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossDragonMaster\misc">
+      <UniqueIdentifier>{a05a8cbd-f7f2-479d-8588-b19aebe2ad95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossFruitMaster\FruitElement">
+      <UniqueIdentifier>{04504c56-bf2e-4898-9f61-d9d6737d3666}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossGanmenMaster\misc">
+      <UniqueIdentifier>{d6c141f0-fc6e-441a-8878-eeb4f1f13e99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\bossPopoesMaster\IronBall">
+      <UniqueIdentifier>{01f4f341-bc62-4681-abb1-0ddc03934aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossGanmenMaster\misc">
+      <UniqueIdentifier>{82899d9c-33f0-4dd5-be4e-459cfc660821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossMoonMaster\misc">
+      <UniqueIdentifier>{81b98939-7fb9-46bb-8e9a-e79eacbabb18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\dlcBossPopoesMaster\popoes">
+      <UniqueIdentifier>{a31db134-1ed6-44ac-aed2-ecc10e216f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\midBossPopoesMaster\misc">
+      <UniqueIdentifier>{356ac691-3c76-4458-b4c0-ece54b6c79c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\midBossPopoesMaster\popoes">
+      <UniqueIdentifier>{dbd66bbe-3068-4472-807c-d9e74d5327d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\character\rushBossGanmenMaster\misc">
+      <UniqueIdentifier>{9ca5f90d-97d9-4660-b650-97c6f5b23891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\boss\goc\sequence">
+      <UniqueIdentifier>{b81e4327-ef53-4745-96f1-15928cc2b957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Common\Bubble">
+      <UniqueIdentifier>{e6d4f2c0-919b-491a-b1b6-a2efe80c61eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Common\ItemBox">
+      <UniqueIdentifier>{a5491a88-69ec-437e-b438-3c218cb5f166}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Common\PhantomCancel">
+      <UniqueIdentifier>{ef9a0ba4-6040-4aa0-a89f-f405ede4e630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Common\PopupRingGenerator">
+      <UniqueIdentifier>{0414a68e-f84e-482a-943c-5e69c937cb10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Common\Ring">
+      <UniqueIdentifier>{9ac5f163-bd2b-44a5-a2a5-ef5bcff2ec87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Common\ItemBox\misc">
+      <UniqueIdentifier>{9b94e3c8-d212-4ec9-87dc-098e966ff294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character">
+      <UniqueIdentifier>{815445a1-2fb4-49b0-a8f3-b05470708251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\aiai">
+      <UniqueIdentifier>{3485bf1e-e5c2-416a-9fd8-23e4593805d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\antlionmother">
+      <UniqueIdentifier>{17da76be-d82c-4558-aa22-730da69be5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\batabata">
+      <UniqueIdentifier>{ea7e3a09-33c6-487a-9b81-d2035dce5f72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\bigdragonfly">
+      <UniqueIdentifier>{cb3af8f5-4af8-4293-b17d-4652b749e6f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\biggola">
+      <UniqueIdentifier>{c8b35bdb-3ac3-4dd8-8f3b-5b781639b78f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\dekunuts">
+      <UniqueIdentifier>{41b23194-ae19-41fd-8e68-569603cd1f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\dosun">
+      <UniqueIdentifier>{7ed73562-81ba-4c81-afb7-2d1748b2a7a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\ganigani">
+      <UniqueIdentifier>{c106a4c2-d032-438b-a145-489874d38961}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\gola">
+      <UniqueIdentifier>{a7923d9b-066f-481f-a088-dc4947220ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\goldTonton">
+      <UniqueIdentifier>{0ed8c24b-5d45-4a6f-b972-0a285e987447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\grabber">
+      <UniqueIdentifier>{a0befb13-ca51-4539-bdcd-338b4778d774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\groundantlion">
+      <UniqueIdentifier>{f3ea904f-b976-404c-93e7-c1f17a6857ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\headfishboat">
+      <UniqueIdentifier>{d26d027c-deb0-4d78-b765-bd7fdbef738e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\hidlun">
+      <UniqueIdentifier>{0322e81e-2698-4e58-9400-b160e2139324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\kamakiller">
+      <UniqueIdentifier>{5b84fc03-9184-4704-9fe2-a3b6b7a1c2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\manta">
+      <UniqueIdentifier>{be7178f5-8bac-4959-b1b2-37f515f74f99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\mogumogu">
+      <UniqueIdentifier>{a0929520-2a3a-4eee-94aa-e53d57d6b383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\mogurin">
+      <UniqueIdentifier>{ae3418cb-2f71-4b47-8040-649b2bc97c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\valkeenStraightSV">
+      <UniqueIdentifier>{b5950453-1c65-4e2d-b886-e9a7ab526004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\dosun\misc">
+      <UniqueIdentifier>{f99640c4-78f1-4992-9ee1-7704ca5c9247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\potos">
+      <UniqueIdentifier>{015c54cb-be30-44e9-b770-3bcd1aafa1a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\potos\misc">
+      <UniqueIdentifier>{09dc1846-7d71-4f35-bb93-76709d1ca620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\pufferbomb">
+      <UniqueIdentifier>{922b724d-47cd-47f4-9755-71ec2dd98df4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\seadora">
+      <UniqueIdentifier>{968e9a25-1451-49c0-bf99-533fc7d8add6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\seadora\ring">
+      <UniqueIdentifier>{ab1104f6-47ec-422a-9eb8-5f7db7dcbc49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\seamine">
+      <UniqueIdentifier>{940b49c7-9a3b-47d9-94a7-68b5fc3b4e22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\tefutefu">
+      <UniqueIdentifier>{e81007af-d02c-4c13-9e56-a18a1cc0a9e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\tonton">
+      <UniqueIdentifier>{7fe1939b-e5b6-4226-b343-4ca4d08160cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\tsuntsun">
+      <UniqueIdentifier>{093940ab-be76-421a-9591-74370d406800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\unidas">
+      <UniqueIdentifier>{e1e0a9b6-98a6-497b-9024-9fc6e8b76534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\unidasSV">
+      <UniqueIdentifier>{ec5a2123-32a6-402d-9ee3-e3f639fc6eee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\uniuni">
+      <UniqueIdentifier>{39d09c9a-0457-4448-bb6f-20c28cdedb34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\valkeenDiving">
+      <UniqueIdentifier>{3c3a71ae-ca4a-4fba-8ca7-16cdc2dc3003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\enemy\character\valkeenStraight">
+      <UniqueIdentifier>{ad9dd392-41a6-47ca-8a23-b9d453716289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\parts">
+      <UniqueIdentifier>{8dd72615-e046-4f3c-afae-a6f80f51116b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\radiocontrol">
+      <UniqueIdentifier>{fb85d59d-5f0b-460f-976b-4e660bac0f91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\parts\beam">
+      <UniqueIdentifier>{b5d46f69-28a4-45de-95f4-708ac1d08c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\parts\sheepFur">
+      <UniqueIdentifier>{233a476a-01fd-4404-8880-c19c185e101d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\parts\popupItem">
+      <UniqueIdentifier>{3407b80c-99ec-4950-a72c-af9151f88544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\parts\throwItemBox">
+      <UniqueIdentifier>{490cfe0a-e126-4a00-ae4e-536e7393da49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\parts\throwMiniThornBall">
+      <UniqueIdentifier>{5c6fe2a3-5538-44ff-8e10-7f6f8a2823c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\radiocontrol\charactor">
+      <UniqueIdentifier>{d8c007c9-e18c-4752-b7b3-df2439b1bdf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\radiocontrol\charactor\Fighter">
+      <UniqueIdentifier>{2df9ad0a-93fb-47f4-9aa3-604c81f7368c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\radiocontrol\charactor\Helicopter">
+      <UniqueIdentifier>{e644af3f-8ae0-4661-9262-f4bcf56cf803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\radiocontrol\charactor\Helicopter\misc">
+      <UniqueIdentifier>{85c3b6f4-ca82-46a7-9ca8-ce2350202ce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\radiocontrol\object">
+      <UniqueIdentifier>{c72715d9-7e34-4a1a-ad0d-eb29cc4c0d3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\radiocontrol\object\RcRestrictCollision">
+      <UniqueIdentifier>{2e188eb7-ca32-45e5-8712-48e205340b0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\dlc">
+      <UniqueIdentifier>{0783849c-213d-4cd7-ab1d-8cd4ef2c8e7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World2">
+      <UniqueIdentifier>{4686139b-b0f9-48d7-a669-5a08faa27d51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1">
+      <UniqueIdentifier>{002eb93f-43a7-48d3-9d0c-c9c525663cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3">
+      <UniqueIdentifier>{b4aa7d0a-468c-4cd0-abf9-1aa8ddc6df3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4">
+      <UniqueIdentifier>{8927e7e9-6a64-4da2-9dc5-5cb964b4b2d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World5">
+      <UniqueIdentifier>{9016f290-3bb6-4c20-9dd5-20957c4a83fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World6">
+      <UniqueIdentifier>{18c7f4c2-0659-463b-b31b-86b346715af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World7">
+      <UniqueIdentifier>{491bd7c7-7fab-4914-a466-9e5559ce1db6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\dlc\Egg">
+      <UniqueIdentifier>{2d6f619e-664f-4cfb-b989-968c16240aa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\dlc\GolonRock">
+      <UniqueIdentifier>{b4c70b19-83d7-443b-82c6-720997622891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\dlc\ZeldaPopupItem">
+      <UniqueIdentifier>{c3aeb87a-4e26-4dc7-87d1-23a6e36b6bda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\dlc\NightsReala">
+      <UniqueIdentifier>{f26360e3-e413-46ac-97af-82ef4c246e9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\dlc\YoshiJumpBoard">
+      <UniqueIdentifier>{3ce15922-0106-4ebd-9155-79d40a36067f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\BigWindmill">
+      <UniqueIdentifier>{b0f07011-e21e-452c-bd2e-316d46ae6ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\Bush">
+      <UniqueIdentifier>{dce9a7f0-62c0-4e89-8880-2e5fa3bcc994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\BushInsideCylinder">
+      <UniqueIdentifier>{71fa17b0-76f7-4836-8499-99d462a710c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\BushSV">
+      <UniqueIdentifier>{fcba4db1-e6c1-4e82-8f31-e80466f5bd0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\CelestialSphere">
+      <UniqueIdentifier>{fb09929f-910e-49e8-81d6-43be6b9bc1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\GiantMoai">
+      <UniqueIdentifier>{d55233c7-d7be-4ee1-8a29-1b084ca61fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\RollCeiling">
+      <UniqueIdentifier>{7096cba7-db37-4e75-93f9-8b1a836c0a93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\RollingMoai">
+      <UniqueIdentifier>{2bead5d5-81ca-4fbc-9988-43102d5a829a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\RollingStone">
+      <UniqueIdentifier>{5d66398f-ec69-4cec-a384-7e010071a60f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World1\Sheep">
+      <UniqueIdentifier>{78f5de27-8566-4e35-9389-f56677644c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World2\BgOasis">
+      <UniqueIdentifier>{c9d5f1c1-9875-419d-828e-c770a0fc8c65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World2\DeadWeightStone">
+      <UniqueIdentifier>{5497f544-0f71-4e2b-80b4-ac2dcd97231f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World2\DroppingSand">
+      <UniqueIdentifier>{8a832e10-1e80-451f-aa68-2264b0e6c14e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World2\MiniCactusBall">
+      <UniqueIdentifier>{79c5c879-c6b5-4d59-8cfd-70f434a87637}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\ArcherFishFloor">
+      <UniqueIdentifier>{0ee2bd32-a970-47db-99f1-ce29571f8751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\BlowFloor">
+      <UniqueIdentifier>{66273ae6-377a-4e6d-a03b-77eeaa90a771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\BonusBumper">
+      <UniqueIdentifier>{d117d7a2-3f0f-4621-aa03-d481229d30eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\CasinoChip">
+      <UniqueIdentifier>{9dea2a9d-6e2d-46d4-be06-7a21c32bae74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\CasinoMedal">
+      <UniqueIdentifier>{5865abbd-df67-4537-ac15-3048a9c1f716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\CoconutCanon">
+      <UniqueIdentifier>{3c860f15-ff9e-4e96-ab00-ec779758817d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\CrowsNest">
+      <UniqueIdentifier>{57cf4f7c-ec59-4bc0-b2ea-c7e8fbf1b17b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\FlowerGun">
+      <UniqueIdentifier>{236bc78b-655b-40cc-a287-4d6d7f5863a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\NeedleDrum">
+      <UniqueIdentifier>{94cd77e7-313b-4b14-90d1-6c927420fab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\RailTruck">
+      <UniqueIdentifier>{59525132-e1d0-41de-b235-a4da5981e2e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\WaterWorks">
+      <UniqueIdentifier>{808cf269-746c-473d-9885-5a8e8644ad68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\Seaweed">
+      <UniqueIdentifier>{320aeaa3-3e53-47e7-9e75-b76873730b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World3\WhirlingWaves">
+      <UniqueIdentifier>{59812827-f702-40a5-845d-a3765240a18b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\BigPiston">
+      <UniqueIdentifier>{39a84124-0c41-4aa2-8c76-ab9b3241c55b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\BigSteamSpring">
+      <UniqueIdentifier>{b878b5c2-e67e-4b44-b842-86455ec4c8bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\HoleGear">
+      <UniqueIdentifier>{a262c9bd-f5ac-4696-86dc-ee07af89d42b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\IceSmokeGenerator">
+      <UniqueIdentifier>{04265c42-1fa3-4dbb-8b05-9764cd573f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\NutChimney">
+      <UniqueIdentifier>{a4d02857-eebb-4d1b-93dd-62c247028caf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\SteamSpring">
+      <UniqueIdentifier>{0d3f71cb-822e-4d6d-966f-62b0be909978}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\SnowBush">
+      <UniqueIdentifier>{37d1c1a7-acfc-4d2e-987c-eda230e5a2fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\SnowMan">
+      <UniqueIdentifier>{18b48f11-2cb1-4dbc-8bd5-40a16fa546ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\SnowBushInsideCylinder">
+      <UniqueIdentifier>{0a09bdb1-39de-437b-8281-642e67a0ff13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World4\OilBall">
+      <UniqueIdentifier>{43dea714-2d1e-48f6-b4c3-598845d0b958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World5\BigOwl">
+      <UniqueIdentifier>{60cbcb43-af94-44f2-bf2a-2f90652dcc08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World5\FloatingGround">
+      <UniqueIdentifier>{d68898f2-253d-49e8-8d5b-efcb202923ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World5\TreeOwl">
+      <UniqueIdentifier>{5fdc03d1-6d22-4d61-aaf5-b5234efbe3b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World5\TurnBine">
+      <UniqueIdentifier>{ad6fcecf-d7ae-482a-9a61-f5c335c0dea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World5\BigOwl\misc">
+      <UniqueIdentifier>{105dd2d4-6d6e-4c99-ade2-bb28df0e4112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World6\DragonFloor">
+      <UniqueIdentifier>{d44f1be0-6d16-46ab-9c12-31fdd89bcc53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World6\Missile">
+      <UniqueIdentifier>{e67d1a92-6fc0-4c26-99c4-059e9f1aa084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World7\FireBall">
+      <UniqueIdentifier>{f9b1d235-8fec-4501-8f80-f8bea8931379}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Stage\World7\Volcano">
+      <UniqueIdentifier>{4fa40af8-c386-4f07-ab42-f4647e1e5672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectSystem">
+      <UniqueIdentifier>{f96490cc-1345-4a80-a5f3-734851b318cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectSystem\Manager">
+      <UniqueIdentifier>{9c5dde16-0dc1-437b-b50a-7530a5e97c66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectSystem\Placement">
+      <UniqueIdentifier>{8f0e0ece-7980-41ca-939f-61d9add1a0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{58bb34a8-8842-45e5-9cfc-84bd10048fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Base">
+      <UniqueIdentifier>{c4cb123d-81ee-44b6-8376-c706932c52d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Debug">
+      <UniqueIdentifier>{9bc6d68a-2a56-4a60-ad43-a6ed841ee7f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Visual">
+      <UniqueIdentifier>{86051241-127c-4f73-be7d-97b49365ccf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Visual\Effect">
+      <UniqueIdentifier>{c77df1e9-bc05-40e2-89eb-8a2e27dc3d07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Part">
+      <UniqueIdentifier>{65286b17-c12c-4a9a-ae9a-b78fa7b82b35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Part\Antenna">
+      <UniqueIdentifier>{b58a9883-a2a2-419f-bf1f-9d2d8354d680}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Part\ChaosEmerald">
+      <UniqueIdentifier>{50e139ba-2cf7-44b0-ae7d-6a8b71edf562}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\Part\SpeedLineEffect">
+      <UniqueIdentifier>{059a4521-a444-4605-827d-9aeb6486adb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player\State">
+      <UniqueIdentifier>{04decbf5-348b-4439-bbc2-26dc2d0d6be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SaveData">
+      <UniqueIdentifier>{41c5296c-42c6-429e-b526-06eb5a900c3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage">
+      <UniqueIdentifier>{aae3826f-fd7d-410e-b471-b6daa1356685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\Shadow">
+      <UniqueIdentifier>{293baa76-9240-4caf-b4a6-e626ea717f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\Shadow\draw">
+      <UniqueIdentifier>{e42a555f-bacc-461d-b1a4-81ee5efce339}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\Shadow\draw\hh">
+      <UniqueIdentifier>{40baf0af-30ed-48c1-97b8-f4024c63d5f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{37dc2b21-3f9b-4483-9838-26a97b580a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\GameMode">
+      <UniqueIdentifier>{4e250f87-0d4f-4f2d-b3c9-5a60e0c398d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{d03034ca-10c9-42d0-934a-4e8d64ede0c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame">
+      <UniqueIdentifier>{c9fcfebd-4a69-4900-b2e1-a3fc127a996d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\event">
+      <UniqueIdentifier>{3973cc40-74d9-43ea-b0e7-1b062fed5abf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\event\Adv">
+      <UniqueIdentifier>{07bb284c-a814-4d4e-a65c-edecc396d76d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\gamemode">
+      <UniqueIdentifier>{cff5444d-31b3-4064-a884-680d147af508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\gamemode\gameover">
+      <UniqueIdentifier>{ac62b113-533c-4c61-8389-07c79d5ed063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\gamemode\minigame">
+      <UniqueIdentifier>{629491b9-0423-41b6-8849-a20c1fe9d8c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\gamemode\Staffroll">
+      <UniqueIdentifier>{ae90c5b6-8178-4791-a1b9-a1b596650b9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\gamemode\WorldAreaMap">
+      <UniqueIdentifier>{854eb59e-bbac-464e-b61e-345ae732f3b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\gamemode\StageBattle">
+      <UniqueIdentifier>{22560370-0691-4a49-b19c-ce0b8b4fa16b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\gamemode\stage">
+      <UniqueIdentifier>{6c5e598f-2986-4dd3-b611-8e79d41f1e0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\system">
+      <UniqueIdentifier>{6c97fa80-2da8-421e-af83-eee78958c693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\system\DisplaySwitch">
+      <UniqueIdentifier>{555069ec-4666-4e49-9c69-7a984df5a88c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgame\path">
+      <UniqueIdentifier>{aa810366-3a74-4556-9650-c059ca8848da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW">
+      <UniqueIdentifier>{fa086e8b-13e9-4750-93e1-aad6e4d15870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\dev">
+      <UniqueIdentifier>{cd69ce45-5a79-4d71-a79b-e0fed52f4e7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\fnd">
+      <UniqueIdentifier>{bc54d458-11be-4bac-8e9b-4fae598c06db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\game">
+      <UniqueIdentifier>{df30bf35-bb0f-4e8c-b81c-266c5461d15e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\gfx">
+      <UniqueIdentifier>{c29c7b0e-a3ab-43f3-b627-6d7bcabc24de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\hid">
+      <UniqueIdentifier>{7f4233fc-a5eb-42ef-8f6b-c8905f838304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\Platform">
+      <UniqueIdentifier>{c04db347-fa87-402c-a954-385e8b161892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\xgame">
+      <UniqueIdentifier>{a4a7499b-dbf9-4124-a0aa-74ceb5698597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\ut">
+      <UniqueIdentifier>{b1babf2f-094f-4dbd-8f5d-2ff6b5f17d67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenLW\Platform\Win32">
+      <UniqueIdentifier>{d894dde5-cd73-4c80-aa6a-17ff9ebe89e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp">
+      <Filter>SaveData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\GameMode\GameMode.cpp">
+      <Filter>System\GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\GameMode\GameModeStartUp.cpp">
+      <Filter>System\GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\Allocators.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\CActor.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\CBranchActor.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\CLeafActor.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\File.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileBinder.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileBinderCri.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileCache.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileLoader.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileReader.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileSystem.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileSystemCri.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\Message.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\MessageManager.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\ReferencedObject.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\Singleton.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\game\GlobalAllocator.cpp">
+      <Filter>OpenLW\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\RenderManager.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\DeviceBase.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\DeviceManager.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\DevicePlatformBase.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\ResAccDeviceData.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\ResDeviceData.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\ResGyroDeviceData.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\ResMotorDeviceData.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\ResPadDeviceData.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\ResSendDeviceData.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\hid\ResTouchDeviceData.cpp">
+      <Filter>OpenLW\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\ApplicationWin.cpp">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DevicePadKB.cpp">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DevicePadWin.cpp">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.cpp">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.cpp">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\xgame\DlcManager.cpp">
+      <Filter>OpenLW\xgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Application.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Atomic.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\CGame.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\CGameSequence.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\GameBase.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\GameObject.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\SyncTimer.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\xgame\MessageSystem.cpp">
+      <Filter>OpenLW\xgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\CriSystem.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\MainWin.cpp">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileReaderCri.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceManager.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceCustom.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceSysCustom.cpp">
+      <Filter>OpenLW\fnd</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
+      <Filter>SaveData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\GameMode\GameMode.h">
+      <Filter>System\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\GameMode\GameModeStartUp.h">
+      <Filter>System\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Utility\Freelist.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\Allocators.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\BaseObject.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\CActor.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\CActorTraverser.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\CBranchActor.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\CLeafActor.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\File.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileBinder.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileBinderCri.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileCache.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileLoader.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileReader.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileSystem.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileSystemCri.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\Message.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\MessageManager.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\ReferencedObject.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\Singleton.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\SUpdateInfo.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\game\GlobalAllocator.h">
+      <Filter>OpenLW\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\RenderManager.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\DeviceBase.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\DeviceManager.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\DevicePlatformBase.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\ResAccDeviceData.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\ResDeviceData.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\ResGyroDeviceData.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\ResMotorDeviceData.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\ResPadDeviceData.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\ResSendDeviceData.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\hid\ResTouchDeviceData.h">
+      <Filter>OpenLW\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\ApplicationWin.h">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceManagerImplWin.h">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DevicePadKB.h">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DevicePadWin.h">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.h">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.h">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\ut\RefPtr.h">
+      <Filter>OpenLW\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\xgame\DlcManager.h">
+      <Filter>OpenLW\xgame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Application.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Atomic.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\CGame.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\CGameSequence.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\GameBase.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\GameObject.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\SyncTimer.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\TinyFsm.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\xgame\MessageSystem.h">
+      <Filter>OpenLW\xgame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\CriSystem.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\RenderManagerImplWin.h">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileReaderCri.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceManager.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceCustom.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceSysCustom.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\OpenLW\Platform\Win32\KBACTION.in">
+      <Filter>OpenLW\Platform\Win32</Filter>
+    </None>
+  </ItemGroup>
+</Project>

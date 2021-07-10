@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="File">
+      <UniqueIdentifier>{5493c0b9-2eb1-4028-add3-1ce6396596b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{69fc3dba-bb19-4c09-9190-725c96ab57e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Device">
+      <UniqueIdentifier>{462fc2a5-78e5-452c-86c0-f880815575c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Stream">
+      <UniqueIdentifier>{663e71cb-9c21-4e7f-adb6-a281d9057573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Shader">
+      <UniqueIdentifier>{0da73d88-eeda-4325-8c88-7622321d5ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeapMemory">
+      <UniqueIdentifier>{2fdd07f0-8888-4eda-9d3f-8ce307c5e87b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeapMemory\Allocator">
+      <UniqueIdentifier>{97d1f617-1de2-4a9c-83e5-8cf70d2d2e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{1ca9b76c-bf81-46d7-adc7-1d7888e28803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\D3d9">
+      <UniqueIdentifier>{6d76ceae-ce0f-4537-a643-91096cef39e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{a8d97578-c2e7-4280-a3b2-2128e112ad89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\System\hhMemoryAllocator.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\hhObject.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\File\hhPackfile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\hhResource.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResource.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhTypes.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\File\hhPackfile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

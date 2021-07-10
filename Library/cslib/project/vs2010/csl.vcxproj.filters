@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\dbg">
+      <UniqueIdentifier>{e187471a-d4c1-4b8c-90bb-fa6713b40db2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fnd">
+      <UniqueIdentifier>{b3c65fa8-8aa9-4db5-b70d-1b01fb28ab72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\hio">
+      <UniqueIdentifier>{87af6c7b-4416-48bd-a1e5-951a21858048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math">
+      <UniqueIdentifier>{d06e222b-20b0-4068-80d6-bc11a619deaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ut">
+      <UniqueIdentifier>{98c5ecec-baa5-4933-89d2-56431e3759f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dbg">
+      <UniqueIdentifier>{1cd36aa4-c85a-4218-ae88-896f66189cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fnd">
+      <UniqueIdentifier>{9613f7f5-fc78-4cd2-b8bc-c52b7523dd1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{69abc526-4457-456e-9d5d-9c27cd882ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ut">
+      <UniqueIdentifier>{d2666069-8a57-41cd-ab4b-6f8920dbd3f4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\csl\ut\bitset.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\array.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\math\math.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\fnd\tick.h">
+      <Filter>Header Files\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\fnd\thread.h">
+      <Filter>Header Files\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\fnd\singleton.h">
+      <Filter>Header Files\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\fnd\memory.h">
+      <Filter>Header Files\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\string.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\string_map.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\hash_map.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\number.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\csl\fnd\tick_win32.cpp">
+      <Filter>Source Files\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\fnd\thread_win32.cpp">
+      <Filter>Source Files\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\fnd\memory.cpp">
+      <Filter>Source Files\fnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\ut\number.cpp">
+      <Filter>Source Files\ut</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

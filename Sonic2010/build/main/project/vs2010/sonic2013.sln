@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sonic2013", "sonic2013.vcxproj", "{77938B3B-E463-4F2B-9D6C-BCA6BA3CE8C9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "csl", "..\..\..\..\..\Library\cslib\project\vs2010\csl.vcxproj", "{AA184D1E-B941-4470-B96E-00C90D12499A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base", "..\..\..\..\..\Sonic2013\Hedgehog\build\Base\Base.vcxproj", "{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MirageCore", "..\..\..\..\..\Sonic2013\Hedgehog\build\MirageCore\MirageCore.vcxproj", "{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MirageDebug", "..\..\..\..\..\Sonic2013\Hedgehog\build\MirageDebug\MirageDebug.vcxproj", "{357069EC-AEFE-44DB-A68E-C5B09BAF6743}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MTBase", "..\..\..\..\..\Sonic2013\Hedgehog\build\MTBase\MTBase.vcxproj", "{527BF992-99B6-453A-BE4F-42C3CA7B4575}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rsdx", "..\..\..\..\..\Sonic2013\Hedgehog\build\Rsdx\Rsdx.vcxproj", "{EA491458-A296-440B-93AF-9B5BD8A508C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77938B3B-E463-4F2B-9D6C-BCA6BA3CE8C9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{77938B3B-E463-4F2B-9D6C-BCA6BA3CE8C9}.Debug|Win32.Build.0 = Debug|Win32
+		{77938B3B-E463-4F2B-9D6C-BCA6BA3CE8C9}.Release|Win32.ActiveCfg = Release|Win32
+		{77938B3B-E463-4F2B-9D6C-BCA6BA3CE8C9}.Release|Win32.Build.0 = Release|Win32
+		{AA184D1E-B941-4470-B96E-00C90D12499A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AA184D1E-B941-4470-B96E-00C90D12499A}.Debug|Win32.Build.0 = Debug|Win32
+		{AA184D1E-B941-4470-B96E-00C90D12499A}.Release|Win32.ActiveCfg = Release|Win32
+		{AA184D1E-B941-4470-B96E-00C90D12499A}.Release|Win32.Build.0 = Release|Win32
+		{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}.Debug|Win32.Build.0 = Debug|Win32
+		{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}.Release|Win32.ActiveCfg = Release|Win32
+		{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}.Release|Win32.Build.0 = Release|Win32
+		{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}.Debug|Win32.Build.0 = Debug|Win32
+		{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}.Release|Win32.ActiveCfg = Release|Win32
+		{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}.Release|Win32.Build.0 = Release|Win32
+		{357069EC-AEFE-44DB-A68E-C5B09BAF6743}.Debug|Win32.ActiveCfg = Debug|Win32
+		{357069EC-AEFE-44DB-A68E-C5B09BAF6743}.Debug|Win32.Build.0 = Debug|Win32
+		{357069EC-AEFE-44DB-A68E-C5B09BAF6743}.Release|Win32.ActiveCfg = Release|Win32
+		{357069EC-AEFE-44DB-A68E-C5B09BAF6743}.Release|Win32.Build.0 = Release|Win32
+		{527BF992-99B6-453A-BE4F-42C3CA7B4575}.Debug|Win32.ActiveCfg = Debug|Win32
+		{527BF992-99B6-453A-BE4F-42C3CA7B4575}.Debug|Win32.Build.0 = Debug|Win32
+		{527BF992-99B6-453A-BE4F-42C3CA7B4575}.Release|Win32.ActiveCfg = Release|Win32
+		{527BF992-99B6-453A-BE4F-42C3CA7B4575}.Release|Win32.Build.0 = Release|Win32
+		{EA491458-A296-440B-93AF-9B5BD8A508C0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EA491458-A296-440B-93AF-9B5BD8A508C0}.Debug|Win32.Build.0 = Debug|Win32
+		{EA491458-A296-440B-93AF-9B5BD8A508C0}.Release|Win32.ActiveCfg = Release|Win32
+		{EA491458-A296-440B-93AF-9B5BD8A508C0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

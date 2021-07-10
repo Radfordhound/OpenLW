@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{6e2647a4-e14d-4f82-b069-8ebefa1432b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Thread\hhMTJobThreadFactory.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\Thread\hhMTJobThreadFactory.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

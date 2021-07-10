@@ -1,0 +1,1 @@
+int dummy_int = 0;

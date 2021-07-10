@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{77938B3B-E463-4F2B-9D6C-BCA6BA3CE8C9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>sonic2013</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformShortName);$(SolutionDir)..\..\..\..\..\depends\criware\libs\$(PlatformShortName);$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformShortName);$(SolutionDir)..\..\..\..\..\depends\criware\libs\$(PlatformShortName);$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;dinput8.lib;dxguid.lib;cri_base_pcx86D.lib;cri_file_system_pcx86D.lib;cri_atom_pcx86D.lib;cri_mana_pcx86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d9.lib;dinput8.lib;dxguid.lib;cri_base_pcx86.lib;cri_file_system_pcx86.lib;cri_atom_pcx86.lib;cri_mana_pcx86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\OpenLW\Application.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Atomic.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\CGame.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\CGameSequence.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\CriSystem.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\Allocators.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\CActor.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\CBranchActor.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\CLeafActor.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\File.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileBinder.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileBinderCri.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileCache.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileLoader.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileReader.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileReaderCri.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileSystem.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\FileSystemCri.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\Message.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\MessageManager.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\ReferencedObject.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceCustom.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceManager.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceSysCustom.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\Singleton.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\GameBase.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\GameObject.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\game\GlobalAllocator.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\gfx\RenderManager.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\DeviceBase.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\DeviceManager.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\DevicePlatformBase.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\ResAccDeviceData.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\ResDeviceData.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\ResGyroDeviceData.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\ResMotorDeviceData.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\ResPadDeviceData.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\ResSendDeviceData.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\hid\ResTouchDeviceData.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\ApplicationWin.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DevicePadKB.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DevicePadWin.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\MainWin.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\SyncTimer.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\xgame\DlcManager.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\xgame\MessageSystem.cpp" />
+    <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp" />
+    <ClCompile Include="..\..\src\System\GameMode\GameMode.cpp" />
+    <ClCompile Include="..\..\src\System\GameMode\GameModeStartUp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\OpenLW\Application.h" />
+    <ClInclude Include="..\..\src\OpenLW\Atomic.h" />
+    <ClInclude Include="..\..\src\OpenLW\CGame.h" />
+    <ClInclude Include="..\..\src\OpenLW\CGameSequence.h" />
+    <ClInclude Include="..\..\src\OpenLW\CriSystem.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\Allocators.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\BaseObject.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\CActor.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\CActorTraverser.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\CBranchActor.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\CLeafActor.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\File.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileBinder.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileBinderCri.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileCache.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileLoader.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileReader.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileReaderCri.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileSystem.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\FileSystemCri.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\Message.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\MessageManager.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\ReferencedObject.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceCustom.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceManager.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceSysCustom.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\Singleton.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\SUpdateInfo.h" />
+    <ClInclude Include="..\..\src\OpenLW\GameBase.h" />
+    <ClInclude Include="..\..\src\OpenLW\GameObject.h" />
+    <ClInclude Include="..\..\src\OpenLW\game\GlobalAllocator.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\RenderManager.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\DeviceBase.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\DeviceManager.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\DevicePlatformBase.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\ResAccDeviceData.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\ResDeviceData.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\ResGyroDeviceData.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\ResMotorDeviceData.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\ResPadDeviceData.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\ResSendDeviceData.h" />
+    <ClInclude Include="..\..\src\OpenLW\hid\ResTouchDeviceData.h" />
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\ApplicationWin.h" />
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceManagerImplWin.h" />
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DevicePadKB.h" />
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DevicePadWin.h" />
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.h" />
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.h" />
+    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\RenderManagerImplWin.h" />
+    <ClInclude Include="..\..\src\OpenLW\SyncTimer.h" />
+    <ClInclude Include="..\..\src\OpenLW\TinyFsm.h" />
+    <ClInclude Include="..\..\src\OpenLW\ut\RefPtr.h" />
+    <ClInclude Include="..\..\src\OpenLW\xgame\DlcManager.h" />
+    <ClInclude Include="..\..\src\OpenLW\xgame\MessageSystem.h" />
+    <ClInclude Include="..\..\src\SaveData\SaveAuto.h" />
+    <ClInclude Include="..\..\src\System\GameMode\GameMode.h" />
+    <ClInclude Include="..\..\src\System\GameMode\GameModeStartUp.h" />
+    <ClInclude Include="..\..\src\Utility\Freelist.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\OpenLW\Platform\Win32\KBACTION.in" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\cslib\project\vs2010\csl.vcxproj">
+      <Project>{aa184d1e-b941-4470-b96e-00c90d12499a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Base\Base.vcxproj">
+      <Project>{1db9a21d-ddc9-46a4-afb9-debcfc970366}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\MirageCore\MirageCore.vcxproj">
+      <Project>{431c1aeb-e72c-40a1-b6aa-e7b33d79afec}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\MirageDebug\MirageDebug.vcxproj">
+      <Project>{357069ec-aefe-44db-a68e-c5b09baf6743}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\MTBase\MTBase.vcxproj">
+      <Project>{527bf992-99b6-453a-be4f-42c3ca7b4575}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Rsdx\Rsdx.vcxproj">
+      <Project>{ea491458-a296-440b-93af-9b5bd8a508c0}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
