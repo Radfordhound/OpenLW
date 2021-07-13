@@ -1,15 +1,35 @@
 #include "Hedgehog/Base/System/hhResource.h"
-#include "csl/ut/number.h"
 
 namespace hh
 {
 namespace ut
 {
-u32 ResFileCommon::GetReverseBigEndian(u32 val)
+IResourceLoader::~IResourceLoader() {}
+
+bool IResourceLoader::PrepareReplaceLoadedResource(void* param_1,
+    std::size_t param_2, SLoadedResourceParameter* args)
 {
-    u32 result;
-    csl::ut::NativeFromBig32(&result, &val, 1);
-    return result;
+    return false;
 }
+
+bool IResourceLoader::ReplaceLoadedResource(const char* param_1, void* param_2,
+    std::size_t* param_3, csl::fnd::IAllocator* allocator)
+{
+    return false;
+}
+
+bool IResourceLoader::FinishLoadedResource(void* param_1, std::size_t param_2,
+    csl::fnd::IAllocator* allocator)
+{
+    return false;
+}
+
+bool IResourceLoader::BindLoadedResource(void* param_1, std::size_t param_2,
+    csl::fnd::IAllocator* allocator, Packfile packfile)
+{
+    return false;
+}
+
+void IResourceLoader::CleanupLoadedResource(void* param_1, std::size_t param_2) {}
 }
 }

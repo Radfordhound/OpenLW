@@ -1,5 +1,5 @@
 #pragma once
-#include "csl/fnd/singleton.h"
+#include <csl/fnd/singleton.h>
 
 #define DECLARE_SINGLETON static ::app::fnd::SingletonInitNode __singletonInitNode;
 

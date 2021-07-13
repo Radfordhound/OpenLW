@@ -60,6 +60,9 @@ T RoundUp(const T& val, unsigned int multiple) // TODO: The symbols suggest that
 }
 
 // Wii U: 0x02ca6da8, PC: 0x00969760
-void NativeFromBig32(void* param_1, void* param_2, int count);
+void NativeFromBig32(void* output, void* input, int count);
+
+// Wii U: 0x02ca6dd4, PC: TODO
+void NativeFromLittle32(void* param_1, void* param_2, int count);
 }
 }

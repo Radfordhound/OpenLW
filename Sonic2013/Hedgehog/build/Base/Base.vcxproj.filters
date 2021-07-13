@@ -42,6 +42,15 @@
     <ClCompile Include="source\File\hhPackfile.cpp">
       <Filter>File</Filter>
     </ClCompile>
+    <ClCompile Include="source\System\hhResCommon.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\hhResourceTypeInfoRegistry.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\hhResGeneralTypeInfo.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
     <ClCompile Include="source\System\hhResource.cpp">
       <Filter>System</Filter>
     </ClCompile>
@@ -61,6 +70,15 @@
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\File\hhPackfile.h">
       <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResourceTypeInfoRegistry.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResGeneralTypeInfo.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResCommon.h">
+      <Filter>System</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

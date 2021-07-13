@@ -43,6 +43,11 @@ struct ResRawBase : public hh::ut::ResCommon<T> // TODO: Is this correct?
         m_ptr->Category = args.Category;
     }
 
+    void SetResolvedData(void* param_1)
+    {
+        m_ptr->Address = param_1;
+    }
+
     ResRawBase(const void* data) :
         hh::ut::ResCommon<T>(data) {}
 
