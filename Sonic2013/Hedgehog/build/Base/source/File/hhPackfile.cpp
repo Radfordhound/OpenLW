@@ -234,7 +234,23 @@ ResPackfileBlockDataHeaderDataTag* GetBlockData(unsigned int version,
 void ReplaceImport(unsigned int version, void* importAddress,
     u32 importSize, bool doSwap)
 {
-    // TODO
+    ResPackfileImportHeaderData importHeader(importAddress);
+    if (importSize != 0)
+    {
+        ResFileCommon::ChangeEndian32(doSwap, &importHeader.ref().Count, &importHeader.ref().Count);
+        if (importHeader.ref().Count > 0)
+        {
+            for (u32 i = 0; i < importHeader.ref().Count; ++i)
+            {
+                if (version > 1)
+                {
+                    ResPackfileImportData& curImport = importHeader.ptr()->Imports[i];
+                    ResFileCommon::ChangeEndian32(doSwap, &curImport.DicLinearEntryIndex,
+                        &curImport.DicLinearEntryIndex);
+                }
+            }
+        }
+    }
 }
 
 void Resolved(void* data)
@@ -261,7 +277,7 @@ void Resolved(void* data)
                     blockV2.ref().Pof0Size, doSwap);
 
                 ResFileCommon::ReplaceDic(version, header.ptr(),
-                    blockV2.GetDicAddress(), blockV2.ref().Unknown1,
+                    blockV2.GetDicAddress(), blockV2.ref().DicDepth,
                     doSwap);
 
                 ReplaceImport(version, blockV2.GetImportAddress(),

@@ -87,7 +87,7 @@ struct ResPackfileBlockV2HeaderDataTag
     u32 ImportSize;
     u32 StrsSize;
     u32 Pof0Size;
-    u8 Unknown1;
+    u8 DicDepth;
     u8 Unknown2;
     u16 Unknown3;
 };
@@ -169,6 +169,30 @@ struct ResPackfileBlockDataHeaderData : public ResCommon<ResPackfileBlockDataHea
 
     inline ResPackfileBlockDataHeaderData(void* data = nullptr) :
         ResCommon<ResPackfileBlockDataHeaderDataTag>(data) {}
+};
+
+struct ResPackfileImportData // TODO: This name was guessed! Is it correct?
+{
+    OFF32(char) Type;
+    OFF32(char) Name;
+    u32 DicLinearEntryIndex;
+};
+
+struct ResPackfileImportHeaderDataTag
+{
+    u32 Count;
+    OFF32(ResPackfileImportData) Imports;
+};
+
+struct ResPackfileImportHeaderData : public ResCommon<ResPackfileImportHeaderDataTag>
+{
+    // TODO: ?
+
+    inline ResPackfileImportHeaderData(const void* data) :
+        ResCommon<ResPackfileImportHeaderDataTag>(data) {}
+
+    inline ResPackfileImportHeaderData(void* data = nullptr) :
+        ResCommon<ResPackfileImportHeaderDataTag>(data) {}
 };
 
 class Packfile // size == 4

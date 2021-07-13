@@ -13,9 +13,14 @@ namespace hh
 {
 namespace ut
 {
+class CAllocationMeasure; // TODO
+
 struct SLoadedResourceParameter
 {
-    // TODO
+    CAllocationMeasure* field_0x0;
+    unsigned int field_0x4;
+    unsigned int field_0x8;
+    const char* Name;
 };
 
 struct IResourceLoader

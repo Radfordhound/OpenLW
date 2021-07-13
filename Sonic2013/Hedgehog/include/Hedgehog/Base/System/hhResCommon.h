@@ -66,6 +66,13 @@ public:
     // Wii U: 0x036945dc, PC: TODO
     static void ChangeEndian32(bool doSwap, const u32* input, u32* output);
 
+    // TODO: Is this function actually a thing?
+    inline static void ChangeEndian32(bool doSwap, const s32* input, s32* output)
+    {
+        ChangeEndian32(doSwap, reinterpret_cast<const u32*>(input),
+            reinterpret_cast<u32*>(output));
+    }
+
     // Wii U: 0x036945fc, PC: 0x00c1a210
     static u32 GetReverseBigEndian(u32 val);
 
@@ -75,7 +82,7 @@ public:
 
     // Wii U: 0x03694790, PC: TODO
     static void ReplaceDic(unsigned int version, void* param_2,
-        void* param_3, unsigned int param_4, bool doSwap);
+        void* param_3, unsigned int depth, bool doSwap);
 };
 }
 }

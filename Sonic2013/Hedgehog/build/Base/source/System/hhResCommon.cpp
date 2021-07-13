@@ -1,4 +1,4 @@
-#include "Hedgehog/Base/System/hhResCommon.h"
+#include "Hedgehog/Base/File/hhPackfile.h"
 #include <csl/ut/number.h>
 #include <cstring>
 
@@ -96,9 +96,38 @@ void ResFileCommon::ReplacePof0(void* baseAddress,
 }
 
 void ResFileCommon::ReplaceDic(unsigned int version, void* param_2,
-    void* param_3, unsigned int param_4, bool doSwap)
+    void* param_3, unsigned int depth, bool doSwap)
 {
-    // TODO
+    unsigned int nextDepth = depth;
+    if (depth != 0)
+    {
+        nextDepth = (depth - 1);
+    }
+
+    ResDicLinear dic(param_3);
+    ChangeEndian32(doSwap, &dic.ref().Count, &dic.ref().Count);
+
+    if (dic.ref().Count > 0)
+    {
+        if (version < 2)
+        {
+            // TODO
+        }
+
+        for (s32 i = 0; i < dic.ref().Count; ++i)
+        {
+            ResDicLinearEntry& curEntry = dic.ptr()->Entries[i];
+            if (version < 2)
+            {
+                // TODO
+            }
+
+            if (depth != 0)
+            {
+                ReplaceDic(version, param_2, curEntry.Value, nextDepth, doSwap);
+            }
+        }
+    }
 }
 }
 }
