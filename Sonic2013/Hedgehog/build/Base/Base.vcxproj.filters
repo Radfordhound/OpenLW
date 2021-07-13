@@ -31,6 +31,9 @@
     <Filter Include="System">
       <UniqueIdentifier>{a8d97578-c2e7-4280-a3b2-2128e112ad89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{3e7c565e-10a6-4e64-a598-80b80c798dac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\System\hhMemoryAllocator.cpp">
@@ -42,17 +45,20 @@
     <ClCompile Include="source\File\hhPackfile.cpp">
       <Filter>File</Filter>
     </ClCompile>
-    <ClCompile Include="source\System\hhResCommon.cpp">
-      <Filter>System</Filter>
+    <ClCompile Include="source\Resource\hhResShaderAcTypeInfo.cpp">
+      <Filter>Resource</Filter>
     </ClCompile>
-    <ClCompile Include="source\System\hhResourceTypeInfoRegistry.cpp">
-      <Filter>System</Filter>
+    <ClCompile Include="source\Resource\hhResCommon.cpp">
+      <Filter>Resource</Filter>
     </ClCompile>
-    <ClCompile Include="source\System\hhResGeneralTypeInfo.cpp">
-      <Filter>System</Filter>
+    <ClCompile Include="source\Resource\hhResGeneralTypeInfo.cpp">
+      <Filter>Resource</Filter>
     </ClCompile>
-    <ClCompile Include="source\System\hhResource.cpp">
-      <Filter>System</Filter>
+    <ClCompile Include="source\Resource\hhResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResourceTypeInfoRegistry.cpp">
+      <Filter>Resource</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,23 +68,26 @@
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h">
       <Filter>System</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResource.h">
-      <Filter>System</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhTypes.h">
       <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\File\hhPackfile.h">
       <Filter>File</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResourceTypeInfoRegistry.h">
-      <Filter>System</Filter>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResShaderAcTypeInfo.h">
+      <Filter>Resource</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResGeneralTypeInfo.h">
-      <Filter>System</Filter>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResCommon.h">
+      <Filter>Resource</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResCommon.h">
-      <Filter>System</Filter>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResGeneralTypeInfo.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResourceTypeInfoRegistry.h">
+      <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

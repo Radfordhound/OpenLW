@@ -12,21 +12,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\File\hhPackfile.cpp" />
+    <ClCompile Include="source\Resource\hhResCommon.cpp" />
+    <ClCompile Include="source\Resource\hhResGeneralTypeInfo.cpp" />
+    <ClCompile Include="source\Resource\hhResource.cpp" />
+    <ClCompile Include="source\Resource\hhResourceTypeInfoRegistry.cpp" />
     <ClCompile Include="source\System\hhMemoryAllocator.cpp" />
     <ClCompile Include="source\System\hhObject.cpp" />
-    <ClCompile Include="source\System\hhResGeneralTypeInfo.cpp" />
-    <ClCompile Include="source\System\hhResCommon.cpp" />
-    <ClCompile Include="source\System\hhResource.cpp" />
-    <ClCompile Include="source\System\hhResourceTypeInfoRegistry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Base\File\hhPackfile.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResCommon.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResGeneralTypeInfo.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResource.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResourceTypeInfoRegistry.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResCommon.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResGeneralTypeInfo.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResource.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhResourceTypeInfoRegistry.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhTypes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

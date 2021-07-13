@@ -1,4 +1,4 @@
-#include "Hedgehog/Base/System/hhResource.h"
+#include "Hedgehog/Base/Resource/hhResource.h"
 
 namespace hh
 {

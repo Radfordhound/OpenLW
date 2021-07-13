@@ -1,5 +1,5 @@
 #pragma once
-#include "hhTypes.h"
+#include "../System/hhTypes.h"
 
 namespace hh
 {

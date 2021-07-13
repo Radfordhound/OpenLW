@@ -1,5 +1,5 @@
 #pragma once
-#include "../System/hhResCommon.h"
+#include "../Resource/hhResCommon.h"
 #include <cstddef>
 
 namespace csl

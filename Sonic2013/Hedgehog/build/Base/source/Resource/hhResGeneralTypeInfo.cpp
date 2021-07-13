@@ -1,4 +1,4 @@
-#include "Hedgehog/Base/System/hhResGeneralTypeInfo.h"
+#include "Hedgehog/Base/Resource/hhResGeneralTypeInfo.h"
 
 using namespace hh::ut;
 
