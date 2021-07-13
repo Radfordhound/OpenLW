@@ -148,7 +148,7 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
             ResDicLinear types(GetDicAddr(version, dataBlock));
             for (s32 i = 0; i < types.ref().Count; ++i)
             {
-                unsigned int hash = typeInfo->CreateHash(GetDicRootName(types.GetName(i)));
+                unsigned int typeHash = typeInfo->CreateHash(GetDicRootName(types.GetName(i)));
                 ResDicLinear files(types[i]);
 
                 for (s32 i2 = 0; i2 < files.ref().Count; ++i2)
@@ -172,7 +172,16 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
 
                     if ((blockDataHeader.ref().Flags & 0x80) == 0) // TODO: Is this correct?
                     {
-                        // TODO
+                        u32 dataSize = blockDataHeader.ref().Size;
+                        SLoadedResourceParameter args =
+                        {
+                            nullptr, //&CStack68 // TODO: Un-comment the CStack68 part!!
+                            0,
+                            0,
+                            fileName
+                        };
+
+                        typeInfo->PrepareReplaceLoadedResource(blockData, typeHash, &dataSize, &args);
                     }
                 }
             }

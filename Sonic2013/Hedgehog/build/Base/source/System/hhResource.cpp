@@ -12,23 +12,14 @@ bool IResourceLoader::PrepareReplaceLoadedResource(void* param_1,
     return false;
 }
 
-bool IResourceLoader::ReplaceLoadedResource(const char* param_1, void* param_2,
-    std::size_t* param_3, csl::fnd::IAllocator* allocator)
-{
-    return false;
-}
+void IResourceLoader::ReplaceLoadedResource(const char* param_1, void* param_2,
+    std::size_t* param_3, csl::fnd::IAllocator* allocator) {}
 
-bool IResourceLoader::FinishLoadedResource(void* param_1, std::size_t param_2,
-    csl::fnd::IAllocator* allocator)
-{
-    return false;
-}
+void IResourceLoader::FinishLoadedResource(void* param_1, std::size_t param_2,
+    csl::fnd::IAllocator* allocator) {}
 
-bool IResourceLoader::BindLoadedResource(void* param_1, std::size_t param_2,
-    csl::fnd::IAllocator* allocator, Packfile packfile)
-{
-    return false;
-}
+void IResourceLoader::BindLoadedResource(void* param_1, std::size_t param_2,
+    csl::fnd::IAllocator* allocator, Packfile packfile) {}
 
 void IResourceLoader::CleanupLoadedResource(void* param_1, std::size_t param_2) {}
 }

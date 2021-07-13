@@ -8,7 +8,7 @@ namespace ut
 {
 class ResourceTypeInfoRegistry : public csl::fnd::Singleton<ResourceTypeInfoRegistry>
 {
-    /* Wii U: 0x10031e40, PC: TODO */
+    // Wii U: 0x10031e40, PC: TODO
     static const ResourceTypeInfo* const ResourceTypes[];
 
     const ResourceTypeInfo* const* m_typeInfo;
@@ -23,7 +23,9 @@ public:
     // Wii U: 0x03695a2c, PC: TODO
     ResourceTypeInfoRegistry();
     
-    // TODO
+    // Wii U: 0x03695ae4, PC: TODO
+    bool PrepareReplaceLoadedResource(void* data, unsigned int typeHash,
+        unsigned int* param_3, SLoadedResourceParameter* param_4);
 };
 }
 }

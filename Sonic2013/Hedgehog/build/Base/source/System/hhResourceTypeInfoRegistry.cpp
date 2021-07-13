@@ -50,5 +50,37 @@ ResourceTypeInfoRegistry::ResourceTypeInfoRegistry() :
 {
     RegisterList(ResourceTypes);
 };
+
+namespace detail
+{
+// Wii U: 0x03695aa0, PC: TODO
+static const ResourceTypeInfo* GetResourceTypeInfo(unsigned int hash,
+    const ResourceTypeInfo* const* typeInfo)
+{
+    ResourceTypeInfo* resTypeInfo;
+    for (std::size_t i = 0; typeInfo[i]; ++i)
+    {
+        if (typeInfo[i]->Hash == hash)
+            return typeInfo[i];
+    }
+
+    return nullptr;
+}
+}
+
+using namespace detail;
+
+bool ResourceTypeInfoRegistry::PrepareReplaceLoadedResource(void* data,
+    unsigned int typeHash, unsigned int* param_3, SLoadedResourceParameter* param_4)
+{
+    const ResourceTypeInfo* resTypeInfo;
+    if (param_4 && (resTypeInfo = GetResourceTypeInfo(typeHash, m_typeInfo)) &&
+        resTypeInfo->Loader)
+    {
+        return resTypeInfo->Loader->PrepareReplaceLoadedResource(data, typeHash, param_4); // TODO: Is this line correct??
+    }
+
+    return false;
+}
 }
 }
