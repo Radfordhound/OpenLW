@@ -32,6 +32,9 @@
     <ClCompile Include="source\hhResDictionary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\hhUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhPackfile.h">
@@ -53,6 +56,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResDictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

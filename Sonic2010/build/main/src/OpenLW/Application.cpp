@@ -7,9 +7,10 @@
 #include "gfx/RenderManager.h"
 #include "fnd/FileSystemCri.h"
 #include <Hedgehog/MirageCore/hhMirageCore.h>
+#include <Hedgehog/Utility/hhUtility.h>
 
-using namespace hh;
-using namespace mr;
+using namespace hh::mr;
+using namespace hh::ut;
 
 namespace app
 {
@@ -33,6 +34,7 @@ void Application::InitializeMain()
     csl::fnd::IAllocator* allocator = game::GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
 
     // TODO
+    InitializeHHUtility();
     InitializeHHMirage();
 
     CreateDevice();
