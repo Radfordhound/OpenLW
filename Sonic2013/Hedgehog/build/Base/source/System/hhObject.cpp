@@ -6,12 +6,12 @@ namespace base
 {
 void* CObject::operator new(std::size_t size)
 {
-    return __HH_ALLOC__(size);
+    return __HH_ALLOC(size);
 }
 
 void CObject::operator delete(void* ptr)
 {
-    return __HH_FREE__(ptr);
+    return __HH_FREE(ptr);
 }
 
 CRefCountObject::~CRefCountObject() {}
