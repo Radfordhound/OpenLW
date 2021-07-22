@@ -19,6 +19,8 @@ class CRenderingInfrastructure;
 
 namespace ut
 {
+struct ResourceTypeInfo;
+
 enum ResPackfileStatus
 {
     PACKFILE_STATUS_IS_IMPORTING = 1,
@@ -68,6 +70,12 @@ struct ResPackfileBlockV1HeaderDataTag
 
 struct ResPackfileBlockV1Header : public ResCommon<ResPackfileBlockV1HeaderDataTag>
 {
+    // Wii U: 0x03696408, PC: TODO
+    u32 GetSignature() const;
+
+    // Wii U: 0x03696430, PC: TODO
+    int GetSignatureId() const;
+
     // Wii U: 0x036964c4, PC: TODO
     void* GetDicAddress();
 
@@ -88,7 +96,7 @@ struct ResPackfileBlockV2HeaderDataTag
     u32 StrsSize;
     u32 Pof0Size;
     u8 DicDepth;
-    u8 Unknown2;
+    u8 SignatureId;
     u16 Unknown3;
 };
 
@@ -131,10 +139,25 @@ struct ResDicLinearData
 struct ResDicLinear : public ResCommon<ResDicLinearData>
 {
     // Wii U: 0x036926a8, PC: TODO
+    // TODO: I think this is inlined actually?
     const char* GetName(int index) const;
 
-    // Wii U: 0x03692748, PC: TODO
-    const void* operator[](int index) const;
+    // Wii U: 0x036968d4, PC: TODO
+    int GetIndex(const char* key) const;
+
+    // Wii U: 0x0369697c, PC: TODO
+    int GetIndex(const char* key, int startChar) const;
+
+    // Wii U: 0x03692748 (Multiple addresses?), PC: TODO
+    const void* operator[](int index) const
+    {
+        if (IsValid() && index > -1 && index < ref().Count)
+        {
+            return ref().Entries[index].Value;
+        }
+
+        return nullptr;
+    }
 
     // TODO: Is this function actually a thing?
     inline void* operator[](int index)
@@ -195,11 +218,10 @@ struct ResPackfileImportHeaderData : public ResCommon<ResPackfileImportHeaderDat
         ResCommon<ResPackfileImportHeaderDataTag>(data) {}
 };
 
-class Packfile // size == 4
+struct Packfile // size == 4
 {
-    ResPackfileHeaderDataTag* m_handle;
+    ResPackfileHeaderDataTag* Handle;
 
-public:
     // Wii U: 0x03692454, PC: TODO
     Packfile(void* data);
 
@@ -208,6 +230,16 @@ public:
 
     // Wii U: 0x03692e1c, PC: 0x00c19560
     void Setup(csl::fnd::IAllocator* allocator, hh::mr::CRenderingInfrastructure* renderInfra);
+
+    // Wii U: 0x036939a0, PC: TODO
+    void* GetResource(const ResourceTypeInfo& typeInfo,
+        const char* param_2, std::size_t* param_3);
+
+    template<typename T>
+    T Get(const char* param_2, std::size_t* param_3)
+    {
+        return T(GetResource(T::staticTypeInfo(), param_2, param_3));
+    }
 
     // Wii U: 0x03693dac, PC: TODO
     std::size_t GetNumberOfImport() const;
@@ -236,6 +268,9 @@ void ReplaceImport(unsigned int version, void* importAddress,
 
 // Wii U: 0x03692a60, PC: TODO
 void Resolved(void* data);
+
+// Wii U: 0x036952c0, PC: TODO
+void* GetNodeDicPointer(unsigned int version, const char* type, void* data);
 
 // Wii U: 0x03695e4c, PC: 0x00c1a770
 bool CheckPacHeader(const ResPackfileHeaderDataTag* data);

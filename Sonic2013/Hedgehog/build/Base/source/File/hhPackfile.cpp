@@ -1,5 +1,5 @@
 #include "Hedgehog/Base/File/hhPackfile.h"
-#include "Hedgehog/Base/System/hhResourceTypeInfoRegistry.h"
+#include "Hedgehog/Base/Resource/hhResourceTypeInfoRegistry.h"
 #include <cstring>
 
 using namespace hh::ut::pac;
@@ -63,6 +63,32 @@ void* ResPackfileHeader::GetNextBlock(unsigned int version, void* block)
     }
 }
 
+u32 ResPackfileBlockV1Header::GetSignature() const
+{
+    return ResFileCommon::GetReverseBigEndian(ref().Signature);
+}
+
+// TODO: This name was guessed.
+// Wii U: 0x102c0690, PC: TODO
+static const u32 PackfileBlockTypes[] = // TODO: Should this be moved somewhere else?
+{
+    HH_MAKE_SIG('D', 'A', 'T', 'A'),
+    HH_MAKE_SIG('I', 'M', 'A', 'G')
+};
+
+int ResPackfileBlockV1Header::GetSignatureId() const
+{
+    for (int i = 0; i < HH_COUNT_OF(PackfileBlockTypes); ++i)
+    {
+        if (PackfileBlockTypes[i] == GetSignature())
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 void* ResPackfileBlockV1Header::GetDicAddress()
 {
     return (ptr() + 1);
@@ -93,6 +119,7 @@ void* ResPackfileBlockV2Header::GetPof0Address()
     return (static_cast<u8*>(GetStrAddress()) + ref().StrsSize);
 }
 
+// TODO: Move this to "hhResDictionary.cpp"
 const char* ResDicLinear::GetName(int index) const
 {
     if (IsValid() && index > -1 && index < ref().Count)
@@ -103,18 +130,50 @@ const char* ResDicLinear::GetName(int index) const
     return nullptr;
 }
 
-const void* ResDicLinear::operator[](int index) const
+// TODO: Move this to "hhResDictionary.cpp"
+int ResDicLinear::GetIndex(const char* key) const
 {
-    if (IsValid() && index > -1 && index < ref().Count)
+    if (IsValid() && key)
     {
-        return ref().Entries[index].Value;
+        for (int i = 0; i < ref().Count; ++i)
+        {
+            if (std::strcmp(key, ref().Entries[i].Key) == 0)
+            {
+                return i;
+            }
+        }
     }
 
-    return nullptr;
+    return -1;
+}
+
+int ResDicLinear::GetIndex(const char* key, int startChar) const
+{
+    if (IsValid() && key)
+    {
+        const char* startPos = std::strchr(key, startChar);
+        if (startPos)
+        {
+            key = (startPos + 1);
+        }
+
+        for (int i = 0; i < ref().Count; ++i)
+        {
+            startPos = std::strchr(ref().Entries[i].Key, startChar);
+
+            if ((!startPos && std::strcmp(key, ref().Entries[i].Key) == 0) ||
+                (startPos && std::strcmp(key, startPos + 1) == 0))
+            {
+                return i;
+            }
+        }
+    }
+
+    return -1;
 }
 
 Packfile::Packfile(void* data) :
-    m_handle(static_cast<ResPackfileHeaderDataTag*>(data))
+    Handle(static_cast<ResPackfileHeaderDataTag*>(data))
 {
     ResPackfileHeader header(data);
     if (header.IsValidHeader())
@@ -125,19 +184,19 @@ Packfile::Packfile(void* data) :
 
 bool Packfile::IsImport() const
 {
-    ResPackfileHeader header(m_handle);
+    ResPackfileHeader header(Handle);
     return ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) != 0);
 }
 
 void Packfile::Setup(csl::fnd::IAllocator* allocator,
     hh::mr::CRenderingInfrastructure* renderInfra)
 {
-    ResPackfileHeader header(m_handle);
+    ResPackfileHeader header(Handle);
     if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) == 0)
     {
         ResourceTypeInfoRegistry* typeInfo = ResourceTypeInfoRegistry::GetInstance();
         unsigned int version = header.GetMajorVersion();
-        Resolved(m_handle);
+        Resolved(Handle);
 
         //CAllocationMeasure CStack68; // TODO: Un-comment this line!
         void* dataBlock;
@@ -191,15 +250,34 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
     }
 }
 
+void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
+    const char* param_2, std::size_t* param_3)
+{
+    if (param_3)
+    {
+        *param_3 = 0;
+    }
+
+    ResPackfileHeader header(Handle);
+    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) != 0)
+    {
+        return ResourceTypeInfo::FindLoadedResourceByName(
+            header.GetMajorVersion(), typeInfo.Type,
+            *this, param_2, param_3);
+    }
+
+    return nullptr;
+}
+
 std::size_t Packfile::GetNumberOfImport() const
 {
-    ResPackfileHeader header(m_handle);
+    ResPackfileHeader header(Handle);
     return header.ref().RemainingDepends;
 }
 
 bool Packfile::IsImportCompleted() const
 {
-    ResPackfileHeader header(m_handle);
+    ResPackfileHeader header(Handle);
     return ((header.ref().Status & PACKFILE_STATUS_IS_IMPORT_COMPLETED) != 0);
 }
 
@@ -296,6 +374,37 @@ void Resolved(void* data)
 
         header.ref().Status |= PACKFILE_STATUS_IS_RESOLVED;
     }
+}
+
+void* GetNodeDicPointer(unsigned int version, const char* type, void* data)
+{
+    void* dicPtr;
+    if (version < 2)
+    {
+        ResPackfileBlockV1Header blockV1(data);
+        int sigID = blockV1.GetSignatureId();
+        dicPtr = blockV1.GetDicAddress();
+
+        if (sigID != 0)
+        {
+            return nullptr;
+        }
+    }
+    else
+    {
+        ResPackfileBlockV2Header blockV2(data);
+        dicPtr = blockV2.GetDicAddress();
+
+        if (blockV2.ref().SignatureId != 0)
+        {
+            return nullptr;
+        }
+    }
+
+    ResDicLinear dic(dicPtr);
+    int index = dic.GetIndex(type, ':');
+
+    return (index != -1) ? dic[index] : nullptr;
 }
 
 bool CheckPacHeader(const ResPackfileHeaderDataTag* data)

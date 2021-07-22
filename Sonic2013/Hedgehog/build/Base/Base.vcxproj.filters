@@ -34,6 +34,9 @@
     <Filter Include="Resource">
       <UniqueIdentifier>{3e7c565e-10a6-4e64-a598-80b80c798dac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Database">
+      <UniqueIdentifier>{5b0167ca-f15a-45d6-9f12-fffafe5e2636}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\System\hhMemoryAllocator.cpp">
@@ -58,6 +61,18 @@
       <Filter>Resource</Filter>
     </ClCompile>
     <ClCompile Include="source\Resource\hhResourceTypeInfoRegistry.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResVertexShader.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Database\hhSampleChunk.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\hhCSymbol.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResNameData.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
   </ItemGroup>
@@ -87,6 +102,21 @@
       <Filter>Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResourceTypeInfoRegistry.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResShaderCommonData.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResVertexShader.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Database\hhSampleChunk.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSymbol.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResNameData.h">
       <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>

@@ -57,11 +57,12 @@ namespace detail
 static const ResourceTypeInfo* GetResourceTypeInfo(unsigned int hash,
     const ResourceTypeInfo* const* typeInfo)
 {
-    ResourceTypeInfo* resTypeInfo;
     for (std::size_t i = 0; typeInfo[i]; ++i)
     {
         if (typeInfo[i]->Hash == hash)
+        {
             return typeInfo[i];
+        }
     }
 
     return nullptr;

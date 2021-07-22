@@ -11,20 +11,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Database\hhSampleChunk.cpp" />
     <ClCompile Include="source\File\hhPackfile.cpp" />
     <ClCompile Include="source\Resource\hhResCommon.cpp" />
     <ClCompile Include="source\Resource\hhResGeneralTypeInfo.cpp" />
+    <ClCompile Include="source\Resource\hhResNameData.cpp" />
     <ClCompile Include="source\Resource\hhResource.cpp" />
     <ClCompile Include="source\Resource\hhResourceTypeInfoRegistry.cpp" />
+    <ClCompile Include="source\Resource\hhResShaderAcTypeInfo.cpp" />
+    <ClCompile Include="source\Resource\hhResVertexShader.cpp" />
+    <ClCompile Include="source\System\hhCSymbol.cpp" />
     <ClCompile Include="source\System\hhMemoryAllocator.cpp" />
     <ClCompile Include="source\System\hhObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Database\hhSampleChunk.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\File\hhPackfile.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResCommon.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResGeneralTypeInfo.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResNameData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResource.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResourceTypeInfoRegistry.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResShaderAcTypeInfo.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResShaderCommonData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Resource\hhResVertexShader.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSymbol.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhTypes.h" />

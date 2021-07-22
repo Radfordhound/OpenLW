@@ -4,6 +4,9 @@
     <Filter Include="Misc">
       <UniqueIdentifier>{3af568fb-a620-46d8-b76f-705389ee160a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{0ae035dd-38fb-430a-a5e4-882b709429f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Misc\hhRenderingInfrastructure.cpp">
@@ -16,5 +19,8 @@
       <Filter>Misc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\hhMirageCore.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MirageCore\Resource\hhShaderResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

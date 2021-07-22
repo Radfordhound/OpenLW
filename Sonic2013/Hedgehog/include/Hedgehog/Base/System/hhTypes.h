@@ -6,6 +6,46 @@
 #include <stdexcept>
 #endif
 
+/* Endian-order macros. */
+#ifndef HH_IS_BIG_ENDIAN
+#ifdef __ORDER_BIG_ENDIAN__ // TODO: Does this work on devkitpro Wii U builds?
+#define HH_IS_BIG_ENDIAN
+#endif
+#endif
+
+/* Endian-fix macros. */
+#ifdef HH_IS_BIG_ENDIAN
+#define HH_ENDIAN_FIX_U16(v) (v)
+#define HH_ENDIAN_FIX_U32(v) (v)
+#define HH_ENDIAN_FIX_U64(v) (v)
+#else
+#if defined(_MSC_VER) && _MSC_VER >= 1310 
+#include <stdlib.h>
+#define HH_ENDIAN_FIX_U16(v) _byteswap_ushort(v)
+#define HH_ENDIAN_FIX_U32(v) _byteswap_ulong(v)
+#define HH_ENDIAN_FIX_U64(v) _byteswap_uint64(v)
+#else
+#define HH_ENDIAN_FIX_U16(v) __builtin_bswap16(v)
+#define HH_ENDIAN_FIX_U32(v) __builtin_bswap32(v)
+#define HH_ENDIAN_FIX_U64(v) __builtin_bswap64(v)
+#endif
+#endif
+
+/* Helper macros. */
+#ifdef HH_IS_BIG_ENDIAN
+#define HH_MAKE_SIG(c1, c2, c3, c4) ((static_cast<::hh::u32>(c1) << 24U) |\
+    (static_cast<::hh::u32>(c2) << 16U) |\
+    (static_cast<::hh::u32>(c3) << 8U) |\
+    static_cast<::hh::u32>(c4))
+#else
+#define HH_MAKE_SIG(c1, c2, c3, c4) ((static_cast<::hh::u32>(c4) << 24U) |\
+    (static_cast<::hh::u32>(c3) << 16U) |\
+    (static_cast<::hh::u32>(c2) << 8U) |\
+    static_cast<::hh::u32>(c1))
+#endif
+
+#define HH_COUNT_OF(arr) (sizeof(arr) / sizeof(*arr))
+
 namespace hh
 {
 typedef std::int8_t s8;
@@ -16,6 +56,22 @@ typedef std::int32_t s32;
 typedef std::uint32_t u32;
 typedef std::int64_t s64;
 typedef std::uint64_t u64;
+
+// NOTE: This function is custom and is NOT present in the original game!
+template<typename T, typename val_t>
+inline const T* PtrAdd(const void* ptr, val_t val)
+{
+    return reinterpret_cast<const T*>(
+        reinterpret_cast<std::uintptr_t>(ptr) + (val));
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+template<typename T, typename val_t>
+inline T* PtrAdd(void* ptr, val_t val)
+{
+    return reinterpret_cast<T*>(
+        reinterpret_cast<std::uintptr_t>(ptr) + (val));
+}
 
 // NOTE: All of the code in this #if block is custom and is NOT present in the original game!
 #if UINTPTR_MAX > UINT32_MAX
@@ -35,6 +91,11 @@ private:
     val_t m_val;
 
 public:
+    inline val_t get_val() const
+    {
+        return m_val;
+    }
+
     cptr_t get() const
     {
         // Convert from relative pointer to absolute pointer and return result.

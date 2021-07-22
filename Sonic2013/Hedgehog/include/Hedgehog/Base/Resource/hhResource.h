@@ -33,7 +33,7 @@ struct IResourceLoader
         std::size_t param_2, SLoadedResourceParameter* args);
     
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual void ReplaceLoadedResource(const char* param_1, void* param_2,
+    virtual void* ReplaceLoadedResource(const char* param_1, void* param_2,
         std::size_t* param_3, csl::fnd::IAllocator* allocator);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
@@ -56,6 +56,15 @@ struct ResourceTypeInfo
     CreateLoaderFunc CreateLoader;
     IResourceLoader* Loader;
     unsigned int Hash;
+
+    // Wii U: 0x036953dc, PC: TODO
+    static void* GetLoadedResourceHeaderByName(unsigned int version,
+        const char* param_2, Packfile pac, const char* param_4);
+
+    // Wii U: 0x03695500, PC: TODO
+    static void* FindLoadedResourceByName(unsigned int version,
+        const char* param_2, Packfile pac, const char* param_4,
+        std::size_t* size);
 };
 }
 }

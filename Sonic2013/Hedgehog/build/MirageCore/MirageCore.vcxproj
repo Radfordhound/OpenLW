@@ -17,6 +17,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\hhMirageCore.h" />
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingInfrastructure.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MirageCore\Resource\hhShaderResource.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}</ProjectGuid>
