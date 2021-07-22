@@ -1,4 +1,7 @@
 #include "Hedgehog/Base/System/hhCSymbol.h"
+#include "Hedgehog/Base/System/hhMemoryAllocator.h"
+#include "Hedgehog/Base/System/hhHash.h"
+#include "Hedgehog/Base/hhBase.h"
 #include <cstring>
 
 namespace hh
@@ -9,17 +12,23 @@ namespace base
 static SSymbolNode* PTR_1031f2c8 = nullptr;
 
 // Wii U: 0x1031f2cc, PC: TODO
-static SSymbolNode DAT_1031f2cc = {};
+static SSymbolNode* DAT_1031f2cc = nullptr;
+
+// Wii U: 0x1031f2d0, PC: TODO
+static std::size_t DAT_1031f2d0 = 0;
+
+// Wii U: 0x1031f2d4, PC: TODO
+static unsigned int DAT_1031f2d4 = 0;
 
 bool IsSame(const SSymbolNode* node1, const SSymbolNode* node2)
 {
-    return (node1->field_0x8 == node2->field_0x8 &&
+    return (node1->Hash == node2->Hash &&
         std::strcmp(node1->Name(), node2->Name()) == 0);
 }
 
 bool IsUpper(const SSymbolNode* node1, const SSymbolNode* node2)
 {
-    if (node1->field_0x8 <= node2->field_0x8)
+    if (node1->Hash <= node2->Hash)
     {
         return (std::strcmp(node1->Name(), node2->Name()) > 0); // TODO: Is this correct??
         //return ((-iVar2 & static_cast<unsigned int>(~iVar2)) >> 31);
@@ -75,11 +84,29 @@ SSymbolNode* MakeStringSymbol(const char* param_1)
     std::size_t len = std::strlen(param_1);
     std::size_t uVar1 = ((len + 19) & 0xFFFFFFFCU); // Is this hex value okay on x64??
 
-    // TODO
+    if (DAT_1031f2d0 < uVar1)
+    {
+        DAT_1031f2cc = static_cast<SSymbolNode*>(__HH_ALLOC_DBG(65536)); // Line: 514
+        ++DAT_1031f2d4;
+        DAT_1031f2d0 = 65536;
+    }
+
+    DAT_1031f2cc->field_0x4 = nullptr;
+    DAT_1031f2cc->field_0x0 = nullptr;
+    DAT_1031f2cc->Hash = hash_value_str(param_1);
+
+    std::memcpy(DAT_1031f2cc->Name(), param_1, len + 1);
+
+    SSymbolNode* local_r3_176 = AddToNode(DAT_1031f2cc);
+    if (local_r3_176 == DAT_1031f2cc)
+    {
+        DAT_1031f2d0 -= uVar1;
+        DAT_1031f2cc = PtrAdd<SSymbolNode>(DAT_1031f2cc, uVar1);
+    }
 
     // TODO
 
-    return nullptr; // TODO: REMOVE THIS
+    return local_r3_176;
 }
 
 const char* GetSetGlobalString(const char* param_1)

@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 
 namespace hh
 {
@@ -8,12 +9,18 @@ struct SSymbolNode
 {
     SSymbolNode* field_0x0;
     SSymbolNode* field_0x4;
-    unsigned int field_0x8;
+    std::size_t Hash;
 
     // TODO: Is this function a thing?
     inline const char* Name() const
     {
         return reinterpret_cast<const char*>(this + 1);
+    }
+
+    // TODO: Is this function a thing?
+    inline char* Name()
+    {
+        return reinterpret_cast<char*>(this + 1);
     }
 };
 

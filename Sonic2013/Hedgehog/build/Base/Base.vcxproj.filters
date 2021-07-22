@@ -21,6 +21,9 @@
     <ClCompile Include="source\System\hhCSymbol.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\System\hhHash.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h">
@@ -33,5 +36,8 @@
       <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\hhBase.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhHash.h">
+      <Filter>System</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

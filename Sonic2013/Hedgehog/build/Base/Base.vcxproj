@@ -12,12 +12,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\System\hhCSymbol.cpp" />
+    <ClCompile Include="source\System\hhHash.cpp" />
     <ClCompile Include="source\System\hhMemoryAllocator.cpp" />
     <ClCompile Include="source\System\hhObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Base\hhBase.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSymbol.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhHash.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h" />
   </ItemGroup>
