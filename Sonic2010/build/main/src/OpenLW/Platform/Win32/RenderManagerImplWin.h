@@ -1,7 +1,7 @@
 #pragma once
 #include "../../fnd/FileLoader.h"
 #include "../../fnd/ResourceManager.h"
-#include <Hedgehog/Base/File/hhPackfile.h>
+#include <Hedgehog/Utility/hhPackfile.h>
 #include <Hedgehog/MTBase/Thread/hhMTJobThreadFactory.h>
 #include <boost/scoped_ptr.hpp>
 

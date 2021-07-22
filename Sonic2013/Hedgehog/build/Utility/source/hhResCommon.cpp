@@ -1,4 +1,5 @@
-#include "Hedgehog/Base/File/hhPackfile.h"
+#include "Hedgehog/Utility/hhPackfile.h"
+#include "Hedgehog/Utility/hhResDictionary.h"
 #include <csl/ut/number.h>
 #include <cstring>
 

@@ -1,5 +1,6 @@
-#include "Hedgehog/Base/File/hhPackfile.h"
-#include "Hedgehog/Base/Resource/hhResourceTypeInfoRegistry.h"
+#include "Hedgehog/Utility/hhPackfile.h"
+#include "Hedgehog/Utility/hhResDictionary.h"
+#include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
 #include <cstring>
 
 using namespace hh::ut::pac;
@@ -117,59 +118,6 @@ void* ResPackfileBlockV2Header::GetStrAddress()
 void* ResPackfileBlockV2Header::GetPof0Address()
 {
     return (static_cast<u8*>(GetStrAddress()) + ref().StrsSize);
-}
-
-// TODO: Move this to "hhResDictionary.cpp"
-const char* ResDicLinear::GetName(int index) const
-{
-    if (IsValid() && index > -1 && index < ref().Count)
-    {
-        return ref().Entries[index].Key;
-    }
-
-    return nullptr;
-}
-
-// TODO: Move this to "hhResDictionary.cpp"
-int ResDicLinear::GetIndex(const char* key) const
-{
-    if (IsValid() && key)
-    {
-        for (int i = 0; i < ref().Count; ++i)
-        {
-            if (std::strcmp(key, ref().Entries[i].Key) == 0)
-            {
-                return i;
-            }
-        }
-    }
-
-    return -1;
-}
-
-int ResDicLinear::GetIndex(const char* key, int startChar) const
-{
-    if (IsValid() && key)
-    {
-        const char* startPos = std::strchr(key, startChar);
-        if (startPos)
-        {
-            key = (startPos + 1);
-        }
-
-        for (int i = 0; i < ref().Count; ++i)
-        {
-            startPos = std::strchr(ref().Entries[i].Key, startChar);
-
-            if ((!startPos && std::strcmp(key, ref().Entries[i].Key) == 0) ||
-                (startPos && std::strcmp(key, startPos + 1) == 0))
-            {
-                return i;
-            }
-        }
-    }
-
-    return -1;
 }
 
 Packfile::Packfile(void* data) :

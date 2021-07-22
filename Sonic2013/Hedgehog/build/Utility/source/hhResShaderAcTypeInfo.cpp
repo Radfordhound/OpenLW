@@ -1,5 +1,5 @@
-#include "Hedgehog/Base/Resource/hhResShaderAcTypeInfo.h"
-#include "Hedgehog/Base/Resource/hhResVertexShader.h"
+#include "Hedgehog/Utility/hhResShaderAcTypeInfo.h"
+#include <Hedgehog/Graphics/Resource/hhResVertexShader.h>
 
 using namespace hh::ut;
 using namespace hh::gfx::res;

@@ -30,9 +30,6 @@
     <Filter Include="Source Files\fnd">
       <UniqueIdentifier>{9613f7f5-fc78-4cd2-b8bc-c52b7523dd1c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Thread">
-      <UniqueIdentifier>{69abc526-4457-456e-9d5d-9c27cd882ab7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ut">
       <UniqueIdentifier>{d2666069-8a57-41cd-ab4b-6f8920dbd3f4}</UniqueIdentifier>
     </Filter>

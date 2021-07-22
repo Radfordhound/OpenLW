@@ -1,6 +1,6 @@
 #pragma once
-#include "Hedgehog/Base/System/hhObject.h"
-#include "Hedgehog/Rsdx/Graphics/Device/RsdxDevice.h"
+#include <Hedgehog/Base/System/hhObject.h>
+#include <Hedgehog/Rsdx/Graphics/Device/RsdxDevice.h>
 
 namespace hh
 {

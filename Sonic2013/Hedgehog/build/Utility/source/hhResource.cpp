@@ -1,4 +1,5 @@
-#include "Hedgehog/Base/Resource/hhResource.h"
+#include "Hedgehog/Utility/hhResource.h"
+#include "Hedgehog/Utility/hhResDictionary.h"
 
 using namespace hh::ut::pac;
 

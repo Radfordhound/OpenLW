@@ -1,4 +1,4 @@
-#include "Hedgehog/Base/Database/hhSampleChunk.h"
+#include "Hedgehog/Database/hhSampleChunk.h"
 
 namespace hh
 {

@@ -11,21 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\System\hhCSymbol.cpp" />
-    <ClCompile Include="source\System\hhMemoryAllocator.cpp" />
-    <ClCompile Include="source\System\hhObject.cpp" />
+    <ClCompile Include="source\Resource\hhResNameData.cpp" />
+    <ClCompile Include="source\Resource\hhResVertexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Hedgehog\Base\hhBase.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSymbol.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResVertexShader.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}</ProjectGuid>
+    <ProjectGuid>{241F2447-CB22-4F3E-B8C0-3C9CCB3CF936}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Base</RootNamespace>
-    <ProjectName>Base</ProjectName>
+    <RootNamespace>Graphics</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

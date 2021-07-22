@@ -1,9 +1,8 @@
-#include "Hedgehog/Base/Resource/hhResVertexShader.h"
-#include "Hedgehog/Base/Resource/hhResShaderAcTypeInfo.h"
-#include <Hedgehog/MirageCore/Resource/hhShaderResource.h> // TODO: This doesn't seem right lol. Is the resource stuff even part of HH Base??
-#include "Hedgehog/Base/System/hhCSymbol.h" // TODO: REMOVE THIS LINE
-#include "Hedgehog/Base/Resource/hhResNameData.h"
-#include "Hedgehog/Base/Database/hhSampleChunk.h"
+#include "Hedgehog/Graphics/Resource/hhResVertexShader.h"
+#include "Hedgehog/Graphics/Resource/hhResNameData.h"
+#include <Hedgehog/Database/hhSampleChunk.h>
+#include <Hedgehog/Utility/hhResShaderAcTypeInfo.h>
+#include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <csl/fnd/memory.h>
 #include <cstring> // TODO: REMOVE THIS LINE
 

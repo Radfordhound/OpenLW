@@ -5,8 +5,8 @@
 #include "ResourceManager.h"
 #include "../game/GlobalAllocator.h"
 #include "../gfx/RenderManager.h"
-#include "Hedgehog/Base/File/hhPackfile.h"
-#include "csl/fnd/thread.h"
+#include <Hedgehog/Utility/hhPackfile.h>
+#include <csl/fnd/thread.h>
 
 namespace app
 {

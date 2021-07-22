@@ -206,6 +206,12 @@
     <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Base\Base.vcxproj">
       <Project>{1db9a21d-ddc9-46a4-afb9-debcfc970366}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Database\Database.vcxproj">
+      <Project>{aeb4342a-5ba0-41d6-95e8-ce46b6a6f984}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Graphics\Graphics.vcxproj">
+      <Project>{241f2447-cb22-4f3e-b8c0-3c9ccb3cf936}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\MirageCore\MirageCore.vcxproj">
       <Project>{431c1aeb-e72c-40a1-b6aa-e7b33d79afec}</Project>
     </ProjectReference>
@@ -217,6 +223,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Rsdx\Rsdx.vcxproj">
       <Project>{ea491458-a296-440b-93af-9b5bd8a508c0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Utility\Utility.vcxproj">
+      <Project>{3c48dfba-b66b-469b-abcc-e816bfceba9a}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,10 +1,12 @@
 #include "Hedgehog/Base/System/hhMemoryAllocator.h"
 #include <cstdlib> // TODO: REMOVE ME
 
+using namespace csl::fnd;
+
 void* __HH_ALLOC__(std::size_t size)
 {
     // If a CSL Allocator is set, allocate using that.
-    csl::fnd::IAllocator* allocator = hh::CMemoryAllocator::GetCSLAllocator();
+    IAllocator* allocator = hh::CMemoryAllocator::GetCSLAllocator();
     if (allocator) return allocator->Alloc(size);
 
     // TODO: Do this properly instead
@@ -14,7 +16,7 @@ void* __HH_ALLOC__(std::size_t size)
 void __HH_FREE__(void* ptr)
 {
     // If a CSL Allocator is set, free using that.
-    csl::fnd::IAllocator* allocator = hh::CMemoryAllocator::GetCSLAllocator();
+    IAllocator* allocator = hh::CMemoryAllocator::GetCSLAllocator();
     if (allocator)
     {
         allocator->Free(ptr);
@@ -28,7 +30,7 @@ void __HH_FREE__(void* ptr)
 void* __HH_ALLOCALIGN(std::size_t size, std::size_t alignment)
 {
     // If a CSL Allocator is set, allocate using that.
-    csl::fnd::IAllocator* allocator = hh::CMemoryAllocator::GetCSLAllocator();
+    IAllocator* allocator = hh::CMemoryAllocator::GetCSLAllocator();
     if (allocator) return allocator->Alloc(size, alignment);
 
     // TODO: Do this properly instead
@@ -47,5 +49,5 @@ void operator delete(void* ptr)
 
 namespace hh
 {
-csl::fnd::IAllocator* CMemoryAllocator::cslAllocator = nullptr;
+IAllocator* CMemoryAllocator::cslAllocator = nullptr;
 }

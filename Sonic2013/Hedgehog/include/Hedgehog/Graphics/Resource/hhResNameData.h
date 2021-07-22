@@ -1,5 +1,5 @@
 #pragma once
-#include "hhResCommon.h"
+#include <Hedgehog/Utility/hhResCommon.h>
 #include <cstddef>
 
 namespace hh

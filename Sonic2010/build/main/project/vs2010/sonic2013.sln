@@ -7,6 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "csl", "..\..\..\..\..\Libra
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base", "..\..\..\..\..\Sonic2013\Hedgehog\build\Base\Base.vcxproj", "{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Database", "..\..\..\..\..\Sonic2013\Hedgehog\build\Database\Database.vcxproj", "{AEB4342A-5BA0-41D6-95E8-CE46B6A6F984}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics", "..\..\..\..\..\Sonic2013\Hedgehog\build\Graphics\Graphics.vcxproj", "{241F2447-CB22-4F3E-B8C0-3C9CCB3CF936}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MirageCore", "..\..\..\..\..\Sonic2013\Hedgehog\build\MirageCore\MirageCore.vcxproj", "{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MirageDebug", "..\..\..\..\..\Sonic2013\Hedgehog\build\MirageDebug\MirageDebug.vcxproj", "{357069EC-AEFE-44DB-A68E-C5B09BAF6743}"
@@ -14,6 +18,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MTBase", "..\..\..\..\..\Sonic2013\Hedgehog\build\MTBase\MTBase.vcxproj", "{527BF992-99B6-453A-BE4F-42C3CA7B4575}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rsdx", "..\..\..\..\..\Sonic2013\Hedgehog\build\Rsdx\Rsdx.vcxproj", "{EA491458-A296-440B-93AF-9B5BD8A508C0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "..\..\..\..\..\Sonic2013\Hedgehog\build\Utility\Utility.vcxproj", "{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,14 @@ Global
 		{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}.Debug|Win32.Build.0 = Debug|Win32
 		{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}.Release|Win32.ActiveCfg = Release|Win32
 		{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}.Release|Win32.Build.0 = Release|Win32
+		{AEB4342A-5BA0-41D6-95E8-CE46B6A6F984}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AEB4342A-5BA0-41D6-95E8-CE46B6A6F984}.Debug|Win32.Build.0 = Debug|Win32
+		{AEB4342A-5BA0-41D6-95E8-CE46B6A6F984}.Release|Win32.ActiveCfg = Release|Win32
+		{AEB4342A-5BA0-41D6-95E8-CE46B6A6F984}.Release|Win32.Build.0 = Release|Win32
+		{241F2447-CB22-4F3E-B8C0-3C9CCB3CF936}.Debug|Win32.ActiveCfg = Debug|Win32
+		{241F2447-CB22-4F3E-B8C0-3C9CCB3CF936}.Debug|Win32.Build.0 = Debug|Win32
+		{241F2447-CB22-4F3E-B8C0-3C9CCB3CF936}.Release|Win32.ActiveCfg = Release|Win32
+		{241F2447-CB22-4F3E-B8C0-3C9CCB3CF936}.Release|Win32.Build.0 = Release|Win32
 		{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}.Debug|Win32.ActiveCfg = Debug|Win32
 		{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}.Debug|Win32.Build.0 = Debug|Win32
 		{431C1AEB-E72C-40A1-B6AA-E7B33D79AFEC}.Release|Win32.ActiveCfg = Release|Win32
@@ -49,6 +63,10 @@ Global
 		{EA491458-A296-440B-93AF-9B5BD8A508C0}.Debug|Win32.Build.0 = Debug|Win32
 		{EA491458-A296-440B-93AF-9B5BD8A508C0}.Release|Win32.ActiveCfg = Release|Win32
 		{EA491458-A296-440B-93AF-9B5BD8A508C0}.Release|Win32.Build.0 = Release|Win32
+		{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}.Debug|Win32.Build.0 = Debug|Win32
+		{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}.Release|Win32.ActiveCfg = Release|Win32
+		{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,7 @@
 #include "ReferencedObject.h"
 #include "Singleton.h"
 #include "File.h"
-#include <Hedgehog/Base/File/hhPackfile.h>
+#include <Hedgehog/Utility/hhPackfile.h>
 #include <csl/ut/array.h>
 #include <csl/ut/string_map.h>
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "hhResShaderCommonData.h"
-#include "hhResource.h"
+#include <Hedgehog/Utility/hhResource.h>
 
 namespace hh
 {

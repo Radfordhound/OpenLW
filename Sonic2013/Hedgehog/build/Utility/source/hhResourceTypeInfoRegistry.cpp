@@ -1,5 +1,5 @@
-#include "Hedgehog/Base/Resource/hhResourceTypeInfoRegistry.h"
-#include "Hedgehog/Base/Resource/hhResGeneralTypeInfo.h"
+#include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
+#include "Hedgehog/Utility/hhResGeneralTypeInfo.h"
 #include <climits>
 #include <cstddef>
 

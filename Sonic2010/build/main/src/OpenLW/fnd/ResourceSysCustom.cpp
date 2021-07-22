@@ -1,7 +1,7 @@
 #include "ResourceSysCustom.h"
 #include "ResourceManager.h"
 #include "../gfx/RenderManager.h"
-#include <Hedgehog/Base/File/hhPackfile.h>
+#include <Hedgehog/Utility/hhPackfile.h>
 
 using namespace app::fnd;
 using namespace app::gfx;

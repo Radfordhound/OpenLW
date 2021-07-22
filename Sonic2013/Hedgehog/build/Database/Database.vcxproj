@@ -11,21 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\System\hhCSymbol.cpp" />
-    <ClCompile Include="source\System\hhMemoryAllocator.cpp" />
-    <ClCompile Include="source\System\hhObject.cpp" />
+    <ClCompile Include="source\hhSampleChunk.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Hedgehog\Base\hhBase.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSymbol.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Database\hhSampleChunk.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1DB9A21D-DDC9-46A4-AFB9-DEBCFC970366}</ProjectGuid>
+    <ProjectGuid>{AEB4342A-5BA0-41D6-95E8-CE46B6A6F984}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Base</RootNamespace>
-    <ProjectName>Base</ProjectName>
+    <RootNamespace>Database</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
