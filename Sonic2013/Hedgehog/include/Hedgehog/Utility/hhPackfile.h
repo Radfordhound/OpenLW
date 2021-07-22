@@ -182,6 +182,9 @@ struct Packfile // size == 4
     // Wii U: 0x03692e1c, PC: 0x00c19560
     void Setup(csl::fnd::IAllocator* allocator, hh::mr::CRenderingInfrastructure* renderInfra);
 
+    // Wii U: 0x03693340, PC: TODO
+    void Bind(csl::fnd::IAllocator* allocator, Packfile param_2);
+
     // Wii U: 0x036939a0, PC: TODO
     void* GetResource(const ResourceTypeInfo& typeInfo,
         const char* param_2, std::size_t* param_3);

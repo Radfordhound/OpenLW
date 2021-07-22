@@ -41,7 +41,7 @@ struct IResourceLoader
         csl::fnd::IAllocator* allocator);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual void BindLoadedResource(void* param_1, std::size_t param_2,
+    virtual bool BindLoadedResource(void* param_1, std::size_t param_2,
         csl::fnd::IAllocator* allocator, Packfile packfile);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO

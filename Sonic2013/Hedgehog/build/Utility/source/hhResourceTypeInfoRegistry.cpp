@@ -74,11 +74,28 @@ using namespace detail;
 bool ResourceTypeInfoRegistry::PrepareReplaceLoadedResource(void* data,
     unsigned int typeHash, unsigned int* param_3, SLoadedResourceParameter* param_4)
 {
-    const ResourceTypeInfo* resTypeInfo;
-    if (param_4 && (resTypeInfo = GetResourceTypeInfo(typeHash, m_typeInfo)) &&
-        resTypeInfo->Loader)
+    if (param_4)
     {
-        return resTypeInfo->Loader->PrepareReplaceLoadedResource(data, typeHash, param_4); // TODO: Is this line correct??
+        const ResourceTypeInfo* resTypeInfo = GetResourceTypeInfo(typeHash, m_typeInfo);
+        if (resTypeInfo && resTypeInfo->Loader)
+        {
+            return resTypeInfo->Loader->PrepareReplaceLoadedResource(data, typeHash, param_4); // TODO: Is this line correct??
+        }
+    }
+
+    return false;
+}
+
+bool ResourceTypeInfoRegistry::BindLoadedResource(void* data, unsigned int typeHash,
+    std::size_t size, Packfile pac, csl::fnd::IAllocator* allocator)
+{
+    if (data)
+    {
+        const ResourceTypeInfo* resTypeInfo = GetResourceTypeInfo(typeHash, m_typeInfo);
+        if (resTypeInfo && resTypeInfo->Loader)
+        {
+            return resTypeInfo->Loader->BindLoadedResource(data, size, allocator, pac);
+        }
     }
 
     return false;

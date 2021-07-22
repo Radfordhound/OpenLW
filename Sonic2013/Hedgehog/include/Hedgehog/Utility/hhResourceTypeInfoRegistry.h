@@ -26,6 +26,10 @@ public:
     // Wii U: 0x03695ae4, PC: TODO
     bool PrepareReplaceLoadedResource(void* data, unsigned int typeHash,
         unsigned int* param_3, SLoadedResourceParameter* param_4);
+
+    // Wii U: 0x03695c58, PC: TODO
+    bool BindLoadedResource(void* data, unsigned int typeHash,
+        std::size_t size, Packfile pac, csl::fnd::IAllocator* allocator);
 };
 }
 }

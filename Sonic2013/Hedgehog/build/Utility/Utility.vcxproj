@@ -18,6 +18,7 @@
     <ClCompile Include="source\hhResource.cpp" />
     <ClCompile Include="source\hhResourceTypeInfoRegistry.cpp" />
     <ClCompile Include="source\hhResShaderAcTypeInfo.cpp" />
+    <ClCompile Include="source\hhUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhPackfile.h" />
@@ -27,6 +28,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResource.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResourceTypeInfoRegistry.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResShaderAcTypeInfo.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhUtility.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}</ProjectGuid>

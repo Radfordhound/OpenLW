@@ -198,6 +198,43 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
     }
 }
 
+void Packfile::Bind(csl::fnd::IAllocator* allocator, Packfile param_2)
+{
+    ResPackfileHeader header(Handle);
+    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) != 0)
+    {
+        ResourceTypeInfoRegistry* typeInfo = ResourceTypeInfoRegistry::GetInstance();
+        unsigned int version = header.GetMajorVersion();
+        void* dataBlock;
+
+        if (header.ref().NodeCount != 0 && (dataBlock = header.GetNextBlock(version)))
+        {
+            ResDicLinear types(GetDicAddr(version, dataBlock));
+            for (s32 i = 0; i < types.ref().Count; ++i)
+            {
+                unsigned int typeHash = typeInfo->CreateHash(GetDicRootName(types.GetName(i)));
+                ResDicLinear files(types[i]);
+
+                for (s32 i2 = 0; i2 < files.ref().Count; ++i2)
+                {
+                    ResPackfileBlockDataHeaderDataTag* blockDataTag =
+                        static_cast<ResPackfileBlockDataHeaderDataTag*>(files[i2]);
+
+                    void* blockData = GetBlockData(version, &blockDataTag);
+                    ResPackfileBlockDataHeaderData blockDataHeader(blockDataTag);
+
+                    if ((blockDataHeader.ref().Status & PACKFILE_STATUS_IS_IMPORTING) == 0 &&
+                        typeInfo->BindLoadedResource(blockDataHeader.ref().Data, typeHash,
+                            blockDataHeader.ref().Size, param_2, allocator))
+                    {
+                        blockDataHeader.ref().Status |= PACKFILE_STATUS_IS_IMPORTING;
+                    }
+                }
+            }
+        }
+    }
+}
+
 void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
     const char* param_2, std::size_t* param_3)
 {
