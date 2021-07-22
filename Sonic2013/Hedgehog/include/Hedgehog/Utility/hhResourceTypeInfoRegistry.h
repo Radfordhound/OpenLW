@@ -25,7 +25,15 @@ public:
     
     // Wii U: 0x03695ae4, PC: TODO
     bool PrepareReplaceLoadedResource(void* data, unsigned int typeHash,
-        unsigned int* param_3, SLoadedResourceParameter* param_4);
+        std::size_t* size, SLoadedResourceParameter* param_4);
+
+    // Wii U: 0x03695b5c, PC: TODO
+    void* ReplaceLoadedResource(const char* resName, void* data,
+        unsigned int typeHash, std::size_t* size, csl::fnd::IAllocator* allocator);
+
+    // Wii U: 0x03695be0, PC: TODO
+    bool FinishLoadedResource(void* data, unsigned int typeHash,
+        std::size_t size, csl::fnd::IAllocator* allocator);
 
     // Wii U: 0x03695c58, PC: TODO
     bool BindLoadedResource(void* data, unsigned int typeHash,

@@ -35,11 +35,11 @@ void* ResVertexShaderLoader::ReplaceLoadedResource(const char* param_1,
     return vtxShader.Replace(param_3, allocator);
 }
 
-void ResVertexShaderLoader::FinishLoadedResource(void* param_1,
+bool ResVertexShaderLoader::FinishLoadedResource(void* param_1,
     std::size_t param_2, csl::fnd::IAllocator* allocator)
 {
     ResVertexShader vtxShader(param_1);
-    vtxShader.Setup(param_2, allocator);
+    return vtxShader.Setup(param_2, allocator);
 }
 
 bool ResVertexShaderLoader::BindLoadedResource(void* param_1,

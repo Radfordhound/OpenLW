@@ -14,12 +14,13 @@ namespace hh
 namespace ut
 {
 class CAllocationMeasure; // TODO
+class CMeasuredMemory; // TODO
 
 struct SLoadedResourceParameter
 {
     CAllocationMeasure* field_0x0;
-    unsigned int field_0x4;
-    unsigned int field_0x8;
+    CMeasuredMemory* field_0x4;
+    csl::fnd::IAllocator* Allocator;
     const char* Name;
 };
 
@@ -29,15 +30,15 @@ struct IResourceLoader
     virtual ~IResourceLoader();
     
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual bool PrepareReplaceLoadedResource(void* param_1,
-        std::size_t param_2, SLoadedResourceParameter* args);
+    virtual bool PrepareReplaceLoadedResource(void* data,
+        unsigned int typeHash, SLoadedResourceParameter* args);
     
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
     virtual void* ReplaceLoadedResource(const char* param_1, void* param_2,
         std::size_t* param_3, csl::fnd::IAllocator* allocator);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual void FinishLoadedResource(void* param_1, std::size_t param_2,
+    virtual bool FinishLoadedResource(void* param_1, std::size_t param_2,
         csl::fnd::IAllocator* allocator);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO

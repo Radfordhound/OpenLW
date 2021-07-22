@@ -1,5 +1,6 @@
 #include "Hedgehog/Utility/hhPackfile.h"
 #include "Hedgehog/Utility/hhResDictionary.h"
+#include "Hedgehog/Utility/hhResDependTypeInfo.h"
 #include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
 #include <cstring>
 
@@ -9,6 +10,11 @@ namespace hh
 {
 namespace ut
 {
+const ResourceTypeInfo& ResDepend::staticTypeInfo()
+{
+    return ResDependTypeInfo;
+}
+
 unsigned int ResPackfileHeader::GetMajorVersion() const
 {
     switch (ref().Version[0])
@@ -133,14 +139,19 @@ Packfile::Packfile(void* data) :
 bool Packfile::IsImport() const
 {
     ResPackfileHeader header(Handle);
-    return ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) != 0);
+    return ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) != 0);
+}
+
+ResDepend Packfile::GetResDepend()
+{
+    return Get<ResDepend>(nullptr, nullptr);
 }
 
 void Packfile::Setup(csl::fnd::IAllocator* allocator,
     hh::mr::CRenderingInfrastructure* renderInfra)
 {
     ResPackfileHeader header(Handle);
-    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) == 0)
+    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) == 0)
     {
         ResourceTypeInfoRegistry* typeInfo = ResourceTypeInfoRegistry::GetInstance();
         unsigned int version = header.GetMajorVersion();
@@ -183,8 +194,8 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
                         SLoadedResourceParameter args =
                         {
                             nullptr, //&CStack68 // TODO: Un-comment the CStack68 part!!
-                            0,
-                            0,
+                            nullptr,
+                            nullptr,
                             fileName
                         };
 
@@ -194,14 +205,113 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
             }
         }
 
-        // TODO
+        // TODO: Un-comment this line:
+        //CMeasuredMemory aCStack112(CStack68, renderInfra, allocator);
+        bool hasDependencies = false;
+
+        if (header.ref().NodeCount != 0 &&
+            (dataBlock = header.GetNextBlock(version)))
+        {
+            ResDicLinear types(GetDicAddr(version, dataBlock));
+            for (s32 i = 0; i < types.ref().Count; ++i)
+            {
+                unsigned int typeHash = typeInfo->CreateHash(GetDicRootName(types.GetName(i)));
+                ResDicLinear files(types[i]);
+
+                for (s32 i2 = 0; i2 < files.ref().Count; ++i2)
+                {
+                    const char* fileName = files.GetName(i2);
+
+                    ResPackfileBlockDataHeaderDataTag* blockDataTag =
+                        static_cast<ResPackfileBlockDataHeaderDataTag*>(files[i2]);
+
+                    void* blockData = GetBlockData(version, &blockDataTag);
+                    ResPackfileBlockDataHeaderData blockDataHeader(blockDataTag);
+
+                    if ((blockDataHeader.ref().Status & PACKFILE_STATUS_IS_SWAPPED) == 0)
+                    {
+                        ResFileCommon::ChangeEndian32(
+                            (header.ref().Status & PACKFILE_STATUS_IS_SWAPPED) != 0,
+                            &blockDataHeader.ref().Size, &blockDataHeader.ref().Size);
+
+                        blockDataHeader.ref().Status |= PACKFILE_STATUS_IS_SWAPPED;
+                    }
+
+                    if ((blockDataHeader.ref().Flags & 0x80) != 0) // TODO: Is this correct?
+                    {
+                        hasDependencies = true;
+                    }
+                    else
+                    {
+                        void* pvVar8;
+                        u32 dataSize;
+
+                        if (!renderInfra)
+                        {
+                            dataSize = blockDataHeader.ref().Size;
+                            pvVar8 = typeInfo->ReplaceLoadedResource(fileName,
+                                blockData, typeHash, &dataSize, allocator);
+
+                            if (!pvVar8)
+                            {
+                                pvVar8 = blockData;
+                            }
+                        }
+                        else
+                        {
+                            dataSize = blockDataHeader.ref().Size;
+                            SLoadedResourceParameter args =
+                            {
+                                nullptr,
+                                nullptr, //&aCStack112 // TODO: Un-comment the aCStack112 part!!
+                                allocator,
+                                fileName
+                            };
+
+                            if (!typeInfo->PrepareReplaceLoadedResource(blockData,
+                                typeHash, &dataSize, &args))
+                            {
+                                dataSize = blockDataHeader.ref().Size;
+                                pvVar8 = typeInfo->ReplaceLoadedResource(fileName,
+                                    blockData, typeHash, &dataSize, allocator);
+
+                                if (!pvVar8)
+                                {
+                                    pvVar8 = blockData;
+                                }
+                            }
+                        }
+
+                        blockDataHeader.ref().Data = pvVar8;
+                        blockDataHeader.ref().Size = dataSize;
+
+                        typeInfo->FinishLoadedResource(blockDataHeader.ref().Data,
+                            typeHash, blockDataHeader.ref().Size, allocator);
+                    }
+                }
+            }
+        }
+
+        header.ref().Status |= PACKFILE_STATUS_IS_IMPORTED;
+
+        // Load dependencies as necessary.
+        if (hasDependencies)
+        {
+            header.ref().Status |= PACKFILE_STATUS_UNKNOWN4;
+            ResDepend dependencies = GetResDepend();
+            header.ref().RemainingDepends = dependencies.ref().Count;
+        }
+        else
+        {
+            header.ref().Status |= PACKFILE_STATUS_IS_IMPORT_COMPLETED;
+        }
     }
 }
 
 void Packfile::Bind(csl::fnd::IAllocator* allocator, Packfile param_2)
 {
     ResPackfileHeader header(Handle);
-    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) != 0)
+    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) != 0)
     {
         ResourceTypeInfoRegistry* typeInfo = ResourceTypeInfoRegistry::GetInstance();
         unsigned int version = header.GetMajorVersion();
@@ -223,11 +333,11 @@ void Packfile::Bind(csl::fnd::IAllocator* allocator, Packfile param_2)
                     void* blockData = GetBlockData(version, &blockDataTag);
                     ResPackfileBlockDataHeaderData blockDataHeader(blockDataTag);
 
-                    if ((blockDataHeader.ref().Status & PACKFILE_STATUS_IS_IMPORTING) == 0 &&
+                    if ((blockDataHeader.ref().Status & PACKFILE_STATUS_IS_IMPORTED) == 0 &&
                         typeInfo->BindLoadedResource(blockDataHeader.ref().Data, typeHash,
                             blockDataHeader.ref().Size, param_2, allocator))
                     {
-                        blockDataHeader.ref().Status |= PACKFILE_STATUS_IS_IMPORTING;
+                        blockDataHeader.ref().Status |= PACKFILE_STATUS_IS_IMPORTED;
                     }
                 }
             }
@@ -244,7 +354,7 @@ void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
     }
 
     ResPackfileHeader header(Handle);
-    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTING) != 0)
+    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) != 0)
     {
         return ResourceTypeInfo::FindLoadedResourceByName(
             header.GetMajorVersion(), typeInfo.Type,

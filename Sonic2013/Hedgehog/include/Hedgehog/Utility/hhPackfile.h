@@ -23,10 +23,29 @@ struct ResourceTypeInfo;
 
 enum ResPackfileStatus
 {
-    PACKFILE_STATUS_IS_IMPORTING = 1,
+    PACKFILE_STATUS_IS_IMPORTED = 1,
     PACKFILE_STATUS_IS_SWAPPED = 2, // TODO: Is this correct?
+    PACKFILE_STATUS_UNKNOWN4 = 4,
     PACKFILE_STATUS_IS_IMPORT_COMPLETED = 8,
     PACKFILE_STATUS_IS_RESOLVED = 16
+};
+
+struct ResDependData
+{
+    OFF32(OFF32(char)) Names;
+    s32 Count;
+};
+
+struct ResDepend : public ResCommon<ResDependData>
+{
+    // Wii U: 0x036944a8, PC: TODO
+    static const ResourceTypeInfo& staticTypeInfo();
+
+    inline ResDepend(const void* data) :
+        ResCommon<ResDependData>(data) {}
+
+    inline ResDepend(void* data = nullptr) :
+        ResCommon<ResDependData>(data) {}
 };
 
 struct ResPackfileHeaderDataTag
@@ -178,6 +197,9 @@ struct Packfile // size == 4
 
     // Wii U: 0x0369257c, PC: TODO
     bool IsImport() const;
+
+    // Wii U: 0x036928bc, PC: TODO
+    ResDepend GetResDepend();
 
     // Wii U: 0x03692e1c, PC: 0x00c19560
     void Setup(csl::fnd::IAllocator* allocator, hh::mr::CRenderingInfrastructure* renderInfra);

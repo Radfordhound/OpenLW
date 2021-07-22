@@ -9,8 +9,8 @@ namespace ut
 {
 IResourceLoader::~IResourceLoader() {}
 
-bool IResourceLoader::PrepareReplaceLoadedResource(void* param_1,
-    std::size_t param_2, SLoadedResourceParameter* args)
+bool IResourceLoader::PrepareReplaceLoadedResource(void* data,
+    unsigned int typeHash, SLoadedResourceParameter* args)
 {
     return false;
 }
@@ -21,8 +21,11 @@ void* IResourceLoader::ReplaceLoadedResource(const char* param_1, void* param_2,
     return nullptr;
 }
 
-void IResourceLoader::FinishLoadedResource(void* param_1, std::size_t param_2,
-    csl::fnd::IAllocator* allocator) {}
+bool IResourceLoader::FinishLoadedResource(void* param_1, std::size_t param_2,
+    csl::fnd::IAllocator* allocator)
+{
+    return false;
+}
 
 bool IResourceLoader::BindLoadedResource(void* param_1, std::size_t param_2,
     csl::fnd::IAllocator* allocator, Packfile packfile)

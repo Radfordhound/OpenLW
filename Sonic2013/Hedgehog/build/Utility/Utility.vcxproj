@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="source\hhPackfile.cpp" />
     <ClCompile Include="source\hhResCommon.cpp" />
+    <ClCompile Include="source\hhResDependTypeInfo.cpp" />
     <ClCompile Include="source\hhResDictionary.cpp" />
     <ClCompile Include="source\hhResGeneralTypeInfo.cpp" />
     <ClCompile Include="source\hhResource.cpp" />
@@ -23,6 +24,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhPackfile.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResCommon.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhResDependTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResDictionary.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResGeneralTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResource.h" />

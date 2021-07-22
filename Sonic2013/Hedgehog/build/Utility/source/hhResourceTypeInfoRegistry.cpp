@@ -1,5 +1,7 @@
 #include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
 #include "Hedgehog/Utility/hhResGeneralTypeInfo.h"
+#include "Hedgehog/Utility/hhResDependTypeInfo.h"
+#include "Hedgehog/Utility/hhResShaderAcTypeInfo.h"
 #include <climits>
 #include <cstddef>
 
@@ -10,6 +12,9 @@ namespace ut
 const ResourceTypeInfo* const ResourceTypeInfoRegistry::ResourceTypes[] =
 {
     &ResRawDataTypeInfo,
+    &ResDependTypeInfo,
+    // TODO
+    &ResVertexShaderTypeInfo,
     // TODO
     nullptr
 };
@@ -72,7 +77,7 @@ static const ResourceTypeInfo* GetResourceTypeInfo(unsigned int hash,
 using namespace detail;
 
 bool ResourceTypeInfoRegistry::PrepareReplaceLoadedResource(void* data,
-    unsigned int typeHash, unsigned int* param_3, SLoadedResourceParameter* param_4)
+    unsigned int typeHash, std::size_t* size, SLoadedResourceParameter* param_4)
 {
     if (param_4)
     {
@@ -80,6 +85,36 @@ bool ResourceTypeInfoRegistry::PrepareReplaceLoadedResource(void* data,
         if (resTypeInfo && resTypeInfo->Loader)
         {
             return resTypeInfo->Loader->PrepareReplaceLoadedResource(data, typeHash, param_4); // TODO: Is this line correct??
+        }
+    }
+
+    return false;
+}
+
+void* ResourceTypeInfoRegistry::ReplaceLoadedResource(const char* resName, void* data,
+    unsigned int typeHash, std::size_t* size, csl::fnd::IAllocator* allocator)
+{
+    if (data)
+    {
+        const ResourceTypeInfo* resTypeInfo = GetResourceTypeInfo(typeHash, m_typeInfo);
+        if (resTypeInfo && resTypeInfo->Loader)
+        {
+            return resTypeInfo->Loader->ReplaceLoadedResource(resName, data, size, allocator); // TODO: Is this line correct??
+        }
+    }
+
+    return nullptr;
+}
+
+bool ResourceTypeInfoRegistry::FinishLoadedResource(void* data, unsigned int typeHash,
+    std::size_t size, csl::fnd::IAllocator* allocator)
+{
+    if (data)
+    {
+        const ResourceTypeInfo* resTypeInfo = GetResourceTypeInfo(typeHash, m_typeInfo);
+        if (resTypeInfo && resTypeInfo->Loader)
+        {
+            return resTypeInfo->Loader->FinishLoadedResource(data, size, allocator); // TODO: Is this line correct??
         }
     }
 
