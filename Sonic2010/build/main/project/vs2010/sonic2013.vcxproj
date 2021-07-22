@@ -132,6 +132,7 @@
     <ClCompile Include="..\..\src\OpenLW\SyncTimer.cpp" />
     <ClCompile Include="..\..\src\OpenLW\xgame\DlcManager.cpp" />
     <ClCompile Include="..\..\src\OpenLW\xgame\MessageSystem.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.cpp" />
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp" />
     <ClCompile Include="..\..\src\System\GameMode\GameMode.cpp" />
     <ClCompile Include="..\..\src\System\GameMode\GameModeStartUp.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="..\..\src\OpenLW\ut\RefPtr.h" />
     <ClInclude Include="..\..\src\OpenLW\xgame\DlcManager.h" />
     <ClInclude Include="..\..\src\OpenLW\xgame\MessageSystem.h" />
+    <ClInclude Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.h" />
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h" />
     <ClInclude Include="..\..\src\System\GameMode\GameMode.h" />
     <ClInclude Include="..\..\src\System\GameMode\GameModeStartUp.h" />

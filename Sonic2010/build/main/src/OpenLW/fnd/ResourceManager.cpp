@@ -39,8 +39,10 @@ void ResourceManager::RegisterList(const ResourceCustomInfo* const* resCustomInf
 static ResourceCustomInfo* const ResourceCustomInfoList[] =
 {
     &DefResourceCustomInfo,
-    &PacResourceCustomInfo
-    // TODO
+    &PacResourceCustomInfo,
+    &OrcaResourceCustomInfo,
+    &CriAcfResourceCustomInfo,
+    &CriAcbResourceCustomInfo
 };
 
 ResourceManager::ResourceManager() :

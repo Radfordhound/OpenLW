@@ -804,6 +804,9 @@
     <ClCompile Include="..\..\src\OpenLW\fnd\ResourceSysCustom.cpp">
       <Filter>OpenLW\fnd</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.cpp">
+      <Filter>OpenLW\xgame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -979,6 +982,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\fnd\ResourceSysCustom.h">
       <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.h">
+      <Filter>OpenLW\xgame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
