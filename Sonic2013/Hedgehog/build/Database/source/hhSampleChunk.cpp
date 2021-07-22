@@ -18,11 +18,13 @@ void CSampleChunkResource::ResolvePointer()
 
         // "Fix" the current offset.
 #if UINTPTR_MAX > UINT32_MAX
-        Off32<void>* curOff = PtrAdd<Off32<void>>(data, (*curOffAddr + 0xFFFFFFFCU));
-        curOff->set(PtrAdd<void>(data, curOff->get_val()));
+        Off32<void>* curOff = PtrAdd<Off32<void>>(data,
+            (HH_ENDIAN_FIX_U32(*curOffAddr) & 0xFFFFFFFCU));
+
+        curOff->set(PtrAdd<void>(data, HH_ENDIAN_FIX_U32(curOff->get_val())));
 #else
-        *PtrAdd<u32>(data, (*curOffAddr + 0xFFFFFFFCU)) +=
-            reinterpret_cast<u32>(data);
+        u32* curOff = PtrAdd<u32>(data, (HH_ENDIAN_FIX_U32(*curOffAddr) & 0xFFFFFFFCU));
+        *curOff = (HH_ENDIAN_FIX_U32(*curOff) + reinterpret_cast<u32>(data));
 #endif
     }
 }
