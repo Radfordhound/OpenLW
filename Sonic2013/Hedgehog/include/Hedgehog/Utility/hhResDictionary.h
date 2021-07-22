@@ -20,7 +20,7 @@ struct ResDicLinearData
 struct ResDicLinear : public ResCommon<ResDicLinearData>
 {
     // Wii U: 0x036926a8 (Multiple addresses?), PC: TODO
-    const char* GetName(int index) const
+    const char* GetName(s32 index) const
     {
         if (IsValid() && index > -1 && index < ref().Count)
         {
@@ -31,13 +31,13 @@ struct ResDicLinear : public ResCommon<ResDicLinearData>
     }
 
     // Wii U: 0x036968d4, PC: TODO
-    int GetIndex(const char* key) const;
+    s32 GetIndex(const char* key) const;
 
     // Wii U: 0x0369697c, PC: TODO
-    int GetIndex(const char* key, int startChar) const;
+    s32 GetIndex(const char* key, int startChar) const;
 
     // Wii U: 0x03692748 (Multiple addresses?), PC: TODO
-    const void* operator[](int index) const
+    const void* operator[](s32 index) const
     {
         if (IsValid() && index > -1 && index < ref().Count)
         {
@@ -48,7 +48,7 @@ struct ResDicLinear : public ResCommon<ResDicLinearData>
     }
 
     // TODO: Is this function actually a thing?
-    inline void* operator[](int index)
+    inline void* operator[](s32 index)
     {
         return const_cast<void*>(const_cast<const ResDicLinear*>(
             this)->operator[](index));

@@ -5,11 +5,11 @@ namespace hh
 {
 namespace ut
 {
-int ResDicLinear::GetIndex(const char* key) const
+s32 ResDicLinear::GetIndex(const char* key) const
 {
     if (IsValid() && key)
     {
-        for (int i = 0; i < ref().Count; ++i)
+        for (s32 i = 0; i < ref().Count; ++i)
         {
             if (std::strcmp(key, ref().Entries[i].Key) == 0)
             {
@@ -21,7 +21,7 @@ int ResDicLinear::GetIndex(const char* key) const
     return -1;
 }
 
-int ResDicLinear::GetIndex(const char* key, int startChar) const
+s32 ResDicLinear::GetIndex(const char* key, int startChar) const
 {
     if (IsValid() && key)
     {
@@ -31,7 +31,7 @@ int ResDicLinear::GetIndex(const char* key, int startChar) const
             key = (startPos + 1);
         }
 
-        for (int i = 0; i < ref().Count; ++i)
+        for (s32 i = 0; i < ref().Count; ++i)
         {
             startPos = std::strchr(ref().Entries[i].Key, startChar);
 

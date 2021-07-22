@@ -387,7 +387,7 @@ void* GetNodeDicPointer(unsigned int version, const char* type, void* data)
     }
 
     ResDicLinear dic(dicPtr);
-    int index = dic.GetIndex(type, ':');
+    s32 index = dic.GetIndex(type, ':');
 
     return (index != -1) ? dic[index] : nullptr;
 }
