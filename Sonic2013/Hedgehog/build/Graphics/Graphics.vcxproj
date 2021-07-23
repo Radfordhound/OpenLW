@@ -12,11 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Resource\hhResNameData.cpp" />
+    <ClCompile Include="source\Resource\hhResUserData.cpp" />
     <ClCompile Include="source\Resource\hhResVertexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResUserData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResVertexShader.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
