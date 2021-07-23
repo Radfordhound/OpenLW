@@ -7,10 +7,9 @@ namespace mr
 {
 class CVertexShaderV2Resource // TODO: Inheritance?
 {
-    OFF32(const char) m_codeResName;
+    OFF32(char) m_codeResName;
     u32 m_paramsCount;
-
-    // TODO: Other data members
+    OFF32(OFF32(char)) m_paramResNames;
 
 public:
     // TODO: Is this function actually a thing?
@@ -23,6 +22,12 @@ public:
     inline u32 ParamsCount() const
     {
         return HH_ENDIAN_FIX_U32(m_paramsCount);
+    }
+
+    // TODO: Is this function actually a thing?
+    inline OFF32(const char) const* ParamResNames() const
+    {
+        return m_paramResNames;
     }
 };
 }

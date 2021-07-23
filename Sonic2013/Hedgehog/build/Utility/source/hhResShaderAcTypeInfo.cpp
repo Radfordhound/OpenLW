@@ -28,32 +28,31 @@ namespace ut
 {
 ResVertexShaderLoader::~ResVertexShaderLoader() {}
 
-void* ResVertexShaderLoader::ReplaceLoadedResource(const char* param_1,
-    void* param_2, std::size_t* param_3, csl::fnd::IAllocator* allocator)
+void* ResVertexShaderLoader::ReplaceLoadedResource(const char* name,
+    void* data, std::size_t* size, csl::fnd::IAllocator* allocator)
 {
-    ResVertexShader vtxShader(param_2);
-    return vtxShader.Replace(param_3, allocator);
+    ResVertexShader vtxShader(data);
+    return vtxShader.Replace(size, allocator);
 }
 
-bool ResVertexShaderLoader::FinishLoadedResource(void* param_1,
-    std::size_t param_2, csl::fnd::IAllocator* allocator)
+bool ResVertexShaderLoader::FinishLoadedResource(void* data,
+    std::size_t size, csl::fnd::IAllocator* allocator)
 {
-    ResVertexShader vtxShader(param_1);
-    return vtxShader.Setup(param_2, allocator);
+    ResVertexShader vtxShader(data);
+    return vtxShader.Setup(size, allocator);
 }
 
-bool ResVertexShaderLoader::BindLoadedResource(void* param_1,
-    std::size_t param_2, csl::fnd::IAllocator* allocator, Packfile packfile)
+bool ResVertexShaderLoader::BindLoadedResource(void* data,
+    std::size_t size, csl::fnd::IAllocator* allocator, Packfile packfile)
 {
-    ResVertexShader vtxShader(param_1);
-    return vtxShader.Setup(param_2, allocator, packfile);
+    ResVertexShader vtxShader(data);
+    return vtxShader.Setup(size, allocator, packfile);
 }
 
-void ResVertexShaderLoader::CleanupLoadedResource(void* param_1,
-    std::size_t param_2)
+void ResVertexShaderLoader::CleanupLoadedResource(void* data, std::size_t size)
 {
-    ResVertexShader vtxShader(param_1);
-    vtxShader.Cleanup(param_2);
+    ResVertexShader vtxShader(data);
+    vtxShader.Cleanup(size);
 }
 
 ResourceTypeInfo ResVertexShaderTypeInfo =

@@ -15,25 +15,25 @@ bool IResourceLoader::PrepareReplaceLoadedResource(void* data,
     return false;
 }
 
-void* IResourceLoader::ReplaceLoadedResource(const char* param_1, void* param_2,
-    std::size_t* param_3, csl::fnd::IAllocator* allocator)
+void* IResourceLoader::ReplaceLoadedResource(const char* name, void* data,
+    std::size_t* size, csl::fnd::IAllocator* allocator)
 {
     return nullptr;
 }
 
-bool IResourceLoader::FinishLoadedResource(void* param_1, std::size_t param_2,
+bool IResourceLoader::FinishLoadedResource(void* data, std::size_t size,
     csl::fnd::IAllocator* allocator)
 {
     return false;
 }
 
-bool IResourceLoader::BindLoadedResource(void* param_1, std::size_t param_2,
+bool IResourceLoader::BindLoadedResource(void* data, std::size_t size,
     csl::fnd::IAllocator* allocator, Packfile packfile)
 {
     return false;
 }
 
-void IResourceLoader::CleanupLoadedResource(void* param_1, std::size_t param_2) {}
+void IResourceLoader::CleanupLoadedResource(void* data, std::size_t size) {}
 
 void* ResourceTypeInfo::GetLoadedResourceHeaderByName(unsigned int version,
     const char* param_2, Packfile pac, const char* param_4)

@@ -25,33 +25,69 @@ const ResourceTypeInfo& ResVertexShader::staticTypeInfo()
 
 ResCommon<ResNameData> ResVertexShader::GetName()
 {
-    return ResCommon<ResNameData>(&ptr()->field_0x24);
+    return ResCommon<ResNameData>(&ptr()->CodeResName);
 }
 
 void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocator)
 {
+    // Resolve sample chunk resource pointers.
     CSampleChunkResource* res = reinterpret_cast<CSampleChunkResource*>(ptr());
     res->ResolvePointer();
 
+    // Get vertex shader resource data.
     CVertexShaderV2Resource* vtxShader = res->GetData<CVertexShaderV2Resource>();
-    *size = (sizeof(ResShaderCommonData) + (vtxShader->ParamsCount() * 0x18)); // TODO: Replace 0x18 with sizeof(param)
+
+    // Compute total size of shader common data + user data items.
+    *size = (sizeof(ResShaderCommonData) + (sizeof(ResUserDataItemData) *
+        vtxShader->ParamsCount()));
     
+    // Allocate buffer to hold shader common data + user data items.
     ResShaderCommonData* shaderData = static_cast<ResShaderCommonData*>(allocator->Alloc(*size));
     std::memset(shaderData, 0, 0x38); // TODO: Replace this with the constructor for ResShaderCommonData!!!
 
-    ResCommon<ResNameData> aRStack32 = InitResNameData(&shaderData->field_0x24,
+    // Initialize shader code resource name.
+    ResName aRStack32 = InitResNameData(&shaderData->CodeResName,
         GetUniqueString(vtxShader->CodeResName()));
 
-    // TODO
-    return nullptr; // TODO
+    // Initialize shader user data.
+    shaderData->UserData.Items = &shaderData->AllocatorData;
+    shaderData->UserData.ItemCount = (vtxShader->ParamsCount() + 1);
+    
+    // Initialize user data for shader allocator.
+    shaderData->AllocatorData.Index = 0;
+    shaderData->AllocatorData.Size = sizeof(csl::fnd::IAllocator*);
+    shaderData->AllocatorData.Count = 1;
+    shaderData->AllocatorData.Data = allocator;
+
+    ResName RStack28 = InitResNameData(&shaderData->AllocatorData.Name,
+        GetUniqueString("allocator"));
+
+    // Initialize user data for shader usages.
+    const char* usageStr = GetUniqueString("usage");
+    unsigned int usageStrHash = CalcHashKey("usage", std::strlen("usage"));
+
+    for (u32 i = 0; i < vtxShader->ParamsCount(); ++i)
+    {
+        ResUserDataItemData& curUserData = shaderData->UserData.Items[i + 1];
+        const char* curParamResName = vtxShader->ParamResNames()[i];
+
+        curUserData.Index = (i + 1);
+        curUserData.Size = sizeof(char);
+        curUserData.Count = std::strlen(curParamResName);
+        curUserData.Data = GetUniqueString(curParamResName);
+        curUserData.Name.Hash = usageStrHash;
+        curUserData.Name.String = usageStr;
+    }
+
+    return shaderData;
 }
 
-bool ResVertexShader::Setup(unsigned int param_1, csl::fnd::IAllocator* allocator)
+bool ResVertexShader::Setup(std::size_t size, csl::fnd::IAllocator* allocator)
 {
     return false;
 }
 
-bool ResVertexShader::Setup(unsigned int param_1,
+bool ResVertexShader::Setup(std::size_t size,
     csl::fnd::IAllocator* allocator, ut::Packfile pac)
 {
     ResCommon<ResNameData> name = GetName();
@@ -65,7 +101,7 @@ void ResVertexShader::Unbind()
     // TODO
 }
 
-void ResVertexShader::Cleanup(unsigned int param_1)
+void ResVertexShader::Cleanup(std::size_t size)
 {
     Unbind();
     // TODO

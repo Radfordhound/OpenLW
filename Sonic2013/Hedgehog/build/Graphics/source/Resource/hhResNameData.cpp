@@ -9,7 +9,7 @@ namespace gfx
 {
 namespace internal // TODO: MOVE THIS TO ANOTHER HEADER PLEASE!!!
 {
-const char* GetUniqueString(const char* param_1)
+char* GetUniqueString(const char* param_1)
 {
     return base::GetSetGlobalString(param_1);
 }
@@ -65,22 +65,22 @@ namespace res
 {
 namespace detail
 {
-ut::ResCommon<ResNameData> InitResNameData(ResNameData* param_1,
+ResName InitResNameData(ResNameData* param_1,
     const char* param_2, std::size_t param_3)
 {
     std::size_t len = std::strlen(param_2);
     if (len == 0)
     {
         param_1->Hash = 0;
-        param_1->Name = nullptr;
+        param_1->String = nullptr;
     }
     else
     {
         param_1->Hash = CalcHashKey(param_2, len, param_3);
-        param_1->Name = param_2;
+        param_1->String = param_2;
     }
     
-    return ut::ResCommon<ResNameData>(param_1);
+    return ResName(param_1);
 }
 }
 }

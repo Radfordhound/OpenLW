@@ -40,6 +40,6 @@ SSymbolNode* AddToNode(SSymbolNode* node);
 SSymbolNode* MakeStringSymbol(const char* param_1);
 
 // Wii U: 0x03699054, PC: 0x00c22930
-const char* GetSetGlobalString(const char* param_1);
+char* GetSetGlobalString(const char* param_1);
 }
 }

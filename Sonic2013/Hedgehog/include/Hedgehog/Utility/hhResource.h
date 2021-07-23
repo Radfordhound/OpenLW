@@ -34,19 +34,19 @@ struct IResourceLoader
         unsigned int typeHash, SLoadedResourceParameter* args);
     
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual void* ReplaceLoadedResource(const char* param_1, void* param_2,
-        std::size_t* param_3, csl::fnd::IAllocator* allocator);
+    virtual void* ReplaceLoadedResource(const char* name, void* data,
+        std::size_t* size, csl::fnd::IAllocator* allocator);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual bool FinishLoadedResource(void* param_1, std::size_t param_2,
+    virtual bool FinishLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual bool BindLoadedResource(void* param_1, std::size_t param_2,
+    virtual bool BindLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator, Packfile packfile);
 
     // Wii U: MULTIPLE ADDRESSES, PC: TODO
-    virtual void CleanupLoadedResource(void* param_1, std::size_t param_2);
+    virtual void CleanupLoadedResource(void* data, std::size_t size);
 };
 
 struct ResourceTypeInfo

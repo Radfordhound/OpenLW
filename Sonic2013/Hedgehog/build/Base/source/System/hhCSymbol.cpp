@@ -109,7 +109,7 @@ SSymbolNode* MakeStringSymbol(const char* param_1)
     return local_r3_176;
 }
 
-const char* GetSetGlobalString(const char* param_1)
+char* GetSetGlobalString(const char* param_1)
 {
     return MakeStringSymbol(param_1)->Name();
 }
