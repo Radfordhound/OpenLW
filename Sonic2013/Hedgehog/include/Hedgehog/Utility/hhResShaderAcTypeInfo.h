@@ -18,7 +18,7 @@ struct ResVertexShaderLoader : IResourceLoader
     bool FinishLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03689a30, PC: TODO
+    // Wii U: 0x03689a30, PC: 0x00c0bee0
     bool BindLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator, Packfile packfile);
 

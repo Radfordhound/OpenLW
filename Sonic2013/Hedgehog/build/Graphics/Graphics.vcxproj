@@ -11,13 +11,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\hhGraphics.cpp" />
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderCode.cpp" />
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderCodeTypeInfo.cpp" />
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderParameter.cpp" />
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderParameterTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResNameData.cpp" />
     <ClCompile Include="source\Resource\hhResUserData.cpp" />
     <ClCompile Include="source\Resource\hhResVertexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\hhGraphics.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCode.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCodeTypeInfo.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameter.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameterTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResUserData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResVertexShader.h" />
   </ItemGroup>

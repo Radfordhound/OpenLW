@@ -14,9 +14,15 @@
     <ClCompile Include="source\hhSampleChunk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\hhCDatabaseData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Database\hhSampleChunk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Database\hhCDatabaseData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

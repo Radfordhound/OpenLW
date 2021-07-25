@@ -1,5 +1,6 @@
 #pragma once
 #include "hhMemoryAllocator.h"
+#include <Hedgehog/Rsdx/System/RsdxAtomic.h>
 
 namespace hh
 {
@@ -7,8 +8,6 @@ namespace base
 {
 class CObject
 {
-    // TODO: Data Members?
-
 public:
     // Wii U: 0x0369973c, PC: 0x00c1e780
     static void* operator new(std::size_t size);
@@ -19,7 +18,7 @@ public:
 
 class CRefCountObject
 {
-    std::size_t m_refCount; // TODO: Change the type of this to an RsdxAtomic
+    rsdx::RsdxAtomic m_refCount;
 
 public:
     // Wii U: 0x03699874, PC: 0x00442340
@@ -34,9 +33,8 @@ public:
     // Wii U: 0x03699888, PC: TODO
     void AddRef();
 
-    // TODO: Change the return type to an RsdxAtomic
     // Wii U: 0x0369988c, PC: TODO
-    std::size_t Release();
+    rsdx::RsdxAtomic Release();
 
     // Wii U: 0x0369982c, PC: TODO
     CRefCountObject();

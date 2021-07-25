@@ -9,6 +9,8 @@ namespace hh
 {
 namespace rsdx
 {
+typedef volatile unsigned int RsdxAtomic;
+
 #ifdef _WIN32
 typedef SLIST_ENTRY RsdxSListEntry;
 //typedef SLIST_HEADER RsdxSListHeader;
@@ -41,5 +43,11 @@ void RsdxAtomicPushSList(RsdxSListHeader* header, RsdxSListEntry* entry);
 
 // Wii U: 0x036a7524, PC: Inlined
 RsdxSListEntry* RsdxAtomicPopSList(RsdxSListHeader* header);
+
+// Wii U: 0x036a7564, PC: Inlined
+RsdxAtomic RsdxAtomicInc(RsdxAtomic* v);
+
+// Wii U: 0x036a7598, PC: Inlined
+RsdxAtomic RsdxAtomicInc2(RsdxAtomic* v);
 }
 }

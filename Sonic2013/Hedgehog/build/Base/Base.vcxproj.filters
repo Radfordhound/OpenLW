@@ -39,5 +39,15 @@
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhHash.h">
       <Filter>System</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Platform\D3d9\hhCCriticalSectionD3D9.h">
+      <Filter>Platform\D3d9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSharedString.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\hhMap.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhAllocator.h">
+      <Filter>System</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

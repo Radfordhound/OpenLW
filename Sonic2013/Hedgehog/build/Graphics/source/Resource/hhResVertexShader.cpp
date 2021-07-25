@@ -1,14 +1,16 @@
 #include "Hedgehog/Graphics/Resource/hhResVertexShader.h"
-#include "Hedgehog/Graphics/Resource/hhResNameData.h"
+#include "Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameter.h"
 #include <Hedgehog/Database/hhSampleChunk.h>
 #include <Hedgehog/Utility/hhResShaderAcTypeInfo.h>
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <csl/fnd/memory.h>
 #include <cstring> // TODO: REMOVE THIS LINE
 
+using namespace csl::fnd;
 using namespace hh::mr;
 using namespace hh::ut;
 using namespace hh::db;
+using namespace hh::rsdx;
 using namespace hh::gfx::internal;
 using namespace hh::gfx::res::detail;
 
@@ -23,9 +25,14 @@ const ResourceTypeInfo& ResVertexShader::staticTypeInfo()
     return ResVertexShaderTypeInfo;
 }
 
-ResCommon<ResNameData> ResVertexShader::GetName()
+ResName ResVertexShader::GetName()
 {
-    return ResCommon<ResNameData>(&ptr()->CodeResName);
+    return ResName(&ptr()->CodeResName);
+}
+
+ResUserData ResVertexShader::GetResUserData()
+{
+    return ResUserData(&ptr()->UserData);
 }
 
 void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocator)
@@ -35,41 +42,43 @@ void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocato
     res->ResolvePointer();
 
     // Get vertex shader resource data.
-    CVertexShaderV2Resource* vtxShader = res->GetData<CVertexShaderV2Resource>();
+    CVertexShaderV2Resource* vtxShaderData = res->GetData<CVertexShaderV2Resource>();
 
     // Compute total size of shader common data + user data items.
     *size = (sizeof(ResShaderCommonData) + (sizeof(ResUserDataItemData) *
-        vtxShader->ParamsCount()));
+        (vtxShaderData->ParamsCount() + 1)));
     
     // Allocate buffer to hold shader common data + user data items.
-    ResShaderCommonData* shaderData = static_cast<ResShaderCommonData*>(allocator->Alloc(*size));
-    std::memset(shaderData, 0, 0x38); // TODO: Replace this with the constructor for ResShaderCommonData!!!
+    ResShaderCommonData* shader = static_cast<ResShaderCommonData*>(allocator->Alloc(*size));
+
+    // Setup common shader data.
+    std::memset(shader, 0, sizeof(ResShaderCommonData));
 
     // Initialize shader code resource name.
-    ResName aRStack32 = InitResNameData(&shaderData->CodeResName,
-        GetUniqueString(vtxShader->CodeResName()));
+    ResName aRStack32 = InitResNameData(&shader->CodeResName,
+        GetUniqueString(vtxShaderData->CodeResName()));
 
     // Initialize shader user data.
-    shaderData->UserData.Items = &shaderData->AllocatorData;
-    shaderData->UserData.ItemCount = (vtxShader->ParamsCount() + 1);
+    shader->UserData.Items = reinterpret_cast<ResUserDataItemData*>(shader + 1);
+    shader->UserData.ItemCount = (vtxShaderData->ParamsCount() + 1);
     
     // Initialize user data for shader allocator.
-    shaderData->AllocatorData.Index = 0;
-    shaderData->AllocatorData.Size = sizeof(csl::fnd::IAllocator*);
-    shaderData->AllocatorData.Count = 1;
-    shaderData->AllocatorData.Data = allocator;
+    shader->UserData.Items[0].Index = 0;
+    shader->UserData.Items[0].Size = sizeof(csl::fnd::IAllocator*);
+    shader->UserData.Items[0].Count = 1;
+    shader->UserData.Items[0].Data = allocator;
 
-    ResName RStack28 = InitResNameData(&shaderData->AllocatorData.Name,
+    ResName RStack28 = InitResNameData(&shader->UserData.Items[0].Name,
         GetUniqueString("allocator"));
 
     // Initialize user data for shader usages.
-    const char* usageStr = GetUniqueString("usage");
+    char* usageStr = GetUniqueString("usage");
     unsigned int usageStrHash = CalcHashKey("usage", std::strlen("usage"));
 
-    for (u32 i = 0; i < vtxShader->ParamsCount(); ++i)
+    for (u32 i = 0; i < vtxShaderData->ParamsCount(); ++i)
     {
-        ResUserDataItemData& curUserData = shaderData->UserData.Items[i + 1];
-        const char* curParamResName = vtxShader->ParamResNames()[i];
+        ResUserDataItemData& curUserData = shader->UserData.Items[i + 1];
+        const char* curParamResName = vtxShaderData->ParamResNames()[i];
 
         curUserData.Index = (i + 1);
         curUserData.Size = sizeof(char);
@@ -79,7 +88,7 @@ void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocato
         curUserData.Name.String = usageStr;
     }
 
-    return shaderData;
+    return shader;
 }
 
 bool ResVertexShader::Setup(std::size_t size, csl::fnd::IAllocator* allocator)
@@ -90,10 +99,121 @@ bool ResVertexShader::Setup(std::size_t size, csl::fnd::IAllocator* allocator)
 bool ResVertexShader::Setup(std::size_t size,
     csl::fnd::IAllocator* allocator, ut::Packfile pac)
 {
-    ResCommon<ResNameData> name = GetName();
+    ResName codeResName = GetName();
+    ResMirageVertexShaderCode vtxShaderCode = pac.Get<ResMirageVertexShaderCode>(codeResName);
+    ptr()->Shader = vtxShaderCode.ptr()->CodeDataPtr->GetVertexShader();
 
-    // TODO
-    return false;
+    if (ptr()->Shader)
+    {
+        ptr()->Shader->AddRef();
+    }
+
+    ResUserData userData = GetResUserData();
+    if (userData.ptr()->ItemCount > 1)
+    {
+        std::size_t floatConstantCount = 0;
+        std::size_t intConstantCount = 0;
+        std::size_t boolConstantCount = 0;
+        std::size_t usageCount = 0;
+
+        for (std::size_t i = 1; i < userData.ptr()->ItemCount; ++i)
+        {
+            ResUserDataItem usageItem = userData.GetResUserDataItem(i);
+            auto vtxShaderParam = pac.Get<ResMirageVertexShaderParameter>(
+                usageItem.GetDataPtr<const char>());
+
+            if (vtxShaderParam.IsValid())
+            {
+                ResMirageVertexShaderParameterData* vtxShaderParamData = vtxShaderParam.ptr();
+                intConstantCount += vtxShaderParamData->IntConstantCount;
+                floatConstantCount += vtxShaderParamData->FloatConstantCount;
+                boolConstantCount += vtxShaderParamData->BoolConstantCount;
+                ++usageCount;
+            }
+        }
+
+        if (usageCount == 0)
+        {
+            return false;
+        }
+
+        ptr()->Float4UsageCount = floatConstantCount;
+        ptr()->Int4UsageCount = intConstantCount;
+        ptr()->BoolUsageCount = boolConstantCount;
+
+        IAllocator* shaderAllocator = static_cast<IAllocator*>(ptr()->UserData.Items->Data);
+        
+        // Allocate buffer for constant usage data.
+        auto constUsageData = static_cast<ResShaderConstantUsageData*>(shaderAllocator->Alloc(
+            static_cast<std::size_t>(floatConstantCount + intConstantCount + boolConstantCount) *
+            sizeof(ResShaderConstantUsageData)));
+
+        // Setup float usages pointer.
+        ptr()->Float4Usages = (ptr()->Float4UsageCount != 0) ?
+            constUsageData : nullptr;
+
+        constUsageData += (ptr()->Float4UsageCount);
+
+        // Setup int usages pointer.
+        ptr()->Int4Usages = (ptr()->Int4UsageCount != 0) ?
+            constUsageData : nullptr;
+
+        constUsageData += (ptr()->Int4UsageCount);
+
+        // Setup bool usages pointer.
+        ptr()->BoolUsages = (ptr()->BoolUsageCount != 0) ?
+            constUsageData : nullptr;
+
+        floatConstantCount = 0;
+        intConstantCount = 0;
+        boolConstantCount = 0;
+
+        for (std::size_t i = 1; i < userData.ptr()->ItemCount; ++i)
+        {
+            ResUserDataItem usageItem = userData.GetResUserDataItem(i);
+            auto vtxShaderParam = pac.Get<ResMirageVertexShaderParameter>(
+                usageItem.GetDataPtr<const char>());
+            
+            if (vtxShaderParam.IsValid())
+            {
+                ResMirageVertexShaderParameterData* vtxShaderParamData = vtxShaderParam.ptr();
+                if (vtxShaderParamData->FloatConstantCount != 0)
+                {
+                    std::memcpy(ptr()->Float4Usages + floatConstantCount,
+                        vtxShaderParamData->FloatConstants,
+                        vtxShaderParamData->FloatConstantCount *
+                        sizeof(ResShaderConstantUsageData));
+
+                    floatConstantCount += vtxShaderParamData->FloatConstantCount;
+                }
+
+                if (vtxShaderParamData->IntConstantCount != 0)
+                {
+                    std::memcpy(ptr()->Int4Usages + intConstantCount,
+                        vtxShaderParamData->IntConstants,
+                        vtxShaderParamData->IntConstantCount *
+                        sizeof(ResShaderConstantUsageData));
+
+                    intConstantCount += vtxShaderParamData->IntConstantCount;
+                }
+
+                if (vtxShaderParamData->BoolConstantCount != 0)
+                {
+                    std::memcpy(ptr()->BoolUsages + boolConstantCount,
+                        vtxShaderParamData->BoolConstants,
+                        vtxShaderParamData->BoolConstantCount *
+                        sizeof(ResShaderConstantUsageData));
+
+                    boolConstantCount += vtxShaderParamData->BoolConstantCount;
+                }
+            }
+        }
+
+        ptr()->field_0x10 = 0;
+        ptr()->field_0x20 = 0;
+    }
+
+    return true;
 }
 
 void ResVertexShader::Unbind()

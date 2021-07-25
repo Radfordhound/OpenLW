@@ -48,6 +48,9 @@
     <ClCompile Include="source\System\RsdxThread.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\Graphics\Shader\RsdxDeviceShader.cpp">
+      <Filter>Graphics\Shader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxObject.h">
@@ -72,6 +75,12 @@
       <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxEvent.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\Graphics\Shader\RsdxDeviceShader.h">
+      <Filter>Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxResource.h">
       <Filter>System</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\hhComPtr.cpp" />
     <ClCompile Include="source\hhPackfile.cpp" />
     <ClCompile Include="source\hhResCommon.cpp" />
     <ClCompile Include="source\hhResDependTypeInfo.cpp" />
@@ -22,6 +23,8 @@
     <ClCompile Include="source\hhUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhComPtr.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhComRefcounterStrategyForRendering.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhPackfile.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResCommon.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResDependTypeInfo.h" />
@@ -30,6 +33,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResource.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResourceTypeInfoRegistry.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResShaderAcTypeInfo.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhScopedComPtr.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhUtility.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

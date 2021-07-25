@@ -13,6 +13,9 @@
       <Filter>Misc</Filter>
     </ClCompile>
     <ClCompile Include="source\hhMirageCore.cpp" />
+    <ClCompile Include="source\Resource\hhShaderResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingInfrastructure.h">

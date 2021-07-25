@@ -1,5 +1,6 @@
 #include "Hedgehog/Rsdx/System/RsdxObject.h"
 #include "Hedgehog/Rsdx/HeapMemory/Allocator/hhRsdxMemoryMain.h"
+#include <d3d9.h>
 
 namespace hh
 {
@@ -19,6 +20,27 @@ void RsdxObject::operator delete(void* ptr)
 {
     // TODO
 }
+
+#ifndef _WIN32
+RsdxAtomic RsdxRefcountObject::AddRef()
+{
+    // TODO
+    return 0; // TODO
+}
+
+RsdxAtomic RsdxRefcountObject::Release()
+{
+    // TODO: Un-comment the following:
+    /*RsdxAtomic refCount = RsdxAtomicDec2(&m_refCount);
+    if ((refCount & 0x3fffffff) == 0)
+    {
+        ReleaseInternal(this, refCount);
+    }
+
+    return (refCount & 0x3fffffff);*/
+    return 0; // TODO
+}
+#endif
 
 bool RsdxSystemResource::DeleteThis()
 {

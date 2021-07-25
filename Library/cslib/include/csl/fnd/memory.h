@@ -177,3 +177,17 @@ inline void operator delete[](void* ptr, csl::fnd::IAllocator* allocator)
 {
     allocator->Free(ptr);
 }
+
+// TODO: Is this function actually a thing?
+inline void* operator new(std::size_t size,
+    csl::fnd::IAllocator* allocator, std::size_t alignment)
+{
+    return allocator->Alloc(size, alignment);
+}
+
+// TODO: Is this function actually a thing?
+inline void operator delete(void* ptr,
+    csl::fnd::IAllocator* allocator, std::size_t alignment)
+{
+    allocator->Free(ptr);
+}

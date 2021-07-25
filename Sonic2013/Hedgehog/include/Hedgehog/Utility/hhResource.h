@@ -60,12 +60,12 @@ struct ResourceTypeInfo
 
     // Wii U: 0x036953dc, PC: TODO
     static void* GetLoadedResourceHeaderByName(unsigned int version,
-        const char* param_2, Packfile pac, const char* param_4);
+        const char* type, Packfile pac, const char* name);
 
     // Wii U: 0x03695500, PC: TODO
     static void* FindLoadedResourceByName(unsigned int version,
-        const char* param_2, Packfile pac, const char* param_4,
-        std::size_t* size);
+        const char* type, Packfile pac, const char* name,
+        std::size_t* size = nullptr);
 };
 }
 }

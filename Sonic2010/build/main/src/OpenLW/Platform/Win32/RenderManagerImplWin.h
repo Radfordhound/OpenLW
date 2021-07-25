@@ -1,6 +1,7 @@
 #pragma once
 #include "../../fnd/FileLoader.h"
 #include "../../fnd/ResourceManager.h"
+#include <Hedgehog/Graphics/hhGraphics.h>
 #include <Hedgehog/Utility/hhPackfile.h>
 #include <Hedgehog/MTBase/Thread/hhMTJobThreadFactory.h>
 #include <boost/scoped_ptr.hpp>
@@ -25,6 +26,7 @@ struct RenderManager::Impl // TODO: Inherit from the appropriate classes. // siz
 
     bool SkipPresent; // TODO: Is this a good name for this?
     // TODO: Other Data Members
+    RenderManager* RenderMgr;
     csl::fnd::com_ptr<fnd::FileHandleObj> field_0xac;
     boost::scoped_ptr<hh::mr::CRenderingInfrastructure> RenderingInfrastructure;
     // TODO: Other Data Members
@@ -66,6 +68,15 @@ struct RenderManager::Impl // TODO: Inherit from the appropriate classes. // siz
     // Wii U: 0x02258d94, PC: TODO
     void Initialize()
     {
+        hh::gfx::GfxInitParam gfxInitParam =
+        {
+            0,
+            RenderMgr->m_allocator,
+            RenderingInfrastructure.get()
+        };
+
+        hh::gfx::GfxInit(gfxInitParam);
+
         // TODO
         LoadShader();
         // TODO
@@ -93,7 +104,8 @@ struct RenderManager::Impl // TODO: Inherit from the appropriate classes. // siz
         {
             fileLoader->WaitSync(field_0xac);
 
-            hh::ut::Packfile shaderFileRes = GetShaderFileResource();
+            hh::ut::Packfile shaderPac = GetShaderFileResource();
+            shaderPac.Bind(RenderMgr->m_allocator, shaderPac);
 
             // TODO
             return true;
@@ -163,6 +175,8 @@ struct RenderManager::Impl // TODO: Inherit from the appropriate classes. // siz
         // TODO
         SkipPresent = true;
         UpdatePtr = &Impl::Update_Init;
+        // TODO
+        RenderMgr = &renderMgr;
         // TODO
 
         JobJoint1 = hh::MTBase::hhMTSimpleJobJointStaticCreate(

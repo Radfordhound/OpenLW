@@ -2,8 +2,12 @@
 #include "Hedgehog/Utility/hhResGeneralTypeInfo.h"
 #include "Hedgehog/Utility/hhResDependTypeInfo.h"
 #include "Hedgehog/Utility/hhResShaderAcTypeInfo.h"
+#include <Hedgehog/Graphics/Resource/hhResMirageVertexShaderCodeTypeInfo.h>
+#include <Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameterTypeInfo.h>
 #include <climits>
 #include <cstddef>
+
+using namespace hh::gfx::res;
 
 namespace hh
 {
@@ -15,6 +19,9 @@ const ResourceTypeInfo* const ResourceTypeInfoRegistry::ResourceTypes[] =
     &ResDependTypeInfo,
     // TODO
     &ResVertexShaderTypeInfo,
+    // TODO
+    &ResMirageVertexShaderCodeTypeInfo,
+    &ResMirageVertexShaderParameterTypeInfo,
     // TODO
     nullptr
 };

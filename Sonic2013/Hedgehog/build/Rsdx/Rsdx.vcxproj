@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="source\Graphics\Device\RsdxDevCore.cpp" />
     <ClCompile Include="source\Graphics\Device\RsdxDevice.cpp" />
+    <ClCompile Include="source\Graphics\Shader\RsdxDeviceShader.cpp" />
     <ClCompile Include="source\HeapMemory\Allocator\hhRsdxMemoryMain.cpp" />
     <ClCompile Include="source\HeapMemory\hhRsdxMemoryUtil.cpp" />
     <ClCompile Include="source\System\RsdxAtomic.cpp" />
@@ -23,11 +24,13 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevCore.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevice.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\Graphics\Shader\RsdxDeviceShader.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\HeapMemory\Allocator\hhRsdxMemoryMain.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\HeapMemory\hhRsdxMemoryUtil.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxAtomic.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxEvent.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxObject.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxResource.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxThread.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

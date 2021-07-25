@@ -346,11 +346,11 @@ void Packfile::Bind(csl::fnd::IAllocator* allocator, Packfile param_2)
 }
 
 void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
-    const char* param_2, std::size_t* param_3)
+    const char* name, std::size_t* size)
 {
-    if (param_3)
+    if (size)
     {
-        *param_3 = 0;
+        *size = 0;
     }
 
     ResPackfileHeader header(Handle);
@@ -358,7 +358,7 @@ void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
     {
         return ResourceTypeInfo::FindLoadedResourceByName(
             header.GetMajorVersion(), typeInfo.Type,
-            *this, param_2, param_3);
+            *this, name, size);
     }
 
     return nullptr;

@@ -31,7 +31,7 @@ void CRefCountObject::AddRef()
     // TODO
 }
 
-std::size_t CRefCountObject::Release()
+rsdx::RsdxAtomic CRefCountObject::Release()
 {
     // TODO
     return 0;

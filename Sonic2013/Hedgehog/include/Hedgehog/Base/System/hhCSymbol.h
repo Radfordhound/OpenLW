@@ -41,5 +41,19 @@ SSymbolNode* MakeStringSymbol(const char* param_1);
 
 // Wii U: 0x03699054, PC: 0x00c22930
 char* GetSetGlobalString(const char* param_1);
+
+class CStringSymbol
+{
+    SSymbolNode* field_0x0;
+
+public:
+    CStringSymbol(const char* str) :
+        field_0x0(MakeStringSymbol(str)) {}
+
+    inline bool operator<(const CStringSymbol& other) const
+    {
+        return (other.field_0x0 < other.field_0x0); // TODO: Is this correct?
+    }
+};
 }
 }

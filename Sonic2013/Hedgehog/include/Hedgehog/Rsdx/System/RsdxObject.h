@@ -1,5 +1,10 @@
 #pragma once
+#include "RsdxAtomic.h"
 #include <cstddef>
+
+#ifdef _WIN32
+#include <d3d9.h>
+#endif
 
 namespace hh
 {
@@ -23,13 +28,19 @@ struct RsdxObject
     }
 };
 
+#ifdef _WIN32
+typedef IUnknown RsdxRefcountObject;
+#else
 class RsdxRefcountObject : public RsdxObject
 {
-    unsigned long m_refCount;
+    RsdxAtomic m_refCount;
 
 public:
     // Wii U: 0x036a7fa4 (THUNK), PC: N/A
-    unsigned long AddRef();
+    RsdxAtomic AddRef();
+
+    // Wii U: 0x036a7fa8, PC: N/A
+    RsdxAtomic Release();
 
     // TODO
 
@@ -37,6 +48,7 @@ public:
     RsdxRefcountObject() :
         m_refCount(0) {}
 };
+#endif
 
 struct RsdxSystemResource : public RsdxObject
 {

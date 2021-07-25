@@ -26,6 +26,21 @@
     <ClCompile Include="source\Resource\hhResUserData.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderCode.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\hhGraphics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderCodeTypeInfo.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderParameter.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResMirageVertexShaderParameterTypeInfo.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h">
@@ -38,6 +53,24 @@
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResUserData.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCode.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\hhGraphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCodeTypeInfo.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameter.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameterTypeInfo.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
   </ItemGroup>

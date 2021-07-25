@@ -36,7 +36,7 @@ bool IResourceLoader::BindLoadedResource(void* data, std::size_t size,
 void IResourceLoader::CleanupLoadedResource(void* data, std::size_t size) {}
 
 void* ResourceTypeInfo::GetLoadedResourceHeaderByName(unsigned int version,
-    const char* param_2, Packfile pac, const char* param_4)
+    const char* type, Packfile pac, const char* name)
 {
     ResPackfileHeader header(pac.Handle);
     if (header.ref().NodeCount != 0)
@@ -44,11 +44,11 @@ void* ResourceTypeInfo::GetLoadedResourceHeaderByName(unsigned int version,
         void* nextBlock = header.GetNextBlock(version);
         if (nextBlock)
         {
-            void* nodeDicPtr = GetNodeDicPointer(version, param_2, nextBlock);
+            void* nodeDicPtr = GetNodeDicPointer(version, type, nextBlock);
             if (nodeDicPtr)
             {
                 ResDicLinear dic(nodeDicPtr);
-                int index = dic.GetIndex(param_4);
+                int index = dic.GetIndex(name);
 
                 if (index != -1)
                 {
@@ -63,11 +63,11 @@ void* ResourceTypeInfo::GetLoadedResourceHeaderByName(unsigned int version,
 }
 
 void* ResourceTypeInfo::FindLoadedResourceByName(unsigned int version,
-    const char* param_2, Packfile pac, const char* param_4,
+    const char* type, Packfile pac, const char* name,
     std::size_t* size)
 {
     void* resHeader = GetLoadedResourceHeaderByName(
-        version, param_2, pac, param_4);
+        version, type, pac, name);
 
     if (resHeader)
     {

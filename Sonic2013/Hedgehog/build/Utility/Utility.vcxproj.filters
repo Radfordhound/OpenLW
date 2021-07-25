@@ -38,6 +38,9 @@
     <ClCompile Include="source\hhResDependTypeInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\hhComPtr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhPackfile.h">
@@ -65,6 +68,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResDependTypeInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhScopedComPtr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhComRefcounterStrategyForRendering.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Utility\hhComPtr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

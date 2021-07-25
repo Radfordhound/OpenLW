@@ -25,6 +25,11 @@ struct ResNameData
 
 struct ResName : public ut::ResCommon<ResNameData>
 {
+    inline operator const char*() const
+    {
+        return ptr()->String;
+    }
+
     inline ResName(const void* data) :
         ResCommon<ResNameData>(data) {}
 

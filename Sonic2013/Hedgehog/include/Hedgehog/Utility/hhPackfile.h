@@ -209,12 +209,12 @@ struct Packfile // size == 4
 
     // Wii U: 0x036939a0, PC: TODO
     void* GetResource(const ResourceTypeInfo& typeInfo,
-        const char* param_2, std::size_t* param_3);
+        const char* name, std::size_t* size = nullptr);
 
     template<typename T>
-    T Get(const char* param_2, std::size_t* param_3)
+    T Get(const char* name, std::size_t* size = nullptr)
     {
-        return T(GetResource(T::staticTypeInfo(), param_2, param_3));
+        return T(GetResource(T::staticTypeInfo(), name, size));
     }
 
     // Wii U: 0x03693dac, PC: TODO

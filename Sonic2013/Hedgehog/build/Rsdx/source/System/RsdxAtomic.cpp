@@ -22,5 +22,20 @@ RsdxSListEntry* RsdxAtomicPopSList(RsdxSListHeader* header)
     return nullptr;
 #endif
 }
+
+RsdxAtomic RsdxAtomicInc(RsdxAtomic* v)
+{
+    // TODO!!!
+    return 0;
+}
+
+RsdxAtomic RsdxAtomicInc2(RsdxAtomic* v)
+{
+#ifdef _WIN32
+    return InterlockedIncrement(v);
+#else
+    // TODO
+#endif
+}
 }
 }

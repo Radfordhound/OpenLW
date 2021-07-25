@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="source\hhMirageCore.cpp" />
     <ClCompile Include="source\Misc\hhRenderingInfrastructure.cpp" />
+    <ClCompile Include="source\Resource\hhShaderResource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\hhMirageCore.h" />
