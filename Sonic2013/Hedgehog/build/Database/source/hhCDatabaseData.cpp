@@ -5,7 +5,7 @@ namespace hh
 namespace db
 {
 CDatabaseData::CDatabaseData() :
-    field_0x0(4),
+    m_flags(DB_UNKNOWN_FLAG4),
     field_0x4()
 {
     // TODO
@@ -18,7 +18,7 @@ CDatabaseData::~CDatabaseData()
 
 void CDatabaseData::SetMadeOne()
 {
-    field_0x0 |= 1;
+    m_flags |= DB_MADE_ONE;
 }
 
 bool CDatabaseData::CheckMadeAll()

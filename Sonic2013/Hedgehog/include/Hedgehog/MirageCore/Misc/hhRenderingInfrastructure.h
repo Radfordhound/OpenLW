@@ -22,6 +22,9 @@ public:
     // Wii U: 0x036d5bb0, PC: 0x00c2b200
     rsdx::RsdxVertexShader9* CreateVertexShader(const void* data);
 
+    // Wii U: 0x036d5bf4, PC: TODO
+    rsdx::RsdxPixelShader9* CreatePixelShader(const void* data);
+
     // Wii U: TODO, PC: 0x00c2be50
     CRenderingInfrastructure();
 

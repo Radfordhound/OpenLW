@@ -6,9 +6,15 @@ namespace hh
 {
 namespace db
 {
+enum DatabaseFlags
+{
+    DB_MADE_ONE = 1,
+    DB_UNKNOWN_FLAG4 = 4
+};
+
 class CDatabaseData : public base::CObject
 {
-    unsigned char field_0x0;
+    unsigned char m_flags;
     // TODO: Other data members? Or is it just padding?
     base::CSharedString field_0x4;
 

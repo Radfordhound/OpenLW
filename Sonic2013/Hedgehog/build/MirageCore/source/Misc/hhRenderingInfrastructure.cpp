@@ -48,6 +48,13 @@ rsdx::RsdxVertexShader9* CRenderingInfrastructure::CreateVertexShader(const void
         data), &shader)) ? shader : nullptr;
 }
 
+rsdx::RsdxPixelShader9* CRenderingInfrastructure::CreatePixelShader(const void* data)
+{
+    rsdx::RsdxPixelShader9* shader;
+    return (!Device->CreatePixelShader(static_cast<const unsigned long*>(
+        data), &shader)) ? shader : nullptr;
+}
+
 CRenderingInfrastructure::CRenderingInfrastructure()
 {
     // TODO

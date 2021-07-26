@@ -41,6 +41,12 @@
     <ClCompile Include="source\Resource\hhResMirageVertexShaderParameterTypeInfo.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="source\Resource\hhResMiragePixelShaderCodeTypeInfo.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResMiragePixelShaderCode.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h">
@@ -71,6 +77,12 @@
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCodeTypeInfo.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCode.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
   </ItemGroup>

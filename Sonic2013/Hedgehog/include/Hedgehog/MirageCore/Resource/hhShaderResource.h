@@ -40,6 +40,30 @@ public:
         field_0x18() {}
 };
 
+class CPixelShaderCodeData : public db::CDatabaseData
+{
+    ut::ScopedComPtr<rsdx::RsdxPixelShader9, ut::ComRefcounterStrategyForRendering> m_pixelShaderPtr;
+    boost::shared_array<unsigned char> field_0x10;
+    boost::shared_ptr<base::CCriticalSectionD3D9> field_0x18;
+
+public:
+    // Wii U: 0x036da84c, PC: TODO
+    void Make(CPixelShaderCodeData* param_1, const u32* param_2,
+        CRenderingInfrastructure* renderInfra);
+
+    // TODO: Is this function actually a thing?
+    inline rsdx::RsdxPixelShader9* GetPixelShader()
+    {
+        return m_pixelShaderPtr.get();
+    }
+
+    inline CPixelShaderCodeData() :
+        CDatabaseData(),
+        m_pixelShaderPtr(),
+        field_0x10(),
+        field_0x18() {}
+};
+
 class CShaderConstantResource // TODO: This name was guessed; is it correct??
 {
     OFF32(char) m_name;

@@ -4,6 +4,7 @@
 #include "Hedgehog/Utility/hhResShaderAcTypeInfo.h"
 #include <Hedgehog/Graphics/Resource/hhResMirageVertexShaderCodeTypeInfo.h>
 #include <Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameterTypeInfo.h>
+#include <Hedgehog/Graphics/Resource/hhResMiragePixelShaderCodeTypeInfo.h>
 #include <climits>
 #include <cstddef>
 
@@ -18,7 +19,11 @@ const ResourceTypeInfo* const ResourceTypeInfoRegistry::ResourceTypes[] =
     &ResRawDataTypeInfo,
     &ResDependTypeInfo,
     // TODO
+    //&ResPixelShaderTypeInfo,
+    // TODO
     &ResVertexShaderTypeInfo,
+    // TODO
+    &ResMiragePixelShaderCodeTypeInfo,
     // TODO
     &ResMirageVertexShaderCodeTypeInfo,
     &ResMirageVertexShaderParameterTypeInfo,
