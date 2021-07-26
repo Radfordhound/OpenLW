@@ -35,7 +35,7 @@ static void MakeConstantName(ResShaderConstantUsageData* output,
 }
 
 // Wii U: 0x0368780c, PC: TODO
-void MakeMirageConstantName(CShaderConstantNameData* output,
+static void MakeMirageConstantName(CShaderConstantNameData* output,
     const CShaderConstantNameResource* input)
 {
     for (std::size_t i = 0; i < input->GetCount(); ++i)
@@ -49,7 +49,7 @@ void MakeMirageConstantName(CShaderConstantNameData* output,
 }
 
 // Wii U: 0x03687888, PC: TODO
-void MakeMirageConstantName(CVertexShaderParameterData* output,
+static void MakeMirageConstantName(CVertexShaderParameterData* output,
     const CVertexShaderParameterResource* input)
 {
     MakeMirageConstantName(&output->GetFloatConstants(), &input->GetFloatConstants());

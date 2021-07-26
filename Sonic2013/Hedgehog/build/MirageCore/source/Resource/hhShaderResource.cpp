@@ -19,9 +19,8 @@ void CPixelShaderCodeData::Make(CPixelShaderCodeData* param_1,
     param_1->SetMadeOne();
 }
 
-CShaderConstantNameData::CShaderConstantNameData() :
-    map<base::CStringSymbol, CShaderConstantData>() {}
-
 CVertexShaderParameterData::~CVertexShaderParameterData() {}
+
+CPixelShaderParameterData::~CPixelShaderParameterData() {}
 }
 }

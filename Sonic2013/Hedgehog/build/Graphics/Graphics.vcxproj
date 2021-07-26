@@ -14,6 +14,8 @@
     <ClCompile Include="source\hhGraphics.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderCode.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderCodeTypeInfo.cpp" />
+    <ClCompile Include="source\Resource\hhResMiragePixelShaderParameter.cpp" />
+    <ClCompile Include="source\Resource\hhResMiragePixelShaderParameterTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResMirageVertexShaderCode.cpp" />
     <ClCompile Include="source\Resource\hhResMirageVertexShaderCodeTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResMirageVertexShaderParameter.cpp" />
@@ -26,6 +28,8 @@
     <ClInclude Include="..\..\include\Hedgehog\Graphics\hhGraphics.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCode.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCodeTypeInfo.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameter.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameterTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCode.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCodeTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameter.h" />
@@ -33,6 +37,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsageData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResUserData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResVertexShader.h" />
   </ItemGroup>
