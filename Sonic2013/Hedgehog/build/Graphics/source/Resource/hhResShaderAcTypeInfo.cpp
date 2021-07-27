@@ -1,6 +1,6 @@
-#include "Hedgehog/Utility/hhResShaderAcTypeInfo.h"
-#include <Hedgehog/Graphics/Resource/hhResVertexShader.h>
-#include <Hedgehog/Graphics/Resource/hhResFragmentShader.h>
+#include "Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h"
+#include "Hedgehog/Graphics/Resource/hhResVertexShader.h"
+#include "Hedgehog/Graphics/Resource/hhResFragmentShader.h"
 
 using namespace hh::ut;
 using namespace hh::gfx::res;
@@ -25,7 +25,9 @@ static IResourceLoader* CreateResShaderResourceLoader()
 
 namespace hh
 {
-namespace ut
+namespace gfx
+{
+namespace res
 {
 ResVertexShaderLoader::~ResVertexShaderLoader() {}
 
@@ -44,7 +46,7 @@ bool ResVertexShaderLoader::FinishLoadedResource(void* data,
 }
 
 bool ResVertexShaderLoader::BindLoadedResource(void* data,
-    std::size_t size, csl::fnd::IAllocator* allocator, Packfile packfile)
+    std::size_t size, csl::fnd::IAllocator* allocator, ut::Packfile packfile)
 {
     ResVertexShader vtxShader(data);
     return vtxShader.Setup(size, allocator, packfile);
@@ -73,7 +75,7 @@ bool ResFragmentShaderLoader::FinishLoadedResource(void* data,
 }
 
 bool ResFragmentShaderLoader::BindLoadedResource(void* data,
-    std::size_t size, csl::fnd::IAllocator* allocator, Packfile packfile)
+    std::size_t size, csl::fnd::IAllocator* allocator, ut::Packfile packfile)
 {
     ResFragmentShader pixelShader(data);
     return pixelShader.Setup(size, allocator, packfile);
@@ -102,5 +104,6 @@ ResourceTypeInfo ResShaderTypeInfo =
     "ResMirageShaderList",                                              // Type
     CreateResShaderResourceLoader                                       // CreateLoader
 };
+}
 }
 }

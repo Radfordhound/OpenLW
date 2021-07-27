@@ -19,7 +19,6 @@
     <ClCompile Include="source\hhResGeneralTypeInfo.cpp" />
     <ClCompile Include="source\hhResource.cpp" />
     <ClCompile Include="source\hhResourceTypeInfoRegistry.cpp" />
-    <ClCompile Include="source\hhResShaderAcTypeInfo.cpp" />
     <ClCompile Include="source\hhUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -32,7 +31,6 @@
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResGeneralTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResource.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResourceTypeInfoRegistry.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Utility\hhResShaderAcTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhScopedComPtr.h" />
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhUtility.h" />
   </ItemGroup>

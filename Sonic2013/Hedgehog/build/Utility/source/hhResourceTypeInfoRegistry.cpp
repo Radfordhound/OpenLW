@@ -1,7 +1,7 @@
 #include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
 #include "Hedgehog/Utility/hhResGeneralTypeInfo.h"
 #include "Hedgehog/Utility/hhResDependTypeInfo.h"
-#include "Hedgehog/Utility/hhResShaderAcTypeInfo.h"
+#include <Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h>
 #include <Hedgehog/Graphics/Resource/hhResMirageVertexShaderCodeTypeInfo.h>
 #include <Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameterTypeInfo.h>
 #include <Hedgehog/Graphics/Resource/hhResMiragePixelShaderCodeTypeInfo.h>

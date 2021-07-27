@@ -26,9 +26,6 @@
     <ClCompile Include="source\hhResourceTypeInfoRegistry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\hhResShaderAcTypeInfo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\hhResDictionary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -56,9 +53,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResourceTypeInfoRegistry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Utility\hhResShaderAcTypeInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Utility\hhResDictionary.h">

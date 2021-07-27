@@ -1,11 +1,13 @@
 #pragma once
-#include "hhResource.h"
+#include <Hedgehog/Utility/hhResource.h>
 
 namespace hh
 {
-namespace ut
+namespace gfx
 {
-struct ResVertexShaderLoader : IResourceLoader
+namespace res
+{
+struct ResVertexShaderLoader : ut::IResourceLoader
 {
     // Wii U: 0x03689980, PC: TODO
     ~ResVertexShaderLoader();
@@ -20,13 +22,13 @@ struct ResVertexShaderLoader : IResourceLoader
 
     // Wii U: 0x03689a30, PC: 0x00c0bee0
     bool BindLoadedResource(void* data, std::size_t size,
-        csl::fnd::IAllocator* allocator, Packfile packfile);
+        csl::fnd::IAllocator* allocator, ut::Packfile packfile);
 
     // Wii U: 0x03689a98, PC: TODO
     void CleanupLoadedResource(void* data, std::size_t size);
 };
 
-struct ResFragmentShaderLoader : IResourceLoader
+struct ResFragmentShaderLoader : ut::IResourceLoader
 {
     // Wii U: TODO, PC: TODO
     ~ResFragmentShaderLoader();
@@ -41,24 +43,25 @@ struct ResFragmentShaderLoader : IResourceLoader
 
     // Wii U: TODO, PC: TODO
     bool BindLoadedResource(void* data, std::size_t size,
-        csl::fnd::IAllocator* allocator, Packfile packfile);
+        csl::fnd::IAllocator* allocator, ut::Packfile packfile);
 
     // Wii U: TODO, PC: TODO
     void CleanupLoadedResource(void* data, std::size_t size);
 };
 
-struct ResShaderLoader : IResourceLoader
+struct ResShaderLoader : ut::IResourceLoader
 {
     // TODO
 };
 
 // Wii U: 0x10401500, PC: TODO
-extern ResourceTypeInfo ResVertexShaderTypeInfo;
+extern ut::ResourceTypeInfo ResVertexShaderTypeInfo;
 
 // Wii U: 0x10401510, PC: TODO
-extern ResourceTypeInfo ResFragmentShaderTypeInfo;
+extern ut::ResourceTypeInfo ResFragmentShaderTypeInfo;
 
 // Wii U: 0x10401520, PC: TODO
-extern ResourceTypeInfo ResShaderTypeInfo;
+extern ut::ResourceTypeInfo ResShaderTypeInfo;
+}
 }
 }

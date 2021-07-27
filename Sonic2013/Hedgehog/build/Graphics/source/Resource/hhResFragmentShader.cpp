@@ -1,7 +1,7 @@
 #include "Hedgehog/Graphics/Resource/hhResFragmentShader.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameter.h"
+#include "Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h"
 #include <Hedgehog/Database/hhSampleChunk.h>
-#include <Hedgehog/Utility/hhResShaderAcTypeInfo.h>
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <csl/fnd/memory.h>
 #include <cstring>
