@@ -13,10 +13,10 @@ namespace res
 struct ResMiragePixelShaderParameterData
 {
     mr::CPixelShaderParameterData* field_0x0;
-    ResShaderConstantUsageData* IntConstants;
-    ResShaderSamplerUsageData* TexSamplers;
-    ResShaderConstantUsageData* BoolConstants;
     ResShaderConstantUsageData* FloatConstants;
+    ResShaderConstantUsageData* IntConstants;
+    ResShaderConstantUsageData* BoolConstants;
+    ResShaderSamplerUsageData* TexSamplers;
     std::size_t FloatConstantCount;
     std::size_t IntConstantCount;
     std::size_t BoolConstantCount;

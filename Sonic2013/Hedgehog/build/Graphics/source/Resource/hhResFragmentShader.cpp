@@ -1,5 +1,5 @@
-#include "Hedgehog/Graphics/Resource/hhResVertexShader.h"
-#include "Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameter.h"
+#include "Hedgehog/Graphics/Resource/hhResFragmentShader.h"
+#include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameter.h"
 #include <Hedgehog/Database/hhSampleChunk.h>
 #include <Hedgehog/Utility/hhResShaderAcTypeInfo.h>
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
@@ -20,33 +20,33 @@ namespace gfx
 {
 namespace res
 {
-const ResourceTypeInfo& ResVertexShader::staticTypeInfo()
+const ResourceTypeInfo& ResFragmentShader::staticTypeInfo()
 {
-    return ResVertexShaderTypeInfo;
+    return ResFragmentShaderTypeInfo;
 }
 
-ResName ResVertexShader::GetName()
+ResName ResFragmentShader::GetName()
 {
     return ResName(&ptr()->CodeResName);
 }
 
-ResUserData ResVertexShader::GetResUserData()
+ResUserData ResFragmentShader::GetResUserData()
 {
     return ResUserData(&ptr()->UserData);
 }
 
-void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocator)
+void* ResFragmentShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocator)
 {
     // Resolve sample chunk resource pointers.
     CSampleChunkResource* res = reinterpret_cast<CSampleChunkResource*>(ptr());
     res->ResolvePointer();
 
     // Get vertex shader resource data.
-    CVertexShaderV2Resource* vtxShaderData = res->GetData<CVertexShaderV2Resource>();
+    CPixelShaderV2Resource* pixelShaderData = res->GetData<CPixelShaderV2Resource>();
 
     // Compute total size of shader common data + user data items.
     *size = (sizeof(ResShaderCommonData) + (sizeof(ResUserDataItemData) *
-        (vtxShaderData->ParamsCount() + 1)));
+        (pixelShaderData->ParamsCount() + 1)));
     
     // Allocate buffer to hold shader common data + user data items.
     ResShaderCommonData* shader = static_cast<ResShaderCommonData*>(allocator->Alloc(*size));
@@ -56,11 +56,11 @@ void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocato
 
     // Initialize shader code resource name.
     ResName aRStack32 = InitResNameData(&shader->CodeResName,
-        GetUniqueString(vtxShaderData->CodeResName()));
+        GetUniqueString(pixelShaderData->CodeResName()));
 
     // Initialize shader user data.
     shader->UserData.Items = reinterpret_cast<ResUserDataItemData*>(shader + 1);
-    shader->UserData.ItemCount = (vtxShaderData->ParamsCount() + 1);
+    shader->UserData.ItemCount = (pixelShaderData->ParamsCount() + 1);
     
     // Initialize user data for shader allocator.
     shader->UserData.Items[0].Index = 0;
@@ -75,10 +75,10 @@ void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocato
     char* usageStr = GetUniqueString("usage");
     unsigned int usageStrHash = CalcHashKey("usage", std::strlen("usage"));
 
-    for (u32 i = 0; i < vtxShaderData->ParamsCount(); ++i)
+    for (u32 i = 0; i < pixelShaderData->ParamsCount(); ++i)
     {
         ResUserDataItemData& curUserData = shader->UserData.Items[i + 1];
-        const char* curParamResName = vtxShaderData->ParamResNames()[i];
+        const char* curParamResName = pixelShaderData->ParamResNames()[i];
 
         curUserData.Index = (i + 1);
         curUserData.Size = sizeof(char);
@@ -91,17 +91,17 @@ void* ResVertexShader::Replace(std::size_t* size, csl::fnd::IAllocator* allocato
     return shader;
 }
 
-bool ResVertexShader::Setup(std::size_t size, csl::fnd::IAllocator* allocator)
+bool ResFragmentShader::Setup(std::size_t size, csl::fnd::IAllocator* allocator)
 {
     return false;
 }
 
-bool ResVertexShader::Setup(std::size_t size,
+bool ResFragmentShader::Setup(std::size_t size,
     csl::fnd::IAllocator* allocator, ut::Packfile pac)
 {
     ResName codeResName = GetName();
-    ResMirageVertexShaderCode vtxShaderCode = pac.Get<ResMirageVertexShaderCode>(codeResName);
-    ptr()->Shader = vtxShaderCode.ptr()->CodeData->GetVertexShader();
+    ResMiragePixelShaderCode pixelShaderCode = pac.Get<ResMiragePixelShaderCode>(codeResName);
+    ptr()->Shader = pixelShaderCode.ptr()->CodeData->GetPixelShader();
 
     if (ptr()->Shader)
     {
@@ -114,20 +114,22 @@ bool ResVertexShader::Setup(std::size_t size,
         std::size_t floatConstantCount = 0;
         std::size_t intConstantCount = 0;
         std::size_t boolConstantCount = 0;
+        std::size_t samplerCount = 0;
         std::size_t usageCount = 0;
 
         for (std::size_t i = 1; i < userData.ptr()->ItemCount; ++i)
         {
             ResUserDataItem usageItem = userData.GetResUserDataItem(i);
-            auto vtxShaderParam = pac.Get<ResMirageVertexShaderParameter>(
+            auto pixelShaderParam = pac.Get<ResMiragePixelShaderParameter>(
                 usageItem.GetDataPtr<const char>());
 
-            if (vtxShaderParam.IsValid())
+            if (pixelShaderParam.IsValid())
             {
-                ResMirageVertexShaderParameterData* vtxShaderParamData = vtxShaderParam.ptr();
-                intConstantCount += vtxShaderParamData->IntConstantCount;
-                floatConstantCount += vtxShaderParamData->FloatConstantCount;
-                boolConstantCount += vtxShaderParamData->BoolConstantCount;
+                ResMiragePixelShaderParameterData* pixelShaderParamData = pixelShaderParam.ptr();
+                intConstantCount += pixelShaderParamData->IntConstantCount;
+                floatConstantCount += pixelShaderParamData->FloatConstantCount;
+                boolConstantCount += pixelShaderParamData->BoolConstantCount;
+                samplerCount += pixelShaderParamData->TexSamplerCount;
                 ++usageCount;
             }
         }
@@ -140,12 +142,14 @@ bool ResVertexShader::Setup(std::size_t size,
         ptr()->Float4UsageCount = floatConstantCount;
         ptr()->Int4UsageCount = intConstantCount;
         ptr()->BoolUsageCount = boolConstantCount;
+        ptr()->TexSamplerCount = samplerCount;
 
         IAllocator* shaderAllocator = static_cast<IAllocator*>(ptr()->UserData.Items->Data);
         
         // Allocate buffer for constant usage data.
         auto constUsageData = static_cast<ResShaderConstantUsageData*>(shaderAllocator->Alloc(
-            (floatConstantCount + intConstantCount + boolConstantCount) * sizeof(ResShaderConstantUsageData)));
+            ((floatConstantCount + intConstantCount + boolConstantCount) * sizeof(ResShaderConstantUsageData)) +
+            (samplerCount * sizeof(ResShaderSamplerUsageData))));
 
         // Setup float usages pointer.
         ptr()->Float4Usages = (ptr()->Float4UsageCount != 0) ?
@@ -163,64 +167,78 @@ bool ResVertexShader::Setup(std::size_t size,
         ptr()->BoolUsages = (ptr()->BoolUsageCount != 0) ?
             constUsageData : nullptr;
 
+        constUsageData += (ptr()->BoolUsageCount);
+
+        // Setup texture sampler usages pointer.
+        ptr()->TexSamplerUsages = (ptr()->TexSamplerCount != 0) ?
+            reinterpret_cast<ResShaderSamplerUsageData*>(constUsageData) : nullptr;
+
         floatConstantCount = 0;
         intConstantCount = 0;
         boolConstantCount = 0;
+        samplerCount = 0;
 
         for (std::size_t i = 1; i < userData.ptr()->ItemCount; ++i)
         {
             ResUserDataItem usageItem = userData.GetResUserDataItem(i);
-            auto vtxShaderParam = pac.Get<ResMirageVertexShaderParameter>(
+            auto pixelShaderParam = pac.Get<ResMiragePixelShaderParameter>(
                 usageItem.GetDataPtr<const char>());
             
-            if (vtxShaderParam.IsValid())
+            if (pixelShaderParam.IsValid())
             {
-                ResMirageVertexShaderParameterData* vtxShaderParamData = vtxShaderParam.ptr();
-                if (vtxShaderParamData->FloatConstantCount != 0)
+                ResMiragePixelShaderParameterData* pixelShaderParamData = pixelShaderParam.ptr();
+                if (pixelShaderParamData->FloatConstantCount != 0)
                 {
                     std::memcpy(ptr()->Float4Usages + floatConstantCount,
-                        vtxShaderParamData->FloatConstants,
-                        vtxShaderParamData->FloatConstantCount *
+                        pixelShaderParamData->FloatConstants,
+                        pixelShaderParamData->FloatConstantCount *
                         sizeof(ResShaderConstantUsageData));
 
-                    floatConstantCount += vtxShaderParamData->FloatConstantCount;
+                    floatConstantCount += pixelShaderParamData->FloatConstantCount;
                 }
 
-                if (vtxShaderParamData->IntConstantCount != 0)
+                if (pixelShaderParamData->IntConstantCount != 0)
                 {
                     std::memcpy(ptr()->Int4Usages + intConstantCount,
-                        vtxShaderParamData->IntConstants,
-                        vtxShaderParamData->IntConstantCount *
+                        pixelShaderParamData->IntConstants,
+                        pixelShaderParamData->IntConstantCount *
                         sizeof(ResShaderConstantUsageData));
 
-                    intConstantCount += vtxShaderParamData->IntConstantCount;
+                    intConstantCount += pixelShaderParamData->IntConstantCount;
                 }
 
-                if (vtxShaderParamData->BoolConstantCount != 0)
+                if (pixelShaderParamData->BoolConstantCount != 0)
                 {
                     std::memcpy(ptr()->BoolUsages + boolConstantCount,
-                        vtxShaderParamData->BoolConstants,
-                        vtxShaderParamData->BoolConstantCount *
+                        pixelShaderParamData->BoolConstants,
+                        pixelShaderParamData->BoolConstantCount *
                         sizeof(ResShaderConstantUsageData));
 
-                    boolConstantCount += vtxShaderParamData->BoolConstantCount;
+                    boolConstantCount += pixelShaderParamData->BoolConstantCount;
+                }
+
+                if (pixelShaderParamData->TexSamplerCount != 0)
+                {
+                    std::memcpy(ptr()->TexSamplerUsages + samplerCount,
+                        pixelShaderParamData->TexSamplers,
+                        pixelShaderParamData->TexSamplerCount *
+                        sizeof(ResShaderSamplerUsageData));
+
+                    samplerCount += pixelShaderParamData->TexSamplerCount;
                 }
             }
         }
-
-        ptr()->TexSamplerUsages = nullptr;
-        ptr()->TexSamplerCount = 0;
     }
 
     return true;
 }
 
-void ResVertexShader::Unbind()
+void ResFragmentShader::Unbind()
 {
     // TODO
 }
 
-void ResVertexShader::Cleanup(std::size_t size)
+void ResFragmentShader::Cleanup(std::size_t size)
 {
     Unbind();
     // TODO

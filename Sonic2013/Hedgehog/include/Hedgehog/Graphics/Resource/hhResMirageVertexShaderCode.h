@@ -10,11 +10,8 @@ namespace res
 {
 struct ResMirageVertexShaderCodeData
 {
-    mr::CVertexShaderCodeData* CodeDataPtr;
+    mr::CVertexShaderCodeData* CodeData;
     csl::fnd::IAllocator* Allocator;
-    mr::CVertexShaderCodeData CodeData;
-    
-    // TODO: Other data members
 };
 
 struct ResMirageVertexShaderCode : public ut::ResCommon<ResMirageVertexShaderCodeData>

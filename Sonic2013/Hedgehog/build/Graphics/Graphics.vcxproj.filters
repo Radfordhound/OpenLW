@@ -53,6 +53,9 @@
     <ClCompile Include="source\Resource\hhResMiragePixelShaderParameter.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="source\Resource\hhResFragmentShader.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h">
@@ -98,6 +101,9 @@
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsageData.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResFragmentShader.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
   </ItemGroup>

@@ -21,6 +21,7 @@
     <ClCompile Include="source\Resource\hhResMirageVertexShaderParameter.cpp" />
     <ClCompile Include="source\Resource\hhResMirageVertexShaderParameterTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResNameData.cpp" />
+    <ClCompile Include="source\Resource\hhResFragmentShader.cpp" />
     <ClCompile Include="source\Resource\hhResUserData.cpp" />
     <ClCompile Include="source\Resource\hhResVertexShader.cpp" />
   </ItemGroup>
@@ -35,6 +36,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameter.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameterTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResFragmentShader.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsageData.h" />

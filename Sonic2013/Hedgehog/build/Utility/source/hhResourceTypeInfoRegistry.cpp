@@ -20,7 +20,7 @@ const ResourceTypeInfo* const ResourceTypeInfoRegistry::ResourceTypes[] =
     &ResRawDataTypeInfo,
     &ResDependTypeInfo,
     // TODO
-    //&ResPixelShaderTypeInfo,
+    &ResFragmentShaderTypeInfo,
     // TODO
     &ResVertexShaderTypeInfo,
     // TODO

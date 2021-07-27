@@ -1,5 +1,6 @@
 #include "Hedgehog/Utility/hhResShaderAcTypeInfo.h"
 #include <Hedgehog/Graphics/Resource/hhResVertexShader.h>
+#include <Hedgehog/Graphics/Resource/hhResFragmentShader.h>
 
 using namespace hh::ut;
 using namespace hh::gfx::res;
@@ -53,6 +54,35 @@ void ResVertexShaderLoader::CleanupLoadedResource(void* data, std::size_t size)
 {
     ResVertexShader vtxShader(data);
     vtxShader.Cleanup(size);
+}
+
+ResFragmentShaderLoader::~ResFragmentShaderLoader() {}
+
+void* ResFragmentShaderLoader::ReplaceLoadedResource(const char* name,
+    void* data, std::size_t* size, csl::fnd::IAllocator* allocator)
+{
+    ResFragmentShader pixelShader(data);
+    return pixelShader.Replace(size, allocator);
+}
+
+bool ResFragmentShaderLoader::FinishLoadedResource(void* data,
+    std::size_t size, csl::fnd::IAllocator* allocator)
+{
+    ResFragmentShader pixelShader(data);
+    return pixelShader.Setup(size, allocator);
+}
+
+bool ResFragmentShaderLoader::BindLoadedResource(void* data,
+    std::size_t size, csl::fnd::IAllocator* allocator, Packfile packfile)
+{
+    ResFragmentShader pixelShader(data);
+    return pixelShader.Setup(size, allocator, packfile);
+}
+
+void ResFragmentShaderLoader::CleanupLoadedResource(void* data, std::size_t size)
+{
+    ResFragmentShader pixelShader(data);
+    pixelShader.Cleanup(size);
 }
 
 ResourceTypeInfo ResVertexShaderTypeInfo =

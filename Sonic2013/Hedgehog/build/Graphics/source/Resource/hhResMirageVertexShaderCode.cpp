@@ -15,16 +15,16 @@ namespace res
 // Wii U: 0x036856ac, PC: TODO
 static std::size_t CalcSize()
 {
-    return sizeof(ResMirageVertexShaderCodeData);
+    return (sizeof(ResMirageVertexShaderCodeData) + sizeof(CVertexShaderCodeData));
 }
 
 // Wii U: 0x036856b4, PC: TODO
 static void Make(ResMirageVertexShaderCodeData* param_1,
     const u32* param_2, csl::fnd::IAllocator* allocator)
 {
-    param_1->CodeDataPtr = ::new (&param_1->CodeData) CVertexShaderCodeData();
+    param_1->CodeData = ::new (param_1 + 1) CVertexShaderCodeData();
 
-    param_1->CodeData.Make(&param_1->CodeData,
+    param_1->CodeData->Make(param_1->CodeData,
         param_2, GetRenderingInfrastructure());
 
     param_1->Allocator = allocator;

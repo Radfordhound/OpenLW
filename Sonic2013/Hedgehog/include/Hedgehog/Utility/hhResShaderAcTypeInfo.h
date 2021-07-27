@@ -28,7 +28,23 @@ struct ResVertexShaderLoader : IResourceLoader
 
 struct ResFragmentShaderLoader : IResourceLoader
 {
-    // TODO
+    // Wii U: TODO, PC: TODO
+    ~ResFragmentShaderLoader();
+
+    // Wii U: 0x03689ae8, PC: TODO
+    void* ReplaceLoadedResource(const char* name, void* data,
+        std::size_t* size, csl::fnd::IAllocator* allocator);
+
+    // Wii U: TODO, PC: TODO
+    bool FinishLoadedResource(void* data, std::size_t size,
+        csl::fnd::IAllocator* allocator);
+
+    // Wii U: TODO, PC: TODO
+    bool BindLoadedResource(void* data, std::size_t size,
+        csl::fnd::IAllocator* allocator, Packfile packfile);
+
+    // Wii U: TODO, PC: TODO
+    void CleanupLoadedResource(void* data, std::size_t size);
 };
 
 struct ResShaderLoader : IResourceLoader
