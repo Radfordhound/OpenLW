@@ -5,7 +5,7 @@ namespace hh
 {
 namespace db
 {
-class CSampleChunkResource // TODO: Inheritance?
+class CSampleChunkResource
 {
     u32 m_fileSize;
     u32 m_version;
@@ -28,6 +28,30 @@ public:
     }
 
     // Wii U: 0x036c4924, PC: 0x00c27c30
+    void ResolvePointer();
+};
+
+class CSampleChunkResource2
+{
+    u32 m_fileSize;
+    u32 m_magic;
+    u32 m_offsetTableOff;
+    u32 m_offsetCount;
+
+public:
+    template<typename T>
+    const T* GetData() const
+    {
+        return reinterpret_cast<const T*>(this + 1);
+    }
+
+    template<typename T>
+    T* GetData()
+    {
+        return reinterpret_cast<T*>(this + 1);
+    }
+
+    // Wii U: 0x036c4b94, PC: TODO
     void ResolvePointer();
 };
 }

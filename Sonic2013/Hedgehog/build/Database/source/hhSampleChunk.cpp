@@ -28,5 +28,29 @@ void CSampleChunkResource::ResolvePointer()
 #endif
     }
 }
+
+void CSampleChunkResource2::ResolvePointer()
+{
+    u32* offTable = PtrAdd<u32>(this, HH_ENDIAN_FIX_U32(m_offsetTableOff));
+    u32* data = GetData<u32>();
+    u32 offCount = HH_ENDIAN_FIX_U32(m_offsetCount);
+
+    for (u32 i = 0; i < offCount; ++i)
+    {
+        // Get the current offset address.
+        u32* curOffAddr = &offTable[i];
+
+        // "Fix" the current offset.
+#if UINTPTR_MAX > UINT32_MAX
+        Off32<void>* curOff = PtrAdd<Off32<void>>(data,
+            (HH_ENDIAN_FIX_U32(*curOffAddr) & 0xFFFFFFFCU));
+
+        curOff->set(PtrAdd<void>(data, HH_ENDIAN_FIX_U32(curOff->get_val())));
+#else
+        u32* curOff = PtrAdd<u32>(data, (HH_ENDIAN_FIX_U32(*curOffAddr) & 0xFFFFFFFCU));
+        *curOff = (HH_ENDIAN_FIX_U32(*curOff) + reinterpret_cast<u32>(data));
+#endif
+    }
+}
 }
 }
