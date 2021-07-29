@@ -807,6 +807,9 @@
     <ClCompile Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.cpp">
       <Filter>OpenLW\xgame</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\RenderManagerImpl.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -968,9 +971,6 @@
     <ClInclude Include="..\..\src\OpenLW\CriSystem.h">
       <Filter>OpenLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\RenderManagerImplWin.h">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\fnd\FileReaderCri.h">
       <Filter>OpenLW\fnd</Filter>
     </ClInclude>
@@ -985,6 +985,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.h">
       <Filter>OpenLW\xgame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\RenderManagerImpl.h">
+      <Filter>OpenLW\gfx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

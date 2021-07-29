@@ -1,8 +1,5 @@
 #include "RenderManager.h"
-
-#ifdef _WIN32
-#include "../Platform/Win32/RenderManagerImplWin.h"
-#endif
+#include "RenderManagerImpl.h"
 
 namespace app
 {

@@ -113,6 +113,7 @@
     <ClCompile Include="..\..\src\OpenLW\GameObject.cpp" />
     <ClCompile Include="..\..\src\OpenLW\game\GlobalAllocator.cpp" />
     <ClCompile Include="..\..\src\OpenLW\gfx\RenderManager.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\gfx\RenderManagerImpl.cpp" />
     <ClCompile Include="..\..\src\OpenLW\hid\DeviceBase.cpp" />
     <ClCompile Include="..\..\src\OpenLW\hid\DeviceManager.cpp" />
     <ClCompile Include="..\..\src\OpenLW\hid\DevicePlatformBase.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="..\..\src\OpenLW\GameObject.h" />
     <ClInclude Include="..\..\src\OpenLW\game\GlobalAllocator.h" />
     <ClInclude Include="..\..\src\OpenLW\gfx\RenderManager.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\RenderManagerImpl.h" />
     <ClInclude Include="..\..\src\OpenLW\hid\DeviceBase.h" />
     <ClInclude Include="..\..\src\OpenLW\hid\DeviceManager.h" />
     <ClInclude Include="..\..\src\OpenLW\hid\DevicePlatformBase.h" />
@@ -186,7 +188,6 @@
     <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DevicePadWin.h" />
     <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.h" />
     <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.h" />
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\RenderManagerImplWin.h" />
     <ClInclude Include="..\..\src\OpenLW\SyncTimer.h" />
     <ClInclude Include="..\..\src\OpenLW\TinyFsm.h" />
     <ClInclude Include="..\..\src\OpenLW\ut\RefPtr.h" />
