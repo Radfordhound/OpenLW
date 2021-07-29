@@ -1,8 +1,6 @@
 #pragma once
 #include "RenderManager.h"
 #include "../fnd/FileLoader.h"
-#include "../fnd/ResourceManager.h"
-#include <Hedgehog/Graphics/hhGraphics.h>
 #include <Hedgehog/Utility/hhPackfile.h>
 #include <Hedgehog/MTBase/Thread/hhMTJobThreadFactory.h>
 #include <boost/scoped_ptr.hpp>

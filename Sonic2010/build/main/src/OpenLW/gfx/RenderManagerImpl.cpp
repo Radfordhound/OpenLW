@@ -1,4 +1,14 @@
 #include "RenderManagerImpl.h"
+#include "../fnd/ResourceManager.h"
+#include <Hedgehog/Graphics/hhGraphics.h>
+#include <Hedgehog/Graphics/Resource/hhResShaderAc.h>
+
+using namespace app::fnd;
+using namespace hh::mr;
+using namespace hh::ut;
+using namespace hh::gfx;
+using namespace hh::gfx::res;
+using namespace hh::MTBase;
 
 namespace app
 {
@@ -13,22 +23,19 @@ RenderManager::Impl::Impl(RenderManager& renderMgr)
     RenderMgr = &renderMgr;
     // TODO
 
-    JobJoint1 = hh::MTBase::hhMTSimpleJobJointStaticCreate(
-        "m_evehtJointSchedulerHandle");
-
-    JobJoint2 = hh::MTBase::hhMTSimpleJobJointStaticCreate(
-        "m_evehtJointPostFrameHandle");
+    JobJoint1 = hhMTSimpleJobJointStaticCreate("m_evehtJointSchedulerHandle");
+    JobJoint2 = hhMTSimpleJobJointStaticCreate("m_evehtJointPostFrameHandle");
 
     // TODO
-    RenderingInfrastructure.reset(new hh::mr::CRenderingInfrastructure());
+    RenderingInfrastructure.reset(new CRenderingInfrastructure());
     // TODO
 }
 
 void RenderManager::Impl::LoadShader()
 {
-    fnd::FileLoader* fileLoader = fnd::FileLoader::GetInstance();
+    FileLoader* fileLoader = FileLoader::GetInstance();
 
-    fnd::FileLoaderParam fileLoadParams;
+    FileLoaderParam fileLoadParams;
     fileLoadParams.field_0xc = 0x1000;
 
     field_0xac = fileLoader->LoadFile(Info.ShaderName, fileLoadParams);
@@ -36,14 +43,14 @@ void RenderManager::Impl::LoadShader()
 
 void RenderManager::Impl::Initialize()
 {
-    hh::gfx::GfxInitParam gfxInitParam =
+    GfxInitParam gfxInitParam =
     {
         0,
         RenderMgr->m_allocator,
         RenderingInfrastructure.get()
     };
 
-    hh::gfx::GfxInit(gfxInitParam);
+    GfxInit(gfxInitParam);
 
     // TODO
     LoadShader();
@@ -74,14 +81,14 @@ void RenderManager::Impl::Update(const fnd::SUpdateInfo& updateInfo, unsigned in
 
 hh::ut::Packfile RenderManager::Impl::GetShaderFileResource() const
 {
-    fnd::ResourceManager* resMgr = fnd::ResourceManager::GetInstance();
-    return hh::ut::Packfile(resMgr->Get<fnd::ResRawData>(Info.ShaderName).GetAddress());
+    ResourceManager* resMgr = ResourceManager::GetInstance();
+    return Packfile(resMgr->Get<ResRawData>(Info.ShaderName).GetAddress());
 }
 
 void RenderManager::Impl::PrepareRenderSchedule()
 {
-    hh::MTBase::hhMTSimpleJobBlockUntilSignal(JobJoint1, 0);
-    hh::MTBase::hhMTSimpleJobBlockUntilSignal(JobJoint2, 0);
+    hhMTSimpleJobBlockUntilSignal(JobJoint1, 0);
+    hhMTSimpleJobBlockUntilSignal(JobJoint2, 0);
 }
 
 void RenderManager::Impl::Update_RunOnRenderInternal(
@@ -110,12 +117,12 @@ void RenderManager::Impl::Present()
 
 bool RenderManager::Impl::SetupShader()
 {
-    fnd::FileLoader* fileLoader = fnd::FileLoader::GetInstance();
+    FileLoader* fileLoader = FileLoader::GetInstance();
     if (fileLoader->IsSyncComplete(field_0xac))
     {
         fileLoader->WaitSync(field_0xac);
 
-        hh::ut::Packfile shaderPac = GetShaderFileResource();
+        Packfile shaderPac = GetShaderFileResource();
         shaderPac.Bind(RenderMgr->m_allocator, shaderPac);
 
         // TODO
