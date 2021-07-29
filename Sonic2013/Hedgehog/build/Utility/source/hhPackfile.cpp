@@ -142,6 +142,25 @@ bool Packfile::IsImport() const
     return ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) != 0);
 }
 
+void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
+    int index, std::size_t* size)
+{
+    if (size)
+    {
+        *size = 0;
+    }
+
+    ResPackfileHeader header(Handle);
+    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) != 0)
+    {
+        return ResourceTypeInfo::FindLoadedResourceByIndex(
+            header.GetMajorVersion(), typeInfo.Type,
+            *this, index, size);
+    }
+
+    return nullptr;
+}
+
 ResDepend Packfile::GetResDepend()
 {
     return Get<ResDepend>(nullptr, nullptr);
@@ -362,6 +381,19 @@ void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
     }
 
     return nullptr;
+}
+
+std::size_t Packfile::GetResourceCount(const ResourceTypeInfo& typeInfo) const
+{
+    ResPackfileHeader header(Handle);
+    if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) != 0)
+    {
+        return ResourceTypeInfo::GetLoadedResourceCount(
+            header.GetMajorVersion(), typeInfo.Type,
+            *this);
+    }
+
+    return 0;
 }
 
 std::size_t Packfile::GetNumberOfImport() const

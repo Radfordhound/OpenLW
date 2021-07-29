@@ -83,5 +83,71 @@ void* ResourceTypeInfo::FindLoadedResourceByName(unsigned int version,
 
     return nullptr;
 }
+
+void* ResourceTypeInfo::GetLoadedResourceHeaderByIndex(unsigned int version,
+    const char* type, Packfile pac, int index)
+{
+    ResPackfileHeader header(pac.Handle);
+    if (header.ref().NodeCount != 0)
+    {
+        void* nextBlock = header.GetNextBlock(version);
+        if (nextBlock)
+        {
+            void* nodeDicPtr = GetNodeDicPointer(version, type, nextBlock);
+            if (nodeDicPtr)
+            {
+                ResDicLinear dic(nodeDicPtr);
+
+                return (version >= 2) ? dic[index] : (static_cast<u8*>(
+                    dic[index]) - sizeof(ResPackfileBlockDataHeaderDataTag));
+            }
+        }
+    }
+
+    return nullptr;
+}
+
+void* ResourceTypeInfo::FindLoadedResourceByIndex(unsigned int version,
+    const char* type, Packfile pac, int index,
+    std::size_t* size)
+{
+    void* resHeader = GetLoadedResourceHeaderByIndex(
+        version, type, pac, index);
+
+    if (resHeader)
+    {
+        ResPackfileBlockDataHeaderData blockHeader(resHeader);
+
+        if (size)
+        {
+            *size = blockHeader.ref().Size;
+        }
+
+        return blockHeader.ref().Data;
+    }
+
+    return nullptr;
+}
+
+std::size_t ResourceTypeInfo::GetLoadedResourceCount(
+    unsigned int version, const char* type, Packfile pac)
+{
+    ResPackfileHeader header(pac.Handle);
+    if (header.ref().NodeCount != 0)
+    {
+        void* dataBlock = header.GetNextBlock(version);
+        if (dataBlock)
+        {
+            void* dicPtr = GetNodeDicPointer(version, type, dataBlock);
+            if (dicPtr)
+            {
+                ResDicLinear dic(dicPtr);
+                return dic.ref().Count;
+            }
+        }
+    }
+
+    return 0;
+}
 }
 }

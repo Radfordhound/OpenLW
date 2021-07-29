@@ -133,7 +133,7 @@ struct ResPackfileBlockV2Header : public ResCommon<ResPackfileBlockV2HeaderDataT
     // Wii U: 0x03696704, PC: TODO
     void* GetStrAddress();
 
-    // Wii U: 0x0369673c, PC: TODO
+    // Wii U: 0x0369673c, PC: 0x00c1a5d0
     void* GetPof0Address();
 
     inline ResPackfileBlockV2Header(const void* data) :
@@ -198,6 +198,16 @@ struct Packfile // size == 4
     // Wii U: 0x0369257c, PC: TODO
     bool IsImport() const;
 
+    // Wii U: 0x036927dc, PC: TODO
+    void* GetResource(const ResourceTypeInfo& typeInfo,
+        int index, std::size_t* size = nullptr);
+
+    template<typename T>
+    T Get(int index, std::size_t* size = nullptr)
+    {
+        return T(GetResource(T::staticTypeInfo(), index, size));
+    }
+
     // Wii U: 0x036928bc, PC: TODO
     ResDepend GetResDepend();
 
@@ -215,6 +225,15 @@ struct Packfile // size == 4
     T Get(const char* name, std::size_t* size = nullptr)
     {
         return T(GetResource(T::staticTypeInfo(), name, size));
+    }
+
+    // Wii U: 0x03693aec, PC: TODO
+    std::size_t GetResourceCount(const ResourceTypeInfo& typeInfo) const;
+
+    template<typename T>
+    std::size_t GetCount() const
+    {
+        return GetResourceCount(T::staticTypeInfo());
     }
 
     // Wii U: 0x03693dac, PC: TODO
@@ -242,7 +261,7 @@ ResPackfileBlockDataHeaderDataTag* GetBlockData(unsigned int version,
 void ReplaceImport(unsigned int version, void* importAddress,
     u32 importSize, bool doSwap);
 
-// Wii U: 0x03692a60, PC: TODO
+// Wii U: 0x03692a60, PC: 0x00c18c40
 void Resolved(void* data);
 
 // Wii U: 0x036952c0, PC: TODO
