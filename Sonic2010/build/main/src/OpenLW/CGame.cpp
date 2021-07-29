@@ -5,10 +5,15 @@
 #include "game/GlobalAllocator.h"
 #include "gfx/RenderManager.h"
 
+using namespace app::fnd;
+using namespace app::gfx;
+using namespace app::game;
+using namespace csl::fnd;
+
 namespace app
 {
 // Wii U: TODO, PC: TODO
-static csl::fnd::IAllocator* GameAllocator;
+static IAllocator* GameAllocator;
 
 bool CGame::PreProcessMessage(fnd::Message& msg)
 {
@@ -53,8 +58,8 @@ void CGame::OnShutdown(Application& app)
 void CGame::Tick(Application& app)
 {
     // Update FileLoader.
-    fnd::FileLoader* fileLoader = fnd::FileLoader::GetInstance();
-    fileLoader->Update();
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    fileLoader.Update();
 
     // TODO
 
@@ -71,8 +76,8 @@ void CGame::Tick(Application& app)
 
         if (doFrame)
         {
-            gfx::RenderManager* renderMgr = gfx::RenderManager::GetInstance();
-            renderMgr->Update(app.UpdateInfo, -1);
+            RenderManager& renderMgr = RenderManager::GetInstance();
+            renderMgr.Update(app.UpdateInfo, -1);
             // TODO
         }
     }
@@ -80,16 +85,16 @@ void CGame::Tick(Application& app)
     // TODO
 
     // Render scene.
-    gfx::RenderManager* renderMgr = gfx::RenderManager::GetInstance();
-    renderMgr->Render();
+    RenderManager& renderMgr = RenderManager::GetInstance();
+    renderMgr.Render();
 
     // TODO
 }
 
 void CGame::Draw(Application& app)
 {
-    gfx::RenderManager* renderMgr = gfx::RenderManager::GetInstance();
-    renderMgr->Render();
+    RenderManager& renderMgr = RenderManager::GetInstance();
+    renderMgr.Render();
 }
 
 void CGame::AdvanceFrame()
@@ -156,14 +161,14 @@ CGame::CGame() :
     m_aspectRatio(1280.0f / 720.0f)
     // TODO: Initialize field_0x74 to 0.
 {
-    SetUpdateFlag(fnd::PHASE_NORMAL, false);
-    SetUpdateFlag(fnd::PHASE_UNK_ONE, false);
-    SetUpdateFlag(fnd::PHASE_UNK_TWO, false);
+    SetUpdateFlag(PHASE_NORMAL, false);
+    SetUpdateFlag(PHASE_UNK_ONE, false);
+    SetUpdateFlag(PHASE_UNK_TWO, false);
 }
 
 CGame* CreateGame(Application& app)
 {
-    GameAllocator = game::GlobalAllocator::GetAllocator(ALLOCATOR_UNK_ZERO);
+    GameAllocator = GlobalAllocator::GetAllocator(ALLOCATOR_UNK_ZERO);
 
     CGame* game = new (GameAllocator) CGame();
     game->AddRef();

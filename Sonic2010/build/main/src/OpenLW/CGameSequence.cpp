@@ -5,6 +5,9 @@
 #include "fnd/SUpdateInfo.h"
 #include "../System/GameMode/GameModeStartUp.h"
 
+using namespace app::gfx;
+using namespace hh::mr;
+
 namespace app
 {
 bool CGameSequence::ProcessMessage(fnd::Message& msg)
@@ -24,9 +27,9 @@ void CGameSequence::ShutdownGameMode()
     m_game->ShutdownGameMode();
     m_gameMode = nullptr;
 
-    gfx::RenderManager* renderMgr = gfx::RenderManager::GetInstance();
-    hh::mr::CRenderingInfrastructure* renderDev = renderMgr->GetRenderingDevice();
-    // TODO: Call something on renderDev, but only on Wii U???
+    RenderManager& renderMgr = RenderManager::GetInstance();
+    CRenderingInfrastructure* renderInfra = renderMgr.GetRenderingDevice();
+    // TODO: Call something on renderInfra, but only on Wii U???
 }
 
 void CGameSequence::StartLeakChecker() {}

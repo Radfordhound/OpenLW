@@ -11,9 +11,9 @@ protected:
     inline Singleton() {};
 
 public:
-    inline static T* GetInstance()
+    inline static T& GetInstance()
     {
-        return m_instance;
+        return *m_instance;
     }
 
     inline static void ReplaceInstance(T* inst)

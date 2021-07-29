@@ -5,6 +5,9 @@
 #include "../../OpenLW/fnd/FileLoader.h"
 #include "../../OpenLW/xgame/DlcManager.h"
 
+using namespace app::fnd;
+using namespace app::xgame;
+
 namespace app
 {
 GameModeStartUp::~GameModeStartUp()
@@ -29,8 +32,8 @@ void GameModeStartUp::Update(CGame& game, const fnd::SUpdateInfo& updateInfo)
 {
     GameMode::Update(game, updateInfo);
 
-    xgame::DlcManager* dlcMgr = xgame::DlcManager::GetInstance();
-    dlcMgr->Update();
+    DlcManager& dlcMgr = DlcManager::GetInstance();
+    dlcMgr.Update();
 
     DispatchFSM(event_t::CreateUpdate(updateInfo.DeltaTime));
 }
@@ -42,7 +45,7 @@ bool GameModeStartUp::ProcessMessage(CGame& game, fnd::Message& msg)
 
     if (msg.ID == WARNING_END)
     {
-        ProcMsgWarningEnd(game, reinterpret_cast<xgame::MsgWarningEnd&>(msg));
+        ProcMsgWarningEnd(game, reinterpret_cast<MsgWarningEnd&>(msg));
         return true;
     }
     
@@ -67,8 +70,8 @@ bool GameModeStartUp::IsWarningEnd()
 
 bool GameModeStartUp::IsLoadEnd()
 {
-    fnd::FileLoader* fileLoader = fnd::FileLoader::GetInstance();
-    return fileLoader->IsSyncCompleteAll();
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    return fileLoader.IsSyncCompleteAll();
 }
 
 void GameModeStartUp::PreLoadGame()
@@ -115,7 +118,7 @@ void GameModeStartUp::PreLoadResidentFile()
     // Load all resident files.
     for (int i = 0; i < (sizeof(ResidentFilePaths) / sizeof(*ResidentFilePaths)); ++i)
     {
-        fnd::FileLoaderParam loaderParams;
+        FileLoaderParam loaderParams;
         loaderParams.field_0xc = 0x1000;
         LoadFile(ResidentFilePaths[i], loaderParams);
     }
@@ -131,8 +134,8 @@ void GameModeStartUp::PreLoadResidentFile()
 
 void GameModeStartUp::LoadResidentFile()
 {
-    fnd::FileLoader* fileLoader = fnd::FileLoader::GetInstance();
-    fileLoader->SetHintCache(nullptr);
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    fileLoader.SetHintCache(nullptr);
 
     // TODO
 }
@@ -148,8 +151,8 @@ GameModeStartUp::state_t GameModeStartUp::StateFirstCpk(const event_t& e)
     {
     case SIGNAL_UPDATE:
     {
-        fnd::FileSystem* fileSystem = fnd::FileSystem::GetInstance();
-        fnd::FileBinder* fileBinder = fileSystem->GetDefaultBinder();
+        FileSystem& fileSystem = FileSystem::GetInstance();
+        FileBinder* fileBinder = fileSystem.GetDefaultBinder();
 
         if (fileBinder->IsSyncCompleteAll())
         {
@@ -238,8 +241,8 @@ GameModeStartUp::state_t GameModeStartUp::StateAfterLoad(const event_t& e)
     {
     case SIGNAL_UPDATE:
     {
-        xgame::DlcManager* dlcMgr = xgame::DlcManager::GetInstance();
-        if (dlcMgr->IsComplete() && IsLoadEnd())
+        DlcManager& dlcMgr = DlcManager::GetInstance();
+        if (dlcMgr.IsComplete() && IsLoadEnd())
         {
             AdvanceSequence();
         }

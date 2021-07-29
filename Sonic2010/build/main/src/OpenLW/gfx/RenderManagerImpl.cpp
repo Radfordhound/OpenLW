@@ -33,12 +33,12 @@ RenderManager::Impl::Impl(RenderManager& renderMgr)
 
 void RenderManager::Impl::LoadShader()
 {
-    FileLoader* fileLoader = FileLoader::GetInstance();
+    FileLoader& fileLoader = FileLoader::GetInstance();
 
     FileLoaderParam fileLoadParams;
     fileLoadParams.field_0xc = 0x1000;
 
-    field_0xac = fileLoader->LoadFile(Info.ShaderName, fileLoadParams);
+    field_0xac = fileLoader.LoadFile(Info.ShaderName, fileLoadParams);
 }
 
 void RenderManager::Impl::Initialize()
@@ -81,8 +81,8 @@ void RenderManager::Impl::Update(const fnd::SUpdateInfo& updateInfo, unsigned in
 
 hh::ut::Packfile RenderManager::Impl::GetShaderFileResource() const
 {
-    ResourceManager* resMgr = ResourceManager::GetInstance();
-    return Packfile(resMgr->Get<ResRawData>(Info.ShaderName).GetAddress());
+    ResourceManager& resMgr = ResourceManager::GetInstance();
+    return Packfile(resMgr.Get<ResRawData>(Info.ShaderName).GetAddress());
 }
 
 void RenderManager::Impl::PrepareRenderSchedule()
@@ -117,10 +117,10 @@ void RenderManager::Impl::Present()
 
 bool RenderManager::Impl::SetupShader()
 {
-    FileLoader* fileLoader = FileLoader::GetInstance();
-    if (fileLoader->IsSyncComplete(field_0xac))
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    if (fileLoader.IsSyncComplete(field_0xac))
     {
-        fileLoader->WaitSync(field_0xac);
+        fileLoader.WaitSync(field_0xac);
 
         Packfile shaderPac = GetShaderFileResource();
         shaderPac.Bind(RenderMgr->m_allocator, shaderPac);
@@ -135,7 +135,7 @@ bool RenderManager::Impl::SetupShader()
         }
 
         field_0xd4 = new (RenderMgr->m_allocator) GfxResourceCallback(RenderMgr->m_allocator);
-        ResourceManager::GetInstance()->AddCallback(field_0xd4.get(), 0);
+        ResourceManager::GetInstance().AddCallback(field_0xd4.get(), 0);
 
         // TODO
         return true;

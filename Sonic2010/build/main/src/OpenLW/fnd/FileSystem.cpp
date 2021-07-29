@@ -1,6 +1,9 @@
 #include "FileSystem.h"
 #include "Allocators.h"
 
+using namespace csl::fnd;
+using namespace csl::ut;
+
 namespace app
 {
 namespace fnd
@@ -40,7 +43,7 @@ const char* FileSystem::GetFileName(const char* filePath)
 
 void FileSystem::GetFileNameNoExtension(const char* filePath, csl::ut::String* result)
 {
-    csl::ut::StringBuf<128> fileNameNoExt("", GetTempAllocator());
+    StringBuf<128> fileNameNoExt("", GetTempAllocator());
 
     const char* fileName = GetFileName(filePath);
     const char* ext = GetFileExtension(fileName);
@@ -54,7 +57,7 @@ void FileSystem::GetFileNameNoExtension(const char* filePath, csl::ut::String* r
 
 void FileSystem::GetPathName(const char* filePath, csl::ut::String* result)
 {
-    csl::ut::StringBuf<128> str("", GetTempAllocator());
+    StringBuf<128> str("", GetTempAllocator());
     for (const char* ptr = std::strchr(filePath, 0); ptr >= filePath; --ptr)
     {
         if (*ptr == '\\' || *ptr == '/')
@@ -77,18 +80,18 @@ void FileSystem::SetFileCacheSize(std::size_t cacheSize)
         }
         else
         {
-            FileCache::GetInstance()->Setup(cacheSize);
-            Cache = FileCache::GetInstance();
+            FileCache::GetInstance().Setup(cacheSize);
+            Cache = &FileCache::GetInstance();
         }
     }
 }
 
 void FileSystem::SetRootDirectory(const char* rootDir)
 {
-    csl::ut::StringBuf<128> str(rootDir, GetTempAllocator());
+    StringBuf<128> str(rootDir, GetTempAllocator());
     if (!str.empty())
     {
-        csl::ut::StringBuf<128> str2("", GetTempAllocator());
+        StringBuf<128> str2("", GetTempAllocator());
         str2.copyFrom(str.c_str(), 1, str.length() - 1);
         
         if (str2 != "/" && str2 != "\\")
@@ -97,7 +100,7 @@ void FileSystem::SetRootDirectory(const char* rootDir)
         }
     }
 
-    csl::fnd::StrLcpy(RootDirectory, str.c_str(), 256);
+    StrLcpy(RootDirectory, str.c_str(), 256);
 }
 
 void FileSystem::Setup(Info& info)

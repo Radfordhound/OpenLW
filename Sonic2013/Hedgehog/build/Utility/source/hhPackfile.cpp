@@ -172,7 +172,7 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
     ResPackfileHeader header(Handle);
     if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) == 0)
     {
-        ResourceTypeInfoRegistry* typeInfo = ResourceTypeInfoRegistry::GetInstance();
+        ResourceTypeInfoRegistry& typeInfo = ResourceTypeInfoRegistry::GetInstance();
         unsigned int version = header.GetMajorVersion();
         Resolved(Handle);
 
@@ -185,7 +185,7 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
             ResDicLinear types(GetDicAddr(version, dataBlock));
             for (s32 i = 0; i < types.ref().Count; ++i)
             {
-                unsigned int typeHash = typeInfo->CreateHash(GetDicRootName(types.GetName(i)));
+                unsigned int typeHash = typeInfo.CreateHash(GetDicRootName(types.GetName(i)));
                 ResDicLinear files(types[i]);
 
                 for (s32 i2 = 0; i2 < files.ref().Count; ++i2)
@@ -218,7 +218,7 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
                             fileName
                         };
 
-                        typeInfo->PrepareReplaceLoadedResource(blockData, typeHash, &dataSize, &args);
+                        typeInfo.PrepareReplaceLoadedResource(blockData, typeHash, &dataSize, &args);
                     }
                 }
             }
@@ -234,7 +234,7 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
             ResDicLinear types(GetDicAddr(version, dataBlock));
             for (s32 i = 0; i < types.ref().Count; ++i)
             {
-                unsigned int typeHash = typeInfo->CreateHash(GetDicRootName(types.GetName(i)));
+                unsigned int typeHash = typeInfo.CreateHash(GetDicRootName(types.GetName(i)));
                 ResDicLinear files(types[i]);
 
                 for (s32 i2 = 0; i2 < files.ref().Count; ++i2)
@@ -268,7 +268,7 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
                         if (!renderInfra)
                         {
                             dataSize = blockDataHeader.ref().Size;
-                            pvVar8 = typeInfo->ReplaceLoadedResource(fileName,
+                            pvVar8 = typeInfo.ReplaceLoadedResource(fileName,
                                 blockData, typeHash, &dataSize, allocator);
 
                             if (!pvVar8)
@@ -287,11 +287,11 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
                                 fileName
                             };
 
-                            if (!typeInfo->PrepareReplaceLoadedResource(blockData,
+                            if (!typeInfo.PrepareReplaceLoadedResource(blockData,
                                 typeHash, &dataSize, &args))
                             {
                                 dataSize = blockDataHeader.ref().Size;
-                                pvVar8 = typeInfo->ReplaceLoadedResource(fileName,
+                                pvVar8 = typeInfo.ReplaceLoadedResource(fileName,
                                     blockData, typeHash, &dataSize, allocator);
 
                                 if (!pvVar8)
@@ -304,7 +304,7 @@ void Packfile::Setup(csl::fnd::IAllocator* allocator,
                         blockDataHeader.ref().Data = pvVar8;
                         blockDataHeader.ref().Size = dataSize;
 
-                        typeInfo->FinishLoadedResource(blockDataHeader.ref().Data,
+                        typeInfo.FinishLoadedResource(blockDataHeader.ref().Data,
                             typeHash, blockDataHeader.ref().Size, allocator);
                     }
                 }
@@ -332,7 +332,7 @@ void Packfile::Bind(csl::fnd::IAllocator* allocator, Packfile param_2)
     ResPackfileHeader header(Handle);
     if ((header.ref().Status & PACKFILE_STATUS_IS_IMPORTED) != 0)
     {
-        ResourceTypeInfoRegistry* typeInfo = ResourceTypeInfoRegistry::GetInstance();
+        ResourceTypeInfoRegistry& typeInfo = ResourceTypeInfoRegistry::GetInstance();
         unsigned int version = header.GetMajorVersion();
         void* dataBlock;
 
@@ -341,7 +341,7 @@ void Packfile::Bind(csl::fnd::IAllocator* allocator, Packfile param_2)
             ResDicLinear types(GetDicAddr(version, dataBlock));
             for (s32 i = 0; i < types.ref().Count; ++i)
             {
-                unsigned int typeHash = typeInfo->CreateHash(GetDicRootName(types.GetName(i)));
+                unsigned int typeHash = typeInfo.CreateHash(GetDicRootName(types.GetName(i)));
                 ResDicLinear files(types[i]);
 
                 for (s32 i2 = 0; i2 < files.ref().Count; ++i2)
@@ -353,7 +353,7 @@ void Packfile::Bind(csl::fnd::IAllocator* allocator, Packfile param_2)
                     ResPackfileBlockDataHeaderData blockDataHeader(blockDataTag);
 
                     if ((blockDataHeader.ref().Status & PACKFILE_STATUS_IS_IMPORTED) == 0 &&
-                        typeInfo->BindLoadedResource(blockDataHeader.ref().Data, typeHash,
+                        typeInfo.BindLoadedResource(blockDataHeader.ref().Data, typeHash,
                             blockDataHeader.ref().Size, param_2, allocator))
                     {
                         blockDataHeader.ref().Status |= PACKFILE_STATUS_IS_IMPORTED;

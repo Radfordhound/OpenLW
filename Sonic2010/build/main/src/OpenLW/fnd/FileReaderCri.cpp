@@ -3,6 +3,10 @@
 #include "FileSystem.h"
 #include "Allocators.h"
 
+using namespace app::fnd::file;
+using namespace csl::fnd;
+using namespace csl::ut;
+
 namespace app
 {
 namespace fnd
@@ -36,7 +40,7 @@ FileReaderCri::Loader::Loader() :
     field_0x14(0)
 {
     criFsLoader_Create(&Handle);
-    criFsLoader_SetLoadEndCallback(Handle, file::CriLoadEndCbFunc, this);
+    criFsLoader_SetLoadEndCallback(Handle, CriLoadEndCbFunc, this);
 }
 
 FileReaderCri::Loader::~Loader()
@@ -78,7 +82,7 @@ void FileReaderCri::Update()
 {
     if (!field_0x58.empty())
     {
-        FileSystem* fileSystem = FileSystem::GetInstance();
+        FileSystem& fileSystem = FileSystem::GetInstance();
         auto it = field_0x58.begin();
 
         while (it != field_0x58.end())
@@ -117,7 +121,7 @@ void FileReaderCri::Update()
                         -64 : 64);
                 }
 
-                if (fileSystem->Cache && ((fileHandle->field_0x9c & 0x40000000) != 0))
+                if (fileSystem.Cache && ((fileHandle->field_0x9c & 0x40000000) != 0))
                 {
                     break;
                 }
@@ -148,7 +152,7 @@ LAB_02190b60:
             }
 
             std::size_t local_2c = 0;
-            void* pvVar2 = fileSystem->Cache->GetCache(fileHandle->field_0x60, &local_2c);
+            void* pvVar2 = fileSystem.Cache->GetCache(fileHandle->field_0x60, &local_2c);
             if (!pvVar2) goto LAB_02190b60;
 
             // TODO: FastMemCopy
@@ -167,7 +171,7 @@ LAB_02190b60:
 LAB_02190c3c:
     if (!field_0x34.empty())
     {
-        FileSystem* fileSystem = FileSystem::GetInstance();
+        FileSystem& fileSystem = FileSystem::GetInstance();
         auto it = field_0x34.begin();
 
         while (it != field_0x34.end())
@@ -237,12 +241,12 @@ LAB_02190d8c:
             // TODO: Un-comment this on Wii U:
             //DCFlushRange(fileHandle->Buffer, fileHandle->BufferSize);
 
-            if (!fileSystem->Cache || (fileHandle->field_0x9c & 0x40000000) == 0)
+            if (!fileSystem.Cache || (fileHandle->field_0x9c & 0x40000000) == 0)
             {
                 goto LAB_02190d8c;
             }
 
-            fileSystem->Cache->AddCache(fileHandle->field_0x60,
+            fileSystem.Cache->AddCache(fileHandle->field_0x60,
                 fileHandle->Buffer, fileHandle->FileSize,
                 fileHandle->field_0x9c >> 31);
 
@@ -275,7 +279,7 @@ bool FileReaderCri::IsFileExist(const char* filePath, FileBinder* binder)
 {
     if (!binder)
     {
-        binder = fnd::FileSystem::GetInstance()->GetDefaultBinder();
+        binder = FileSystem::GetInstance().GetDefaultBinder();
     }
     
     return binder->IsFileExist(filePath);
@@ -285,7 +289,7 @@ std::size_t FileReaderCri::GetFileSize(const char* filePath, FileBinder* binder)
 {
     if (!binder)
     {
-        binder = FileSystem::GetInstance()->GetDefaultBinder();
+        binder = FileSystem::GetInstance().GetDefaultBinder();
     }
 
     return binder->GetFileSize(filePath);
@@ -295,7 +299,7 @@ csl::fnd::com_ptr<FileHandleObj> FileReaderCri::LoadFile(const char* filePath,
     const char* param_2, csl::fnd::IAllocator* allocator,
     void* param_4, unsigned int param_5, FileBinder* binder)
 {
-    csl::fnd::com_ptr<FileHandleObj> fileHandle = CreateHandle(
+    com_ptr<FileHandleObj> fileHandle = CreateHandle(
         filePath, param_2, allocator, param_4, param_5, binder);
 
     AddRequest(fileHandle);
@@ -369,10 +373,10 @@ csl::fnd::com_ptr<FileHandleObj> FileReaderCri::CreateHandle(const char* filePat
     const char* param_2, csl::fnd::IAllocator* allocator,
     void* param_4, unsigned int param_5, fnd::FileBinder* binder)
 {
-    csl::fnd::com_ptr<FileHandleObj> fileHandle;
+    com_ptr<FileHandleObj> fileHandle;
     
     // Create regist name.
-    csl::ut::StringBuf<128> registName(GetTempAllocator());
+    StringBuf<128> registName(GetTempAllocator());
     CreateRegistName(filePath, param_2, &registName);
 
     // If we already have a handle to this file open, just return it.
@@ -382,7 +386,7 @@ csl::fnd::com_ptr<FileHandleObj> FileReaderCri::CreateHandle(const char* filePat
     // Get the default binder.
     if (!binder)
     {
-        binder = fnd::FileSystem::GetInstance()->GetDefaultBinder();
+        binder = FileSystem::GetInstance().GetDefaultBinder();
     }
 
     // This file is not currently open; create a new file handle for it.
@@ -393,7 +397,7 @@ csl::fnd::com_ptr<FileHandleObj> FileReaderCri::CreateHandle(const char* filePat
         fileHandle = file::CreateHandle(m_allocator);
         if (!param_4)
         {
-            param_5 = csl::ut::RoundUp(fileSize, 64);
+            param_5 = RoundUp(fileSize, 64);
         }
 
         fileHandle->Buffer = param_4;
@@ -405,8 +409,8 @@ csl::fnd::com_ptr<FileHandleObj> FileReaderCri::CreateHandle(const char* filePat
         fileHandle->Allocator = allocator;
         fileHandle->field_0x9c = (param_4 != nullptr);
 
-        csl::fnd::StrLcpy(fileHandle->field_0x20, filePath, 64);
-        csl::fnd::StrLcpy(fileHandle->field_0x60, registName, 48);
+        StrLcpy(fileHandle->field_0x20, filePath, 64);
+        StrLcpy(fileHandle->field_0x60, registName, 48);
 
         // Add the new handle to the list.
         AddFileHnList(fileHandle);
@@ -445,8 +449,8 @@ void FileReaderCri::AddRequestList(Request* request)
 void FileReaderCri::CreateRegistName(const char* filePath, const char* registName,
     csl::ut::String* result)
 {
-    FileSystem* fileSys = FileSystem::GetInstance();
-    *result = (registName) ? registName : fileSys->GetFileName(filePath);
+    FileSystem& fileSystem = FileSystem::GetInstance();
+    *result = (registName) ? registName : fileSystem.GetFileName(filePath);
 }
 
 bool FileReaderCri::AddFileHnList(const csl::fnd::com_ptr<FileHandleObj>& fileHandle)

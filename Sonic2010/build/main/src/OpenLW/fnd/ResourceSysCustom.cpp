@@ -49,8 +49,8 @@ void ResourceCustomPacLoader::Setup(void* param_1, const ResourceArgsData& args)
         res.SetData(args);
 
         Packfile pac(res.GetAddress());
-        RenderManager* renderMgr = RenderManager::GetInstance();
-        CRenderingInfrastructure* renderInfra = renderMgr->GetRenderingDevice();
+        RenderManager& renderMgr = RenderManager::GetInstance();
+        CRenderingInfrastructure* renderInfra = renderMgr.GetRenderingDevice();
 
         pac.Setup(args.Allocator, renderInfra);
         if (pac.IsImportCompleted())

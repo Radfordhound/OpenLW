@@ -8,6 +8,13 @@
 #include <Hedgehog/Utility/hhPackfile.h>
 #include <csl/fnd/thread.h>
 
+using namespace app::gfx;
+using namespace app::game;
+using namespace hh::mr;
+using namespace hh::ut;
+using namespace csl::fnd;
+using namespace csl::ut;
+
 namespace app
 {
 namespace fnd
@@ -76,16 +83,16 @@ FileLoader::~FileLoader()
 
 void FileLoader::GetMultiLangResourceName(const char* name, csl::ut::String* result)
 {
-    csl::ut::StringBuf<128> stringBuf1(name, GetTempAllocator());
-    FileSystem* fileSystem = FileSystem::GetInstance();
-    csl::ut::StringBuf<128> ext(fileSystem->GetFileExtension(name), GetTempAllocator());
+    StringBuf<128> stringBuf1(name, GetTempAllocator());
+    FileSystem& fileSystem = FileSystem::GetInstance();
+    StringBuf<128> ext(fileSystem.GetFileExtension(name), GetTempAllocator());
 
     if (!ext.empty())
     {
-        csl::ut::StringBuf<128> stringBuf3(GetTempAllocator());
-        fileSystem->GetFileNameNoExtension(name, &stringBuf3);
+        StringBuf<128> stringBuf3(GetTempAllocator());
+        fileSystem.GetFileNameNoExtension(name, &stringBuf3);
 
-        csl::ut::StringBuf<128> stringBuf4(GetTempAllocator());
+        StringBuf<128> stringBuf4(GetTempAllocator());
         stringBuf4.copyFrom(stringBuf3.c_str(), stringBuf3.length() - 2, 0, 0);
 
         stringBuf4 += ".";
@@ -98,16 +105,16 @@ void FileLoader::GetMultiLangResourceName(const char* name, csl::ut::String* res
 
 void FileLoader::ResourceJobMTExec(LoadInfo* loadInfo)
 {
-    ResourceManager* resMgr = ResourceManager::GetInstance();
+    ResourceManager& resMgr = ResourceManager::GetInstance();
     const char* name = loadInfo->field_0x4->field_0x60;
-    csl::ut::StringBuf<128> stringBuf(name, GetTempAllocator());
+    StringBuf<128> stringBuf(name, GetTempAllocator());
 
     if ((loadInfo->field_0x20 & 1) != 0)
     {
         GetMultiLangResourceName(name, &stringBuf);
     }
 
-    resMgr->CreateResource(stringBuf, loadInfo->field_0x0, loadInfo->field_0x4->Buffer,
+    resMgr.CreateResource(stringBuf, loadInfo->field_0x0, loadInfo->field_0x4->Buffer,
         loadInfo->field_0x4->FileSize, loadInfo->field_0x8, loadInfo->field_0x20);
 
     if ((loadInfo->field_0xc & 2) != 0)
@@ -117,28 +124,28 @@ void FileLoader::ResourceJobMTExec(LoadInfo* loadInfo)
 
     if ((loadInfo->field_0xc & 4) != 0)
     {
-        csl::ut::StringBuf<128> stringBuf2(GetTempAllocator());
-        FileSystem* fileSystem = FileSystem::GetInstance();
+        StringBuf<128> stringBuf2(GetTempAllocator());
+        FileSystem& fileSystem = FileSystem::GetInstance();
 
-        fileSystem->GetFileNameNoExtension(stringBuf, &stringBuf2);
+        fileSystem.GetFileNameNoExtension(stringBuf, &stringBuf2);
         stringBuf2 += ".pac";
 
-        hh::ut::Packfile pac1(resMgr->Get<ResRawData>(stringBuf2).GetAddress());
-        hh::ut::Packfile pac2(loadInfo->field_0x4->Buffer);
+        Packfile pac1(resMgr.Get<ResRawData>(stringBuf2).GetAddress());
+        Packfile pac2(loadInfo->field_0x4->Buffer);
 
-        gfx::RenderManager* renderMgr = gfx::RenderManager::GetInstance();
-        hh::mr::CRenderingInfrastructure* renderInfra = renderMgr->GetRenderingDevice();
+        RenderManager& renderMgr = RenderManager::GetInstance();
+        CRenderingInfrastructure* renderInfra = renderMgr.GetRenderingDevice();
 
         pac2.Setup(loadInfo->field_0x0, renderInfra);
 
-        hh::ut::Packfile otherPac(pac2);
+        Packfile otherPac(pac2);
         __debugbreak(); // TODO: Un-comment the following code and remove this line
         /*pac1.Import(otherPac);
         pac2.Cleanup();*/
 
         if (pac1.IsImportCompleted() || pac1.GetNumberOfImport() == 0)
         {
-            resMgr->SetupCallback(otherPac, loadInfo->field_0x0);
+            resMgr.SetupCallback(otherPac, loadInfo->field_0x0);
         }
 
         loadInfo->field_0xc |= 0x1000;
@@ -149,18 +156,18 @@ bool FileLoader::ResourceJobMTStart(LoadInfo* loadInfo)
 {
     if ((loadInfo->field_0xc & 1) == 0)
     {
-        ResourceManager* resMgr = ResourceManager::GetInstance();
+        ResourceManager& resMgr = ResourceManager::GetInstance();
         const char* name = loadInfo->field_0x4->field_0x60;
-        csl::ut::StringBuf<128> stringBuf(name, GetTempAllocator());
+        StringBuf<128> stringBuf(name, GetTempAllocator());
 
         if ((loadInfo->field_0x20 & 1) != 0)
         {
             GetMultiLangResourceName(name, &stringBuf);
         }
 
-        if (resMgr->AddResourceName(stringBuf, loadInfo->field_0x4))
+        if (resMgr.AddResourceName(stringBuf, loadInfo->field_0x4))
         {
-            resMgr->CreateResource(stringBuf, loadInfo->field_0x0,
+            resMgr.CreateResource(stringBuf, loadInfo->field_0x0,
                 loadInfo->field_0x4->Buffer, loadInfo->field_0x4->FileSize,
                 loadInfo->field_0x8, loadInfo->field_0x20);
         }
@@ -170,14 +177,14 @@ bool FileLoader::ResourceJobMTStart(LoadInfo* loadInfo)
     else if ((loadInfo->field_0xc & 16) == 0)
     {
         const char* name = loadInfo->field_0x4->field_0x60;
-        csl::ut::StringBuf<128> stringBuf(name, GetTempAllocator());
+        StringBuf<128> stringBuf(name, GetTempAllocator());
 
         if ((loadInfo->field_0x20 & 1) != 0)
         {
             GetMultiLangResourceName(name, &stringBuf);
         }
 
-        if (ResourceManager::GetInstance()->AddResourceName(
+        if (ResourceManager::GetInstance().AddResourceName(
             stringBuf, loadInfo->field_0x4))
         {
             loadInfo->field_0xc |= 2;
@@ -198,7 +205,7 @@ void FileLoader::ResourceJobExec()
 {
     if (!field_0x20.empty())
     {
-        FileSystem* fileSystem = FileSystem::GetInstance();
+        FileSystem& fileSystem = FileSystem::GetInstance();
         for (auto it = field_0x20.begin(); it != field_0x20.end(); ++it)
         {
             LoadInfo* loadInfo;
@@ -213,14 +220,14 @@ void FileLoader::ResourceJobExec()
                     goto LAB_0218d460;
 
                 {
-                    hh::ut::Packfile pac(loadInfo->field_0x4->Buffer);
+                    Packfile pac(loadInfo->field_0x4->Buffer);
                     if (!pac.IsImport() || pac.IsImportCompleted())
                     {
                         goto LAB_0218d418;
                     }
 
-                    csl::ut::StringBuf<128> stringBuf(GetTempAllocator());
-                    fileSystem->GetPathName(loadInfo->field_0x4->field_0x20, &stringBuf);
+                    StringBuf<128> stringBuf(GetTempAllocator());
+                    fileSystem.GetPathName(loadInfo->field_0x4->field_0x20, &stringBuf);
 
                     // TODO
                 }
@@ -256,7 +263,7 @@ void FileLoader::LoadBufferRequestJobExec()
 {
     if (!field_0x30.empty())
     {
-        FileReader* fileReader = FileReader::GetInstance();
+        FileReader& fileReader = FileReader::GetInstance();
         auto it = field_0x30.begin();
         bool bVar1 = true;
 
@@ -268,7 +275,7 @@ void FileLoader::LoadBufferRequestJobExec()
                 LoadInfo* loadInfo = *it;
                 bVar1 = false;
 
-                std::size_t uVar4 = csl::ut::RoundUp(loadInfo->field_0x4->FileSize, 64);
+                std::size_t uVar4 = RoundUp(loadInfo->field_0x4->FileSize, 64);
                 // TODO
 
                 loadBuffer->AddRef();
@@ -279,7 +286,7 @@ void FileLoader::LoadBufferRequestJobExec()
                 loadInfo->field_0x10 = loadBuffer->field_0x68;
                 loadInfo->field_0x18 = uVar4;
 
-                fileReader->AddRequest(loadInfo->field_0x4); // TODO: Is this correct?
+                fileReader.AddRequest(loadInfo->field_0x4); // TODO: Is this correct?
 
                 field_0x10.push_back_unchecked(loadInfo);
 
@@ -307,7 +314,7 @@ void FileLoader::Update()
     {
         for (auto it = field_0x10.begin(); it != field_0x10.end();)
         {
-            csl::fnd::com_ptr<FileHandleObj> tmpFileHandle((*it)->field_0x4);
+            com_ptr<FileHandleObj> tmpFileHandle((*it)->field_0x4);
             if (tmpFileHandle->field_0x1c == 4)
             {
                 if (((*it)->field_0xc & 0x100000) == 0)
@@ -320,8 +327,8 @@ void FileLoader::Update()
                 }
                 else
                 {
-                    FileReader* fileReader = FileReader::GetInstance();
-                    fileReader->UnloadFile((*it)->field_0x4);
+                    FileReader& fileReader = FileReader::GetInstance();
+                    fileReader.UnloadFile((*it)->field_0x4);
 
                     (*it)->~LoadInfo();
                     m_allocator->Free(*it);
@@ -331,8 +338,8 @@ void FileLoader::Update()
             }
             else if (tmpFileHandle->field_0x1c == 6)
             {
-                FileReader* fileReader = FileReader::GetInstance();
-                fileReader->UnloadFile(tmpFileHandle);
+                FileReader& fileReader = FileReader::GetInstance();
+                fileReader.UnloadFile(tmpFileHandle);
 
                 if (*it)
                 {
@@ -399,8 +406,8 @@ bool FileLoader::CheckInfoListInHandle(csl::fnd::com_ptr<FileHandleObj> fileHand
 
 bool FileLoader::IsSyncComplete(csl::fnd::com_ptr<FileHandleObj> fileHandle)
 {
-    FileReader* fileReader = FileReader::GetInstance();
-    if (fileReader->IsSyncComplete(fileHandle))
+    FileReader& fileReader = FileReader::GetInstance();
+    if (fileReader.IsSyncComplete(fileHandle))
     {
         if (!CheckInfoListInHandle(fileHandle))
         {
@@ -418,10 +425,10 @@ bool FileLoader::IsSyncCompleteAll()
 
 void FileLoader::WaitSync(csl::fnd::com_ptr<FileHandleObj> fileHandle)
 {
-    FileReader* fileReader = FileReader::GetInstance();
+    FileReader& fileReader = FileReader::GetInstance();
     while (!IsSyncComplete(fileHandle))
     {
-        fileReader->Update();
+        fileReader.Update();
         Update();
 
         if (IsSyncComplete(fileHandle))
@@ -429,15 +436,15 @@ void FileLoader::WaitSync(csl::fnd::com_ptr<FileHandleObj> fileHandle)
             break;
         }
 
-        csl::fnd::ThreadSleep(1);
+        ThreadSleep(1);
     }
 }
 
 bool FileLoader::SetHintCache(const char* param_1)
 {
-    FileSystem* fileSystem = FileSystem::GetInstance();
-    return (fileSystem->Cache) ?
-        fileSystem->Cache->SetHintCache(param_1) :
+    FileSystem& fileSystem = FileSystem::GetInstance();
+    return (fileSystem.Cache) ?
+        fileSystem.Cache->SetHintCache(param_1) :
         false;
 }
 
@@ -451,8 +458,8 @@ csl::fnd::com_ptr<FileHandleObj> FileLoader::LoadFileOne(
     const char* filePath, const char* param_2,
     unsigned int param_3, const FileLoaderParam& params)
 {
-    fnd::FileReader* fileReader = fnd::FileReader::GetInstance();
-    csl::fnd::com_ptr<FileHandleObj> fileHandle = fileReader->CreateHandle(
+    FileReader& fileReader = FileReader::GetInstance();
+    com_ptr<FileHandleObj> fileHandle = fileReader.CreateHandle(
         filePath, param_2, field_0xc, params.field_0x4,
         params.field_0x8, params.field_0x10);
 
@@ -482,7 +489,7 @@ csl::fnd::com_ptr<FileHandleObj> FileLoader::LoadFileOne(
 
         if ((param_3 & 0x400) == 0)
         {
-            fileReader->AddRequest(fileHandle);
+            fileReader.AddRequest(fileHandle);
             field_0x10.push_back_unchecked(loadInfo);
             m_isSyncCompleteAll = false;
         }
@@ -500,15 +507,15 @@ csl::fnd::com_ptr<FileHandleObj> FileLoader::LoadFile(
     const char* filePath, const char* param_2,
     const FileLoaderParam& params)
 {
-    fnd::FileSystem* fileSystem = fnd::FileSystem::GetInstance();
-    csl::ut::StringBuf<128> filePathStr(filePath, GetTempAllocator());
+    FileSystem& fileSystem = FileSystem::GetInstance();
+    StringBuf<128> filePathStr(filePath, GetTempAllocator());
 
     if ((params.field_0x14 & 1) != 0)
     {
         // TODO
     }
 
-    const char* ext = fileSystem->GetFileExtension(filePathStr.c_str());
+    const char* ext = fileSystem.GetFileExtension(filePathStr.c_str());
     return LoadFileOne(filePathStr.c_str(), param_2,
         (std::strcmp(ext, "pac") == 0), params);
 }
@@ -521,7 +528,7 @@ csl::fnd::com_ptr<FileHandleObj> FileLoader::LoadFile(
 
 void FileLoader::SetupEx(unsigned int param_1, std::size_t param_2)
 {
-    param_1 = csl::ut::RoundUp(param_1, 128);
+    param_1 = RoundUp(param_1, 128);
     if (param_2 != 0 && param_1 != 0)
     {
         field_0x40 = static_cast<LoadBuffer*>(m_allocator->Alloc(
@@ -533,7 +540,7 @@ void FileLoader::SetupEx(unsigned int param_1, std::size_t param_2)
         }
     }
     
-    field_0xc = game::GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
+    field_0xc = GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
 }
 
 FileLoader::FileLoader() :

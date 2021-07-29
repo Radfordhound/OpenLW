@@ -5,6 +5,9 @@
 #include <cstring>
 #include <d3d9.h>
 
+using namespace app::hid;
+using namespace csl::fnd;
+
 namespace app
 {
 ApplicationWin* ApplicationWin::Instance = nullptr;
@@ -272,8 +275,8 @@ void ApplicationWin::InitializeMain()
     Application::InitializeMain();
 
     // Setup Windows Device.
-    hid::DeviceWin* devWin = hid::DeviceWin::GetInstance();
-    devWin->Setup(InstHandle, SurfaceHandle);
+    DeviceWin& devWin = DeviceWin::GetInstance();
+    devWin.Setup(InstHandle, SurfaceHandle);
 }
 
 void ApplicationWin::ShutdownMain()
@@ -294,7 +297,7 @@ void ApplicationWin::RunCore(SyncTimer* timer)
         }
         else
         {
-            csl::fnd::ThreadSleep(10);
+            ThreadSleep(10);
         }
 
         MSG msg;

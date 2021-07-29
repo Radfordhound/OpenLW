@@ -7,6 +7,9 @@
 #include <cstring>
 #include <cstdio> // TODO: REMOVE ME
 
+using namespace app::fnd::file;
+using namespace csl::fnd;
+
 namespace app
 {
 namespace fnd
@@ -33,11 +36,11 @@ unsigned int FileBinderCri::BindCpk(const char* filePath, int priority, bool isA
 {
     CriFsBinderId bindID;
     char buf[256];
-    FileSystem* fs = FileSystem::GetInstance();
+    FileSystem& fileSystem = FileSystem::GetInstance();
 
     if (!isAbsolute)
     {
-        std::strcpy(buf, fs->RootDirectory);
+        std::strcpy(buf, fileSystem.RootDirectory);
         std::strcat(buf, filePath);
     }
     else
@@ -45,7 +48,7 @@ unsigned int FileBinderCri::BindCpk(const char* filePath, int priority, bool isA
         std::strcpy(buf, filePath);
     }
 
-    file::ConvertPath(buf);
+    ConvertPath(buf);
     criFsBinder_BindCpk(binder, nullptr, buf, nullptr, 0, &bindID);
 
     if (bindID)
@@ -61,11 +64,11 @@ unsigned int FileBinderCri::BindDirectory(const char* filePath, int priority, bo
 {
     CriFsBinderId bindID;
     char buf[256];
-    FileSystem* fs = FileSystem::GetInstance();
+    FileSystem& fileSystem = FileSystem::GetInstance();
 
     if (!isAbsolute)
     {
-        std::strcpy(buf, fs->RootDirectory);
+        std::strcpy(buf, fileSystem.RootDirectory);
         std::strcat(buf, filePath);
     }
     else
@@ -73,7 +76,7 @@ unsigned int FileBinderCri::BindDirectory(const char* filePath, int priority, bo
         std::strcpy(buf, filePath);
     }
 
-    file::ConvertPath(buf);
+    ConvertPath(buf);
     criFsBinder_BindDirectory(binder, nullptr, buf, nullptr, 0, &bindID);
 
     if (bindID)
@@ -89,11 +92,11 @@ unsigned int FileBinderCri::BindFile(const char* filePath, int priority, bool is
 {
     CriFsBinderId bindID;
     char buf[256];
-    FileSystem* fs = FileSystem::GetInstance();
+    FileSystem& fileSystem = FileSystem::GetInstance();
 
     if (!isAbsolute)
     {
-        std::strcpy(buf, fs->RootDirectory);
+        std::strcpy(buf, fileSystem.RootDirectory);
         std::strcat(buf, filePath);
     }
     else
@@ -101,7 +104,7 @@ unsigned int FileBinderCri::BindFile(const char* filePath, int priority, bool is
         std::strcpy(buf, filePath);
     }
 
-    file::ConvertPath(buf);
+    ConvertPath(buf);
     criFsBinder_BindFile(binder, nullptr, buf, nullptr, 0, &bindID);
 
     if (bindID)
@@ -175,9 +178,9 @@ void FileBinderCri::WaitSync(unsigned int id)
 
     while (!isSyncComplete)
     {
-        FileSystem* fs = FileSystem::GetInstance();
-        fs->Update();
-        csl::fnd::ThreadSleep(1);
+        FileSystem& fileSystem = FileSystem::GetInstance();
+        fileSystem.Update();
+        ThreadSleep(1);
         isSyncComplete = IsSyncComplete(criID);
     }
 }
@@ -187,9 +190,9 @@ void FileBinderCri::WaitSyncAll()
     bool isSyncComplete = IsSyncCompleteAll();
     while (!isSyncComplete)
     {
-        FileSystem* fs = FileSystem::GetInstance();
-        fs->Update();
-        csl::fnd::ThreadSleep(1);
+        FileSystem& fileSystem = FileSystem::GetInstance();
+        fileSystem.Update();
+        ThreadSleep(1);
         isSyncComplete = IsSyncCompleteAll();
     }
 }

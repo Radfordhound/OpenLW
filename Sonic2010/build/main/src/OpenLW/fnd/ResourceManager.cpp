@@ -4,6 +4,8 @@
 #include "Allocators.h"
 #include <new>
 
+using namespace csl::ut;
+
 namespace app
 {
 namespace fnd
@@ -62,8 +64,8 @@ IResourceCustomLoader* ResourceManager::GetResourceLoader(const char* name)
 {
     if (!m_resourceLoaders.empty())
     {
-        FileSystem* fileSystem = FileSystem::GetInstance();
-        const char* ext = fileSystem->GetFileExtension(name);
+        FileSystem& fileSystem = FileSystem::GetInstance();
+        const char* ext = fileSystem.GetFileExtension(name);
         auto it = m_resourceLoaders.find(ext);
 
         if (it != m_resourceLoaders.end())
@@ -84,7 +86,7 @@ bool ResourceManager::AddResourceName(const char* name,
     if (it == m_resourceNames.end())
     {
         // Allocate buffer large enough to hold ResourceData and resource name.
-        std::size_t nameSize = csl::ut::RoundUp(std::strlen(name) + 1, 4);
+        std::size_t nameSize = RoundUp(std::strlen(name) + 1, 4);
         ResourceData* resData = static_cast<ResourceData*>(
             m_allocator->Alloc(sizeof(ResourceData) + nameSize));
 

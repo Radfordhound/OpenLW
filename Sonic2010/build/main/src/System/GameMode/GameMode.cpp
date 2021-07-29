@@ -5,6 +5,11 @@
 #include "../../OpenLW/fnd/FileSystem.h"
 #include "../../OpenLW/xgame/MessageSystem.h"
 
+using namespace app::fnd;
+using namespace app::game;
+using namespace app::xgame;
+using namespace csl::fnd;
+
 namespace app
 {
 GameMode::~GameMode()
@@ -14,10 +19,10 @@ GameMode::~GameMode()
 
 void GameMode::OnEnter(CGame& game)
 {
-    fnd::FileSystem* fileSystem = fnd::FileSystem::GetInstance();
-    if (fileSystem->Cache)
+    FileSystem& fileSystem = FileSystem::GetInstance();
+    if (fileSystem.Cache)
     {
-        fileSystem->Cache->OnEnterCache(Name);
+        fileSystem.Cache->OnEnterCache(Name);
     }
 
     // TODO
@@ -26,10 +31,10 @@ void GameMode::OnEnter(CGame& game)
 
 void GameMode::OnLeave(CGame& game)
 {
-    fnd::FileSystem* fileSystem = fnd::FileSystem::GetInstance();
-    if (fileSystem->Cache)
+    FileSystem& fileSystem = FileSystem::GetInstance();
+    if (fileSystem.Cache)
     {
-        fileSystem->Cache->OnLeaveCache();
+        fileSystem.Cache->OnLeaveCache();
     }
 }
 
@@ -55,19 +60,19 @@ void GameMode::InitializeGameMode(CGame& game)
 
 bool GameMode::PreLoadFile(const char* filePath, int param_2)
 {
-    fnd::FileLoader* fileLoader = fnd::FileLoader::GetInstance();
-    return fileLoader->PreLoadFile(filePath, param_2);
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    return fileLoader.PreLoadFile(filePath, param_2);
 }
 
 bool GameMode::LoadFile(const char* filePath, const fnd::FileLoaderParam& loaderParams)
 {
-    fnd::FileLoader* fileLoader = fnd::FileLoader::GetInstance();
-    return fileLoader->LoadFile(filePath, loaderParams);
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    return fileLoader.LoadFile(filePath, loaderParams);
 }
 
 void GameMode::AdvanceSequence()
 {
-    xgame::MsgAdvanceSequence msg;
+    MsgAdvanceSequence msg;
     Game->SendMessage(msg); // TODO: Does AdvanceSequence return this result?
 }
 
@@ -84,7 +89,7 @@ void GameMode::Destroy(CGame& game)
 void* GameMode::operator new(std::size_t size)
 {
     // Get a "default" allocator.
-    csl::fnd::IAllocator* allocator = game::GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
+    IAllocator* allocator = GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
 
     // Allocate a new GameMode of the given size.
     GameMode* obj = static_cast<GameMode*>(allocator->Alloc(size));

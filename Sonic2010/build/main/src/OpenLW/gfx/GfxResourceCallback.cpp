@@ -10,8 +10,8 @@ void GfxResourceCallback::SetupCallback(hh::ut::Packfile pac,
 {
     pac.Bind(allocator, pac);
     
-    RenderManager* renderMgr = RenderManager::GetInstance();
-    pac.Bind(allocator, renderMgr->GetShaderFileResource());
+    RenderManager& renderMgr = RenderManager::GetInstance();
+    pac.Bind(allocator, renderMgr.GetShaderFileResource());
 }
 
 void GfxResourceCallback::CleanupCallback(hh::ut::Packfile pac) {}

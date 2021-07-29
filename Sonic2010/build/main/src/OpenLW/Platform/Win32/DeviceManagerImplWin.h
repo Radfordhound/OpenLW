@@ -35,7 +35,7 @@ struct DeviceManager::Impl // sizeof == 0x38
         field_0x20(0),
         field_0x24(0)
     {
-        Device = DeviceWin::GetInstance();
+        Device = &DeviceWin::GetInstance();
         std::size_t deviceCount = Device->GetPortMax();
 
         for (int i = 0; i < MAX_DEVICE_PORTS; ++i)

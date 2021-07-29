@@ -21,7 +21,7 @@ FileSystemCri::~FileSystemCri()
 
 void FileSystemCri::Update()
 {
-    FileReader::GetInstance()->Update();
+    FileReader::GetInstance().Update();
 }
 
 FileBinder* FileSystemCri::GetDefaultBinder() const
