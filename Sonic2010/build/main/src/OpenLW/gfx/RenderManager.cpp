@@ -53,5 +53,10 @@ void RenderManager::Present()
 {
     m_impl->Present();
 }
+
+hh::ut::Packfile RenderManager::GetShaderFileResource() const
+{
+    return m_impl->GetShaderFileResource();
+}
 }
 }

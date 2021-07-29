@@ -2,7 +2,8 @@
 #include "../fnd/SUpdateInfo.h"
 #include "../fnd/ReferencedObject.h"
 #include "../fnd/Singleton.h"
-#include "Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h"
+#include <Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h>
+#include <Hedgehog/Utility/hhPackfile.h>
 
 namespace app
 {
@@ -61,6 +62,9 @@ public:
 
     // Wii U: 0x02263d28, PC: TODO
     void Present();
+
+    // Wii U: 0x02264694, PC: TODO
+    hh::ut::Packfile GetShaderFileResource() const;
 };
 }
 }

@@ -134,6 +134,9 @@ bool RenderManager::Impl::SetupShader()
             }
         }
 
+        field_0xd4 = new (RenderMgr->m_allocator) GfxResourceCallback(RenderMgr->m_allocator);
+        ResourceManager::GetInstance()->AddCallback(field_0xd4.get(), 0);
+
         // TODO
         return true;
     }

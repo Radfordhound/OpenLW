@@ -810,6 +810,9 @@
     <ClCompile Include="..\..\src\OpenLW\gfx\RenderManagerImpl.cpp">
       <Filter>OpenLW\gfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\GfxResourceCallback.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -987,6 +990,12 @@
       <Filter>OpenLW\xgame</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\gfx\RenderManagerImpl.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceCallbackBase.h">
+      <Filter>OpenLW\fnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\GfxResourceCallback.h">
       <Filter>OpenLW\gfx</Filter>
     </ClInclude>
   </ItemGroup>

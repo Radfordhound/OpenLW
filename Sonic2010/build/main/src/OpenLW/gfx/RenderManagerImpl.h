@@ -1,9 +1,10 @@
 #pragma once
 #include "RenderManager.h"
+#include "GfxResourceCallback.h"
 #include "../fnd/FileLoader.h"
-#include <Hedgehog/Utility/hhPackfile.h>
 #include <Hedgehog/MTBase/Thread/hhMTJobThreadFactory.h>
 #include <boost/scoped_ptr.hpp>
+#include <boost/intrusive_ptr.hpp>
 
 namespace app
 {
@@ -16,23 +17,24 @@ struct RenderManager::Impl // TODO: Inherit from the appropriate classes. // siz
 
     // TODO: Other Data Members
 
-    unsigned int Unknown1; // TODO: Is this a uint?
-    fnd::SUpdateInfo UpdateInfo;
+    unsigned int Unknown1; // offset: 136 // TODO: Is this a uint?
+    fnd::SUpdateInfo UpdateInfo; // offset: 140
 
     // TODO: Other Data Members
 
-    UpdateFunc UpdatePtr;
+    UpdateFunc UpdatePtr; // offset: 160
 
-    bool SkipPresent; // TODO: Is this a good name for this?
+    bool SkipPresent; // offset: 164 // TODO: Is this a good name for this?
     // TODO: Other Data Members
-    RenderManager* RenderMgr;
-    csl::fnd::com_ptr<fnd::FileHandleObj> field_0xac;
-    boost::scoped_ptr<hh::mr::CRenderingInfrastructure> RenderingInfrastructure;
+    RenderManager* RenderMgr; // offset: 168
+    csl::fnd::com_ptr<fnd::FileHandleObj> field_0xac; // offset: 172
+    boost::scoped_ptr<hh::mr::CRenderingInfrastructure> RenderingInfrastructure; // offset: 176
     // TODO: Other Data Members
-    hh::MTBase::SJobJoint* JobJoint1;
-    hh::MTBase::SJobJoint* JobJoint2;
+    hh::MTBase::SJobJoint* JobJoint1; // offset: 192
+    hh::MTBase::SJobJoint* JobJoint2; // offset: 196
     // TODO: Other Data Members
-    SetupInfo Info;
+    SetupInfo Info; // offset: 204
+    boost::intrusive_ptr<GfxResourceCallback> field_0xd4; // offset: 212
     // TODO: Other Data Members
 
     // Wii U: 0x022587fc, PC: 0x004e7a00
@@ -72,10 +74,10 @@ struct RenderManager::Impl // TODO: Inherit from the appropriate classes. // siz
     // Wii U: 0x02263cc0, PC: TODO
     void Present();
 
-    // Wii U: 0x0226bd5c, PC: TODO
+    // Wii U: 0x0226bd5c, PC: 0x004e5d80
     bool SetupShader();
 
-    // Wii U: 0x0226bf5c, PC: TODO
+    // Wii U: 0x0226bf5c, PC: 0x004e6c90
     void Update_Init(const fnd::SUpdateInfo& updateInfo, unsigned int param_2);
 
     // Wii U: 0x0226bfd0, PC: TODO

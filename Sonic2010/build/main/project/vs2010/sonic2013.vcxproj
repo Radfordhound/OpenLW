@@ -112,6 +112,7 @@
     <ClCompile Include="..\..\src\OpenLW\GameBase.cpp" />
     <ClCompile Include="..\..\src\OpenLW\GameObject.cpp" />
     <ClCompile Include="..\..\src\OpenLW\game\GlobalAllocator.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\gfx\GfxResourceCallback.cpp" />
     <ClCompile Include="..\..\src\OpenLW\gfx\RenderManager.cpp" />
     <ClCompile Include="..\..\src\OpenLW\gfx\RenderManagerImpl.cpp" />
     <ClCompile Include="..\..\src\OpenLW\hid\DeviceBase.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="..\..\src\OpenLW\fnd\Message.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\MessageManager.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\ReferencedObject.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceCallbackBase.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\ResourceCustom.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\ResourceManager.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\ResourceSysCustom.h" />
@@ -170,6 +172,7 @@
     <ClInclude Include="..\..\src\OpenLW\GameBase.h" />
     <ClInclude Include="..\..\src\OpenLW\GameObject.h" />
     <ClInclude Include="..\..\src\OpenLW\game\GlobalAllocator.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\GfxResourceCallback.h" />
     <ClInclude Include="..\..\src\OpenLW\gfx\RenderManager.h" />
     <ClInclude Include="..\..\src\OpenLW\gfx\RenderManagerImpl.h" />
     <ClInclude Include="..\..\src\OpenLW\hid\DeviceBase.h" />

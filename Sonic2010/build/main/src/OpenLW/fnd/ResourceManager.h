@@ -11,6 +11,8 @@ namespace app
 {
 namespace fnd
 {
+struct ResourceCallbackBase;
+
 template<typename T>
 struct ResRawBase : public hh::ut::ResCommon<T> // TODO: Is this correct?
 {
@@ -73,9 +75,10 @@ struct ResRawData : public ResRawBase<ResRawDataData>
         ResRawBase<ResRawDataData>(data) {}
 };
 
-struct ResourceCallbackData // size == 8?
+struct ResourceCallbackData // size == 8
 {
-    // TODO
+    unsigned int Value;
+    ResourceCallbackBase* Callback;
 };
 
 class ResourceManager : public ReferencedObject, public csl::fnd::Singleton<ResourceManager> // size == 0xc0
@@ -124,6 +127,15 @@ public:
     void CreateResource(const char* name, csl::fnd::IAllocator* allocator,
         void* data, std::size_t size, int category, unsigned int param_6);
 
+    // Wii U: 0x021b0a5c, PC: TODO
+    static int ResouceCallbackSort(ResourceCallbackData a, ResourceCallbackData b);
+
+    // Wii U: 0x021b0a74, PC: TODO
+    void AddCallback(ResourceCallbackBase* callback, unsigned int value);
+
+    // Wii U: 0x021b0c38, PC: TODO
+    void SetupCallback(hh::ut::Packfile pac, csl::fnd::IAllocator* allocator);
+
     // Wii U: 0x021b0d8c, PC: TODO
     void* GetResource(const char* name, std::size_t size);
 
@@ -132,9 +144,6 @@ public:
     {
         return T(GetResource(name, sizeof(typename T::value_type)));
     }
-
-    // Wii U: 0x021b0c38, PC: TODO
-    void SetupCallback(hh::ut::Packfile pac, csl::fnd::IAllocator* allocator);
 };
 }
 }

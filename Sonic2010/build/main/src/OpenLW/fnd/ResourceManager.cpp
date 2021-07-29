@@ -140,6 +140,42 @@ void ResourceManager::CreateResource(const char* name, csl::fnd::IAllocator* all
     // TODO
 }
 
+int ResourceManager::ResouceCallbackSort(ResourceCallbackData a, ResourceCallbackData b)
+{
+    return (a.Value < b.Value);
+}
+
+void ResourceManager::AddCallback(ResourceCallbackBase* callback, unsigned int value)
+{
+    // TODO
+
+    ResourceCallbackData callbackData =
+    {
+        value,
+        callback
+    };
+
+    m_resourceCallbackData.push_back_unchecked(callbackData);
+
+    std::sort(m_resourceCallbackData.begin(), m_resourceCallbackData.end(),
+        ResouceCallbackSort);
+
+    // TODO
+}
+
+void ResourceManager::SetupCallback(hh::ut::Packfile pac, csl::fnd::IAllocator* allocator)
+{
+    // TODO
+
+    for (std::size_t i = 0; i < m_resourceCallbackData.size(); ++i)
+    {
+        ResourceCallbackData& resCallbackData = m_resourceCallbackData.at(i);
+        // TODO
+    }
+
+    // TODO
+}
+
 void* ResourceManager::GetResource(const char* name, std::size_t size)
 {
     void* res = nullptr;
@@ -170,19 +206,6 @@ void* ResourceManager::GetResource(const char* name, std::size_t size)
 
     // TODO
     return res;
-}
-
-void ResourceManager::SetupCallback(hh::ut::Packfile pac, csl::fnd::IAllocator* allocator)
-{
-    // TODO
-
-    for (std::size_t i = 0; i < m_resourceCallbackData.size(); ++i)
-    {
-        ResourceCallbackData& resCallbackData = m_resourceCallbackData.at(i);
-        // TODO
-    }
-
-    // TODO
 }
 
 // Wii U: 0x021b0ec0, PC: TODO
