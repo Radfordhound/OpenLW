@@ -23,6 +23,9 @@ struct ResShaderData
 
 struct ResShader : public ut::ResCommon<ResShaderData>
 {
+    // Wii U: 0x0367cce8, PC: TODO
+    static const ut::ResourceTypeInfo& staticTypeInfo();
+
     // Wii U: 0x0367ccf4, PC: TODO
     ResTechnique GetResTechnique(std::size_t index) const;
 
@@ -49,6 +52,9 @@ struct ResShader : public ut::ResCommon<ResShaderData>
 
     // Wii U: 0x0367d978, PC: 0x0367d978
     void Cleanup(std::size_t index);
+
+    // Wii U: 0x0367da28, PC: TODO
+    bool FinalInitialization();
 
     inline ResShader(const void* data) :
         ResCommon<ResShaderData>(data) {}

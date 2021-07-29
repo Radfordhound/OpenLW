@@ -1,11 +1,16 @@
 #include "Hedgehog/Graphics/Resource/hhResShaderAc.h"
+#include "Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h"
+#include "Hedgehog/Graphics/Resource/hhResShaderConstant.h"
+#include "Hedgehog/Graphics/Resource/hhResShaderSampler.h"
 #include <Hedgehog/Database/hhSampleChunk.h>
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
+#include <csl/ut/number.h>
 
 using namespace hh::db;
 using namespace hh::mr;
 using namespace hh::gfx::res::detail;
 using namespace hh::gfx::internal;
+using namespace csl::ut;
 
 namespace hh
 {
@@ -13,6 +18,11 @@ namespace gfx
 {
 namespace res
 {
+const ut::ResourceTypeInfo& ResShader::staticTypeInfo()
+{
+    return ResShaderTypeInfo;
+}
+
 ResTechnique ResShader::GetResTechnique(std::size_t index) const
 {
     return (index < ptr()->TechniqueCount) ?
@@ -113,10 +123,10 @@ static void* ShaderList2ResShader(CShaderListV0Resource* shaderListRes,
 
     *size = (sizeof(ResShaderData) +
         (sizeof(ResTechniqueData) * techniqueCount) +
-        // TODO: Account for whatever the second array of things in the shader list data is.
+        ((sizeof(ResShaderConstantData) + sizeof(float[4])) * 
+           shaderListRes->GetDefaultParameterCount()) +
         (sizeof(ResMapChannelFixedData) * shaderListRes->GetMapChannelFixedCount()) +
-        sizeof(ResUserDataItemData) // TODO: Account for the missing 15 bytes properly
-        );
+        sizeof(ResUserDataItemData) + 15); // TODO: What are the extra 15 bytes for? Alignment??
 
     ResShaderData* shaderData = static_cast<ResShaderData*>(allocator->Alloc(*size));
     std::memset(shaderData, 0, sizeof(ResShaderData));
@@ -135,20 +145,59 @@ static void* ShaderList2ResShader(CShaderListV0Resource* shaderListRes,
         }
     }
 
-    shaderData->DefaultParameter.field_0x14 = 0;
-    // TODO
-    shaderData->DefaultParameter.field_0x8 = 0;
-    shaderData->DefaultParameter.NumSamplers = 0;
-    shaderData->DefaultParameter.field_0x18 = 0;
-    shaderData->DefaultParameter.field_0x4 = 0;
-    shaderData->DefaultParameter.ShaderSamplers = nullptr;
+    shaderData->DefaultParameter.Float4Constants = reinterpret_cast<
+        ResShaderConstantData*>(&shaderData->Techniques[techniqueCount]);
 
+    shaderData->DefaultParameter.Int4Constants = nullptr;
+    shaderData->DefaultParameter.Bool4Constants = nullptr;
+    shaderData->DefaultParameter.Samplers = nullptr;
+
+    shaderData->DefaultParameter.Float4ConstantCount =
+        shaderListRes->GetDefaultParameterCount();
+
+    shaderData->DefaultParameter.Int4ConstantCount = 0;
+    shaderData->DefaultParameter.Bool4ConstantCount = 0;
+    shaderData->DefaultParameter.SamplerCount = 0;
+    
     std::size_t curOff = (sizeof(ResShaderData) +
         (sizeof(ResTechniqueData) * techniqueCount) +
-        0 // TODO: Account for whatever the second array of things in the shader list data is.
-        );
+        (sizeof(ResShaderConstantData) * shaderData->DefaultParameter.Float4ConstantCount));
 
-    // TODO
+    if (shaderListRes->GetDefaultParameterCount() != 0)
+    {
+        std::uintptr_t local_2c0 = reinterpret_cast<std::uintptr_t>(
+            shaderData->DefaultParameter.Float4Constants +
+            shaderData->DefaultParameter.Float4ConstantCount);
+
+        curOff = static_cast<std::size_t>(RoundUp(local_2c0, 16) -
+            reinterpret_cast<std::uintptr_t>(shaderData));
+    }
+
+    for (std::size_t i = 0; i < shaderListRes->GetDefaultParameterCount(); ++i)
+    {
+        auto curDefaultParameter = shaderListRes->GetDefaultParameter(i);
+        auto& curConstant = shaderData->DefaultParameter.Float4Constants[i];
+
+        for (std::size_t i2 = 0; i2 < HH_COUNT_OF(VertexShaderSubPermutations); ++i2)
+        {
+            curConstant.Usages[i2] = nullptr;
+        }
+
+        curConstant.field_0x8 = 0;
+        curConstant.field_0xc = 1;
+        curConstant.Data = PtrAdd<void>(shaderData, curOff);
+
+        InitResNameData(&curConstant.UsageName, GetUniqueString(
+            curDefaultParameter->GetName()));
+
+        curOff += sizeof(float[4]);
+
+        float* data = static_cast<float*>(curConstant.Data);
+        for (std::size_t i2 = 0; i2 < 4; ++i2)
+        {
+            data[i2] = curDefaultParameter->GetValue(i2);
+        }
+    }
 
     shaderData->field_0x2c = shaderListRes->GetMapChannelFixedCount();
     shaderData->field_0x28 = PtrAdd<ResMapChannelFixedData>(shaderData, curOff);
@@ -366,6 +415,145 @@ void ResShader::Cleanup(std::size_t index)
         
         allocator->Free(this); // TODO: Is this correct?
     }
+}
+
+bool ResShader::FinalInitialization()
+{
+    if (!ptr()->Techniques)
+    {
+        return false;
+    }
+
+    ResTechnique defaultTechnique = GetResTechnique(0);
+    ResParameter defaultParameter = GetDefaultParameter();
+    ResVertexShader defaultVertexShader = defaultTechnique.ptr()->VertexShader;
+
+    if (defaultVertexShader.IsValid())
+    {
+        for (std::size_t i = 0; i < defaultParameter.ptr()->Float4ConstantCount; ++i)
+        {
+            ResShaderConstant curConstant(defaultParameter.ptr()->Float4Constants + i);
+            for (std::size_t i2 = 0; i2 < defaultVertexShader.ptr()->Float4UsageCount; ++i2)
+            {
+                ResShaderConstantUsage curUsage(defaultVertexShader.ptr()->Float4Usages + i2);
+                if (curConstant.GetUsageName() == curUsage.GetName())
+                {
+                    curConstant.ptr()->Usages[0] = curUsage.ptr();
+                    break;
+                }
+            }
+        }
+
+        for (std::size_t i = 0; i < defaultParameter.ptr()->Int4ConstantCount; ++i)
+        {
+            ResShaderConstant curConstant(defaultParameter.ptr()->Int4Constants + i);
+            for (std::size_t i2 = 0; i2 < defaultVertexShader.ptr()->Int4UsageCount; ++i2)
+            {
+                ResShaderConstantUsage curUsage(defaultVertexShader.ptr()->Int4Usages + i2);
+                if (curConstant.GetUsageName() == curUsage.GetName())
+                {
+                    curConstant.ptr()->Usages[0] = curUsage.ptr();
+                    break;
+                }
+            }
+        }
+
+        for (std::size_t i = 0; i < defaultParameter.ptr()->Bool4ConstantCount; ++i)
+        {
+            ResShaderConstant curConstant(defaultParameter.ptr()->Bool4Constants + i);
+            for (std::size_t i2 = 0; i2 < defaultVertexShader.ptr()->Bool4UsageCount; ++i2)
+            {
+                ResShaderConstantUsage curUsage(defaultVertexShader.ptr()->Bool4Usages + i2);
+                if (curConstant.GetUsageName() == curUsage.GetName())
+                {
+                    curConstant.ptr()->Usages[0] = curUsage.ptr();
+                    break;
+                }
+            }
+        }
+
+        std::size_t uVar3 = 0;
+        for (std::size_t i = 0; i < defaultParameter.ptr()->SamplerCount; ++i)
+        {
+            ResShaderSampler curSampler(defaultParameter.ptr()->Samplers + i);
+            for (std::size_t i2 = 0; i2 < defaultVertexShader.ptr()->SamplerUsageCount; ++i2)
+            {
+                ResShaderSamplerUsage curUsage(defaultVertexShader.ptr()->SamplerUsages + i2);
+                if (curSampler.GetUsageName() == curUsage.GetName() &&
+                    (uVar3 & (1 << curUsage.ptr()->RegIndex)) == 0)
+                {
+                    curSampler.ptr()->Usages[0] = curUsage.ptr();
+                    uVar3 |= (1 << curUsage.ptr()->RegIndex);
+                    break;
+                }
+            }
+        }
+    }
+
+    ResFragmentShader defaultPixelShader = defaultTechnique.ptr()->PixelShader;
+    if (defaultPixelShader.IsValid())
+    {
+        for (std::size_t i = 0; i < defaultParameter.ptr()->Float4ConstantCount; ++i)
+        {
+            ResShaderConstant curConstant(defaultParameter.ptr()->Float4Constants + i);
+            for (std::size_t i2 = 0; i2 < defaultPixelShader.ptr()->Float4UsageCount; ++i2)
+            {
+                ResShaderConstantUsage curUsage(defaultPixelShader.ptr()->Float4Usages + i2);
+                if (curConstant.GetUsageName() == curUsage.GetName())
+                {
+                    curConstant.ptr()->Usages[1] = curUsage.ptr();
+                    break;
+                }
+            }
+        }
+
+        for (std::size_t i = 0; i < defaultParameter.ptr()->Int4ConstantCount; ++i)
+        {
+            ResShaderConstant curConstant(defaultParameter.ptr()->Int4Constants + i);
+            for (std::size_t i2 = 0; i2 < defaultPixelShader.ptr()->Int4UsageCount; ++i2)
+            {
+                ResShaderConstantUsage curUsage(defaultPixelShader.ptr()->Int4Usages + i2);
+                if (curConstant.GetUsageName() == curUsage.GetName())
+                {
+                    curConstant.ptr()->Usages[1] = curUsage.ptr();
+                    break;
+                }
+            }
+        }
+
+        for (std::size_t i = 0; i < defaultParameter.ptr()->Bool4ConstantCount; ++i)
+        {
+            ResShaderConstant curConstant(defaultParameter.ptr()->Bool4Constants + i);
+            for (std::size_t i2 = 0; i2 < defaultPixelShader.ptr()->Bool4UsageCount; ++i2)
+            {
+                ResShaderConstantUsage curUsage(defaultPixelShader.ptr()->Bool4Usages + i2);
+                if (curConstant.GetUsageName() == curUsage.GetName())
+                {
+                    curConstant.ptr()->Usages[1] = curUsage.ptr();
+                    break;
+                }
+            }
+        }
+
+        std::size_t uVar3 = 0;
+        for (std::size_t i = 0; i < defaultParameter.ptr()->SamplerCount; ++i)
+        {
+            ResShaderSampler curSampler(defaultParameter.ptr()->Samplers + i);
+            for (std::size_t i2 = 0; i2 < defaultPixelShader.ptr()->SamplerUsageCount; ++i2)
+            {
+                ResShaderSamplerUsage curUsage(defaultPixelShader.ptr()->SamplerUsages + i2);
+                if (curSampler.GetUsageName() == curUsage.GetName() &&
+                    (uVar3 & (1 << curUsage.ptr()->RegIndex)) == 0)
+                {
+                    curSampler.ptr()->Usages[1] = curUsage.ptr();
+                    uVar3 |= (1 << curUsage.ptr()->RegIndex);
+                    break;
+                }
+            }
+        }
+    }
+
+    return true;
 }
 }
 }

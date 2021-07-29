@@ -252,15 +252,33 @@ public:
     }
 
     // TODO: Is this function actually a thing?
+    inline std::size_t GetFloatConstantCount() const
+    {
+        return m_floatConstants.GetCount();
+    }
+
+    // TODO: Is this function actually a thing?
     inline const CShaderConstantNameResource& GetIntConstants() const
     {
         return m_intConstants;
     }
 
     // TODO: Is this function actually a thing?
+    inline std::size_t GetIntConstantCount() const
+    {
+        return m_intConstants.GetCount();
+    }
+
+    // TODO: Is this function actually a thing?
     inline const CShaderConstantNameResource& GetBoolConstants() const
     {
         return m_boolConstants;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline std::size_t GetBoolConstantCount() const
+    {
+        return m_boolConstants.GetCount();
     }
 
     // TODO: Is this function actually a thing?
@@ -381,9 +399,21 @@ public:
     }
 
     // TODO: Is this function actually a thing?
+    inline std::size_t GetFloatConstantCount() const
+    {
+        return m_floatConstants.GetCount();
+    }
+
+    // TODO: Is this function actually a thing?
     inline const CShaderConstantNameResource& GetIntConstants() const
     {
         return m_intConstants;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline std::size_t GetIntConstantCount() const
+    {
+        return m_intConstants.GetCount();
     }
 
     // TODO: Is this function actually a thing?
@@ -393,9 +423,9 @@ public:
     }
 
     // TODO: Is this function actually a thing?
-    inline const CShaderSamplerUsageResource& GetTextureSamplers() const
+    inline std::size_t GetBoolConstantCount() const
     {
-        return m_texSamplers;
+        return m_boolConstants.GetCount();
     }
 
     // TODO: Is this function actually a thing?
@@ -407,9 +437,15 @@ public:
     }
 
     // TODO: Is this function actually a thing?
-    inline std::size_t GetTotalSamplerCount() const
+    inline const CShaderSamplerUsageResource& GetTextureSamplers() const
     {
-        return (m_texSamplers.GetCount());
+        return m_texSamplers;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline std::size_t GetTextureSamplerCount() const
+    {
+        return m_texSamplers.GetCount();
     }
 };
 
@@ -527,6 +563,25 @@ public:
     }
 };
 
+class CShaderDefaultParameterResource // TODO: This name was guessed; is it correct??
+{
+    OFF32(char) m_name;
+    float m_value[4]; // TODO: Is this type correct?
+
+public:
+    // TODO: Is this function actually a thing?
+    inline const char* GetName() const
+    {
+        return m_name;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline float GetValue(std::size_t index) const
+    {
+        return HH_ENDIAN_FIX_F32(m_value[index]);
+    }
+};
+
 class CMapChannelFixedResource // TODO: This name was guessed; is it correct??
 {
     OFF32(char) m_slotName;
@@ -550,8 +605,8 @@ class CShaderListV0Resource
 {
     u32 m_pixelPermutationCount;
     OFF32(OFF32(CPixelShaderPermutationData)) m_pixelPermutations;
-    u32 field_0x8;
-    OFF32(OFF32(void)) field_0xc;
+    u32 m_defaultParameterCount;
+    OFF32(OFF32(CShaderDefaultParameterResource)) m_defaultParameters;
     u32 m_mapChannelFixedCount;
     OFF32(OFF32(CMapChannelFixedResource)) m_mapChannelFixed;
 
@@ -568,6 +623,18 @@ public:
         return m_pixelPermutations[index];
     }
 
+    // TODO: Is this function actually a thing?
+    inline u32 GetDefaultParameterCount() const
+    {
+        return HH_ENDIAN_FIX_U32(m_defaultParameterCount);
+    }
+
+    // TODO: Is this function actually a thing?
+    inline const CShaderDefaultParameterResource* GetDefaultParameter(std::size_t index) const
+    {
+        return m_defaultParameters[index];
+    }
+    
     // TODO: Is this function actually a thing?
     inline u32 GetMapChannelFixedCount() const
     {

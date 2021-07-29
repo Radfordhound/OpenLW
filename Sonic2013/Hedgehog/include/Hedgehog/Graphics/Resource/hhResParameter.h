@@ -7,22 +7,26 @@ namespace gfx
 {
 namespace res
 {
-struct ResShaderSamplerData; // TODO: Move this to its own header!!!
+struct ResShaderConstantData;
+struct ResShaderSamplerData;
 
 struct ResParameterData // size == 32
 {
-    ResUserDataItemData* field_0x0;
-    std::size_t field_0x4;
-    std::size_t field_0x8;
-    ResShaderSamplerData* ShaderSamplers;
-    std::size_t field_0x10;
-    std::size_t field_0x14;
-    std::size_t field_0x18;
-    std::size_t NumSamplers;
+    ResShaderConstantData* Float4Constants;
+    ResShaderConstantData* Int4Constants;
+    ResShaderConstantData* Bool4Constants;
+    ResShaderSamplerData* Samplers;
+    std::size_t Float4ConstantCount;
+    std::size_t Int4ConstantCount;
+    std::size_t Bool4ConstantCount;
+    std::size_t SamplerCount;
 };
 
 struct ResParameter : public ut::ResCommon<ResParameterData>
 {
+    inline ResParameter(std::nullptr_t) :
+        ResCommon<ResParameterData>() {}
+
     inline ResParameter(const void* data) :
         ResCommon<ResParameterData>(data) {}
 

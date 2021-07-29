@@ -68,6 +68,18 @@
     <ClCompile Include="source\Resource\hhResMapChannelFixed.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="source\Resource\hhResShaderSamplerUsage.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResShaderSampler.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResShaderConstant.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResShaderConstantUsage.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h">
@@ -112,7 +124,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameter.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsageData.h">
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsage.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResFragmentShader.h">
@@ -131,6 +143,15 @@
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMapChannelFixed.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSampler.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResTexture.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstant.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
   </ItemGroup>

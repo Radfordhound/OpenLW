@@ -77,11 +77,11 @@ void* ResMirageVertexShaderParameter::Replace(std::size_t* size,
 
     // Setup parameter data.
     vtxShaderParams->FloatConstants = nullptr;
-    vtxShaderParams->FloatConstantCount = vtxShaderParamData->GetFloatConstants().GetCount();
+    vtxShaderParams->FloatConstantCount = vtxShaderParamData->GetFloatConstantCount();
     vtxShaderParams->IntConstants = nullptr;
-    vtxShaderParams->IntConstantCount = vtxShaderParamData->GetIntConstants().GetCount();
+    vtxShaderParams->IntConstantCount = vtxShaderParamData->GetIntConstantCount();
     vtxShaderParams->BoolConstants = nullptr;
-    vtxShaderParams->BoolConstantCount = vtxShaderParamData->GetBoolConstants().GetCount();
+    vtxShaderParams->BoolConstantCount = vtxShaderParamData->GetBoolConstantCount();
 
     // Setup constant usage data.
     std::size_t curOff = sizeof(ResMirageVertexShaderParameterData);

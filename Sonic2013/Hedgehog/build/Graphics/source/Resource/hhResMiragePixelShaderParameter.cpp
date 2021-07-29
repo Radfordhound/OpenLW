@@ -1,5 +1,7 @@
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameter.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameterTypeInfo.h"
+#include "Hedgehog/Graphics/Resource/hhResShaderConstantUsage.h"
+#include "Hedgehog/Graphics/Resource/hhResShaderSamplerUsage.h"
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <Hedgehog/Database/hhSampleChunk.h>
 #include <new>
@@ -108,66 +110,66 @@ void* ResMiragePixelShaderParameter::Replace(std::size_t* size,
     // Compute total size of parameter data + constant usage data + constant name data.
     *size = (sizeof(ResMiragePixelShaderParameterData) + sizeof(CPixelShaderParameterData) +
         (pixelShaderParamData->GetTotalConstantCount() * sizeof(ResShaderConstantUsageData)) +
-        (pixelShaderParamData->GetTotalSamplerCount() * sizeof(ResShaderSamplerUsageData)));
+        (pixelShaderParamData->GetTextureSamplerCount() * sizeof(ResShaderSamplerUsageData)));
 
     // Allocate buffer to hold parameter data + constant usage data + constant name data.
     auto pixelShaderParams = static_cast<ResMiragePixelShaderParameterData*>(
         allocator->Alloc(*size));
 
     // Setup parameter data.
-    pixelShaderParams->FloatConstants = nullptr;
-    pixelShaderParams->FloatConstantCount = pixelShaderParamData->GetFloatConstants().GetCount();
-    pixelShaderParams->IntConstants = nullptr;
-    pixelShaderParams->IntConstantCount = pixelShaderParamData->GetIntConstants().GetCount();
-    pixelShaderParams->BoolConstants = nullptr;
-    pixelShaderParams->BoolConstantCount = pixelShaderParamData->GetBoolConstants().GetCount();
-    pixelShaderParams->TexSamplers = nullptr;
-    pixelShaderParams->TexSamplerCount = pixelShaderParamData->GetTextureSamplers().GetCount();
+    pixelShaderParams->Float4Usages = nullptr;
+    pixelShaderParams->Float4UsageCount = pixelShaderParamData->GetFloatConstantCount();
+    pixelShaderParams->Int4Usages = nullptr;
+    pixelShaderParams->Int4UsageCount = pixelShaderParamData->GetIntConstantCount();
+    pixelShaderParams->Bool4Usages = nullptr;
+    pixelShaderParams->Bool4UsageCount = pixelShaderParamData->GetBoolConstantCount();
+    pixelShaderParams->SamplerUsages = nullptr;
+    pixelShaderParams->SamplerUsageCount = pixelShaderParamData->GetTextureSamplerCount();
 
     // Setup constant usage data.
     std::size_t curOff = sizeof(ResMiragePixelShaderParameterData);
-    if (pixelShaderParams->FloatConstantCount != 0)
+    if (pixelShaderParams->Float4UsageCount != 0)
     {
-        pixelShaderParams->FloatConstants = PtrAdd<ResShaderConstantUsageData>(
+        pixelShaderParams->Float4Usages = PtrAdd<ResShaderConstantUsageData>(
             pixelShaderParams, curOff);
 
-        MakeConstantName(pixelShaderParams->FloatConstants,
+        MakeConstantName(pixelShaderParams->Float4Usages,
             &pixelShaderParamData->GetFloatConstants());
 
         curOff += (pixelShaderParamData->GetFloatConstants().GetCount() *
             sizeof(ResShaderConstantUsageData));
     }
 
-    if (pixelShaderParams->IntConstantCount != 0)
+    if (pixelShaderParams->Int4UsageCount != 0)
     {
-        pixelShaderParams->IntConstants = PtrAdd<ResShaderConstantUsageData>(
+        pixelShaderParams->Int4Usages = PtrAdd<ResShaderConstantUsageData>(
             pixelShaderParams, curOff);
 
-        MakeConstantName(pixelShaderParams->IntConstants,
+        MakeConstantName(pixelShaderParams->Int4Usages,
             &pixelShaderParamData->GetIntConstants());
 
         curOff += (pixelShaderParamData->GetIntConstants().GetCount() *
             sizeof(ResShaderConstantUsageData));
     }
 
-    if (pixelShaderParams->BoolConstantCount != 0)
+    if (pixelShaderParams->Bool4UsageCount != 0)
     {
-        pixelShaderParams->BoolConstants = PtrAdd<ResShaderConstantUsageData>(
+        pixelShaderParams->Bool4Usages = PtrAdd<ResShaderConstantUsageData>(
             pixelShaderParams, curOff);
 
-        MakeConstantName(pixelShaderParams->BoolConstants,
+        MakeConstantName(pixelShaderParams->Bool4Usages,
             &pixelShaderParamData->GetBoolConstants());
 
         curOff += (pixelShaderParamData->GetBoolConstants().GetCount() *
             sizeof(ResShaderConstantUsageData));
     }
 
-    if (pixelShaderParams->TexSamplerCount != 0)
+    if (pixelShaderParams->SamplerUsageCount != 0)
     {
-        pixelShaderParams->TexSamplers = PtrAdd<ResShaderSamplerUsageData>(
+        pixelShaderParams->SamplerUsages = PtrAdd<ResShaderSamplerUsageData>(
             pixelShaderParams, curOff);
 
-        MakeSamplerUsage(pixelShaderParams->TexSamplers,
+        MakeSamplerUsage(pixelShaderParams->SamplerUsages,
             &pixelShaderParamData->GetTextureSamplers());
 
         curOff += (pixelShaderParamData->GetTextureSamplers().GetCount() *

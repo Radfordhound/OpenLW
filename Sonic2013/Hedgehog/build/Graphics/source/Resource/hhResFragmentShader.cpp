@@ -1,8 +1,10 @@
 #include "Hedgehog/Graphics/Resource/hhResFragmentShader.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameter.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h"
-#include <Hedgehog/Database/hhSampleChunk.h>
+#include "Hedgehog/Graphics/Resource/hhResShaderConstantUsage.h"
+#include "Hedgehog/Graphics/Resource/hhResShaderSamplerUsage.h"
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
+#include <Hedgehog/Database/hhSampleChunk.h>
 #include <csl/fnd/memory.h>
 #include <cstring>
 
@@ -126,10 +128,10 @@ bool ResFragmentShader::Setup(std::size_t size,
             if (pixelShaderParam.IsValid())
             {
                 ResMiragePixelShaderParameterData* pixelShaderParamData = pixelShaderParam.ptr();
-                intConstantCount += pixelShaderParamData->IntConstantCount;
-                floatConstantCount += pixelShaderParamData->FloatConstantCount;
-                boolConstantCount += pixelShaderParamData->BoolConstantCount;
-                samplerCount += pixelShaderParamData->TexSamplerCount;
+                intConstantCount += pixelShaderParamData->Int4UsageCount;
+                floatConstantCount += pixelShaderParamData->Float4UsageCount;
+                boolConstantCount += pixelShaderParamData->Bool4UsageCount;
+                samplerCount += pixelShaderParamData->SamplerUsageCount;
                 ++usageCount;
             }
         }
@@ -141,8 +143,8 @@ bool ResFragmentShader::Setup(std::size_t size,
 
         ptr()->Float4UsageCount = floatConstantCount;
         ptr()->Int4UsageCount = intConstantCount;
-        ptr()->BoolUsageCount = boolConstantCount;
-        ptr()->TexSamplerCount = samplerCount;
+        ptr()->Bool4UsageCount = boolConstantCount;
+        ptr()->SamplerUsageCount = samplerCount;
 
         IAllocator* shaderAllocator = static_cast<IAllocator*>(ptr()->UserData.Items->Data);
         
@@ -164,13 +166,13 @@ bool ResFragmentShader::Setup(std::size_t size,
         constUsageData += (ptr()->Int4UsageCount);
 
         // Setup bool usages pointer.
-        ptr()->BoolUsages = (ptr()->BoolUsageCount != 0) ?
+        ptr()->Bool4Usages = (ptr()->Bool4UsageCount != 0) ?
             constUsageData : nullptr;
 
-        constUsageData += (ptr()->BoolUsageCount);
+        constUsageData += (ptr()->Bool4UsageCount);
 
         // Setup texture sampler usages pointer.
-        ptr()->TexSamplerUsages = (ptr()->TexSamplerCount != 0) ?
+        ptr()->SamplerUsages = (ptr()->SamplerUsageCount != 0) ?
             reinterpret_cast<ResShaderSamplerUsageData*>(constUsageData) : nullptr;
 
         floatConstantCount = 0;
@@ -187,44 +189,44 @@ bool ResFragmentShader::Setup(std::size_t size,
             if (pixelShaderParam.IsValid())
             {
                 ResMiragePixelShaderParameterData* pixelShaderParamData = pixelShaderParam.ptr();
-                if (pixelShaderParamData->FloatConstantCount != 0)
+                if (pixelShaderParamData->Float4UsageCount != 0)
                 {
                     std::memcpy(ptr()->Float4Usages + floatConstantCount,
-                        pixelShaderParamData->FloatConstants,
-                        pixelShaderParamData->FloatConstantCount *
+                        pixelShaderParamData->Float4Usages,
+                        pixelShaderParamData->Float4UsageCount *
                         sizeof(ResShaderConstantUsageData));
 
-                    floatConstantCount += pixelShaderParamData->FloatConstantCount;
+                    floatConstantCount += pixelShaderParamData->Float4UsageCount;
                 }
 
-                if (pixelShaderParamData->IntConstantCount != 0)
+                if (pixelShaderParamData->Int4UsageCount != 0)
                 {
                     std::memcpy(ptr()->Int4Usages + intConstantCount,
-                        pixelShaderParamData->IntConstants,
-                        pixelShaderParamData->IntConstantCount *
+                        pixelShaderParamData->Int4Usages,
+                        pixelShaderParamData->Int4UsageCount *
                         sizeof(ResShaderConstantUsageData));
 
-                    intConstantCount += pixelShaderParamData->IntConstantCount;
+                    intConstantCount += pixelShaderParamData->Int4UsageCount;
                 }
 
-                if (pixelShaderParamData->BoolConstantCount != 0)
+                if (pixelShaderParamData->Bool4UsageCount != 0)
                 {
-                    std::memcpy(ptr()->BoolUsages + boolConstantCount,
-                        pixelShaderParamData->BoolConstants,
-                        pixelShaderParamData->BoolConstantCount *
+                    std::memcpy(ptr()->Bool4Usages + boolConstantCount,
+                        pixelShaderParamData->Bool4Usages,
+                        pixelShaderParamData->Bool4UsageCount *
                         sizeof(ResShaderConstantUsageData));
 
-                    boolConstantCount += pixelShaderParamData->BoolConstantCount;
+                    boolConstantCount += pixelShaderParamData->Bool4UsageCount;
                 }
 
-                if (pixelShaderParamData->TexSamplerCount != 0)
+                if (pixelShaderParamData->SamplerUsageCount != 0)
                 {
-                    std::memcpy(ptr()->TexSamplerUsages + samplerCount,
-                        pixelShaderParamData->TexSamplers,
-                        pixelShaderParamData->TexSamplerCount *
+                    std::memcpy(ptr()->SamplerUsages + samplerCount,
+                        pixelShaderParamData->SamplerUsages,
+                        pixelShaderParamData->SamplerUsageCount *
                         sizeof(ResShaderSamplerUsageData));
 
-                    samplerCount += pixelShaderParamData->TexSamplerCount;
+                    samplerCount += pixelShaderParamData->SamplerUsageCount;
                 }
             }
         }

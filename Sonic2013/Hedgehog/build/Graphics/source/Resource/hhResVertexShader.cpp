@@ -139,13 +139,14 @@ bool ResVertexShader::Setup(std::size_t size,
 
         ptr()->Float4UsageCount = floatConstantCount;
         ptr()->Int4UsageCount = intConstantCount;
-        ptr()->BoolUsageCount = boolConstantCount;
+        ptr()->Bool4UsageCount = boolConstantCount;
 
         IAllocator* shaderAllocator = static_cast<IAllocator*>(ptr()->UserData.Items->Data);
         
         // Allocate buffer for constant usage data.
         auto constUsageData = static_cast<ResShaderConstantUsageData*>(shaderAllocator->Alloc(
-            (floatConstantCount + intConstantCount + boolConstantCount) * sizeof(ResShaderConstantUsageData)));
+            (floatConstantCount + intConstantCount + boolConstantCount) *
+            sizeof(ResShaderConstantUsageData)));
 
         // Setup float usages pointer.
         ptr()->Float4Usages = (ptr()->Float4UsageCount != 0) ?
@@ -160,7 +161,7 @@ bool ResVertexShader::Setup(std::size_t size,
         constUsageData += (ptr()->Int4UsageCount);
 
         // Setup bool usages pointer.
-        ptr()->BoolUsages = (ptr()->BoolUsageCount != 0) ?
+        ptr()->Bool4Usages = (ptr()->Bool4UsageCount != 0) ?
             constUsageData : nullptr;
 
         floatConstantCount = 0;
@@ -198,7 +199,7 @@ bool ResVertexShader::Setup(std::size_t size,
 
                 if (vtxShaderParamData->BoolConstantCount != 0)
                 {
-                    std::memcpy(ptr()->BoolUsages + boolConstantCount,
+                    std::memcpy(ptr()->Bool4Usages + boolConstantCount,
                         vtxShaderParamData->BoolConstants,
                         vtxShaderParamData->BoolConstantCount *
                         sizeof(ResShaderConstantUsageData));
@@ -208,8 +209,8 @@ bool ResVertexShader::Setup(std::size_t size,
             }
         }
 
-        ptr()->TexSamplerUsages = nullptr;
-        ptr()->TexSamplerCount = 0;
+        ptr()->SamplerUsages = nullptr;
+        ptr()->SamplerUsageCount = 0;
     }
 
     return true;

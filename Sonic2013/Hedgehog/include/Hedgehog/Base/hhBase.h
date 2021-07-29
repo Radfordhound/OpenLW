@@ -18,6 +18,7 @@
 #define HH_ENDIAN_FIX_U16(v) (v)
 #define HH_ENDIAN_FIX_U32(v) (v)
 #define HH_ENDIAN_FIX_U64(v) (v)
+#define HH_ENDIAN_FIX_F32(v) (v)
 #else
 #if defined(_MSC_VER) && _MSC_VER >= 1310 
 #include <stdlib.h>
@@ -29,6 +30,8 @@
 #define HH_ENDIAN_FIX_U32(v) __builtin_bswap32(v)
 #define HH_ENDIAN_FIX_U64(v) __builtin_bswap64(v)
 #endif
+
+#define HH_ENDIAN_FIX_F32(v) ::hh::internal::SwapFloat32(v)
 #endif
 
 /* Helper macros. */
@@ -56,6 +59,19 @@ typedef std::int32_t s32;
 typedef std::uint32_t u32;
 typedef std::int64_t s64;
 typedef std::uint64_t u64;
+
+#ifndef HH_IS_BIG_ENDIAN
+namespace internal
+{
+// NOTE: This function is custom and is NOT present in the original game!
+inline float SwapFloat32(float v)
+{
+    u32& ref = reinterpret_cast<u32&>(v);
+    ref = HH_ENDIAN_FIX_U32(ref);
+    return reinterpret_cast<float&>(ref);
+}
+}
+#endif
 
 // NOTE: This function is custom and is NOT present in the original game!
 template<typename T, typename val_t>

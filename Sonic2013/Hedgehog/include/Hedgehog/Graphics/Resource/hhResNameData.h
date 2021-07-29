@@ -45,6 +45,9 @@ struct ResName : public ut::ResCommon<ResNameData>
         return ptr()->String;
     }
 
+    inline ResName(std::nullptr_t) :
+        ResCommon<ResNameData>() {}
+
     inline ResName(const void* data) :
         ResCommon<ResNameData>(data) {}
 

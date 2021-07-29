@@ -25,6 +25,10 @@
     <ClCompile Include="source\Resource\hhResFragmentShader.cpp" />
     <ClCompile Include="source\Resource\hhResShaderAc.cpp" />
     <ClCompile Include="source\Resource\hhResShaderAcTypeInfo.cpp" />
+    <ClCompile Include="source\Resource\hhResShaderConstant.cpp" />
+    <ClCompile Include="source\Resource\hhResShaderConstantUsage.cpp" />
+    <ClCompile Include="source\Resource\hhResShaderSampler.cpp" />
+    <ClCompile Include="source\Resource\hhResShaderSamplerUsage.cpp" />
     <ClCompile Include="source\Resource\hhResTechnique.cpp" />
     <ClCompile Include="source\Resource\hhResUserData.cpp" />
     <ClCompile Include="source\Resource\hhResVertexShader.cpp" />
@@ -46,11 +50,14 @@
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderAc.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderAcTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstant.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h" />
-    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsageData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsage.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResTechnique.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResTexture.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResUserData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResVertexShader.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSampler.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{241F2447-CB22-4F3E-B8C0-3C9CCB3CF936}</ProjectGuid>

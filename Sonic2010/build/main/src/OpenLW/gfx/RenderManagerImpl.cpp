@@ -125,6 +125,15 @@ bool RenderManager::Impl::SetupShader()
         Packfile shaderPac = GetShaderFileResource();
         shaderPac.Bind(RenderMgr->m_allocator, shaderPac);
 
+        for (std::size_t i = 0; i < shaderPac.GetCount<ResShader>(); ++i)
+        {
+            ResShader shader = shaderPac.Get<ResShader>(i);
+            if (shader.IsValid())
+            {
+                shader.FinalInitialization();
+            }
+        }
+
         // TODO
         return true;
     }
