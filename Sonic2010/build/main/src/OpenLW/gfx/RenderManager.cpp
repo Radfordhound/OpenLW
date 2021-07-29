@@ -11,14 +11,30 @@ RenderManager::RenderManager()
     // TODO
 }
 
-hh::mr::CRenderingInfrastructure* RenderManager::GetRenderingDevice() const
+RenderManager* RenderManager::Create(csl::fnd::IAllocator* allocator)
 {
-    return m_impl->RenderingInfrastructure.get();
+    void* buf = allocator->Alloc(sizeof(RenderManager) + sizeof(Impl));
+    return new (buf, allocator, sizeof(RenderManager)) RenderManager();
 }
 
 void RenderManager::Setup(const SetupInfo& setupInfo)
 {
     m_impl->Setup(setupInfo);
+}
+
+void RenderManager::Shutdown()
+{
+    m_impl->Shutdown();
+}
+
+void RenderManager::Update(const fnd::SUpdateInfo& updateInfo, unsigned int param_2)
+{
+    m_impl->Update(updateInfo, param_2);
+}
+
+hh::mr::CRenderingInfrastructure* RenderManager::GetRenderingDevice() const
+{
+    return m_impl->RenderingInfrastructure.get();
 }
 
 void RenderManager::RenderNoPresent()
@@ -36,22 +52,6 @@ void RenderManager::Render()
 void RenderManager::Present()
 {
     m_impl->Present();
-}
-
-void RenderManager::Update(const fnd::SUpdateInfo& updateInfo, unsigned int param_2)
-{
-    m_impl->Update(updateInfo, param_2);
-}
-
-void RenderManager::Shutdown()
-{
-    m_impl->Shutdown();
-}
-
-RenderManager* RenderManager::Create(csl::fnd::IAllocator* allocator)
-{
-    void* buf = allocator->Alloc(sizeof(RenderManager) + sizeof(Impl));
-    return new (buf, allocator, sizeof(RenderManager)) RenderManager();
 }
 }
 }

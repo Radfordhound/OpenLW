@@ -35,13 +35,25 @@ public:
             AspectRatio(0) {}
     };
 
-    // Wii U: 0x0225a014, PC: 0x004e1c10
-    hh::mr::CRenderingInfrastructure* GetRenderingDevice() const;
+    // Wii U: 0x02258a98, PC: Inlined
+    RenderManager();
+
+    // Wii U: 0x02258b10, PC: 0x004e7f70
+    static RenderManager* Create(csl::fnd::IAllocator* allocator);
 
     // Wii U: 0x02258ec0, PC: TODO
     void Setup(const SetupInfo& setupInfo);
 
-    // Wii U: TODO, PC: TODO
+    // Wii U: 0x02258fc8 (THUNK), PC: TODO
+    void Shutdown();
+
+    // Wii U: 0x02259eec, PC: TODO
+    void Update(const fnd::SUpdateInfo& updateInfo, unsigned int param_2);
+
+    // Wii U: 0x0225a014, PC: 0x004e1c10
+    hh::mr::CRenderingInfrastructure* GetRenderingDevice() const;
+
+    // Wii U: 0x02263c70, PC: TODO
     void RenderNoPresent();
 
     // Wii U: 0x02263cf4, PC: 0x004ee530
@@ -49,20 +61,6 @@ public:
 
     // Wii U: 0x02263d28, PC: TODO
     void Present();
-
-    // Wii U: 0x02259eec, PC: TODO
-    void Update(const fnd::SUpdateInfo& updateInfo, unsigned int param_2);
-
-    // TODO: Other Functions
-
-    // Wii U: 0x02258fc8 (THUNK), PC: TODO
-    void Shutdown();
-
-    // Wii U: 0x02258b10, PC: 0x004e7f70
-    static RenderManager* Create(csl::fnd::IAllocator* allocator);
-
-    // Wii U: 0x02258a98, PC: Inlined
-    RenderManager();
 };
 }
 }
