@@ -52,5 +52,10 @@ void CSampleChunkResource2::ResolvePointer()
 #endif
     }
 }
+
+bool CSampleChunkNode::IsLeaf() const
+{
+    return ((m_flags & SAMPLE_CHUNK_FLAG_IS_LEAF) != 0);
+}
 }
 }
