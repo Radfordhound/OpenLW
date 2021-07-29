@@ -32,7 +32,7 @@ void SyncTimer::Reset()
 
     // TODO
 
-    field_0x18 = csl::fnd::Tick(0);
+    field_0x18 = tick;
 
     // TODO
 }
