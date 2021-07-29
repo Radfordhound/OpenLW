@@ -34,6 +34,9 @@ struct ResVertexShader : public ut::ResCommon<ResShaderCommonData>
     // Wii U: 0x0367c41c, PC: TODO
     void Cleanup(std::size_t size);
 
+    inline ResVertexShader(std::nullptr_t) :
+        ResCommon<ResShaderCommonData>() {}
+
     inline ResVertexShader(const void* data) :
         ResCommon<ResShaderCommonData>(data) {}
 

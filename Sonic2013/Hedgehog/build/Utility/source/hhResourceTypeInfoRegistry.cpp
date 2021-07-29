@@ -22,6 +22,8 @@ const ResourceTypeInfo* const ResourceTypeInfoRegistry::ResourceTypes[] =
     // TODO
     &ResFragmentShaderTypeInfo,
     // TODO
+    &ResShaderTypeInfo,
+    // TODO
     &ResVertexShaderTypeInfo,
     // TODO
     &ResMiragePixelShaderCodeTypeInfo,

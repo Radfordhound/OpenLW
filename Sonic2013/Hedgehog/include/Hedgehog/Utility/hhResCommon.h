@@ -39,6 +39,10 @@ public:
         return (m_ptr != nullptr);
     }
 
+    // TODO: Is this function actually a thing?
+    inline ResCommon(std::nullptr_t) :
+        m_ptr(nullptr) {}
+
     ResCommon(const void* data) :
         m_ptr(static_cast<T*>(const_cast<void*>(data))) {}
 
@@ -76,7 +80,7 @@ public:
     // Wii U: 0x036945fc, PC: 0x00c1a210
     static u32 GetReverseBigEndian(u32 val);
 
-    // Wii U: 0x03694630, PC: TODO
+    // Wii U: 0x03694630, PC: 0x00c1a240
     static void ReplacePof0(void* baseAddress,
         void* pof0Address, u32 pof0Size, bool doSwap);
 

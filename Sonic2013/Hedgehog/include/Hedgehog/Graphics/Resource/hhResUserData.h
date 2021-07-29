@@ -7,7 +7,7 @@ namespace gfx
 {
 namespace res
 {
-struct ResUserDataItemData
+struct ResUserDataItemData // size == 0x18
 {
     std::size_t Index;
     std::size_t Size;

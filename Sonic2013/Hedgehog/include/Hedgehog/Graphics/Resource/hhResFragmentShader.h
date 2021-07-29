@@ -31,8 +31,11 @@ struct ResFragmentShader : public ut::ResCommon<ResShaderCommonData>
     // Wii U: 0x0367ca8c, PC: TODO
     void Unbind();
 
-    // Wii U: TODO, PC: TODO
+    // Wii U: 0x0367cb94, PC: TODO
     void Cleanup(std::size_t size);
+
+    inline ResFragmentShader(std::nullptr_t) :
+        ResCommon<ResShaderCommonData>() {}
 
     inline ResFragmentShader(const void* data) :
         ResCommon<ResShaderCommonData>(data) {}

@@ -25,6 +25,21 @@ struct ResNameData
 
 struct ResName : public ut::ResCommon<ResNameData>
 {
+    unsigned int GetHash() const
+    {
+        return ptr()->Hash;
+    }
+
+    bool operator==(const ResName& other) const
+    {
+        return (ptr() == other.ptr() || GetHash() == other.GetHash());
+    }
+
+    bool operator!=(const ResName& other) const
+    {
+        return (ptr() != other.ptr() && GetHash() != other.GetHash());
+    }
+
     inline operator const char*() const
     {
         return ptr()->String;

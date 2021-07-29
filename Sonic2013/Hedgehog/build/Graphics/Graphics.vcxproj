@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\hhGraphics.cpp" />
+    <ClCompile Include="source\Resource\hhResMapChannelFixed.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderCode.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderCodeTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderParameter.cpp" />
@@ -22,12 +23,15 @@
     <ClCompile Include="source\Resource\hhResMirageVertexShaderParameterTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResNameData.cpp" />
     <ClCompile Include="source\Resource\hhResFragmentShader.cpp" />
+    <ClCompile Include="source\Resource\hhResShaderAc.cpp" />
     <ClCompile Include="source\Resource\hhResShaderAcTypeInfo.cpp" />
+    <ClCompile Include="source\Resource\hhResTechnique.cpp" />
     <ClCompile Include="source\Resource\hhResUserData.cpp" />
     <ClCompile Include="source\Resource\hhResVertexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\hhGraphics.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMapChannelFixed.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCode.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCodeTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameter.h" />
@@ -38,10 +42,13 @@
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameterTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResFragmentShader.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResParameter.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderAc.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderAcTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsageData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResTechnique.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResUserData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResVertexShader.h" />
   </ItemGroup>

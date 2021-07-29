@@ -59,6 +59,15 @@
     <ClCompile Include="source\Resource\hhResShaderAcTypeInfo.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="source\Resource\hhResTechnique.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResShaderAc.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResMapChannelFixed.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResNameData.h">
@@ -110,6 +119,18 @@
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderAcTypeInfo.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResTechnique.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderAc.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResParameter.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMapChannelFixed.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
   </ItemGroup>

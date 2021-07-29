@@ -438,5 +438,147 @@ public:
         return m_paramResNames;
     }
 };
+
+enum CVertexShaderSubPermutation
+{
+    HH_VS_SUB_PERMUTATION_NONE = (1 << 0),
+    HH_VS_SUB_PERMUTATION_CONSTTEXCOORD = (1 << 1),
+
+    HH_VS_SUB_PERMUTATION_ALL = (
+        HH_VS_SUB_PERMUTATION_NONE |
+        HH_VS_SUB_PERMUTATION_CONSTTEXCOORD),
+};
+
+// TODO: This symbol is actually present, but did I get this confused with another struct called CVertexShaderPermutationResource?
+class CVertexShaderPermutationData
+{
+    u32 m_subPermutations;
+    OFF32(char) m_name;
+    OFF32(char) m_shaderName;
+
+public:
+    // TODO: Is this function actually a thing?
+    inline const char* GetName() const
+    {
+        return m_name;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline const char* GetShaderName() const
+    {
+        return m_shaderName;
+    }
+};
+
+enum CPixelShaderSubPermutation
+{
+    HH_PS_SUB_PERMUTATION_NONE = (1 << 0),
+    HH_PS_SUB_PERMUTATION_CONSTTEXCOORD = (1 << 1),
+    HH_PS_SUB_PERMUTATION_NOGI = (1 << 2),
+    HH_PS_SUB_PERMUTATION_NOGI_CONSTTEXCOORD = (1 << 3),
+    HH_PS_SUB_PERMUTATION_NOLIGHT = (1 << 4),
+    HH_PS_SUB_PERMUTATION_NOLIGHT_CONSTTEXCOORD = (1 << 5),
+    HH_PS_SUB_PERMUTATION_NOLIGHT_NOGI = (1 << 6),
+    HH_PS_SUB_PERMUTATION_NOLIGHT_NOGI_CONSTTEXCOORD = (1 << 7),
+
+    HH_PS_SUB_PERMUTATION_ALL = (
+        HH_PS_SUB_PERMUTATION_NONE |
+        HH_PS_SUB_PERMUTATION_CONSTTEXCOORD |
+        HH_PS_SUB_PERMUTATION_NOGI |
+        HH_PS_SUB_PERMUTATION_NOGI_CONSTTEXCOORD |
+        HH_PS_SUB_PERMUTATION_NOLIGHT |
+        HH_PS_SUB_PERMUTATION_NOLIGHT_CONSTTEXCOORD |
+        HH_PS_SUB_PERMUTATION_NOLIGHT_NOGI |
+        HH_PS_SUB_PERMUTATION_NOLIGHT_NOGI_CONSTTEXCOORD),
+};
+
+// TODO: This symbol is actually present, but did I get this confused with another struct called CPixelShaderPermutationResource?
+class CPixelShaderPermutationData
+{
+    u32 field_0x0;
+    OFF32(char) m_name;
+    OFF32(char) m_shaderName;
+    u32 m_vertexPermutationCount;
+    OFF32(OFF32(CVertexShaderPermutationData)) m_vertexPermutations;
+
+public:
+    // TODO: Is this function actually a thing?
+    inline const char* GetName() const
+    {
+        return m_name;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline const char* GetShaderName() const
+    {
+        return m_shaderName;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline u32 GetVertexPermutationCount() const
+    {
+        return HH_ENDIAN_FIX_U32(m_vertexPermutationCount);
+    }
+
+    // TODO: Is this function actually a thing?
+    inline const CVertexShaderPermutationData* GetVertexPermutation(std::size_t index) const
+    {
+        return m_vertexPermutations[index];
+    }
+};
+
+class CMapChannelFixedResource // TODO: This name was guessed; is it correct??
+{
+    OFF32(char) m_slotName;
+    u32 m_value;
+
+public:
+    // TODO: Is this function actually a thing?
+    inline const char* GetSlotName() const
+    {
+        return m_slotName;
+    }
+
+    // TODO: Is this function actually a thing?
+    inline u32 GetValue() const
+    {
+        return HH_ENDIAN_FIX_U32(m_value);
+    }
+};
+
+class CShaderListV0Resource
+{
+    u32 m_pixelPermutationCount;
+    OFF32(OFF32(CPixelShaderPermutationData)) m_pixelPermutations;
+    u32 field_0x8;
+    OFF32(OFF32(void)) field_0xc;
+    u32 m_mapChannelFixedCount;
+    OFF32(OFF32(CMapChannelFixedResource)) m_mapChannelFixed;
+
+public:
+    // TODO: Is this function actually a thing?
+    inline u32 GetPixelPermutationCount() const
+    {
+        return HH_ENDIAN_FIX_U32(m_pixelPermutationCount);
+    }
+
+    // TODO: Is this function actually a thing?
+    inline const CPixelShaderPermutationData* GetPixelPermutation(std::size_t index) const
+    {
+        return m_pixelPermutations[index];
+    }
+
+    // TODO: Is this function actually a thing?
+    inline u32 GetMapChannelFixedCount() const
+    {
+        return HH_ENDIAN_FIX_U32(m_mapChannelFixedCount);
+    }
+
+    // TODO: Is this function actually a thing?
+    inline const CMapChannelFixedResource* GetMapChannelFixed(std::size_t index) const
+    {
+        return m_mapChannelFixed[index];
+    }
+};
 }
 }
