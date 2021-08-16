@@ -6,7 +6,7 @@ namespace hh
 namespace rsdx
 {
 #ifdef _WIN32
-typedef IDirect3DResource9 RsdxResource;
+typedef RsdxRefcountObject RsdxResource; // TODO: Is this correct?
 #else
 struct RsdxResource : public RsdxRefcountObject
 {

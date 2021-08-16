@@ -52,6 +52,8 @@ public:
 
 struct RsdxSystemResource : public RsdxObject
 {
+    void* Handle;
+
     virtual bool CloseSystemResource() = 0;
 
     virtual bool WaitSystemResource() = 0;
