@@ -825,6 +825,9 @@
     <ClCompile Include="..\..\src\OpenLW\ApplicationProperty.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\CWorld.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1023,6 +1026,9 @@
       <Filter>OpenLW</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\ApplicationPropertyImpl.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\CWorld.h">
       <Filter>OpenLW</Filter>
     </ClInclude>
   </ItemGroup>

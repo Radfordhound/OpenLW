@@ -90,6 +90,7 @@
     <ClCompile Include="..\..\src\OpenLW\CGame.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CGameSequence.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CriSystem.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\CWorld.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\Allocators.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\CActor.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\CBranchActor.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="..\..\src\OpenLW\CGame.h" />
     <ClInclude Include="..\..\src\OpenLW\CGameSequence.h" />
     <ClInclude Include="..\..\src\OpenLW\CriSystem.h" />
+    <ClInclude Include="..\..\src\OpenLW\CWorld.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\Allocators.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\BaseObject.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\CActor.h" />
