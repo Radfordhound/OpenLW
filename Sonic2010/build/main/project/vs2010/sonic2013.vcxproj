@@ -85,6 +85,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\OpenLW\Application.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\ApplicationProperty.cpp" />
     <ClCompile Include="..\..\src\OpenLW\Atomic.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CGame.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CGameSequence.cpp" />
@@ -144,6 +145,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\OpenLW\Application.h" />
+    <ClInclude Include="..\..\src\OpenLW\ApplicationProperty.h" />
+    <ClInclude Include="..\..\src\OpenLW\ApplicationPropertyImpl.h" />
     <ClInclude Include="..\..\src\OpenLW\Atomic.h" />
     <ClInclude Include="..\..\src\OpenLW\CGame.h" />
     <ClInclude Include="..\..\src\OpenLW\CGameSequence.h" />

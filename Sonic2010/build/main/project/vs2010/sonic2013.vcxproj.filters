@@ -822,6 +822,9 @@
     <ClCompile Include="..\..\src\OpenLW\gfx\RenderableContainer.cpp">
       <Filter>OpenLW\gfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\ApplicationProperty.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1015,6 +1018,12 @@
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\gfx\RenderableContainer.h">
       <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\ApplicationProperty.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\ApplicationPropertyImpl.h">
+      <Filter>OpenLW</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
