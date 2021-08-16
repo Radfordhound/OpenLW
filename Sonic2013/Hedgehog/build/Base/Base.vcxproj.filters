@@ -30,6 +30,12 @@
     <ClCompile Include="source\System\hhMemoryAllocator.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\System\hhEventWait.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Platform\D3d9\hhEventWaitD3D9.cpp">
+      <Filter>Platform\D3d9</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemory.h">
@@ -57,6 +63,12 @@
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhEventWait.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Platform\D3d9\hhEventWaitD3D9.h">
+      <Filter>Platform\D3d9</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhPluginable.h">
       <Filter>System</Filter>

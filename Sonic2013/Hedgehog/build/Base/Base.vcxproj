@@ -11,7 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Platform\D3d9\hhEventWaitD3D9.cpp" />
     <ClCompile Include="source\System\hhCSymbol.cpp" />
+    <ClCompile Include="source\System\hhEventWait.cpp" />
     <ClCompile Include="source\System\hhHash.cpp" />
     <ClCompile Include="source\System\hhMemory.cpp" />
     <ClCompile Include="source\System\hhMemoryAllocator.cpp" />
@@ -22,7 +24,9 @@
     <ClInclude Include="..\..\include\Hedgehog\Base\hhBase.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\hhMap.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\Platform\D3d9\hhCCriticalSectionD3D9.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\Platform\D3d9\hhEventWaitD3D9.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhAllocator.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhEventWait.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhPluginable.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhSharedString.h" />
