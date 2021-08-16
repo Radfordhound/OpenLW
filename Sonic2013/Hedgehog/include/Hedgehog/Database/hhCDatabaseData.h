@@ -1,6 +1,6 @@
 #pragma once
 #include <Hedgehog/Base/System/hhObject.h>
-#include <Hedgehog/Base/System/hhCSharedString.h>
+#include <Hedgehog/Base/System/hhSharedString.h>
 
 namespace hh
 {
