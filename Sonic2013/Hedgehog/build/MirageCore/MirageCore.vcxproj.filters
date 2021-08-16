@@ -25,5 +25,8 @@
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Resource\hhShaderResource.h">
       <Filter>Resource</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\MirageCore\Resource\hhMaterialResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -59,6 +59,12 @@
     <ClCompile Include="source\Resource\hhResShaderAcTypeInfo.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="source\Resource\hhResMaterial.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Resource\hhResMaterialAcTypeInfo.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
     <ClCompile Include="source\Resource\hhResTechnique.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
@@ -131,6 +137,12 @@
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderAcTypeInfo.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMaterialAcTypeInfo.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMaterial.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResTechnique.h">

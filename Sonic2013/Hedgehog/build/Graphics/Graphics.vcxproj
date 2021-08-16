@@ -13,6 +13,8 @@
   <ItemGroup>
     <ClCompile Include="source\hhGraphics.cpp" />
     <ClCompile Include="source\Resource\hhResMapChannelFixed.cpp" />
+    <ClCompile Include="source\Resource\hhResMaterial.cpp" />
+    <ClCompile Include="source\Resource\hhResMaterialAcTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderCode.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderCodeTypeInfo.cpp" />
     <ClCompile Include="source\Resource\hhResMiragePixelShaderParameter.cpp" />
@@ -36,6 +38,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\hhGraphics.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMapChannelFixed.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMaterial.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMaterialAcTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCode.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCodeTypeInfo.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameter.h" />
