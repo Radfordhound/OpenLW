@@ -825,6 +825,9 @@
     <ClCompile Include="..\..\src\OpenLW\ApplicationProperty.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\HUD\SurfRidePlatformMIRAGE.cpp">
+      <Filter>HUD</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\CWorld.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
@@ -1042,6 +1045,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\ApplicationPropertyImpl.h">
       <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\HUD\SurfRide.h">
+      <Filter>HUD</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\CWorld.h">
       <Filter>OpenLW</Filter>

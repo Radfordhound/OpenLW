@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\HUD\SurfRidePlatformMIRAGE.cpp" />
     <ClCompile Include="..\..\src\OpenLW\Application.cpp" />
     <ClCompile Include="..\..\src\OpenLW\ApplicationProperty.cpp" />
     <ClCompile Include="..\..\src\OpenLW\Atomic.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="..\..\src\System\GameMode\GameModeStartUp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\HUD\SurfRide.h" />
     <ClInclude Include="..\..\src\OpenLW\Application.h" />
     <ClInclude Include="..\..\src\OpenLW\ApplicationProperty.h" />
     <ClInclude Include="..\..\src\OpenLW\ApplicationPropertyImpl.h" />
