@@ -60,7 +60,7 @@ public:
 
     T& at(std::size_t index)
     {
-        return (index > m_count) ? *m_data : m_data[index];
+        return (index >= m_count) ? *m_data : m_data[index];
     }
 
     inline const_iterator begin() const
@@ -168,18 +168,20 @@ public:
         if (!m_count) m_count = 0;
     }
 
-    iterator erase(const_iterator pos)
+    template<typename it_t>
+    it_t erase(it_t pos)
     {
         --m_count;
-        for (iterator it = const_cast<iterator>(pos); it != (m_data + m_count); ++it)
+        for (it_t it = pos; it != (m_data + m_count); ++it)
         {
-            *it = it[1];
+            *it = *(it + 1);
         }
 
-        return const_cast<iterator>(pos);
+        return pos;
     }
 
-    void erase_unstable(const_iterator pos)
+    template<typename it_t>
+    void erase_unstable(it_t pos)
     {
         if (pos != (m_data + --m_count))
         {
