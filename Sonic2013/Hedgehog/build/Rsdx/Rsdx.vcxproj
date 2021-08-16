@@ -30,6 +30,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\HeapMemory\hhRsdxMemoryUtil.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxAtomic.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxEvent.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxIntrusivePtr.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxMutex.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxObject.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxResource.h" />
