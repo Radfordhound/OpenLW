@@ -23,6 +23,16 @@ RsdxSListEntry* RsdxAtomicPopSList(RsdxSListHeader* header)
 #endif
 }
 
+RsdxSListEntry* RsdxAtomicPopSListWhole(RsdxSListHeader* header, RsdxSListEntry* entry)
+{
+#ifdef _WIN32
+    // TODO: Do we do anything with the second argument?
+    return InterlockedFlushSList(&header->_Impl);
+#else
+    // TODO
+#endif
+}
+
 RsdxAtomic RsdxAtomicInc(RsdxAtomic* v)
 {
     // TODO!!!
@@ -33,6 +43,15 @@ RsdxAtomic RsdxAtomicInc2(RsdxAtomic* v)
 {
 #ifdef _WIN32
     return InterlockedIncrement(v);
+#else
+    // TODO
+#endif
+}
+
+RsdxAtomic RsdxAtomicDec2(RsdxAtomic* v)
+{
+#ifdef _WIN32
+    return InterlockedDecrement(v);
 #else
     // TODO
 #endif
