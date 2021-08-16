@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Graphics\hhGraphics.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\hhRenderEvent.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMapChannelFixed.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMaterial.h" />
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResMaterialAcTypeInfo.h" />

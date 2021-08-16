@@ -166,5 +166,8 @@
     <ClInclude Include="..\..\include\Hedgehog\Graphics\Resource\hhResShaderConstant.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Graphics\hhRenderEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
