@@ -813,6 +813,15 @@
     <ClCompile Include="..\..\src\OpenLW\gfx\GfxResourceCallback.cpp">
       <Filter>OpenLW\gfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\Renderable.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\RenderableEvent.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\RenderableContainer.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -996,6 +1005,15 @@
       <Filter>OpenLW\fnd</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\gfx\GfxResourceCallback.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\Renderable.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\RenderableEvent.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\RenderableContainer.h">
       <Filter>OpenLW\gfx</Filter>
     </ClInclude>
   </ItemGroup>
