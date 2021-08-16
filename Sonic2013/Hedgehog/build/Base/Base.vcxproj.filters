@@ -10,6 +10,9 @@
     <Filter Include="System">
       <UniqueIdentifier>{a8d97578-c2e7-4280-a3b2-2128e112ad89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{5d4ed2ed-09fc-43b5-8882-f1388dc8f459}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\System\hhMemory.cpp">
@@ -27,10 +30,16 @@
     <ClCompile Include="source\System\hhSharedString.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\Platform\D3d9\hhThreadImpD3D9.cpp">
+      <Filter>Platform\D3d9</Filter>
+    </ClCompile>
     <ClCompile Include="source\System\hhMemoryAllocator.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="source\hhBaseCommon.cpp" />
+    <ClCompile Include="source\Thread\hhThread.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
     <ClCompile Include="source\System\hhEventWait.cpp">
       <Filter>System</Filter>
     </ClCompile>
@@ -65,8 +74,14 @@
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhAllocator.h">
       <Filter>System</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Platform\D3d9\hhThreadImpD3D9.h">
+      <Filter>Platform\D3d9</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Thread\hhThread.h">
+      <Filter>Thread</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhEventWait.h">
       <Filter>System</Filter>
