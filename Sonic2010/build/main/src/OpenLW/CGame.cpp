@@ -161,9 +161,9 @@ CGame::CGame() :
     m_aspectRatio(1280.0f / 720.0f)
     // TODO: Initialize field_0x74 to 0.
 {
-    SetUpdateFlag(PHASE_NORMAL, false);
-    SetUpdateFlag(PHASE_UNK_ONE, false);
-    SetUpdateFlag(PHASE_UNK_TWO, false);
+    SetUpdateFlag(PHASE_ONE, false);
+    SetUpdateFlag(PHASE_TWO, false);
+    SetUpdateFlag(PHASE_THREE, false);
 }
 
 CGame* CreateGame(Application& app)
