@@ -9,7 +9,7 @@
 
 //  Kai C++ compiler setup:
 
-#include <boost/config/compiler/common_edg.hpp>
+#include "boost/config/compiler/common_edg.hpp"
 
 #   if (__KCC_VERSION <= 4001) || !defined(BOOST_STRICT_CONFIG)
       // at least on Sun, the contents of <cwchar> is not in namespace std
@@ -17,7 +17,7 @@
 #   endif
 
 // see also common_edg.hpp which needs a special check for __KCC
-# if !defined(_EXCEPTIONS) && !defined(BOOST_NO_EXCEPTIONS)
+# if !defined(_EXCEPTIONS)
 #     define BOOST_NO_EXCEPTIONS
 # endif
 
@@ -25,7 +25,7 @@
 // last known and checked version is 4001:
 #if (__KCC_VERSION > 4001)
 #  if defined(BOOST_ASSERT_CONFIG)
-#     error "boost: Unknown compiler version - please run the configure tests and report the results"
+#     error "Unknown compiler version - please run the configure tests and report the results"
 #  endif
 #endif
 

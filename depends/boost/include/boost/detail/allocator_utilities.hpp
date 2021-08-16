@@ -1,4 +1,4 @@
-/* Copyright 2003-2013 Joaquin M Lopez Munoz.
+/* Copyright 2003-2009 Joaquin M Lopez Munoz.
  * Distributed under the Boost Software License, Version 1.0.
  * (See accompanying file LICENSE_1_0.txt or copy at
  * http://www.boost.org/LICENSE_1_0.txt)
@@ -11,7 +11,8 @@
 
 #include <boost/config.hpp> /* keep it first to prevent nasty warns in MSVC */
 #include <boost/detail/workaround.hpp>
-#include <boost/detail/select_type.hpp>
+#include <boost/mpl/aux_/msvc_never_true.hpp>
+#include <boost/mpl/eval_if.hpp>
 #include <boost/type_traits/is_same.hpp>
 #include <cstddef>
 #include <memory>
@@ -44,7 +45,7 @@ public:
 
   typedef Type value_type;
 
-  partial_std_allocator_wrapper(){}
+  partial_std_allocator_wrapper(){};
 
   template<typename Other>
   partial_std_allocator_wrapper(const partial_std_allocator_wrapper<Other>&){}
@@ -52,7 +53,7 @@ public:
   partial_std_allocator_wrapper(const std::allocator<Type>& x):
     std::allocator<Type>(x)
   {
-  }
+  };
 
 #if defined(BOOST_DINKUMWARE_STDLIB)
   /* Dinkumware guys didn't provide a means to call allocate() without
@@ -115,21 +116,40 @@ struct partial_std_allocator_rebind_to
 
 /* rebind operation in all other cases */
 
+#if BOOST_WORKAROUND(BOOST_MSVC,<1300)
+/* Workaround for a problem in MSVC with dependent template typedefs
+ * when doing rebinding of allocators.
+ * Modeled after <boost/mpl/aux_/msvc_dtw.hpp> (thanks, Aleksey!)
+ */
+
+template<typename Allocator>
+struct rebinder
+{
+  template<bool> struct fake_allocator:Allocator{};
+  template<> struct fake_allocator<true>
+  {
+    template<typename Type> struct rebind{};
+  };
+
+  template<typename Type>
+  struct result:
+    fake_allocator<mpl::aux::msvc_never_true<Allocator>::value>::
+      template rebind<Type>
+  {
+  };
+};
+#else
 template<typename Allocator>
 struct rebinder
 {
   template<typename Type>
   struct result
   {
-#ifdef BOOST_NO_CXX11_ALLOCATOR
-      typedef typename Allocator::BOOST_NESTED_TEMPLATE
+      typedef typename Allocator::BOOST_NESTED_TEMPLATE 
           rebind<Type>::other other;
-#else
-      typedef typename std::allocator_traits<Allocator>::BOOST_NESTED_TEMPLATE
-          rebind_alloc<Type> other;
-#endif
   };
 };
+#endif
 
 template<typename Allocator,typename Type>
 struct compliant_allocator_rebind_to
@@ -142,12 +162,11 @@ struct compliant_allocator_rebind_to
 
 template<typename Allocator,typename Type>
 struct rebind_to:
-  boost::detail::if_true<
-    is_partial_std_allocator<Allocator>::value
-  >::template then<
+  mpl::eval_if_c<
+    is_partial_std_allocator<Allocator>::value,
     partial_std_allocator_rebind_to<Allocator,Type>,
     compliant_allocator_rebind_to<Allocator,Type>
-  >::type
+  >
 {
 };
 
@@ -165,7 +184,7 @@ void construct(void* p,const Type& t)
  */
 
 #pragma warning(push)
-#pragma warning(disable:4100)
+#pragma warning(disable:4100)  
 #endif
 
 template<typename Type>

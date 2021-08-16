@@ -15,8 +15,7 @@
 //  See accompanying file LICENSE_1_0.txt or copy at
 //  http://www.boost.org/LICENSE_1_0.txt
 
-#include <boost/smart_ptr/detail/sp_typeinfo_.hpp>
-#include <boost/config.hpp>
+#include <boost/detail/sp_typeinfo.hpp>
 #include <limits.h>
 
 #if defined( __ia64__ ) && defined( __INTEL_COMPILER )
@@ -77,7 +76,7 @@ inline sp_int32_t atomic_conditional_increment( sp_int32_t * pw )
     }    
 }
 
-class BOOST_SYMBOL_VISIBLE sp_counted_base
+class sp_counted_base
 {
 private:
 
@@ -109,9 +108,7 @@ public:
         delete this;
     }
 
-    virtual void * get_deleter( sp_typeinfo_ const & ti ) = 0;
-    virtual void * get_local_deleter( sp_typeinfo_ const & ti ) = 0;
-    virtual void * get_untyped_deleter() = 0;
+    virtual void * get_deleter( sp_typeinfo const & ti ) = 0;
 
     void add_ref_copy()
     {

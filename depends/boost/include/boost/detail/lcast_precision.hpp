@@ -17,7 +17,7 @@
 
 #ifndef BOOST_NO_IS_ABSTRACT
 // Fix for SF:1358600 - lexical_cast & pure virtual functions & VC 8 STL
-#include <boost/type_traits/conditional.hpp>
+#include <boost/mpl/if.hpp>
 #include <boost/type_traits/is_abstract.hpp>
 #endif
 
@@ -47,8 +47,8 @@ struct lcast_precision
 #ifdef BOOST_NO_IS_ABSTRACT
     typedef std::numeric_limits<T> limits; // No fix for SF:1358600.
 #else
-    typedef BOOST_DEDUCED_TYPENAME boost::conditional<
-        boost::is_abstract<T>::value
+    typedef BOOST_DEDUCED_TYPENAME boost::mpl::if_<
+        boost::is_abstract<T>
       , std::numeric_limits<lcast_abstract_stub>
       , std::numeric_limits<T>
       >::type limits;
@@ -105,8 +105,8 @@ inline std::streamsize lcast_get_precision(T* = 0)
 #ifdef BOOST_NO_IS_ABSTRACT
     typedef std::numeric_limits<T> limits; // No fix for SF:1358600.
 #else
-    typedef BOOST_DEDUCED_TYPENAME boost::conditional<
-        boost::is_abstract<T>::value
+    typedef BOOST_DEDUCED_TYPENAME boost::mpl::if_<
+        boost::is_abstract<T>
       , std::numeric_limits<lcast_abstract_stub>
       , std::numeric_limits<T>
       >::type limits;
@@ -125,7 +125,6 @@ inline std::streamsize lcast_get_precision(T* = 0)
             limits::radix == 10 && limits::digits10 > 0;
         std::streamsize const streamsize_max =
             (boost::integer_traits<std::streamsize>::max)();
-        (void)streamsize_max;
 
         if(is_specialized_bin)
         { // Floating-point types with
@@ -174,8 +173,8 @@ inline void lcast_set_precision(std::ios_base& stream, T*)
 template<class Source, class Target>
 inline void lcast_set_precision(std::ios_base& stream, Source*, Target*)
 {
-    std::streamsize const s = lcast_get_precision(static_cast<Source*>(0));
-    std::streamsize const t = lcast_get_precision(static_cast<Target*>(0));
+    std::streamsize const s = lcast_get_precision((Source*)0);
+    std::streamsize const t = lcast_get_precision((Target*)0);
     stream.precision(s > t ? s : t);
 }
 

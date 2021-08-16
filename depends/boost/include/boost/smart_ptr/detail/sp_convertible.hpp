@@ -16,7 +16,6 @@
 //  http://www.boost.org/LICENSE_1_0.txt
 
 #include <boost/config.hpp>
-#include <cstddef>
 
 #if !defined( BOOST_SP_NO_SP_CONVERTIBLE ) && defined( BOOST_NO_SFINAE )
 # define BOOST_SP_NO_SP_CONVERTIBLE
@@ -26,7 +25,7 @@
 # define BOOST_SP_NO_SP_CONVERTIBLE
 #endif
 
-#if !defined( BOOST_SP_NO_SP_CONVERTIBLE ) && defined( __BORLANDC__ ) && ( __BORLANDC__ < 0x630 )
+#if !defined( BOOST_SP_NO_SP_CONVERTIBLE ) && defined( __BORLANDC__ ) && ( __BORLANDC__ <= 0x610 )
 # define BOOST_SP_NO_SP_CONVERTIBLE
 #endif
 
@@ -46,22 +45,7 @@ template< class Y, class T > struct sp_convertible
     static yes f( T* );
     static no  f( ... );
 
-    enum _vt { value = sizeof( (f)( static_cast<Y*>(0) ) ) == sizeof(yes) };
-};
-
-template< class Y, class T > struct sp_convertible< Y, T[] >
-{
-    enum _vt { value = false };
-};
-
-template< class Y, class T > struct sp_convertible< Y[], T[] >
-{
-    enum _vt { value = sp_convertible< Y[1], T[1] >::value };
-};
-
-template< class Y, std::size_t N, class T > struct sp_convertible< Y[N], T[] >
-{
-    enum _vt { value = sp_convertible< Y[1], T[1] >::value };
+    enum _vt { value = sizeof( f( static_cast<Y*>(0) ) ) == sizeof(yes) };
 };
 
 struct sp_empty

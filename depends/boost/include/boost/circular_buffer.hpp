@@ -8,27 +8,24 @@
 
 //  See www.boost.org/libs/circular_buffer for documentation.
 
-/*! @file
-Includes <boost/circular_buffer/base.hpp>
-*/
-
 #if !defined(BOOST_CIRCULAR_BUFFER_HPP)
 #define BOOST_CIRCULAR_BUFFER_HPP
 
-#if defined(_MSC_VER)
+#if defined(_MSC_VER) && _MSC_VER >= 1200
     #pragma once
 #endif
 
 #include <boost/circular_buffer_fwd.hpp>
-#include <boost/config/workaround.hpp>
-#include <boost/static_assert.hpp>
+#include <boost/detail/workaround.hpp>
 
-/*! Debug support control. */
-#if !defined(BOOST_CB_ENABLE_DEBUG)
+// BOOST_CB_ENABLE_DEBUG: Debug support control.
+#if defined(NDEBUG) || defined(BOOST_CB_DISABLE_DEBUG)
     #define BOOST_CB_ENABLE_DEBUG 0
+#else
+    #define BOOST_CB_ENABLE_DEBUG 1
 #endif
 
-/*! INTERNAL ONLY */
+// BOOST_CB_ASSERT: Runtime assertion.
 #if BOOST_CB_ENABLE_DEBUG
     #include <boost/assert.hpp>
     #define BOOST_CB_ASSERT(Expr) BOOST_ASSERT(Expr)
@@ -36,19 +33,29 @@ Includes <boost/circular_buffer/base.hpp>
     #define BOOST_CB_ASSERT(Expr) ((void)0)
 #endif
 
-/*! INTERNAL ONLY */
-#if BOOST_WORKAROUND(__BORLANDC__, <= 0x0550) || BOOST_WORKAROUND(__MWERKS__, <= 0x2407)
-    #define BOOST_CB_IS_CONVERTIBLE(Iterator, Type) ((void)0)
+// BOOST_CB_STATIC_ASSERT: Compile time assertion.
+#if BOOST_WORKAROUND(BOOST_MSVC, < 1300)
+    #define BOOST_CB_STATIC_ASSERT(Expr) ((void)0)
 #else
-    #include <iterator>
-    #include <boost/type_traits/is_convertible.hpp>
-    #define BOOST_CB_IS_CONVERTIBLE(Iterator, Type) \
-        BOOST_STATIC_ASSERT((is_convertible<typename std::iterator_traits<Iterator>::value_type, Type>::value))
+    #include <boost/static_assert.hpp>
+    #define BOOST_CB_STATIC_ASSERT(Expr) BOOST_STATIC_ASSERT(Expr)
 #endif
 
-/*! INTERNAL ONLY */
+// BOOST_CB_IS_CONVERTIBLE: Check if Iterator::value_type is convertible to Type.
+#if BOOST_WORKAROUND(__BORLANDC__, <= 0x0550) || BOOST_WORKAROUND(__MWERKS__, <= 0x2407) || \
+    BOOST_WORKAROUND(BOOST_MSVC, < 1300)
+    #define BOOST_CB_IS_CONVERTIBLE(Iterator, Type) ((void)0)
+#else
+    #include <boost/detail/iterator.hpp>
+    #include <boost/type_traits/is_convertible.hpp>
+    #define BOOST_CB_IS_CONVERTIBLE(Iterator, Type) \
+        BOOST_CB_STATIC_ASSERT((is_convertible<typename detail::iterator_traits<Iterator>::value_type, Type>::value))
+#endif
+
+// BOOST_CB_ASSERT_TEMPLATED_ITERATOR_CONSTRUCTORS:
+// Check if the STL provides templated iterator constructors for its containers.
 #if defined(BOOST_NO_TEMPLATED_ITERATOR_CONSTRUCTORS)
-    #define BOOST_CB_ASSERT_TEMPLATED_ITERATOR_CONSTRUCTORS BOOST_STATIC_ASSERT(false);
+    #define BOOST_CB_ASSERT_TEMPLATED_ITERATOR_CONSTRUCTORS BOOST_CB_STATIC_ASSERT(false);
 #else
     #define BOOST_CB_ASSERT_TEMPLATED_ITERATOR_CONSTRUCTORS ((void)0);
 #endif
@@ -60,6 +67,8 @@ Includes <boost/circular_buffer/base.hpp>
 
 #undef BOOST_CB_ASSERT_TEMPLATED_ITERATOR_CONSTRUCTORS
 #undef BOOST_CB_IS_CONVERTIBLE
+#undef BOOST_CB_STATIC_ASSERT
 #undef BOOST_CB_ASSERT
+#undef BOOST_CB_ENABLE_DEBUG
 
 #endif // #if !defined(BOOST_CIRCULAR_BUFFER_HPP)

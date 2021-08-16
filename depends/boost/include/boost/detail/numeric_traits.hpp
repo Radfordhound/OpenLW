@@ -56,39 +56,65 @@
 // 21 Jan 2001 - Created (David Abrahams)
 
 #ifndef BOOST_NUMERIC_TRAITS_HPP_DWA20001901
-#define BOOST_NUMERIC_TRAITS_HPP_DWA20001901
+# define BOOST_NUMERIC_TRAITS_HPP_DWA20001901
 
-#include <cstddef>
-#include <boost/config.hpp>
-#include <boost/limits.hpp>
-#include <boost/cstdint.hpp>
-#include <boost/type_traits/is_signed.hpp>
-#include <boost/type_traits/conditional.hpp>
-#ifdef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
-#include <boost/static_assert.hpp>
-#include <boost/type_traits/is_integral.hpp>
-#endif
+# include <boost/config.hpp>
+# include <boost/cstdint.hpp>
+# include <boost/static_assert.hpp>
+# include <boost/type_traits.hpp>
+# include <boost/detail/select_type.hpp>
+# include <boost/limits.hpp>
 
 namespace boost { namespace detail {
 
-#ifndef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
+  // Template class is_signed -- determine whether a numeric type is signed
+  // Requires that T is constructable from the literals -1 and 0.  Compile-time
+  // error results if that requirement is not met (and thus signedness is not
+  // likely to have meaning for that type).
+  template <class Number>
+  struct is_signed
+  {
+#if defined(BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS) || defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+    BOOST_STATIC_CONSTANT(bool, value = (Number(-1) < Number(0)));
+#else
+    BOOST_STATIC_CONSTANT(bool, value = std::numeric_limits<Number>::is_signed);
+#endif
+  };
+
+# ifndef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
   // digit_traits - compute the number of digits in a built-in integer
   // type. Needed for implementations on which numeric_limits is not specialized
-  // for some integer types, like __int128 in libstdc++ (gcc).
-  template <class T, bool IsSpecialized = std::numeric_limits<T>::is_specialized>
-  struct digit_traits
+  // for intmax_t (e.g. VC6).
+  template <bool is_specialized> struct digit_traits_select;
+
+  // numeric_limits is specialized; just select that version of digits
+  template <> struct digit_traits_select<true>
   {
-      BOOST_STATIC_CONSTANT(int, digits = std::numeric_limits<T>::digits);
+      template <class T> struct traits
+      {
+          BOOST_STATIC_CONSTANT(int, digits = std::numeric_limits<T>::digits);
+      };
   };
 
   // numeric_limits is not specialized; compute digits from sizeof(T)
-  template <class T>
-  struct digit_traits<T, false>
+  template <> struct digit_traits_select<false>
   {
-      BOOST_STATIC_CONSTANT(int, digits = (
-          sizeof(T) * std::numeric_limits<unsigned char>::digits
-          - (boost::is_signed<T>::value ? 1 : 0))
-          );
+      template <class T> struct traits
+      {
+          BOOST_STATIC_CONSTANT(int, digits = (
+              sizeof(T) * std::numeric_limits<unsigned char>::digits
+              - (is_signed<T>::value ? 1 : 0))
+              );
+      };
+  };
+
+  // here's the "usable" template
+  template <class T> struct digit_traits
+  {
+      typedef digit_traits_select<
+                ::std::numeric_limits<T>::is_specialized> selector;
+      typedef typename selector::template traits<T> traits;
+      BOOST_STATIC_CONSTANT(int, digits = traits::digits);
   };
 #endif
 
@@ -98,48 +124,53 @@ namespace boost { namespace detail {
   template <class Integer>
   struct integer_traits
   {
-#ifndef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
+# ifndef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
    private:
       typedef Integer integer_type;
       typedef std::numeric_limits<integer_type> x;
+#   if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+      // for some reason, MSVC asserts when it shouldn't unless we make these
+      // local definitions
+      BOOST_STATIC_CONSTANT(bool, is_integer = x::is_integer);
+      BOOST_STATIC_CONSTANT(bool, is_specialized = x::is_specialized);
+      
+      BOOST_STATIC_ASSERT(is_integer);
+      BOOST_STATIC_ASSERT(is_specialized);
+#   endif
    public:
-      typedef typename boost::conditional<
-        (int(x::is_signed)
-          && (!int(x::is_bounded)
-             // digits is the number of no-sign bits
-             || (int(x::digits) + 1 >= digit_traits<boost::intmax_t>::digits))),
+      typedef typename
+      if_true<(int(x::is_signed)
+              && (!int(x::is_bounded)
+                 // digits is the number of no-sign bits
+                  || (int(x::digits) + 1 >= digit_traits<boost::intmax_t>::digits)))>::template then<
         Integer,
+          
+      typename if_true<(int(x::digits) + 1 < digit_traits<signed int>::digits)>::template then<
+        signed int,
 
-        typename boost::conditional<
-          (int(x::digits) + 1 < digit_traits<signed int>::digits),
-          signed int,
+      typename if_true<(int(x::digits) + 1 < digit_traits<signed long>::digits)>::template then<
+        signed long,
 
-          typename boost::conditional<
-            (int(x::digits) + 1 < digit_traits<signed long>::digits),
-            signed long,
-            boost::intmax_t
-          >::type
-        >::type
-      >::type difference_type;
+   // else
+        intmax_t
+      >::type>::type>::type difference_type;
 #else
       BOOST_STATIC_ASSERT(boost::is_integral<Integer>::value);
 
-      typedef typename boost::conditional<
-        (sizeof(Integer) >= sizeof(intmax_t)),
-
-        boost::conditional<
-          (boost::is_signed<Integer>::value),
+      typedef typename
+      if_true<(sizeof(Integer) >= sizeof(intmax_t))>::template then<
+               
+        typename if_true<(is_signed<Integer>::value)>::template then<
           Integer,
-          boost::intmax_t
-        >,
+          intmax_t
+        >::type,
 
-        boost::conditional<
-          (sizeof(Integer) < sizeof(std::ptrdiff_t)),
+        typename if_true<(sizeof(Integer) < sizeof(std::ptrdiff_t))>::template then<
           std::ptrdiff_t,
-          boost::intmax_t
-        >
-      >::type::type difference_type;
-#endif
+          intmax_t
+        >::type
+      >::type difference_type;
+# endif
   };
 
   // Right now, only supports integers, but should be expanded.
@@ -150,7 +181,7 @@ namespace boost { namespace detail {
   };
 
   template <class Number>
-  inline BOOST_CONSTEXPR typename numeric_traits<Number>::difference_type numeric_distance(Number x, Number y)
+  typename numeric_traits<Number>::difference_type numeric_distance(Number x, Number y)
   {
       typedef typename numeric_traits<Number>::difference_type difference_type;
       return difference_type(y) - difference_type(x);

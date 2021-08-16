@@ -8,34 +8,14 @@
 
 #include <ostream>
 
-#if (__GNUC__*100+__GNUC_MINOR__>301) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
-#pragma GCC system_header
-#endif
-#if defined(_MSC_VER) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
-#pragma warning(push,1)
-#endif
-
 namespace
 boost
     {
     namespace
     to_string_detail
         {
-        struct
-        partial_ordering_helper1
-            {
-            template <class CharT,class Traits>
-            partial_ordering_helper1( std::basic_ostream<CharT,Traits> & );
-            };
-
-        struct
-        partial_ordering_helper2
-            {
-            template <class T>
-            partial_ordering_helper2( T const & );
-            };
-
-        char operator<<( partial_ordering_helper1, partial_ordering_helper2 );
+        template <class T,class CharT,class Traits>
+        char operator<<( std::basic_ostream<CharT,Traits> &, T const & );
 
         template <class T,class CharT,class Traits>
         struct
@@ -55,7 +35,4 @@ boost
         };
     }
 
-#if defined(_MSC_VER) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
-#pragma warning(pop)
-#endif
 #endif

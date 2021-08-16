@@ -24,8 +24,7 @@
 //  formulation
 //
 
-#include <boost/smart_ptr/detail/sp_typeinfo_.hpp>
-#include <boost/config.hpp>
+#include <boost/detail/sp_typeinfo.hpp>
 
 namespace boost
 {
@@ -103,7 +102,7 @@ inline int atomic_conditional_increment( int * pw )
     return rv;
 }
 
-class BOOST_SYMBOL_VISIBLE sp_counted_base
+class sp_counted_base
 {
 private:
 
@@ -135,9 +134,7 @@ public:
         delete this;
     }
 
-    virtual void * get_deleter( sp_typeinfo_ const & ti ) = 0;
-    virtual void * get_local_deleter( sp_typeinfo_ const & ti ) = 0;
-    virtual void * get_untyped_deleter() = 0;
+    virtual void * get_deleter( sp_typeinfo const & ti ) = 0;
 
     void add_ref_copy()
     {
