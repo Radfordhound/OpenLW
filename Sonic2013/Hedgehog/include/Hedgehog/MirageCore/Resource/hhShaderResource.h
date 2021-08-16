@@ -1,5 +1,5 @@
 #pragma once
-#include <Hedgehog/Base/hhBase.h>
+#include <Hedgehog/Base/hhBaseCommon.h>
 #include <Hedgehog/Base/hhMap.h>
 #include <Hedgehog/Base/System/hhCSymbol.h>
 #include <Hedgehog/Base/Platform/D3d9/hhCCriticalSectionD3D9.h>

@@ -18,7 +18,7 @@
 #define HH_ENDIAN_FIX_U16(v) (v)
 #define HH_ENDIAN_FIX_U32(v) (v)
 #define HH_ENDIAN_FIX_U64(v) (v)
-#define HH_ENDIAN_FIX_F32(v) (v)
+#define HH_ENDIAN_FIX(v) (v)
 #else
 #if defined(_MSC_VER) && _MSC_VER >= 1310 
 #include <stdlib.h>
@@ -31,7 +31,7 @@
 #define HH_ENDIAN_FIX_U64(v) __builtin_bswap64(v)
 #endif
 
-#define HH_ENDIAN_FIX_F32(v) ::hh::internal::SwapFloat32(v)
+#define HH_ENDIAN_FIX(v) ::hh::internal::SwapVal(v)
 #endif
 
 /* Helper macros. */
@@ -64,11 +64,68 @@ typedef std::uint64_t u64;
 namespace internal
 {
 // NOTE: This function is custom and is NOT present in the original game!
-inline float SwapFloat32(float v)
+template<typename T>
+inline T SwapVal(T v)
+{
+    return v;
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline u16 SwapVal(u16 v)
+{
+    return HH_ENDIAN_FIX_U16(v);
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline s16 SwapVal(s16 v)
+{
+    u16& ref = reinterpret_cast<u16&>(v);
+    ref = HH_ENDIAN_FIX_U16(ref);
+    return reinterpret_cast<s16&>(ref);
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline u32 SwapVal(u32 v)
+{
+    return HH_ENDIAN_FIX_U32(v);
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline s32 SwapVal(s32 v)
+{
+    u32& ref = reinterpret_cast<u32&>(v);
+    ref = HH_ENDIAN_FIX_U32(ref);
+    return reinterpret_cast<s32&>(ref);
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline float SwapVal(float v)
 {
     u32& ref = reinterpret_cast<u32&>(v);
     ref = HH_ENDIAN_FIX_U32(ref);
     return reinterpret_cast<float&>(ref);
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline u64 SwapVal(u64 v)
+{
+    return HH_ENDIAN_FIX_U64(v);
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline s64 SwapVal(s64 v)
+{
+    u64& ref = reinterpret_cast<u64&>(v);
+    ref = HH_ENDIAN_FIX_U64(ref);
+    return reinterpret_cast<s64&>(ref);
+}
+
+// NOTE: This function is custom and is NOT present in the original game!
+inline double SwapVal(double v)
+{
+    u64& ref = reinterpret_cast<u64&>(v);
+    ref = HH_ENDIAN_FIX_U64(ref);
+    return reinterpret_cast<double&>(ref);
 }
 }
 #endif
@@ -283,4 +340,30 @@ public:
 #else
 #define OFF32(type) type*
 #endif
+
+
+namespace base
+{
+typedef void* (*InitializeWorkerThreadCallback)();
+typedef void (*FinalizeWorkerThreadCallback)(void* param_1);
+
+struct SInitializeHHBaseSetting
+{
+    bool field_0x0;
+    bool field_0x1;
+    bool field_0x2;
+    bool field_0x3;
+    InitializeWorkerThreadCallback InitializeWorkerThread;
+    FinalizeWorkerThreadCallback FinalizeWorkerThread;
+};
+
+// Wii U: 0x03696ad0, PC: 0x00c23120
+SInitializeHHBaseSetting* GetHHBaseSetting();
+
+// Wii U: 0x03696adc, PC: TODO
+void InitializeHHBase(const SInitializeHHBaseSetting* baseSetting);
+
+// Wii U: 0x03696b48, PC: TODO
+void FinalizeHHBase();
+}
 }

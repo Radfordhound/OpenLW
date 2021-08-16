@@ -30,10 +30,14 @@
     <ClCompile Include="source\System\hhMemoryAllocator.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\hhBaseCommon.cpp" />
     <ClCompile Include="source\System\hhEventWait.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="source\Platform\D3d9\hhEventWaitD3D9.cpp">
+      <Filter>Platform\D3d9</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Platform\D3d9\hhBaseD3D9.cpp">
       <Filter>Platform\D3d9</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +51,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSymbol.h">
       <Filter>System</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Base\hhBase.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\hhBaseCommon.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhHash.h">
       <Filter>System</Filter>
     </ClInclude>
@@ -72,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhPluginable.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\Platform\D3d9\hhBaseD3D9.h">
+      <Filter>Platform\D3d9</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

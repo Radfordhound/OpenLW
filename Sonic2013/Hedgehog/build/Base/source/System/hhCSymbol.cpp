@@ -1,7 +1,7 @@
 #include "Hedgehog/Base/System/hhCSymbol.h"
 #include "Hedgehog/Base/System/hhMemory.h"
 #include "Hedgehog/Base/System/hhHash.h"
-#include "Hedgehog/Base/hhBase.h"
+#include "Hedgehog/Base/hhBaseCommon.h"
 #include <cstring>
 
 namespace hh

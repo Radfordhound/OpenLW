@@ -13,6 +13,7 @@ using namespace app::fnd;
 using namespace app::gfx;
 using namespace app::game;
 using namespace app::hid;
+using namespace hh::base;
 using namespace hh::mr;
 using namespace hh::ut;
 using namespace csl::fnd;
@@ -39,6 +40,13 @@ void Application::InitializeMain()
     IAllocator* allocator = GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
 
     // TODO
+
+    SInitializeHHBaseSetting baseSetting = {};
+    baseSetting.field_0x1 = true;
+    baseSetting.field_0x2 = true;
+    // TODO
+
+    InitializeHHBase(&baseSetting);
     InitializeHHUtility();
     InitializeHHMirage();
 
