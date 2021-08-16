@@ -18,6 +18,7 @@
     <ClCompile Include="source\HeapMemory\hhRsdxMemoryUtil.cpp" />
     <ClCompile Include="source\System\RsdxAtomic.cpp" />
     <ClCompile Include="source\System\RsdxEvent.cpp" />
+    <ClCompile Include="source\System\RsdxMutex.cpp" />
     <ClCompile Include="source\System\RsdxObject.cpp" />
     <ClCompile Include="source\System\RsdxThread.cpp" />
   </ItemGroup>
@@ -29,6 +30,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\HeapMemory\hhRsdxMemoryUtil.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxAtomic.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxEvent.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxMutex.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxObject.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxResource.h" />
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxThread.h" />
