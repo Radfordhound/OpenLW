@@ -22,6 +22,9 @@ struct FileLoaderParam // size == 24
 
     // Wii U: 0x0218b83c, PC: TODO
     FileLoaderParam();
+
+    // Wii U: 0x0218b890, PC: TODO
+    void SetMultiLanguageAttr(bool param_1, unsigned int param_2);
 };
 
 class FileLoader : public ReferencedObject, public csl::fnd::Singleton<FileLoader> // size == 104

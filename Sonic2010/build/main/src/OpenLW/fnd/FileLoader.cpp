@@ -27,6 +27,12 @@ FileLoaderParam::FileLoaderParam() :
     field_0x10(nullptr),
     field_0x14(0) {}
 
+void FileLoaderParam::SetMultiLanguageAttr(bool param_1, unsigned int param_2)
+{
+    field_0x14 = (param_1) ?
+        (param_2 | 1) : 0;
+}
+
 FileLoader::LoadInfo::LoadInfo() :
     field_0x0(nullptr),
     field_0x4(nullptr),
@@ -513,6 +519,7 @@ csl::fnd::com_ptr<FileHandleObj> FileLoader::LoadFile(
     if ((params.field_0x14 & 1) != 0)
     {
         // TODO
+        __debugbreak();
     }
 
     const char* ext = fileSystem.GetFileExtension(filePathStr.c_str());
