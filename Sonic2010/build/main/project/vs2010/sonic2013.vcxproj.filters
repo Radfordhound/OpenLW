@@ -828,8 +828,20 @@
     <ClCompile Include="..\..\src\OpenLW\CWorld.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\CRenderSceneView.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\System\GameDocument.cpp">
       <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\CRenderSceneViewImpl.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\CRMSceneViewImpl.cpp">
+      <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\gfx\IRenderScheduler.cpp">
+      <Filter>OpenLW\gfx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1034,8 +1046,23 @@
     <ClInclude Include="..\..\src\OpenLW\CWorld.h">
       <Filter>OpenLW</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\CRenderSceneViewImpl.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\CRenderSceneView.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\System\GameDocument.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\IRenderScheduler.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\CRMSceneViewImpl.h">
+      <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\gfx\IRenderSynchronizer.h">
+      <Filter>OpenLW\gfx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

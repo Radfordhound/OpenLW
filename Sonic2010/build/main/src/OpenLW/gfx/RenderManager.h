@@ -1,6 +1,6 @@
 #pragma once
+#include "CRenderSceneView.h"
 #include "../fnd/SUpdateInfo.h"
-#include "../fnd/ReferencedObject.h"
 #include "../fnd/Singleton.h"
 #include <Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h>
 #include <Hedgehog/Utility/hhPackfile.h>
@@ -9,6 +9,8 @@ namespace app
 {
 namespace gfx
 {
+struct Renderable;
+
 class RenderManager : public fnd::ReferencedObject, public csl::fnd::Singleton<RenderManager>
 {
     struct Impl;
@@ -63,8 +65,14 @@ public:
     // Wii U: 0x02263d28, PC: TODO
     void Present();
 
+    // Wii U: 0x02263d4c, PC: TODO
+    CRenderSceneView* GetDefaultScene() const;
+
     // Wii U: 0x02264694, PC: TODO
     hh::ut::Packfile GetShaderFileResource() const;
+
+    // Wii U: 0x022646c0, PC: TODO
+    void AddRenderable(Renderable* renderable);
 };
 }
 }

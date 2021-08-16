@@ -114,7 +114,11 @@
     <ClCompile Include="..\..\src\OpenLW\GameBase.cpp" />
     <ClCompile Include="..\..\src\OpenLW\GameObject.cpp" />
     <ClCompile Include="..\..\src\OpenLW\game\GlobalAllocator.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\gfx\CRenderSceneView.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\gfx\CRenderSceneViewImpl.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\gfx\CRMSceneViewImpl.cpp" />
     <ClCompile Include="..\..\src\OpenLW\gfx\GfxResourceCallback.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\gfx\IRenderScheduler.cpp" />
     <ClCompile Include="..\..\src\OpenLW\gfx\Renderable.cpp" />
     <ClCompile Include="..\..\src\OpenLW\gfx\RenderableContainer.cpp" />
     <ClCompile Include="..\..\src\OpenLW\gfx\RenderableEvent.cpp" />
@@ -181,7 +185,12 @@
     <ClInclude Include="..\..\src\OpenLW\GameBase.h" />
     <ClInclude Include="..\..\src\OpenLW\GameObject.h" />
     <ClInclude Include="..\..\src\OpenLW\game\GlobalAllocator.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\CRenderSceneView.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\CRenderSceneViewImpl.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\CRMSceneViewImpl.h" />
     <ClInclude Include="..\..\src\OpenLW\gfx\GfxResourceCallback.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\IRenderScheduler.h" />
+    <ClInclude Include="..\..\src\OpenLW\gfx\IRenderSynchronizer.h" />
     <ClInclude Include="..\..\src\OpenLW\gfx\Renderable.h" />
     <ClInclude Include="..\..\src\OpenLW\gfx\RenderableContainer.h" />
     <ClInclude Include="..\..\src\OpenLW\gfx\RenderableEvent.h" />

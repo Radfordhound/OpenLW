@@ -54,9 +54,19 @@ void RenderManager::Present()
     m_impl->Present();
 }
 
+CRenderSceneView* RenderManager::GetDefaultScene() const
+{
+    return &m_impl->DefaultSceneView;
+}
+
 hh::ut::Packfile RenderManager::GetShaderFileResource() const
 {
     return m_impl->GetShaderFileResource();
+}
+
+void RenderManager::AddRenderable(Renderable* renderable)
+{
+    GetDefaultScene()->AddRenderable(renderable);
 }
 }
 }
