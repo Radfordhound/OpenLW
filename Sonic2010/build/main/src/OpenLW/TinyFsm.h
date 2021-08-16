@@ -303,7 +303,7 @@ public:
                 state_t* firstUnique2 = &stateStack2[i2];
 
                 while (firstUnique1 != stateStack && firstUnique2 != stateStack2 &&
-                    firstUnique1 == firstUnique2)
+                    *firstUnique1 == nullptr || firstUnique1 == firstUnique2)
                 {
                     --firstUnique1;
                     --firstUnique2;
@@ -375,10 +375,10 @@ public:
         if (hierarchical)
         {
             m_cur = m_src;
-            while (true)
+            while (m_cur.IsValid())
             {
                 state_t tinyFsmState = Trigger(m_cur, e);
-                if (tinyFsmState.IsValid()) break;
+                if (!tinyFsmState.IsValid()) break;
 
                 m_cur = Super(m_cur);
             }
@@ -394,6 +394,7 @@ public:
         if (hierarchical)
         {
             // TODO (Check 0x02a7f190 to implement this)
+            __debugbreak();
         }
         else
         {

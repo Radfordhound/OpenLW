@@ -42,7 +42,11 @@ public:
 
     RefPtr<T>& operator=(T* refObjPtr)
     {
-        refObjPtr->AddRef();
+        if (refObjPtr)
+        {
+            refObjPtr->AddRef();
+        }
+
         if (m_refObjPtr)
         {
             m_refObjPtr->Release();
