@@ -1,5 +1,5 @@
 #pragma once
-#include "hhMemoryAllocator.h"
+#include "hhMemory.h"
 #include <Hedgehog/Rsdx/System/RsdxAtomic.h>
 
 namespace hh

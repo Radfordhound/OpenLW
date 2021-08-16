@@ -4,6 +4,7 @@
 #include "Hedgehog/Graphics/Resource/hhResShaderSamplerUsage.h"
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <Hedgehog/Database/hhSampleChunk.h>
+#include <csl/fnd/memory.h>
 #include <new>
 
 using namespace hh::mr;

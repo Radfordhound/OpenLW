@@ -12,7 +12,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\System\hhMemoryAllocator.cpp">
+    <ClCompile Include="source\System\hhMemory.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="source\System\hhObject.cpp">
@@ -24,9 +24,12 @@
     <ClCompile Include="source\System\hhHash.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\System\hhMemoryAllocator.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h">
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemory.h">
       <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhObject.h">
@@ -47,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\Base\hhMap.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhAllocator.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h">
       <Filter>System</Filter>
     </ClInclude>
   </ItemGroup>

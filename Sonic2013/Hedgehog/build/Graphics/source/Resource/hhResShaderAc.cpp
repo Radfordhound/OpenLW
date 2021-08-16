@@ -4,6 +4,7 @@
 #include "Hedgehog/Graphics/Resource/hhResShaderSampler.h"
 #include <Hedgehog/Database/hhSampleChunk.h>
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
+#include <csl/fnd/memory.h>
 #include <csl/ut/number.h>
 
 using namespace hh::db;

@@ -1,5 +1,5 @@
 #include "Hedgehog/Base/System/hhCSymbol.h"
-#include "Hedgehog/Base/System/hhMemoryAllocator.h"
+#include "Hedgehog/Base/System/hhMemory.h"
 #include "Hedgehog/Base/System/hhHash.h"
 #include "Hedgehog/Base/hhBase.h"
 #include <cstring>
