@@ -68,7 +68,7 @@ void CRsdxThreadEntryMain::SetThreadName(const char* name)
     THREADNAME_INFO info;
     info.dwType = 0x1000;
     info.szName = name;
-    info.dwThreadID = ThreadID;
+    info.dwThreadID = m_threadID;
     info.dwFlags = 0;
 
 #pragma warning(push)
@@ -82,7 +82,7 @@ void CRsdxThreadEntryMain::SetThreadName(const char* name)
     }
 #pragma warning(pop)
 #elif defined(__WIIU__)
-    OSSetThreadName(&CafeThread);
+    OSSetThreadName(&m_cafeThread, name);
 #endif
 }
 
@@ -102,21 +102,21 @@ bool CRsdxThreadEntryMain::EndThread()
     // If the thread was suspended leading up to this function call, resume it.
     if (state == RSDX_THREAD_STATE_SUSPENDED)
     {
-        ResumeThread(ThreadHandle);
+        ResumeThread(Handle);
     }
 
     // Wait for the thread to finish.
-    WaitForSingleObject(ThreadHandle, INFINITE);
+    WaitForSingleObject(Handle, INFINITE);
 
     // Store the thread's exit code.
     DWORD exitCode = 0;
-    GetExitCodeThread(ThreadHandle, &exitCode);
+    GetExitCodeThread(Handle, &exitCode);
 
     field_0x10 = exitCode;
     field_0x14 = 0;
 
     // Close the thread's handle and return true.
-    CloseHandle(ThreadHandle);
+    CloseHandle(Handle);
     return true;
 #elif defined(__WIIU__)
     // TODO
@@ -148,8 +148,8 @@ CRsdxThreadEntryMain* CRsdxThreadEntryMain::CreateThread(
         return nullptr;
     }
 
-    thread->ThreadHandle = threadHandle;
-    thread->ThreadID = threadID;
+    thread->Handle = threadHandle;
+    thread->m_threadID = threadID;
 
     // Set thread name if requested.
     if (createInfo->Name)
@@ -164,14 +164,24 @@ CRsdxThreadEntryMain* CRsdxThreadEntryMain::CreateThread(
     if (createInfo->StartSuspended)
     {
         thread->m_state = RSDX_THREAD_STATE_SUSPENDED;
-        return thread;
     }
     else
     {
         thread->m_state = RSDX_THREAD_STATE_RUNNING;
         ResumeThread(threadHandle);
-        return thread;
     }
+
+    return thread;
+#elif defined(__WIIU__)
+    // TODO
+#endif
+}
+
+bool CRsdxThreadEntryMain::SetThreadAffinity(unsigned int mask)
+{
+#ifdef _WIN32
+    // TODO
+    return false;
 #elif defined(__WIIU__)
     // TODO
 #endif
@@ -179,7 +189,7 @@ CRsdxThreadEntryMain* CRsdxThreadEntryMain::CreateThread(
 
 #ifdef _WIN32
 CRsdxThreadEntryMain::CRsdxThreadEntryMain() :
-    ThreadID(0),
+    m_threadID(0),
     m_state(RSDX_THREAD_STATE_NONE),
     field_0x10(0x10000),
     field_0x14(0),
@@ -213,14 +223,20 @@ CRsdxThreadEntryMain* RsdxCreateThread(std::size_t stackSize,
     CRsdxThreadEntryMain* thread = CRsdxThreadEntryMain::CreateThread(&createInfo);
     if (thread && nativeThread)
     {
-#ifdef _WIN32
-        *nativeThread = thread->ThreadID;
-#elif defined(__WIIU__)
-        *nativeThread = &thread->CafeThread;
-#endif
+        *nativeThread = thread->GetThreadHandle();
     }
 
     return thread;
+}
+
+void RsdxSetThreadAffinityMask(RsdxSystemResource* thread, unsigned int mask)
+{
+    static_cast<CRsdxThreadEntryMain*>(thread)->SetThreadAffinity(mask);
+}
+
+void RsdxSetThreadName(RsdxSystemResource* thread, const char* name)
+{
+    static_cast<CRsdxThreadEntryMain*>(thread)->SetThreadName(name);
 }
 
 void RsdxThreadSleep(unsigned int milliseconds)

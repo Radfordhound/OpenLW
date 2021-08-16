@@ -4,6 +4,7 @@
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <process.h>
 #elif defined(__WIIU__)
 #include <coreinit/thread.h>
 #endif
@@ -15,11 +16,13 @@ namespace rsdx
 // TODO: This name was guessed, what's it actually called?
 #ifdef _WIN32
 typedef DWORD RsdxNativeThread;
+#define RSDXSTDCALL __stdcall
 #elif defined(__WIIU__)
 typedef OSThread* RsdxNativeThread;
+#define RSDXSTDCALL
 #endif
 
-typedef unsigned int(*RsdxThreadExecFunc)(void* threadParam);
+typedef unsigned int (RSDXSTDCALL *RsdxThreadExecFunc)(void* threadParam);
 
 struct RSDXTHREADTHREADCREATIONINFO
 {
@@ -42,17 +45,12 @@ enum RSDXTHREADSTATE // TODO: This name was guessed, what's it actually called?
 
 class CRsdxThreadEntryMain : public RsdxSystemResource
 {
-public:
 #ifdef _WIN32
-    HANDLE ThreadHandle;
-    DWORD ThreadID;
+    DWORD m_threadID;
 #elif defined(__WIIU__)
-    // TODO
-    OSThread CafeThread;
-    // TODO
+    OSThread m_cafeThread;
 #endif
 
-private:
     // TODO: The following data members are only correct on PC; this is incorrect on Wii U!
     RSDXTHREADSTATE m_state;
     unsigned int field_0x10;
@@ -61,6 +59,15 @@ private:
     void* m_threadParam;
 
 public:
+    inline RsdxNativeThread GetThreadHandle()
+    {
+#ifdef _WIN32
+        return m_threadID;
+#elif defined(__WIIU__)
+        return &m_cafeThread;
+#endif
+    }
+
     // Wii U: TODO, PC: 0x00464aa0 (GENERIC RETURN TRUE)
     bool CloseSystemResource();
 
@@ -93,6 +100,9 @@ public:
     static CRsdxThreadEntryMain* CreateThread(
         const RSDXTHREADTHREADCREATIONINFO* createInfo);
 
+    // Wii U: 0x036c1180, PC: TODO
+    bool SetThreadAffinity(unsigned int mask);
+
     // Wii U: TODO, PC: TODO
     CRsdxThreadEntryMain();
 };
@@ -101,6 +111,12 @@ public:
 CRsdxThreadEntryMain* RsdxCreateThread(std::size_t stackSize,
     RsdxThreadExecFunc threadFuncPtr, void* threadParam, bool startSuspended,
     RsdxNativeThread* nativeThread, unsigned int param_6);
+
+// Wii U: 0x036c128c (THUNK), PC: TODO
+void RsdxSetThreadAffinityMask(RsdxSystemResource* thread, unsigned int mask);
+
+// Wii U: 0x036c1290, PC: TODO
+void RsdxSetThreadName(RsdxSystemResource* thread, const char* name);
 
 // Wii U: 0x036c12ac, PC: Inlined
 void RsdxThreadSleep(unsigned int milliseconds);
