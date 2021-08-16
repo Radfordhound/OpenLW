@@ -27,6 +27,9 @@
     <ClCompile Include="source\System\hhHash.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\Platform\D3d9\hhCCriticalSectionD3D9.cpp">
+      <Filter>Platform\D3d9</Filter>
+    </ClCompile>
     <ClCompile Include="source\System\hhSharedString.cpp">
       <Filter>System</Filter>
     </ClCompile>

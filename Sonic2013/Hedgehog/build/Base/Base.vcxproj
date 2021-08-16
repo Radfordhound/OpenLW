@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="source\hhBaseCommon.cpp" />
     <ClCompile Include="source\Platform\D3d9\hhBaseD3D9.cpp" />
+    <ClCompile Include="source\Platform\D3d9\hhCCriticalSectionD3D9.cpp" />
     <ClCompile Include="source\Platform\D3d9\hhEventWaitD3D9.cpp" />
     <ClCompile Include="source\Platform\D3d9\hhThreadImpD3D9.cpp" />
     <ClCompile Include="source\System\hhCSymbol.cpp" />
