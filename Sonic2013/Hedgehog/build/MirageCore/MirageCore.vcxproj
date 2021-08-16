@@ -12,11 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\hhMirageCore.cpp" />
+    <ClCompile Include="source\Misc\hhRenderingDevice.cpp" />
     <ClCompile Include="source\Misc\hhRenderingInfrastructure.cpp" />
     <ClCompile Include="source\Resource\hhShaderResource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\hhMirageCore.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingDevice.h" />
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingInfrastructure.h" />
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Resource\hhMaterialResource.h" />
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Resource\hhShaderResource.h" />

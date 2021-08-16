@@ -16,6 +16,9 @@
     <ClCompile Include="source\Resource\hhShaderResource.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
+    <ClCompile Include="source\Misc\hhRenderingDevice.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingInfrastructure.h">
@@ -27,6 +30,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Resource\hhMaterialResource.h">
       <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingDevice.h">
+      <Filter>Misc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
