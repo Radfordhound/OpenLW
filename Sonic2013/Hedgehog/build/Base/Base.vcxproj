@@ -24,6 +24,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Base\Platform\D3d9\hhCCriticalSectionD3D9.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhAllocator.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhPluginable.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhSharedString.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhCSymbol.h" />
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhHash.h" />

@@ -58,5 +58,8 @@
     <ClInclude Include="..\..\include\Hedgehog\Base\System\hhMemoryAllocator.h">
       <Filter>System</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\Base\System\hhPluginable.h">
+      <Filter>System</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
