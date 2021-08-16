@@ -12,6 +12,7 @@ namespace rsdx
 #ifdef _WIN32
 typedef IDirect3D9Ex RsdxDevCore;
 typedef IDirect3DDevice9Ex RsdxDevice;
+typedef HRESULT RSDXRESULT; // TODO: Is this name correct?
 #else
 class RsdxDevice;
 
