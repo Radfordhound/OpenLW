@@ -92,10 +92,10 @@ static void MakeMirageSamplerUsage(CShaderSamplerUsageData* output,
 static void MakeMirageConstantName(CPixelShaderParameterData* output,
     const CPixelShaderParameterResource* input)
 {
-    MakeMirageConstantName(&output->GetFloatConstants(), &input->GetFloatConstants());
-    MakeMirageConstantName(&output->GetIntConstants(), &input->GetIntConstants());
-    MakeMirageConstantName(&output->GetBoolConstants(), &input->GetBoolConstants());
-    MakeMirageSamplerUsage(&output->GetTextureSamplers(), &input->GetTextureSamplers());
+    MakeMirageConstantName(&output->Floats, &input->GetFloatConstants());
+    MakeMirageConstantName(&output->Ints, &input->GetIntConstants());
+    MakeMirageConstantName(&output->Bools, &input->GetBoolConstants());
+    MakeMirageSamplerUsage(&output->Textures, &input->GetTextureSamplers());
 }
 
 void* ResMiragePixelShaderParameter::Replace(std::size_t* size,

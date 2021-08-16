@@ -17,52 +17,30 @@ namespace mr
 {
 class CRenderingInfrastructure;
 
-class CVertexShaderCodeData : public db::CDatabaseData
+class CVertexShaderCodeData : public db::CDatabaseData // size == 0x24
 {
-    ut::ScopedComPtr<rsdx::RsdxVertexShader9, ut::ComRefcounterStrategyForRendering> m_vtxShaderPtr;
+public:
+    ut::ScopedComPtr<rsdx::RsdxVertexShader9, ut::ComRefcounterStrategyForRendering> Handle;
     boost::shared_array<unsigned char> field_0x10;
     boost::shared_ptr<base::CCriticalSectionD3D9> field_0x18;
+    // TODO: Other data members.
 
-public:
     // Wii U: 0x036e2e4c, PC: 0x00c33050
     void Make(CVertexShaderCodeData* param_1, const u32* param_2,
         CRenderingInfrastructure* renderInfra);
-
-    // TODO: Is this function actually a thing?
-    inline rsdx::RsdxVertexShader9* GetVertexShader()
-    {
-        return m_vtxShaderPtr.get();
-    }
-
-    inline CVertexShaderCodeData() :
-        CDatabaseData(),
-        m_vtxShaderPtr(),
-        field_0x10(),
-        field_0x18() {}
 };
 
-class CPixelShaderCodeData : public db::CDatabaseData
+class CPixelShaderCodeData : public db::CDatabaseData // size == 0x24
 {
-    ut::ScopedComPtr<rsdx::RsdxPixelShader9, ut::ComRefcounterStrategyForRendering> m_pixelShaderPtr;
+public:
+    ut::ScopedComPtr<rsdx::RsdxPixelShader9, ut::ComRefcounterStrategyForRendering> Handle;
     boost::shared_array<unsigned char> field_0x10;
     boost::shared_ptr<base::CCriticalSectionD3D9> field_0x18;
+    // TODO: Other data members.
 
-public:
     // Wii U: 0x036da84c, PC: TODO
     void Make(CPixelShaderCodeData* param_1, const u32* param_2,
         CRenderingInfrastructure* renderInfra);
-
-    // TODO: Is this function actually a thing?
-    inline rsdx::RsdxPixelShader9* GetPixelShader()
-    {
-        return m_pixelShaderPtr.get();
-    }
-
-    inline CPixelShaderCodeData() :
-        CDatabaseData(),
-        m_pixelShaderPtr(),
-        field_0x10(),
-        field_0x18() {}
 };
 
 class CShaderConstantResource // TODO: This name was guessed; is it correct??
@@ -176,64 +154,22 @@ public:
     }
 };
 
-class CShaderSamplerUsageData : public map<base::CStringSymbol, std::vector<unsigned char>>
+class CShaderSamplerUsageData : public map<base::CStringSymbol, std::vector<u8>>
 {
 public:
     CShaderSamplerUsageData() :
-        map<base::CStringSymbol, std::vector<unsigned char>>() {}
+        map<base::CStringSymbol, std::vector<u8>>() {}
 };
 
 class CVertexShaderParameterData : public db::CDatabaseData // size == 48
 {
+public:
     CShaderConstantNameData Floats;
     CShaderConstantNameData Ints;
     CShaderConstantNameData Bools;
 
-public:
-    inline CVertexShaderParameterData() :
-        CDatabaseData(),
-        Floats(),
-        Ints(),
-        Bools() {}
-
     // Wii U: 0x03687700, PC: TODO
     ~CVertexShaderParameterData();
-
-    // TODO: Is this function actually a thing?
-    inline const CShaderConstantNameData& GetFloatConstants() const
-    {
-        return Floats;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline CShaderConstantNameData& GetFloatConstants()
-    {
-        return Floats;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline const CShaderConstantNameData& GetIntConstants() const
-    {
-        return Ints;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline CShaderConstantNameData& GetIntConstants()
-    {
-        return Ints;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline const CShaderConstantNameData& GetBoolConstants() const
-    {
-        return Bools;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline CShaderConstantNameData& GetBoolConstants()
-    {
-        return Bools;
-    }
 };
 
 class CVertexShaderParameterResource
@@ -316,71 +252,26 @@ public:
     }
 };
 
-class CPixelShaderParameterData : public db::CDatabaseData // size == 60
+class CVertexShaderData : public db::CDatabaseData // size == 0x28
 {
+public:
+    // TODO: Other data members.
+    boost::shared_ptr<CVertexShaderCodeData> Code;
+    std::vector<boost::shared_ptr<CVertexShaderParameterData>> field_0x18;
+
+    // TODO: Virtual functions.
+};
+
+class CPixelShaderParameterData : public db::CDatabaseData // size == 0x3c
+{
+public:
     CShaderConstantNameData Floats;
     CShaderConstantNameData Ints;
     CShaderConstantNameData Bools;
     CShaderSamplerUsageData Textures;
 
-public:
-    inline CPixelShaderParameterData() :
-        CDatabaseData(),
-        Floats(),
-        Ints(),
-        Bools(),
-        Textures() {}
-
     // Wii U: 0x0217885c, PC: TODO
     ~CPixelShaderParameterData();
-
-    // TODO: Is this function actually a thing?
-    inline const CShaderConstantNameData& GetFloatConstants() const
-    {
-        return Floats;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline CShaderConstantNameData& GetFloatConstants()
-    {
-        return Floats;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline const CShaderConstantNameData& GetIntConstants() const
-    {
-        return Ints;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline CShaderConstantNameData& GetIntConstants()
-    {
-        return Ints;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline const CShaderConstantNameData& GetBoolConstants() const
-    {
-        return Bools;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline CShaderConstantNameData& GetBoolConstants()
-    {
-        return Bools;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline const CShaderSamplerUsageData& GetTextureSamplers() const
-    {
-        return Textures;
-    }
-
-    // TODO: Is this function actually a thing?
-    inline CShaderSamplerUsageData& GetTextureSamplers()
-    {
-        return Textures;
-    }
 };
 
 class CPixelShaderParameterResource
@@ -473,6 +364,16 @@ public:
     {
         return m_paramResNames;
     }
+};
+
+class CPixelShaderData : public db::CDatabaseData // size == 0x28
+{
+public:
+    // TODO: Other data members.
+    boost::shared_ptr<CPixelShaderCodeData> Code;
+    std::vector<boost::shared_ptr<CPixelShaderParameterData>> field_0x18;
+
+    // TODO: Virtual functions.
 };
 
 enum CVertexShaderSubPermutation
@@ -578,7 +479,7 @@ public:
     // TODO: Is this function actually a thing?
     inline float GetValue(std::size_t index) const
     {
-        return HH_ENDIAN_FIX_F32(m_value[index]);
+        return HH_ENDIAN_FIX(m_value[index]);
     }
 };
 

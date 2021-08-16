@@ -1,8 +1,6 @@
 #include "Hedgehog/Graphics/Resource/hhResFragmentShader.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameter.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h"
-#include "Hedgehog/Graphics/Resource/hhResShaderConstantUsage.h"
-#include "Hedgehog/Graphics/Resource/hhResShaderSamplerUsage.h"
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <Hedgehog/Database/hhSampleChunk.h>
 #include <csl/fnd/memory.h>
@@ -103,7 +101,7 @@ bool ResFragmentShader::Setup(std::size_t size,
 {
     ResName codeResName = GetName();
     ResMiragePixelShaderCode pixelShaderCode = pac.Get<ResMiragePixelShaderCode>(codeResName);
-    ptr()->Shader = pixelShaderCode.ptr()->CodeData->GetPixelShader();
+    ptr()->Shader = pixelShaderCode.ptr()->CodeData->Handle.get();
 
     if (ptr()->Shader)
     {

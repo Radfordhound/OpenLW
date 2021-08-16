@@ -101,7 +101,7 @@ bool ResVertexShader::Setup(std::size_t size,
 {
     ResName codeResName = GetName();
     ResMirageVertexShaderCode vtxShaderCode = pac.Get<ResMirageVertexShaderCode>(codeResName);
-    ptr()->Shader = vtxShaderCode.ptr()->CodeData->GetVertexShader();
+    ptr()->Shader = vtxShaderCode.ptr()->CodeData->Handle.get();
 
     if (ptr()->Shader)
     {

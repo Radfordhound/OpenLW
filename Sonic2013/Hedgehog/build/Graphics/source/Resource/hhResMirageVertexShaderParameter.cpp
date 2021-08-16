@@ -53,9 +53,9 @@ static void MakeMirageConstantName(CShaderConstantNameData* output,
 static void MakeMirageConstantName(CVertexShaderParameterData* output,
     const CVertexShaderParameterResource* input)
 {
-    MakeMirageConstantName(&output->GetFloatConstants(), &input->GetFloatConstants());
-    MakeMirageConstantName(&output->GetIntConstants(), &input->GetIntConstants());
-    MakeMirageConstantName(&output->GetBoolConstants(), &input->GetBoolConstants());
+    MakeMirageConstantName(&output->Floats, &input->GetFloatConstants());
+    MakeMirageConstantName(&output->Ints, &input->GetIntConstants());
+    MakeMirageConstantName(&output->Bools, &input->GetBoolConstants());
 }
 
 void* ResMirageVertexShaderParameter::Replace(std::size_t* size,
