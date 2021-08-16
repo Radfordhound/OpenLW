@@ -56,7 +56,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -73,7 +73,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -232,6 +232,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Utility\Utility.vcxproj">
       <Project>{3c48dfba-b66b-469b-abcc-e816bfceba9a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\Extra\build\fx\fx.vcxproj">
+      <Project>{950af8da-ad3f-4c76-af86-de095ed1e47d}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

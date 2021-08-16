@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rsdx", "..\..\..\..\..\Soni
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "..\..\..\..\..\Sonic2013\Hedgehog\build\Utility\Utility.vcxproj", "{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fx", "..\..\..\..\..\Sonic2013\Hedgehog\Extra\build\fx\fx.vcxproj", "{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -67,6 +69,10 @@ Global
 		{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}.Debug|Win32.Build.0 = Debug|Win32
 		{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}.Release|Win32.ActiveCfg = Release|Win32
 		{3C48DFBA-B66B-469B-ABCC-E816BFCEBA9A}.Release|Win32.Build.0 = Release|Win32
+		{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}.Debug|Win32.Build.0 = Debug|Win32
+		{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}.Release|Win32.ActiveCfg = Release|Win32
+		{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

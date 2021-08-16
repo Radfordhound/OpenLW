@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{133041f1-ff33-4fe3-98f0-656f2b7eaf1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{b7cdab56-17f0-4b41-a835-56b403639777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System">
+      <UniqueIdentifier>{9525cc98-927e-4831-9838-148a172e68fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Schedule">
+      <UniqueIdentifier>{12c7b5f1-a497-415e-969e-66de98f7f2fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Schedule">
+      <UniqueIdentifier>{865d7d27-32c3-4b98-b0cd-2b289ba48fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{bd8b604b-55f5-4d8c-84ab-067ad1f846e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Extra\Util\hhStackAllocator.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\Util\hhRenderOneCallback.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\Util\hhGroupStartEndPair.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\Util\hhRenderScratchBuffer.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\Util\hhGPUInstanceMapper.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\System\hhFxObject.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\Schedule\hhFxPipelineCommandUtil.h">
+      <Filter>Header Files\Schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\Util\hhRenderParam.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Extra\Schedule\hhFxPipelineScheduler.h">
+      <Filter>Header Files\Schedule</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Util\hhRenderOneCallback.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Schedule\hhFxPipelineCommandUtil.cpp">
+      <Filter>Source Files\Schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="source\System\hhFxObject.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Util\hhGPUInstanceMapper.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Schedule\hhFxPipelineScheduler.cpp">
+      <Filter>Source Files\Schedule</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
