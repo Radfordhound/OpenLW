@@ -68,6 +68,9 @@
     <ClInclude Include="..\..\include\csl\ut\number.h">
       <Filter>Header Files\ut</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\link_list.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\csl\fnd\tick_win32.cpp">

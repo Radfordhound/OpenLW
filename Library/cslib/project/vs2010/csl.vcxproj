@@ -18,6 +18,7 @@
     <ClInclude Include="..\..\include\csl\math\math.h" />
     <ClInclude Include="..\..\include\csl\ut\bitset.h" />
     <ClInclude Include="..\..\include\csl\ut\array.h" />
+    <ClInclude Include="..\..\include\csl\ut\link_list.h" />
     <ClInclude Include="..\..\include\csl\ut\number.h" />
     <ClInclude Include="..\..\include\csl\ut\hash_map.h" />
     <ClInclude Include="..\..\include\csl\ut\string.h" />
