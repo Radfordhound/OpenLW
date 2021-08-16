@@ -68,12 +68,6 @@ bool GameModeStartUp::IsWarningEnd()
     return m_isWarningEnd;
 }
 
-bool GameModeStartUp::IsLoadEnd()
-{
-    FileLoader& fileLoader = FileLoader::GetInstance();
-    return fileLoader.IsSyncCompleteAll();
-}
-
 void GameModeStartUp::PreLoadGame()
 {
     // TODO
@@ -103,6 +97,8 @@ static const char* ResidentFilePaths[] =
     "ui/ui_icon_pda.pac"
 };
 
+#define ResidentFilePathCount (sizeof(ResidentFilePaths) / sizeof(*ResidentFilePaths))
+
 void GameModeStartUp::PreLoadResidentFile()
 {
     // Add lua files to resident file paths if necessary.
@@ -116,7 +112,7 @@ void GameModeStartUp::PreLoadResidentFile()
     }
 
     // Load all resident files.
-    for (int i = 0; i < (sizeof(ResidentFilePaths) / sizeof(*ResidentFilePaths)); ++i)
+    for (int i = 0; i < ResidentFilePathCount; ++i)
     {
         FileLoaderParam loaderParams;
         loaderParams.field_0xc = 0x1000;

@@ -64,7 +64,7 @@ void Application::InitializeMain()
     RenderManager& renderMgr = RenderManager::GetInstance();
     CRenderingInfrastructure* renderInfrs = renderMgr.GetRenderingDevice();
 
-    renderInfrs->Device = RsdxDevice;
+    renderInfrs->GetDevice()->SetHandle(RsdxDevice);
 
     // TODO
 }
@@ -110,7 +110,7 @@ void Application::InitializeCommon()
     FileBinder* binder = fileSystem.GetDefaultBinder();
     if (binder)
     {
-        if (!(fileSystem.Flags & FILE_SYSTEM_FLAG_USE_CPK))
+        if ((fileSystem.Flags & FILE_SYSTEM_FLAG_USE_CPK) == 0)
         {
             binder->BindDirectory("raw", 0x100, false);
             binder->BindDirectory("", 0x300, false);

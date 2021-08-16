@@ -188,7 +188,7 @@ public:
     inline StringBuf(fnd::IAllocator* allocator = nullptr) :
         String(m_buf, 0, CSL_HIGH_BITMASK(m_capacityAndFlags) | bufLen, allocator) {}
 
-    inline StringBuf(const char* initialText, fnd::IAllocator* allocator = nullptr) :
+    StringBuf(const char* initialText, fnd::IAllocator* allocator = nullptr) :
         String(m_buf, 0, CSL_HIGH_BITMASK(m_capacityAndFlags) | bufLen, allocator)
     {
         copyFrom(initialText, std::strlen(initialText), 0, 0);

@@ -44,9 +44,6 @@ public:
     // Wii U: 0x02aa3d14, PC: TODO
     bool IsWarningEnd();
 
-    // Wii U: 0x021c9aac, PC: TODO
-    bool IsLoadEnd();
-
     // Wii U: 0x02aa3ac8, PC: TODO
     void PreLoadGame();
 

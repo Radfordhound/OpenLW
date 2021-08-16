@@ -163,7 +163,7 @@ void* Packfile::GetResource(const ResourceTypeInfo& typeInfo,
 
 ResDepend Packfile::GetResDepend()
 {
-    return Get<ResDepend>(nullptr, nullptr);
+    return Get<ResDepend>(0);
 }
 
 void Packfile::Setup(csl::fnd::IAllocator* allocator,

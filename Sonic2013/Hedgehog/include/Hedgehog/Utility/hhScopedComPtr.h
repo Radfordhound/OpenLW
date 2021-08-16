@@ -20,9 +20,19 @@ public:
 
     void reset(T* ptr = nullptr)
     {
+        if (m_ptr)
+        {
+            // TODO
+        }
 
-        // TODO
         m_ptr = ptr;
+    }
+
+    void resetaddref(T* ptr = nullptr)
+    {
+        // TODO
+
+        reset(ptr);
     }
 };
 }

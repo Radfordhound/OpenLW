@@ -69,6 +69,7 @@ void CGame::Tick(Application& app)
         m_gameSeq->Update(app.UpdateInfo);
     }
 
+    // Update game mode.
     if (m_gameMode)
     {
         bool doFrame = true;
@@ -80,6 +81,8 @@ void CGame::Tick(Application& app)
             renderMgr.Update(app.UpdateInfo, -1);
             // TODO
         }
+
+        m_gameMode->Update(*this, app.UpdateInfo);
     }
 
     // TODO
