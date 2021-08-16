@@ -96,6 +96,8 @@
     <ClCompile Include="..\..\src\OpenLW\fnd\CActor.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\CBranchActor.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\CLeafActor.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\CMoviePlayer.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\fnd\CMovieSystem.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\File.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\FileBinder.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\FileBinderCri.cpp" />
@@ -166,6 +168,8 @@
     <ClInclude Include="..\..\src\OpenLW\fnd\CActorTraverser.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\CBranchActor.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\CLeafActor.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\CMoviePlayer.h" />
+    <ClInclude Include="..\..\src\OpenLW\fnd\CMovieSystem.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\File.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\FileBinder.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\FileBinderCri.h" />
