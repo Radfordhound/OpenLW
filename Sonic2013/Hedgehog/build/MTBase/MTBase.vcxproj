@@ -11,9 +11,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\hhMTJobMemorySystemUtil.cpp" />
+    <ClCompile Include="source\hhMTSimpleJob.cpp" />
     <ClCompile Include="source\Thread\hhMTJobThreadFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhEventHolder.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhListExecutor.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhJob.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhJobJoint.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhMTJobMemorySystemUtil.h" />
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhMTSimpleJob.h" />
     <ClInclude Include="..\..\include\Hedgehog\MTBase\Thread\hhMTJobThreadFactory.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

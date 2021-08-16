@@ -2,7 +2,7 @@
 #include "RenderManager.h"
 #include "GfxResourceCallback.h"
 #include "../fnd/FileLoader.h"
-#include <Hedgehog/MTBase/Thread/hhMTJobThreadFactory.h>
+#include <Hedgehog/MTBase/hhMTSimpleJob.h>
 #include <boost/scoped_ptr.hpp>
 #include <boost/intrusive_ptr.hpp>
 

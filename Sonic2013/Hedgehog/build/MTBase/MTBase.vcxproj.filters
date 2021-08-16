@@ -1,18 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Thread">
-      <UniqueIdentifier>{6e2647a4-e14d-4f82-b069-8ebefa1432b5}</UniqueIdentifier>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Thread">
+      <UniqueIdentifier>{b92aafb9-334e-4ffe-bd12-6ec87df93e6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread">
+      <UniqueIdentifier>{0f5a9a42-6dc8-415c-ad38-d292cc2bec75}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\hhMTSimpleJob.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\hhMTJobMemorySystemUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="source\Thread\hhMTJobThreadFactory.cpp">
-      <Filter>Thread</Filter>
+      <Filter>Source Files\Thread</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhListExecutor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhMTSimpleJob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhJob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhJobJoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhEventHolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Hedgehog\MTBase\hhMTJobMemorySystemUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\MTBase\Thread\hhMTJobThreadFactory.h">
-      <Filter>Thread</Filter>
+      <Filter>Header Files\Thread</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

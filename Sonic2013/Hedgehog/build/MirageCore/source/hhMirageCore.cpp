@@ -1,5 +1,5 @@
 #include "Hedgehog/MirageCore/hhMirageCore.h"
-#include <Hedgehog/MTBase/Thread/hhMTJobThreadFactory.h>
+#include <Hedgehog/MTBase/hhMTSimpleJob.h>
 
 using namespace hh::MTBase;
 
