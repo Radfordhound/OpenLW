@@ -1,4 +1,5 @@
 #include "GameMode.h"
+#include "../GameDocument.h"
 #include "../../OpenLW/CGame.h"
 #include "../../OpenLW/game/GlobalAllocator.h"
 #include "../../OpenLW/fnd/FileLoader.h"
@@ -12,6 +13,31 @@ using namespace csl::fnd;
 
 namespace app
 {
+void* GameMode::operator new(std::size_t size)
+{
+    // Get a "default" allocator.
+    IAllocator* allocator = GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
+
+    // Allocate a new GameMode of the given size.
+    GameMode* obj = static_cast<GameMode*>(allocator->Alloc(size));
+
+    // Construct the new GameMode if allocation succeeded and return.
+    if (obj)
+    {
+        obj->m_size = static_cast<unsigned short>(size);
+        obj->m_allocator = allocator;
+    }
+
+    return obj;
+}
+
+GameMode::GameMode() :
+    Game(nullptr),
+    field_0x10(0),
+    Name("UnnamedMode"),
+    GameDoc(nullptr),
+    SwitchListener(nullptr) {}
+
 GameMode::~GameMode()
 {
     // TODO
@@ -53,15 +79,10 @@ bool GameMode::PreProcessMessage(CGame& game, fnd::Message& msg)
     return false;
 }
 
-void GameMode::InitializeGameMode(CGame& game)
+void GameMode::AdvanceSequence()
 {
-    // TODO
-}
-
-bool GameMode::PreLoadFile(const char* filePath, int param_2)
-{
-    FileLoader& fileLoader = FileLoader::GetInstance();
-    return fileLoader.PreLoadFile(filePath, param_2);
+    MsgAdvanceSequence msg;
+    Game->SendMessage(msg); // TODO: Does AdvanceSequence return this result?
 }
 
 bool GameMode::LoadFile(const char* filePath, const fnd::FileLoaderParam& loaderParams)
@@ -70,10 +91,22 @@ bool GameMode::LoadFile(const char* filePath, const fnd::FileLoaderParam& loader
     return fileLoader.LoadFile(filePath, loaderParams);
 }
 
-void GameMode::AdvanceSequence()
+bool GameMode::PreLoadFile(const char* filePath, int param_2)
 {
-    MsgAdvanceSequence msg;
-    Game->SendMessage(msg); // TODO: Does AdvanceSequence return this result?
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    return fileLoader.PreLoadFile(filePath, param_2);
+}
+
+bool GameMode::IsLoadEnd()
+{
+    FileLoader& fileLoader = FileLoader::GetInstance();
+    return fileLoader.IsSyncCompleteAll();
+}
+
+void GameMode::InitializeGameMode(CGame& game)
+{
+    GameDoc = new (m_allocator) GameDocument(this);
+    // TODO
 }
 
 void GameMode::ReleaseGameMode(CGame& game)
@@ -85,29 +118,4 @@ void GameMode::Destroy(CGame& game)
 {
     // TODO
 }
-
-void* GameMode::operator new(std::size_t size)
-{
-    // Get a "default" allocator.
-    IAllocator* allocator = GlobalAllocator::GetAllocator(ALLOCATOR_UNK_TWO);
-
-    // Allocate a new GameMode of the given size.
-    GameMode* obj = static_cast<GameMode*>(allocator->Alloc(size));
-
-    // Construct the new GameMode if allocation succeeded and return.
-    if (obj)
-    {
-        obj->m_size = static_cast<unsigned short>(size);
-        obj->m_allocator = allocator;
-    }
-
-    return obj;
-}
-
-GameMode::GameMode() :
-    Game(nullptr),
-    field_0x10(0),
-    Name("UnnamedMode"),
-    field_0x18(0),
-    SwitchListener(nullptr) {}
 }

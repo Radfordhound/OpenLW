@@ -5,6 +5,7 @@
 
 namespace app
 {
+struct GameDocument;
 class CGame;
 
 namespace fnd
@@ -113,8 +114,14 @@ struct GameMode : public fnd::ReferencedObject // size == 32
     CGame* Game;
     unsigned int field_0x10; // TODO: Get the type right.
     const char* Name;
-    unsigned int field_0x18; // TODO: Get the type right.
+    GameDocument* GameDoc;
     ut::RefPtr<MyDisplaySwitchListener> SwitchListener;
+
+    // Wii U: 0x021c9460, PC: 0x004ac630
+    static void* operator new(std::size_t size);
+
+    // Wii U: 0x021c953c, PC: 0x004ac770
+    GameMode();
 
     // Wii U: 0x021c960c, PC: 0x004acab0
     ~GameMode();
@@ -134,30 +141,25 @@ struct GameMode : public fnd::ReferencedObject // size == 32
     // Wii U: 0x021c98b4, PC: GENERIC RETURN FALSE
     virtual bool PreProcessMessage(CGame& game, fnd::Message& msg);
 
-    // TODO: Other non-virtual member functions.
-
-    // Wii U: 0x021c9e38, PC: TODO
-    void InitializeGameMode(CGame& game);
-
-    // Wii U: 0x021c9a88, PC: TODO
-    bool PreLoadFile(const char* filePath, int param_2);
+    // Wii U: 0x021c98f8, PC: TODO
+    void AdvanceSequence();
 
     // Wii U: 0x021c9a30, PC: TODO
     bool LoadFile(const char* filePath, const fnd::FileLoaderParam& loaderParams);
 
-    // Wii U: 0x021c98f8, PC: TODO
-    void AdvanceSequence();
+    // Wii U: 0x021c9a88, PC: TODO
+    bool PreLoadFile(const char* filePath, int param_2);
+
+    // Wii U: 0x021c9aac, PC: TODO
+    bool IsLoadEnd();
+
+    // Wii U: 0x021c9e38, PC: TODO
+    void InitializeGameMode(CGame& game);
 
     // Wii U: 0x021c9f48, PC: 0x004ac4f0
     void ReleaseGameMode(CGame& game);
 
     // Wii U: 0x021c9f64, PC: 0x004ac7c0
     void Destroy(CGame& game);
-
-    // Wii U: 0x021c9460, PC: 0x004ac630
-    static void* operator new(std::size_t size);
-
-    // Wii U: 0x021c953c, PC: 0x004ac770
-    GameMode();
 };
 }
