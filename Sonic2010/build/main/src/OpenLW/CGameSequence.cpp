@@ -4,6 +4,7 @@
 #include "fnd/Message.h"
 #include "fnd/SUpdateInfo.h"
 #include "../System/GameMode/GameModeStartUp.h"
+#include "../System/GameMode/GameModeSegaLogo.h"
 
 using namespace app::gfx;
 using namespace hh::mr;
@@ -91,8 +92,7 @@ CGameSequence::state_t CGameSequence::StateSegaLogo(const event_t& e)
 
     case SIGNAL_ENTER:
         StartLeakChecker();
-        // TODO: Un-comment this line:
-        //InitGameMode(new GameModeSegalogo());
+        InitGameMode(new GameModeSegalogo());
         return nullptr;
     }
 

@@ -813,6 +813,9 @@
     <ClCompile Include="..\..\src\OpenLW\gfx\GfxResourceCallback.cpp">
       <Filter>OpenLW\gfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\System\GameMode\GameModeSegaLogo.cpp">
+      <Filter>System\GameMode</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\gfx\Renderable.cpp">
       <Filter>OpenLW\gfx</Filter>
     </ClCompile>
@@ -1036,6 +1039,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\gfx\GfxResourceCallback.h">
       <Filter>OpenLW\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\GameMode\GameModeSegaLogo.h">
+      <Filter>System\GameMode</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\gfx\Renderable.h">
       <Filter>OpenLW\gfx</Filter>

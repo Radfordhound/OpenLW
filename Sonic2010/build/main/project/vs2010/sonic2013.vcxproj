@@ -150,6 +150,7 @@
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp" />
     <ClCompile Include="..\..\src\System\GameDocument.cpp" />
     <ClCompile Include="..\..\src\System\GameMode\GameMode.cpp" />
+    <ClCompile Include="..\..\src\System\GameMode\GameModeSegaLogo.cpp" />
     <ClCompile Include="..\..\src\System\GameMode\GameModeStartUp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +228,7 @@
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h" />
     <ClInclude Include="..\..\src\System\GameDocument.h" />
     <ClInclude Include="..\..\src\System\GameMode\GameMode.h" />
+    <ClInclude Include="..\..\src\System\GameMode\GameModeSegaLogo.h" />
     <ClInclude Include="..\..\src\System\GameMode\GameModeStartUp.h" />
     <ClInclude Include="..\..\src\Utility\Freelist.h" />
   </ItemGroup>
