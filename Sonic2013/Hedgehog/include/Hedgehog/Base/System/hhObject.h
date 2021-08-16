@@ -9,10 +9,23 @@ namespace base
 class CObject
 {
 public:
+    // Wii U: 0x0369946c, PC: TODO
+    static void* operator new(std::size_t size,
+        const CHedgehogMemoryAllocatorFileLine& fileLineInfo,
+        CHedgehogMemoryAllocatorHeap heap);
+
+    // TODO: Is this function a thing?
+    inline void operator delete(void* ptr,
+        const CHedgehogMemoryAllocatorFileLine& fileLineInfo,
+        CHedgehogMemoryAllocatorHeap heap)
+    {
+        return __HH_FREE(ptr);
+    }
+
     // Wii U: 0x0369973c, PC: 0x00c1e780
     static void* operator new(std::size_t size);
 
-    // Wii U: TODO, PC: TODO
+    // Wii U: 0x0369981c (THUNK), PC: TODO
     static void operator delete(void* ptr);
 };
 
@@ -34,7 +47,7 @@ public:
     void AddRef();
 
     // Wii U: 0x0369988c, PC: TODO
-    rsdx::RsdxAtomic Release();
+    void Release();
 
     // Wii U: 0x0369982c, PC: TODO
     CRefCountObject();

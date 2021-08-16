@@ -1,9 +1,18 @@
 #include "Hedgehog/Base/System/hhObject.h"
 
+using namespace hh::rsdx;
+
 namespace hh
 {
 namespace base
 {
+void* CObject::operator new(std::size_t size,
+    const CHedgehogMemoryAllocatorFileLine& fileLineInfo,
+    CHedgehogMemoryAllocatorHeap heap)
+{
+    return __HH_ALLOC(size, fileLineInfo, heap);
+}
+
 void* CObject::operator new(std::size_t size)
 {
     return __HH_ALLOC(size);
@@ -23,18 +32,20 @@ std::size_t CRefCountObject::RefCount() const
 
 bool CRefCountObject::IsUnique() const
 {
-    return (m_refCount == 1);
+    return (RefCount() == 1);
 }
 
 void CRefCountObject::AddRef()
 {
-    // TODO
+    RsdxAtomicInc2(&m_refCount);
 }
 
-rsdx::RsdxAtomic CRefCountObject::Release()
+void CRefCountObject::Release()
 {
-    // TODO
-    return 0;
+    if (RsdxAtomicDec2(&m_refCount) == 0)
+    {
+        delete this;
+    }
 }
 
 CRefCountObject::CRefCountObject() :
