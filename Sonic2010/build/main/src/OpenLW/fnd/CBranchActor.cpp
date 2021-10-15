@@ -1,6 +1,6 @@
 #include "CBranchActor.h"
 #include "Message.h"
-#include "../TinyFsm.h"
+#include "../../System/Component/TinyFsm.h"
 #include "../game/GlobalAllocator.h"
 
 namespace app

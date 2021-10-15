@@ -1,7 +1,7 @@
 #include "CActor.h"
 #include "Message.h"
 #include "MessageManager.h"
-#include "../TinyFsm.h"
+#include "../../System/Component/TinyFsm.h"
 
 namespace app
 {

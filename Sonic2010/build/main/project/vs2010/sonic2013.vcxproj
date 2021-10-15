@@ -220,12 +220,12 @@
     <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.h" />
     <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.h" />
     <ClInclude Include="..\..\src\OpenLW\SyncTimer.h" />
-    <ClInclude Include="..\..\src\OpenLW\TinyFsm.h" />
     <ClInclude Include="..\..\src\OpenLW\ut\RefPtr.h" />
     <ClInclude Include="..\..\src\OpenLW\xgame\DlcManager.h" />
     <ClInclude Include="..\..\src\OpenLW\xgame\MessageSystem.h" />
     <ClInclude Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.h" />
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h" />
+    <ClInclude Include="..\..\src\System\Component\TinyFsm.h" />
     <ClInclude Include="..\..\src\System\GameDocument.h" />
     <ClInclude Include="..\..\src\System\GameMode\GameMode.h" />
     <ClInclude Include="..\..\src\System\GameMode\GameModeSegaLogo.h" />

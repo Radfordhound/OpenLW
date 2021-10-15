@@ -1,6 +1,6 @@
 #pragma once
 #include "GameMode.h"
-#include "../../OpenLW/TinyFsm.h"
+#include "../Component/TinyFsm.h"
 #include "../../OpenLW/gfx/Renderable.h"
 #include <boost/intrusive_ptr.hpp>
 

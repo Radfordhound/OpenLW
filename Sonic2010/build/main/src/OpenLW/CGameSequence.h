@@ -1,5 +1,5 @@
 #pragma once
-#include "TinyFsm.h"
+#include "../System/Component/TinyFsm.h"
 #include "fnd/ReferencedObject.h"
 #include "csl/ut/string.h"
 

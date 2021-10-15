@@ -1,7 +1,7 @@
 #pragma once
 #include "../../OpenLW/ut/RefPtr.h"
 #include "../../OpenLW/fnd/ReferencedObject.h"
-#include "../../OpenLW/TinyFsm.h"
+#include "../Component/TinyFsm.h"
 
 namespace app
 {
