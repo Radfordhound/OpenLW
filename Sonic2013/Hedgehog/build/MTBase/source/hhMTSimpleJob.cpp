@@ -129,7 +129,7 @@ void hhMTSimpleJobDestroyDefault(SJobType256* job)
 void hhMTExecuteJob(SJobExecParam* jobExecParam, bool param_2)
 {
     SJobJoint* jobJoint = jobExecParam->JobJoint;
-    jobExecParam->JobExec(jobExecParam);
+    jobExecParam->JobExecFunc(jobExecParam);
 
     if (jobJoint && RsdxAtomicDec2(&jobJoint->field_0x4) == 0)
     {
@@ -207,11 +207,13 @@ class CMTSimpleJobPushEasyData // TODO: Inheritance?
 
 public:
     // Wii U: 0x036e6be8, PC: 0x00c2a8b0
-    static void JobExec(void* param_1)
+    static void JobExec(void* data)
     {
-        SJobExecParam* jobExecParam = static_cast<SJobExecParam*>(param_1);
-        jobExecParam->Job();
-        jobExecParam->Job.~function<void()>(); // TODO: Is this correct?
+        SJobType256* job = static_cast<SJobType256*>(data);
+        SJobEasyData* jobData = reinterpret_cast<SJobEasyData*>(job->Data);
+
+        jobData->JobFunc();
+        jobData->~SJobEasyData(); // TODO: Is this correct?
     }
 };
 
@@ -221,14 +223,13 @@ class CMTSimpleJobPushEasyData2 // TODO: Inheritance?
 
 public:
     // Wii U: 0x036e6e28, PC: TODO
-    static void JobExec(void* param_1)
+    static void JobExec(void* data)
     {
-        SJobExecParam* jobExecParam = static_cast<SJobExecParam*>(param_1);
-        auto& job2 = reinterpret_cast<boost::function<void(
-            unsigned int, unsigned int)>&>(jobExecParam->Job);
+        SJobType256* job = static_cast<SJobType256*>(data);
+        SJobEasyData2* jobData = reinterpret_cast<SJobEasyData2*>(job->Data);
 
-        job2(jobExecParam->field_0x24, jobExecParam->field_0x20);
-        job2.~function<void(unsigned int, unsigned int)>(); // TODO: Is this correct?
+        jobData->JobFunc(jobData->Param1, jobData->Param2);
+        jobData->~SJobEasyData2(); // TODO: Is this correct?
     }
 };
 
@@ -356,6 +357,7 @@ void hhMTSimpleJobBind(SJobType256* job, SJobJoint* jobJoint)
 void hhMTSimpleJobFunction(const boost::function<void()>& jobFunc,
     const SMTUpdateHint& updateHint)
 {
+    // Setup job.
     SJobType256* job = hhMTSimpleJobCreateDefault();
     if (updateHint.field_0x4)
     {
@@ -363,9 +365,15 @@ void hhMTSimpleJobFunction(const boost::function<void()>& jobFunc,
     }
 
     job->Name = updateHint.JobName;
-    job->JobExecParam.JobExec = &CMTSimpleJobPushEasyData::JobExec;
-    new (&job->JobExecParam.Job) boost::function<void()>(jobFunc);
 
+    // Setup job exec data.
+    job->JobExecParam.JobExecFunc = &CMTSimpleJobPushEasyData::JobExec;
+
+    // Setup job data.
+    SJobEasyData* jobData = reinterpret_cast<SJobEasyData*>(job->Data);
+    jobData->JobFunc = jobFunc;
+
+    // Enqueue job.
     if (updateHint.field_0x8)
     {
         hhMTSimpleJobLinkNext(job, updateHint.field_0x8.get(), updateHint.field_0x0);
@@ -382,14 +390,20 @@ void hhMTSimpleJobFunction2(
 {
     for (unsigned int i = 0; i < param_2; ++i)
     {
+        // Setup job.
         SJobType256* job = hhMTSimpleJobCreateDefault();
-
         job->Name = updateHint.JobName;
-        job->JobExecParam.JobExec = &CMTSimpleJobPushEasyData2::JobExec;
-        new (&job->JobExecParam.Job) boost::function<void(unsigned int, unsigned int)>(jobFunc);
-        job->JobExecParam.field_0x20 = param_2;
-        job->JobExecParam.field_0x24 = i;
 
+        // Setup job exec data.
+        job->JobExecParam.JobExecFunc = &CMTSimpleJobPushEasyData2::JobExec;
+
+        // Setup job data.
+        SJobEasyData2* jobData = reinterpret_cast<SJobEasyData2*>(job->Data);
+        jobData->JobFunc = jobFunc;
+        jobData->Param2 = param_2;
+        jobData->Param1 = i;
+
+        // Enqueue job.
         if (updateHint.field_0x4)
         {
             hhMTSimpleJobBind(job, updateHint.field_0x4.get());

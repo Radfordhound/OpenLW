@@ -20,7 +20,7 @@ void CMTExecutorThread::Process()
 
     do
     {
-        result = m_jobExecHeader->Job(m_jobExecHeader->JobParam);
+        result = m_jobExecHeader->JobFunc(m_jobExecHeader->JobParam);
     }
     while (result == 0 || result == 1);
 }

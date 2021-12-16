@@ -127,9 +127,9 @@ public:
         memory_util_t::InitializeList(field_0x0);
 
         m_memoryUtil.field_0x4 = 0;
-
+        
         m_pipe.field_0x4 = 0;
-        m_pipe.Job = &StaticFlushFunc;
+        m_pipe.JobFunc = &StaticFlushFunc;
         m_pipe.JobParam = this;
 
         m_yieldMask = 1;

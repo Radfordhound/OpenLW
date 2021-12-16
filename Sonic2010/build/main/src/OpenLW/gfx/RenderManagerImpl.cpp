@@ -373,7 +373,7 @@ void RenderManager::Impl::RenderNoPresent()
     for (std::size_t i = 0; i < uVar13; ++i)
     {
         SJobType256* job = hhMTSimpleJobCreateDefault();
-        job->JobExecParam.JobExec = &DummyJointJob;
+        job->JobExecParam.JobExecFunc = &DummyJointJob;
 
         hhMTSimpleJobBind(job, CVar16);
         hhMTSimpleJobLinkNext(job, *local_1250[i], 0);

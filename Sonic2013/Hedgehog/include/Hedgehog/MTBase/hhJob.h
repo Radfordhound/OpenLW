@@ -12,12 +12,9 @@ typedef void (*SJobExecFunc)(void* param_1);
 
 struct SJobExecParam : public rsdx::RsdxSListEntry
 {
-    SJobExecFunc JobExec;
+    SJobExecFunc JobExecFunc;
     unsigned int field_0x8;
     SJobJoint* JobJoint;
-    boost::function<void()> Job;
-    unsigned int field_0x20;
-    unsigned int field_0x24;
 
     // TODO: Other data members?
 };
@@ -27,19 +24,27 @@ typedef unsigned int (*SJobFunc)(void* param_1);
 struct SJobExecuteHeader : public rsdx::RsdxSListHeader // TODO: Is this correct?
 {
     unsigned int field_0x4;
-    SJobFunc Job;
+    SJobFunc JobFunc;
     void* JobParam;
+};
+
+struct SJobEasyData // TODO: This name was guessed.
+{
+    boost::function<void()> JobFunc;
+};
+
+struct SJobEasyData2 // TODO: This name was guessed.
+{
+    boost::function<void(unsigned int, unsigned int)> JobFunc;
+    unsigned int Param2;
+    unsigned int Param1;
 };
 
 struct SJobType256 // size == 256???
 {
     SJobExecParam JobExecParam;
-
-    // TODO: Other data members.
+    char Data[256 - (sizeof(SJobExecParam) + sizeof(const char*))]; // TODO: Is this correct?
     const char* Name;
-    // TODO: Other data members?
-
-    char Padding[224]; // TODO
 };
 }
 }
