@@ -31,6 +31,7 @@ class FileLoader : public ReferencedObject, public csl::fnd::Singleton<FileLoade
 {
     DECLARE_SINGLETON
 
+public:
     struct LoadInfo // size == 0x24
     {
         csl::fnd::IAllocator* field_0x0;
@@ -65,6 +66,7 @@ class FileLoader : public ReferencedObject, public csl::fnd::Singleton<FileLoade
             unsigned int param_3);
     };
 
+private:
     csl::fnd::IAllocator* field_0xc;
     csl::ut::MoveArray<LoadInfo*> field_0x10;
     csl::ut::MoveArray<LoadInfo*> field_0x20;
@@ -86,6 +88,9 @@ public:
 
     // Wii U: 0x0218c658, PC: 0x00491140
     void ResourceJobMTExec(LoadInfo* loadInfo);
+
+    // Wii U: 0x0218c898, PC: TODO
+    static void ResourceJobMT(void* data);
 
     // Wii U: 0x0218c8a4, PC: 0x004916b0
     bool ResourceJobMTStart(LoadInfo* loadInfo);

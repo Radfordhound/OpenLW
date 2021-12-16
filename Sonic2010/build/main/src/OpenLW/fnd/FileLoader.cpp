@@ -6,12 +6,14 @@
 #include "../game/GlobalAllocator.h"
 #include "../gfx/RenderManager.h"
 #include <Hedgehog/Utility/hhPackfile.h>
+#include <Hedgehog/MTBase/hhMTSimpleJob.h>
 #include <csl/fnd/thread.h>
 
 using namespace app::gfx;
 using namespace app::game;
 using namespace hh::mr;
 using namespace hh::ut;
+using namespace hh::MTBase;
 using namespace csl::fnd;
 using namespace csl::ut;
 
@@ -158,6 +160,21 @@ void FileLoader::ResourceJobMTExec(LoadInfo* loadInfo)
     }
 }
 
+struct ResourceJobData // TODO: This name was guessed.
+{
+    FileLoader* Loader;
+    FileLoader::LoadInfo* LoadInfo;
+};
+
+// Wii U: 0x0218c898, PC: TODO
+void FileLoader::ResourceJobMT(void* data)
+{
+    SJobType256* job = static_cast<SJobType256*>(data);
+    ResourceJobData* jobData = reinterpret_cast<ResourceJobData*>(job->Data);
+
+    jobData->Loader->ResourceJobMTExec(jobData->LoadInfo);
+}
+
 bool FileLoader::ResourceJobMTStart(LoadInfo* loadInfo)
 {
     if ((loadInfo->field_0xc & 1) == 0)
@@ -202,8 +219,21 @@ bool FileLoader::ResourceJobMTStart(LoadInfo* loadInfo)
     }
 
     field_0x20.push_back_unchecked(loadInfo);
-    // TODO
-    __debugbreak(); ResourceJobMTExec(loadInfo); // TODO: REMOVE THIS AND DO THE STUFF REQUIRED TO EVENTUALLY CALL ResourceJobMTExec PROPERLY!!!
+
+    // Setup resource job.
+    SJobType256* job = hhMTSimpleJobCreateDefault();
+    ResourceJobData* jobData = reinterpret_cast<ResourceJobData*>(job->Data);
+
+    // Setup resource job data.
+    jobData->Loader = this;
+    jobData->LoadInfo = loadInfo;
+
+    // Setup resource job exec.
+    job->JobExecParam.field_0x8 = 3;
+    job->JobExecParam.JobExecFunc = &ResourceJobMT;
+
+    // Enter resource job.
+    hhMTSimpleJobEntry(job, 0);
     return true;
 }
 
