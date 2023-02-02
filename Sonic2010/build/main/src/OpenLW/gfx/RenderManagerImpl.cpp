@@ -124,8 +124,8 @@ void RenderManager::Impl::Initialize()
 
     // TODO
 
-    Stack.field_0x0 = nullptr;
-    Stack.Top = nullptr;
+    ScratchBuffer.Allocator.field_0x0 = nullptr;
+    ScratchBuffer.Allocator.Top = nullptr;
 
     // TODO
     LoadShader();
@@ -185,14 +185,14 @@ void RenderManager::Impl::Update_RunOnRenderInternal(
 
     // TODO
 
-    Stack.field_0x0 = StackMemory;
-    Stack.Top = StackMemory;
+    ScratchBuffer.Allocator.field_0x0 = StackMemory;
+    ScratchBuffer.Allocator.Top = StackMemory;
 
     // TODO
 
     // Get scene views.
     CRenderSceneViewImpl** sceneViews = static_cast<CRenderSceneViewImpl**>(
-        Stack.AllocateMemory(sizeof(CRenderSceneViewImpl*) * 3));
+        ScratchBuffer.Allocator.AllocateMemory(sizeof(CRenderSceneViewImpl*) * 3));
 
     std::size_t sceneViewCount = 0;
 
@@ -210,12 +210,13 @@ void RenderManager::Impl::Update_RunOnRenderInternal(
 
     // Get group start end pairs.
     SGroupStartEndPair* pSVar4 = static_cast<SGroupStartEndPair*>(
-        Stack.AllocateMemory(sizeof(SGroupStartEndPair) * sceneViewCount * 2));
+        ScratchBuffer.Allocator.AllocateMemory(sizeof(SGroupStartEndPair) *
+            sceneViewCount * 2));
 
     for (std::size_t i = 0; i < sceneViewCount; ++i)
     {
         sceneViews[i]->StartRenderContainerOne(updateInfo, param_2,
-            &field_0x163ec, field_0x68.get(), GetCommonResource());
+            &ScratchBuffer, field_0x68.get(), GetCommonResource());
     }
 
     SJobJoint* jointAfterPostTraverse = hhMTSimpleJobJointDynamicCreate("jointAfterPostTraverse");
@@ -254,7 +255,8 @@ void RenderManager::Impl::Update_RunOnRenderInternal(
     SJobJoint* jointAfterGazePointFrustum = m_evehtJointSchedulerHandle;
     if (!jointAfterGazePointFrustum)
     {
-        jointAfterGazePointFrustum = hhMTSimpleJobJointDynamicCreate("jointAfterGazePointFrustum");
+        jointAfterGazePointFrustum = hhMTSimpleJobJointDynamicCreate(
+            "jointAfterGazePointFrustum");
     }
 
     hhMTSimpleJobJointLock(jointAfterGazePointFrustum);

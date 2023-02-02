@@ -42,9 +42,10 @@ static ResourceCustomInfo* const ResourceCustomInfoList[] =
 {
     &DefResourceCustomInfo,
     &PacResourceCustomInfo,
-    &OrcaResourceCustomInfo,
+    /*&OrcaResourceCustomInfo,
     &CriAcfResourceCustomInfo,
-    &CriAcbResourceCustomInfo
+    &CriAcbResourceCustomInfo,*/
+    nullptr
 };
 
 ResourceManager::ResourceManager() :

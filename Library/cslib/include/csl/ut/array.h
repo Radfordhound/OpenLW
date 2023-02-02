@@ -16,16 +16,15 @@ class MoveArray
 protected:
     T* m_data;
     std::size_t m_count;
-    std::size_t m_capacityAndFlags;
+    std::size_t m_flags;
     fnd::IAllocator* m_allocator;
 
     MoveArray(T* data, std::size_t count,
         std::size_t capacityAndFlags,
         fnd::IAllocator* allocator) :
-
         m_data(data),
         m_count(count),
-        m_capacityAndFlags(capacityAndFlags),
+        m_flags(capacityAndFlags),
         m_allocator(allocator) {}
 
 public:
@@ -55,7 +54,12 @@ public:
 
     inline std::size_t capacity() const
     {
-        return (m_capacityAndFlags & ~CSL_HIGH_BITMASK(m_capacityAndFlags));
+        return (m_flags & ~CSL_HIGH_BITMASK(m_flags));
+    }
+
+    T& back()
+    {
+        return m_data[m_count - 1];
     }
 
     T& at(std::size_t index)
@@ -108,26 +112,26 @@ public:
         return (count) ? static_cast<T*>(m_allocator->Alloc(sizeof(T) * count)) : nullptr;
     }
 
-    void reserve(std::size_t count)
+    void reserve(std::size_t capacity)
     {
-        if (capacity() < count)
+        if (this->capacity() < capacity)
         {
             // Allocate a new buffer of the given size.
-            T* newData = AllocateMemory(count);
+            T* newData = AllocateMemory(capacity);
             if (!empty())
             {
                 std::memcpy(newData, m_data, m_count);
             }
 
             // Free the old buffer if necessary.
-            if ((CSL_HIGH_BIT(m_capacityAndFlags) == 0) && m_allocator && m_data)
+            if ((CSL_HIGH_BIT(m_flags) == 0) && m_allocator && m_data)
             {
                 m_allocator->Free(m_data);
             }
 
             // Set the new data pointer and capacity.
             m_data = newData;
-            m_capacityAndFlags = count;
+            m_flags = capacity;
         }
     }
 
@@ -192,7 +196,7 @@ public:
     void Reset(void* newData, std::size_t newCount, std::size_t newCapacity,
         fnd::IAllocator* newAllocator, bool noFree)
     {
-        if ((CSL_HIGH_BIT(m_capacityAndFlags) == 0) && m_allocator && m_data)
+        if ((CSL_HIGH_BIT(m_flags) == 0) && m_allocator && m_data)
         {
             m_allocator->Free(m_data);
         }
@@ -202,10 +206,10 @@ public:
 
         if (noFree)
         {
-            newCapacity |= CSL_HIGH_BITMASK(m_capacityAndFlags);
+            newCapacity |= CSL_HIGH_BITMASK(m_flags);
         }
 
-        m_capacityAndFlags = newCapacity;
+        m_flags = newCapacity;
         m_allocator = newAllocator;
     }
 
@@ -214,17 +218,17 @@ public:
         if (&other != this)
         {
             std::size_t tmpCount = m_count;
-            std::size_t tmpCapacity = m_capacityAndFlags;
+            std::size_t tmpFlags = m_flags;
             fnd::IAllocator* tmpAllocator = m_allocator;
             T* tmpData = m_data;
 
             m_count = other.m_count;
-            m_capacityAndFlags = other.m_capacityAndFlags;
+            m_flags = other.m_flags;
             m_allocator = other.m_allocator;
             m_data = other.m_data;
 
             other.m_count = tmpCount;
-            other.m_capacityAndFlags = tmpCapacity;
+            other.m_flags = tmpFlags;
             other.m_allocator = tmpAllocator;
             other.m_data = tmpData;
         }
@@ -243,28 +247,28 @@ public:
     MoveArray() :
         m_data(nullptr),
         m_count(0),
-        m_capacityAndFlags(0),
+        m_flags(0),
         m_allocator(nullptr) {}
 
     MoveArray(fnd::IAllocator* allocator) :
         m_data(nullptr),
         m_count(0),
-        m_capacityAndFlags(0),
+        m_flags(0),
         m_allocator(allocator) {}
 
     MoveArray(std::size_t initialCapacity, fnd::IAllocator* allocator) :
         m_data(nullptr),
         m_count(0),
-        m_capacityAndFlags(0),
+        m_flags(0),
         m_allocator(allocator)
     {
         m_data = AllocateMemory(initialCapacity);
-        m_capacityAndFlags = initialCapacity;
+        m_flags = initialCapacity;
     }
 
     ~MoveArray()
     {
-        if ((CSL_HIGH_BIT(m_capacityAndFlags) == 0) && m_allocator && m_data)
+        if ((CSL_HIGH_BIT(m_flags) == 0) && m_allocator && m_data)
         {
             m_allocator->Free(m_data);
         }
@@ -289,14 +293,14 @@ class ObjectMoveArray
 protected:
     T* m_data;
     std::size_t m_count;
-    std::size_t m_capacityAndFlags;
+    std::size_t m_flags;
     fnd::IAllocator* m_allocator;
 
     ObjectMoveArray(T* data, std::size_t count,
         std::size_t capacityAndFlags, fnd::IAllocator* allocator) :
         m_data(data),
         m_count(count),
-        m_capacityAndFlags(capacityAndFlags),
+        m_flags(capacityAndFlags),
         m_allocator(allocator) {}
 
 public:
@@ -326,7 +330,7 @@ public:
 
     inline std::size_t capacity() const
     {
-        return (m_capacityAndFlags & ~CSL_HIGH_BITMASK(m_capacityAndFlags));
+        return (m_flags & ~CSL_HIGH_BITMASK(m_flags));
     }
 
     inline const_iterator begin() const
@@ -374,26 +378,26 @@ public:
         return (count) ? static_cast<T*>(m_allocator->Alloc(sizeof(T) * count)) : nullptr;
     }
 
-    void reserve(std::size_t count)
+    void reserve(std::size_t capacity)
     {
-        if (capacity() < count)
+        if (this->capacity() < capacity)
         {
             // Allocate a new buffer of the given size.
-            T* newData = AllocateMemory(count);
+            T* newData = AllocateMemory(capacity);
             if (!empty())
             {
                 std::memcpy(newData, m_data, m_count);
             }
 
             // Free the old buffer if necessary.
-            if ((CSL_HIGH_BIT(m_capacityAndFlags) == 0) && m_allocator && m_data)
+            if ((CSL_HIGH_BIT(m_flags) == 0) && m_allocator && m_data)
             {
                 m_allocator->Free(m_data);
             }
 
             // Set the new data pointer and capacity.
             m_data = newData;
-            m_capacityAndFlags = count;
+            m_flags = capacity;
         }
     }
 
@@ -459,25 +463,6 @@ public:
         }
     }
 
-    /*iterator erase(const_iterator pos)
-    {
-        --m_count;
-        for (iterator it = const_cast<iterator>(pos); it != (m_data + m_count); ++it)
-        {
-            *it = it[1];
-        }
-
-        return const_cast<iterator>(pos);
-    }
-
-    void erase_unstable(const_iterator pos)
-    {
-        if (pos != (m_data + --m_count))
-        {
-            *pos = m_data[m_count];
-        }
-    }*/
-
     bool erase_find(const T& val)
     {
         T* ptr = std::remove(m_data, m_data + m_count, val);
@@ -497,47 +482,6 @@ public:
         return true;
     }
 
-    /*void Reset(void* newData, std::size_t newCount, std::size_t newCapacity,
-        fnd::IAllocator* newAllocator, bool noFree)
-    {
-        if ((CSL_HIGH_BIT(m_capacityAndFlags) == 0) && m_allocator && m_data)
-        {
-            m_allocator->Free(m_data);
-        }
-
-        m_data = static_cast<T*>(newData);
-        m_count = newCount;
-
-        if (noFree)
-        {
-            newCapacity |= CSL_HIGH_BITMASK(m_capacityAndFlags);
-        }
-
-        m_capacityAndFlags = newCapacity;
-        m_allocator = newAllocator;
-    }
-
-    void swap(ObjectMoveArray<T>& other)
-    {
-        if (&other != this)
-        {
-            std::size_t tmpCount = m_count;
-            std::size_t tmpCapacity = m_capacityAndFlags;
-            fnd::IAllocator* tmpAllocator = m_allocator;
-            T* tmpData = m_data;
-
-            m_count = other.m_count;
-            m_capacityAndFlags = other.m_capacityAndFlags;
-            m_allocator = other.m_allocator;
-            m_data = other.m_data;
-
-            other.m_count = tmpCount;
-            other.m_capacityAndFlags = tmpCapacity;
-            other.m_allocator = tmpAllocator;
-            other.m_data = tmpData;
-        }
-    }*/
-
     inline const T& operator[] (std::size_t index) const
     {
         return m_data[index];
@@ -551,30 +495,30 @@ public:
     /*ObjectMoveArray() :
         m_data(nullptr),
         m_count(0),
-        m_capacityAndFlags(0),
+        m_flags(0),
         m_allocator(nullptr) {}
 
     ObjectMoveArray(fnd::IAllocator* allocator) :
         m_data(nullptr),
         m_count(0),
-        m_capacityAndFlags(0),
+        m_flags(0),
         m_allocator(allocator) {}*/
 
     ObjectMoveArray(std::size_t initialCapacity, fnd::IAllocator* allocator) :
         m_data(nullptr),
         m_count(0),
-        m_capacityAndFlags(0),
+        m_flags(0),
         m_allocator(allocator)
     {
         m_data = AllocateMemory(initialCapacity);
-        m_capacityAndFlags = initialCapacity;
+        m_flags = initialCapacity;
     }
 
     ~ObjectMoveArray()
     {
         clear();
 
-        if ((CSL_HIGH_BIT(m_capacityAndFlags) == 0) && m_allocator && m_data)
+        if ((CSL_HIGH_BIT(m_flags) == 0) && m_allocator && m_data)
         {
             m_allocator->Free(m_data);
         }

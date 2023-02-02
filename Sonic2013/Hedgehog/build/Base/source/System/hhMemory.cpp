@@ -39,6 +39,16 @@ void* __HH_ALLOC(std::size_t size, const CHedgehogMemoryAllocatorFileLine& fileL
     return std::malloc(size);
 }
 
+void* __HH_ALLOC(std::size_t size, CHedgehogMemoryAllocatorHeap heap)
+{
+    // If a CSL Allocator is set, allocate using that.
+    IAllocator* allocator = CMemoryAllocator::GetCSLAllocator();
+    if (allocator) return allocator->Alloc(size);
+
+    // TODO: Do this properly instead
+    return std::malloc(size);
+}
+
 void* __HH_ALLOC(std::size_t size, const CHedgehogMemoryAllocatorFileLine& fileLineInfo,
     CHedgehogMemoryAllocatorHeap heap)
 {

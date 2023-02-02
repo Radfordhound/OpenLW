@@ -123,7 +123,7 @@ public:
     }
 };
 
-template<typename T, typename _event_t = TiFsmBasicEvent<T>, bool hierarchical = true>
+template<typename T, typename _event_t = TiFsmBasicEvent<T>, bool hierarchical = false>
 class TTinyFsm;
 
 template<typename T, typename event_t = TiFsmBasicEvent<T>>
@@ -137,52 +137,56 @@ private:
     event_func m_delegate;
 
 public:
-    // TODO: Is this function actually a thing?
-    inline bool IsValid() const
+    //// TODO: Is this function actually a thing?
+    //inline bool IsValid() const
+    //{
+    //    return (m_delegate != nullptr);
+    //}
+
+    //// TODO: Is this function actually a thing?
+    //inline void Clear()
+    //{
+    //    m_delegate = nullptr;
+    //}
+
+    //// TODO: Is this function actually a thing?
+    //inline this_t Call(T* obj, const event_t& e)
+    //{
+    //    return (obj->*m_delegate)(e);
+    //}
+
+    inline operator event_func() const
     {
-        return (m_delegate != nullptr);
+        return m_delegate;
     }
 
-    // TODO: Is this function actually a thing?
-    inline void Clear()
-    {
-        m_delegate = nullptr;
-    }
+    //// TODO: Is this function actually a thing?
+    //inline bool operator==(const this_t& other) const
+    //{
+    //    return (m_delegate == other.m_delegate);
+    //}
 
-    // TODO: Is this function actually a thing?
-    inline this_t Call(T* obj, const event_t& e)
-    {
-        return (obj->*m_delegate)(e);
-    }
+    //// TODO: Is this function actually a thing?
+    //inline bool operator!=(const this_t& other) const
+    //{
+    //    return (m_delegate != other.m_delegate);
+    //}
 
-    // TODO: Is this function actually a thing?
-    inline bool operator==(const this_t& other) const
-    {
-        return (m_delegate == other.m_delegate);
-    }
+    //// TODO: Is this function actually a thing?
+    //inline bool operator==(const event_func& eventFunc) const
+    //{
+    //    return (m_delegate == eventFunc);
+    //}
 
-    // TODO: Is this function actually a thing?
-    inline bool operator!=(const this_t& other) const
-    {
-        return (m_delegate != other.m_delegate);
-    }
-
-    // TODO: Is this function actually a thing?
-    inline bool operator==(const event_func& eventFunc) const
-    {
-        return (m_delegate == eventFunc);
-    }
-
-    // TODO: Is this function actually a thing?
-    inline bool operator!=(const event_func& eventFunc) const
-    {
-        return (m_delegate != eventFunc);
-    }
+    //// TODO: Is this function actually a thing?
+    //inline bool operator!=(const event_func& eventFunc) const
+    //{
+    //    return (m_delegate != eventFunc);
+    //}
     
     inline TTinyFsmState() :
         m_delegate(nullptr) {}
 
-    // TODO: Is this constructor actually a thing?
     inline TTinyFsmState(event_func eventFunc) :
         m_delegate(eventFunc) {}
 };
@@ -202,38 +206,38 @@ private:
     state_t m_src;
 
     // TODO: Is this function actually a thing?
-    inline state_t Trigger(state_t state, const event_t& e)
+    inline state_t Trigger(typename state_t::event_func state, const event_t& e)
     {
-        return state.Call(static_cast<T*>(this), e);
+        return (static_cast<T*>(this)->*state)(e);
     }
 
     // TODO: Is this function actually a thing?
-    inline state_t Super(state_t state)
+    inline state_t Super(typename state_t::event_func state)
     {
         return Trigger(state, event_t::CreateSuper());
     }
 
     // TODO: Is this function actually a thing?
-    inline state_t Init(state_t state)
+    inline state_t Init(typename state_t::event_func state)
     {
         return Trigger(state, event_t::CreateInit());
     }
 
     // TODO: Is this function actually a thing?
-    inline void Enter(state_t state)
+    inline void Enter(typename state_t::event_func state)
     {
         Trigger(state, event_t::CreateEnter());
     }
 
     // TODO: Is this function actually a thing?
-    inline void Leave(state_t state)
+    inline void Leave(typename state_t::event_func state)
     {
         Trigger(state, event_t::CreateLeave());
     }
 
     state_t _top(const event_t& event) // TODO: Is this actually defined by the user of this class?
     {
-        return state_t(); // TODO: Is this correct?
+        return state_t();
     }
 
     // TODO: Is this function actually a thing? It appears to
@@ -375,10 +379,10 @@ public:
         if (hierarchical)
         {
             m_cur = m_src;
-            while (m_cur.IsValid())
+            while (m_cur)
             {
                 state_t tinyFsmState = Trigger(m_cur, e);
-                if (!tinyFsmState.IsValid()) break;
+                if (!tinyFsmState) break;
 
                 m_cur = Super(m_cur);
             }

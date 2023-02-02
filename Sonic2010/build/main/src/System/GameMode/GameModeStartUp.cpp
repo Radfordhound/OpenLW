@@ -136,7 +136,7 @@ void GameModeStartUp::LoadResidentFile()
     // TODO
 }
 
-void GameModeStartUp::ChangeState(state_t newState)
+void GameModeStartUp::ChangeState(state_t::event_func newState)
 {
     FSM_TRAN(newState);
 }

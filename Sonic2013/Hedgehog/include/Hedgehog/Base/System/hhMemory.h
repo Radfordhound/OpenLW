@@ -18,19 +18,24 @@ public:
 
 class CHedgehogMemoryAllocatorHeap // TODO: Inheritance?
 {
-    // TODO
+    unsigned int field_0x0;
 };
 
-// Wii U: 0x036984E8, PC: TODO
+// TODO: Is the PC address for this function the correct address?
+// Wii U: 0x036984E8, PC: 0x00c1b330
 void __HH_FREE(void* ptr);
 
-// Wii U: 0x03698554, PC: TODO
+// TODO: Is the PC address for this function the correct address?
+// Wii U: 0x03698554, PC: 0x00c1b130
 void* __HH_ALLOC(std::size_t size);
 
 // Wii U: 0x036985c8, PC: TODO
 void* __HH_ALLOC(std::size_t size, const CHedgehogMemoryAllocatorFileLine& fileLineInfo);
 
-// Wii U: 0x036986b0, PC: TODO
+// Wii U: 0x0369863C, PC: TODO
+void* __HH_ALLOC(std::size_t size, CHedgehogMemoryAllocatorHeap heap);
+
+// Wii U: 0x036986b0, PC: 0x00c1b1f0
 void* __HH_ALLOC(std::size_t size, const CHedgehogMemoryAllocatorFileLine& fileLineInfo,
     CHedgehogMemoryAllocatorHeap heap);
 

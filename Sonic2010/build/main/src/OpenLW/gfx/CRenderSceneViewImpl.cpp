@@ -1,6 +1,7 @@
 #include "CRenderSceneViewImpl.h"
 #include <Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h>
 #include <Hedgehog/MTBase/hhMTSimpleJob.h>
+#include <Extra/Util/hhRenderScratchBuffer.h>
 
 using namespace app::fnd;
 using namespace hh::mr;
@@ -138,6 +139,7 @@ void CRenderSceneViewImpl::StartRenderContainerOne(
     RenderScratchBuffer* param_3, CGPUInstanceMapper* param_4,
     const SFxPipelineCommonResource* param_5)
 {
+    void* data = param_3->Allocator.AllocateMemory(0x4970);
     // TODO
 }
 }

@@ -99,7 +99,7 @@ CGameSequence::state_t CGameSequence::StateSegaLogo(const event_t& e)
     return &CGameSequence::StateProduct;
 }
 
-void CGameSequence::ChangeState(state_t newState)
+void CGameSequence::ChangeState(state_t::event_func newState)
 {
     m_nextState = newState;
 }
@@ -111,10 +111,10 @@ void CGameSequence::Start()
 
 void CGameSequence::Update(const fnd::SUpdateInfo& updateInfo)
 {
-    if (m_nextState.IsValid())
+    if (m_nextState != nullptr)
     {
         FSM_SETSTATE(m_nextState);
-        m_nextState.Clear();
+        m_nextState = nullptr;
     }
 
     DispatchFSM(event_t::CreateUpdate(updateInfo.DeltaTime));
@@ -124,7 +124,8 @@ CGameSequence::CGameSequence(CGame& game) :
     TTinyFsm(&CGameSequence::StateBoot),
     m_game(&game),
     m_gameMode(nullptr),
-    field_0x28("stg901")
+    field_0x28("stg901"),
+    m_nextState(nullptr)
 {
     // TODO
 }

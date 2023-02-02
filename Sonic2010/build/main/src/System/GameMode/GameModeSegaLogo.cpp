@@ -50,7 +50,7 @@ void GameModeSegalogo::LoadData()
     param.SetMultiLanguageAttr(false, 0);
 }
 
-void GameModeSegalogo::ChangeState(state_t newState)
+void GameModeSegalogo::ChangeState(state_t::event_func newState)
 {
     FSM_TRAN(newState);
 }

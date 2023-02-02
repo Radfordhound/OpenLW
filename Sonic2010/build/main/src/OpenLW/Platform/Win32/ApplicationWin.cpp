@@ -5,6 +5,54 @@
 #include <cstring>
 #include <d3d9.h>
 
+// TODO: REMOVE THIS!!! =============================
+// TODO: RE-ENABLE LINKER OPTIMIZATIONS!!!
+#include "csl/math/quaternion.h"
+#include "csl/math/vector3.h"
+#include "csl/math/matrix34.h"
+#include "../../../dev/seteditor/SetEdDataAc.h"
+#include "../../../math/Angle3.h"
+#include "../../../math/Matrix34.h"
+#include <cstdio>
+
+void test()
+{
+    //csl::math::Vector3 rotEuler;
+    //rotEuler.Set(0, 1, 0);
+    //csl::math::Quaternion test(rotEuler, 90);
+
+    //csl::math::Vector3 rotEuler(0, 1, 0);
+    //csl::math::Quaternion rot(csl::math::Vector3::Up, 0.0f);
+
+    //app::math::Angle3 angle = { -0.513791025f, -1.86194003f, -0.0460119992f };
+    //app::math::Angle3 angle = { 0, 0, 0 };
+    //csl::math::Quaternion rot = app::SetEd::CalcRotationByAngle(angle);
+
+    __declspec(align(16)) float z[] = { 1.00000000, 0.00000000, 0.00000000, 0.00000000,
+    0.00000000, 1.00000000, 0.00000000, 0.00000000,
+    0.00000000, 0.00000000, 1.00000000, 0.00000000,
+    0.00000000, 0.00000000, 0.00000000, 1.00000000 };
+
+    
+    const csl::math::Matrix34* mtx = (const csl::math::Matrix34*)z;
+    //const auto row = mtx->GetRow(2);
+    app::math::Angle3 eulerAngles;
+    app::math::Matrix34ToEulerAngleZXY(*mtx, &eulerAngles);
+
+    char buf[1024];
+    //const XMVECTOR* ptr = (const XMVECTOR*)&rot;
+    /*const XMVECTOR* ptr = (const XMVECTOR*)&row;
+    sprintf(buf, "rot: %f, %f, %f, %f\n",
+        XMVectorGetX(*ptr), XMVectorGetY(*ptr),
+        XMVectorGetZ(*ptr), XMVectorGetW(*ptr));*/
+
+    sprintf(buf, "angles: %f, %f, %f\n",
+        eulerAngles.X, eulerAngles.Y, eulerAngles.Z);
+
+    MessageBoxA(NULL, buf, "OK", MB_OK);
+}
+// ==================================================
+
 using namespace app::hid;
 using namespace csl::fnd;
 
@@ -15,6 +63,8 @@ ApplicationWin* ApplicationWin::Instance = nullptr;
 // Wii U: N/A, PC: 0x00401410
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+    test();
+
     // Get HINSTANCE.
     static ApplicationWin* inst = nullptr;
     HINSTANCE hInst = reinterpret_cast<HINSTANCE>(

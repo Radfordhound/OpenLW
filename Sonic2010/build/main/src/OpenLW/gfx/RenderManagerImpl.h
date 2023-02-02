@@ -17,7 +17,7 @@ namespace app
 {
 namespace gfx
 {
-struct RenderManager::Impl : public Extra::fx::CFxPipelineExecutor, // size == 0x1BF10
+struct RenderManager::Impl : public Extra::fx::CFxPipelineExecutor, // size == 0x16410
     public IRenderSynchronizer
 {
     typedef void (Impl::*UpdateFunc)(const fnd::SUpdateInfo& updateInfo,
@@ -59,8 +59,7 @@ struct RenderManager::Impl : public Extra::fx::CFxPipelineExecutor, // size == 0
     CRenderSceneView DefaultSceneView;
     void* StackMemory;
     std::size_t StackSize;
-    Extra::fx::RenderScratchBuffer field_0x163ec;
-    Extra::fx::SStackAllocator Stack;
+    Extra::fx::RenderScratchBuffer ScratchBuffer;
     // TODO: Other data members.
 
     // Wii U: 0x022570c4, PC: 0x004dfce0

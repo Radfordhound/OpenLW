@@ -12,7 +12,7 @@ class CMoviePlayer;
 }
 
 class GameModeSegalogo : public GameMode, public TTinyFsm<GameModeSegalogo,
-    GameModeUtil::Event<GameModeSegalogo>, false> // size == 0x58
+    GameModeUtil::Event<GameModeSegalogo>> // size == 0x58
 {
     fnd::CMoviePlayer* m_player;
     unsigned int field_0x38;
@@ -34,10 +34,8 @@ public:
     // Wii U: 0x02add578, PC: TODO
     void LoadData();
 
-    // TODO: I wasn't able to successfully demangle this function's symbol. Are the arguments, etc. all correct?
-    // Symbol: __CPR250__ChangeState__Q2_3app16GameModeSegalogoFMQ2_3appJ20JFRCQ3_3app12GameModeUtil39Event__tm__26_Q2_3appJ20J_Q2_3app109TTinyFsmState__tm__88_Q2_3appJ20JQ3_3appJ75JJ89J
     // Wii U: 0x02add5f4, PC: TODO
-    void ChangeState(state_t newState);
+    void ChangeState(state_t::event_func newState);
 
     // Wii U: 0x02add660, PC: TODO
     state_t StateLoad(const event_t& e);

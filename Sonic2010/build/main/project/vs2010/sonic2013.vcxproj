@@ -56,7 +56,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -73,23 +73,31 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(SolutionDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(SolutionDir)..\..\..\..\..\Library\cslib\include;$(SolutionDir)..\..\..\..\..\depends\boost\include;$(SolutionDir)..\..\..\..\..\depends\criware\include;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
+      <OptimizeReferences>false</OptimizeReferences>
       <AdditionalDependencies>d3d9.lib;dinput8.lib;dxguid.lib;cri_base_pcx86.lib;cri_file_system_pcx86.lib;cri_atom_pcx86.lib;cri_mana_pcx86.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\dev\seteditor\SetEdDataAc.cpp" />
     <ClCompile Include="..\..\src\HUD\SurfRidePlatformMIRAGE.cpp" />
+    <ClCompile Include="..\..\src\math\Angle3.cpp" />
+    <ClCompile Include="..\..\src\math\Matrix34.cpp" />
+    <ClCompile Include="..\..\src\math\Quaternion.cpp" />
     <ClCompile Include="..\..\src\OpenLW\Application.cpp" />
     <ClCompile Include="..\..\src\OpenLW\ApplicationProperty.cpp" />
     <ClCompile Include="..\..\src\OpenLW\Atomic.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CGame.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CGameSequence.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\Constants.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CriSystem.cpp" />
     <ClCompile Include="..\..\src\OpenLW\CWorld.cpp" />
     <ClCompile Include="..\..\src\OpenLW\fnd\Allocators.cpp" />
@@ -154,13 +162,18 @@
     <ClCompile Include="..\..\src\System\GameMode\GameModeStartUp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\dev\seteditor\SetEdDataAc.h" />
     <ClInclude Include="..\..\src\HUD\SurfRide.h" />
+    <ClInclude Include="..\..\src\math\Angle3.h" />
+    <ClInclude Include="..\..\src\math\Matrix34.h" />
+    <ClInclude Include="..\..\src\math\Quaternion.h" />
     <ClInclude Include="..\..\src\OpenLW\Application.h" />
     <ClInclude Include="..\..\src\OpenLW\ApplicationProperty.h" />
     <ClInclude Include="..\..\src\OpenLW\ApplicationPropertyImpl.h" />
     <ClInclude Include="..\..\src\OpenLW\Atomic.h" />
     <ClInclude Include="..\..\src\OpenLW\CGame.h" />
     <ClInclude Include="..\..\src\OpenLW\CGameSequence.h" />
+    <ClInclude Include="..\..\src\OpenLW\Constants.h" />
     <ClInclude Include="..\..\src\OpenLW\CriSystem.h" />
     <ClInclude Include="..\..\src\OpenLW\CWorld.h" />
     <ClInclude Include="..\..\src\OpenLW\fnd\Allocators.h" />

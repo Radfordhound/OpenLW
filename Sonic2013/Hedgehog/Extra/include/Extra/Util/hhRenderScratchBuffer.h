@@ -1,12 +1,14 @@
 #pragma once
+#include "hhStackAllocator.h"
 
 namespace Extra
 {
 namespace fx
 {
-struct RenderScratchBuffer // size == 8
+struct RenderScratchBuffer
 {
-    // TODO
+    char Padding[8]; // TODO
+    Extra::fx::SStackAllocator Allocator;
 };
 }
 }

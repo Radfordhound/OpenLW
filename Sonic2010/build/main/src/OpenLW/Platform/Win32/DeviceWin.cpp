@@ -2,7 +2,7 @@
 #include "DevicePadWin.h"
 #include "DevicePadKB.h"
 #include "../../fnd/Allocators.h"
-#include "csl/math/math.h"
+#include "csl/math/algorithm.h"
 
 namespace app
 {

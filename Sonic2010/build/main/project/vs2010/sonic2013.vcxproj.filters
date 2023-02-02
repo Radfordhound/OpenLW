@@ -652,6 +652,9 @@
     <Filter Include="System\Component">
       <UniqueIdentifier>{3630fd42-2a6d-48c3-913b-bba42464448f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{9b7d187a-c94e-413a-9b7c-94956377ee71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp">
@@ -857,6 +860,21 @@
     </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\gfx\IRenderScheduler.cpp">
       <Filter>OpenLW\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OpenLW\Constants.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\dev\seteditor\SetEdDataAc.cpp">
+      <Filter>dev\seteditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\math\Angle3.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\math\Quaternion.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\math\Matrix34.cpp">
+      <Filter>math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1090,6 +1108,21 @@
     </ClInclude>
     <ClInclude Include="..\..\src\System\Component\TinyFsm.h">
       <Filter>System\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\OpenLW\Constants.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\dev\seteditor\SetEdDataAc.h">
+      <Filter>dev\seteditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\math\Angle3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\math\Quaternion.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\math\Matrix34.h">
+      <Filter>math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,28 +1,27 @@
 #pragma once
-#include <cstddef>
-#include <climits>
+#include "number.h"
 
 namespace csl
 {
 namespace ut
 {
-/* @brief A helpful wrapper for dealing with collections of bits. */
-template<typename T>
+/** @brief A helpful wrapper for dealing with collections of bits. */
+template<typename T, int bitCount = CSL_BIT_COUNT(T)>
 class Bitset
 {
-    T m_val;
+    T m_data;
 
 public:
-    /*
+    /**
         @brief Returns whether any bits within the bitset are currently set to 1.
         @return Whether any bits within the bitset are currently set to 1.
     */
     bool any() const
     {
-        return (m_val != 0);
+        return (m_data != 0);
     }
 
-    /*
+    /**
         @brief Returns whether any bits within the bitset are currently set to 1.
         @return Whether any bits within the bitset are currently set to 1.
     */
@@ -31,29 +30,29 @@ public:
         return any();
     }
 
-    /*
+    /**
         @brief Counts the amount of bits that are currently set to 1 within the bitset.
         @returns How many bits are currently set to 1 within the bitset.
     */
-    std::size_t count() const
+    unsigned int count() const
     {
-        T mask(1);
-        std::size_t bitCount = 0;
+        T bitMask(1);
+        unsigned int count = 0;
 
-        for (int pos = (sizeof(T) * CHAR_BIT); pos != 0; --pos)
+        for (int pos = bitCount; pos != 0; --pos)
         {
-            if ((m_val & mask))
+            if ((m_data & bitMask))
             {
-                ++bitCount;
+                ++count;
             }
 
-            mask <<= 1;
+            bitMask <<= 1;
         }
 
-        return bitCount;
+        return count;
     }
 
-    /*
+    /**
         @brief Counts the amount of bits that are currently set to 1 within the bitset.
         @returns How many bits are currently set to 1 within the bitset.
     */
@@ -62,119 +61,142 @@ public:
         return count();
     }
 
-    /*
+    /**
         @brief Flips the value of the bit at the given index (i.e. if the given bit is 0 it becomes 1).
-        @param[in] pos      The zero-based index of the bit to flip within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to flip within the bitset.
     */
-    void flip(std::size_t pos)
+    Bitset<T, bitCount> flip(unsigned int bitIndex)
     {
-        m_val ^= static_cast<T>(1 << pos);
+        m_data ^= static_cast<T>(1 << bitIndex);
+        return *this;
     }
 
-    /*
+    /**
         @brief Flips the value of the bit at the given index (i.e. if the given bit is 0 it becomes 1).
-        @param[in] pos      The zero-based index of the bit to flip within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to flip within the bitset.
     */
-    inline void Flip(std::size_t pos)
+    inline Bitset<T, bitCount> Flip(unsigned int bitIndex)
     {
-        flip(pos);
+        return flip(bitIndex);
     }
 
-    /*
+    /** @brief Resets all bits in the bitset to 0. */
+    Bitset<T, bitCount> reset()
+    {
+        m_data = 0;
+        return *this;
+    }
+
+    /** @brief Resets all bits in the bitset to 0. */
+    inline Bitset<T, bitCount> Reset()
+    {
+        return *this;
+    }
+
+    /**
         @brief Sets the bit at the given index to 0.
-        @param[in] pos      The zero-based index of the bit to disable within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to disable within the bitset.
     */
-    void reset(std::size_t pos)
+    Bitset<T, bitCount> reset(unsigned int bitIndex)
     {
-        m_val &= ~static_cast<T>(1 << pos);
+        m_data &= ~static_cast<T>(1 << bitIndex);
+        return *this;
     }
 
-    /*
+    /**
         @brief Sets the bit at the given index to 0.
-        @param[in] pos      The zero-based index of the bit to disable within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to disable within the bitset.
     */
-    inline void Reset(std::size_t pos)
+    inline Bitset<T, bitCount> Reset(unsigned int bitIndex)
     {
-        reset(pos);
+        return reset(pos);
     }
 
-    /*
+    /** @brief Sets all bits in the bitset to 1. */
+    Bitset<T, bitCount> set()
+    {
+        m_data = (std::numeric_limits<T>::max)();
+        return *this;
+    }
+
+    /** @brief Sets all bits in the bitset to 1. */
+    inline Bitset<T, bitCount> Set()
+    {
+        return set();
+    }
+
+    /**
         @brief Sets the bit at the given index to 1.
-        @param[in] pos      The zero-based index of the bit to enable within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to enable within the bitset.
     */
-    void set(std::size_t pos)
+    Bitset<T, bitCount> set(unsigned int bitIndex)
     {
-        m_val |= static_cast<T>(1 << pos);
+        m_data |= static_cast<T>(1 << bitIndex);
+        return *this;
     }
 
-    /*
+    /**
         @brief Sets the bit at the given index to 1.
-        @param[in] pos      The zero-based index of the bit to enable within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to enable within the bitset.
     */
-    inline void Set(std::size_t pos)
+    inline Bitset<T, bitCount> Set(unsigned int bitIndex)
     {
-        set(pos);
+        return set(pos);
     }
 
-    /*
+    /**
         @brief Sets the bit at the given index within the bitset to the given value.
-        @param[in] pos      The zero-based index of the bit to modify within the bitset.
-        @param[in] v        The value to set the given bit to (false == 0 and true == 1).
+        @param[in] bitIndex The zero-based index of the bit to modify within the bitset.
+        @param[in] val      The value to set the given bit to (false == 0 and true == 1).
     */
-    void set(std::size_t pos, bool v)
+    Bitset<T, bitCount> set(unsigned int bitIndex, bool val)
     {
-        if (v)
-        {
-            set(pos);
-        }
-        else
-        {
-            reset(pos);
-        }
+        return (val) ? set(bitIndex) : reset(bitIndex);
     }
 
-    /*
+    /**
         @brief Sets the bit at the given index within the bitset to the given value.
-        @param[in] pos      The zero-based index of the bit to modify within the bitset.
-        @param[in] v        The value to set the given bit to (false == 0 and true == 1).
+        @param[in] bitIndex The zero-based index of the bit to modify within the bitset.
+        @param[in] val      The value to set the given bit to (false == 0 and true == 1).
     */
-    inline void Set(std::size_t pos, bool v)
+    inline Bitset<T, bitCount> Set(unsigned int bitIndex, bool val)
     {
-        set(pos, v);
+        return set(bitIndex, val);
     }
 
-    /*
+    /**
         @brief Returns whether the bit at the given index within the bitset is set to 1.
-        @param[in] pos      The zero-based index of the bit to check within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to check within the bitset.
         @return Whether the bit at the given index is set to 1 or not.
     */
-    bool test(std::size_t pos) const
+    bool test(unsigned int bitIndex) const
     {
-        return ((m_val >> pos) & 1);
+        return ((m_data >> bitIndex) & 1);
     }
 
-    /*
+    /**
         @brief Returns whether the bit at the given index within the bitset is set to 1.
-        @param[in] pos      The zero-based index of the bit to check within the bitset.
+        @param[in] bitIndex The zero-based index of the bit to check within the bitset.
         @return Whether the bit at the given index is set to 1 or not.
     */
-    inline bool Test(std::size_t pos) const
+    inline bool Test(unsigned int bitIndex) const
     {
-        return test(pos);
+        return test(bitIndex);
     }
 
-    unsigned long to_ulong() const
+    unsigned int to_ulong() const
     {
-        return static_cast<unsigned long>(m_val);
+        return static_cast<unsigned int>(m_data);
     }
 
-    // TODO: Is this constructor actually a thing?
-    inline Bitset() :
-        m_val(0) {}
+    Bitset() :
+        m_data(0) {}
 
-    // TODO: Is this constructor actually a thing?
-    inline Bitset(T val) :
-        m_val(val) {}
+    Bitset(T data) :
+        m_data(data) {}
+
+    Bitset(const Bitset<T, bitCount>& other) :
+        m_data(other.m_data) {}
 };
 }
 }

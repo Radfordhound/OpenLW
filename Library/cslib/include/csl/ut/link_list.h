@@ -31,12 +31,12 @@ protected:
 
     struct iterator
     {
-        LinkListNode* m_node;
-        int m_nodeOffset;
+        LinkListNode* Node;
+        int NodeOffset;
 
         inline iterator(LinkListNode* node, int nodeOffset) :
-            m_node(node),
-            m_nodeOffset(nodeOffset) {}
+            Node(node),
+            NodeOffset(nodeOffset) {}
     };
 
     inline iterator begin()
@@ -49,86 +49,32 @@ protected:
         return iterator(&m_root, m_nodeOffset);
     }
 
-    void Initialize()
-    {
-        m_count = 0;
-        m_root.Next = &m_root;
-        m_root.Prev = &m_root;
-    }
+    // Wii U: 0x02014CD0, PC: Inlined
+    void Initialize();
 
-    void init(int param_1)
-    {
-        m_nodeOffset = param_1;
-    }
+    // Wii U: 0x02CA6E98, PC: 0x00962180
+    iterator insert(iterator it, LinkListNode* node);
 
-    iterator insert(detail::LinkListImpl::iterator it, LinkListNode* node)
-    {
-        ++m_count;
+    // Wii U: 0x02CA6ED4, PC: 0x009621b0
+    iterator erase(LinkListNode* node);
 
-        LinkListNode* prev = it.m_node->Prev;
-        node->Next = it.m_node;
-        node->Prev = prev;
+    // Wii U: 0x02CA6F14, PC: 0x009621e0
+    iterator erase(iterator first, iterator last);
 
-        it.m_node->Prev = node;
-        prev->Next = node;
+    // Wii U: 0x02CA6F64, PC: 0x009622b0
+    iterator erase(iterator it);
 
-        return iterator(node, m_nodeOffset);
-    }
+    // Wii U: 0x02CA6FB8, PC: 0x00962170
+    void init(int nodeOffset);
 
-    void reverse()
-    {
-        if (m_count != 0)
-        {
-            LinkListNode* curNode = m_root.Next;
-            m_root.Prev = &m_root;
-            m_root.Next = &m_root;
+    // Wii U: 0x02CA6FC0, PC: 0x00962280
+    void clear();
 
-            m_count = 0;
-            while (curNode != &m_root)
-            {
-                LinkListNode* next = curNode->Next;
-                curNode->Prev = nullptr;
-                curNode->Next = nullptr;
+    // Wii U: 0x02CA7024, PC: 0x00962230
+    void reverse();
 
-                insert(iterator(m_root.Next, m_nodeOffset), curNode);
-
-                curNode = next;
-            }
-        }
-    }
-
-    iterator erase(LinkListNode* node)
-    {
-        LinkListNode* next = node->Next;
-        node->Next->Prev = node->Prev;
-        node->Prev->Next = next;
-        
-        node->Next = nullptr;
-        node->Prev = nullptr;
-        --m_count;
-
-        return iterator(next, m_nodeOffset);
-    }
-
-    iterator erase(iterator first, iterator last)
-    {
-        for (LinkListNode* curNode = first.m_node;
-            curNode != last.m_node;
-            curNode = curNode->Next)
-        {
-            erase(curNode);
-        }
-
-        return last;
-    }
-
-    void clear()
-    {
-        erase(begin(), end());
-    }
-
-    inline LinkListImpl() :
-        m_nodeOffset(static_cast<std::size_t>(-1)),
+    inline LinkListImpl(int nodeOffset = -1) :
+        m_nodeOffset(nodeOffset),
         m_root()
     {
         Initialize();
@@ -149,26 +95,24 @@ struct LinkList : public detail::LinkListImpl // size == 16
 
         iterator& operator++()
         {
-            m_node->Next;
-            return *this;
-        }
-
-        // TODO: Is this a thing?
-        iterator& operator++(int)
-        {
-            m_node->Next;
+            Node = Node->Next;
             return *this;
         }
 
         T* operator->() const
         {
             return reinterpret_cast<T*>(reinterpret_cast<
-                std::uintptr_t>(m_node) - m_nodeOffset);
+                std::uintptr_t>(Node) - NodeOffset);
+        }
+
+        T& operator*() const
+        {
+            return *operator->();
         }
 
         friend bool operator==(iterator it1, iterator it2)
         {
-            return (it1.m_node == it2.m_node);
+            return (it1.Node == it2.Node);
         }
 
         friend bool operator!=(iterator it1, iterator it2)
@@ -177,9 +121,14 @@ struct LinkList : public detail::LinkListImpl // size == 16
         }
     };
 
-    void init(int param_1)
+    void init(int nodeOffset)
     {
-        detail::LinkListImpl::init(param_1);
+        detail::LinkListImpl::init(nodeOffset);
+    }
+
+    bool empty() const
+    {
+        return (m_count == 0);
     }
 
     std::size_t size() const
@@ -209,8 +158,21 @@ struct LinkList : public detail::LinkListImpl // size == 16
             reinterpret_cast<std::uintptr_t>(val) + m_nodeOffset));
     }
 
+    iterator erase(iterator it)
+    {
+        return detail::LinkListImpl::erase(it);
+    }
+
+    void clear()
+    {
+        detail::LinkListImpl::clear();
+    }
+
     LinkList() :
         detail::LinkListImpl() {}
+
+    LinkList(int nodeOffset) :
+        detail::LinkListImpl(nodeOffset) {}
 
     ~LinkList()
     {

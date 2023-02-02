@@ -1,5 +1,5 @@
 #pragma once
-#include <climits>
+#include <limits>
 
 #ifndef _MSC_VER
 #include <cstdint>

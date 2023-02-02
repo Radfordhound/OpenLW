@@ -33,6 +33,9 @@
     <Filter Include="Source Files\ut">
       <UniqueIdentifier>{d2666069-8a57-41cd-ab4b-6f8920dbd3f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{ae627a26-14dc-4504-981c-7343d839b756}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\csl\ut\bitset.h">
@@ -41,7 +44,7 @@
     <ClInclude Include="..\..\include\csl\ut\array.h">
       <Filter>Header Files\ut</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\csl\math\math.h">
+    <ClInclude Include="..\..\include\csl\math\algorithm.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\csl\fnd\tick.h">
@@ -74,6 +77,15 @@
     <ClInclude Include="..\..\include\csl\ut\noncopyable.h">
       <Filter>Header Files\ut</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\csl\math\vector3.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\math\quaternion.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\csl\math\matrix34.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\csl\fnd\tick_win32.cpp">
@@ -87,6 +99,18 @@
     </ClCompile>
     <ClCompile Include="..\..\src\csl\ut\number.cpp">
       <Filter>Source Files\ut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\ut\link_list.cpp">
+      <Filter>Source Files\ut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\math\quaternion.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\math\vector3.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\math\matrix34.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

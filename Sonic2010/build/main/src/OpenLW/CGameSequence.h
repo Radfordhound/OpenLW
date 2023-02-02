@@ -14,12 +14,13 @@ struct Message;
 struct SUpdateInfo;
 }
 
-class CGameSequence : public fnd::ReferencedObject, public TTinyFsm<CGameSequence> // size == 0xF0
+class CGameSequence : public fnd::ReferencedObject,
+    public TTinyFsm<CGameSequence, TiFsmBasicEvent<CGameSequence>, true> // size == 0xF0
 {
     CGame* m_game;
     GameMode* m_gameMode;
     csl::ut::FixedString<16> field_0x28;
-    state_t m_nextState;
+    state_t::event_func m_nextState;
     // TODO
 
 public:
@@ -44,10 +45,8 @@ public:
     // Wii U: 0x02a83c00, PC: TODO
     state_t StateSegaLogo(const event_t& e);
 
-    // TODO: I wasn't able to successfully demangle this function's symbol. Are the arguments, etc. all correct?
-    // Symbol: __CPR226__ChangeState__Q2_3app13CGameSequenceFMQ2_3appJ20JFRCQ2_3app46TiFsmBasicEvent__tm__23_Q2_3appJ20J_Q2_3app99TTinyFsmState__tm__78_Q2_3appJ20JQ2_3appJ69J
     // Wii U: 0x02a80ac8, PC: TODO
-    void ChangeState(state_t newState);
+    void ChangeState(state_t::event_func newState);
 
     // Wii U: 0x02a80970, PC: 0x0090f240
     void Start();

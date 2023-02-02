@@ -12,7 +12,7 @@ struct MsgWarningEnd;
 }
 
 class GameModeStartUp : public GameMode, public TTinyFsm<GameModeStartUp,
-    GameModeUtil::Event<GameModeStartUp>, false> // size == 0x3c
+    GameModeUtil::Event<GameModeStartUp>> // size == 0x3c
 {
     bool m_isWarningEnd;
     boost::intrusive_ptr<SaveData::CSaveAuto> field_0x38;
@@ -53,10 +53,8 @@ public:
     // Wii U: 0x02aa3cb0, PC: TODO
     void LoadResidentFile();
 
-    // TODO: I wasn't able to successfully demangle this function's symbol. Are the arguments, etc. all correct?
-    // Symbol: __CPR245__ChangeState__Q2_3app15GameModeStartUpFMQ2_3appJ20JFRCQ3_3app12GameModeUtil38Event__tm__25_Q2_3appJ20J_Q2_3app107TTinyFsmState__tm__86_Q2_3appJ20JQ3_3appJ73JJ87J
     // Wii U: 0x02aa3d1c, PC: TODO
-    void ChangeState(state_t newState);
+    void ChangeState(state_t::event_func newState);
 
     // Wii U: 0x02aa3d88, PC: TODO
     state_t StateFirstCpk(const event_t& e);
