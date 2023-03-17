@@ -1,5 +1,5 @@
-#include "SurfRide.h"
-#include "../OpenLW/gfx/RenderManager.h"
+#include "SurfRidePlatformMIRAGE.h"
+#include "Render/RenderManager.h"
 #include <Hedgehog/Graphics/Resource/hhResVertexShader.h>
 #include <Hedgehog/Graphics/Resource/hhResFragmentShader.h>
 

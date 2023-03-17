@@ -1,7 +1,7 @@
 #pragma once
 #include "GameMode.h"
-#include "../Component/TinyFsm.h"
-#include "../../OpenLW/gfx/Renderable.h"
+#include "System/Component/TinyFsm.h"
+#include "Render/gfx_Renderable.h"
 #include <boost/intrusive_ptr.hpp>
 
 namespace app

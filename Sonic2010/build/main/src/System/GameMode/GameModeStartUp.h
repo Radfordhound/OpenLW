@@ -1,7 +1,7 @@
 #pragma once
 #include "GameMode.h"
-#include "../Component/TinyFsm.h"
-#include "../../SaveData/SaveAuto.h"
+#include "SaveData/SaveAuto.h"
+#include "System/Component/TinyFsm.h"
 #include <boost/intrusive_ptr.hpp>
 
 namespace app

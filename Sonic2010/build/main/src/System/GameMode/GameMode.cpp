@@ -1,10 +1,10 @@
 #include "GameMode.h"
-#include "../GameDocument.h"
-#include "../../OpenLW/CGame.h"
-#include "../../OpenLW/game/GlobalAllocator.h"
-#include "../../OpenLW/fnd/FileLoader.h"
-#include "../../OpenLW/fnd/FileSystem.h"
-#include "../../OpenLW/xgame/MessageSystem.h"
+#include "Memory/GlobalAllocator.h"
+#include "Message/MessageSystem.h"
+#include "System/GameDocument.h"
+#include "System/Game.h"
+#include "System/FileLoader.h"
+#include "System/FileSystem.h"
 
 using namespace app::fnd;
 using namespace app::game;

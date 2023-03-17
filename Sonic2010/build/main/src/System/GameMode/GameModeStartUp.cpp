@@ -1,9 +1,9 @@
 #include "GameModeStartUp.h"
-#include "../../OpenLW/fnd/Message.h"
-#include "../../OpenLW/fnd/SUpdateInfo.h"
-#include "../../OpenLW/fnd/FileSystem.h"
-#include "../../OpenLW/fnd/FileLoader.h"
-#include "../../OpenLW/xgame/DlcManager.h"
+#include "Message/Message.h"
+#include "System/UpdateInfo.h"
+#include "System/FileSystem.h"
+#include "System/FileLoader.h"
+#include "xgame/system/DlcManager.h"
 
 using namespace app::fnd;
 using namespace app::xgame;

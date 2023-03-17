@@ -61,6 +61,21 @@
     <Filter Include="HUD">
       <UniqueIdentifier>{48e097a9-9282-4ba9-82ab-7766fa061c89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{b6471e5c-b653-4533-9680-49311fe01194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{9b7d187a-c94e-413a-9b7c-94956377ee71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{5a8f6611-2af4-417f-827e-6ffd68185293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message">
+      <UniqueIdentifier>{121f71c9-c5d0-4fee-8e17-82022bb9a09a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Movie">
+      <UniqueIdentifier>{36d0c71d-7039-4677-a7a1-9a24245e6156}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Object">
       <UniqueIdentifier>{64929b10-e4ba-4aec-9a2a-ff3a7de3807c}</UniqueIdentifier>
     </Filter>
@@ -526,6 +541,12 @@
     <Filter Include="ObjectSystem\Placement">
       <UniqueIdentifier>{8f0e0ece-7980-41ca-939f-61d9add1a0b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platforms">
+      <UniqueIdentifier>{5e56b5dc-87de-43d6-a73a-9172196e5c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\Win">
+      <UniqueIdentifier>{1f8233be-ea61-4654-8331-df642efab5d4}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Player">
       <UniqueIdentifier>{58bb34a8-8842-45e5-9cfc-84bd10048fd3}</UniqueIdentifier>
     </Filter>
@@ -556,6 +577,9 @@
     <Filter Include="Player\State">
       <UniqueIdentifier>{04decbf5-348b-4439-bbc2-26dc2d0d6be8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{bd9131b3-90af-42ce-b9b6-b7684270608a}</UniqueIdentifier>
+    </Filter>
     <Filter Include="SaveData">
       <UniqueIdentifier>{41c5296c-42c6-429e-b526-06eb5a900c3d}</UniqueIdentifier>
     </Filter>
@@ -574,8 +598,14 @@
     <Filter Include="System">
       <UniqueIdentifier>{37dc2b21-3f9b-4483-9838-26a97b580a58}</UniqueIdentifier>
     </Filter>
+    <Filter Include="System\Component">
+      <UniqueIdentifier>{3630fd42-2a6d-48c3-913b-bba42464448f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="System\GameMode">
       <UniqueIdentifier>{4e250f87-0d4f-4f2d-b3c9-5a60e0c398d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Resource">
+      <UniqueIdentifier>{a78410b3-1876-46c0-aa91-74f38263e9bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utility">
       <UniqueIdentifier>{d03034ca-10c9-42d0-934a-4e8d64ede0c2}</UniqueIdentifier>
@@ -610,50 +640,14 @@
     <Filter Include="xgame\gamemode\stage">
       <UniqueIdentifier>{6c5e598f-2986-4dd3-b611-8e79d41f1e0a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="xgame\path">
+      <UniqueIdentifier>{aa810366-3a74-4556-9650-c059ca8848da}</UniqueIdentifier>
+    </Filter>
     <Filter Include="xgame\system">
       <UniqueIdentifier>{6c97fa80-2da8-421e-af83-eee78958c693}</UniqueIdentifier>
     </Filter>
     <Filter Include="xgame\system\DisplaySwitch">
       <UniqueIdentifier>{555069ec-4666-4e49-9c69-7a984df5a88c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="xgame\path">
-      <UniqueIdentifier>{aa810366-3a74-4556-9650-c059ca8848da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW">
-      <UniqueIdentifier>{fa086e8b-13e9-4750-93e1-aad6e4d15870}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\dev">
-      <UniqueIdentifier>{cd69ce45-5a79-4d71-a79b-e0fed52f4e7c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\fnd">
-      <UniqueIdentifier>{bc54d458-11be-4bac-8e9b-4fae598c06db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\game">
-      <UniqueIdentifier>{df30bf35-bb0f-4e8c-b81c-266c5461d15e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\gfx">
-      <UniqueIdentifier>{c29c7b0e-a3ab-43f3-b627-6d7bcabc24de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\hid">
-      <UniqueIdentifier>{7f4233fc-a5eb-42ef-8f6b-c8905f838304}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\Platform">
-      <UniqueIdentifier>{c04db347-fa87-402c-a954-385e8b161892}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\xgame">
-      <UniqueIdentifier>{a4a7499b-dbf9-4124-a0aa-74ceb5698597}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\ut">
-      <UniqueIdentifier>{b1babf2f-094f-4dbd-8f5d-2ff6b5f17d67}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OpenLW\Platform\Win32">
-      <UniqueIdentifier>{d894dde5-cd73-4c80-aa6a-17ff9ebe89e2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="System\Component">
-      <UniqueIdentifier>{3630fd42-2a6d-48c3-913b-bba42464448f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="math">
-      <UniqueIdentifier>{9b7d187a-c94e-413a-9b7c-94956377ee71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -666,203 +660,14 @@
     <ClCompile Include="..\..\src\System\GameMode\GameModeStartUp.cpp">
       <Filter>System\GameMode</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\Allocators.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\CActor.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\CBranchActor.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\CLeafActor.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\File.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileBinder.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileBinderCri.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileCache.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileLoader.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileReader.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileSystem.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileSystemCri.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\Message.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\MessageManager.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\ReferencedObject.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\Singleton.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\game\GlobalAllocator.cpp">
-      <Filter>OpenLW\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\RenderManager.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\DeviceBase.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\DeviceManager.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\DevicePlatformBase.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\ResAccDeviceData.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\ResDeviceData.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\ResGyroDeviceData.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\ResMotorDeviceData.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\ResPadDeviceData.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\ResSendDeviceData.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\hid\ResTouchDeviceData.cpp">
-      <Filter>OpenLW\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\ApplicationWin.cpp">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DevicePadKB.cpp">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DevicePadWin.cpp">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.cpp">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.cpp">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\xgame\DlcManager.cpp">
-      <Filter>OpenLW\xgame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Application.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Atomic.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\CGame.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\CGameSequence.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\GameBase.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\GameObject.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\SyncTimer.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\xgame\MessageSystem.cpp">
-      <Filter>OpenLW\xgame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\CriSystem.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Platform\Win32\MainWin.cpp">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\FileReaderCri.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceManager.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceCustom.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\ResourceSysCustom.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.cpp">
-      <Filter>OpenLW\xgame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\RenderManagerImpl.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\GfxResourceCallback.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\System\GameMode\GameModeSegaLogo.cpp">
       <Filter>System\GameMode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\Renderable.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\RenderableEvent.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\RenderableContainer.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\ApplicationProperty.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\CMoviePlayer.cpp">
-      <Filter>OpenLW\fnd</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\HUD\SurfRidePlatformMIRAGE.cpp">
       <Filter>HUD</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\fnd\CMovieSystem.cpp">
-      <Filter>OpenLW\fnd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\CWorld.cpp">
-      <Filter>OpenLW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\CRenderSceneView.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\System\GameDocument.cpp">
       <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\CRenderSceneViewImpl.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\CRMSceneViewImpl.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\gfx\IRenderScheduler.cpp">
-      <Filter>OpenLW\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\OpenLW\Constants.cpp">
-      <Filter>OpenLW</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\dev\seteditor\SetEdDataAc.cpp">
       <Filter>dev\seteditor</Filter>
@@ -875,6 +680,183 @@
     </ClCompile>
     <ClCompile Include="..\..\src\math\Matrix34.cpp">
       <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Message\Message.cpp">
+      <Filter>Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Message\MessageManager.cpp">
+      <Filter>Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Memory\PooledAllocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Memory\MemoryRouter.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Actor.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\BranchActor.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\LeafActor.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Movie\MoviePlayer.cpp">
+      <Filter>Movie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Movie\MovieSystem.cpp">
+      <Filter>Movie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileHandle.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileBinder.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileBinderCri.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileReader.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileReaderCri.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileCache.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileLoader.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\FileSystemCri.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\ReferencedObject.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Resource\ResourceCustom.cpp">
+      <Filter>System\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Resource\ResourceManager.cpp">
+      <Filter>System\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Resource\ResourceSysCustom.cpp">
+      <Filter>System\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Singleton.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Memory\GlobalAllocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\RenderSceneView.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\gfx_ResourceCallback.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\RenderScheduler.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\gfx_Renderable.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\gfx_RenderableEvent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\RenderableContainer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\RenderManager.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Application.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\ApplicationProperty.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Platforms\Win\ApplicationWin.cpp">
+      <Filter>Platforms\Win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Platforms\Win\MainWin.cpp">
+      <Filter>Platforms\Win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Game.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\GameSequence.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\CriSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\WorldHH.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\SyncTimer.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\GameBase.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\GameObject.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Constants.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DeviceBase.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DeviceManager.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DevicePlatformBase.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DeviceData.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DeviceManagerImplWin.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DeviceWin.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DevicePadWin.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DevicePadKB.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Input\DeviceTouchWin.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\xgame\system\DlcManager.cpp">
+      <Filter>xgame\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Message\MessageSystem.cpp">
+      <Filter>Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\Atomic.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\RenderManagerImpl.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\RenderSceneViewImpl.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Render\RMSceneViewImpl.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\System\ApplicationPropertyImpl.cpp">
+      <Filter>System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -890,227 +872,14 @@
     <ClInclude Include="..\..\src\Utility\Freelist.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\Allocators.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\BaseObject.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\CActor.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\CActorTraverser.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\CBranchActor.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\CLeafActor.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\File.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileBinder.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileBinderCri.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileCache.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileLoader.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileReader.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileSystem.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileSystemCri.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\Message.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\MessageManager.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\ReferencedObject.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\Singleton.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\SUpdateInfo.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\game\GlobalAllocator.h">
-      <Filter>OpenLW\game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\RenderManager.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\DeviceBase.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\DeviceManager.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\DevicePlatformBase.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\ResAccDeviceData.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\ResDeviceData.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\ResGyroDeviceData.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\ResMotorDeviceData.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\ResPadDeviceData.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\ResSendDeviceData.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\hid\ResTouchDeviceData.h">
-      <Filter>OpenLW\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\ApplicationWin.h">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceManagerImplWin.h">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DevicePadKB.h">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DevicePadWin.h">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceTouchWin.h">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Platform\Win32\DeviceWin.h">
-      <Filter>OpenLW\Platform\Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\ut\RefPtr.h">
-      <Filter>OpenLW\ut</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\xgame\DlcManager.h">
-      <Filter>OpenLW\xgame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Application.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Atomic.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\CGame.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\CGameSequence.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\GameBase.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\GameObject.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\SyncTimer.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\xgame\MessageSystem.h">
-      <Filter>OpenLW\xgame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\CriSystem.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\FileReaderCri.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceManager.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceCustom.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceSysCustom.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\xgame\ResourceCustomOrca.h">
-      <Filter>OpenLW\xgame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\RenderManagerImpl.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\ResourceCallbackBase.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\GfxResourceCallback.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\System\GameMode\GameModeSegaLogo.h">
       <Filter>System\GameMode</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\Renderable.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\RenderableEvent.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\RenderableContainer.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\ApplicationProperty.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\ApplicationPropertyImpl.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\CMoviePlayer.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\HUD\SurfRide.h">
-      <Filter>HUD</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\fnd\CMovieSystem.h">
-      <Filter>OpenLW\fnd</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\CWorld.h">
-      <Filter>OpenLW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\CRenderSceneViewImpl.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\CRenderSceneView.h">
-      <Filter>OpenLW\gfx</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\System\GameDocument.h">
       <Filter>System</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\IRenderScheduler.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\CRMSceneViewImpl.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\gfx\IRenderSynchronizer.h">
-      <Filter>OpenLW\gfx</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\System\Component\TinyFsm.h">
       <Filter>System\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\OpenLW\Constants.h">
-      <Filter>OpenLW</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\dev\seteditor\SetEdDataAc.h">
       <Filter>dev\seteditor</Filter>
@@ -1124,10 +893,205 @@
     <ClInclude Include="..\..\src\math\Matrix34.h">
       <Filter>math</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Message\Message.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\MessageManager.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Memory\PooledAllocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Memory\MemoryRouter.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Actor.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\ActorTraverser.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\BranchActor.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\LeafActor.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Movie\MoviePlayer.h">
+      <Filter>Movie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Movie\MovieSystem.h">
+      <Filter>Movie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileHandle.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileBinder.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileBinderCri.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileReader.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileReaderCri.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileCache.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileLoader.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\FileSystemCri.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\ReferencedObject.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\BaseObject.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Resource\ResourceCallbackBase.h">
+      <Filter>System\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Resource\ResourceCustom.h">
+      <Filter>System\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Resource\ResourceManager.h">
+      <Filter>System\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Resource\ResourceSysCustom.h">
+      <Filter>System\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Singleton.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\UpdateInfo.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Memory\GlobalAllocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RenderSceneView.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RenderSceneViewImpl.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RMSceneViewImpl.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\gfx_ResourceCallback.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RenderScheduler.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RenderSynchronizer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\gfx_Renderable.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\gfx_RenderableEvent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RenderableContainer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RenderManager.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Render\RenderManagerImpl.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Application.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\ApplicationProperty.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\ApplicationPropertyImpl.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Platforms\Win\ApplicationWin.h">
+      <Filter>Platforms\Win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Utility\RefPtr.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Game.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\GameSequence.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\CriSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\WorldHH.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\SyncTimer.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\GameBase.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\GameObject.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Constants.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DeviceBase.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DeviceManager.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DevicePlatformBase.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DeviceData.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DeviceManagerImpl.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DeviceWin.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DevicePadWin.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DevicePadKB.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Input\DeviceTouchWin.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\xgame\system\DlcManager.h">
+      <Filter>xgame\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\MessageSystem.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Atomic.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\HUD\SurfRidePlatformMIRAGE.h">
+      <Filter>HUD</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\src\OpenLW\Platform\Win32\KBACTION.in">
-      <Filter>OpenLW\Platform\Win32</Filter>
+    <None Include="..\..\src\Input\KBACTION.inl">
+      <Filter>Input</Filter>
     </None>
   </ItemGroup>
 </Project>

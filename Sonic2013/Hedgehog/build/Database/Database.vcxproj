@@ -11,11 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\hhCDatabaseData.cpp" />
+    <ClCompile Include="source\hhDatabaseData.cpp" />
     <ClCompile Include="source\hhSampleChunk.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Hedgehog\Database\hhCDatabaseData.h" />
+    <ClInclude Include="..\..\include\Hedgehog\Database\hhDatabaseData.h" />
     <ClInclude Include="..\..\include\Hedgehog\Database\hhSampleChunk.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

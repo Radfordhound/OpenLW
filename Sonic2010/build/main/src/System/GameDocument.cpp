@@ -1,6 +1,6 @@
 #include "GameDocument.h"
 #include "GameMode/GameMode.h"
-#include "../OpenLW/CGame.h"
+#include "Game.h"
 
 namespace app
 {

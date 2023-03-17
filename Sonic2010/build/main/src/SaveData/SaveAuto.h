@@ -1,5 +1,5 @@
 #pragma once
-#include "../OpenLW/GameObject.h"
+#include "System/GameObject.h"
 
 namespace app
 {

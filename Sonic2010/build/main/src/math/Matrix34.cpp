@@ -1,9 +1,7 @@
+// TODO: The name of this file is correct, but the path was guessed!
 #include "Matrix34.h"
 #include "Angle3.h"
-#include "../OpenLW/Constants.h"
-
-// TODO: This file name is correct, but the path the file is stored at might
-// not be, as it had to be guessed.
+#include "System/Constants.h"
 
 namespace app
 {

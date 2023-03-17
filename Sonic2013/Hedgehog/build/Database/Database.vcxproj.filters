@@ -14,7 +14,7 @@
     <ClCompile Include="source\hhSampleChunk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\hhCDatabaseData.cpp">
+    <ClCompile Include="source\hhDatabaseData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -22,7 +22,7 @@
     <ClInclude Include="..\..\include\Hedgehog\Database\hhSampleChunk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Hedgehog\Database\hhCDatabaseData.h">
+    <ClInclude Include="..\..\include\Hedgehog\Database\hhDatabaseData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

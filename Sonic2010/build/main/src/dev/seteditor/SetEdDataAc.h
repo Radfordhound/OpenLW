@@ -1,9 +1,6 @@
+// TODO: The name of this file is correct, but the path was guessed!
 #pragma once
 #include <csl/math/quaternion.h>
-
-// TODO: This file name is correct, but the path the file is stored at might
-// not be, as it had to be guessed from a combination of leftover paths from
-// Lost World Wii U and Colors Ultimate Switch.
 
 namespace app
 {

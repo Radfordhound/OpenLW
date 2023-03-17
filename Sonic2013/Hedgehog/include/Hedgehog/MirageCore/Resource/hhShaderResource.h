@@ -3,7 +3,7 @@
 #include <Hedgehog/Base/hhMap.h>
 #include <Hedgehog/Base/System/hhCSymbol.h>
 #include <Hedgehog/Base/Platform/D3d9/hhCCriticalSectionD3D9.h>
-#include <Hedgehog/Database/hhCDatabaseData.h>
+#include <Hedgehog/Database/hhDatabaseData.h>
 #include <Hedgehog/Utility/hhScopedComPtr.h>
 #include <Hedgehog/Utility/hhComRefcounterStrategyForRendering.h>
 #include <Hedgehog/Rsdx/Graphics/Shader/RsdxDeviceShader.h>

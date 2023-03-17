@@ -1,6 +1,6 @@
 #pragma once
-#include "../OpenLW/CWorld.h"
-#include "../OpenLW/fnd/ReferencedObject.h"
+#include "WorldHH.h"
+#include "ReferencedObject.h"
 #include <csl/ut/noncopyable.h>
 #include <boost/scoped_ptr.hpp>
 

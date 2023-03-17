@@ -1,8 +1,8 @@
 #include "GameModeSegaLogo.h"
-#include "../GameDocument.h"
-#include "../../OpenLW/fnd/Allocators.h"
-#include "../../OpenLW/fnd/FileLoader.h"
-#include "../../OpenLW/fnd/CMoviePlayer.h"
+#include "Memory/MemoryRouter.h"
+#include "Movie/MoviePlayer.h"
+#include "System/FileLoader.h"
+#include "System/GameDocument.h"
 
 using namespace app::fnd;
 using namespace app::Render;
