@@ -24,22 +24,22 @@ struct SSymbolNode
     }
 };
 
-// Wii U: 0x03698c04, PC: Inlined
+LWAPI(0x03698c04, NONE)
 bool IsSame(const SSymbolNode* node1, const SSymbolNode* node2);
 
-// Wii U: 0x03698c5c, PC: Inlined
+LWAPI(0x03698c5c, NONE)
 bool IsUpper(const SSymbolNode* node1, const SSymbolNode* node2);
 
-// Wii U: 0x03698ca8, PC: 0x00c22680
+LWAPI(0x03698ca8, 0x00c22680)
 SSymbolNode* SymbolNodeInsert(SSymbolNode* node, SSymbolNode* childNode);
 
-// Wii U: 0x03698dc8, PC: 0x00c227b0
+LWAPI(0x03698dc8, 0x00c227b0)
 SSymbolNode* AddToNode(SSymbolNode* node);
 
-// Wii U: 0x03698e64, PC: 0x00c22820
+LWAPI(0x03698e64, 0x00c22820)
 SSymbolNode* MakeStringSymbol(const char* param_1);
 
-// Wii U: 0x03699054, PC: 0x00c22930
+LWAPI(0x03699054, 0x00c22930)
 char* GetSetGlobalString(const char* param_1);
 
 class CStringSymbol

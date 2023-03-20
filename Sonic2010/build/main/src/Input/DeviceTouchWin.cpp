@@ -1,13 +1,8 @@
 // TODO: The name of this file is correct, but the path was guessed!
 // NOTE: This file appears to be included in Wii U builds also, just disabled.
+#include "pch.h"
 #ifdef _WIN32
 #include "DeviceTouchWin.h"
-
-#define DIRECTINPUT_VERSION 0x0800
-#include <dinput.h>
-
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 
 namespace app
 {
@@ -55,8 +50,7 @@ void* DeviceTouchWin::CreateDevice(const void* inst)
     return nullptr;
 }
 
-// Wii U: N/A, PC: 0x004f7b70
-static BOOL CALLBACK EnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
+BOOL CALLBACK EnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
 {
     DeviceTouchWin* devTouch = static_cast<DeviceTouchWin*>(pvRef);
     LPDIRECTINPUTDEVICE8W device = static_cast<

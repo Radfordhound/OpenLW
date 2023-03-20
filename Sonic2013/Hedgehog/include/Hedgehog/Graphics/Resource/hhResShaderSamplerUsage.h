@@ -16,7 +16,7 @@ struct ResShaderSamplerUsageData
 
 struct ResShaderSamplerUsage : public ut::ResCommon<ResShaderSamplerUsageData>
 {
-    // Wii U: 0x0367bc48, PC: TODO
+    LWAPI(0x0367bc48, TODO)
     ResName GetName();
 
     inline ResShaderSamplerUsage(std::nullptr_t) :

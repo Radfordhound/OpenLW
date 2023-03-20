@@ -1,10 +1,11 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameterTypeInfo.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameter.h"
 
 using namespace hh::ut;
 using namespace hh::gfx::res;
 
-// Wii U: 0x03684754, PC: TODO
+LWAPI(0x03684754, TODO)
 static IResourceLoader* CreateResMiragePixelShaderParameterResourceLoader()
 {
     return new ResMiragePixelShaderParameterLoader();

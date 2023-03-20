@@ -38,7 +38,7 @@ struct ResDependData
 
 struct ResDepend : public ResCommon<ResDependData>
 {
-    // Wii U: 0x036944a8, PC: TODO
+    LWAPI(0x036944a8, TODO)
     static const ResourceTypeInfo& staticTypeInfo();
 
     inline ResDepend(const void* data) :
@@ -61,16 +61,16 @@ struct ResPackfileHeaderDataTag
 
 struct ResPackfileHeader : public ResCommon<ResPackfileHeaderDataTag>
 {
-    // Wii U: 0x03695e08, PC: TODO
+    LWAPI(0x03695e08, TODO)
     unsigned int GetMajorVersion() const;
 
-    // Wii U: 0x03695ecc, PC: TODO
+    LWAPI(0x03695ecc, TODO)
     bool IsValidHeader() const;
 
-    // Wii U: 0x036960ec, PC: TODO
+    LWAPI(0x036960ec, TODO)
     void ConvertEndian();
 
-    // Wii U: 0x03696018, PC: TODO
+    LWAPI(0x03696018, TODO)
     void* GetNextBlock(unsigned int version, void* block = nullptr);
 
     inline ResPackfileHeader(const void* data) :
@@ -89,13 +89,13 @@ struct ResPackfileBlockV1HeaderDataTag
 
 struct ResPackfileBlockV1Header : public ResCommon<ResPackfileBlockV1HeaderDataTag>
 {
-    // Wii U: 0x03696408, PC: TODO
+    LWAPI(0x03696408, TODO)
     u32 GetSignature() const;
 
-    // Wii U: 0x03696430, PC: TODO
+    LWAPI(0x03696430, TODO)
     int GetSignatureId() const;
 
-    // Wii U: 0x036964c4, PC: TODO
+    LWAPI(0x036964c4, TODO)
     void* GetDicAddress();
 
     inline ResPackfileBlockV1Header(const void* data) :
@@ -121,19 +121,19 @@ struct ResPackfileBlockV2HeaderDataTag
 
 struct ResPackfileBlockV2Header : public ResCommon<ResPackfileBlockV2HeaderDataTag>
 {
-    // Wii U: 0x03696670, PC: TODO
+    LWAPI(0x03696670, TODO)
     void* GetDicAddress();
 
-    // Wii U: 0x03696694, PC: TODO
+    LWAPI(0x03696694, TODO)
     void* GetDataAddress();
 
-    // Wii U: 0x036966cc, PC: TODO
+    LWAPI(0x036966cc, TODO)
     void* GetImportAddress();
 
-    // Wii U: 0x03696704, PC: TODO
+    LWAPI(0x03696704, TODO)
     void* GetStrAddress();
 
-    // Wii U: 0x0369673c, PC: 0x00c1a5d0
+    LWAPI(0x0369673c, 0x00c1a5d0)
     void* GetPof0Address();
 
     inline ResPackfileBlockV2Header(const void* data) :
@@ -192,13 +192,13 @@ struct Packfile // size == 4
 {
     ResPackfileHeaderDataTag* Handle;
 
-    // Wii U: 0x03692454, PC: TODO
+    LWAPI(0x03692454, TODO)
     Packfile(void* data);
 
-    // Wii U: 0x0369257c, PC: TODO
+    LWAPI(0x0369257c, TODO)
     bool IsImport() const;
 
-    // Wii U: 0x036927dc, PC: TODO
+    LWAPI(0x036927dc, TODO)
     void* GetResource(const ResourceTypeInfo& typeInfo,
         int index, std::size_t* size = nullptr);
 
@@ -208,16 +208,16 @@ struct Packfile // size == 4
         return T(GetResource(T::staticTypeInfo(), index, size));
     }
 
-    // Wii U: 0x036928bc, PC: TODO
+    LWAPI(0x036928bc, TODO)
     ResDepend GetResDepend();
 
-    // Wii U: 0x03692e1c, PC: 0x00c19560
+    LWAPI(0x03692e1c, 0x00c19560)
     void Setup(csl::fnd::IAllocator* allocator, hh::mr::CRenderingInfrastructure* renderInfra);
 
-    // Wii U: 0x03693340, PC: TODO
+    LWAPI(0x03693340, TODO)
     void Bind(csl::fnd::IAllocator* allocator, Packfile param_2);
 
-    // Wii U: 0x036939a0, PC: TODO
+    LWAPI(0x036939a0, TODO)
     void* GetResource(const ResourceTypeInfo& typeInfo,
         const char* name, std::size_t* size = nullptr);
 
@@ -227,7 +227,7 @@ struct Packfile // size == 4
         return T(GetResource(T::staticTypeInfo(), name, size));
     }
 
-    // Wii U: 0x03693aec, PC: TODO
+    LWAPI(0x03693aec, TODO)
     std::size_t GetResourceCount(const ResourceTypeInfo& typeInfo) const;
 
     template<typename T>
@@ -236,10 +236,10 @@ struct Packfile // size == 4
         return GetResourceCount(T::staticTypeInfo());
     }
 
-    // Wii U: 0x03693dac, PC: TODO
+    LWAPI(0x03693dac, TODO)
     std::size_t GetNumberOfImport() const;
 
-    // Wii U: 0x03693de0, PC: TODO
+    LWAPI(0x03693de0, TODO)
     bool IsImportCompleted() const;
 };
 
@@ -247,27 +247,27 @@ namespace pac
 {
 #define PACX_SIGNATURE 0x50414378U
 
-// Wii U: 0x03692648, PC: TODO
+LWAPI(0x03692648, TODO)
 void* GetDicAddr(unsigned int version, void* data);
 
-// Wii U: 0x03692710, PC: Inlined
+LWAPI(0x03692710, NONE)
 const char* GetDicRootName(const char* param_1);
 
-// Wii U: 0x036927b4, PC: TODO
+LWAPI(0x036927b4, TODO)
 ResPackfileBlockDataHeaderDataTag* GetBlockData(unsigned int version,
     ResPackfileBlockDataHeaderDataTag** param_2);
 
-// Wii U: 0x03692980, PC: TODO
+LWAPI(0x03692980, TODO)
 void ReplaceImport(unsigned int version, void* importAddress,
     u32 importSize, bool doSwap);
 
-// Wii U: 0x03692a60, PC: 0x00c18c40
+LWAPI(0x03692a60, 0x00c18c40)
 void Resolved(void* data);
 
-// Wii U: 0x036952c0, PC: TODO
+LWAPI(0x036952c0, TODO)
 void* GetNodeDicPointer(unsigned int version, const char* type, void* data);
 
-// Wii U: 0x03695e4c, PC: 0x00c1a770
+LWAPI(0x03695e4c, 0x00c1a770)
 bool CheckPacHeader(const ResPackfileHeaderDataTag* data);
 }
 }

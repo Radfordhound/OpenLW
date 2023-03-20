@@ -357,13 +357,13 @@ struct SInitializeHHBaseSetting
     FinalizeWorkerThreadCallback FinalizeWorkerThread;
 };
 
-// Wii U: 0x03696ad0, PC: 0x00c23120
+LWAPI(0x03696ad0, 0x00c23120)
 SInitializeHHBaseSetting* GetHHBaseSetting();
 
-// Wii U: 0x03696adc, PC: TODO
+LWAPI(0x03696adc, TODO)
 void InitializeHHBase(const SInitializeHHBaseSetting* baseSetting);
 
-// Wii U: 0x03696b48, PC: TODO
+LWAPI(0x03696b48, TODO)
 void FinalizeHHBase();
 }
 }

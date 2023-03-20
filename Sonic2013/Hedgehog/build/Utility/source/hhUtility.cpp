@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Utility/hhUtility.h"
 #include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
 

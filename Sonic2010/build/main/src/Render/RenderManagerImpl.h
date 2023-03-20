@@ -65,74 +65,74 @@ struct RenderManager::Impl : public Extra::fx::CFxPipelineExecutor, // size == 0
     Extra::fx::RenderScratchBuffer ScratchBuffer;
     // TODO: Other data members.
 
-    // Wii U: 0x022570c4, PC: 0x004dfce0
+    LWAPI(0x022570c4, 0x004dfce0)
     void WaitJoint();
 
-    // Wii U: 0x0225715c, PC: TODO
+    LWAPI(0x0225715c, TODO)
     void WaitUntilNotbusy();
 
-    // Wii U: 0x0225878c, PC: TODO
+    LWAPI(0x0225878c, TODO)
     void LockWorkerJoint();
 
-    // Wii U: 0x022587c4, PC: TODO
+    LWAPI(0x022587c4, TODO)
     std::size_t EntryRenderScheduler(IRenderScheduler* scheduler);
 
-    // Wii U: 0x022587fc, PC: 0x004e7a00
+    LWAPI(0x022587fc, 0x004e7a00)
     Impl(RenderManager& renderMgr);
 
-    // Wii U: 0x02258d20, PC: TODO
+    LWAPI(0x02258d20, TODO)
     void LoadShader();
 
-    // Wii U: 0x02258d94, PC: TODO
+    LWAPI(0x02258d94, TODO)
     void Initialize();
 
-    // Wii U: 0x02258eac, PC: TODO
+    LWAPI(0x02258eac, TODO)
     void Setup(const SetupInfo& setupInfo);
 
-    // Wii U: 0x02258f08, PC: TODO
+    LWAPI(0x02258f08, TODO)
     void Finalize();
 
-    // Wii U: 0x02258fc4 (THUNK), PC: TODO
+    LWAPI(0x02258fc4, TODO)
     void Shutdown();
 
-    // Wii U: 0x02259ea8, PC: TODO
+    LWAPI(0x02259ea8, TODO)
     void Update(const fnd::SUpdateInfo& updateInfo, unsigned int param_2);
 
-    // Wii U: 0x0225a020, PC: TODO
+    LWAPI(0x0225a020, TODO)
     hh::ut::Packfile GetShaderFileResource() const;
 
-    // Wii U: 0x0225a670, PC: Inlined
+    LWAPI(0x0225a670, NONE)
     void PrepareRenderSchedule();
 
-    // Wii U: 0x02261fdc, PC: 0x004eca50
+    LWAPI(0x02261fdc, 0x004eca50)
     void Update_RunOnRenderInternal(const fnd::SUpdateInfo& updateInfo,
         unsigned int param_2);
 
-    // Wii U: 0x02262fbc, PC: TODO
+    LWAPI(0x02262fbc, TODO)
     void InitUpdated();
 
-    // Wii U: 0x02263324, PC: TODO
+    LWAPI(0x02263324, TODO)
     void PrepareRenderOne();
 
-    // Wii U: 0x0226349c, PC: 0x004edf40
+    LWAPI(0x0226349c, 0x004edf40)
     void RenderNoPresent();
 
-    // Wii U: 0x02263cc0, PC: TODO
+    LWAPI(0x02263cc0, TODO)
     void Present();
 
-    // Wii U: 0x0226b9d8, PC: TODO
+    LWAPI(0x0226b9d8, TODO)
     ~Impl();
 
-    // Wii U: 0x0226bd5c, PC: 0x004e5d80
+    LWAPI(0x0226bd5c, 0x004e5d80)
     bool SetupShader();
 
-    // Wii U: 0x0226bf5c, PC: 0x004e6c90
+    LWAPI(0x0226bf5c, 0x004e6c90)
     void Update_Init(const fnd::SUpdateInfo& updateInfo, unsigned int param_2);
 
-    // Wii U: 0x0226bfd0, PC: TODO
+    LWAPI(0x0226bfd0, TODO)
     void Update_Run(const fnd::SUpdateInfo& updateInfo, unsigned int param_2);
 
-    // Wii U: 0x0226c000, PC: TODO
+    LWAPI(0x0226c000, TODO)
     void Update_BufferFixup(CRenderSceneViewImpl** param_1,
         unsigned int param_2, const Extra::fx::SGroupStartEndPair* param_3,
         unsigned int param_4, const hh::MTBase::SMTUpdateHint& param_5);

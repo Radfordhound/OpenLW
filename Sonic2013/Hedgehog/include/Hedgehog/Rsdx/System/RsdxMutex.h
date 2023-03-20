@@ -2,7 +2,7 @@
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#include <Windows.h>
 #elif defined(__WIIU__)
 #include <coreinit/mutex.h>
 #endif
@@ -28,22 +28,22 @@ struct RsdxMutex2
     // TODO: Other data members?
 };
 
-// Wii U: 0x036a7af0, PC: Inlined
+LWAPI(0x036a7af0, NONE)
 void RsdxInitializeMutex(RsdxMutex* mutex, bool param_2);
 
-// Wii U: 0x036a7b1c, PC: Inlined (TODO: Is this PC address correct??)
+LWAPI(0x036a7b1c, NONE)
 void RsdxLockMutex(RsdxMutex* mutex);
 
-// Wii U: 0x036a7b20, PC: Inlined (TODO: Is this PC address correct??)
+LWAPI(0x036a7b20, NONE)
 void RsdxUnlockMutex(RsdxMutex* mutex);
 
-// Wii U: 0x036c0170, PC: Inlined
+LWAPI(0x036c0170, NONE)
 void RsdxInitializeMutex2(RsdxMutex2* mutex, bool param_2);
 
-// Wii U: 0x036c01f8, PC: Inlined (TODO: Is this PC address correct??)
+LWAPI(0x036c01f8, NONE)
 void RsdxLockMutex2(RsdxMutex2* mutex);
 
-// Wii U: 0x036c0200, PC: Inlined (TODO: Is this PC address correct??)
+LWAPI(0x036c0200, NONE)
 void RsdxUnlockMutex2(RsdxMutex2* mutex);
 }
 }

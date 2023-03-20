@@ -26,7 +26,7 @@ enum UpdatingPhase
 
 class CActor : public boost::noncopyable // size == 0x1c
 {
-protected:
+LWAPI_PROTECTED
     unsigned int m_ID;
     MessageManager* m_msgMgr;
     CActor* m_parent;
@@ -56,62 +56,62 @@ public:
         return field_0x10;
     }
 
-    // Wii U: 0x021a002c, PC: TODO
+    LWAPI(0x021a002c, TODO)
     void SetUpdateFlag(UpdatingPhase phase, bool isUpdating);
 
-    // Wii U: 0x021a0034, PC: 0x0049a5c0
+    LWAPI(0x021a0034, 0x0049a5c0)
     CActor();
 
-    // Wii U: 0x021a00c8, PC: TODO
+    LWAPI(0x021a00c8, TODO)
     void RemoveFromAllParents();
 
-    // Wii U: 0x021a011c, PC: TODO
+    LWAPI(0x021a011c, TODO)
     virtual ~CActor();
 
-    // Wii U: 0x021a018c, PC: TODO
+    LWAPI(0x021a018c, TODO)
     void SetParent(CActor* parent);
 
-    // Wii U: 0x021a0194, PC: TODO
+    LWAPI(0x021a0194, TODO)
     void MessageSetup(unsigned int receiverID, Message& msg);
 
-    // Wii U: 0x021a01a4, PC: TODO
+    LWAPI(0x021a01a4, TODO)
     void BroadcastMessageImm(unsigned int param_1, Message& msg);
 
-    // Wii U: 0x021a020c, PC: TODO
+    LWAPI(0x021a020c, TODO)
     void BroadcastMessage(unsigned int receiverID, Message& msg);
 
-    // Wii U: 0x021a0250, PC: TODO
+    LWAPI(0x021a0250, TODO)
     bool SendMessage(Message& msg);
 
-    // Wii U: 0x021a0280, PC: TODO
+    LWAPI(0x021a0280, TODO)
     void BroadcastMessage(Message& msg);
 
-    // Wii U: 0x021a02a8, PC: TODO
+    LWAPI(0x021a02a8, TODO)
     void SendMessage(unsigned int receiverID, Message& msg);
 
-    // Wii U: 0x021a02e4, PC: TODO
+    LWAPI(0x021a02e4, TODO)
     bool SendMessageImm(unsigned int receiverID, Message& msg);
 
     virtual bool ForEach(CActorTraverser& traverser) = 0;
 
-    // Wii U: 0x021a0440, PC: TODO
+    LWAPI(0x021a0440, TODO)
     bool GetUpdateFlag(UpdatingPhase phase) const;
 
-    // Wii U: 0x021a0448, PC: TODO
+    LWAPI(0x021a0448, TODO)
     virtual bool PreProcessMessage(Message& msg);
 
-    // Wii U: 0x021a0450, PC: TODO
+    LWAPI(0x021a0450, TODO)
     virtual bool ProcessMessage(Message& msg);
 
-    // Wii U: 0x021a0460, PC: TODO
+    LWAPI(0x021a0460, TODO)
     virtual void Update(const SUpdateInfo& updateInfo);
 
     virtual bool ActorProc(int param_1, void* param_2) = 0;
 
-    // Wii U: 0x021a0464, PC: TODO
+    LWAPI(0x021a0464, TODO)
     void BeginProfile(int param_1);
 
-    // Wii U: 0x021a04a4, PC: TODO
+    LWAPI(0x021a04a4, TODO)
     void EndProfile(int param_1);
 };
 }

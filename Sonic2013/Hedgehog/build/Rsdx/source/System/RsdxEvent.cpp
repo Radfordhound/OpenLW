@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Rsdx/System/RsdxEvent.h"
 
 namespace hh

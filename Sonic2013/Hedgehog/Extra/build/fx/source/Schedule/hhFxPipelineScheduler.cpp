@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Extra/Schedule/hhFxPipelineScheduler.h"
 #include <Hedgehog/MTBase/hhMTSimpleJob.h>
 

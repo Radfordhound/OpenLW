@@ -33,10 +33,10 @@ struct ResPadDeviceData // sizeof == 0x30
     bool field_0x2c;
     bool field_0x2d;
 
-    // Wii U: 0x02278f54, PC: 0x004f5c80
+    LWAPI(0x02278f54, 0x004f5c80)
     void Init();
 
-    // Wii U: 0x02278fb8, PC: 0x004f5cc0
+    LWAPI(0x02278fb8, 0x004f5cc0)
     void InitDiff();
 };
 
@@ -44,7 +44,7 @@ struct ResGyroDeviceData // sizeof == 0x40
 {
     // TODO
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void Init();
 };
 
@@ -52,7 +52,7 @@ struct ResAccDeviceData // sizeof == 0x20
 {
     // TODO
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void Init();
 
     // TODO?
@@ -62,7 +62,7 @@ struct ResTouchDeviceData // sizeof == 0x18
 {
     // TODO
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void Init();
 
     // TODO
@@ -72,7 +72,7 @@ struct ResMotorDeviceData // sizeof == 0xC
 {
     // TODO
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void Init();
 };
 
@@ -84,7 +84,7 @@ struct ResDeviceData // sizeof == 0xC0
         float field_0x4;
         float field_0x8;
 
-        // Wii U: 0x022790c8, PC: Inlined
+        LWAPI(0x022790c8, NONE)
         void Init();
     };
 
@@ -95,7 +95,7 @@ struct ResDeviceData // sizeof == 0xC0
     ResMotorDeviceData MotorData;
     Repeat RepeatData;
 
-    // Wii U: 0x022790f0, PC: 0x004f5d90
+    LWAPI(0x022790f0, 0x004f5d90)
     void Init(bool hasRepeat);
 };
 }

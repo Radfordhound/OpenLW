@@ -8,7 +8,7 @@ namespace math
 {
 struct Angle3;
 
-// Wii U: 0x022e866c, PC: 0x00532490
+LWAPI(0x022e866c, 0x00532490)
 void Matrix34ToEulerAngleZXY(const csl::math::Matrix34& mtx, Angle3* eulerAngles);
 }
 }

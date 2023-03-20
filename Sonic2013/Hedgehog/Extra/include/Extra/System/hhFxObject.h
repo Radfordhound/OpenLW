@@ -26,16 +26,16 @@ class CFxRefcountObject : public CFxObject // size == 8
     hh::rsdx::RsdxAtomic m_refCount;
 
 public:
-    // Wii U: 0x03715b7c, PC: TODO
+    LWAPI(0x03715b7c, TODO)
     CFxRefcountObject();
 
-    // Wii U: 0x03715bc4, PC: 0x00c49720
+    LWAPI(0x03715bc4, 0x00c49720)
     virtual ~CFxRefcountObject();
 
-    // Wii U: 0x03715bd8, PC: TODO
+    LWAPI(0x03715bd8, TODO)
     void AddRef();
 
-    // Wii U: 0x03715bdc, PC: TODO
+    LWAPI(0x03715bdc, TODO)
     void Release();
 };
 

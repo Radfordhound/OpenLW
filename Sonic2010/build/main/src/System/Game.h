@@ -7,8 +7,18 @@ namespace app
 struct Application;
 class CGameSequence;
 
+/**
+ * @brief The cslib allocator used for the game.
+ *
+ * NOTE: This data appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+*/
+LWAPI(0x102e7f14, 0x00fd735c)
+extern csl::fnd::IAllocator* GameAllocator;
+
 class CGame : public GameBase // size == 0x7c
 {
+LWAPI_PRIVATE
     ut::RefPtr<GameMode> m_gameMode;
     CGameSequence* m_gameSeq;
     // TODO
@@ -17,61 +27,61 @@ class CGame : public GameBase // size == 0x7c
 public:
     // TODO: Does CGame need an explicit destructor?
 
-    // Wii U: 0x021c857c, PC: 0x004ac1b0
+    LWAPI(0x021c857c, 0x004ac1b0)
     bool PreProcessMessage(fnd::Message& msg);
 
-    // Wii U: 0x021c8610, PC: 0x004abff0
+    LWAPI(0x021c8610, 0x004abff0)
     bool ProcessMessage(fnd::Message& msg);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void Config(Application& app);
 
-    // Wii U: 0x021c895c, PC: 0x004ac0a0
+    LWAPI(0x021c895c, 0x004ac0a0)
     void OnSetup(Application& app);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void OnShutdown(Application& app);
 
-    // Wii U: 0x021c8dd4, PC: 0x004ac3a0
+    LWAPI(0x021c8dd4, 0x004ac3a0)
     void Tick(Application& app);
 
-    // Wii U: 0x021c8f2c, PC: TODO
+    LWAPI(0x021c8f2c, TODO)
     void Draw(Application& app);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void AdvanceFrame();
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void CheckSuspend();
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void DelayDestroy();
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void DrawSync();
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void FlushFileLoad();
 
-    // Wii U: 0x021c8fb4, PC: 0x004ac240
+    LWAPI(0x021c8fb4, 0x004ac240)
     void InitGameMode(GameMode* gameMode);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void Pause();
 
-    // Wii U: 0x021c9034, PC: 0x004ac290
+    LWAPI(0x021c9034, 0x004ac290)
     void ShutdownGameMode();
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void UpdateFlag(bool param_1);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     CGame();
 };
 
-// Wii U: 0x021c9200, PC: 0x004ac490
+LWAPI(0x021c9200, 0x004ac490)
 CGame* CreateGame(Application& app);
 
-// Wii U: TODO, PC: TODO
+LWAPI(TODO, TODO)
 void DestroyGame(GameBase* game);
 }

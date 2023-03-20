@@ -19,7 +19,7 @@ struct ResDicLinearData
 
 struct ResDicLinear : public ResCommon<ResDicLinearData>
 {
-    // Wii U: 0x036926a8 (Multiple addresses?), PC: TODO
+    LWAPI(TODO, TODO)
     const char* GetName(s32 index) const
     {
         if (IsValid() && index > -1 && index < ref().Count)
@@ -30,13 +30,13 @@ struct ResDicLinear : public ResCommon<ResDicLinearData>
         return nullptr;
     }
 
-    // Wii U: 0x036968d4, PC: TODO
+    LWAPI(0x036968d4, TODO)
     s32 GetIndex(const char* key) const;
 
-    // Wii U: 0x0369697c, PC: TODO
+    LWAPI(0x0369697c, TODO)
     s32 GetIndex(const char* key, int startChar) const;
 
-    // Wii U: 0x03692748 (Multiple addresses?), PC: TODO
+    LWAPI(TODO, TODO)
     const void* operator[](s32 index) const
     {
         if (IsValid() && index > -1 && index < ref().Count)

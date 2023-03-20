@@ -21,14 +21,14 @@ struct FileHandleObj : public ThreadSafeReferencedObject // size == 0xa0
     csl::fnd::IAllocator* Allocator;
     unsigned int field_0x9c;
 
-    // Wii U: 0x0218b6a4, PC: TODO
+    LWAPI(0x0218b6a4, TODO)
     bool IsValid() const;
 
-    // Wii U: 0x0218b6b4, PC: TODO
+    LWAPI(0x0218b6b4, TODO)
     void Replace(void* buffer, std::size_t fileSize,
         std::size_t bufSize, bool param_4);
 
-    // Wii U: 0x0218b754, PC: 0x004901e0
+    LWAPI(0x0218b754, 0x004901e0)
     void Destroy();
 };
 }

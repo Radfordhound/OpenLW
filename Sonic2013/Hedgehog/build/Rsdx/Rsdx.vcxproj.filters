@@ -54,6 +54,7 @@
     <ClCompile Include="source\System\RsdxMutex.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="source\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxObject.h">
@@ -92,5 +93,6 @@
     <ClInclude Include="..\..\include\Hedgehog\Rsdx\System\RsdxIntrusivePtr.h">
       <Filter>System</Filter>
     </ClInclude>
+    <ClInclude Include="source\pch.h" />
   </ItemGroup>
 </Project>

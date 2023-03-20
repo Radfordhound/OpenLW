@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Utility/hhComPtr.h"
 #include <Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h>
 

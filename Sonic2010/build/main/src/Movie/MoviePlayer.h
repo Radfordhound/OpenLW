@@ -10,6 +10,17 @@ namespace app
 {
 namespace fnd
 {
+/**
+ * @brief Vertex elements to be used for rendering movies.
+ *
+ * NOTE: This data appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+ * 
+ * TODO: This name was guessed.
+*/
+LWAPI(0x1002df30, 0x00eb2f04)
+extern hh::rsdx::D3DVERTEXELEMENT9 MovieVertexElements[];
+
 enum CMoviePlayerFlags
 {
     MOVIE_PLAYER_FLAG_PREPARED = 0,
@@ -22,6 +33,7 @@ enum CMoviePlayerFlags
 
 class CMoviePlayer : public ReferencedObject // size == 0x1fc
 {
+LWAPI_PRIVATE
     csl::ut::StringBuf<256> field_0xc;
     CriManaPlayerHn m_playerHandle;
     boost::shared_ptr<hh::mr::CVertexShaderData> m_vtxShader;
@@ -46,24 +58,24 @@ class CMoviePlayer : public ReferencedObject // size == 0x1fc
     csl::ut::Bitset<unsigned int> field_0x1f8;
 
 public:
-    // Wii U: 0x021a1ce0, PC: TODO
+    LWAPI(0x021a1ce0, TODO)
     static CMoviePlayer* Create(const char* movieResName, int param_2,
         bool param_3, bool param_4, bool param_5);
 
-    // Wii U: 0x021a1c24, PC: TODO
+    LWAPI(0x021a1c24, TODO)
     void Play(const char* movieResName, int param_2,
         bool param_3, bool param_4, bool param_5);
 
-    // Wii U: 0x021a30b8, PC: TODO
+    LWAPI(0x021a30b8, TODO)
     void DestroyImmediately();
 
-    // Wii U: 0x021a32b8, PC: TODO
+    LWAPI(0x021a32b8, TODO)
     hh::rsdx::RsdxBaseTexture9* GetTexture(int index);
 
-    // Wii U: 0x021a34cc, PC: 0x0049bef0
+    LWAPI(0x021a34cc, 0x0049bef0)
     void DrawPrepare();
 
-    // Wii U: 0x021a399c, PC: 0x0049c030
+    LWAPI(0x021a399c, 0x0049c030)
     void Draw(bool param_1);
 };
 }

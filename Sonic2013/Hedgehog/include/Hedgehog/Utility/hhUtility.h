@@ -9,7 +9,7 @@ struct SInitializeHHUtilitySetting
     // TODO
 };
 
-// Wii U: 0x0369680c, PC: TODO
+LWAPI(0x0369680c, TODO)
 void InitializeHHUtility(const SInitializeHHUtilitySetting* setting = nullptr);
 }
 }

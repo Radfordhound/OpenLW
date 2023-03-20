@@ -1,5 +1,5 @@
+#include "pch.h"
 #include "Hedgehog/Base/System/hhHash.h"
-#include <cstdint>
 
 namespace hh
 {

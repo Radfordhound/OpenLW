@@ -12,28 +12,29 @@ class CMoviePlayer;
 class CMovieSystem : public ReferencedObject, // size == 0x124
     public csl::fnd::Singleton<CMovieSystem>
 {
+LWAPI_PRIVATE
     csl::ut::MoveArray<CMoviePlayer*> m_players;
     csl::fnd::IAllocator* m_playerAllocator;
     float field_0x20;
     char m_rootDir[256];
 
-    // Wii U: 0x021a4300, PC: TODO
+    LWAPI(0x021a4300, TODO)
     void SetRootDirectory(const char* rootDir);
 
 public:
-    // Wii U: 0x021a43e8, PC: TODO
+    LWAPI(0x021a43e8, TODO)
     void Initialize();
 
-    // Wii U: 0x021a43ec, PC: TODO
+    LWAPI(0x021a43ec, TODO)
     CMovieSystem();
 
-    // Wii U: 0x021a4530, PC: TODO
+    LWAPI(0x021a4530, TODO)
     void Finalize();
 
-    // Wii U: 0x021a462c, PC: TODO
+    LWAPI(0x021a462c, TODO)
     ~CMovieSystem();
 
-    // Wii U: 0x021a4a68, PC: TODO
+    LWAPI(0x021a4a68, TODO)
     CMoviePlayer* CreatePlayer();
 };
 }

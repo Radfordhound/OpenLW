@@ -84,6 +84,7 @@ struct ResourceCallbackData // size == 8
 
 class ResourceManager : public ReferencedObject, public csl::fnd::Singleton<ResourceManager> // size == 0xc0
 {
+LWAPI_PRIVATE
     DECLARE_SINGLETON
 
     struct ResourceData // size == 20
@@ -111,33 +112,33 @@ class ResourceManager : public ReferencedObject, public csl::fnd::Singleton<Reso
     csl::ut::MoveArray<ResourceCallbackData> m_resourceCallbackData;
     // TODO: Data members
 
-    // Wii U: 0x021ae38c, PC: TODO
+    LWAPI(0x021ae38c, TODO)
     void RegisterList(const ResourceCustomInfo* const* resCustomInfoList);
 
 public:
-    // Wii U: 0x021ae44c, PC: TODO
+    LWAPI(0x021ae44c, TODO)
     ResourceManager();
 
-    // Wii U: 0x021aed1c, PC: TODO
+    LWAPI(0x021aed1c, TODO)
     IResourceCustomLoader* GetResourceLoader(const char* name);
 
-    // Wii U: 0x021aeef0, PC: TODO
+    LWAPI(0x021aeef0, TODO)
     bool AddResourceName(const char* name, csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: 0x021af160, PC: TODO
+    LWAPI(0x021af160, TODO)
     void CreateResource(const char* name, csl::fnd::IAllocator* allocator,
         void* data, std::size_t size, int category, unsigned int param_6);
 
-    // Wii U: 0x021b0a5c, PC: TODO
+    LWAPI(0x021b0a5c, TODO)
     static int ResouceCallbackSort(ResourceCallbackData a, ResourceCallbackData b);
 
-    // Wii U: 0x021b0a74, PC: TODO
+    LWAPI(0x021b0a74, TODO)
     void AddCallback(ResourceCallbackBase* callback, unsigned int value);
 
-    // Wii U: 0x021b0c38, PC: TODO
+    LWAPI(0x021b0c38, TODO)
     void SetupCallback(hh::ut::Packfile pac, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x021b0d8c, PC: TODO
+    LWAPI(0x021b0d8c, TODO)
     void* GetResource(const char* name, std::size_t size);
 
     template<typename T>

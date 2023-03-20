@@ -12,6 +12,7 @@ class CActor;
 
 class MessageManager : public ReferencedObject, public csl::fnd::Singleton<MessageManager> // size == 0x4c
 {
+LWAPI_PRIVATE
     DECLARE_SINGLETON
 
     unsigned int m_curID;
@@ -21,29 +22,49 @@ class MessageManager : public ReferencedObject, public csl::fnd::Singleton<Messa
     // TODO: Data Members
 
 public:
-    // Wii U: 0x021a1218, PC: TODO
+    LWAPI(0x021a1218, TODO)
     ~MessageManager();
 
-    // Wii U: 0x021a13c4, PC: 0x0049a8e0
+    LWAPI(0x021a13c4, 0x0049a8e0)
     bool Add(CActor* actor);
 
-    // Wii U: 0x021a16d0, PC: TODO
+    LWAPI(0x021a16d0, TODO)
     void AddMessage(const Message& msg);
 
-    // Wii U: 0x021a1350, PC: TODO
+    LWAPI(0x021a1350, TODO)
     unsigned int GenerateID();
 
-    // Wii U: 0x021a15d4, PC: 0x0049a950
+    LWAPI(0x021a15d4, 0x0049a950)
     CActor* GetActor(unsigned int id) const;
 
-    // Wii U: 0x021a149c, PC: TODO
+    LWAPI(0x021a149c, TODO)
     bool Remove(CActor* actor);
 
-    // Wii U: 0x021a17e8, PC: TODO
+    LWAPI(0x021a17e8, TODO)
     void Update();
 
-    // Wii U: 0x021a0f24, PC: 0x0049a6c0
+    LWAPI(0x021a0f24, 0x0049a6c0)
     MessageManager();
 };
+
+/**
+ * @brief Initializes the MessageManager Singleton.
+ *
+ * NOTE: This function appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+*/
+LWAPI(0x021a18b8, TODO)
+void* MessageManager_init();
+
+/**
+ * @brief Destroys the MessageManager Singleton.
+ *
+ * NOTE: This function appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+ *
+ * @param[in] ptr The pointer to the Singleton.
+*/
+LWAPI(0x021a1908, TODO)
+void MessageManager_destroy(void* ptr);
 }
 }

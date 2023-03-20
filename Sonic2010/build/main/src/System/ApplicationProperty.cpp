@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ApplicationProperty.h"
 #include "ApplicationPropertyImpl.h"
 
@@ -10,7 +11,6 @@ ApplicationProperty::ApplicationProperty()
     m_impl = new ApplicationPropertyImpl(m_allocator);
 }
 
-// Wii U: 0x021c8354, PC: TODO
 void* ApplicationProperty_init()
 {
     ApplicationProperty* appProperty = new (GetSingletonAllocator()) ApplicationProperty();
@@ -18,7 +18,6 @@ void* ApplicationProperty_init()
     return appProperty;
 }
 
-// Wii U: 0x021c83a4 (THUNK), PC: TODO
 void ApplicationProperty_destroy(void* ptr)
 {
     static_cast<ApplicationProperty*>(ptr)->Release();

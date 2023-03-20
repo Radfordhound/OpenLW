@@ -26,26 +26,26 @@ public:
             int cpuID, std::size_t stackSize) = 0;
     };
 
-    // Wii U: 0x03a006d0, PC: 0x00d156b0
+    LWAPI(0x03a006d0, 0x00d156b0)
     CThreadImp(const CSharedString& name, int cpuID,
         std::size_t stackSize);
 
-    // Wii U: 0x03a0079c, PC: 0x00d15910
+    LWAPI(0x03a0079c, 0x00d15910)
     virtual ~CThreadImp();
 
-    // Wii U: 0x03a00810, PC: 0x00d155e0
+    LWAPI(0x03a00810, 0x00d155e0)
     void Start();
 
-    // Wii U: 0x03a00848, PC: 0x00d15600
+    LWAPI(0x03a00848, 0x00d15600)
     void Join(unsigned int param_1 = 0);
 
-    // Wii U: 0x03a008e0, PC: TODO
+    LWAPI(0x03a008e0, TODO)
     void SetPriority(EThreadPriority priority);
 
-    // Wii U: 0x03a009c0, PC: TODO
+    LWAPI(0x03a009c0, TODO)
     virtual void Process();
 
-    // Wii U: 0x03a009d0, PC: TODO
+    LWAPI(0x03a009d0, TODO)
     void SetThread(CThread* thread);
 };
 }

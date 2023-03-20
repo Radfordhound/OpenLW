@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "Hedgehog/Rsdx/System/RsdxObject.h"
 #include "Hedgehog/Rsdx/HeapMemory/Allocator/hhRsdxMemoryMain.h"
-#include <d3d9.h>
 
 namespace hh
 {

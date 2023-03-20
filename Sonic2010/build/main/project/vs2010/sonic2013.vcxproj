@@ -51,12 +51,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(ProjectDir)..\..\..\..\..\Library\cslib\include;$(ProjectDir)..\..\..\..\..\depends\boost\include;$(ProjectDir)..\..\..\..\..\depends\criware\include;$(DXSDK_DIR)Include;$(ProjectDir)..\..\src</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -67,8 +67,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -77,6 +76,7 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -109,6 +109,10 @@
     <ClCompile Include="..\..\src\Message\MessageSystem.cpp" />
     <ClCompile Include="..\..\src\Movie\MoviePlayer.cpp" />
     <ClCompile Include="..\..\src\Movie\MovieSystem.cpp" />
+    <ClCompile Include="..\..\src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\..\src\Platforms\Win\ApplicationWin.cpp" />
     <ClCompile Include="..\..\src\Platforms\Win\MainWin.cpp" />
     <ClCompile Include="..\..\src\Render\gfx_Renderable.cpp" />
@@ -180,6 +184,7 @@
     <ClInclude Include="..\..\src\Message\MessageSystem.h" />
     <ClInclude Include="..\..\src\Movie\MoviePlayer.h" />
     <ClInclude Include="..\..\src\Movie\MovieSystem.h" />
+    <ClInclude Include="..\..\src\pch.h" />
     <ClInclude Include="..\..\src\Platforms\Win\ApplicationWin.h" />
     <ClInclude Include="..\..\src\Render\gfx_Renderable.h" />
     <ClInclude Include="..\..\src\Render\gfx_RenderableEvent.h" />

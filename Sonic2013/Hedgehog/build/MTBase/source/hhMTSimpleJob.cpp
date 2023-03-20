@@ -1,10 +1,10 @@
+#include "pch.h"
 #include "Hedgehog/MTBase/hhMTSimpleJob.h"
 #include "Hedgehog/MTBase/hhListExecutor.h"
 #include "Hedgehog/MTBase/hhMTJobMemorySystemUtil.h"
 #include "Hedgehog/MTBase/Thread/hhMTJobThreadFactory.h"
 #include <Hedgehog/Base/System/hhSharedString.h>
 #include <Hedgehog/Rsdx/System/RsdxThread.h>
-#include <cstring>
 
 #ifdef __WIIU__
 #include <gx2/displaylist.h>
@@ -19,14 +19,14 @@ namespace MTBase
 {
 static const std::size_t MTBaseThreadCount = 2;
 
-// Wii U: 0x102c7780, PC: TODO
+LWAPI(0x102c7780, TODO)
 static const int MTBaseThreadCPUIDs[MTBaseThreadCount] =
 {
     0,
     2
 };
 
-// Wii U: 0x1031f924, PC: TODO
+LWAPI(0x1031f924, TODO)
 static const char* const MTBaseThreadNames[MTBaseThreadCount] =
 {
     "MTBase0",
@@ -39,21 +39,21 @@ struct CMTSimpleJobInternal : public CObject // size == 20
     CListExecutor<8, CMTJobMemorySystemUtilLocal>* field_0x4;
     CMTExecutorThread* field_0x8[MTBaseThreadCount];
 
-    // Wii U: 0x036e67d0, PC: 0x00c2a5f0
+    LWAPI(0x036e67d0, 0x00c2a5f0)
     CMTSimpleJobInternal(std::size_t param_1);
 
-    // Wii U: 0x036e6988, PC: 0x00c2a880
+    LWAPI(0x036e6988, 0x00c2a880)
     virtual ~CMTSimpleJobInternal();
 
-    // Wii U: 0x036e6b18, PC: 0x00c2a430
+    LWAPI(0x036e6b18, 0x00c2a430)
     void* MTExecuteJobOneNow(unsigned int signal);
 
-    // Wii U: 0x036e6b3c, PC: 0x00c2a590
+    LWAPI(0x036e6b3c, 0x00c2a590)
     void MTSimpleJobBlockUntilSignal(SEventHolder* param_1,
         bool param_2, unsigned int signal);
 };
 
-// Wii U: 0x1031f93c, PC: 0x011d7984
+LWAPI(0x1031f93c, 0x011d7984)
 static CMTSimpleJobInternal* DAT_1031f93c = nullptr;
 
 void hhMTSimpleJobJointUnlock(SJobJoint* jobJoint)
@@ -120,7 +120,7 @@ void jobJointFinish(SJobJoint* jobJoint)
     }
 }
 
-// Wii U: 0x036e6544, PC: TODO
+LWAPI(0x036e6544, TODO)
 void hhMTSimpleJobDestroyDefault(SJobType256* job)
 {
     CMTJobMemorySystemUtil::Free(job, 256);
@@ -164,7 +164,7 @@ CMTSimpleJobInternal::CMTSimpleJobInternal(std::size_t param_1)
     }
 }
 
-// Wii U: 0x036e6988, PC: 0x00c2a880
+LWAPI(0x036e6988, 0x00c2a880)
 CMTSimpleJobInternal::~CMTSimpleJobInternal()
 {
     field_0x4->PrepareFinalize();
@@ -183,7 +183,7 @@ CMTSimpleJobInternal::~CMTSimpleJobInternal()
     CMTJobMemorySystemUtil::FinalizeJobMemory();
 }
 
-// Wii U: 0x036e6b18, PC: 0x00c2a430
+LWAPI(0x036e6b18, 0x00c2a430)
 void* CMTSimpleJobInternal::MTExecuteJobOneNow(unsigned int signal)
 {
     // TODO
@@ -192,7 +192,7 @@ void* CMTSimpleJobInternal::MTExecuteJobOneNow(unsigned int signal)
     return nullptr;
 }
 
-// Wii U: 0x036e6b3c, PC: 0x00c2a590
+LWAPI(0x036e6b3c, 0x00c2a590)
 void CMTSimpleJobInternal::MTSimpleJobBlockUntilSignal(SEventHolder* param_1,
     bool param_2, unsigned int signal)
 {
@@ -206,7 +206,7 @@ class CMTSimpleJobPushEasyData // TODO: Inheritance?
     // TODO: Any data members?
 
 public:
-    // Wii U: 0x036e6be8, PC: 0x00c2a8b0
+    LWAPI(0x036e6be8, 0x00c2a8b0)
     static void JobExec(void* data)
     {
         SJobType256* job = static_cast<SJobType256*>(data);
@@ -222,7 +222,7 @@ class CMTSimpleJobPushEasyData2 // TODO: Inheritance?
     // TODO: Any data members?
 
 public:
-    // Wii U: 0x036e6e28, PC: TODO
+    LWAPI(0x036e6e28, TODO)
     static void JobExec(void* data)
     {
         SJobType256* job = static_cast<SJobType256*>(data);

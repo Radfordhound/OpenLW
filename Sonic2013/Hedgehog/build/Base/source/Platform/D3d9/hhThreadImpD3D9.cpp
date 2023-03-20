@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Base/Thread/hhThread.h"
 #include "Hedgehog/Base/hhBaseCommon.h"
 #include "Hedgehog/Base/System/hhSharedString.h"
@@ -43,7 +44,7 @@ struct CThreadImpInternal : public CObject // size == 24
 #endif
 
 public:
-    // Wii U: 0x03a0053c, PC: 0x00d15730
+    LWAPI(0x03a0053c, 0x00d15730)
     static unsigned int RSDXSTDCALL ThreadProc(void* param_1)
     {
         SInitializeHHBaseSetting* baseSetting = GetHHBaseSetting();
@@ -65,7 +66,7 @@ public:
         return 1;
     }
 
-    // Wii U: 0x03a00614, PC: Inlined
+    LWAPI(0x03a00614, NONE)
     void SetCPUID(int cpuID)
     {
 #ifdef _WIN32
@@ -105,7 +106,7 @@ public:
     }
 #endif
 
-    // Wii U: 0x03a00624, PC: 0x00d158a0
+    LWAPI(0x03a00624, 0x00d158a0)
     void Initialize(const CSharedString& name, int cpuID, std::size_t stackSize)
     {
         field_0x8 = 0;
@@ -135,7 +136,7 @@ public:
         SetCPUID(cpuID);
     }
 
-    // Wii U: 0x03a00824, PC: Inlined
+    LWAPI(0x03a00824, NONE)
     void Join(unsigned int param_1)
     {
         if (field_0x0)
@@ -150,19 +151,19 @@ public:
         }
     }
 
-    // Wii U: 0x03a0088c, PC: TODO
+    LWAPI(0x03a0088c, TODO)
     void SetPriority(EThreadPriority priority)
     {
         // TODO
     }
 
-    // Wii U: Inlined, PC: Inlined
-    CThreadImpInternal(const CSharedString& name, int cpuID, std::size_t stackSize)
+    inline CThreadImpInternal(const CSharedString& name,
+        int cpuID, std::size_t stackSize)
     {
         Initialize(name, cpuID, stackSize);
     }
 
-    // Wii U: 0x03a00900, PC: 0x00d15950
+    LWAPI(0x03a00900, 0x00d15950)
     virtual ~CThreadImpInternal()
     {
 #ifdef _WIN32

@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "Hedgehog/Base/System/hhSharedString.h"
 #include <Hedgehog/Rsdx/System/RsdxAtomic.h>
-#include <cstring>
 
 using namespace hh::rsdx;
 
@@ -15,13 +15,13 @@ enum CSharedStringFlags
     SHARED_STRING_REF_COUNT_MASK = 0xffff,
 };
 
-// Wii U: 0x102c16a0, PC: 0x00eb29b4
+LWAPI(0x102c16a0, 0x00eb29b4)
 static char* StaticData = "";
 
 CSharedString::CSharedString() :
     m_data(StaticData) {}
 
-// Wii U: 0x0369de1c, PC: Inlined
+LWAPI(0x0369de1c, NONE)
 static bool is_memstatic(const char* data)
 {
     return (!data || data == StaticData);
@@ -72,7 +72,7 @@ const char* CSharedString::c_str() const
         StaticData : m_data;
 }
 
-// Wii U: 0x0369dfc8, PC: TODO
+LWAPI(0x0369dfc8, TODO)
 static bool TryExtend(char* data, const char* str, int len)
 {
     if (!is_memstatic(data))

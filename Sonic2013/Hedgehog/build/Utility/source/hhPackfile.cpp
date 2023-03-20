@@ -1,8 +1,8 @@
+#include "pch.h"
 #include "Hedgehog/Utility/hhPackfile.h"
 #include "Hedgehog/Utility/hhResDictionary.h"
 #include "Hedgehog/Utility/hhResDependTypeInfo.h"
 #include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
-#include <cstring>
 
 using namespace hh::ut::pac;
 
@@ -76,7 +76,7 @@ u32 ResPackfileBlockV1Header::GetSignature() const
 }
 
 // TODO: This name was guessed.
-// Wii U: 0x102c0690, PC: TODO
+LWAPI(0x102c0690, TODO)
 static const u32 PackfileBlockTypes[] = // TODO: Should this be moved somewhere else?
 {
     HH_MAKE_SIG('D', 'A', 'T', 'A'),

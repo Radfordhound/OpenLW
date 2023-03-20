@@ -46,13 +46,13 @@ struct Message // size == 0x18
     bool Broadcasted;
     unsigned int Mask;
 
-    // Wii U: 0x021a0bb4, PC: TODO
+    LWAPI(0x021A0BB4, 0x0049A630)
     virtual Message* Clone() const;
 
-    // Wii U: 0x021a0c94, PC: TODO
+    LWAPI(0x021A0C28, 0x0049A620)
     virtual ~Message();
 
-    // Wii U: 0x021a0c28, PC: 0x0049a5f0
+    LWAPI(0x021A0C94, 0x0049A5F0)
     Message(const int id);
 };
 }

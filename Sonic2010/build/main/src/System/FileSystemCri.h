@@ -12,19 +12,19 @@ struct FileSystemCri : FileSystem
 {
     FileBinderCri* Binder;
 
-    // Wii U: 0x021932d8, PC: TODO
+    LWAPI(0x021932d8, TODO)
     ~FileSystemCri();
 
-    // Wii U: 0x02193394, PC: TODO
+    LWAPI(0x02193394, TODO)
     void Update();
 
-    // Wii U: 0x0219338c, PC: TODO
+    LWAPI(0x0219338c, TODO)
     FileBinder* GetDefaultBinder() const;
 
-    // Wii U: 0x021932a4, PC: TODO
+    LWAPI(0x021932a4, TODO)
     static FileSystemCri* Create(csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x0219320c, PC: 0x004940d0
+    LWAPI(0x0219320c, 0x004940d0)
     FileSystemCri();
 };
 }

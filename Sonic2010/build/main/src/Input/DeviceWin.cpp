@@ -1,5 +1,6 @@
 // TODO: The name of this file is correct, but the path was guessed!
 // NOTE: This file appears to be included in Wii U builds also, just disabled.
+#include "pch.h"
 #ifdef _WIN32
 #include "DeviceWin.h"
 #include "DevicePadWin.h"
@@ -56,16 +57,14 @@ DeviceWin::DeviceWin() :
     TouchDevice = nullptr;
 }
 
-// Wii U: N/A, PC: 0x004f7f40
-static void* DeviceWin_init()
+void* DeviceWin_init()
 {
     DeviceWin* dev = new (fnd::GetSingletonAllocator()) DeviceWin();
     dev->AddRef();
     return dev;
 }
 
-// Wii U: N/A, PC: 0x0095fa00
-static void DeviceWin_destroy(void* ptr)
+void DeviceWin_destroy(void* ptr)
 {
     static_cast<DeviceWin*>(ptr)->Release();
 }

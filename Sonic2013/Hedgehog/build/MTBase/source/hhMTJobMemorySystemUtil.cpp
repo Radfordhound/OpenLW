@@ -1,8 +1,8 @@
+#include "pch.h"
 #include "Hedgehog/MTBase/hhMTJobMemorySystemUtil.h"
 #include "Hedgehog/MTBase/hhJobJoint.h"
 #include <Hedgehog/Base/System/hhMemory.h>
 #include <Hedgehog/Rsdx/System/RsdxAtomic.h>
-#include <cstring>
 
 using namespace hh::rsdx;
 

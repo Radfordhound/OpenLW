@@ -19,10 +19,10 @@ struct ResTechniqueData
 
 struct ResTechnique : public ut::ResCommon<ResTechniqueData>
 {
-    // Wii U: 0x0367cbec, PC: TODO
+    LWAPI(0x0367cbec, TODO)
     ResName GetVSName();
 
-    // Wii U: 0x0367cc40, PC: TODO
+    LWAPI(0x0367cc40, TODO)
     ResName GetFSName();
 
     inline ResTechnique(const void* data) :

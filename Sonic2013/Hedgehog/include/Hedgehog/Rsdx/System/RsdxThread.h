@@ -3,7 +3,7 @@
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#include <Windows.h>
 #include <process.h>
 #elif defined(__WIIU__)
 #include <coreinit/thread.h>
@@ -68,57 +68,57 @@ public:
 #endif
     }
 
-    // Wii U: TODO, PC: 0x00464aa0 (GENERIC RETURN TRUE)
+    LWAPI(TODO, 0x00464aa0)
     bool CloseSystemResource();
 
-    // Wii U: TODO, PC: 0x00c24e20
+    LWAPI(TODO, 0x00c24e20)
     bool WaitSystemResource();
 
-    // Wii U: TODO, PC: 0x00c24f30
+    LWAPI(TODO, 0x00c24f30)
     ~CRsdxThreadEntryMain();
 
-    // Wii U: 0x036c0e34, PC: Inlined
+    LWAPI(0x036c0e34, NONE)
     unsigned int ThreadEntry();
 
 #ifdef _WIN32
-    // Wii U: N/A, PC: 0x00c24c50
+    LWAPI(NONE, 0x00c24c50)
     static DWORD WINAPI ThreadEntryStatic(void* threadParam);
 #elif defined(__WIIU__)
-    // Wii U: 0x036c0e9c, PC: N/A
+    LWAPI(0x036c0e9c, NONE)
     static int ThreadEntryStatic(int argc, const char** argv);
 #endif
 
-    // Wii U: 0x036c0ea4, PC: 0x00c24d00
+    LWAPI(0x036c0ea4, 0x00c24d00)
     void SetThreadName(const char* name);
 
-    // Wii U: TODO, PC: 0x00c24c90
+    LWAPI(TODO, 0x00c24c90)
     bool EndThread();
 
     // TODO
 
-    // Wii U: 0x036c0eac, PC: 0x00c24e30
+    LWAPI(0x036c0eac, 0x00c24e30)
     static CRsdxThreadEntryMain* CreateThread(
         const RSDXTHREADTHREADCREATIONINFO* createInfo);
 
-    // Wii U: 0x036c1180, PC: TODO
+    LWAPI(0x036c1180, TODO)
     bool SetThreadAffinity(unsigned int mask);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     CRsdxThreadEntryMain();
 };
 
-// Wii U: 0x036c11e4, PC: 0x00c24f60
+LWAPI(0x036c11e4, 0x00c24f60)
 CRsdxThreadEntryMain* RsdxCreateThread(std::size_t stackSize,
     RsdxThreadExecFunc threadFuncPtr, void* threadParam, bool startSuspended,
     RsdxNativeThread* nativeThread, unsigned int param_6);
 
-// Wii U: 0x036c128c (THUNK), PC: TODO
+LWAPI(0x036c128c, TODO)
 void RsdxSetThreadAffinityMask(RsdxSystemResource* thread, unsigned int mask);
 
-// Wii U: 0x036c1290, PC: TODO
+LWAPI(0x036c1290, TODO)
 void RsdxSetThreadName(RsdxSystemResource* thread, const char* name);
 
-// Wii U: 0x036c12ac, PC: Inlined
+LWAPI(0x036c12ac, NONE)
 void RsdxThreadSleep(unsigned int milliseconds);
 }
 }

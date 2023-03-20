@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h"
 #include "Hedgehog/Graphics/Resource/hhResVertexShader.h"
 #include "Hedgehog/Graphics/Resource/hhResFragmentShader.h"
@@ -6,19 +7,19 @@
 using namespace hh::ut;
 using namespace hh::gfx::res;
 
-// Wii U: 0x03689818, PC: TODO
+LWAPI(0x03689818, TODO)
 static IResourceLoader* CreateResVertexShaderResourceLoader()
 {
     return new ResVertexShaderLoader();
 }
 
-// Wii U: 0x03689850, PC: TODO
+LWAPI(0x03689850, TODO)
 static IResourceLoader* CreateResFragmentShaderResourceLoader()
 {
     return new ResFragmentShaderLoader();
 }
 
-// Wii U: 0x03689888, PC: TODO
+LWAPI(0x03689888, TODO)
 static IResourceLoader* CreateResShaderResourceLoader()
 {
     return new ResShaderLoader();

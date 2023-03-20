@@ -8,18 +8,18 @@ struct Tick
 {
     long long Value;
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     long long ToMicroseconds() const;
 
     // TODO
 
-    // Wii U: TODO, PC: 0x00969130
+    LWAPI(TODO, 0x00969130)
     static void Initialize();
 
-    // Wii U: 0x02caa1d4, PC: TODO
+    LWAPI(0x02caa1d4, TODO)
     static void Finalize();
 
-    // Wii U: 0x02caa164, PC: 0x009690f0
+    LWAPI(0x02caa164, 0x009690f0)
     static Tick Sample();
 
     inline Tick() : Value(0LL) {}

@@ -1,25 +1,13 @@
 // TODO: Both the name of this file and its path were guessed!
 // TODO: Could be "DevicePadMapWin.cpp"?
+#include "pch.h"
 #include "DevicePadKB.h"
-
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 
 namespace app
 {
 namespace hid
 {
-enum KBACTION // TODO: This name was guessed.
-{
-#define KBACTION_DEF(lbl) KBACTION_##lbl,
-#include "KBACTION.inl"
-#undef KBACTION_DEF
-
-    KBACTION_COUNT
-};
-
-// Wii U: N/A, PC: 0x00404090
-static const char* GetKBActionRegKeyName(KBACTION action) // TODO: This name was guessed.
+const char* GetKBActionRegKeyName(KBACTION action)
 {
     switch (action)
     {

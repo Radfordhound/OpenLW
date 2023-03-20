@@ -19,6 +19,7 @@
     <ClCompile Include="source\Misc\hhRenderingDevice.cpp">
       <Filter>Misc</Filter>
     </ClCompile>
+    <ClCompile Include="source\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingInfrastructure.h">
@@ -34,5 +35,6 @@
     <ClInclude Include="..\..\include\Hedgehog\MirageCore\Misc\hhRenderingDevice.h">
       <Filter>Misc</Filter>
     </ClInclude>
+    <ClInclude Include="source\pch.h" />
   </ItemGroup>
 </Project>

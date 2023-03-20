@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Base/System/hhEventWait.h"
 
 namespace hh

@@ -16,7 +16,7 @@ struct GameDocument : public fnd::ReferencedObject, // size == 0xDC
     boost::scoped_ptr<CWorld> World;
     // TODO: Other data members.
 
-    // Wii U: 0x02a7ec20, PC: TODO
+    LWAPI(0x02a7ec20, TODO)
     GameDocument(GameMode* gameMode);
 };
 }

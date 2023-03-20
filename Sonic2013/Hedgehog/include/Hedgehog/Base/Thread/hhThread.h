@@ -15,12 +15,12 @@ class CThread // TODO: Inheritance? // size == 0x1c
     // TODO: Other data members?
 
 public:
-    // Wii U: 0x03a040e0, PC: TODO
+    LWAPI(0x03a040e0, TODO)
     CThread(boost::function0<void> param_1,
         const CSharedString& name, unsigned int cpuID,
         std::size_t stackSize, CThreadImp::IFactory* factory);
 
-    // Wii U: 0x03a0436c, PC: TODO
+    LWAPI(0x03a0436c, TODO)
     void Process();
 };
 }

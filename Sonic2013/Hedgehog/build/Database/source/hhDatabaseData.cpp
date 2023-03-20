@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Database/hhDatabaseData.h"
 
 namespace hh

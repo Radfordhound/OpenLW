@@ -59,10 +59,10 @@ T RoundUp(const T& val, unsigned int multiple) // TODO: The symbols suggest that
     return (((val + multiple) - 1) & ~(multiple - 1));
 }
 
-// Wii U: 0x02ca6da8, PC: 0x00969760
+LWAPI(0x02ca6da8, 0x00969760)
 void NativeFromBig32(void* output, void* input, int count);
 
-// Wii U: 0x02ca6dd4, PC: TODO
+LWAPI(0x02ca6dd4, TODO)
 void NativeFromLittle32(void* param_1, void* param_2, int count);
 }
 }

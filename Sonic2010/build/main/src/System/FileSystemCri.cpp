@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #ifdef USE_CRIWARE
 #include "FileSystemCri.h"
 #include "FileReaderCri.h"

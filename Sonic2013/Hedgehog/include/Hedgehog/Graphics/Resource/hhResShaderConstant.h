@@ -18,10 +18,10 @@ struct ResShaderConstantData // size == 28
 
 struct ResShaderConstant : public ut::ResCommon<ResShaderConstantData>
 {
-    // Wii U: 0x0367b148, PC: TODO
+    LWAPI(0x0367b148, TODO)
     ResShaderConstantUsage GetUsage(std::size_t index) const;
 
-    // Wii U: 0x0367b1c8, PC: TODO
+    LWAPI(0x0367b1c8, TODO)
     ResName GetUsageName();
 
     inline ResShaderConstant(std::nullptr_t) :

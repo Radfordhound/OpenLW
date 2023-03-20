@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResNameData.h"
 #include <Hedgehog/Base/System/hhCSymbol.h> // TODO: REMOVE THIS LINE PLEASE
-#include <cstring>
 
 // ============ TODO: MOVE THIS BLOCK TO ANOTHER FILE ===========
 namespace hh

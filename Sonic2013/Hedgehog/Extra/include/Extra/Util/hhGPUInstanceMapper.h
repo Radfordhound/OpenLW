@@ -12,10 +12,10 @@ class CGPUInstanceMapper : public CFxRefcountObject
     CGPUInstanceMapperInternal* m_impl;
 
 public:
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     CGPUInstanceMapper();
 
-    // Wii U: 0x0370b1bc, PC: 0x00c54550
+    LWAPI(0x0370b1bc, 0x00c54550)
     ~CGPUInstanceMapper();
 };
 }

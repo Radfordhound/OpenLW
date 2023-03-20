@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Base/System/hhObject.h"
 
 using namespace hh::rsdx;

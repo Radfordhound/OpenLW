@@ -5,7 +5,7 @@ namespace hh
 {
 namespace base
 {
-// Wii U: 0x0369fc50, PC: TODO
+LWAPI(0x0369fc50, TODO)
 std::size_t hash_value_str(const char* str);
 }
 }

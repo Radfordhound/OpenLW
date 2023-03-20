@@ -16,14 +16,15 @@ namespace game
 {
 class GlobalAllocator
 {
-    // Wii U: 0x10338d38, PC: TODO
+LWAPI_PRIVATE
+    LWAPI(0x10338d38, 0x00fd7c34)
     static csl::fnd::IAllocator* Allocators[4];
 
 public:
-    // Wii U: 0x02230294, PC: 0x004d0c90
+    LWAPI(0x02230294, 0x004d0c90)
     static csl::fnd::IAllocator* GetAllocator(AllocatorID allocID);
 
-    // Wii U: 0x022302a8, PC: TODO
+    LWAPI(0x022302a8, 0x004d0ca0)
     static void SetAllocator(AllocatorID allocID,
         csl::fnd::IAllocator* allocator);
 };

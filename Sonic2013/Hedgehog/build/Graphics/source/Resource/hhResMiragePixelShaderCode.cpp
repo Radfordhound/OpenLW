@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderCode.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderCodeTypeInfo.h"
 #include "Hedgehog/Graphics/hhGraphics.h"
@@ -12,13 +13,13 @@ namespace gfx
 {
 namespace res
 {
-// Wii U: 0x03680884, PC: TODO
+LWAPI(0x03680884, TODO)
 static std::size_t CalcSize()
 {
     return (sizeof(ResMiragePixelShaderCodeData) + sizeof(CPixelShaderCodeData));
 }
 
-// Wii U: 0x0368088c, PC: TODO
+LWAPI(0x0368088c, TODO)
 static void Make(ResMiragePixelShaderCodeData* param_1,
     const u32* param_2, csl::fnd::IAllocator* allocator)
 {

@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #include "ResourceManager.h"
 #include "ResourceSysCustom.h"
 #include "Memory/MemoryRouter.h"
@@ -212,7 +213,7 @@ void* ResourceManager::GetResource(const char* name, std::size_t size)
     return res;
 }
 
-// Wii U: 0x021b0ec0, PC: TODO
+LWAPI(0x021b0ec0, TODO)
 static void* ResourceManager_init()
 {
     ResourceManager* resMgr = new (GetSingletonAllocator()) ResourceManager();
@@ -220,7 +221,7 @@ static void* ResourceManager_init()
     return resMgr;
 }
 
-// Wii U: 0x021b0f10, PC: TODO
+LWAPI(0x021b0f10, TODO)
 static void ResourceManager_destroy(void* ptr)
 {
     static_cast<ResourceManager*>(ptr)->Release();

@@ -49,28 +49,28 @@ protected:
         return iterator(&m_root, m_nodeOffset);
     }
 
-    // Wii U: 0x02014CD0, PC: Inlined
+    LWAPI(0x02014CD0, NONE)
     void Initialize();
 
-    // Wii U: 0x02CA6E98, PC: 0x00962180
+    LWAPI(0x02CA6E98, 0x00962180)
     iterator insert(iterator it, LinkListNode* node);
 
-    // Wii U: 0x02CA6ED4, PC: 0x009621b0
+    LWAPI(0x02CA6ED4, 0x009621b0)
     iterator erase(LinkListNode* node);
 
-    // Wii U: 0x02CA6F14, PC: 0x009621e0
+    LWAPI(0x02CA6F14, 0x009621e0)
     iterator erase(iterator first, iterator last);
 
-    // Wii U: 0x02CA6F64, PC: 0x009622b0
+    LWAPI(0x02CA6F64, 0x009622b0)
     iterator erase(iterator it);
 
-    // Wii U: 0x02CA6FB8, PC: 0x00962170
+    LWAPI(0x02CA6FB8, 0x00962170)
     void init(int nodeOffset);
 
-    // Wii U: 0x02CA6FC0, PC: 0x00962280
+    LWAPI(0x02CA6FC0, 0x00962280)
     void clear();
 
-    // Wii U: 0x02CA7024, PC: 0x00962230
+    LWAPI(0x02CA7024, 0x00962230)
     void reverse();
 
     inline LinkListImpl(int nodeOffset = -1) :

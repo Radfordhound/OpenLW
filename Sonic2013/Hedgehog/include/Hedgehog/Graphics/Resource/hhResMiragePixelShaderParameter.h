@@ -27,16 +27,16 @@ struct ResMiragePixelShaderParameterData
 
 struct ResMiragePixelShaderParameter : ut::ResCommon<ResMiragePixelShaderParameterData>
 {
-    // Wii U: 0x03684208, PC: TODO
+    LWAPI(0x03684208, TODO)
     static const ut::ResourceTypeInfo& staticTypeInfo();
 
-    // Wii U: 0x036844c8, PC: TODO
+    LWAPI(0x036844c8, TODO)
     void* Replace(std::size_t* size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03684694, PC: TODO
+    LWAPI(0x03684694, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x0368469c, PC: TODO
+    LWAPI(0x0368469c, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator, ut::Packfile pac);
 
     inline ResMiragePixelShaderParameter(std::nullptr_t) :

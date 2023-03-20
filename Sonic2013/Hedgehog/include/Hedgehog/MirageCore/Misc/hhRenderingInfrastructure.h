@@ -23,10 +23,10 @@ public:
         return m_vtxDecl;
     }
 
-    // Wii U: 0x036c7a4c, PC: TODO
+    LWAPI(0x036c7a4c, TODO)
     void clear();
 
-    // Wii U: 0x036c7a90, PC: TODO
+    LWAPI(0x036c7a90, TODO)
     void reset(CRenderingInfrastructure* renderInfra,
         rsdx::RsdxVertexDeclaration9** vtxDecl, bool addRef);
 };
@@ -37,10 +37,10 @@ struct SVertexDecl
     rsdx::D3DVERTEXELEMENT9 VertexElements[MAXD3DDECLLENGTH + 1];
     unsigned int Hash;
 
-    // Wii U: 0x036d5d14, PC: TODO
+    LWAPI(0x036d5d14, TODO)
     bool operator==(const SVertexDecl& other) const;
 
-    // Wii U: 0x036d6430, PC: 0x00c2aa50
+    LWAPI(0x036d6430, 0x00c2aa50)
     bool InitializeDecl(const rsdx::D3DVERTEXELEMENT9* vtxElements,
         std::size_t param_2, const u8* param_3);
 };
@@ -66,38 +66,38 @@ public:
         return &m_device;
     }
 
-    // Wii U: 0x036caea4, PC: TODO
+    LWAPI(0x036caea4, TODO)
     static void ReleaseD3DRenderResource(rsdx::RsdxResource* res);
 
-    // Wii U: 0x036d4f14, PC: TODO
+    LWAPI(0x036d4f14, TODO)
     void Initwork1st();
 
-    // Wii U: 0x036d4ff0, PC: 0x00c2be50
+    LWAPI(0x036d4ff0, 0x00c2be50)
     CRenderingInfrastructure();
 
-    // Wii U: 0x036d5bb0, PC: 0x00c2b200
+    LWAPI(0x036d5bb0, 0x00c2b200)
     rsdx::RsdxVertexShader9* CreateVertexShader(const void* data);
 
-    // Wii U: 0x036d5bf4, PC: TODO
+    LWAPI(0x036d5bf4, TODO)
     rsdx::RsdxPixelShader9* CreatePixelShader(const void* data);
 
-    // Wii U: 0x036d6970, PC: 0x00c2bed0
+    LWAPI(0x036d6970, 0x00c2bed0)
     void CreateVertexDeclaration(const rsdx::D3DVERTEXELEMENT9* param_1,
         CVertexDeclarationPtr* param_2, const u8* param_3);
 
-    // Wii U: 0x036d6cbc, PC: TODO
+    LWAPI(0x036d6cbc, TODO)
     void ReleaseVertexDeclaration(rsdx::RsdxVertexDeclaration9** vtxDecl);
 
-    // Wii U: 0x036d6e28, PC: TODO
+    LWAPI(0x036d6e28, TODO)
     void BlockUntilAsyncNotBusy();
 
-    // Wii U: 0x036d8c0c, PC: TODO
+    LWAPI(0x036d8c0c, TODO)
     bool BeginScene();
 
-    // Wii U: 0x036d8c7c, PC: TODO
+    LWAPI(0x036d8c7c, TODO)
     void EndScene();
 
-    // Wii U: 0x036d8d84, PC: 0x00c2b490
+    LWAPI(0x036d8d84, 0x00c2b490)
     void Present();
 };
 }

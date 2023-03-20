@@ -16,16 +16,16 @@ struct ResMirageVertexShaderCodeData
 
 struct ResMirageVertexShaderCode : public ut::ResCommon<ResMirageVertexShaderCodeData>
 {
-    // Wii U: 0x036856a0, PC: TODO
+    LWAPI(0x036856a0, TODO)
     static const ut::ResourceTypeInfo& staticTypeInfo();
 
-    // Wii U: 0x03685758, PC: TODO
+    LWAPI(0x03685758, TODO)
     void* Replace(std::size_t* size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x036857d0, PC: TODO
+    LWAPI(0x036857d0, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x036857d8, PC: TODO
+    LWAPI(0x036857d8, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator, ut::Packfile packfile);
 
     inline ResMirageVertexShaderCode(const void* data) :

@@ -23,37 +23,37 @@ struct ResShaderData
 
 struct ResShader : public ut::ResCommon<ResShaderData>
 {
-    // Wii U: 0x0367cce8, PC: TODO
+    LWAPI(0x0367cce8, TODO)
     static const ut::ResourceTypeInfo& staticTypeInfo();
 
-    // Wii U: 0x0367ccf4, PC: TODO
+    LWAPI(0x0367ccf4, TODO)
     ResTechnique GetResTechnique(std::size_t index) const;
 
-    // Wii U: 0x0367cd8c, PC: TODO
+    LWAPI(0x0367cd8c, TODO)
     ResParameter GetDefaultParameter();
 
-    // Wii U: 0x0367cde0, PC: TODO
+    LWAPI(0x0367cde0, TODO)
     ResMapChannelFixed GetResMapChannelFixed(std::size_t index);
 
-    // Wii U: 0x0367ce78, PC: TODO
+    LWAPI(0x0367ce78, TODO)
     ResName GetName();
 
-    // Wii U: 0x0367cecc, PC: TODO
+    LWAPI(0x0367cecc, TODO)
     ResUserData GetResUserData();
 
-    // Wii U: 0x0367d4ac, PC: TODO
+    LWAPI(0x0367d4ac, TODO)
     void* Replace(const char* name, std::size_t* size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x0367d518, PC: TODO
+    LWAPI(0x0367d518, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x0367d5b0, PC: TODO
+    LWAPI(0x0367d5b0, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator, ut::Packfile pac);
 
-    // Wii U: 0x0367d978, PC: 0x0367d978
+    LWAPI(0x0367d978, 0x0367d978)
     void Cleanup(std::size_t index);
 
-    // Wii U: 0x0367da28, PC: TODO
+    LWAPI(0x0367da28, TODO)
     bool FinalInitialization();
 
     inline ResShader(const void* data) :

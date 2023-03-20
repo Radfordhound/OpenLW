@@ -1,8 +1,8 @@
+#include "pch.h"
 #include "MoviePlayer.h"
 #include "MovieSystem.h"
 #include "Render/RenderManager.h"
 #include "HUD/SurfRidePlatformMIRAGE.h"
-#include <Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h>
 
 using namespace app::gfx;
 using namespace app::HUD;
@@ -14,9 +14,7 @@ namespace app
 {
 namespace fnd
 {
-// TODO: This name was guessed.
-// Wii U: 0x1002df30, PC: 0x00eb2f04
-static hh::rsdx::D3DVERTEXELEMENT9 MovieVertexElements[] =
+hh::rsdx::D3DVERTEXELEMENT9 MovieVertexElements[] =
 {
     {
         0,                                                              // Stream

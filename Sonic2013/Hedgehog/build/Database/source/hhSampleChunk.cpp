@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Database/hhSampleChunk.h"
 
 namespace hh

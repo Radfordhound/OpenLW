@@ -25,7 +25,7 @@ public:
     boost::shared_ptr<base::CCriticalSectionD3D9> field_0x18;
     // TODO: Other data members.
 
-    // Wii U: 0x036e2e4c, PC: 0x00c33050
+    LWAPI(0x036e2e4c, 0x00c33050)
     void Make(CVertexShaderCodeData* param_1, const u32* param_2,
         CRenderingInfrastructure* renderInfra);
 };
@@ -38,7 +38,7 @@ public:
     boost::shared_ptr<base::CCriticalSectionD3D9> field_0x18;
     // TODO: Other data members.
 
-    // Wii U: 0x036da84c, PC: TODO
+    LWAPI(0x036da84c, TODO)
     void Make(CPixelShaderCodeData* param_1, const u32* param_2,
         CRenderingInfrastructure* renderInfra);
 };
@@ -168,7 +168,7 @@ public:
     CShaderConstantNameData Ints;
     CShaderConstantNameData Bools;
 
-    // Wii U: 0x03687700, PC: TODO
+    LWAPI(0x03687700, TODO)
     ~CVertexShaderParameterData();
 };
 
@@ -270,7 +270,7 @@ public:
     CShaderConstantNameData Bools;
     CShaderSamplerUsageData Textures;
 
-    // Wii U: 0x0217885c, PC: TODO
+    LWAPI(0x0217885c, TODO)
     ~CPixelShaderParameterData();
 };
 

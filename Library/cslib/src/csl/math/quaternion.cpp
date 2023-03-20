@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "csl/math/quaternion.h"
 #include "csl/math/vector3.h"
-#include <math.h>
 
 namespace csl
 {

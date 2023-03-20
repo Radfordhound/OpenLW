@@ -10,7 +10,7 @@ namespace fnd
 {
 class ReferencedObject : public BaseObject
 {
-protected:
+LWAPI_PROTECTED
     unsigned short m_size;
     unsigned short m_refCount;
     csl::fnd::IAllocator* m_allocator;
@@ -22,20 +22,20 @@ public:
         if (m_size) ++m_refCount;
     }
 
-    // Wii U: 0x02185188, PC: 0x0048d460
+    LWAPI(0x02185188, 0x0048d460)
     void Release();
 
-    // Wii U: 0x0218521c, PC: 0x0048d4d0
+    LWAPI(0x0218521c, 0x0048d4d0)
     static void* operator new(std::size_t size, void* ptr);
 
-    // Wii U: 0x021851bc, PC: 0x0048d4a0
+    LWAPI(0x021851bc, 0x0048d4a0)
     static void* operator new(std::size_t size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x02185234, PC: 0x0048d4f0
+    LWAPI(0x02185234, 0x0048d4f0)
     static void* operator new(std::size_t size, void* ptr,
         csl::fnd::IAllocator* allocator, std::size_t objSize);
 
-    // Wii U: 0x02185154, PC: 0x0048d480
+    LWAPI(0x02185154, 0x0048d480)
     static void operator delete(void* ptr);
 
     // TODO: Is this function a thing?

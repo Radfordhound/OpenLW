@@ -9,7 +9,7 @@ namespace base
 class CEventWait : public TPluginable1<CEventWait, bool>, public CObject // size == 4
 {
 public:
-    // Wii U: 0x03698268, PC: TODO
+    LWAPI(0x03698268, TODO)
     virtual ~CEventWait();
 
     virtual void Set() = 0;

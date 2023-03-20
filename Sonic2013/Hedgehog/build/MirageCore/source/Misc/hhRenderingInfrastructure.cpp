@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h"
 #include <Hedgehog/Base/Platform/D3d9/hhCCriticalSectionD3D9.h>
 #include <Hedgehog/Rsdx/Graphics/Shader/RsdxDeviceShader.h>
@@ -28,7 +29,7 @@ class CRenderingInfrastructureInternal : public CObject // size == 0x98
     boost::shared_ptr<CCriticalSectionD3D9> field_0x90;
 
 public:
-    // Wii U: 0x036d4d7c, PC: 0x00c2dac0
+    LWAPI(0x036d4d7c, 0x00c2dac0)
     CRenderingInfrastructureInternal(CRenderingInfrastructure* renderInfra);
 
     // TODO: Is this function really a thing?
@@ -43,14 +44,14 @@ public:
         field_0x90->Leave();
     }
 
-    // Wii U: 0x036d67a8, PC: 0x00c2e410
+    LWAPI(0x036d67a8, 0x00c2e410)
     bool CreateVertexDeclaration(const rsdx::D3DVERTEXELEMENT9* vtxElements,
         CVertexDeclarationPtr* param_2, const u8* param_3);
 
-    // Wii U: 0x036d6b28, PC: TODO
+    LWAPI(0x036d6b28, TODO)
     void ReleaseVertexDeclaration(RsdxVertexDeclaration9* vtxDecl);
 
-    // Wii U: 0x036d6cb4, PC: TODO
+    LWAPI(0x036d6cb4, TODO)
     void ReleaseVertexDeclaration(RsdxVertexDeclaration9** vtxDecl);
 };
 
@@ -81,16 +82,16 @@ void CVertexDeclarationPtr::reset(CRenderingInfrastructure* renderInfra,
 }
 
 // TODO: Should this be moved somewhere else?
-// Wii U: 0x1031f7ec, PC: TODO
+LWAPI(0x1031f7ec, TODO)
 static RsdxSListHeader DAT_1031f7ec;
 
 // TODO: Should this be moved somewhere else?
 // TODO: Is this type correct?
-// Wii U: 0x1031f7f0, PC: TODO
+LWAPI(0x1031f7f0, TODO)
 static unsigned int DAT_1031f7f0 = 0;
 
 // TODO: Should this be moved somewhere else?
-// Wii U: 0x1031f824, PC: TODO
+LWAPI(0x1031f824, TODO)
 static RsdxAtomic DAT_1031f824 = 0;
 
 struct UnknownStruct : public RsdxSListEntry // TODO: There seems to be no name for this struct in the symbols?
@@ -157,7 +158,7 @@ bool SVertexDecl::operator==(const SVertexDecl& other) const
             VertexElementCount * sizeof(rsdx::D3DVERTEXELEMENT9)) == 0);
 }
 
-// Wii U: 0x036d6390, PC: Inlined
+LWAPI(0x036d6390, NONE)
 static std::size_t MakePermedDeclaration(rsdx::D3DVERTEXELEMENT9* output,
     std::size_t* validInputCount, std::size_t inputCount, std::size_t param_4,
     const rsdx::D3DVERTEXELEMENT9* input, const u8* param_6)

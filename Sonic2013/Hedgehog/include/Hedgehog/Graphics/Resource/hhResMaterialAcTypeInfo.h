@@ -9,26 +9,26 @@ namespace res
 {
 struct ResMaterialLoader : ut::IResourceLoader
 {
-    // Wii U: 0x03688ed8, PC: TODO
+    LWAPI(0x03688ed8, TODO)
     ~ResMaterialLoader();
 
-    // Wii U: 0x03688eec, PC: TODO
+    LWAPI(0x03688eec, TODO)
     void* ReplaceLoadedResource(const char* name, void* data,
         std::size_t* size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03688f4c, PC: TODO
+    LWAPI(0x03688f4c, TODO)
     bool FinishLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03688f98, PC: TODO
+    LWAPI(0x03688f98, TODO)
     bool BindLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator, ut::Packfile packfile);
 
-    // Wii U: 0x03689000, PC: TODO
+    LWAPI(0x03689000, TODO)
     void CleanupLoadedResource(void* data, std::size_t size);
 };
 
-// Wii U: 0x104014b4, PC: TODO
+LWAPI(0x104014b4, TODO)
 extern ut::ResourceTypeInfo ResMaterialTypeInfo;
 }
 }

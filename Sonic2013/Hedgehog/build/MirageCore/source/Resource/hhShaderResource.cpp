@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/MirageCore/Resource/hhShaderResource.h"
 #include "Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h"
 

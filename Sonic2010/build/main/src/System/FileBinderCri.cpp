@@ -1,11 +1,11 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #ifdef USE_CRIWARE
 #include "FileBinderCri.h"
 #include "FileSystem.h"
 #include "FileHandle.h"
 #include <csl/fnd/thread.h>
 #include <cri_framework.h> // TODO: Replace Criware with an open-source library!!
-#include <cstring>
 #include <cstdio> // TODO: REMOVE ME
 
 using namespace app::fnd::file;

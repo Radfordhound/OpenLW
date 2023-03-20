@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #include "ResourceSysCustom.h"
 #include "ResourceManager.h"
 #include "Render/RenderManager.h"
@@ -9,13 +10,13 @@ using namespace app::gfx;
 using namespace hh::ut;
 using namespace hh::mr;
 
-// Wii U: 0x021b0f84, PC: TODO
+LWAPI(0x021b0f84, TODO)
 static IResourceCustomLoader* CreateDefResourceCustomLoader()
 {
     return new ResourceCustomDefLoader();
 }
 
-// Wii U: 0x021b0fbc, PC: TODO
+LWAPI(0x021b0fbc, TODO)
 static IResourceCustomLoader* CreatePacResourceCustomLoader()
 {
     return new ResourceCustomPacLoader();

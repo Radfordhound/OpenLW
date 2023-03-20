@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderAc.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderAcTypeInfo.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderConstant.h"
@@ -53,14 +54,14 @@ ResUserData ResShader::GetResUserData()
     return ResUserData(&ptr()->UserData);
 }
 
-// Wii U: 0x1031ec58, PC: TODO
+LWAPI(0x1031ec58, TODO)
 static const char* const VertexShaderSubPermutations[] = // TODO: This name was guessed.
 {
     "",
     "_ConstTexCoord"
 };
 
-// Wii U: 0x1031ec60, PC: TODO
+LWAPI(0x1031ec60, TODO)
 static const char* const PixelShaderSubPermutations[] = // TODO: This name was guessed.
 {
     "",
@@ -73,7 +74,7 @@ static const char* const PixelShaderSubPermutations[] = // TODO: This name was g
     "_NoLight_NoGI_ConstTexCoord"
 };
 
-// Wii U: 0x0367cf38, PC: TODO
+LWAPI(0x0367cf38, TODO)
 static void* ShaderList2ResShader(CShaderListV0Resource* shaderListRes,
     const char* name, std::size_t* size, csl::fnd::IAllocator* allocator)
 {

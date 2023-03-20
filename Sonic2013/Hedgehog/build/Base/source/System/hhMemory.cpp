@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Base/System/hhMemory.h"
 #include "Hedgehog/Base/System/hhMemoryAllocator.h"
 #include <cstdlib> // TODO: REMOVE THIS LINE

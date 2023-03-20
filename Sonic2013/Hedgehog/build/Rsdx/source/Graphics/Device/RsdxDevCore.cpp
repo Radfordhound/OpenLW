@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Rsdx/Graphics/Device/RsdxDevCore.h"
 
 namespace hh

@@ -22,22 +22,22 @@ class CHedgehogMemoryAllocatorHeap // TODO: Inheritance?
 };
 
 // TODO: Is the PC address for this function the correct address?
-// Wii U: 0x036984E8, PC: 0x00c1b330
+LWAPI(0x036984E8, 0x00c1b330)
 void __HH_FREE(void* ptr);
 
 // TODO: Is the PC address for this function the correct address?
-// Wii U: 0x03698554, PC: 0x00c1b130
+LWAPI(0x03698554, 0x00c1b130)
 void* __HH_ALLOC(std::size_t size);
 
-// Wii U: 0x036985c8, PC: TODO
+LWAPI(0x036985c8, TODO)
 void* __HH_ALLOC(std::size_t size, const CHedgehogMemoryAllocatorFileLine& fileLineInfo);
 
-// Wii U: 0x0369863C, PC: TODO
+LWAPI(0x0369863C, TODO)
 void* __HH_ALLOC(std::size_t size, CHedgehogMemoryAllocatorHeap heap);
 
-// Wii U: 0x036986b0, PC: 0x00c1b1f0
+LWAPI(0x036986b0, 0x00c1b1f0)
 void* __HH_ALLOC(std::size_t size, const CHedgehogMemoryAllocatorFileLine& fileLineInfo,
     CHedgehogMemoryAllocatorHeap heap);
 
-// Wii U: 0x03698724, PC: 0x00c1b230
+LWAPI(0x03698724, 0x00c1b230)
 void* __HH_ALLOCALIGN(std::size_t size, std::size_t alignment = 16);

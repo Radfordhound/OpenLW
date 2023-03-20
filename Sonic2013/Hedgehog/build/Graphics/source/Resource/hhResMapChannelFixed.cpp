@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMapChannelFixed.h"
 
 namespace hh

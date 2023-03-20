@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/MirageCore/hhMirageCore.h"
 #include <Hedgehog/MTBase/hhMTSimpleJob.h>
 

@@ -20,19 +20,19 @@ struct ResShaderSamplerData // size == 48
 
 struct ResShaderSampler : public ut::ResCommon<ResShaderSamplerData>
 {
-    // Wii U: 0x0367b21c, PC: TODO
+    LWAPI(0x0367b21c, TODO)
     ResTexture GetResTexture() const;
 
-    // Wii U: 0x0367b270, PC: TODO
+    LWAPI(0x0367b270, TODO)
     ResShaderSamplerUsage GetUsage(std::size_t index) const;
 
-    // Wii U: 0x0367b2fc, PC: TODO
+    LWAPI(0x0367b2fc, TODO)
     ResName GetTexName();
 
-    // Wii U: 0x0367b350, PC: TODO
+    LWAPI(0x0367b350, TODO)
     ResName GetUsageName();
 
-    // Wii U: 0x0367b3a4, PC: TODO
+    LWAPI(0x0367b3a4, TODO)
     ResName GetTexSlotName();
 
     inline ResShaderSampler(std::nullptr_t) :

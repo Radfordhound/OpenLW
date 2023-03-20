@@ -8,6 +8,7 @@ namespace app
 {
 class SyncTimer : public fnd::ReferencedObject, public csl::fnd::Singleton<SyncTimer>
 {
+LWAPI_PRIVATE
     DECLARE_SINGLETON
 
     bool field_0xc;
@@ -23,25 +24,25 @@ class SyncTimer : public fnd::ReferencedObject, public csl::fnd::Singleton<SyncT
     float field_0x13c;
 
 public:
-    // Wii U: 0x021ca1a4, PC: 0x004acc40
+    LWAPI(0x021ca1a4, 0x004acc40)
     ~SyncTimer();
 
-    // Wii U: 0x021ca2a8, PC: TODO
+    LWAPI(0x021ca2a8, TODO)
     void CalcFps();
 
-    // Wii U: 0x021ca208, PC: Inlined
+    LWAPI(0x021ca208, NONE)
     long long GetDiff();
 
-    // Wii U: 0x021ca094, PC: 0x004acc70
+    LWAPI(0x021ca094, 0x004acc70)
     void Reset();
 
-    // Wii U: 0x021ca100, PC: Inlined
+    LWAPI(0x021ca100, NONE)
     void SetFPS(float fps);
 
-    // Wii U: 0x021ca398, PC: 0x004ace10
+    LWAPI(0x021ca398, 0x004ace10)
     float Sync();
 
-    // Wii U: 0x021ca10c, PC: 0x004acff0
+    LWAPI(0x021ca10c, 0x004acff0)
     SyncTimer();
 };
 }

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "SurfRidePlatformMIRAGE.h"
 #include "Render/RenderManager.h"
 #include <Hedgehog/Graphics/Resource/hhResVertexShader.h>

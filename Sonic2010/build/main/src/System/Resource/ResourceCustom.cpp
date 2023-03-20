@@ -1,23 +1,24 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #include "ResourceCustom.h"
 #include "ResourceManager.h"
 
 using namespace app::fnd;
 using namespace app::xgame;
 
-// Wii U: 0x02b2c150, PC: TODO
+LWAPI(0x02b2c150, TODO)
 static IResourceCustomLoader* CreateOrcaResourceCustomLoader()
 {
     return new ResourceCustomOrcaLoader();
 }
 
-// Wii U: 0x02b2c188, PC: TODO
+LWAPI(0x02b2c188, TODO)
 static IResourceCustomLoader* CreateCriAcfResourceCustomLoader()
 {
     return nullptr; // TODO
 }
 
-// Wii U: 0x02b2c1c0, PC: TODO
+LWAPI(0x02b2c1c0, TODO)
 static IResourceCustomLoader* CreateCriAcbResourceCustomLoader()
 {
     return nullptr; // TODO

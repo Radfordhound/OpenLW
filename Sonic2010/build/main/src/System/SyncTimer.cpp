@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #include "SyncTimer.h"
 #include <csl/fnd/thread.h>
 #include <csl/math/algorithm.h>
@@ -130,7 +131,7 @@ SyncTimer::SyncTimer() : // TODO: This initilization is probably completely wron
     SetFPS(60.0f);
 }
 
-// Wii U: 0x021ca5c0, PC: 0x004ad090
+LWAPI(0x021ca5c0, 0x004ad090)
 static void* SyncTimer_init()
 {
     csl::fnd::IAllocator* allocator = fnd::GetSingletonAllocator();
@@ -139,7 +140,7 @@ static void* SyncTimer_init()
     return timer;
 }
 
-// Wii U: 0x021ca610, PC: TODO
+LWAPI(0x021ca610, TODO)
 static void SyncTimer_destroy(void* ptr)
 {
     static_cast<SyncTimer*>(ptr)->Release();

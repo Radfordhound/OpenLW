@@ -68,7 +68,7 @@ class ResFileCommon
     // TODO: Any data members or anything??
 
 public:
-    // Wii U: 0x036945dc, PC: TODO
+    LWAPI(0x036945dc, TODO)
     static void ChangeEndian32(bool doSwap, const u32* input, u32* output);
 
     // TODO: Is this function actually a thing?
@@ -78,14 +78,14 @@ public:
             reinterpret_cast<u32*>(output));
     }
 
-    // Wii U: 0x036945fc, PC: 0x00c1a210
+    LWAPI(0x036945fc, 0x00c1a210)
     static u32 GetReverseBigEndian(u32 val);
 
-    // Wii U: 0x03694630, PC: 0x00c1a240
+    LWAPI(0x03694630, 0x00c1a240)
     static void ReplacePof0(void* baseAddress,
         void* pof0Address, u32 pof0Size, bool doSwap);
 
-    // Wii U: 0x03694790, PC: TODO
+    LWAPI(0x03694790, TODO)
     static void ReplaceDic(unsigned int version, void* param_2,
         void* param_3, unsigned int depth, bool doSwap);
 };

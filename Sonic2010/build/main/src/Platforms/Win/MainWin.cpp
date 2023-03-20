@@ -1,7 +1,8 @@
 // TODO: Both the name of this file and its path were guessed!
+#include "pch.h"
 #include "ApplicationWin.h"
 
-// Wii U: N/A, PC: 0x00402910
+// Address: 0x00402910
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     LPSTR pCmdLine, int nCmdShow)
 {

@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #include "FileLoader.h"
 #include "FileReader.h"
 #include "FileSystem.h"
@@ -167,7 +168,7 @@ struct ResourceJobData // TODO: This name was guessed.
     FileLoader::LoadInfo* LoadInfo;
 };
 
-// Wii U: 0x0218c898, PC: TODO
+LWAPI(0x0218c898, TODO)
 void FileLoader::ResourceJobMT(void* data)
 {
     SJobType256* job = static_cast<SJobType256*>(data);
@@ -593,7 +594,7 @@ FileLoader::FileLoader() :
     SetupEx(0xb00000, 2);
 }
 
-// Wii U: 0x0218e380, PC: TODO
+LWAPI(0x0218e380, TODO)
 static void* FileLoader_init()
 {
     FileLoader* fileLoader = new (GetSingletonAllocator()) FileLoader();
@@ -601,7 +602,7 @@ static void* FileLoader_init()
     return fileLoader;
 }
 
-// Wii U: 0x0218e3cc, PC: TODO
+LWAPI(0x0218e3cc, TODO)
 static void FileLoader_destroy(void* ptr)
 {
     static_cast<FileLoader*>(ptr)->Release();

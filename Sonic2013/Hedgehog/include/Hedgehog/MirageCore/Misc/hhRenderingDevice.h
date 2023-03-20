@@ -110,7 +110,7 @@ public:
         return m_device->EndScene();
     }
 
-    // Wii U: Inlined, PC: 0x00488540
+    LWAPI(NONE, 0x00488540)
     void SetVertexDeclaration(rsdx::RsdxVertexDeclaration9* vtxDecl)
     {
         if (m_curVtxDecl != vtxDecl)

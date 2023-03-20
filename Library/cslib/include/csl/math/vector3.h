@@ -23,25 +23,24 @@ struct Vector3
     XMVECTOR Data;
 #endif
 
-    // Wii U: 0x1038a440, PC: 0x00feff90
+    LWAPI(0x1038a440, 0x00feff90)
     static const Vector3 Zero;
 
-    // Wii U: 0x1038a450, PC: TODO
+    LWAPI(0x1038a450, TODO)
     static const Vector3 One;
 
-    // Wii U: 0x1038a460, PC: TODO
+    LWAPI(0x1038a460, TODO)
     static const Vector3 NegativeOne;
 
-    // Wii U: 0x1038a470, PC: TODO
+    LWAPI(0x1038a470, TODO)
     static const Vector3 Right;
 
-    // Wii U: 0x1038a480, PC: TODO
+    LWAPI(0x1038a480, TODO)
     static const Vector3 Up;
 
-    // Wii U: 0x1038a490, PC: TODO
+    LWAPI(0x1038a490, TODO)
     static const Vector3 Forward;
 
-    // Wii U: Inlined, PC: Inlined
 #ifdef _WIN32
     __forceinline
 #else
@@ -56,7 +55,6 @@ struct Vector3
 #endif
     }
 
-    // Wii U: Inlined, PC: Inlined
     inline float GetX() const
     {
 #ifdef _WIN32
@@ -66,7 +64,6 @@ struct Vector3
 #endif
     }
 
-    // Wii U: Inlined, PC: Inlined
     inline float GetY() const
     {
 #ifdef _WIN32
@@ -76,7 +73,6 @@ struct Vector3
 #endif
     }
 
-    // Wii U: Inlined, PC: Inlined
     inline float GetZ() const
     {
 #ifdef _WIN32
@@ -86,13 +82,12 @@ struct Vector3
 #endif
     }
 
-    // Wii U: Inlined, PC: Inlined
     void Copy(const Vector3& other)
     {
         Data = other.Data;
     }
 
-    // Wii U: 0x020235AC, PC: Inlined
+    LWAPI(0x020235AC, NONE)
     Vector3 operator*(float scale) const
     {
         Vector3 result;
@@ -107,7 +102,7 @@ struct Vector3
         return result;
     }
 
-    // Wii U: 0x0203204C, PC: Inlined
+    LWAPI(0x0203204C, NONE)
     float Length() const
     {
 #ifdef _WIN32
@@ -119,7 +114,7 @@ struct Vector3
 #endif
     }
 
-    // Wii U: 0x02032050, PC: Inlined
+    LWAPI(0x02032050, NONE)
     Vector3 operator/(float scale) const
     {
         Vector3 result;
@@ -135,7 +130,6 @@ struct Vector3
         return result;
     }
 
-    // Wii U: Inlined, PC: Inlined
     inline void Normalize()
     {
 #ifdef _WIN32
@@ -146,16 +140,13 @@ struct Vector3
 #endif
     }
 
-    // Wii U: Inlined, PC: Inlined
     inline Vector3() {}
 
-    // Wii U: Inlined, PC: Inlined
     inline Vector3(float x, float y, float z)
     {
         Set(x, y, z);
     }
 
-    // Wii U: Inlined, PC: Inlined
     inline Vector3(const Vector3& other)
     {
         Copy(other);

@@ -1,23 +1,23 @@
+#include "pch.h"
 #include "Hedgehog/Base/System/hhCSymbol.h"
 #include "Hedgehog/Base/System/hhMemory.h"
 #include "Hedgehog/Base/System/hhHash.h"
 #include "Hedgehog/Base/hhBaseCommon.h"
-#include <cstring>
 
 namespace hh
 {
 namespace base
 {
-// Wii U: 0x1031f2c8, PC: TODO
+LWAPI(0x1031f2c8, TODO)
 static SSymbolNode* PTR_1031f2c8 = nullptr;
 
-// Wii U: 0x1031f2cc, PC: TODO
+LWAPI(0x1031f2cc, TODO)
 static SSymbolNode* DAT_1031f2cc = nullptr;
 
-// Wii U: 0x1031f2d0, PC: TODO
+LWAPI(0x1031f2d0, TODO)
 static std::size_t DAT_1031f2d0 = 0;
 
-// Wii U: 0x1031f2d4, PC: TODO
+LWAPI(0x1031f2d4, TODO)
 static unsigned int DAT_1031f2d4 = 0;
 
 bool IsSame(const SSymbolNode* node1, const SSymbolNode* node2)

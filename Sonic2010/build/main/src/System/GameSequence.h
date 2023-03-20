@@ -17,6 +17,7 @@ struct SUpdateInfo;
 class CGameSequence : public fnd::ReferencedObject,
     public TTinyFsm<CGameSequence, TiFsmBasicEvent<CGameSequence>, true> // size == 0xF0
 {
+LWAPI_PRIVATE
     CGame* m_game;
     GameMode* m_gameMode;
     csl::ut::FixedString<16> field_0x28;
@@ -24,39 +25,39 @@ class CGameSequence : public fnd::ReferencedObject,
     // TODO
 
 public:
-    // Wii U: 0x02a809a8, PC: 0x0090e950
+    LWAPI(0x02a809a8, 0x0090e950)
     bool ProcessMessage(fnd::Message& msg);
 
-    // Wii U: 0x02a80adc, PC: TODO
+    LWAPI(0x02a80adc, TODO)
     void InitGameMode(GameMode* gameMode);
     
-    // Wii U: 0x02a80aec, PC: Inlined
+    LWAPI(0x02a80aec, NONE)
     void ShutdownGameMode();
 
-    // Wii U: 0x02a80b7c, PC: TODO
+    LWAPI(0x02a80b7c, TODO)
     void StartLeakChecker();
 
-    // Wii U: 0x02a83998, PC: 0x00910c30
+    LWAPI(0x02a83998, 0x00910c30)
     state_t StateBoot(const event_t& e);
 
-    // Wii U: 0x02a83b38, PC: TODO
+    LWAPI(0x02a83b38, TODO)
     state_t StateProduct(const event_t& e);
 
-    // Wii U: 0x02a83c00, PC: TODO
+    LWAPI(0x02a83c00, TODO)
     state_t StateSegaLogo(const event_t& e);
 
-    // Wii U: 0x02a80ac8, PC: TODO
+    LWAPI(0x02a80ac8, TODO)
     void ChangeState(state_t::event_func newState);
 
-    // Wii U: 0x02a80970, PC: 0x0090f240
+    LWAPI(0x02a80970, 0x0090f240)
     void Start();
 
-    // Wii U: 0x02a80a24, PC: 0x0090fab0
+    LWAPI(0x02a80a24, 0x0090fab0)
     void Update(const fnd::SUpdateInfo& updateInfo);
 
     // TODO
 
-    // Wii U: 0x02a80808, PC: 0x00910d10
+    LWAPI(0x02a80808, 0x00910d10)
     CGameSequence(CGame& game);
 };
 }

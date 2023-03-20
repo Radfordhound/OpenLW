@@ -26,54 +26,54 @@ struct DeviceManager::Impl // sizeof == 0x38
     ResDeviceData* Devices2;
     unsigned long long field_0x30; // TODO: Is this actually another bool array of MAX_DEVICE_PORTS?
 
-	// Wii U: 0x02279328, PC: TODO
+	LWAPI(0x02279328, TODO)
     void UserProcUIRelease();
 
 	// TODO: This is almost surely static?
-	// Wii U: 0x022793b4, PC: TODO
+	LWAPI(0x022793b4, TODO)
     void UserProcUIReleaseCallback(void* param_1);
 	
-    // Wii U: 0x022793d8, PC: TODO
+    LWAPI(0x022793d8, TODO)
     void UserProcUIAcquired();
 
 	// TODO: This is almost surely static?
-	// Wii U: 0x02279470, PC: TODO
+	LWAPI(0x02279470, TODO)
 	void UserProcUIAcquiredCallback(void* param_1);
 
-    // Wii U: 0x02279494, PC: 0x004f63e0
+    LWAPI(0x02279494, 0x004f63e0)
     Impl(csl::fnd::IAllocator* allocator);
 
-	// Wii U: 0x02279c24, PC: TODO
+	LWAPI(0x02279c24, TODO)
     void ConvertProcData();
 
-    // Wii U: 0x02279cd4, PC: 0x004f6480
+    LWAPI(0x02279cd4, 0x004f6480)
     void ConvertData();
 
-	// Wii U: 0x02279658, PC: 0x004f5f70
+	LWAPI(0x02279658, 0x004f5f70)
     void CreatePadData(const ResPadDeviceData& in, ResPadDeviceData& out);
 
-    // Wii U: 0x02279918, PC: TODO
+    LWAPI(0x02279918, TODO)
     void SetPort(ResDeviceData* deviceData, std::size_t portIndex);
 
-    // Wii U: 0x0227997c, PC: 0x004f61b0
+    LWAPI(0x0227997c, 0x004f61b0)
     void CreateData();
 
-	// Wii U: 0x02279e68, PC: TODO
+	LWAPI(0x02279e68, TODO)
     void connectCheck();
 
-    // Wii U: 0x0227a0ac, PC: TODO
+    LWAPI(0x0227a0ac, TODO)
     ResPadDeviceData& GetPadDevice(std::size_t index);
 
-	// Wii U: 0x0227a0bc, PC: TODO
+	LWAPI(0x0227a0bc, TODO)
     ResGyroDeviceData& GetGyroDevice(std::size_t index);
 
-    // Wii U: 0x0227a0d0, PC: TODO
+    LWAPI(0x0227a0d0, TODO)
     ResAccDeviceData& GetAccDevice(std::size_t index);
 
-    // Wii U: 0x0227a0e4, PC: TODO
+    LWAPI(0x0227a0e4, TODO)
     ResTouchDeviceData& GetTouchDevice(std::size_t index);
 
-	// Wii U: 0x0227a0f8, PC: TODO
+	LWAPI(0x0227a0f8, TODO)
     ResMotorDeviceData& GetMotorDevice(std::size_t index);
 };
 }

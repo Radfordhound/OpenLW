@@ -11,19 +11,19 @@ struct RenderableContainer : public fnd::ReferencedObject // size == 28
 {
     csl::ut::LinkList<Renderable> Renderables;
 
-    // Wii U: 0x02256d28, PC: TODO
+    LWAPI(0x02256d28, TODO)
     RenderableContainer();
 
-    // Wii U: 0x02256d7c, PC: TODO
+    LWAPI(0x02256d7c, TODO)
     static RenderableContainer* Create(csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x02256e98, PC: TODO
+    LWAPI(0x02256e98, TODO)
     ~RenderableContainer();
 
-    // Wii U: 0x02256fec, PC: TODO
+    LWAPI(0x02256fec, TODO)
     void AddObject(Renderable* obj);
 
-    // Wii U: 0x02257040, PC: TODO
+    LWAPI(0x02257040, TODO)
     void RemoveObject(Renderable* obj);
 };
 }

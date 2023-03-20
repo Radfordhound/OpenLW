@@ -15,7 +15,7 @@ struct ResMapChannelFixedData // size == 12
 
 struct ResMapChannelFixed : public ut::ResCommon<ResMapChannelFixedData>
 {
-    // Wii U: 0x0367cc94, PC: TODO
+    LWAPI(0x0367cc94, TODO)
     ResName GetSlotName();
 
     inline ResMapChannelFixed(const void* data) :

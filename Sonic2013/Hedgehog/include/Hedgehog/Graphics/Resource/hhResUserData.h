@@ -39,10 +39,10 @@ struct ResUserDataData
 
 struct ResUserData : public ut::ResCommon<ResUserDataData>
 {
-    // Wii U: 0x0367bec4, PC: TODO
+    LWAPI(0x0367bec4, TODO)
     std::size_t GetNumResUserDataItems() const;
 
-    // Wii U: 0x0367bee8, PC: TODO
+    LWAPI(0x0367bee8, TODO)
     ResUserDataItem GetResUserDataItem(std::size_t index);
 
     inline ResUserData(const void* data) :

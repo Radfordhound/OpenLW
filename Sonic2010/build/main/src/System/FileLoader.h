@@ -21,15 +21,16 @@ struct FileLoaderParam // size == 24
     FileBinder* field_0x10;
     unsigned int field_0x14;
 
-    // Wii U: 0x0218b83c, PC: TODO
+    LWAPI(0x0218b83c, TODO)
     FileLoaderParam();
 
-    // Wii U: 0x0218b890, PC: TODO
+    LWAPI(0x0218b890, TODO)
     void SetMultiLanguageAttr(bool param_1, unsigned int param_2);
 };
 
 class FileLoader : public ReferencedObject, public csl::fnd::Singleton<FileLoader> // size == 104
 {
+LWAPI_PRIVATE
     DECLARE_SINGLETON
 
 public:
@@ -45,7 +46,7 @@ public:
         unsigned int field_0x1c;
         unsigned int field_0x20;
 
-        // Wii U: 0x0218cd78, PC: TODO
+        LWAPI(0x0218cd78, TODO)
         LoadInfo();
     };
 
@@ -56,18 +57,18 @@ public:
         unsigned int RefCount;
         bool field_0x70;
 
-        // Wii U: 0x0218cfdc, PC: TODO
+        LWAPI(0x0218cfdc, TODO)
         void AddRef();
 
-        // Wii U: 0x0218cfb4, PC: TODO
+        LWAPI(0x0218cfb4, TODO)
         void Reset();
 
-        // Wii U: 0x0218bbf8, PC: TODO
+        LWAPI(0x0218bbf8, TODO)
         LoadBuffer(std::size_t param_1, csl::fnd::IAllocator* allocator,
             unsigned int param_3);
     };
 
-private:
+LWAPI_PRIVATE
     csl::fnd::IAllocator* field_0xc;
     csl::ut::MoveArray<LoadInfo*> field_0x10;
     csl::ut::MoveArray<LoadInfo*> field_0x20;
@@ -77,74 +78,74 @@ private:
     bool m_isSyncCompleteAll;
     // TODO: Other data members
 
-    // Wii U: 0x0218be60, PC: TODO
+    LWAPI(0x0218be60, TODO)
     LoadBuffer* GetLoadBuffer(std::size_t index);
 
 public:
-    // Wii U: 0x0218c160, PC: TODO
+    LWAPI(0x0218c160, TODO)
     ~FileLoader();
 
-    // Wii U: 0x0218c338, PC: TODO
+    LWAPI(0x0218c338, TODO)
     void GetMultiLangResourceName(const char* name, csl::ut::String* result);
 
-    // Wii U: 0x0218c658, PC: 0x00491140
+    LWAPI(0x0218c658, 0x00491140)
     void ResourceJobMTExec(LoadInfo* loadInfo);
 
-    // Wii U: 0x0218c898, PC: TODO
+    LWAPI(0x0218c898, TODO)
     static void ResourceJobMT(void* data);
 
-    // Wii U: 0x0218c8a4, PC: 0x004916b0
+    LWAPI(0x0218c8a4, 0x004916b0)
     bool ResourceJobMTStart(LoadInfo* loadInfo);
 
-    // Wii U: 0x0218d14c, PC: TODO
+    LWAPI(0x0218d14c, TODO)
     void ResourceJobExec();
 
-    // Wii U: 0x0218cff8, PC: TODO
+    LWAPI(0x0218cff8, TODO)
     void LoadBufferRequestJobExec();
 
-    // Wii U: 0x0218d490, PC: TODO
+    LWAPI(0x0218d490, TODO)
     void LoadBufferReset();
     
-    // Wii U: 0x0218d4f4, PC: 0x00491cc0
+    LWAPI(0x0218d4f4, 0x00491cc0)
     void Update();
 
-    // Wii U: 0x0218ddbc, PC: TODO
+    LWAPI(0x0218ddbc, TODO)
     bool CheckInfoListInHandle(csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: 0x0218deec, PC: TODO
+    LWAPI(0x0218deec, TODO)
     bool IsSyncComplete(csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: 0x0218e060, PC: TODO
+    LWAPI(0x0218e060, TODO)
     bool IsSyncCompleteAll();
 
-    // Wii U: 0x0218e12c, PC: TODO
+    LWAPI(0x0218e12c, TODO)
     void WaitSync(csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: 0x0218dd74, PC: TODO
+    LWAPI(0x0218dd74, TODO)
     bool SetHintCache(const char* param_1);
 
-    // Wii U: 0x0218d970, PC: TODO
+    LWAPI(0x0218d970, TODO)
     bool PreLoadFile(const char* filePath, int param_2);
 
-    // Wii U: 0x0218cdfc, PC: TODO
+    LWAPI(0x0218cdfc, TODO)
     csl::fnd::com_ptr<FileHandleObj> LoadFileOne(const char* filePath,
         const char* param_2, unsigned int param_3,
         const FileLoaderParam& params);
 
-    // Wii U: 0x0218d758, PC: TODO
+    LWAPI(0x0218d758, TODO)
     csl::fnd::com_ptr<FileHandleObj> LoadFile(const char* filePath,
         const char* param_2, const FileLoaderParam& params);
 
-    // Wii U: 0x0218d864, PC: TODO
+    LWAPI(0x0218d864, TODO)
     csl::fnd::com_ptr<FileHandleObj> LoadFile(const char* filePath,
         const FileLoaderParam& params);
 
     // TODO
 
-    // Wii U: 0x0218bcc0, PC: TODO
+    LWAPI(0x0218bcc0, TODO)
     void SetupEx(unsigned int param_1, std::size_t param_2);
 
-    // Wii U: 0x0218bd98, PC: TODO
+    LWAPI(0x0218bd98, TODO)
     FileLoader();
 };
 }

@@ -7,7 +7,7 @@ namespace ut
 {
 struct ResDependLoader : IResourceLoader {};
 
-// Wii U: 0x1040157c, PC: TODO
+LWAPI(0x1040157c, TODO)
 extern ResourceTypeInfo ResDependTypeInfo;
 }
 }

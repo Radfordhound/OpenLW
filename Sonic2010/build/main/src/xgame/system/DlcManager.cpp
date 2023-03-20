@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #include "DlcManager.h"
 
 namespace app
@@ -39,7 +40,7 @@ DlcManager::DlcManager()
 
 namespace dlc
 {
-// Wii U: 0x02b3ff2c, PC: TODO
+LWAPI(0x02b3ff2c, TODO)
 static void* DlcManagerCreate()
 {
     // TODO: Un-comment this block once AocManager is implemented:
@@ -52,7 +53,7 @@ static void* DlcManagerCreate()
 }
 }
 
-// Wii U: 0x02b3ffb0, PC: TODO
+LWAPI(0x02b3ffb0, TODO)
 static void DlcManager_destroy(void* ptr)
 {
     static_cast<DlcManager*>(ptr)->Release();

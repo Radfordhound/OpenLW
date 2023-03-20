@@ -5,10 +5,10 @@ namespace hh
 {
 namespace base
 {
-// Wii U: 0x03696dcc, PC: TODO
+LWAPI(0x03696dcc, TODO)
 void InitializeHHD3D9(const SInitializeHHBaseSetting* baseSetting);
 
-// Wii U: 0x03696ecc, PC: TODO
+LWAPI(0x03696ecc, TODO)
 void FinalizeHHD3D9();
 }
 }

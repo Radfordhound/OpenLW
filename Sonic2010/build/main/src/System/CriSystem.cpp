@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #ifdef USE_CRIWARE
 #include "CriSystem.h"
 
@@ -164,13 +165,13 @@ namespace app
 {
 namespace cri
 {
-// Wii U: TODO, PC: TODO
+LWAPI(TODO, TODO)
 void* CRIAPI CriUserAlloc(void* obj, CriUint32 size)
 {
     return static_cast<csl::fnd::IAllocator*>(obj)->Alloc(size);
 }
 
-// Wii U: TODO, PC: TODO
+LWAPI(TODO, TODO)
 void CRIAPI CriUserFree(void* obj, void* mem)
 {
     static_cast<csl::fnd::IAllocator*>(obj)->Free(mem);
@@ -182,19 +183,19 @@ struct CriSystem::Impl
     csl::fnd::IAllocator* Allocator; // TODO: Is this right?
     // TODO: Data Members
 
-    // Wii U: 0x021cac74, PC: TODO
+    LWAPI(0x021cac74, TODO)
     void Cleanup()
     {
         // TODO
     }
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void ResetServerThread()
     {
         // TODO
     }
 
-    // Wii U: 0x021ca854, PC: 0x004ad2c0
+    LWAPI(0x021ca854, 0x004ad2c0)
     void Setup()
     {
         // TODO
@@ -228,7 +229,7 @@ struct CriSystem::Impl
         criMana_Initialize(&manaConfig, nullptr, 0);
     }
 
-    // Wii U: 0x021cae0c, PC: TODO
+    LWAPI(0x021cae0c, TODO)
     void Update()
     {
         criAtomEx_ExecuteMain();
@@ -236,7 +237,7 @@ struct CriSystem::Impl
         criMana_ExecuteMain();
     }
 
-    // Wii U: [Inlined], PC: 0x004ad440
+    LWAPI(NONE, 0x004ad440)
     Impl(csl::fnd::IAllocator* allocator) :
         Allocator(allocator)
     {
@@ -244,7 +245,7 @@ struct CriSystem::Impl
         Setup();
     }
 
-    // Wii U: [Inlined], PC: TODO
+    LWAPI(NONE, TODO)
     ~Impl()
     {
         Cleanup();
@@ -315,7 +316,7 @@ CriSystem::CriSystem()
     }
 }
 
-// Wii U: 0x021cb180, PC: TODO
+LWAPI(0x021cb180, TODO)
 static void* CriSystem_init()
 {
     CriSystem* criSys = new (fnd::GetSingletonAllocator()) CriSystem();
@@ -323,7 +324,7 @@ static void* CriSystem_init()
     return criSys;
 }
 
-// Wii U: 0x021cb1d0, PC: TODO
+LWAPI(0x021cb1d0, TODO)
 static void CriSystem_destroy(void* ptr)
 {
     static_cast<CriSystem*>(ptr)->Release();

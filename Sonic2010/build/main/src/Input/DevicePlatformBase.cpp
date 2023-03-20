@@ -1,10 +1,13 @@
 // TODO: Both the name of this file and its path were guessed!
+#include "pch.h"
 #include "DevicePlatformBase.h"
 
 namespace app
 {
 namespace hid
 {
+DevicePlatformBase::~DevicePlatformBase() {}
+
 void* DevicePlatformBase::GetRuntimeTypeInfo() const
 {
     // TODO

@@ -9,26 +9,26 @@ namespace res
 {
 struct ResMiragePixelShaderCodeLoader : ut::IResourceLoader
 {
-    // Wii U: 0x03680b1c, PC: TODO
+    LWAPI(0x03680b1c, TODO)
     ~ResMiragePixelShaderCodeLoader();
 
-    // Wii U: 0x03680b30, PC: TODO
+    LWAPI(0x03680b30, TODO)
     void* ReplaceLoadedResource(const char* name, void* data,
         std::size_t* size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03680b80, PC: TODO
+    LWAPI(0x03680b80, TODO)
     bool FinishLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03680bcc, PC: TODO
+    LWAPI(0x03680bcc, TODO)
     bool BindLoadedResource(void* data, std::size_t size,
         csl::fnd::IAllocator* allocator, ut::Packfile packfile);
 
-    // Wii U: 0x03680c34, PC: TODO
+    LWAPI(0x03680c34, TODO)
     void CleanupLoadedResource(void* data, std::size_t size);
 };
 
-// Wii U: TODO, PC: TODO
+LWAPI(TODO, TODO)
 extern ut::ResourceTypeInfo ResMiragePixelShaderCodeTypeInfo;
 }
 }

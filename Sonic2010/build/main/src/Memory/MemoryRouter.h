@@ -6,7 +6,7 @@ namespace app
 {
 namespace fnd
 {
-// Wii U: 0x0219f9f0, PC: TODO
+LWAPI(0x0219f9f0, TODO)
 csl::fnd::IAllocator* GetTempAllocator();
 }
 }

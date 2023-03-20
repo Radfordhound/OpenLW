@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameter.h"
 #include "Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameterTypeInfo.h"
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
@@ -21,7 +22,7 @@ const ut::ResourceTypeInfo& ResMirageVertexShaderParameter::staticTypeInfo()
     return ResMirageVertexShaderParameterTypeInfo;
 }
 
-// Wii U: 0x03687784, PC: TODO
+LWAPI(0x03687784, TODO)
 static void MakeConstantName(ResShaderConstantUsageData* output,
     const CShaderConstantNameResource* input)
 {
@@ -35,7 +36,7 @@ static void MakeConstantName(ResShaderConstantUsageData* output,
     }
 }
 
-// Wii U: 0x0368780c, PC: TODO
+LWAPI(0x0368780c, TODO)
 static void MakeMirageConstantName(CShaderConstantNameData* output,
     const CShaderConstantNameResource* input)
 {
@@ -49,7 +50,7 @@ static void MakeMirageConstantName(CShaderConstantNameData* output,
     }
 }
 
-// Wii U: 0x03687888, PC: TODO
+LWAPI(0x03687888, TODO)
 static void MakeMirageConstantName(CVertexShaderParameterData* output,
     const CVertexShaderParameterResource* input)
 {

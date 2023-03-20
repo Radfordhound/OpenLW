@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameter.h"
 #include "Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameterTypeInfo.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderConstantUsage.h"
@@ -5,7 +6,6 @@
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <Hedgehog/Database/hhSampleChunk.h>
 #include <csl/fnd/memory.h>
-#include <new>
 
 using namespace hh::mr;
 using namespace hh::db;
@@ -23,7 +23,7 @@ const ut::ResourceTypeInfo& ResMiragePixelShaderParameter::staticTypeInfo()
     return ResMiragePixelShaderParameterTypeInfo;
 }
 
-// Wii U: 0x03684214, PC: TODO
+LWAPI(0x03684214, TODO)
 static void MakeConstantName(ResShaderConstantUsageData* output,
     const CShaderConstantNameResource* input)
 {
@@ -37,7 +37,7 @@ static void MakeConstantName(ResShaderConstantUsageData* output,
     }
 }
 
-// Wii U: 0x0368429c, PC: TODO
+LWAPI(0x0368429c, TODO)
 static void MakeSamplerUsage(ResShaderSamplerUsageData* output,
     const CShaderSamplerUsageResource* input)
 {
@@ -51,7 +51,7 @@ static void MakeSamplerUsage(ResShaderSamplerUsageData* output,
     }
 }
 
-// Wii U: 0x03684328, PC: TODO
+LWAPI(0x03684328, TODO)
 static void MakeMirageConstantName(CShaderConstantNameData* output,
     const CShaderConstantNameResource* input)
 {
@@ -65,7 +65,7 @@ static void MakeMirageConstantName(CShaderConstantNameData* output,
     }
 }
 
-// Wii U: 0x036843a4, PC: TODO
+LWAPI(0x036843a4, TODO)
 static void MakeMirageSamplerUsage(CShaderSamplerUsageData* output,
     const CShaderSamplerUsageResource* input)
 {
@@ -88,7 +88,7 @@ static void MakeMirageSamplerUsage(CShaderSamplerUsageData* output,
     }
 }
 
-// Wii U: 0x03684468, PC: TODO
+LWAPI(0x03684468, TODO)
 static void MakeMirageConstantName(CPixelShaderParameterData* output,
     const CPixelShaderParameterResource* input)
 {

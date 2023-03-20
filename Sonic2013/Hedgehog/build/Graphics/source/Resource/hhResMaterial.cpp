@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMaterial.h"
 #include "Hedgehog/Graphics/Resource/hhResMaterialAcTypeInfo.h"
 #include "Hedgehog/Graphics/Resource/hhResShaderConstant.h"

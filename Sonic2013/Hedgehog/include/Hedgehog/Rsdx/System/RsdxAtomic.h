@@ -2,7 +2,7 @@
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#include <Windows.h>
 #endif
 
 namespace hh
@@ -37,22 +37,22 @@ struct RsdxSListHeader
 #define RsdxPeekSListOne(header) // TODO
 #endif
 
-// Wii U: 0x036a74d8, PC: Inlined
+LWAPI(0x036a74d8, NONE)
 void RsdxAtomicPushSList(RsdxSListHeader* header, RsdxSListEntry* entry);
 
-// Wii U: 0x036a7524, PC: Inlined
+LWAPI(0x036a7524, NONE)
 RsdxSListEntry* RsdxAtomicPopSList(RsdxSListHeader* header);
 
-// Wii U: 0x036a754c, PC: Inlined
+LWAPI(0x036a754c, NONE)
 RsdxSListEntry* RsdxAtomicPopSListWhole(RsdxSListHeader* header, RsdxSListEntry* entry);
 
-// Wii U: 0x036a7564, PC: Inlined
+LWAPI(0x036a7564, NONE)
 RsdxAtomic RsdxAtomicInc(RsdxAtomic* v);
 
-// Wii U: 0x036a7598, PC: Inlined
+LWAPI(0x036a7598, NONE)
 RsdxAtomic RsdxAtomicInc2(RsdxAtomic* v);
 
-// Wii U: 0x036a75e8, PC: TODO
+LWAPI(0x036a75e8, TODO)
 RsdxAtomic RsdxAtomicDec2(RsdxAtomic* v);
 }
 }

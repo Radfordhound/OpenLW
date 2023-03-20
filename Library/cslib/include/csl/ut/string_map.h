@@ -11,7 +11,7 @@ struct StringMapOperation
     // TODO: Are there any data members?
 
 public:
-    // Wii U: 0x02ca8778, PC: TODO
+    LWAPI(0x02ca8778, TODO)
     std::size_t hash(std::size_t key) const
     {
         const char* keyStr = reinterpret_cast<const char*>(key);

@@ -1,8 +1,9 @@
+#include "pch.h"
 #include "Hedgehog/Utility/hhResGeneralTypeInfo.h"
 
 using namespace hh::ut;
 
-// Wii U: 0x0369492c, PC: TODO
+LWAPI(0x0369492c, TODO)
 static IResourceLoader* CreateResPacGeneralResourceLoader()
 {
     return new ResPacGeneralResourceLoader();

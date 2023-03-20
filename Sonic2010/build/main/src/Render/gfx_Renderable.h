@@ -36,34 +36,34 @@ struct Renderable : public hh::base::CRefCountObject // size == 0x5c
     unsigned int field_0x54;
     unsigned char field_0x58;
 
-    // Wii U: 0x02255c18, PC: TODO
+    LWAPI(0x02255c18, TODO)
     Renderable();
 
-    // Wii U: 0x02255cdc, PC: TODO
+    LWAPI(0x02255cdc, TODO)
     ~Renderable();
 
-    // Wii U: 0x02255d5c, PC: TODO
+    LWAPI(0x02255d5c, TODO)
     virtual bool GetMTSync();
 
     // TODO: Is this the function that is supposed to be here?
     virtual void Render(const hh::gfx::RenderEventParam* params) = 0;
 
-    // Wii U: 0x02255d64, PC: TODO
+    LWAPI(0x02255d64, TODO)
     virtual void CalcView();
 
-    // Wii U: 0x02255d68, PC: TODO
+    LWAPI(0x02255d68, TODO)
     virtual void UpdateFrame(float param_1);
 
-    // Wii U: 0x02255d6c, PC: TODO
+    LWAPI(0x02255d6c, TODO)
     virtual bool CheckEnable();
 
-    // Wii U: 0x02255d74, PC: TODO
+    LWAPI(0x02255d74, TODO)
     void SetPriorityDrawOpa(int priorityDrawOpa);
 
-    // Wii U: 0x02255d84, PC: TODO
+    LWAPI(0x02255d84, TODO)
     void SetOption(unsigned int opt);
 
-    // Wii U: 0x02255d9c, PC: TODO
+    LWAPI(0x02255d9c, TODO)
     void SetName(const char* name);
 };
 }

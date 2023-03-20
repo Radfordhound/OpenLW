@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMirageVertexShaderCode.h"
 #include "Hedgehog/Graphics/Resource/hhResMirageVertexShaderCodeTypeInfo.h"
 #include "Hedgehog/Graphics/hhGraphics.h"
@@ -12,13 +13,13 @@ namespace gfx
 {
 namespace res
 {
-// Wii U: 0x036856ac, PC: TODO
+LWAPI(0x036856ac, TODO)
 static std::size_t CalcSize()
 {
     return (sizeof(ResMirageVertexShaderCodeData) + sizeof(CVertexShaderCodeData));
 }
 
-// Wii U: 0x036856b4, PC: TODO
+LWAPI(0x036856b4, TODO)
 static void Make(ResMirageVertexShaderCodeData* param_1,
     const u32* param_2, csl::fnd::IAllocator* allocator)
 {

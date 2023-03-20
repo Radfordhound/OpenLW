@@ -1,3 +1,4 @@
+#include "pch.h"
 #ifdef _WIN32
 #include "Hedgehog/Base/Platform/D3d9/hhEventWaitD3D9.h"
 

@@ -26,6 +26,9 @@
     <ClCompile Include="source\Thread\hhMTJobThreadFactory.cpp">
       <Filter>Source Files\Thread</Filter>
     </ClCompile>
+    <ClCompile Include="source\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Hedgehog\MTBase\hhListExecutor.h">
@@ -48,6 +51,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\Hedgehog\MTBase\Thread\hhMTJobThreadFactory.h">
       <Filter>Header Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pch.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

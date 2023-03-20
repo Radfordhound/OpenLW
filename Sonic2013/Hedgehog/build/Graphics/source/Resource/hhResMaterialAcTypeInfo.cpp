@@ -1,10 +1,11 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/Resource/hhResMaterialAcTypeInfo.h"
 #include "Hedgehog/Graphics/Resource/hhResMaterial.h"
 
 using namespace hh::ut;
 using namespace hh::gfx::res;
 
-// Wii U: 0x03688e24, PC: TODO
+LWAPI(0x03688e24, TODO)
 static IResourceLoader* CreateResMaterialResourceLoader()
 {
     return new ResMaterialLoader();

@@ -1,5 +1,5 @@
+#include "pch.h"
 #include "Hedgehog/Utility/hhResDictionary.h"
-#include <cstring>
 
 namespace hh
 {

@@ -12,27 +12,28 @@ class DlcManagerImpl; // size == 228
 class DlcManager : public fnd::ReferencedObject,
     public csl::fnd::Singleton<DlcManager> // size == 16
 {
+LWAPI_PRIVATE
     DECLARE_SINGLETON
 
     DlcManagerImpl* m_impl;
 
 public:
-    // Wii U: 0x02b3f714, PC: TODO
+    LWAPI(0x02b3f714, TODO)
     ~DlcManager();
 
-    // Wii U: 0x02b3fe10, PC: TODO
+    LWAPI(0x02b3fe10, TODO)
     bool IsComplete() const;
 
-    // Wii U: 0x02b3feac, PC: TODO
+    LWAPI(0x02b3feac, TODO)
     bool IsPurchase(unsigned short param_1) const;
 
-    // Wii U: 0x02b3fde4, PC: TODO
+    LWAPI(0x02b3fde4, TODO)
     void Update();
 
-    // Wii U: 0x02b3f868, PC: TODO
+    LWAPI(0x02b3f868, TODO)
     void Cleanup();
 
-    // Wii U: 0x02b3f44c, PC: TODO
+    LWAPI(0x02b3f44c, TODO)
     DlcManager();
 };
 }

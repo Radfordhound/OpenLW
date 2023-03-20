@@ -8,16 +8,16 @@ namespace gfx
 {
 struct GfxResourceCallback : public fnd::ResourceCallbackBase // TODO: Also inherit from hh::gfx::GfxObject
 {
-    // Wii U: 0x02256638, PC: TODO
+    LWAPI(0x02256638, TODO)
     void SetupCallback(hh::ut::Packfile pac, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x022566ac, PC: TODO
+    LWAPI(0x022566ac, TODO)
     void CleanupCallback(hh::ut::Packfile pac);
 
-    // Wii U: 0x022566b0, PC: TODO
+    LWAPI(0x022566b0, TODO)
     GfxResourceCallback(csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x02256148 (THUNK), PC: TODO
+    LWAPI(0x02256148, TODO)
     ~GfxResourceCallback();
 };
 }

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Base/Platform/D3d9/hhBaseD3D9.h"
 #include "Hedgehog/Base/System/hhPluginable.h"
 

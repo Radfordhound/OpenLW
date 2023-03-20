@@ -18,7 +18,7 @@ struct SResourceContext;
 class CRenderingPerfCounterContainer;
 struct SDebugParameters;
 
-// Wii U: 0x036f45e8, PC: TODO
+LWAPI(0x036f45e8, TODO)
 void ExecuteSceneRenderParam(const SRenderDevice* device,
     SDrawInstanceParam* param_2, const SResourceContext* param_3,
     const CRenderingPerfCounterContainer* param_4, bool param_5,

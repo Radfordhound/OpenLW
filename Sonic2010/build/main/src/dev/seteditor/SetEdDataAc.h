@@ -11,7 +11,7 @@ struct Angle3;
 
 namespace SetEd
 {
-// Wii U: 0x020fd9ec, PC: 0x00462080
+LWAPI(0x020fd9ec, 0x00462080)
 csl::math::Quaternion CalcRotationByAngle(const math::Angle3& angle);
 }
 }

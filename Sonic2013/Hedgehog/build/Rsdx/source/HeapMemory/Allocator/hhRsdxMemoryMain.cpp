@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Rsdx/HeapMemory/Allocator/hhRsdxMemoryMain.h"
 #include "Hedgehog/Rsdx/HeapMemory/hhRsdxMemoryUtil.h"
 
@@ -10,7 +11,7 @@ struct ALLOCATORFUNCTIONS // size == 32
     // TODO
 };
 
-// Wii U: 0x1031f4d4, PC: TODO
+LWAPI(0x1031f4d4, TODO)
 static ALLOCATORFUNCTIONS AllocatorFunctions[4]; // TODO: This name was guessed. What's its actual name?
 
 #ifdef __WIIU__

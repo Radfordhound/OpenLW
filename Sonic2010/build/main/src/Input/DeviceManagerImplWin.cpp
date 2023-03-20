@@ -1,4 +1,5 @@
 // TODO: Both the name of this file and its path were guessed!
+#include "pch.h"
 #include "DeviceManagerImpl.h"
 #include "DeviceWin.h"
 

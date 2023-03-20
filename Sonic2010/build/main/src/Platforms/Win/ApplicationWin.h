@@ -2,9 +2,6 @@
 #pragma once
 #include "System/Application.h"
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-
 namespace app
 {
 struct CreationParameterWin
@@ -33,41 +30,44 @@ struct ApplicationWin : Application // size == 292
     DWORD Style;
     CreationParameterWin* CreationParams;
 
-    // Wii U: N/A, PC: TODO
+    LWAPI(NONE, 0x004010b0)
     static ApplicationWin* Instance;
 
-    // Wii U: N/A, PC: 0x00401900
+    LWAPI(NONE, 0x00401410)
+    static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+    LWAPI(NONE, 0x00401900)
     bool CreateWindowWin(HINSTANCE hInstance, int nCmdShow, const char* className,
         const char* windowName, int width, int height);
 
-    // Wii U: N/A, PC: 0x00401c80
+    LWAPI(NONE, 0x00401c80)
     bool CreateDevice();
 
-    // Wii U: N/A, PC: 0x00402240
+    LWAPI(NONE, 0x00402240)
     void DestroyDevice();
 
-    // Wii U: N/A, PC: 0x00401360
+    LWAPI(NONE, 0x00401360)
     void InitializeBasic();
 
-    // Wii U: N/A, PC: 0x004013b0
+    LWAPI(NONE, 0x004013b0)
     void ShutdownBasic();
 
-    // Wii U: N/A, PC: 0x004013c0
+    LWAPI(NONE, 0x004013c0)
     void InitializeMain();
 
-    // Wii U: N/A, PC: 0x004013f0
+    LWAPI(NONE, 0x004013f0)
     void ShutdownMain();
 
-    // Wii U: N/A, PC: 0x00401100
+    LWAPI(NONE, 0x00401100)
     void RunCore(SyncTimer* timer);
 
-    // Wii U: N/A, PC: 0x004010b0
+    LWAPI(NONE, 0x004010b0)
     ApplicationWin(CreationParameterWin* creationParams);
 };
 
 namespace fw
 {
-// Wii U: N/A, PC: 0x00402730
+LWAPI(NONE, 0x00402730)
 void ParseCmdLine(const char* args, CreationParameterWin* creationParams);
 }
 }

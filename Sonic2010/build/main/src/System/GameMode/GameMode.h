@@ -117,49 +117,49 @@ struct GameMode : public fnd::ReferencedObject // size == 32
     GameDocument* GameDoc;
     ut::RefPtr<MyDisplaySwitchListener> SwitchListener;
 
-    // Wii U: 0x021c9460, PC: 0x004ac630
+    LWAPI(0x021c9460, 0x004ac630)
     static void* operator new(std::size_t size);
 
-    // Wii U: 0x021c953c, PC: 0x004ac770
+    LWAPI(0x021c953c, 0x004ac770)
     GameMode();
 
-    // Wii U: 0x021c960c, PC: 0x004acab0
+    LWAPI(0x021c960c, 0x004acab0)
     ~GameMode();
 
-    // Wii U: 0x021c96c8, PC: 0x004ac800
+    LWAPI(0x021c96c8, 0x004ac800)
     virtual void OnEnter(CGame& game);
 
-    // Wii U: 0x021c9718, PC: 0x004ac820
+    LWAPI(0x021c9718, 0x004ac820)
     virtual void OnLeave(CGame& game);
 
-    // Wii U: 0x021c989c, PC: 0x004acc30
+    LWAPI(0x021c989c, 0x004acc30)
     virtual void Update(CGame& game, const fnd::SUpdateInfo& updateInfo);
 
-    // Wii U: 0x021c98a4, PC: GENERIC RETURN FALSE
+    LWAPI(0x021c98a4, 0x005dd780)
     virtual bool ProcessMessage(CGame& game, fnd::Message& msg);
 
-    // Wii U: 0x021c98b4, PC: GENERIC RETURN FALSE
+    LWAPI(0x021c98b4, 0x005dd780)
     virtual bool PreProcessMessage(CGame& game, fnd::Message& msg);
 
-    // Wii U: 0x021c98f8, PC: TODO
+    LWAPI(0x021c98f8, TODO)
     void AdvanceSequence();
 
-    // Wii U: 0x021c9a30, PC: TODO
+    LWAPI(0x021c9a30, TODO)
     bool LoadFile(const char* filePath, const fnd::FileLoaderParam& loaderParams);
 
-    // Wii U: 0x021c9a88, PC: TODO
+    LWAPI(0x021c9a88, TODO)
     bool PreLoadFile(const char* filePath, int param_2);
 
-    // Wii U: 0x021c9aac, PC: TODO
+    LWAPI(0x021c9aac, TODO)
     bool IsLoadEnd();
 
-    // Wii U: 0x021c9e38, PC: TODO
+    LWAPI(0x021c9e38, TODO)
     void InitializeGameMode(CGame& game);
 
-    // Wii U: 0x021c9f48, PC: 0x004ac4f0
+    LWAPI(0x021c9f48, 0x004ac4f0)
     void ReleaseGameMode(CGame& game);
 
-    // Wii U: 0x021c9f64, PC: 0x004ac7c0
+    LWAPI(0x021c9f64, 0x004ac7c0)
     void Destroy(CGame& game);
 };
 }

@@ -13,27 +13,47 @@ namespace hid
 {
 class DeviceWin : public DeviceBase, public csl::fnd::Singleton<DeviceWin>
 {
+LWAPI_PRIVATE
     DECLARE_SINGLETON
 
     csl::ut::InplaceMoveArray<DevicePlatformBase*, MAX_DEVICE_PORTS> m_platforms;
     std::size_t m_portMax;
 
 public:
-    // Wii U: N/A, PC: 0x00fd9fac
+    LWAPI(NONE, 0x00fd9fac)
     static DeviceTouchWin* TouchDevice;
 
-    // Wii U: N/A, PC: 0x004439d0
+    LWAPI(NONE, 0x004439d0)
     std::size_t GetPortMax() const;
 
-    // Wii U: N/A, PC: 0x004f7d60
+    LWAPI(NONE, 0x004f7d60)
     void GetDeviceData(ResDeviceData* devices, std::size_t deviceCount);
 
-    // Wii U: N/A, PC: 0x004f7c50
+    LWAPI(NONE, 0x004f7c50)
     void Setup(void* instHandle, void* surfaceHandle);
 
-    // Wii U: N/A, PC: Inlined
     DeviceWin();
 };
+
+/**
+ * @brief Initializes the DeviceWin Singleton.
+ *
+ * NOTE: This function appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+*/
+LWAPI(NONE, 0x004f7f40)
+void* DeviceWin_init();
+
+/**
+ * @brief Destroys the DeviceWin Singleton.
+ *
+ * NOTE: This function appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+ *
+ * @param[in] ptr The pointer to the Singleton.
+*/
+LWAPI(NONE, 0x0095fa00)
+void DeviceWin_destroy(void* ptr);
 }
 }
 #endif

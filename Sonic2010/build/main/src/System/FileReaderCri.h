@@ -10,6 +10,18 @@ namespace app
 {
 namespace fnd
 {
+namespace file
+{
+/**
+ * @brief Criware load end callback function.
+ *
+ * NOTE: This function appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+*/
+LWAPI(0x0218fb4c, TODO)
+void CRIAPI CriLoadEndCbFunc(void* obj, CriFsLoaderHn loader);
+}
+
 class FileReaderCri : public FileReader
 {
 public:
@@ -22,16 +34,16 @@ public:
         unsigned int field_0x10;
         unsigned int field_0x14;
 
-        // Wii U: 0x0218fb3c, PC: TODO
+        LWAPI(0x0218fb3c, TODO)
         static void LoadEndCbFunc(void* obj, CriFsLoaderHn loader);
 
-        // Wii U: 0x02190930, PC: TODO
+        LWAPI(0x02190930, TODO)
         void Flush();
 
-        // Wii U: 0x0218fb50, PC: TODO
+        LWAPI(0x0218fb50, TODO)
         Loader();
 
-        // Wii U: 0x021903a8, PC: TODO
+        LWAPI(0x021903a8, TODO)
         ~Loader();
     };
 
@@ -40,7 +52,7 @@ public:
         csl::fnd::com_ptr<FileHandleObj> field_0x0;
         unsigned int field_0x4;
 
-        // Wii U: 0x02192ff8, PC: TODO
+        LWAPI(0x02192ff8, TODO)
         Request();
     };
 
@@ -53,83 +65,83 @@ public:
     Loader* field_0x68;
     // TODO
     
-    // Wii U: 0x02190604, PC: TODO
+    LWAPI(0x02190604, TODO)
     ~FileReaderCri();
 
-    // Wii U: 0x021909bc, PC: 0x004934a0
+    LWAPI(0x021909bc, 0x004934a0)
     void Update();
 
-    // Wii U: 0x02190f98, PC: 0x004933d0
+    LWAPI(0x02190f98, 0x004933d0)
     csl::fnd::com_ptr<FileHandleObj> GetFileHandle(const char* registName);
 
-    // Wii U: 0x02191074, PC: TODO
+    LWAPI(0x02191074, TODO)
     bool IsFileExist(const char* filePath, FileBinder* binder);
 
-    // Wii U: 0x021910cc, PC: TODO
+    LWAPI(0x021910cc, TODO)
     std::size_t GetFileSize(const char* filePath, FileBinder* binder);
 
-    // Wii U: 0x02191124, PC: TODO
+    LWAPI(0x02191124, TODO)
     csl::fnd::com_ptr<FileHandleObj> LoadFile(const char* filePath,
         const char* param_2, csl::fnd::IAllocator* allocator,
         void* param_4, unsigned int param_5, FileBinder* binder);
 
-    // Wii U: 0x0218faf4, PC: TODO
+    LWAPI(0x0218faf4, TODO)
     void StopFile(csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void StopFileAll();
 
-    // Wii U: 0x02191594, PC: 0x00493fd0
+    LWAPI(0x02191594, 0x00493fd0)
     bool UnloadFile(csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: 0x02191678, PC: TODO
+    LWAPI(0x02191678, TODO)
     bool IsSyncComplete(csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: 0x021916f4, PC: TODO
+    LWAPI(0x021916f4, TODO)
     bool IsSyncCompleteAll();
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void WaitSync(csl::fnd::com_ptr<FileHandleObj> fileHandle);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void WaitSyncAll();
 
-    // Wii U: 0x02192b40, PC: TODO
+    LWAPI(0x02192b40, TODO)
     bool DbgGet(csl::ut::MoveArray<dbg::FileInfo::Data>& param_1, bool param_2);
 
-    // Wii U: 0x02192dc4, PC: 0x00493910
+    LWAPI(0x02192dc4, 0x00493910)
     csl::fnd::com_ptr<FileHandleObj> CreateHandle(const char* filePath,
         const char* param_2, csl::fnd::IAllocator* allocator,
         void* param_4, unsigned int param_5, fnd::FileBinder* binder);
 
-    // Wii U: 0x0219309c, PC: TODO
+    LWAPI(0x0219309c, TODO)
     void AddRequest(const csl::fnd::com_ptr<FileHandleObj>& fileHandle,
         void* buffer, std::size_t bufSize);
 
-    // Wii U: 0x0219316c, PC: TODO
+    LWAPI(0x0219316c, TODO)
     void AddRequest(const csl::fnd::com_ptr<FileHandleObj>& fileHandle);
 
-    // Wii U: 0x02193070, PC: TODO
+    LWAPI(0x02193070, TODO)
     void AddRequestList(Request* request);
 
-    // Wii U: 0x02192b48, PC: TODO
+    LWAPI(0x02192b48, TODO)
     void CreateRegistName(const char* filePath, const char* registName,
         csl::ut::String* result);
 
-    // Wii U: 0x02192ce8, PC: 0x00493870
+    LWAPI(0x02192ce8, 0x00493870)
     bool AddFileHnList(const csl::fnd::com_ptr<FileHandleObj>& fileHandle);
 
-    // Wii U: 0x021914a4, PC: 0x00493ef0
+    LWAPI(0x021914a4, 0x00493ef0)
     bool RemoveFileHnList(const csl::fnd::com_ptr<FileHandleObj>& fileHandle);
 
-    // Wii U: 0x0219076c, PC: TODO
+    LWAPI(0x0219076c, TODO)
     Loader* GetFreeLoader();
 
-    // Wii U: 0x0218ff90, PC: TODO
+    LWAPI(0x0218ff90, TODO)
     static FileReaderCri* Create(csl::fnd::IAllocator* allocator,
         std::size_t param_2, std::size_t param_3);
 
-    // Wii U: 0x0218fe58, PC: TODO
+    LWAPI(0x0218fe58, TODO)
     FileReaderCri(std::size_t param_1, std::size_t param_2);
 };
 
@@ -143,7 +155,7 @@ namespace file
  *
  * @param[in] allocator The allocator to use to create the object.
 */
-// Wii U: 0x02192bc0, PC: TODO
+LWAPI(0x02192bc0, TODO)
 FileHandleObj* CreateHandle(csl::fnd::IAllocator* allocator);
 }
 }

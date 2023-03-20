@@ -9,7 +9,7 @@ namespace base
 class CObject
 {
 public:
-    // Wii U: 0x0369946c, PC: TODO
+    LWAPI(0x0369946c, TODO)
     static void* operator new(std::size_t size,
         const CHedgehogMemoryAllocatorFileLine& fileLineInfo,
         CHedgehogMemoryAllocatorHeap heap);
@@ -22,10 +22,10 @@ public:
         return __HH_FREE(ptr);
     }
 
-    // Wii U: 0x0369973c, PC: 0x00c1e780
+    LWAPI(0x0369973c, 0x00c1e780)
     static void* operator new(std::size_t size);
 
-    // Wii U: 0x0369981c (THUNK), PC: TODO
+    LWAPI(0x0369981c, TODO)
     static void operator delete(void* ptr);
 };
 
@@ -34,22 +34,22 @@ class CRefCountObject
     rsdx::RsdxAtomic m_refCount;
 
 public:
-    // Wii U: 0x03699874, PC: 0x00442340
+    LWAPI(0x03699874, 0x00442340)
     virtual ~CRefCountObject();
 
-    // Wii U: 0x036998f8, PC: TODO
+    LWAPI(0x036998f8, TODO)
     std::size_t RefCount() const;
 
-    // Wii U: 0x03699900, PC: TODO
+    LWAPI(0x03699900, TODO)
     bool IsUnique() const;
 
-    // Wii U: 0x03699888, PC: TODO
+    LWAPI(0x03699888, TODO)
     void AddRef();
 
-    // Wii U: 0x0369988c, PC: TODO
+    LWAPI(0x0369988c, TODO)
     void Release();
 
-    // Wii U: 0x0369982c, PC: TODO
+    LWAPI(0x0369982c, TODO)
     CRefCountObject();
 };
 

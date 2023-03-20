@@ -19,11 +19,11 @@ class CDatabaseData : public base::CObject
     // TODO: Other data members? Or is it just padding?
     base::CSharedString field_0x4;
 
-    // Wii U: 0x036c46ec, PC: TODO
+    LWAPI(0x036c46ec, TODO)
     bool IsMadeAllInternal() const;
 
 public:
-    // Wii U: 0x036c4764, PC: TODO
+    LWAPI(0x036c4764, TODO)
     CDatabaseData();
 
     bool IsMadeAll() const
@@ -32,16 +32,16 @@ public:
             IsMadeAllInternal());
     }
 
-    // Wii U: 0x036c47cc, PC: TODO
+    LWAPI(0x036c47cc, TODO)
     virtual ~CDatabaseData();
 
-    // Wii U: 0x036c4850, PC: TODO
+    LWAPI(0x036c4850, TODO)
     void SetMadeOne();
 
-    // Wii U: 0x036c489c, PC: TODO
+    LWAPI(0x036c489c, TODO)
     void SetMadeAllFlag();
 
-    // Wii U: 0x036c48c4, PC: TODO
+    LWAPI(0x036c48c4, TODO)
     virtual bool CheckMadeAll();
 };
 }

@@ -16,7 +16,7 @@ struct ResShaderConstantUsageData
 
 struct ResShaderConstantUsage : public ut::ResCommon<ResShaderConstantUsageData>
 {
-    // Wii U: 0x0367bbf4, PC: TODO
+    LWAPI(0x0367bbf4, TODO)
     ResName GetName();
 
     inline ResShaderConstantUsage(std::nullptr_t) :

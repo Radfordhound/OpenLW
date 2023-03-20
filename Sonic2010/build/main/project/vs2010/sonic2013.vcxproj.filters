@@ -858,6 +858,7 @@
     <ClCompile Include="..\..\src\System\ApplicationPropertyImpl.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1088,6 +1089,7 @@
     <ClInclude Include="..\..\src\HUD\SurfRidePlatformMIRAGE.h">
       <Filter>HUD</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\Input\KBACTION.inl">

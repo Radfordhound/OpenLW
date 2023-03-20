@@ -27,12 +27,12 @@ struct ResourceArgsData // size == 20?
 
 struct IResourceCustomLoader
 {
-    // Wii U: Inlined, PC: TODO
+    LWAPI(NONE, TODO)
     virtual ~IResourceCustomLoader() {}
 
     virtual void Setup(void* param_1, const ResourceArgsData& args) = 0;
 
-    // Wii U: Inlined, PC: TODO
+    LWAPI(NONE, TODO)
     virtual void Cleanup(void* param_1, const ResRawData& rawData) {}
 };
 
@@ -45,13 +45,13 @@ struct ResourceCustomInfo // size == 12?
     IResourceCustomLoader* Loader;
 };
 
-// Wii U: 0x10360d90, PC: TODO
+LWAPI(0x10360d90, TODO)
 extern ResourceCustomInfo OrcaResourceCustomInfo;
 
-// Wii U: 0x10360d9c, PC: TODO
+LWAPI(0x10360d9c, TODO)
 extern ResourceCustomInfo CriAcfResourceCustomInfo;
 
-// Wii U: 0x10360da8, PC: TODO
+LWAPI(0x10360da8, TODO)
 extern ResourceCustomInfo CriAcbResourceCustomInfo;
 }
 
@@ -59,10 +59,10 @@ namespace xgame
 {
 struct ResourceCustomOrcaLoader : fnd::IResourceCustomLoader
 {
-    // Wii U: 0x02b2c30c, PC: TODO
+    LWAPI(0x02b2c30c, TODO)
     ~ResourceCustomOrcaLoader();
 
-    // Wii U: 0x02b2c330, PC: TODO
+    LWAPI(0x02b2c330, TODO)
     void Setup(void* param_1, const fnd::ResourceArgsData& args);
 };
 }

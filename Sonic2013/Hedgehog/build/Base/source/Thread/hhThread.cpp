@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Base/Thread/hhThread.h"
 #include "Hedgehog/Base/System/hhMemoryAllocator.h"
 

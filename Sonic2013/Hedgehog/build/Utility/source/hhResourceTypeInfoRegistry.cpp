@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Utility/hhResourceTypeInfoRegistry.h"
 #include "Hedgehog/Utility/hhResGeneralTypeInfo.h"
 #include "Hedgehog/Utility/hhResDependTypeInfo.h"
@@ -7,8 +8,6 @@
 #include <Hedgehog/Graphics/Resource/hhResMirageVertexShaderParameterTypeInfo.h>
 #include <Hedgehog/Graphics/Resource/hhResMiragePixelShaderCodeTypeInfo.h>
 #include <Hedgehog/Graphics/Resource/hhResMiragePixelShaderParameterTypeInfo.h>
-#include <climits>
-#include <cstddef>
 
 using namespace hh::gfx::res;
 
@@ -76,7 +75,7 @@ ResourceTypeInfoRegistry::ResourceTypeInfoRegistry() :
 
 namespace detail
 {
-// Wii U: 0x03695aa0, PC: TODO
+LWAPI(0x03695aa0, TODO)
 static const ResourceTypeInfo* GetResourceTypeInfo(unsigned int hash,
     const ResourceTypeInfo* const* typeInfo)
 {

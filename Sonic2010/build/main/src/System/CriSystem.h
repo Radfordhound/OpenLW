@@ -8,40 +8,41 @@ namespace app
 {
 class CriSystem : public fnd::ReferencedObject, public csl::fnd::Singleton<CriSystem> // size == 16
 {
+LWAPI_PRIVATE
     DECLARE_SINGLETON
 
     struct Impl;
     Impl* m_impl;
 
 public:
-    // Wii U: 0x021cad54, PC: TODO
+    LWAPI(0x021cad54, TODO)
     ~CriSystem();
 
-    // Wii U: 0x021cae44, PC: TODO
+    LWAPI(0x021cae44, TODO)
     void* GetClient() const;
 
-    // Wii U: 0x021cae58, PC: TODO
+    LWAPI(0x021cae58, TODO)
     unsigned int GetErrorCode() const;
 
-    // Wii U: 0x021caec8, PC: TODO
+    LWAPI(0x021caec8, TODO)
     bool IsASR() const;
 
-    // Wii U: 0x021caeb0, PC: TODO
+    LWAPI(0x021caeb0, TODO)
     void ResetErrorCode();
 
-    // Wii U: 0x021caf44, PC: TODO
+    LWAPI(0x021caf44, TODO)
     void ResetServerThread();
 
-    // Wii U: 0x021caee8, PC: TODO
+    LWAPI(0x021caee8, TODO)
     void SetDefaultServerThread();
 
-    // Wii U: 0x021cae6c, PC: TODO
+    LWAPI(0x021cae6c, TODO)
     void SetErrorCode();
 
-    // Wii U: 0x021cae34, PC: TODO
+    LWAPI(0x021cae34, TODO)
     void Update();
 
-    // Wii U: 0x021cab0c, PC: TODO
+    LWAPI(0x021cab0c, TODO)
     CriSystem();
 };
 }

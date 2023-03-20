@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Extra/Schedule/hhFxPipelineCommandUtil.h"
 #include "Extra/Schedule/hhFxPipelineScheduler.h"
 #include <Hedgehog/Base/System/hhMemory.h>
@@ -33,7 +34,7 @@ struct CFxPipelineExecutorInternal // size == 0x158c
         // TODO
     }
 
-    // Wii U: 0x036fccac, PC: TODO
+    LWAPI(0x036fccac, TODO)
     void Render(SDrawInstanceParam* param_1, const SRenderDevice* device,
         const SRenderParamInitializeParameter* param_3,
         unsigned int param_4, bool param_5, bool param_6,

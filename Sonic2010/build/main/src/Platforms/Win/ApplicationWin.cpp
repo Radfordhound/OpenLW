@@ -1,10 +1,9 @@
 // TODO: Both the name of this file and its path were guessed!
+#include "pch.h"
 #include "ApplicationWin.h"
 #include "Input/DeviceWin.h"
 #include "System/SyncTimer.h"
 #include <csl/fnd/thread.h>
-#include <cstring>
-#include <d3d9.h>
 
 using namespace app::hid;
 using namespace csl::fnd;
@@ -13,8 +12,7 @@ namespace app
 {
 ApplicationWin* ApplicationWin::Instance = nullptr;
 
-// Wii U: N/A, PC: 0x00401410
-LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK ApplicationWin::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     // Get HINSTANCE.
     static ApplicationWin* inst = nullptr;

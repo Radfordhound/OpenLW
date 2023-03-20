@@ -32,13 +32,12 @@ struct Matrix34
 #endif
     }
 
-    // Wii U: 0x02C9E3C4, PC: 0x00961130
+    LWAPI(0x02C9E3C4, 0x00961130)
     Vector3 GetRow(int index) const;
 
-    // Wii U: 0x02C9E45C, PC: TODO
+    LWAPI(0x02C9E45C, TODO)
     Vector3 GetColumn(int index) const;
 
-    // Wii U: Inlined, PC: Inlined
     inline Matrix34() {}
 
     // TODO: Is this constructor actually a thing?

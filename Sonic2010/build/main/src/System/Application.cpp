@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Application.h"
 #include "CriSystem.h"
 #include "FileSystemCri.h"

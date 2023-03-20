@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Game.h"
 #include "GameSequence.h"
 #include "Application.h"
@@ -12,8 +13,7 @@ using namespace csl::fnd;
 
 namespace app
 {
-// Wii U: TODO, PC: TODO
-static IAllocator* GameAllocator;
+IAllocator* GameAllocator;
 
 bool CGame::PreProcessMessage(fnd::Message& msg)
 {

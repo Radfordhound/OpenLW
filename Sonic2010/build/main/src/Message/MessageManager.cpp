@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "MessageManager.h"
 #include "Message.h"
 #include "System/Actor.h"
@@ -80,16 +81,14 @@ MessageManager::MessageManager() :
     m_executingMessages.reserve(512);
 }
 
-// Wii U: 0x021a18b8, PC: TODO
-static void* MessageManager_init()
+void* MessageManager_init()
 {
     MessageManager* msgMgr = new (GetSingletonAllocator()) MessageManager();
     msgMgr->AddRef();
     return msgMgr;
 }
 
-// Wii U: 0x021a1908, PC: TODO
-static void MessageManager_destroy(void* ptr)
+void MessageManager_destroy(void* ptr)
 {
     static_cast<MessageManager*>(ptr)->Release();
 }

@@ -56,6 +56,9 @@
     <ClInclude Include="..\..\include\Extra\Schedule\hhFxPipelineScheduler.h">
       <Filter>Header Files\Schedule</Filter>
     </ClInclude>
+    <ClInclude Include="source\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Util\hhRenderOneCallback.cpp">
@@ -72,6 +75,9 @@
     </ClCompile>
     <ClCompile Include="source\Schedule\hhFxPipelineScheduler.cpp">
       <Filter>Source Files\Schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pch.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

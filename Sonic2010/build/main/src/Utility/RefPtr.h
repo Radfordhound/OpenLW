@@ -8,6 +8,7 @@ namespace ut
 template<typename T>
 class RefPtr
 {
+LWAPI_PRIVATE
     T* m_refObjPtr;
 
 public:

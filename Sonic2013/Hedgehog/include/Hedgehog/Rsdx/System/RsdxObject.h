@@ -12,13 +12,13 @@ namespace rsdx
 {
 struct RsdxObject
 {
-    // Wii U: 0x036a7d28, PC: N/A
+    LWAPI(0x036a7d28, NONE)
     void* operator new(std::size_t size);
 
-    // Wii U: 0x036a8280, PC: TODO
+    LWAPI(0x036a8280, TODO)
     void* operator new(std::size_t size, void* ptr);
 
-    // Wii U: 0x036a7d48, PC: N/A
+    LWAPI(0x036a7d48, NONE)
     void operator delete(void* ptr);
 
     // TODO: Is this function actually a thing?
@@ -36,15 +36,15 @@ class RsdxRefcountObject : public RsdxObject
     RsdxAtomic m_refCount;
 
 public:
-    // Wii U: 0x036a7fa4 (THUNK), PC: N/A
+    LWAPI(0x036a7fa4, NONE)
     RsdxAtomic AddRef();
 
-    // Wii U: 0x036a7fa8, PC: N/A
+    LWAPI(0x036a7fa8, NONE)
     RsdxAtomic Release();
 
     // TODO
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     RsdxRefcountObject() :
         m_refCount(0) {}
 };
@@ -58,10 +58,10 @@ struct RsdxSystemResource : public RsdxObject
 
     virtual bool WaitSystemResource() = 0;
 
-    // Wii U: 0x036a7ff4, PC: 0x00c24fd0
+    LWAPI(0x036a7ff4, 0x00c24fd0)
     virtual bool DeleteThis();
 
-    // Wii U: 0x036a806c, PC: TODO
+    LWAPI(0x036a806c, TODO)
     virtual ~RsdxSystemResource();
 };
 }

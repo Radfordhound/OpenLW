@@ -12,7 +12,7 @@ namespace res
 {
 struct ResFragmentShader : public ut::ResCommon<ResShaderCommonData>
 {
-    // Wii U: 0x0367b7c8, PC: TODO
+    LWAPI(0x0367b7c8, TODO)
     static const ut::ResourceTypeInfo& staticTypeInfo();
 
     std::size_t GetNumFloat4Usages() const
@@ -63,25 +63,25 @@ struct ResFragmentShader : public ut::ResCommon<ResShaderCommonData>
             ResShaderSamplerUsage();
     }
 
-    // Wii U: 0x0367c474, PC: TODO
+    LWAPI(0x0367c474, TODO)
     ResName GetName();
 
-    // Wii U: 0x0367c4c8, PC: TODO
+    LWAPI(0x0367c4c8, TODO)
     ResUserData GetResUserData();
 
-    // Wii U: 0x0367c51c, PC: TODO
+    LWAPI(0x0367c51c, TODO)
     void* Replace(std::size_t* size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x0367c684, PC: TODO
+    LWAPI(0x0367c684, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x0367c684, PC: TODO
+    LWAPI(0x0367c684, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator, ut::Packfile pac);
 
-    // Wii U: 0x0367ca8c, PC: TODO
+    LWAPI(0x0367ca8c, TODO)
     void Unbind();
 
-    // Wii U: 0x0367cb94, PC: TODO
+    LWAPI(0x0367cb94, TODO)
     void Cleanup(std::size_t size);
 
     inline ResFragmentShader(std::nullptr_t) :

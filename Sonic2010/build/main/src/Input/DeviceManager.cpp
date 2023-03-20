@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #include "DeviceManager.h"
 #include "DeviceManagerImpl.h"
 #include "DeviceBase.h"
@@ -80,16 +81,14 @@ void DeviceManager::Setup()
     }
 }
 
-// Wii U: 0x0227a10c, PC: TODO
-static void* DeviceManager_init()
+void* DeviceManager_init()
 {
     DeviceManager* dmgr = new (fnd::GetSingletonAllocator()) DeviceManager();
     dmgr->AddRef();
     return dmgr;
 }
 
-// Wii U: 0x0227a15c, PC: TODO
-static void DeviceManager_destroy(void* ptr)
+void DeviceManager_destroy(void* ptr)
 {
     static_cast<DeviceManager*>(ptr)->Release();
 }

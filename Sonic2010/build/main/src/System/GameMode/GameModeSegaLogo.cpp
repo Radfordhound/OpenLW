@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "GameModeSegaLogo.h"
 #include "Memory/MemoryRouter.h"
 #include "Movie/MoviePlayer.h"

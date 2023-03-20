@@ -28,7 +28,7 @@ public:
         return PtrAdd<T>(this, HH_ENDIAN_FIX_U32(m_dataOff));
     }
 
-    // Wii U: 0x036c4924, PC: 0x00c27c30
+    LWAPI(0x036c4924, 0x00c27c30)
     void ResolvePointer();
 };
 
@@ -82,7 +82,7 @@ public:
         return ((m_fileSize & SAMPLE_CHUNK_FLAG_IS_ROOT) != 0);
     }
 
-    // Wii U: 0x036c4b94, PC: TODO
+    LWAPI(0x036c4b94, TODO)
     void ResolvePointer();
 };
 
@@ -93,7 +93,7 @@ class CSampleChunkNode
     char m_name[8];
 
 public:
-    // Wii U: 0x03674140, PC: TODO
+    LWAPI(0x03674140, TODO)
     bool IsLeaf() const;
 
     u32 GetChunkSize(u32 flags)

@@ -13,6 +13,7 @@ struct Renderable;
 
 class RenderManager : public fnd::ReferencedObject, public csl::fnd::Singleton<RenderManager>
 {
+LWAPI_PRIVATE
     struct Impl;
     Impl* m_impl;
 
@@ -38,40 +39,40 @@ public:
             AspectRatio(0) {}
     };
 
-    // Wii U: 0x02258a98, PC: Inlined
+    LWAPI(0x02258a98, NONE)
     RenderManager();
 
-    // Wii U: 0x02258b10, PC: 0x004e7f70
+    LWAPI(0x02258b10, 0x004e7f70)
     static RenderManager* Create(csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x02258ec0, PC: TODO
+    LWAPI(0x02258ec0, TODO)
     void Setup(const SetupInfo& setupInfo);
 
-    // Wii U: 0x02258fc8 (THUNK), PC: TODO
+    LWAPI(0x02258fc8, TODO)
     void Shutdown();
 
-    // Wii U: 0x02259eec, PC: TODO
+    LWAPI(0x02259eec, TODO)
     void Update(const fnd::SUpdateInfo& updateInfo, unsigned int param_2);
 
-    // Wii U: 0x0225a014, PC: 0x004e1c10
+    LWAPI(0x0225a014, 0x004e1c10)
     hh::mr::CRenderingInfrastructure* GetRenderingDevice() const;
 
-    // Wii U: 0x02263c70, PC: TODO
+    LWAPI(0x02263c70, TODO)
     void RenderNoPresent();
 
-    // Wii U: 0x02263cf4, PC: 0x004ee530
+    LWAPI(0x02263cf4, 0x004ee530)
     void Render();
 
-    // Wii U: 0x02263d28, PC: TODO
+    LWAPI(0x02263d28, TODO)
     void Present();
 
-    // Wii U: 0x02263d4c, PC: TODO
+    LWAPI(0x02263d4c, TODO)
     CRenderSceneView* GetDefaultScene() const;
 
-    // Wii U: 0x02264694, PC: TODO
+    LWAPI(0x02264694, TODO)
     hh::ut::Packfile GetShaderFileResource() const;
 
-    // Wii U: 0x022646c0, PC: TODO
+    LWAPI(0x022646c0, TODO)
     void AddRenderable(Renderable* renderable);
 };
 }

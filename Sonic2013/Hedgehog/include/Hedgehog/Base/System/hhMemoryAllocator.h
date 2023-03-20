@@ -2,10 +2,10 @@
 #include "hhMemory.h"
 #include <csl/fnd/memory.h>
 
-// Wii U: 0x03698a70, PC: TODO
+LWAPI(0x03698a70, TODO)
 CHedgehogMemoryAllocatorHeap hhBaseGetUserMemoryAllocator(); // TODO: Is this return type correct?
 
-// Wii U: 0x03698ae8, PC: TODO
+LWAPI(0x03698ae8, TODO)
 CHedgehogMemoryAllocatorHeap hhGetHeapHandle(unsigned int param_1);
 
 namespace hh
@@ -14,14 +14,14 @@ namespace base
 {
 class CMemoryAllocator
 {
-    // Wii U: 0x1031f2c0, PC: TODO
+    LWAPI(0x1031f2c0, TODO)
     static csl::fnd::IAllocator* Allocator;
 
 public:
-    // Wii U: 0x03698b1c, PC: TODO
+    LWAPI(0x03698b1c, TODO)
     static csl::fnd::IAllocator* GetCSLAllocator();
 
-    // Wii U: 0x03698b10, PC: TODO
+    LWAPI(0x03698b10, TODO)
     static void SetCSLAllocator(csl::fnd::IAllocator* allocator);
 };
 }

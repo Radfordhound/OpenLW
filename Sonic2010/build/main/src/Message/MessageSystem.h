@@ -8,25 +8,25 @@ namespace xgame
 {
 struct MsgWarningEnd : fnd::Message
 {
-    // Wii U: 0x022fd5dc, PC: TODO
+    LWAPI(0x022fd5dc, TODO)
     MsgWarningEnd* Clone() const;
 
-    // Wii U: 0x022fd650, PC: TODO
+    LWAPI(0x022fd650, TODO)
     ~MsgWarningEnd();
 
-    // Wii U: 0x022fd6a8, PC: TODO
+    LWAPI(0x022fd6a8, TODO)
     MsgWarningEnd();
 };
 
 struct MsgAdvanceSequence : fnd::Message
 {
-    // Wii U: 0x022fd6fc, PC: TODO
+    LWAPI(0x022fd6fc, TODO)
     MsgAdvanceSequence* Clone() const;
 
-    // Wii U: 0x022fd7c8, PC: TODO
+    LWAPI(0x022fd7c8, TODO)
     ~MsgAdvanceSequence();
 
-    // Wii U: 0x022fd770, PC: TODO
+    LWAPI(0x022fd770, TODO)
     MsgAdvanceSequence();
 };
 }

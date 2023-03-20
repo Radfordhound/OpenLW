@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Graphics/hhGraphics.h"
 #include <csl/fnd/memory.h>
 
@@ -7,7 +8,7 @@ namespace gfx
 {
 namespace internal
 {
-// Wii U: 0x104012e8, PC: 0x011d6dac
+LWAPI(0x104012e8, 0x011d6dac)
 static GfxInitParam GfxParameters;
 
 VertexDeclarationRegistry::VertexDeclarationRegistry() :

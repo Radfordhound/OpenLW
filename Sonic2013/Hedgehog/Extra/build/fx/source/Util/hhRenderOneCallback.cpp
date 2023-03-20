@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Extra/Util/hhRenderOneCallback.h"
 
 namespace Extra

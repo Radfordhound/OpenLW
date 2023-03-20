@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Rsdx/HeapMemory/hhRsdxMemoryUtil.h"
 
 namespace hh

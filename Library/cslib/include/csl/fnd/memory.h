@@ -7,7 +7,7 @@ namespace fnd
 {
 struct IAllocator
 {
-    // Wii U: Inlined, PC: 0x00445a00
+    LWAPI(NONE, 0x00445a00)
     virtual ~IAllocator() {} // Wii U VTABLE OFF: 8
 
     /*
@@ -51,13 +51,13 @@ struct IAllocator
 
 struct DefaultAllocator : IAllocator
 {
-    // Wii U: Inlined, PC: 0x00445a30
+    LWAPI(NONE, 0x00445a30)
     void* Alloc(std::size_t size, std::size_t alignment = 16)
     {
         return (size) ? ::operator new(size) : nullptr;
     }
 
-    // Wii U: Inlined, PC: 0x00445a50
+    LWAPI(NONE, 0x00445a50)
     void Free(void* ptr)
     {
         ::operator delete(ptr);
@@ -149,7 +149,7 @@ public:
     }
 };
 
-// Wii U: 0x02c995b8, PC: 0x00968aa0
+LWAPI(0x02c995b8, 0x00968aa0)
 std::size_t StrLcpy(char* dst, const char* src, std::size_t len);
 }
 }

@@ -26,7 +26,7 @@ struct FileSystem : public ReferencedObject, public csl::fnd::Singleton<FileSyst
 
         // TODO: Are the remaining 2 bytes for sure just padding?
 
-        // Wii U: TODO, PC: TODO
+        LWAPI(TODO, TODO)
         Info() :
             RootDirectory(nullptr),
             field_0x5(true),
@@ -37,37 +37,37 @@ struct FileSystem : public ReferencedObject, public csl::fnd::Singleton<FileSyst
     FileCache* Cache;
     FILE_SYSTEM_FLAG Flags;
 
-    // Wii U: 0x0218e570, PC: TODO
+    LWAPI(0x0218e570, TODO)
     ~FileSystem();
 
-    // Wii U: 0x0218e5c4, PC: TODO
+    LWAPI(0x0218e5c4, TODO)
     virtual void Update();
 
-    // Wii U: 0x0218e770, PC: TODO
+    LWAPI(0x0218e770, TODO)
     virtual FileBinder* GetDefaultBinder() const;
 
-    // Wii U: 0x0218e7e4, PC: TODO
+    LWAPI(0x0218e7e4, TODO)
     const char* GetFileExtension(const char* filePath);
 
-    // Wii U: 0x0218e778, PC: TODO
+    LWAPI(0x0218e778, TODO)
     const char* GetFileName(const char* filePath);
 
-    // Wii U: 0x0218e854, PC: TODO
+    LWAPI(0x0218e854, TODO)
     void GetFileNameNoExtension(const char* filePath, csl::ut::String* result);
 
-    // Wii U: 0x0218e974, PC: TODO
+    LWAPI(0x0218e974, TODO)
     void GetPathName(const char* filePath, csl::ut::String* result);
 
-    // Wii U: 0x0218ead0, PC: TODO
+    LWAPI(0x0218ead0, TODO)
     void SetFileCacheSize(std::size_t cacheSize);
 
-    // Wii U: 0x0218e5c8, PC: TODO
+    LWAPI(0x0218e5c8, TODO)
     void SetRootDirectory(const char* rootDir);
 
-    // Wii U: 0x0218e760, PC: TODO
+    LWAPI(0x0218e760, TODO)
     void Setup(Info& info);
 
-    // Wii U: 0x0218eb24, PC: 0x004926e0
+    LWAPI(0x0218eb24, 0x004926e0)
     FileSystem();
 };
 }

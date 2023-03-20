@@ -40,7 +40,7 @@ class RsdxDevCore : public RsdxRefcountObject
     // TODO
 
 public:
-    // Wii U: 0x036b33ac, PC: N/A
+    LWAPI(0x036b33ac, NONE)
     RSDXRESULT CreateDevice(unsigned int Adapter,
         RSDXDEVTYPE DeviceType, void* hFocusWindow,
         int BehaviorFlags, _RSDXPRESENTPARAM* pPresentationParameters,
@@ -50,7 +50,7 @@ public:
     // TODO
 };
 
-// Wii U: 0x036b34ec, PC: N/A
+LWAPI(0x036b34ec, NONE)
 RsdxDevCore* RsdxCreate(unsigned long long param_1);
 #endif
 }

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Base/Platform/D3d9/hhCCriticalSectionD3D9.h"
 
 using namespace hh::rsdx;

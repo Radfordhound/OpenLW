@@ -6,7 +6,7 @@ namespace app
 {
 namespace fnd
 {
-// Wii U: 0x0219fb7c, PC: TODO
+LWAPI(0x0219fb7c, TODO)
 csl::fnd::IAllocator* getDebugAllocator();
 }
 }

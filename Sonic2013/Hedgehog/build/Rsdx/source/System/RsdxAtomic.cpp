@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hedgehog/Rsdx/System/RsdxAtomic.h"
 
 namespace hh

@@ -10,98 +10,98 @@ class CSharedString
     char* m_data;
 
 public:
-    // Wii U: 0x0369dddc, PC: TODO
+    LWAPI(0x0369dddc, TODO)
     CSharedString();
 
-    // Wii U: 0x0369de40, PC: TODO
+    LWAPI(0x0369de40, TODO)
     void clearstr();
     
-    // Wii U: 0x0369dea4, PC: TODO
+    LWAPI(0x0369dea4, TODO)
     void assign(const CSharedString& str);
 
-    // Wii U: 0x0369df10, PC: TODO
+    LWAPI(0x0369df10, TODO)
     CSharedString(const CSharedString& other);
 
-    // Wii U: 0x0369df74, PC: 0x00c1f470
+    LWAPI(0x0369df74, 0x00c1f470)
     const char* c_str() const;
 
-    // Wii U: 0x0369e084, PC: TODO
+    LWAPI(0x0369e084, TODO)
     void newallocstr(const char* initialText, int len = -1);
 
-    // Wii U: 0x0369e154, PC: TODO
+    LWAPI(0x0369e154, TODO)
     CSharedString(const CSharedString& other, int off);
 
-    // Wii U: 0x0369e210, PC: TODO
+    LWAPI(0x0369e210, TODO)
     CSharedString(const CSharedString& other, int off, int count);
 
-    // Wii U: 0x0369e2d8, PC: TODO
+    LWAPI(0x0369e2d8, TODO)
     CSharedString(const std::string& str);
 
-    // Wii U: 0x0369e348, PC: TODO
+    LWAPI(0x0369e348, TODO)
     CSharedString(const char* first, const char* last);
 
-    // Wii U: 0x0369e3e0, PC: TODO
+    LWAPI(0x0369e3e0, TODO)
     CSharedString(const char* str);
 
-    // Wii U: 0x0369e460, PC: TODO
+    LWAPI(0x0369e460, TODO)
     CSharedString(const char* str, int off);
 
-    // Wii U: 0x0369e4f8, PC: TODO
+    LWAPI(0x0369e4f8, TODO)
     CSharedString(const char* str, int off, int count);
 
-    // Wii U: 0x0369e5b8, PC: TODO
+    LWAPI(0x0369e5b8, TODO)
     CSharedString(const char* str, int count, char val);
 
-    // Wii U: 0x0369e650, PC: TODO
+    LWAPI(0x0369e650, TODO)
     void reserve(int amount);
 
-    // Wii U: 0x0369e654 (THUNK), PC: TODO
+    LWAPI(0x0369e654, TODO)
     void clear();
 
-    // Wii U: 0x0369e658, PC: TODO
+    LWAPI(0x0369e658, TODO)
     std::size_t size() const;
 
-    // Wii U: 0x0369e6b4 (THUNK), PC: TODO
+    LWAPI(0x0369e6b4, TODO)
     std::size_t length() const;
 
-    // Wii U: 0x0369e6b8, PC: TODO
+    LWAPI(0x0369e6b8, TODO)
     std::size_t find(const char* str) const;
 
-    // Wii U: 0x0369e714, PC: TODO
+    LWAPI(0x0369e714, TODO)
     std::size_t find(const CSharedString& other) const;
 
-    // Wii U: 0x0369e778, PC: TODO
+    LWAPI(0x0369e778, TODO)
     std::size_t find(char val) const;
 
-    // Wii U: 0x0369e7d4, PC: TODO
+    LWAPI(0x0369e7d4, TODO)
     CSharedString& operator=(const char* str);
 
-    // Wii U: 0x0369e808, PC: TODO
+    LWAPI(0x0369e808, TODO)
     CSharedString& replace(int off, int count, const char* str, int count2);
 
-    // Wii U: 0x0369e888, PC: TODO
+    LWAPI(0x0369e888, TODO)
     CSharedString& replace(int off, int count, const char* str);
 
-    // Wii U: 0x0369e918, PC: TODO
+    LWAPI(0x0369e918, TODO)
     CSharedString& replace(int off, int count, const CSharedString& str);
 
-    // Wii U: 0x0369e9b0 (THUNK), PC: TODO
+    LWAPI(0x0369e9b0, TODO)
     void erase();
 
     // TODO: Implement the rest of these unused functions?
 
-    // Wii U: 0x0369ef90, PC: TODO
+    LWAPI(0x0369ef90, TODO)
     ~CSharedString();
 
-    // Wii U: 0x0369efe0, PC: TODO
+    LWAPI(0x0369efe0, TODO)
     CSharedString substr(int param_1, int param_2) const;
 
     // TODO: Implement the rest of these unused functions?
 
-    // Wii U: 0x0369f1b4, PC: TODO
+    LWAPI(0x0369f1b4, TODO)
     bool empty() const;
 
-    // Wii U: 0x0369f8e8, PC: TODO
+    LWAPI(0x0369f8e8, TODO)
     CSharedString& operator=(const CSharedString& other);
 
     // TODO

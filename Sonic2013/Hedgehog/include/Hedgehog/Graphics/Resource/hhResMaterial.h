@@ -41,28 +41,28 @@ struct ResMaterialData // size == 0x128
 
 struct ResMaterial : public ut::ResCommon<ResMaterialData>
 {
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     static const ut::ResourceTypeInfo& staticTypeInfo();
 
-    // Wii U: 0x03674284, PC: TODO
+    LWAPI(0x03674284, TODO)
     ResName GetName();
 
-    // Wii U: 0x036742D8, PC: TODO
+    LWAPI(0x036742D8, TODO)
     ResUserData GetResUserData();
 
-    // Wii U: 0x03674344, PC: TODO
+    LWAPI(0x03674344, TODO)
     void* Replace(const char* param_1, std::size_t* size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03674f04, PC: TODO
+    LWAPI(0x03674f04, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator);
 
-    // Wii U: 0x03674f9c, PC: TODO
+    LWAPI(0x03674f9c, TODO)
     bool Setup(std::size_t size, csl::fnd::IAllocator* allocator, ut::Packfile pac);
 
-    // Wii U: TODO, PC: TODO
+    LWAPI(TODO, TODO)
     void Unbind();
 
-    // Wii U: 0x036758e0, PC: TODO
+    LWAPI(0x036758e0, TODO)
     void Cleanup(std::size_t size);
 
     inline ResMaterial(std::nullptr_t) :

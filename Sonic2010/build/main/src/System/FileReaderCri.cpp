@@ -1,4 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
+#include "pch.h"
 #ifdef USE_CRIWARE
 #include "FileReaderCri.h"
 #include "FileSystem.h"
@@ -14,9 +15,7 @@ namespace fnd
 {
 namespace file
 {
-// TODO: Should this be moved to another header?
-// Wii U: 0x0218fb4c (THUNK), PC: TODO
-static void CRIAPI CriLoadEndCbFunc(void* obj, CriFsLoaderHn loader)
+void CRIAPI CriLoadEndCbFunc(void* obj, CriFsLoaderHn loader)
 {
     FileReaderCri::Loader::LoadEndCbFunc(obj, loader);
 }

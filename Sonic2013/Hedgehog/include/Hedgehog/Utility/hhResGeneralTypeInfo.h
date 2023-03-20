@@ -7,7 +7,7 @@ namespace ut
 {
 struct ResPacGeneralResourceLoader : IResourceLoader {};
 
-// Wii U: 0x10401594, PC: TODO
+LWAPI(0x10401594, TODO)
 extern ResourceTypeInfo ResRawDataTypeInfo;
 }
 }

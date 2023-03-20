@@ -6,27 +6,27 @@ namespace app
 {
 namespace fnd
 {
-// Wii U: 0x1032c3b0, PC: TODO
+LWAPI(0x1032c3b0, TODO)
 extern ResourceCustomInfo DefResourceCustomInfo;
 
-// Wii U: 0x1032c3bc, PC: TODO
+LWAPI(0x1032c3bc, TODO)
 extern ResourceCustomInfo PacResourceCustomInfo;
 
 struct ResourceCustomDefLoader : IResourceCustomLoader
 {
-    // Wii U: 0x021b10cc, PC: TODO
+    LWAPI(0x021b10cc, TODO)
     ~ResourceCustomDefLoader();
 
-    // Wii U: 0x021b10f0, PC: TODO
+    LWAPI(0x021b10f0, TODO)
     void Setup(void* param_1, const ResourceArgsData& args);
 };
 
 struct ResourceCustomPacLoader : IResourceCustomLoader
 {
-    // Wii U: 0x021b1158, PC: TODO
+    LWAPI(0x021b1158, TODO)
     ~ResourceCustomPacLoader();
 
-    // Wii U: 0x021b116c, PC: TODO
+    LWAPI(0x021b116c, TODO)
     void Setup(void* param_1, const ResourceArgsData& args);
 };
 }

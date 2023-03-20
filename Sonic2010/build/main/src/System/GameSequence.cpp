@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "GameSequence.h"
 #include "Game.h"
 #include "UpdateInfo.h"

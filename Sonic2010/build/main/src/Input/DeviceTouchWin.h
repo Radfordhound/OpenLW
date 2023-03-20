@@ -3,6 +3,10 @@
 #pragma once
 #ifdef _WIN32
 #include "DevicePlatformBase.h"
+#include <Windows.h>
+
+#define DIRECTINPUT_VERSION 0x0800
+#include <dinput.h>
 
 namespace app
 {
@@ -10,13 +14,14 @@ namespace hid
 {
 class DeviceTouchWin : public DevicePlatformBase // size == 0x34
 {
+LWAPI_PRIVATE
     struct InputWrapper // TODO: Is this a good name?
     {
         void* Handle;
 
         // TODO: Other functions, if any.
 
-        // Wii U: N/A, PC: 0x004f6920
+        LWAPI(NONE, 0x004f6920)
         InputWrapper(void* instHandle);
     };
 
@@ -32,18 +37,27 @@ class DeviceTouchWin : public DevicePlatformBase // size == 0x34
 public:
     std::size_t DeviceCount;
 
-    // Wii U: N/A, PC: 0x008f1360
+    LWAPI(NONE, 0x008f1360)
     std::size_t GetPortMax() const;
 
-    // Wii U: N/A, PC: 0x004f7a50
+    LWAPI(NONE, 0x004f7a50)
     void GetDeviceData(ResDeviceData* devices, std::size_t deviceCount); // TODO: Does this actually return a number on PC?
 
-    // Wii U: N/A, PC: 0x004f7970
+    LWAPI(NONE, 0x004f7970)
     void* CreateDevice(const void* deviceInst);
 
-    // Wii U: N/A, PC: 0x004f7bd0
+    LWAPI(NONE, 0x004f7bd0)
     DeviceTouchWin(void* instHandle, void* surfaceHandle);
 };
+
+/**
+ * @brief DirectInput8 callback to enumerate devices.
+ *
+ * NOTE: This function appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+*/
+LWAPI(NONE, 0x004f7b70)
+BOOL CALLBACK EnumDevicesCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef);
 }
 }
 #endif

@@ -1,10 +1,8 @@
 // TODO: This entire header was guessed. Is it all accurate?
+#include "pch.h"
 #include "Atomic.h"
 
-#ifdef _WIN32
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#elif defined(__WIIU__)
+#ifdef __WIIU__
 #include <coreinit/atomic.h>
 #endif
 

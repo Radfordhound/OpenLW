@@ -23,7 +23,7 @@ struct SingletonInitNode
     SingletonInitNode* PrevNode;
     void** InstPtr;
 
-    // Wii U: 0x102e78f0, PC: 0x00fd4218
+    LWAPI(0x102e78f0, 0x00fd4218)
     static SingletonInitNode* CurNode;
 
 	SingletonInitNode() {}
@@ -39,13 +39,13 @@ struct SingletonInitNode
     }
 };
 
-// Wii U: 0x02185574, PC: 0x0048d520
+LWAPI(0x02185574, 0x0048d520)
 void InitSingletons();
 
-// Wii U: 0x0218570c, PC: 0x0048d6c0
+LWAPI(0x0218570c, 0x0048d6c0)
 void DestroySingletons();
 
-// Wii U: 0x02185818, PC: 0x0048d510
+LWAPI(0x02185818, 0x0048d510)
 csl::fnd::IAllocator* GetSingletonAllocator();
 }
 }

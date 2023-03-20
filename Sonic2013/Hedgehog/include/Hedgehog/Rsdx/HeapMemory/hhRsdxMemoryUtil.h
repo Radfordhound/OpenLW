@@ -6,7 +6,7 @@ namespace rsdx
 {
 struct MemoryUtil
 {
-    // Wii U: 0x036AE184, PC: TODO
+    LWAPI(0x036AE184, TODO)
     static void ThrowAssert();
 };
 }

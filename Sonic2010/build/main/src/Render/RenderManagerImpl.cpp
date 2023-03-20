@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "RenderManagerImpl.h"
 #include "System/Resource/ResourceManager.h"
 #include <Hedgehog/Graphics/hhGraphics.h>
@@ -16,7 +17,7 @@ using namespace hh::gfx::res;
 using namespace hh::MTBase;
 using namespace Extra::fx;
 
-// Wii U: 0x022570c0, PC: TODO
+LWAPI(0x022570c0, TODO)
 void DummyJointJob(void* param_1) {}
 
 namespace app

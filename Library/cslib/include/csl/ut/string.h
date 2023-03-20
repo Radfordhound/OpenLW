@@ -25,7 +25,7 @@ protected:
         m_allocator(allocator) {}
 
 public:
-    // Wii U: 0x02ca86b0, PC: 0x00967ae0
+    LWAPI(0x02ca86b0, 0x00967ae0)
     std::size_t copyFrom(const char* src, std::size_t srcLen,
         std::size_t srcOff, std::size_t dstOff)
     {
@@ -131,7 +131,7 @@ public:
         return (m_len == 0);
     }
 
-    // Wii U: 0x02ca85a8, PC: 0x00967a70
+    LWAPI(0x02ca85a8, 0x00967a70)
     void resize(std::size_t len)
     {
         // Only resize if the string's size doesn't already match the requested size.
