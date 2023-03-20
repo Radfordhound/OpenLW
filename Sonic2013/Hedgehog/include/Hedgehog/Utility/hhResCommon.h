@@ -1,5 +1,6 @@
 #pragma once
 #include <Hedgehog/Base/hhBaseCommon.h>
+#include <cstddef>
 
 namespace hh
 {

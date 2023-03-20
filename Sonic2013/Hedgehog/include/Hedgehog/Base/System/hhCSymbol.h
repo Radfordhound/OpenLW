@@ -52,7 +52,7 @@ public:
 
     inline bool operator<(const CStringSymbol& other) const
     {
-        return (other.field_0x0 < other.field_0x0); // TODO: Is this correct?
+        return (field_0x0 < other.field_0x0); // TODO: Is this correct?
     }
 };
 }
