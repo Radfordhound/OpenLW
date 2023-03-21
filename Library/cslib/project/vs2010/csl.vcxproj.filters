@@ -89,6 +89,9 @@
     <ClInclude Include="..\..\src\csl\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\csl\math\vector2.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\csl\fnd\tick_win32.cpp">

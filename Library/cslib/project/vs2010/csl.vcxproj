@@ -18,6 +18,7 @@
     <ClInclude Include="..\..\include\csl\math\algorithm.h" />
     <ClInclude Include="..\..\include\csl\math\matrix34.h" />
     <ClInclude Include="..\..\include\csl\math\quaternion.h" />
+    <ClInclude Include="..\..\include\csl\math\vector2.h" />
     <ClInclude Include="..\..\include\csl\math\vector3.h" />
     <ClInclude Include="..\..\include\csl\ut\bitset.h" />
     <ClInclude Include="..\..\include\csl\ut\array.h" />
