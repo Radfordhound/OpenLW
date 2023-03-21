@@ -119,4 +119,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\csl\math\math_includes.inl">
+      <Filter>Header Files\math</Filter>
+    </None>
+  </ItemGroup>
 </Project>

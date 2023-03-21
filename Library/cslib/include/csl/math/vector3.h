@@ -1,10 +1,5 @@
 #pragma once
-
-#ifdef _WIN32
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-#include <xnamath.h>
-#endif
+#include "math_includes.inl"
 
 namespace csl
 {
@@ -20,7 +15,7 @@ struct Vector3_
 struct Vector3
 {
 #ifdef _WIN32
-    XMVECTOR Data;
+    DXMATH_NAMESPACE XMVECTOR Data;
 #endif
 
     LWAPI(0x1038a440, 0x00feff90)
@@ -49,7 +44,7 @@ struct Vector3
     void Set(float x, float y, float z)
     {
 #ifdef _WIN32
-        Data = XMVectorSet(x, y, z, 0.0f);
+        Data = DXMATH_NAMESPACE XMVectorSet(x, y, z, 0.0f);
 #else
         // TODO
 #endif
@@ -58,7 +53,7 @@ struct Vector3
     inline float GetX() const
     {
 #ifdef _WIN32
-        return XMVectorGetX(Data);
+        return DXMATH_NAMESPACE XMVectorGetX(Data);
 #else
         // TODO
 #endif
@@ -67,7 +62,7 @@ struct Vector3
     inline float GetY() const
     {
 #ifdef _WIN32
-        return XMVectorGetY(Data);
+        return DXMATH_NAMESPACE XMVectorGetY(Data);
 #else
         // TODO
 #endif
@@ -76,7 +71,7 @@ struct Vector3
     inline float GetZ() const
     {
 #ifdef _WIN32
-        return XMVectorGetZ(Data);
+        return DXMATH_NAMESPACE XMVectorGetZ(Data);
 #else
         // TODO
 #endif
@@ -87,14 +82,13 @@ struct Vector3
         Data = other.Data;
     }
 
-    LWAPI(0x020235AC, NONE)
-    Vector3 operator*(float scale) const
+    inline Vector3 operator*(float scale) const
     {
         Vector3 result;
 
 #ifdef _WIN32
         // TODO: Is this correct?
-        result.Data = XMVectorScale(Data, scale);
+        result.Data = DXMATH_NAMESPACE XMVectorScale(Data, scale);
 #else
         // TODO
 #endif
@@ -102,26 +96,27 @@ struct Vector3
         return result;
     }
 
-    LWAPI(0x0203204C, NONE)
-    float Length() const
+    //LWAPI(0x0203204C, NONE)
+    inline float Length() const
     {
 #ifdef _WIN32
         // TODO: Is this correct?
-        return XMVectorGetX(XMVector3ReciprocalLength(Data));
+        return DXMATH_NAMESPACE XMVectorGetX(
+            DXMATH_NAMESPACE XMVector3ReciprocalLength(Data));
 #else
         // TODO: It basically works like this on Wii U, but doesn't actually use this exact code at all:
         //return std::sqrt((X * X) + (Y * Y) + (Z * Z));
 #endif
     }
 
-    LWAPI(0x02032050, NONE)
-    Vector3 operator/(float scale) const
+    inline Vector3 operator/(float scale) const
     {
         Vector3 result;
 
 #ifdef _WIN32
         // TODO: Is this correct?
-        result.Data = XMVectorScale(Data, 1 / scale);
+        result.Data = DXMATH_NAMESPACE XMVectorScale(
+			Data, 1 / scale);
 #else
         // TODO
         //result.Data = PSVECScale(1 / scale);
@@ -133,7 +128,7 @@ struct Vector3
     inline void Normalize()
     {
 #ifdef _WIN32
-        Data = XMVector3Normalize(Data);
+        Data = DXMATH_NAMESPACE XMVector3Normalize(Data);
 #else
         // TODO: Is this correct?
         Copy(*this / Length());

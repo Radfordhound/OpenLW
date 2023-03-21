@@ -43,6 +43,9 @@
     <ClCompile Include="..\..\src\csl\ut\link_list.cpp" />
     <ClCompile Include="..\..\src\csl\ut\number.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\csl\math\math_includes.inl" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AA184D1E-B941-4470-B96E-00C90D12499A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

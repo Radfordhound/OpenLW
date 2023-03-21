@@ -7,13 +7,10 @@ namespace math
 {
 struct Quaternion;
 
-#ifdef _WIN32
-__declspec(align(16))
-#endif
 struct Matrix34
 {
 #ifdef _WIN32
-    XMMATRIX Data;
+    DXMATH_NAMESPACE XMMATRIX Data;
 #endif
 
     // TODO: Is this function actually a thing?

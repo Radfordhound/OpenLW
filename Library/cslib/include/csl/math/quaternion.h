@@ -1,10 +1,5 @@
 #pragma once
-
-#ifdef _WIN32
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-#include <xnamath.h>
-#endif
+#include "math_includes.inl"
 
 namespace csl
 {
@@ -15,7 +10,7 @@ struct Vector3;
 struct Quaternion
 {
 #ifdef _WIN32
-    XMVECTOR Data;
+    DXMATH_NAMESPACE XMVECTOR Data;
 #endif
 
     void Copy(const Quaternion& other)
@@ -26,7 +21,7 @@ struct Quaternion
     void Set(float x, float y, float z, float w)
     {
 #ifdef _WIN32
-        Data = XMVectorSet(x, y, z, w);
+        Data = DXMATH_NAMESPACE XMVectorSet(x, y, z, w);
 #else
         // TODO
 #endif
@@ -39,7 +34,8 @@ struct Quaternion
 
 #ifdef _WIN32
         // TODO: Is this correct?
-        result.Data = XMQuaternionMultiply(Data, other.Data);
+        result.Data = DXMATH_NAMESPACE XMQuaternionMultiply(
+			Data, other.Data);
 #else
         // TODO
 #endif
