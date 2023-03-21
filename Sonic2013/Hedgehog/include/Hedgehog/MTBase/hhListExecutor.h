@@ -1,4 +1,5 @@
 #pragma once
+#include "hhJob.h"
 #include <Hedgehog/Base/System/hhEventWait.h>
 #include <boost/shared_ptr.hpp>
 #include <cstring>
