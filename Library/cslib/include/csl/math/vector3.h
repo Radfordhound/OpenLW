@@ -125,6 +125,36 @@ struct Vector3
         return result;
     }
 
+    inline Vector3 operator+(const Vector3& other) const
+    {
+        Vector3 result;
+
+#ifdef _WIN32
+        // TODO: Is this correct?
+        result.Data = DXMATH_NAMESPACE XMVectorAdd(
+			Data, other.Data);
+#else
+        // TODO
+#endif
+
+        return result;
+    }
+
+    inline Vector3 operator-(const Vector3& other) const
+    {
+        Vector3 result;
+
+#ifdef _WIN32
+        // TODO: Is this correct?
+        result.Data = DXMATH_NAMESPACE XMVectorSubtract(
+			Data, other.Data);
+#else
+        // TODO
+#endif
+
+        return result;
+    }
+
     inline void Normalize()
     {
 #ifdef _WIN32
