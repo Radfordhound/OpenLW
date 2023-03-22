@@ -22,7 +22,8 @@ struct Matrix34
     float GetValue(int row, int column) const
     {
 #ifdef _WIN32
-        return Data.m[column][row];
+        return reinterpret_cast<const DXMATH_NAMESPACE XMFLOAT4X4&>(
+            Data)(column, row);
 #else
         // TODO: It seems on Wii U, they use column-major order?
         // return Data.m[row][column];
