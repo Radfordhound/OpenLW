@@ -1,6 +1,6 @@
 // TODO: The name of this file is correct, but the path was guessed!
 // NOTE: This file appears to be included in Wii U builds also, just disabled.
-#include "pch.h"
+#include "OpenLW/pch.h"
 #ifdef _WIN32
 #include "DeviceTouchWin.h"
 

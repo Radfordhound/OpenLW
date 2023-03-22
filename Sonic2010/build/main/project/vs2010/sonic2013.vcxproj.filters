@@ -649,6 +649,9 @@
     <Filter Include="xgame\system\DisplaySwitch">
       <UniqueIdentifier>{555069ec-4666-4e49-9c69-7a984df5a88c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OpenLW">
+      <UniqueIdentifier>{6ae0b15f-ac14-4ef7-ada7-ac5fd9c82a84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp">
@@ -858,7 +861,9 @@
     <ClCompile Include="..\..\src\System\ApplicationPropertyImpl.cpp">
       <Filter>System</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\pch.cpp" />
+    <ClCompile Include="..\..\src\OpenLW\pch.cpp">
+      <Filter>OpenLW</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1089,7 +1094,9 @@
     <ClInclude Include="..\..\src\HUD\SurfRidePlatformMIRAGE.h">
       <Filter>HUD</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\pch.h" />
+    <ClInclude Include="..\..\src\OpenLW\pch.h">
+      <Filter>OpenLW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\Input\KBACTION.inl">
