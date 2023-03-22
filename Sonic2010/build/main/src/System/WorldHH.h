@@ -6,7 +6,7 @@ namespace app
 {
 class CWorld // TODO: Inheritance
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     // TODO: Other data members.
 
 public:

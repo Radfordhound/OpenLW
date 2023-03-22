@@ -17,7 +17,7 @@ struct SUpdateInfo;
 class CGameSequence : public fnd::ReferencedObject,
     public TTinyFsm<CGameSequence, TiFsmBasicEvent<CGameSequence>, true> // size == 0xF0
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     CGame* m_game;
     GameMode* m_gameMode;
     csl::ut::FixedString<16> field_0x28;

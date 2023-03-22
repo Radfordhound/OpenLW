@@ -8,7 +8,7 @@ namespace app
 {
 class CriSystem : public fnd::ReferencedObject, public csl::fnd::Singleton<CriSystem> // size == 16
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     struct Impl;

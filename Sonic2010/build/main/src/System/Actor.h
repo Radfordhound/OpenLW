@@ -26,7 +26,7 @@ enum UpdatingPhase
 
 class CActor : public boost::noncopyable // size == 0x1c
 {
-LWAPI_PROTECTED
+OPENLW_PROTECTED
     unsigned int m_ID;
     MessageManager* m_msgMgr;
     CActor* m_parent;

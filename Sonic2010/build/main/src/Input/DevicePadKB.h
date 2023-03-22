@@ -31,7 +31,7 @@ const char* GetKBActionRegKeyName(KBACTION action);
 
 class DevicePadKB : public DevicePlatformBase // sizeof == 0x420
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     // TODO: Data Members
 
 public:

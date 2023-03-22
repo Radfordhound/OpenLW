@@ -12,7 +12,7 @@ class CActor;
 
 class MessageManager : public ReferencedObject, public csl::fnd::Singleton<MessageManager> // size == 0x4c
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     unsigned int m_curID;

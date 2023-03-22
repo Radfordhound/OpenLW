@@ -18,7 +18,7 @@ extern csl::fnd::IAllocator* GameAllocator;
 
 class CGame : public GameBase // size == 0x7c
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     ut::RefPtr<GameMode> m_gameMode;
     CGameSequence* m_gameSeq;
     // TODO

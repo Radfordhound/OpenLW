@@ -9,7 +9,7 @@ struct ApplicationPropertyImpl;
 class ApplicationProperty : public fnd::ReferencedObject,
     public csl::fnd::Singleton<ApplicationProperty>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     ApplicationPropertyImpl* m_impl;

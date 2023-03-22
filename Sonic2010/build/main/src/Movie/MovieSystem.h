@@ -12,7 +12,7 @@ class CMoviePlayer;
 class CMovieSystem : public ReferencedObject, // size == 0x124
     public csl::fnd::Singleton<CMovieSystem>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     csl::ut::MoveArray<CMoviePlayer*> m_players;
     csl::fnd::IAllocator* m_playerAllocator;
     float field_0x20;

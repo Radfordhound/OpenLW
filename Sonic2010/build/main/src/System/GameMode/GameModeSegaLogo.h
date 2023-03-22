@@ -14,7 +14,7 @@ class CMoviePlayer;
 class GameModeSegalogo : public GameMode, public TTinyFsm<GameModeSegalogo,
     GameModeUtil::Event<GameModeSegalogo>> // size == 0x58
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     fnd::CMoviePlayer* m_player;
     unsigned int field_0x38;
     unsigned int field_0x3c;

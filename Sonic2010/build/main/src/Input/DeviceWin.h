@@ -13,7 +13,7 @@ namespace hid
 {
 class DeviceWin : public DeviceBase, public csl::fnd::Singleton<DeviceWin>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     csl::ut::InplaceMoveArray<DevicePlatformBase*, MAX_DEVICE_PORTS> m_platforms;

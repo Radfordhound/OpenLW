@@ -14,7 +14,7 @@ struct MsgWarningEnd;
 class GameModeStartUp : public GameMode, public TTinyFsm<GameModeStartUp,
     GameModeUtil::Event<GameModeStartUp>> // size == 0x3c
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     bool m_isWarningEnd;
     boost::intrusive_ptr<SaveData::CSaveAuto> field_0x38;
 

@@ -1,9 +1,11 @@
 #pragma once
 
+// OpenLW
+#define OPENLW_PRIVATE private:
+#define OPENLW_PROTECTED protected:
+
 // LWAPI
 #define LWAPI(addrWiiU, addrPC)
-#define LWAPI_PRIVATE private:
-#define LWAPI_PROTECTED protected:
 
 // Standard library includes
 #include <climits>

@@ -8,7 +8,7 @@ namespace app
 {
 class SyncTimer : public fnd::ReferencedObject, public csl::fnd::Singleton<SyncTimer>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     bool field_0xc;

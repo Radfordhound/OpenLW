@@ -10,7 +10,7 @@ namespace fnd
 {
 class ReferencedObject : public BaseObject
 {
-LWAPI_PROTECTED
+OPENLW_PROTECTED
     unsigned short m_size;
     unsigned short m_refCount;
     csl::fnd::IAllocator* m_allocator;

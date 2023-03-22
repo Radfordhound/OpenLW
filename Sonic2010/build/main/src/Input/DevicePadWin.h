@@ -10,7 +10,7 @@ namespace hid
 {
 class DevicePadWin : public DevicePlatformBase // sizeof == 0x308
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     // TODO
 
 public:

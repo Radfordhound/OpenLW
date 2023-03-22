@@ -14,7 +14,7 @@ namespace hid
 {
 class DeviceTouchWin : public DevicePlatformBase // size == 0x34
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     struct InputWrapper // TODO: Is this a good name?
     {
         void* Handle;

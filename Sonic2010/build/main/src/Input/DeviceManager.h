@@ -9,7 +9,7 @@ namespace hid
 {
 class DeviceManager : public fnd::ReferencedObject, public csl::fnd::Singleton<DeviceManager>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     struct Impl;

@@ -9,7 +9,7 @@ namespace fnd
 {
 class CBranchActor : public CActor // size == 0x5c
 {
-LWAPI_PROTECTED
+OPENLW_PROTECTED
     csl::ut::MoveArray<CActor*> m_childActors;
     csl::ut::MoveArray<CActor*> m_phasedActors[PHASE_COUNT];
 

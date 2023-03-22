@@ -11,7 +11,7 @@ struct Renderable;
 
 class CRenderSceneView : public fnd::ReferencedObject // size == 20
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     CRenderSceneViewImpl* m_impl;
     bool field_0x10;
 

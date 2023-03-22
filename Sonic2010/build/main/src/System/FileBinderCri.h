@@ -19,7 +19,7 @@ namespace fnd
 {
 class FileBinderCri : public FileBinder
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     csl::fnd::IAllocator* allocator;
     CriFsBinderHn binder;
     csl::ut::MoveArray<unsigned int> boundIDs;

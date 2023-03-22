@@ -8,7 +8,7 @@ namespace gfx
 {
 class CRMSceneViewImpl : public CRenderSceneViewImpl
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     // TODO: Data members?
 
 public:

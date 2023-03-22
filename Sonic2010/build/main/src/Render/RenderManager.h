@@ -13,7 +13,7 @@ struct Renderable;
 
 class RenderManager : public fnd::ReferencedObject, public csl::fnd::Singleton<RenderManager>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     struct Impl;
     Impl* m_impl;
 

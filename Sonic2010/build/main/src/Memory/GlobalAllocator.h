@@ -16,7 +16,7 @@ namespace game
 {
 class GlobalAllocator
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     LWAPI(0x10338d38, 0x00fd7c34)
     static csl::fnd::IAllocator* Allocators[4];
 

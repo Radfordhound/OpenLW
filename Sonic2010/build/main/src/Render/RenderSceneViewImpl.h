@@ -44,7 +44,7 @@ class CRenderSceneView;
 class CRenderSceneViewImpl : public IRenderScheduler, // size == 0x162e0
     public Extra::fx::IRenderOneCallback
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     friend CRenderSceneView;
 
     // TODO: Other data members.

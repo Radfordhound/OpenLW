@@ -8,7 +8,7 @@ namespace fnd
 {
 class FileBinder
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     // TODO: Data Members
 
 public:

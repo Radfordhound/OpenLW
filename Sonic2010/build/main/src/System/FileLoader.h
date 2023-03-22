@@ -30,7 +30,7 @@ struct FileLoaderParam // size == 24
 
 class FileLoader : public ReferencedObject, public csl::fnd::Singleton<FileLoader> // size == 104
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
 public:
@@ -68,7 +68,7 @@ public:
             unsigned int param_3);
     };
 
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     csl::fnd::IAllocator* field_0xc;
     csl::ut::MoveArray<LoadInfo*> field_0x10;
     csl::ut::MoveArray<LoadInfo*> field_0x20;

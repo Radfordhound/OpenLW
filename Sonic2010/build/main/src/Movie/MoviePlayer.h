@@ -33,7 +33,7 @@ enum CMoviePlayerFlags
 
 class CMoviePlayer : public ReferencedObject // size == 0x1fc
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     csl::ut::StringBuf<256> field_0xc;
     CriManaPlayerHn m_playerHandle;
     boost::shared_ptr<hh::mr::CVertexShaderData> m_vtxShader;

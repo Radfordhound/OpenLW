@@ -84,7 +84,7 @@ struct ResourceCallbackData // size == 8
 
 class ResourceManager : public ReferencedObject, public csl::fnd::Singleton<ResourceManager> // size == 0xc0
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     struct ResourceData // size == 20

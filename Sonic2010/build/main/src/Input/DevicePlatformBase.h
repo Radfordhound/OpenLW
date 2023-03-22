@@ -9,7 +9,7 @@ namespace hid
 {
 class DevicePlatformBase : public fnd::ReferencedObject
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     // TODO: Are there any data members?
 
 public:

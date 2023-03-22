@@ -11,7 +11,7 @@ struct Message;
 template<typename T, typename _event_t>
 class TTinyFsmEvent
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     int m_sig;
 
 public:
@@ -42,7 +42,7 @@ enum TiFsmBasicEventSignal // TODO: This name was guessed. Is it good?
 template<typename T>
 class TiFsmBasicEvent : public TTinyFsmEvent<T, TiFsmBasicEvent<T>>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     union
     {
         int m_integer;
@@ -135,7 +135,7 @@ public:
     typedef TTinyFsmState<T, event_t> this_t;
     typedef this_t (T::*event_func)(const event_t& e);
 
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     event_func m_delegate;
 
 public:
@@ -201,7 +201,7 @@ public:
     typedef TTinyFsmState<T, _event_t> state_t;
     typedef _event_t event_t;
 
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     // TODO: I might have gotten the m_cur and m_src names mixed up actually lol.
     // Regardless this is functionally still accurate to what LW actually does.
     state_t m_cur;

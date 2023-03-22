@@ -27,7 +27,7 @@ class FileBinder;
 
 class FileReader : public ReferencedObject, public csl::fnd::Singleton<FileReader>
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     // TODO: Are there any data members?

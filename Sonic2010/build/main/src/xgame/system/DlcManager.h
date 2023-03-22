@@ -12,7 +12,7 @@ class DlcManagerImpl; // size == 228
 class DlcManager : public fnd::ReferencedObject,
     public csl::fnd::Singleton<DlcManager> // size == 16
 {
-LWAPI_PRIVATE
+OPENLW_PRIVATE
     DECLARE_SINGLETON
 
     DlcManagerImpl* m_impl;
