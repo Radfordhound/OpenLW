@@ -652,6 +652,9 @@
     <Filter Include="OpenLW">
       <UniqueIdentifier>{6ae0b15f-ac14-4ef7-ada7-ac5fd9c82a84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{3ae786c0-a5c0-423d-98e8-23a99aad87a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp">
@@ -869,6 +872,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\pch.cpp">
       <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Sound\SoundHandle.cpp">
+      <Filter>Sound</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\System\Handle.cpp">
       <Filter>System</Filter>
@@ -1114,6 +1120,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\System\Component\Fsm.h">
       <Filter>System\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Sound\SoundHandle.h">
+      <Filter>Sound</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\System\Handle.h">
       <Filter>System</Filter>
