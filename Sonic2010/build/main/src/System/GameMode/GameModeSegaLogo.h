@@ -1,6 +1,6 @@
 #pragma once
 #include "GameMode.h"
-#include "System/Component/TinyFsm.h"
+#include "System/Component/Fsm.h"
 #include "Render/gfx_Renderable.h"
 #include <boost/intrusive_ptr.hpp>
 
@@ -9,10 +9,10 @@ namespace app
 namespace fnd
 {
 class CMoviePlayer;
-}
+} // fnd
 
-class GameModeSegalogo : public GameMode, public TTinyFsm<GameModeSegalogo,
-    GameModeUtil::Event<GameModeSegalogo>> // size == 0x58
+class GameModeSegalogo : public GameMode,
+	public GameModeUtil::Fsm<GameModeSegalogo>::Type
 {
 OPENLW_PRIVATE
     fnd::CMoviePlayer* m_player;
@@ -36,18 +36,18 @@ public:
     void LoadData();
 
     LWAPI(0x02add5f4, TODO)
-    void ChangeState(state_t::event_func newState);
+    void ChangeState(EventFunc state);
 
     LWAPI(0x02add660, TODO)
-    state_t StateLoad(const event_t& e);
+    StateType StateLoad(const EventType& e);
 
     LWAPI(0x02add844, 0x00930c90)
-    state_t StateExec(const event_t& e);
+    StateType StateExec(const EventType& e);
 
     LWAPI(0x02adde2c, TODO)
     void Draw();
 
-    struct MyRenderable : public gfx::Renderable // size == 0x60
+    struct MyRenderable : public gfx::Renderable
     {
         GameModeSegalogo* GameMode;
 
@@ -63,5 +63,10 @@ public:
         LWAPI(0x02adde94, 0x009309a0)
         void Render(const hh::gfx::RenderEventParam* params);
     };
+
+    LWAPI_STATIC_ASSERT_SIZE(MyRenderable, 0x60)
 };
-}
+
+// TODO: Uncomment once all fields have been added.
+//LWAPI_STATIC_ASSERT_SIZE(GameModeSegalogo, 0x58)
+} // app

@@ -14,7 +14,7 @@ namespace app
 {
 bool CGameSequence::ProcessMessage(fnd::Message& msg)
 {
-    DispatchFSM(event_t::CreateMessage(msg));
+    DispatchFSM(EventType::CreateMessage(msg));
     return msg.Received;
 }
 
@@ -36,7 +36,7 @@ void CGameSequence::ShutdownGameMode()
 
 void CGameSequence::StartLeakChecker() {}
 
-CGameSequence::state_t CGameSequence::StateBoot(const event_t& e)
+CGameSequence::StateType CGameSequence::StateBoot(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -61,7 +61,7 @@ CGameSequence::state_t CGameSequence::StateBoot(const event_t& e)
     return FSM_TOP();
 }
 
-CGameSequence::state_t CGameSequence::StateProduct(const event_t& e)
+CGameSequence::StateType CGameSequence::StateProduct(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -73,7 +73,7 @@ CGameSequence::state_t CGameSequence::StateProduct(const event_t& e)
     return FSM_TOP();
 }
 
-CGameSequence::state_t CGameSequence::StateSegaLogo(const event_t& e)
+CGameSequence::StateType CGameSequence::StateSegaLogo(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -100,9 +100,9 @@ CGameSequence::state_t CGameSequence::StateSegaLogo(const event_t& e)
     return &CGameSequence::StateProduct;
 }
 
-void CGameSequence::ChangeState(state_t::event_func newState)
+void CGameSequence::ChangeState(EventFunc state)
 {
-    m_nextState = newState;
+    m_nextState = state;
 }
 
 void CGameSequence::Start()
@@ -118,7 +118,7 @@ void CGameSequence::Update(const fnd::SUpdateInfo& updateInfo)
         m_nextState = nullptr;
     }
 
-    DispatchFSM(event_t::CreateUpdate(updateInfo.DeltaTime));
+    DispatchFSM(EventType::CreateUpdate(updateInfo.DeltaTime));
 }
 
 CGameSequence::CGameSequence(CGame& game) :

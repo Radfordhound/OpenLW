@@ -1097,6 +1097,9 @@
     <ClInclude Include="..\..\src\OpenLW\pch.h">
       <Filter>OpenLW</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\System\Component\Fsm.h">
+      <Filter>System\Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\Input\KBACTION.inl">

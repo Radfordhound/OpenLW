@@ -36,7 +36,7 @@ void GameModeStartUp::Update(CGame& game, const fnd::SUpdateInfo& updateInfo)
     DlcManager& dlcMgr = DlcManager::GetInstance();
     dlcMgr.Update();
 
-    DispatchFSM(event_t::CreateUpdate(updateInfo.DeltaTime));
+    DispatchFSM(EventType::CreateUpdate(updateInfo.DeltaTime));
 }
 
 bool GameModeStartUp::ProcessMessage(CGame& game, fnd::Message& msg)
@@ -55,7 +55,7 @@ bool GameModeStartUp::ProcessMessage(CGame& game, fnd::Message& msg)
 
 bool GameModeStartUp::PreProcessMessage(CGame& game, fnd::Message& msg)
 {
-    DispatchFSM(event_t::CreateMessage(msg));
+    DispatchFSM(EventType::CreateMessage(msg));
     return msg.Received;
 }
 
@@ -137,12 +137,12 @@ void GameModeStartUp::LoadResidentFile()
     // TODO
 }
 
-void GameModeStartUp::ChangeState(state_t::event_func newState)
+void GameModeStartUp::ChangeState(EventFunc state)
 {
-    FSM_TRAN(newState);
+    FSM_TRAN(state);
 }
 
-GameModeStartUp::state_t GameModeStartUp::StateFirstCpk(const event_t& e)
+GameModeStartUp::StateType GameModeStartUp::StateFirstCpk(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -167,7 +167,7 @@ GameModeStartUp::state_t GameModeStartUp::StateFirstCpk(const event_t& e)
     return FSM_TOP();
 }
 
-GameModeStartUp::state_t GameModeStartUp::StateLoadGame(const event_t& e)
+GameModeStartUp::StateType GameModeStartUp::StateLoadGame(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -189,7 +189,7 @@ GameModeStartUp::state_t GameModeStartUp::StateLoadGame(const event_t& e)
     return FSM_TOP();
 }
 
-GameModeStartUp::state_t GameModeStartUp::StateLoadResidentFile(const event_t& e)
+GameModeStartUp::StateType GameModeStartUp::StateLoadResidentFile(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -212,7 +212,7 @@ GameModeStartUp::state_t GameModeStartUp::StateLoadResidentFile(const event_t& e
     return FSM_TOP();
 }
 
-GameModeStartUp::state_t GameModeStartUp::StateMain(const event_t& e)
+GameModeStartUp::StateType GameModeStartUp::StateMain(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -232,7 +232,7 @@ GameModeStartUp::state_t GameModeStartUp::StateMain(const event_t& e)
     return FSM_TOP();
 }
 
-GameModeStartUp::state_t GameModeStartUp::StateAfterLoad(const event_t& e)
+GameModeStartUp::StateType GameModeStartUp::StateAfterLoad(const EventType& e)
 {
     switch (e.getSignal())
     {

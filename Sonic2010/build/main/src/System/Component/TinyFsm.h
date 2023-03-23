@@ -6,16 +6,16 @@ namespace app
 namespace fnd
 {
 struct Message;
-}
+} // fnd
 
-template<typename T, typename _event_t>
+template<typename T, typename _EventType>
 class TTinyFsmEvent
 {
 OPENLW_PRIVATE
     int m_sig;
 
 public:
-    typedef _event_t event_t;
+    typedef _EventType EventType;
 
     int getSignal() const
     {
@@ -57,15 +57,15 @@ OPENLW_PRIVATE
 
     // TODO: Is this constructor actually a thing?
     inline TiFsmBasicEvent(int signal, float deltaTime) :
-        TTinyFsmEvent<T, TiFsmBasicEvent<T>>(signal), m_float(deltaTime) {}
+        TTinyFsmEvent<T, TiFsmBasicEvent<T>>(signal),
+        m_float(deltaTime) {}
 
     // TODO: Is this constructor actually a thing?
     inline TiFsmBasicEvent(int signal, fnd::Message& msg) :
-        TTinyFsmEvent<T, TiFsmBasicEvent<T>>(signal), m_message(&msg) {}
+        TTinyFsmEvent<T, TiFsmBasicEvent<T>>(signal),
+        m_message(&msg) {}
 
 public:
-    typedef TiFsmBasicEvent<T> this_t;
-
     // TODO: Is this function actually a thing?
     inline int getInt() const
     {
@@ -85,58 +85,59 @@ public:
     }
 
     // TODO: Is this function actually a thing?
-    inline static this_t CreateSignal(int signal)
+    static inline TiFsmBasicEvent<T> CreateSignal(int signal)
     {
-        return this_t(signal);
+        return TiFsmBasicEvent<T>(signal);
     }
 
     // TODO: Is this function actually a thing?
-    inline static this_t CreateSuper()
+    static inline TiFsmBasicEvent<T> CreateSuper()
     {
         return CreateSignal(SIGNAL_SUPER);
     }
 
     // TODO: Is this function actually a thing?
-    inline static this_t CreateInit()
+    static inline TiFsmBasicEvent<T> CreateInit()
     {
         return CreateSignal(SIGNAL_INIT);
     }
 
     // TODO: Is this function actually a thing?
-    inline static this_t CreateEnter()
+    static inline TiFsmBasicEvent<T> CreateEnter()
     {
         return CreateSignal(SIGNAL_ENTER);
     }
 
     // TODO: Is this function actually a thing?
-    inline static this_t CreateLeave()
+    static inline TiFsmBasicEvent<T> CreateLeave()
     {
         return CreateSignal(SIGNAL_LEAVE);
     }
 
-    inline static this_t CreateUpdate(float deltaTime)
+    static inline TiFsmBasicEvent<T> CreateUpdate(float deltaTime)
     {
-        return this_t(SIGNAL_UPDATE, deltaTime);
+        return TiFsmBasicEvent<T>(SIGNAL_UPDATE, deltaTime);
     }
 
-    inline static this_t CreateMessage(fnd::Message& msg)
+    static inline TiFsmBasicEvent<T> CreateMessage(fnd::Message& msg)
     {
-        return this_t(SIGNAL_MESSAGE, msg);
+        return TiFsmBasicEvent<T>(SIGNAL_MESSAGE, msg);
     }
 };
 
-template<typename T, typename _event_t = TiFsmBasicEvent<T>, bool hierarchical = false>
+template<typename T, typename _EventType = TiFsmBasicEvent<T>, bool IsHierarchical = false>
 class TTinyFsm;
 
-template<typename T, typename event_t = TiFsmBasicEvent<T>>
+template<typename T, typename _EventType = TiFsmBasicEvent<T>>
 class TTinyFsmState
 {
 public:
-    typedef TTinyFsmState<T, event_t> this_t;
-    typedef this_t (T::*event_func)(const event_t& e);
+    typedef _EventType EventType;
+    typedef TTinyFsmState<T, EventType> ThisType;
+    typedef ThisType (T::*EventFunc)(const EventType& e);
 
 OPENLW_PRIVATE
-    event_func m_delegate;
+    EventFunc m_delegate;
 
 public:
     //// TODO: Is this function actually a thing?
@@ -152,36 +153,36 @@ public:
     //}
 
     //// TODO: Is this function actually a thing?
-    //inline this_t Call(T* obj, const event_t& e)
+    //inline ThisType Call(T* obj, const EventType& e)
     //{
     //    return (obj->*m_delegate)(e);
     //}
 
-    inline operator event_func() const
+    inline operator EventFunc() const
     {
         return m_delegate;
     }
 
     //// TODO: Is this function actually a thing?
-    //inline bool operator==(const this_t& other) const
+    //inline bool operator==(const ThisType& other) const
     //{
     //    return (m_delegate == other.m_delegate);
     //}
 
     //// TODO: Is this function actually a thing?
-    //inline bool operator!=(const this_t& other) const
+    //inline bool operator!=(const ThisType& other) const
     //{
     //    return (m_delegate != other.m_delegate);
     //}
 
     //// TODO: Is this function actually a thing?
-    //inline bool operator==(const event_func& eventFunc) const
+    //inline bool operator==(const EventFunc& eventFunc) const
     //{
     //    return (m_delegate == eventFunc);
     //}
 
     //// TODO: Is this function actually a thing?
-    //inline bool operator!=(const event_func& eventFunc) const
+    //inline bool operator!=(const EventFunc& eventFunc) const
     //{
     //    return (m_delegate != eventFunc);
     //}
@@ -189,57 +190,58 @@ public:
     inline TTinyFsmState() :
         m_delegate(nullptr) {}
 
-    inline TTinyFsmState(event_func eventFunc) :
+    inline TTinyFsmState(EventFunc eventFunc) :
         m_delegate(eventFunc) {}
 };
 
-template<typename T, typename _event_t, bool hierarchical>
+template<typename T, typename _EventType, bool IsHierarchical>
 class TTinyFsm
 {
 public:
-    typedef TTinyFsm<T, _event_t, hierarchical> this_t;
-    typedef TTinyFsmState<T, _event_t> state_t;
-    typedef _event_t event_t;
+    typedef _EventType EventType;
+    typedef TTinyFsm<T, EventType, IsHierarchical> ThisType;
+    typedef TTinyFsmState<T, EventType> StateType;
+    typedef typename StateType::EventFunc EventFunc;
 
 OPENLW_PRIVATE
     // TODO: I might have gotten the m_cur and m_src names mixed up actually lol.
     // Regardless this is functionally still accurate to what LW actually does.
-    state_t m_cur;
-    state_t m_src;
+    StateType m_cur;
+    StateType m_src;
 
     // TODO: Is this function actually a thing?
-    inline state_t Trigger(typename state_t::event_func state, const event_t& e)
+    inline StateType Trigger(EventFunc state, const EventType& e)
     {
         return (static_cast<T*>(this)->*state)(e);
     }
 
     // TODO: Is this function actually a thing?
-    inline state_t Super(typename state_t::event_func state)
+    inline StateType Super(EventFunc state)
     {
-        return Trigger(state, event_t::CreateSuper());
+        return Trigger(state, EventType::CreateSuper());
     }
 
     // TODO: Is this function actually a thing?
-    inline state_t Init(typename state_t::event_func state)
+    inline StateType Init(EventFunc state)
     {
-        return Trigger(state, event_t::CreateInit());
+        return Trigger(state, EventType::CreateInit());
     }
 
     // TODO: Is this function actually a thing?
-    inline void Enter(typename state_t::event_func state)
+    inline void Enter(EventFunc state)
     {
-        Trigger(state, event_t::CreateEnter());
+        Trigger(state, EventType::CreateEnter());
     }
 
     // TODO: Is this function actually a thing?
-    inline void Leave(typename state_t::event_func state)
+    inline void Leave(EventFunc state)
     {
-        Trigger(state, event_t::CreateLeave());
+        Trigger(state, EventType::CreateLeave());
     }
 
-    state_t _top(const event_t& event) // TODO: Is this actually defined by the user of this class?
+    StateType _top(const EventType& e) // TODO: Is this actually defined by the user of this class?
     {
-        return state_t();
+        return StateType();
     }
 
     // TODO: Is this function actually a thing? It appears to
@@ -254,24 +256,24 @@ OPENLW_PRIVATE
     }
 
 public:
-    state_t FSM_TOP() const
+    StateType FSM_TOP() const
     {
-        return state_t(&this_t::_top); // TODO: Is this correct?
+        return StateType(&ThisType::_top); // TODO: Is this correct?
     }
 
-    void FSM_INIT(state_t initialState)
+    void FSM_INIT(StateType initialState)
     {
         m_src = initialState;
     }
 
-    void FSM_TRAN(state_t state)
+    void FSM_TRAN(StateType state)
     {
-        if (hierarchical)
+        if (IsHierarchical)
         {
-            for (state_t tinyFsmState = m_cur; tinyFsmState != m_src;
-                tinyFsmState = Super(tinyFsmState))
+            // Leave all events from all states.
+            for (EventFunc e = m_cur; e != m_src; e = Super(e))
             {
-                Leave(tinyFsmState);
+                Leave(e);
             }
 
             if (m_cur == state)
@@ -284,8 +286,8 @@ public:
                 // TODO: It seems the "stateStack" stuff is actually, like, a csl implace move array or something??
 
                 // Call the current state and all of its base states.
-                state_t stateStack[5];
-                state_t tinyFsmState = m_cur;
+                StateType stateStack[5];
+                StateType tinyFsmState = m_cur;
                 int i = 0;
 
                 while (tinyFsmState != FSM_TOP())
@@ -295,8 +297,8 @@ public:
                 }
 
                 // Call the new state and all of its base states.
-                state_t stateStack2[5];
-                state_t tinyFsmState2 = state;
+                StateType stateStack2[5];
+                StateType tinyFsmState2 = state;
                 int i2 = 0;
 
                 while (tinyFsmState2 != FSM_TOP())
@@ -305,8 +307,8 @@ public:
                     tinyFsmState2 = Super(tinyFsmState2);
                 }
 
-                state_t* firstUnique1 = &stateStack[i];
-                state_t* firstUnique2 = &stateStack2[i2];
+                StateType* firstUnique1 = &stateStack[i];
+                StateType* firstUnique2 = &stateStack2[i2];
 
                 while (firstUnique1 != stateStack && firstUnique2 != stateStack2 &&
                     *firstUnique1 == nullptr || firstUnique1 == firstUnique2)
@@ -315,7 +317,7 @@ public:
                     --firstUnique2;
                 }
 
-                state_t* curPtr = stateStack;
+                StateType* curPtr = stateStack;
                 while (curPtr != firstUnique1)
                 {
                     Leave(*(curPtr++));
@@ -340,7 +342,7 @@ public:
         }
     }
 
-    void FSM_SETSTATE(state_t state)
+    void FSM_SETSTATE(StateType state)
     {
         m_cur = m_src;
         FSM_TRAN(state);
@@ -348,11 +350,11 @@ public:
 
     void InitFSM()
     {
-        if (hierarchical)
+        if (IsHierarchical)
         {
             // Call super event on all source states.
-            state_t stateStack[5];
-            state_t tinyFsmState = m_src;
+            StateType stateStack[5];
+            StateType tinyFsmState = m_src;
             int i = 0;
 
             while (tinyFsmState != FSM_TOP())
@@ -362,7 +364,7 @@ public:
             }
 
             // Call enter event on all source states in reverse order.
-            state_t* curPtr = &stateStack[i];
+            StateType* curPtr = &stateStack[i];
             while (curPtr-- != stateStack)
             {
                 Enter(*curPtr);
@@ -376,14 +378,14 @@ public:
         }
     }
 
-    void DispatchFSM(const event_t& e)
+    void DispatchFSM(const EventType& e)
     {
-        if (hierarchical)
+        if (IsHierarchical)
         {
             m_cur = m_src;
             while (m_cur)
             {
-                state_t tinyFsmState = Trigger(m_cur, e);
+                StateType tinyFsmState = Trigger(m_cur, e);
                 if (!tinyFsmState) break;
 
                 m_cur = Super(m_cur);
@@ -397,7 +399,7 @@ public:
 
     void ShutdownFSM()
     {
-        if (hierarchical)
+        if (IsHierarchical)
         {
             // TODO (Check 0x02a7f190 to implement this)
             __debugbreak();
@@ -412,7 +414,7 @@ public:
         }
     }
 
-    TTinyFsm(state_t param_1) :
+    TTinyFsm(StateType param_1) :
         m_cur(FSM_TOP()),
         m_src(param_1) {}
 
@@ -421,4 +423,4 @@ public:
         // TODO: Does the "default" virtual destructor have a body?
     }
 };
-}
+} // app

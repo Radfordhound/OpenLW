@@ -12,16 +12,16 @@ namespace fnd
 {
 struct Message;
 struct SUpdateInfo;
-}
+} // fnd
 
 class CGameSequence : public fnd::ReferencedObject,
-    public TTinyFsm<CGameSequence, TiFsmBasicEvent<CGameSequence>, true> // size == 0xF0
+    public TTinyFsm<CGameSequence, TiFsmBasicEvent<CGameSequence>, true>
 {
 OPENLW_PRIVATE
     CGame* m_game;
     GameMode* m_gameMode;
     csl::ut::FixedString<16> field_0x28;
-    state_t::event_func m_nextState;
+    EventFunc m_nextState;
     // TODO
 
 public:
@@ -38,16 +38,16 @@ public:
     void StartLeakChecker();
 
     LWAPI(0x02a83998, 0x00910c30)
-    state_t StateBoot(const event_t& e);
+    StateType StateBoot(const EventType& e);
 
     LWAPI(0x02a83b38, TODO)
-    state_t StateProduct(const event_t& e);
+    StateType StateProduct(const EventType& e);
 
     LWAPI(0x02a83c00, TODO)
-    state_t StateSegaLogo(const event_t& e);
+    StateType StateSegaLogo(const EventType& e);
 
     LWAPI(0x02a80ac8, TODO)
-    void ChangeState(state_t::event_func newState);
+    void ChangeState(EventFunc state);
 
     LWAPI(0x02a80970, 0x0090f240)
     void Start();
@@ -60,4 +60,7 @@ public:
     LWAPI(0x02a80808, 0x00910d10)
     CGameSequence(CGame& game);
 };
-}
+
+// TODO: Uncomment once all fields have been added.
+//LWAPI_STATIC_ASSERT_SIZE(CGameSequence, 0xF0)
+} // app

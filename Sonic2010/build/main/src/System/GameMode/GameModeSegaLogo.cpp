@@ -51,12 +51,12 @@ void GameModeSegalogo::LoadData()
     param.SetMultiLanguageAttr(false, 0);
 }
 
-void GameModeSegalogo::ChangeState(state_t::event_func newState)
+void GameModeSegalogo::ChangeState(EventFunc state)
 {
-    FSM_TRAN(newState);
+    FSM_TRAN(state);
 }
 
-GameModeSegalogo::state_t GameModeSegalogo::StateLoad(const event_t& e)
+GameModeSegalogo::StateType GameModeSegalogo::StateLoad(const EventType& e)
 {
     switch (e.getSignal())
     {
@@ -84,7 +84,7 @@ GameModeSegalogo::state_t GameModeSegalogo::StateLoad(const event_t& e)
     return FSM_TOP();
 }
 
-GameModeSegalogo::state_t GameModeSegalogo::StateExec(const event_t& e)
+GameModeSegalogo::StateType GameModeSegalogo::StateExec(const EventType& e)
 {
     switch (e.getSignal())
     {

@@ -206,6 +206,7 @@
     <ClInclude Include="..\..\src\System\Atomic.h" />
     <ClInclude Include="..\..\src\System\BaseObject.h" />
     <ClInclude Include="..\..\src\System\BranchActor.h" />
+    <ClInclude Include="..\..\src\System\Component\Fsm.h" />
     <ClInclude Include="..\..\src\System\Component\TinyFsm.h" />
     <ClInclude Include="..\..\src\System\Constants.h" />
     <ClInclude Include="..\..\src\System\CriSystem.h" />

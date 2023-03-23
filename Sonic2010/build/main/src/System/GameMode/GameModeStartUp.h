@@ -1,7 +1,7 @@
 #pragma once
 #include "GameMode.h"
 #include "SaveData/SaveAuto.h"
-#include "System/Component/TinyFsm.h"
+#include "System/Component/Fsm.h"
 #include <boost/intrusive_ptr.hpp>
 
 namespace app
@@ -11,8 +11,8 @@ namespace xgame
 struct MsgWarningEnd;
 }
 
-class GameModeStartUp : public GameMode, public TTinyFsm<GameModeStartUp,
-    GameModeUtil::Event<GameModeStartUp>> // size == 0x3c
+class GameModeStartUp : public GameMode,
+	public GameModeUtil::Fsm<GameModeStartUp>::Type
 {
 OPENLW_PRIVATE
     bool m_isWarningEnd;
@@ -55,24 +55,27 @@ public:
     void LoadResidentFile();
 
     LWAPI(0x02aa3d1c, TODO)
-    void ChangeState(state_t::event_func newState);
+    void ChangeState(EventFunc state);
 
     LWAPI(0x02aa3d88, TODO)
-    state_t StateFirstCpk(const event_t& e);
+    StateType StateFirstCpk(const EventType& e);
 
     LWAPI(0x02aa3fdc, TODO)
-    state_t StateLoadGame(const event_t& e);
+    StateType StateLoadGame(const EventType& e);
 
     LWAPI(0x02aa3e9c, TODO)
-    state_t StateLoadResidentFile(const event_t& e);
+    StateType StateLoadResidentFile(const EventType& e);
 
     LWAPI(0x02aa4114, TODO)
-    state_t StateMain(const event_t& e);
+    StateType StateMain(const EventType& e);
 
     LWAPI(0x02aa4458, TODO)
-    state_t StateAfterLoad(const event_t& e);
+    StateType StateAfterLoad(const EventType& e);
 
     LWAPI(0x02aa37b8, 0x0091bd60)
     GameModeStartUp();
 };
-}
+
+// TODO: Uncomment once all fields have been added.
+//LWAPI_STATIC_ASSERT_SIZE(GameModeStartUp, 0x3c)
+} // app
