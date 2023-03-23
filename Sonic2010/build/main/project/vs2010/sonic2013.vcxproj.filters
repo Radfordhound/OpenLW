@@ -652,6 +652,9 @@
     <Filter Include="OpenLW">
       <UniqueIdentifier>{6ae0b15f-ac14-4ef7-ada7-ac5fd9c82a84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Camera\Controller">
+      <UniqueIdentifier>{50f53218-18d0-45aa-8e36-906325ffeaa0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Sound">
       <UniqueIdentifier>{3ae786c0-a5c0-423d-98e8-23a99aad87a7}</UniqueIdentifier>
     </Filter>
@@ -875,6 +878,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\pch.cpp">
       <Filter>OpenLW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Camera\Controller\Player3DNormalCamera.cpp">
+      <Filter>Camera\Controller</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Player\Base\PlayerState.cpp">
       <Filter>Player\Base</Filter>
@@ -1132,6 +1138,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\System\Component\Fsm.h">
       <Filter>System\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Camera\Controller\Player3DNormalCamera.h">
+      <Filter>Camera\Controller</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\PlayerState.h">
       <Filter>Player\Base</Filter>
