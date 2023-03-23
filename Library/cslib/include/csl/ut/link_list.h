@@ -6,7 +6,7 @@ namespace csl
 {
 namespace ut
 {
-struct LinkListNode // size == 8
+struct LinkListNode
 {
     LinkListNode* Next;
     LinkListNode* Prev;
@@ -20,11 +20,13 @@ struct LinkListNode // size == 8
         Prev(prev) {}
 };
 
+LWAPI_STATIC_ASSERT_SIZE(LinkListNode, 8)
+
 namespace detail
 {
 class LinkListImpl // size == 16
 {
-protected:
+OPENLW_PROTECTED
     std::size_t m_count;
     int m_nodeOffset;
     LinkListNode m_root;
@@ -50,7 +52,12 @@ protected:
     }
 
     LWAPI(0x02014CD0, NONE)
-    void Initialize();
+    void Initialize()
+    {
+        m_count = 0;
+        m_root.Next = &m_root;
+        m_root.Prev = &m_root;
+    }
 
     LWAPI(0x02CA6E98, 0x00962180)
     iterator insert(iterator it, LinkListNode* node);
@@ -74,17 +81,19 @@ protected:
     void reverse();
 
     inline LinkListImpl(int nodeOffset = -1) :
-        m_nodeOffset(nodeOffset),
-        m_root()
+        m_nodeOffset(nodeOffset)
     {
         Initialize();
     }
 };
-}
+
+LWAPI_STATIC_ASSERT_SIZE(LinkListImpl, 16)
+} // detail
 
 template<typename T>
-struct LinkList : public detail::LinkListImpl // size == 16
+class LinkList : public detail::LinkListImpl // size == 16
 {
+public:
     struct iterator : public detail::LinkListImpl::iterator
     {
         inline iterator(LinkListNode* node, int nodeOffset) :
@@ -179,5 +188,5 @@ struct LinkList : public detail::LinkListImpl // size == 16
         clear();
     }
 };
-}
-}
+} // ut
+} // csl

@@ -7,13 +7,6 @@ namespace ut
 {
 namespace detail
 {
-void LinkListImpl::Initialize()
-{
-    m_count = 0;
-    m_root.Next = &m_root;
-    m_root.Prev = &m_root;
-}
-
 LinkListImpl::iterator LinkListImpl::insert(iterator it, LinkListNode* node)
 {
     ++m_count;
@@ -89,6 +82,6 @@ void LinkListImpl::reverse()
         }
     }
 }
-}
-}
-}
+} // detail
+} // ut
+} // csl
