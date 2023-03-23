@@ -72,13 +72,20 @@ class CCamera : public GameObject
 OPENLW_PRIVATE
     struct SCameraListUnit
     {
-        CCameraController* CameraController;
-        unsigned int field_0x4;
+        CCameraController* controller;
+        EInterpolateType interpolation;
     };
 
     struct SCinfo
     {
-        // TODO
+        unsigned int unknown1;
+        unsigned int viewport;
+        float nearClipPlane;
+        float farClipPlane;
+        float fov;
+        unsigned int unknown2;
+        unsigned int flags;
+        unsigned int unknown3;
     };
 
     csl::ut::MoveArray<SCameraListUnit> field_0xD0;
