@@ -48,8 +48,5 @@ void CRefCountObject::Release()
         delete this;
     }
 }
-
-CRefCountObject::CRefCountObject() :
-    m_refCount(0) {}
 }
 }

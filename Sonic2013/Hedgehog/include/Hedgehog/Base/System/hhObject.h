@@ -49,8 +49,9 @@ public:
     LWAPI(0x0369988c, TODO)
     void Release();
 
-    LWAPI(0x0369982c, TODO)
-    CRefCountObject();
+    LWAPI(0x0369982c, NONE)
+    CRefCountObject() :
+        m_refCount(0) {}
 };
 
 inline void intrusive_ptr_add_ref(CRefCountObject* obj)
