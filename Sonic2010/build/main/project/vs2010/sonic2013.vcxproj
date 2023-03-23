@@ -135,6 +135,7 @@
     <ClCompile Include="..\..\src\System\ApplicationPropertyImpl.cpp" />
     <ClCompile Include="..\..\src\System\Atomic.cpp" />
     <ClCompile Include="..\..\src\System\BranchActor.cpp" />
+    <ClCompile Include="..\..\src\System\Component\GOComponent.cpp" />
     <ClCompile Include="..\..\src\System\Constants.cpp" />
     <ClCompile Include="..\..\src\System\CriSystem.cpp" />
     <ClCompile Include="..\..\src\System\FileBinder.cpp" />
@@ -214,6 +215,7 @@
     <ClInclude Include="..\..\src\System\BaseObject.h" />
     <ClInclude Include="..\..\src\System\BranchActor.h" />
     <ClInclude Include="..\..\src\System\Component\Fsm.h" />
+    <ClInclude Include="..\..\src\System\Component\GOComponent.h" />
     <ClInclude Include="..\..\src\System\Component\TinyFsm.h" />
     <ClInclude Include="..\..\src\System\Constants.h" />
     <ClInclude Include="..\..\src\System\CriSystem.h" />
