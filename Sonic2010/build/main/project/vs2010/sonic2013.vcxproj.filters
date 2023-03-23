@@ -864,6 +864,9 @@
     <ClCompile Include="..\..\src\Camera\Camera.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Camera\CameraController.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\pch.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
@@ -1098,6 +1101,9 @@
       <Filter>HUD</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Camera\Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Camera\CameraController.h">
       <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\pch.h">
