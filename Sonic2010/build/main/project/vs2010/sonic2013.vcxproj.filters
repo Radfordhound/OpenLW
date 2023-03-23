@@ -876,6 +876,9 @@
     <ClCompile Include="..\..\src\OpenLW\pch.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\Base\PlayerState.cpp">
+      <Filter>Player\Base</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\System\Component\GOComponent.cpp">
       <Filter>System\Component</Filter>
     </ClCompile>
@@ -1129,6 +1132,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\System\Component\Fsm.h">
       <Filter>System\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Base\PlayerState.h">
+      <Filter>Player\Base</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\System\Component\GOComponent.h">
       <Filter>System\Component</Filter>
