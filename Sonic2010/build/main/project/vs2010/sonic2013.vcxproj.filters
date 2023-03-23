@@ -861,6 +861,9 @@
     <ClCompile Include="..\..\src\System\ApplicationPropertyImpl.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Camera\Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\pch.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
@@ -1093,6 +1096,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\HUD\SurfRidePlatformMIRAGE.h">
       <Filter>HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Camera\Camera.h">
+      <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\pch.h">
       <Filter>OpenLW</Filter>

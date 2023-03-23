@@ -87,6 +87,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\Camera\Camera.cpp" />
     <ClCompile Include="..\..\src\dev\seteditor\SetEdDataAc.cpp" />
     <ClCompile Include="..\..\src\HUD\SurfRidePlatformMIRAGE.cpp" />
     <ClCompile Include="..\..\src\Input\DeviceBase.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="..\..\src\xgame\system\DlcManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\Camera\Camera.h" />
     <ClInclude Include="..\..\src\dev\seteditor\SetEdDataAc.h" />
     <ClInclude Include="..\..\src\HUD\SurfRidePlatformMIRAGE.h" />
     <ClInclude Include="..\..\src\Input\DeviceBase.h" />
