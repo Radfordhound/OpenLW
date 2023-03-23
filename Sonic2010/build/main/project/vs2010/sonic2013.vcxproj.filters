@@ -870,6 +870,9 @@
     <ClCompile Include="..\..\src\Camera\CameraController.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\System\Component\Goc.cpp">
+      <Filter>System\Component</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\OpenLW\pch.cpp">
       <Filter>OpenLW</Filter>
     </ClCompile>
@@ -1117,6 +1120,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Camera\CameraController.h">
       <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Component\Goc.h">
+      <Filter>System\Component</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\OpenLW\pch.h">
       <Filter>OpenLW</Filter>
