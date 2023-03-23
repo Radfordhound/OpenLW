@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\src\sonicusa\pch.h" />
+    <ClInclude Include="..\..\include\sonicusa\system\Random.h">
+      <Filter>system</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\sonicusa\pch.cpp" />
+    <ClCompile Include="..\..\src\sonicusa\system\Random.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="system">
+      <UniqueIdentifier>{0c569302-a917-4727-a714-63ae818a168a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -55,7 +55,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(ProjectDir)..\..\..\..\..\Library\cslib\include;$(ProjectDir)..\..\..\..\..\depends\boost\include;$(ProjectDir)..\..\..\..\..\depends\criware\include;$(DXSDK_DIR)Include;$(ProjectDir)..\..\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)Include;$(ProjectDir)..\..\..\..\..\depends\boost\include;$(ProjectDir)..\..\..\..\..\depends\criware\include;$(ProjectDir)..\..\..\..\..\Library\cslib\include;$(ProjectDir)..\..\..\..\..\Library\sonicusa\include;$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(ProjectDir)..\..\src</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>OpenLW/pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -72,7 +72,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;USE_CRIWARE;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(ProjectDir)..\..\..\..\..\Library\cslib\include;$(ProjectDir)..\..\..\..\..\depends\boost\include;$(ProjectDir)..\..\..\..\..\depends\criware\include;$(DXSDK_DIR)Include;$(ProjectDir)..\..\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)Include;$(ProjectDir)..\..\..\..\..\depends\boost\include;$(ProjectDir)..\..\..\..\..\depends\criware\include;$(ProjectDir)..\..\..\..\..\Library\cslib\include;$(ProjectDir)..\..\..\..\..\Library\sonicusa\include;$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\include;$(ProjectDir)..\..\..\..\..\Sonic2013\Hedgehog\Extra\include;$(ProjectDir)..\..\src</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -247,6 +247,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Library\cslib\project\vs2010\csl.vcxproj">
       <Project>{aa184d1e-b941-4470-b96e-00c90d12499a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\sonicusa\project\vs2010\SonicUSA.vcxproj">
+      <Project>{a2f644c4-d1de-406d-8695-b3317ed5bb1f}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Sonic2013\Hedgehog\build\Base\Base.vcxproj">
       <Project>{1db9a21d-ddc9-46a4-afb9-debcfc970366}</Project>

@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "..\..\..\..\..\S
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fx", "..\..\..\..\..\Sonic2013\Hedgehog\Extra\build\fx\fx.vcxproj", "{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SonicUSA", "..\..\..\..\..\Library\sonicusa\project\vs2010\SonicUSA.vcxproj", "{A2F644C4-D1DE-406D-8695-B3317ED5BB1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -73,6 +75,10 @@ Global
 		{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}.Debug|Win32.Build.0 = Debug|Win32
 		{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}.Release|Win32.ActiveCfg = Release|Win32
 		{950AF8DA-AD3F-4C76-AF86-DE095ED1E47D}.Release|Win32.Build.0 = Release|Win32
+		{A2F644C4-D1DE-406D-8695-B3317ED5BB1F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A2F644C4-D1DE-406D-8695-B3317ED5BB1F}.Debug|Win32.Build.0 = Debug|Win32
+		{A2F644C4-D1DE-406D-8695-B3317ED5BB1F}.Release|Win32.ActiveCfg = Release|Win32
+		{A2F644C4-D1DE-406D-8695-B3317ED5BB1F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
