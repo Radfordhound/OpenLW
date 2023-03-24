@@ -8,12 +8,13 @@ namespace app
 {
 struct GameMode;
 
-struct GameDocument : public fnd::ReferencedObject, // size == 0xDC
+class GameDocument : public fnd::ReferencedObject, // size == 0xDC
     public csl::ut::NonCopyable
 {
-    GameMode* GameModePtr;
-    unsigned int GameModeID;
-    boost::scoped_ptr<CWorld> World;
+public:
+    GameMode* gameModePtr;
+    unsigned int gameModeID;
+    boost::scoped_ptr<CWorld> world;
     // TODO: Other data members.
 
     LWAPI(0x02a7ec20, TODO)

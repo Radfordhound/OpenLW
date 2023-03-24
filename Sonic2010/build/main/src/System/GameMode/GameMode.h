@@ -5,7 +5,7 @@
 
 namespace app
 {
-struct GameDocument;
+class GameDocument;
 class CGame;
 
 namespace fnd

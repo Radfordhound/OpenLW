@@ -35,7 +35,7 @@ void GameModeSegalogo::OnEnter(CGame& game)
     field_0x54 = new MyRenderable(this, field_0x50);
     if (field_0x54)
     {
-        (*GameDoc->World).AddRenderable(field_0x54.get(),
+        (*GameDoc->world).AddRenderable(field_0x54.get(),
             SceneGroupType::UNKNOWN_800);
     }
 }

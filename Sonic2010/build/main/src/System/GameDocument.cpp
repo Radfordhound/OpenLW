@@ -6,12 +6,12 @@
 namespace app
 {
 GameDocument::GameDocument(GameMode* gameMode) :
-    GameModePtr(gameMode),
-    GameModeID(gameMode->Game->GetID())
+    gameModePtr(gameMode),
+    gameModeID(gameMode->Game->GetID())
     // TODO
 {
     // TODO: Switch to the CHedgehogMemoryAllocatorHeap variant!!!
-    World.reset(static_cast<CWorld*>(__HH_ALLOC_DBG(sizeof(CWorld)))); // line: 79
+    world.reset(static_cast<CWorld*>(__HH_ALLOC_DBG(sizeof(CWorld)))); // line: 79
 
     // TODO
 }

@@ -8,7 +8,7 @@
 
 namespace app
 {
-struct GameDocument;
+class GameDocument;
 
 namespace fnd
 {
@@ -18,39 +18,39 @@ struct SUpdateInfo;
 
 namespace xgame
 {
-struct MsgCameraReset;
-struct MsgGetFrontDirection;
-struct MsgGetPosition;
-struct MsgGetCameraTargetPosition;
-struct MsgGetCameraUpDirection;
-struct MsgSetDebugCamera;
-struct MsgIsDebugCamera;
-struct MsgPushCameraController;
-struct MsgPopCameraController;
-struct MsgChangePlayerCamera;
-struct MsgGetCameraDefaultFovy;
-struct MsgGetCameraFovy;
-struct MsgIs2DMode;
-struct MsgCameraBeginQuickStep;
-struct MsgCameraEndQuickStep;
-struct MsgShakeCamera;
-struct MsgRandomShakeCamera;
-struct MsgStartEventCamera;
-struct MsgEndEventCamera;
-struct MsgSetCamera3DParam;
-struct MsgSetCamera3DParamDashMode;
-struct MsgSetCameraPosition;
-struct MsgSetViewport;
-struct MsgGetViewport;
-struct MsgSetCameraReset;
-struct MsgSetInterpolate;
-struct MsgResetInterpolate;
-struct MsgGetMultiCameraStatus;
-struct MsgCameraUpdate;
-struct MsgFocusChange;
-struct MsgPLStargGroundImpulse;
-struct MsgBeginBoost;
-struct MsgEndBoost;
+class MsgCameraReset;
+class MsgGetFrontDirection;
+class MsgGetPosition;
+class MsgGetCameraTargetPosition;
+class MsgGetCameraUpDirection;
+class MsgSetDebugCamera;
+class MsgIsDebugCamera;
+class MsgPushCameraController;
+class MsgPopCameraController;
+class MsgChangePlayerCamera;
+class MsgGetCameraDefaultFovy;
+class MsgGetCameraFovy;
+class MsgIs2DMode;
+class MsgCameraBeginQuickStep;
+class MsgCameraEndQuickStep;
+class MsgShakeCamera;
+class MsgRandomShakeCamera;
+class MsgStartEventCamera;
+class MsgEndEventCamera;
+class MsgSetCamera3DParam;
+class MsgSetCamera3DParamDashMode;
+class MsgSetCameraPosition;
+class MsgSetViewport;
+class MsgGetViewport;
+class MsgSetCameraReset;
+class MsgSetInterpolate;
+class MsgResetInterpolate;
+class MsgGetMultiCameraStatus;
+class MsgCameraUpdate;
+class MsgFocusChange;
+class MsgPLStargGroundImpulse;
+class MsgBeginBoost;
+class MsgEndBoost;
 } // xgame
 
 namespace Camera
