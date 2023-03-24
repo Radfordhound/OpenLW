@@ -1,6 +1,5 @@
 #include "OpenLW/pch.h"
 #include "Message.h"
-#include <climits>
 
 namespace app
 {

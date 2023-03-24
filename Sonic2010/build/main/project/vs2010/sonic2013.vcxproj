@@ -160,6 +160,7 @@
     <ClCompile Include="..\..\src\System\GameSequence.cpp" />
     <ClCompile Include="..\..\src\System\Handle.cpp" />
     <ClCompile Include="..\..\src\System\LeafActor.cpp" />
+    <ClCompile Include="..\..\src\System\Property.cpp" />
     <ClCompile Include="..\..\src\System\ReferencedObject.cpp" />
     <ClCompile Include="..\..\src\System\Resource\ResourceCustom.cpp" />
     <ClCompile Include="..\..\src\System\Resource\ResourceManager.cpp" />
@@ -244,6 +245,7 @@
     <ClInclude Include="..\..\src\System\GameSequence.h" />
     <ClInclude Include="..\..\src\System\Handle.h" />
     <ClInclude Include="..\..\src\System\LeafActor.h" />
+    <ClInclude Include="..\..\src\System\Property.h" />
     <ClInclude Include="..\..\src\System\ReferencedObject.h" />
     <ClInclude Include="..\..\src\System\Resource\ResourceCallbackBase.h" />
     <ClInclude Include="..\..\src\System\Resource\ResourceCustom.h" />

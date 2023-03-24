@@ -894,6 +894,9 @@
     <ClCompile Include="..\..\src\System\Handle.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\System\Property.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1152,6 +1155,9 @@
       <Filter>Sound</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\System\Handle.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\Property.h">
       <Filter>System</Filter>
     </ClInclude>
   </ItemGroup>

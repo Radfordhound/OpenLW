@@ -11,6 +11,7 @@
 
 // Standard library includes
 #include <cstring>
+#include <climits>
 
 // Win32 includes
 #ifdef _WIN32
