@@ -16,14 +16,6 @@ struct Message;
 class MessageManager;
 class CActorTraverser;
 
-enum UpdatingPhase
-{
-    PHASE_ONE = 0,
-    PHASE_TWO = 1,
-    PHASE_THREE = 2,
-    PHASE_COUNT
-};
-
 class CActor : public boost::noncopyable // size == 0x1c
 {
 OPENLW_PROTECTED

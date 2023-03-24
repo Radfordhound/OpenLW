@@ -4,6 +4,14 @@ namespace app
 {
 namespace fnd
 {
+enum UpdatingPhase
+{
+    PHASE_ONE = 0,
+    PHASE_TWO = 1,
+    PHASE_THREE = 2,
+    PHASE_COUNT
+};
+
 struct SUpdateInfo
 {
     float DeltaTime;
