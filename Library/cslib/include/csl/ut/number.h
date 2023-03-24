@@ -54,7 +54,13 @@ typedef std::uint64_t u64;
 namespace ut
 {
 template<typename T>
-T RoundUp(const T& val, unsigned int multiple) // TODO: The symbols suggest that multiple is always an unsigned int, but is it actually of type T?
+const T& Min(const T& a, const T& b)
+{
+    return (b < a) ? b : a;
+}
+
+template<typename T>
+T RoundUp(const T& val, unsigned int multiple)
 {
     return (((val + multiple) - 1) & ~(multiple - 1));
 }
@@ -64,5 +70,5 @@ void NativeFromBig32(void* output, void* input, int count);
 
 LWAPI(0x02ca6dd4, TODO)
 void NativeFromLittle32(void* param_1, void* param_2, int count);
-}
-}
+} // ut
+} // csl
