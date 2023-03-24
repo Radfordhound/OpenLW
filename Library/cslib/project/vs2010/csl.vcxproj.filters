@@ -71,9 +71,6 @@
     <ClInclude Include="..\..\include\csl\ut\number.h">
       <Filter>Header Files\ut</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\csl\ut\link_list.h">
-      <Filter>Header Files\ut</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\csl\ut\noncopyable.h">
       <Filter>Header Files\ut</Filter>
     </ClInclude>
@@ -92,6 +89,9 @@
     <ClInclude Include="..\..\include\csl\math\vector2.h">
       <Filter>Header Files\math</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\linklist.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\csl\fnd\tick_win32.cpp">
@@ -106,9 +106,6 @@
     <ClCompile Include="..\..\src\csl\ut\number.cpp">
       <Filter>Source Files\ut</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\csl\ut\link_list.cpp">
-      <Filter>Source Files\ut</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\csl\math\quaternion.cpp">
       <Filter>Source Files\math</Filter>
     </ClCompile>
@@ -120,6 +117,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\csl\pch.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\ut\linklist.cpp">
+      <Filter>Source Files\ut</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
