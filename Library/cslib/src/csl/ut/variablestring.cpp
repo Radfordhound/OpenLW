@@ -1,4 +1,5 @@
 // TODO: Both the name of this file and its path were guessed!
+#include "pch.h"
 #include "csl/ut/variablestring.h"
 #include "csl/ut/number.h"
 #include "csl/fnd/memory.h"
@@ -9,7 +10,7 @@ namespace ut
 {
 char* VariableString::getDataPointer() const
 {
-    return reinterpret_cast<std::uintptr_t>(m_data) & ~1;
+    return reinterpret_cast<char*>(reinterpret_cast<std::uintptr_t>(m_data) & ~1);
 }
 
 bool VariableString::needsFree() const
@@ -22,7 +23,7 @@ const char* VariableString::c_str() const
     return (m_data == nullptr) ? "" : getDataPointer();
 }
 
-void VariableString::assign(const fnd::IAllocator* allocator, const char* data, int len)
+void VariableString::assign(fnd::IAllocator* allocator, const char* data, int len)
 {
     // Return early if myData is already equal to data.
     if (c_str() == data) return;
@@ -91,14 +92,14 @@ VariableString& VariableString::operator=(const VariableString& other)
     return *this;
 }
 
-void VariableString::Set(const fnd::IAllocator* allocator, const char* data, int len)
+void VariableString::Set(fnd::IAllocator* allocator, const char* data, int len)
 {
     assign(allocator, data, len);
 }
 
-void VariableString::SetDataUserFree(const fnd::IAllocator* allocator, const char* data)
+void VariableString::SetDataUserFree(fnd::IAllocator* allocator, const char* data)
 {
-    m_data = data;
+    m_data = const_cast<char*>(data);
     m_allocator = allocator;
 }
 

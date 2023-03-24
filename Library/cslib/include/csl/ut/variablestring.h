@@ -28,7 +28,7 @@ public:
     const char* c_str() const;
 
     LWAPI(0x02ca9728, 0x00962d10)
-    void assign(const fnd::IAllocator* allocator, const char* data, int len = -1);
+    void assign(fnd::IAllocator* allocator, const char* data, int len = -1);
 
     LWAPI(0x02ca98a0, 0x00962e00)
     VariableString(const char* data, fnd::IAllocator* allocator);
@@ -53,10 +53,10 @@ public:
     VariableString& operator=(const VariableString& other);
 
     LWAPI(0x02ca9af0, 0x00962f30)
-    void Set(const fnd::IAllocator* allocator, const char* data, int len = -1);
+    void Set(fnd::IAllocator* allocator, const char* data, int len = -1);
 
     LWAPI(0x02ca9af4, 0x00962c90)
-    void SetDataUserFree(const fnd::IAllocator* allocator, const char* data);
+    void SetDataUserFree(fnd::IAllocator* allocator, const char* data);
 
     LWAPI(0x02ca9b00, 0x00962cb0)
     int compareTo(const char* data) const;
