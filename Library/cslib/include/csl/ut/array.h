@@ -275,16 +275,17 @@ public:
     }
 };
 
-template<typename T, std::size_t bufferSize>
+template<typename T, std::size_t BufferSize>
 class InplaceMoveArray : public MoveArray<T>
 {
-    T m_buffer[bufferSize];
+    T m_buffer[BufferSize];
 
 public:
-    // TODO
-
     InplaceMoveArray(std::size_t count = 0) :
-        MoveArray<T>(m_buffer, count, bufferSize, nullptr) {}
+        MoveArray<T>(m_buffer, count, BufferSize, nullptr) {}
+
+    InplaceMoveArray(csl::fnd::IAllocator* allocator) :
+        MoveArray<T>(m_buffer, 0, CSL_HIGH_BITMASK(BufferSize) | BufferSize, allocator) {}
 };
 
 template<typename T>
