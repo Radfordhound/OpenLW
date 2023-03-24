@@ -1,3 +1,4 @@
+// TODO: The name of this file is correct, but the path was guessed!
 #pragma once
 #include "math_includes.inl"
 
@@ -54,5 +55,7 @@ struct Quaternion
     LWAPI(0x02CA2338, 0x00964060)
     Quaternion(const Vector3& axis, float angle);
 };
-}
-}
+
+LWAPI_STATIC_ASSERT_SIZE(Quaternion, 16)
+} // math
+} // csl

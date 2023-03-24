@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #include "pch.h"
 #include "csl/fnd/tick.h"
 
@@ -25,5 +26,5 @@ Tick Tick::Sample()
     return Tick((QueryPerformanceCounter(&counter)) ? 
         counter.QuadPart : 0);
 }
-}
-}
+} // fnd
+} // csl

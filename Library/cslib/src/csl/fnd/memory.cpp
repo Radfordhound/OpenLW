@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #include "pch.h"
 #include "csl/fnd/memory.h"
 
@@ -22,5 +23,5 @@ std::size_t StrLcpy(char* dst, const char* src, std::size_t len)
     *dst = '\0';
     return copiedLen;
 }
-}
-}
+} // fnd
+} // csl

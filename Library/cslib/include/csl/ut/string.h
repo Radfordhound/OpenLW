@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 #include "number.h"
 #include "../fnd/memory.h"
@@ -10,7 +11,7 @@ namespace ut
 {
 class String
 {
-protected:
+OPENLW_PROTECTED
     char* m_data;
     unsigned short m_len;
     unsigned short m_capacityAndFlags;
@@ -179,6 +180,8 @@ public:
     }
 };
 
+LWAPI_STATIC_ASSERT_SIZE(String, 12)
+
 template<unsigned short bufLen>
 class StringBuf : public String
 {
@@ -249,5 +252,5 @@ public:
         fnd::StrLcpy(m_buf, str, bufLen);
     }
 };
-}
-}
+} // ut
+} // csl

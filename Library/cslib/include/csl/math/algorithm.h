@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 namespace csl
 {
@@ -26,5 +27,5 @@ inline T& Max(T& a, T& b)
 {
     return (a < b) ? b : a;
 }
-}
-}
+} // math
+} // csl

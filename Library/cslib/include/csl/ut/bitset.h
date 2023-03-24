@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 #include "number.h"
 
@@ -9,6 +10,7 @@ namespace ut
 template<typename T, int BitCount = CSL_BIT_COUNT(T)>
 class Bitset
 {
+OPENLW_PRIVATE
     T m_Data;
 
 public:
@@ -198,5 +200,5 @@ public:
     Bitset(const Bitset<T, BitCount>& other) :
         m_Data(other.m_Data) {}
 };
-}
-}
+} // ut
+} // csl

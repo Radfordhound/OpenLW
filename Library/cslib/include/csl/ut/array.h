@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 #include "number.h"
 #include "../fnd/memory.h"
@@ -13,7 +14,7 @@ namespace ut
 template<typename T>
 class MoveArray
 {
-protected:
+OPENLW_PROTECTED
     T* m_data;
     std::size_t m_count;
     std::size_t m_flags;
@@ -278,6 +279,7 @@ public:
 template<typename T, std::size_t BufferSize>
 class InplaceMoveArray : public MoveArray<T>
 {
+OPENLW_PRIVATE
     T m_buffer[BufferSize];
 
 public:
@@ -291,7 +293,7 @@ public:
 template<typename T>
 class ObjectMoveArray
 {
-protected:
+OPENLW_PROTECTED
     T* m_data;
     std::size_t m_count;
     std::size_t m_flags;
@@ -525,5 +527,5 @@ public:
         }
     }
 };
-}
-}
+} // ut
+} // csl

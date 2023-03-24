@@ -1,3 +1,4 @@
+// TODO: The name of this file is correct, but the path was guessed!
 #pragma once
 #include "math_includes.inl"
 
@@ -177,5 +178,7 @@ struct Vector3
         Copy(other);
     }
 };
-}
-}
+
+LWAPI_STATIC_ASSERT_SIZE(Vector3, 16)
+} // math
+} // csl

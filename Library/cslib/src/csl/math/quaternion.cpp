@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #include "pch.h"
 #include "csl/math/quaternion.h"
 #include "csl/math/vector3.h"
@@ -18,5 +19,5 @@ Quaternion::Quaternion(const Vector3& axis, float angle)
     Set(normalizedAxis.GetX() * sine, normalizedAxis.GetY() * sine,
         normalizedAxis.GetZ() * sine, cosine);
 }
-}
-}
+} // math
+} // csl

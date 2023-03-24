@@ -1,3 +1,4 @@
+// TODO: The name of this file is correct, but the path was guessed!
 #pragma once
 
 namespace csl
@@ -96,5 +97,7 @@ struct Vector2
         Copy(other);
     }
 };
-}
-}
+
+LWAPI_STATIC_ASSERT_SIZE(Vector2, 8)
+} // math
+} // csl

@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 #include "hash_map.h"
 #include <cstring>
@@ -132,5 +133,5 @@ public:
     StringMap(std::size_t initialCapacity, fnd::IAllocator* allocator) :
         HashMap<StringMapOperation>(initialCapacity, allocator) {}
 };
-}
-}
+} // ut
+} // csl

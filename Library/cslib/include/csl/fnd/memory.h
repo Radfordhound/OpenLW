@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 #include <cstddef>
 
@@ -67,6 +68,7 @@ struct DefaultAllocator : IAllocator
 template<typename T>
 class com_ptr
 {
+OPENLW_PRIVATE
     T* m_ptr;
 
 public:
@@ -151,8 +153,8 @@ public:
 
 LWAPI(0x02c995b8, 0x00968aa0)
 std::size_t StrLcpy(char* dst, const char* src, std::size_t len);
-}
-}
+} // fnd
+} // csl
 
 // TODO: Is this function actually a thing?
 inline void* operator new(std::size_t size, csl::fnd::IAllocator* allocator)

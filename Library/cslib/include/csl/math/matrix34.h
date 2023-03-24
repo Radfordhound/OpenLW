@@ -1,3 +1,4 @@
+// TODO: The name of this file is correct, but the path was guessed!
 #pragma once
 #include "vector3.h"
 
@@ -41,5 +42,7 @@ struct Matrix34
     // TODO: Is this constructor actually a thing?
     Matrix34(const Quaternion& rot);
 };
-}
-}
+
+LWAPI_STATIC_ASSERT_SIZE(Matrix34, 64)
+} // math
+} // csl

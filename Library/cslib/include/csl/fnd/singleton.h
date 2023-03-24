@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 namespace csl
 {
@@ -6,7 +7,7 @@ namespace fnd
 template<typename T>
 class Singleton
 {
-protected:
+OPENLW_PROTECTED
     static T* m_instance;
     inline Singleton() {};
 
@@ -30,5 +31,5 @@ public:
 
 template<typename T>
 T* Singleton<T>::m_instance;
-}
-}
+} // fnd
+} // csl

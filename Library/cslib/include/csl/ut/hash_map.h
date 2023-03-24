@@ -1,3 +1,4 @@
+// TODO: Both the name of this file and its path were guessed!
 #pragma once
 #include "../fnd/memory.h"
 #include "number.h"
@@ -10,7 +11,7 @@ namespace ut
 template<typename OP>
 class HashMap
 {
-protected:
+OPENLW_PROTECTED
     struct Elem
     {
         std::size_t Hash;
@@ -255,5 +256,5 @@ public:
         ReleaseMemory();
     }
 };
-}
-}
+} // ut
+} // csl
