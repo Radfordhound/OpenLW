@@ -28,6 +28,7 @@
     <ClInclude Include="..\..\include\csl\ut\hash_map.h" />
     <ClInclude Include="..\..\include\csl\ut\string.h" />
     <ClInclude Include="..\..\include\csl\ut\string_map.h" />
+    <ClInclude Include="..\..\include\csl\ut\variablestring.h" />
     <ClInclude Include="..\..\src\csl\pch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +44,7 @@
     </ClCompile>
     <ClCompile Include="..\..\src\csl\ut\linklist.cpp" />
     <ClCompile Include="..\..\src\csl\ut\number.cpp" />
+    <ClCompile Include="..\..\src\csl\ut\variablestring.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\include\csl\math\math_includes.inl" />

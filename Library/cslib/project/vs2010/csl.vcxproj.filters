@@ -92,6 +92,9 @@
     <ClInclude Include="..\..\include\csl\ut\linklist.h">
       <Filter>Header Files\ut</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\variablestring.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\csl\fnd\tick_win32.cpp">
@@ -119,6 +122,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\csl\ut\linklist.cpp">
+      <Filter>Source Files\ut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\csl\ut\variablestring.cpp">
       <Filter>Source Files\ut</Filter>
     </ClCompile>
   </ItemGroup>

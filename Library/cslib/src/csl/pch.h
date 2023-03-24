@@ -11,6 +11,8 @@
 
 // Standard library includes
 #include <math.h>
+#include <cstdint>
+#include <cstring>
 
 // Win32 includes
 #ifdef _WIN32
