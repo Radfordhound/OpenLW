@@ -43,7 +43,7 @@ public:
     LWAPI(0x03699900, TODO)
     bool IsUnique() const;
 
-    LWAPI(0x03699888, TODO)
+    LWAPI(0x03699888, 0x00c1e850)
     void AddRef();
 
     LWAPI(0x0369988c, TODO)
