@@ -24,7 +24,7 @@ LWAPI_STATIC_ASSERT_SIZE(LinkListNode, 8)
 
 namespace detail
 {
-class LinkListImpl // size == 16
+class LinkListImpl
 {
 OPENLW_PROTECTED
     std::size_t m_count;
@@ -91,7 +91,7 @@ LWAPI_STATIC_ASSERT_SIZE(LinkListImpl, 16)
 } // detail
 
 template<typename T>
-class LinkList : public detail::LinkListImpl // size == 16
+class LinkList : public detail::LinkListImpl
 {
 public:
     struct iterator : public detail::LinkListImpl::iterator
