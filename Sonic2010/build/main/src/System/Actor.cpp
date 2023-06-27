@@ -20,9 +20,9 @@ CActor::CActor() :
     m_parent(nullptr),
     m_updateFlags(),
     field_0xd(false),
-    field_0xe(true),
-    field_0xf(true),
-    field_0x10(-1),
+    m_flags(1),
+    m_enabled(true),
+    m_allowedMessageFlags(UINT_MAX),
     field_0x14(nullptr)
 {
     SetUpdateFlag(PHASE_ONE, true);
@@ -56,7 +56,7 @@ void CActor::BroadcastMessageImm(unsigned int param_1, Message& msg)
 
 void CActor::BroadcastMessage(unsigned int receiverID, Message& msg)
 {
-    if ((field_0x10 & msg.Mask) != 0)
+    if ((m_allowedMessageFlags & msg.mask) != 0)
     {
         MessageSetup(receiverID, msg);
         msg.Broadcasted = true;
@@ -66,7 +66,7 @@ void CActor::BroadcastMessage(unsigned int receiverID, Message& msg)
 
 bool CActor::SendMessage(Message& msg)
 {
-    return ((field_0x10 & msg.Mask) != 0 &&
+    return ((m_allowedMessageFlags & msg.mask) != 0 &&
         ActorProc(SIGNAL_UPDATE, &msg)); // TODO: Is this correct?
 }
 
@@ -77,7 +77,7 @@ void CActor::BroadcastMessage(Message& msg)
 
 void CActor::SendMessage(unsigned int receiverID, Message& msg)
 {
-    if ((field_0x10 & msg.Mask) != 0)
+    if ((m_allowedMessageFlags & msg.mask) != 0)
     {
         MessageSetup(receiverID, msg);
         m_msgMgr->AddMessage(msg);
@@ -86,7 +86,7 @@ void CActor::SendMessage(unsigned int receiverID, Message& msg)
 
 bool CActor::SendMessageImm(unsigned int receiverID, Message& msg)
 {
-    if ((field_0x10 & msg.Mask) != 0)
+    if ((m_allowedMessageFlags & msg.mask) != 0)
     {
         MessageSetup(receiverID, msg);
         
@@ -126,5 +126,5 @@ void CActor::EndProfile(int param_1)
 {
     // TODO
 }
-}
-}
+} // fnd
+} // app

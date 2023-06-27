@@ -4,6 +4,7 @@
 #include <csl/ut/bitset.h>
 #include <boost/noncopyable.hpp>
 
+// Avoid name collisions on Windows.
 #ifdef SendMessage
 #undef SendMessage
 #endif
@@ -16,7 +17,7 @@ struct Message;
 class MessageManager;
 class CActorTraverser;
 
-class CActor : public boost::noncopyable // size == 0x1c
+class CActor : public boost::noncopyable
 {
 OPENLW_PROTECTED
     unsigned int m_ID;
@@ -24,9 +25,9 @@ OPENLW_PROTECTED
     CActor* m_parent;
     csl::ut::Bitset<unsigned char> m_updateFlags;
     bool field_0xd;
-    bool field_0xe;
-    bool field_0xf;
-    int field_0x10; // TODO: Is this type correct?
+    unsigned char m_flags;
+    bool m_enabled;
+    unsigned int m_allowedMessageFlags; // TODO: Is this type correct?
     void* field_0x14; // TODO: Is this type correct?
 
 public:
@@ -37,15 +38,15 @@ public:
     }
 
     // TODO: Is this function actually a thing?
-    inline bool GetField0xE() const
+    inline unsigned char GetFlags() const
     {
-        return field_0xe;
+        return m_flags;
     }
 
     // TODO: Is this function actually a thing?
-    inline int GetField0x10() const
+    inline unsigned int GetAllowedMessageFlags() const
     {
-        return field_0x10;
+        return m_allowedMessageFlags;
     }
 
     LWAPI(0x021a002c, TODO)
@@ -57,7 +58,7 @@ public:
     LWAPI(0x021a00c8, TODO)
     void RemoveFromAllParents();
 
-    LWAPI(0x021a011c, TODO)
+    LWAPI(0x021a011c, 0x0049a520)
     virtual ~CActor();
 
     LWAPI(0x021a018c, TODO)
@@ -81,7 +82,7 @@ public:
     LWAPI(0x021a02a8, TODO)
     void SendMessage(unsigned int receiverID, Message& msg);
 
-    LWAPI(0x021a02e4, TODO)
+    LWAPI(0x021a02e4, 0x0049a470)
     bool SendMessageImm(unsigned int receiverID, Message& msg);
 
     virtual bool ForEach(CActorTraverser& traverser) = 0;
@@ -89,16 +90,16 @@ public:
     LWAPI(0x021a0440, TODO)
     bool GetUpdateFlag(UpdatingPhase phase) const;
 
-    LWAPI(0x021a0448, TODO)
+    LWAPI(0x021a0448, 0x004a34e0)
     virtual bool PreProcessMessage(Message& msg);
 
-    LWAPI(0x021a0450, TODO)
+    LWAPI(0x021a0450, 0x0049a330)
     virtual bool ProcessMessage(Message& msg);
 
-    LWAPI(0x021a0460, TODO)
+    LWAPI(0x021a0460, 0x0085b2f0)
     virtual void Update(const SUpdateInfo& updateInfo);
 
-    virtual bool ActorProc(int param_1, void* param_2) = 0;
+    virtual bool ActorProc(int id, void* data) = 0;
 
     LWAPI(0x021a0464, TODO)
     void BeginProfile(int param_1);
@@ -106,5 +107,7 @@ public:
     LWAPI(0x021a04a4, TODO)
     void EndProfile(int param_1);
 };
-}
-}
+
+LWAPI_STATIC_ASSERT_SIZE(CActor, 0x1c)
+} // fnd
+} // app
