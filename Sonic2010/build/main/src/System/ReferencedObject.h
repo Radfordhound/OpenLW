@@ -81,5 +81,5 @@ struct ThreadSafeReferencedObject : public ReferencedObject
     inline ThreadSafeReferencedObject() :
         m_safeRefCount(0) {} // TODO: uhh it seems the game doesn't actually initialize this to 0?? what
 };
-}
-}
+} // fnd
+} // app
