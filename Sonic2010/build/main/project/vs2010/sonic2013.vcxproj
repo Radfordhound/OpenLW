@@ -161,6 +161,7 @@
     <ClCompile Include="..\..\src\System\GameObject.cpp" />
     <ClCompile Include="..\..\src\System\GameObject3D.cpp" />
     <ClCompile Include="..\..\src\System\GameSequence.cpp" />
+    <ClCompile Include="..\..\src\System\GameService.cpp" />
     <ClCompile Include="..\..\src\System\GameServiceClass.cpp" />
     <ClCompile Include="..\..\src\System\Handle.cpp" />
     <ClCompile Include="..\..\src\System\LeafActor.cpp" />
@@ -258,6 +259,7 @@
     <ClInclude Include="..\..\src\System\GameObject.h" />
     <ClInclude Include="..\..\src\System\GameObject3D.h" />
     <ClInclude Include="..\..\src\System\GameSequence.h" />
+    <ClInclude Include="..\..\src\System\GameService.h" />
     <ClInclude Include="..\..\src\System\GameServiceClass.h" />
     <ClInclude Include="..\..\src\System\Handle.h" />
     <ClInclude Include="..\..\src\System\LeafActor.h" />

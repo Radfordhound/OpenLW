@@ -909,6 +909,9 @@
     <ClCompile Include="..\..\src\Message\MessageCamera.cpp">
       <Filter>Message</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\System\GameService.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\System\GameServiceClass.cpp">
       <Filter>System</Filter>
     </ClCompile>
@@ -1183,6 +1186,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Message\MessageCamera.h">
       <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\System\GameService.h">
+      <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\System\GameServiceClass.h">
       <Filter>System</Filter>
