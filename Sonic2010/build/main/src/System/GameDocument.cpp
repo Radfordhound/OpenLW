@@ -5,6 +5,11 @@
 
 namespace app
 {
+GameDocument::~GameDocument()
+{
+    // TODO
+}
+
 GameDocument::GameDocument(GameMode* gameMode) :
     gameModePtr(gameMode),
     gameModeID(gameMode->Game->GetID())
@@ -15,4 +20,4 @@ GameDocument::GameDocument(GameMode* gameMode) :
 
     // TODO
 }
-}
+} // app
