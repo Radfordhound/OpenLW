@@ -122,6 +122,13 @@
     <ClCompile Include="..\..\src\Platforms\Win\MainWin.cpp" />
     <ClCompile Include="..\..\src\Player\Base\Player.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerState.cpp" />
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtil.cpp" />
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilEffect.cpp" />
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilGravity.cpp" />
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilParkour.cpp" />
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilSound.cpp" />
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilSuperSonic.cpp" />
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilVisual.cpp" />
     <ClCompile Include="..\..\src\Render\gfx_Renderable.cpp" />
     <ClCompile Include="..\..\src\Render\gfx_RenderableEvent.cpp" />
     <ClCompile Include="..\..\src\Render\gfx_ResourceCallback.cpp" />
@@ -217,6 +224,13 @@
     <ClInclude Include="..\..\src\Platforms\Win\ApplicationWin.h" />
     <ClInclude Include="..\..\src\Player\Base\Player.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerState.h" />
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtil.h" />
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilEffect.h" />
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilGravity.h" />
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilParkour.h" />
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilSound.h" />
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilSuperSonic.h" />
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilVisual.h" />
     <ClInclude Include="..\..\src\Render\gfx_Renderable.h" />
     <ClInclude Include="..\..\src\Render\gfx_RenderableEvent.h" />
     <ClInclude Include="..\..\src\Render\gfx_ResourceCallback.h" />

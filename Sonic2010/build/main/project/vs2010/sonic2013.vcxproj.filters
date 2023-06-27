@@ -918,6 +918,27 @@
     <ClCompile Include="..\..\src\System\GameServiceClass.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtil.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilEffect.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilGravity.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilParkour.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilSound.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilSuperSonic.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateUtilVisual.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\Player\Base\Player.cpp">
       <Filter>Player\Base</Filter>
     </ClCompile>
@@ -1201,6 +1222,27 @@
     </ClInclude>
     <ClInclude Include="..\..\src\System\GameServiceClass.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtil.h">
+      <Filter>Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilEffect.h">
+      <Filter>Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilGravity.h">
+      <Filter>Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilParkour.h">
+      <Filter>Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilSound.h">
+      <Filter>Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilSuperSonic.h">
+      <Filter>Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateUtilVisual.h">
+      <Filter>Player\State</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\Player.h">
       <Filter>Player\Base</Filter>
