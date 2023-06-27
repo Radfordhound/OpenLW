@@ -120,6 +120,7 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Platforms\Win\ApplicationWin.cpp" />
     <ClCompile Include="..\..\src\Platforms\Win\MainWin.cpp" />
+    <ClCompile Include="..\..\src\Player\Base\Player.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerState.cpp" />
     <ClCompile Include="..\..\src\Render\gfx_Renderable.cpp" />
     <ClCompile Include="..\..\src\Render\gfx_RenderableEvent.cpp" />
@@ -214,6 +215,7 @@
     <ClInclude Include="..\..\src\Movie\MovieSystem.h" />
     <ClInclude Include="..\..\src\OpenLW\pch.h" />
     <ClInclude Include="..\..\src\Platforms\Win\ApplicationWin.h" />
+    <ClInclude Include="..\..\src\Player\Base\Player.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerState.h" />
     <ClInclude Include="..\..\src\Render\gfx_Renderable.h" />
     <ClInclude Include="..\..\src\Render\gfx_RenderableEvent.h" />
