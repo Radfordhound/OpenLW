@@ -30,6 +30,11 @@ public:
     LWAPI(0x02ca9728, 0x00962d10)
     void assign(fnd::IAllocator* allocator, const char* data, int len = -1);
 
+    // TODO: Is this really a thing?
+    inline VariableString(fnd::IAllocator* allocator) :
+        m_data(nullptr),
+        m_allocator(allocator) {}
+
     LWAPI(0x02ca98a0, 0x00962e00)
     VariableString(const char* data, fnd::IAllocator* allocator);
 
