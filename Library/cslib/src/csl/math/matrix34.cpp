@@ -1,7 +1,6 @@
 // TODO: Both the name of this file and its path were guessed!
 #include "pch.h"
 #include "csl/math/matrix34.h"
-#include "csl/math/quaternion.h"
 
 namespace csl
 {
@@ -31,15 +30,6 @@ Vector3 Matrix34::GetColumn(int index) const
 #endif
 
     return result;
-}
-
-Matrix34::Matrix34(const Quaternion& rot)
-{
-#ifdef _WIN32
-    Data = DXMATH_NAMESPACE XMMatrixRotationQuaternion(rot.Data);
-#else
-    // TODO
-#endif
 }
 } // math
 } // csl

@@ -40,7 +40,15 @@ struct Matrix34
     inline Matrix34() {}
 
     // TODO: Is this constructor actually a thing?
-    Matrix34(const Quaternion& rot);
+    Matrix34(const Quaternion& rot)
+    {
+    #ifdef _WIN32
+        Data = DXMATH_NAMESPACE XMMatrixRotationQuaternion(
+            reinterpret_cast<const DXMATH_NAMESPACE XMVECTOR&>(Data));
+    #else
+        // TODO
+    #endif
+    }
 };
 
 LWAPI_STATIC_ASSERT_SIZE(Matrix34, 64)
