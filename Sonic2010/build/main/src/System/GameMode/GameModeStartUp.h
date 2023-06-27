@@ -8,8 +8,8 @@ namespace app
 {
 namespace xgame
 {
-struct MsgWarningEnd;
-}
+class MsgWarningEnd;
+} // xgame
 
 class GameModeStartUp : public GameMode,
 	public GameModeUtil::Fsm<GameModeStartUp>::Type

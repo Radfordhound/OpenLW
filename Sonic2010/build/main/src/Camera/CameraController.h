@@ -19,7 +19,7 @@ namespace app
 namespace fnd
 {
 struct SUpdateInfo;
-struct Message;
+class Message;
 } // fnd
 
 namespace Camera

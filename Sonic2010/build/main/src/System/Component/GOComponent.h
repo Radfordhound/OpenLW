@@ -19,7 +19,7 @@ namespace fnd
 {
 struct SUpdateInfo;
 class GOComponentClass;
-struct Message;
+class Message;
 class GameServiceClass;
 
 class GOComponent : public RefByHandleObject

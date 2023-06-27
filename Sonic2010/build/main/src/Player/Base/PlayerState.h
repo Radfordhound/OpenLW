@@ -18,7 +18,7 @@ class GameObject;
 
 namespace fnd
 {
-struct Message;
+class Message;
 } // fnd
 
 namespace game

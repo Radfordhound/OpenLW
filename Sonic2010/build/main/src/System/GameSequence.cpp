@@ -4,10 +4,11 @@
 #include "UpdateInfo.h"
 #include "GameMode/GameModeStartUp.h"
 #include "GameMode/GameModeSegaLogo.h"
-#include "Message/Message.h"
+#include "Message/MessageSystem.h"
 #include "Render/RenderManager.h"
 
 using namespace app::gfx;
+using namespace app::xgame;
 using namespace hh::mr;
 
 namespace app
@@ -15,7 +16,7 @@ namespace app
 bool CGameSequence::ProcessMessage(fnd::Message& msg)
 {
     DispatchFSM(EventType::CreateMessage(msg));
-    return msg.Received;
+    return msg.received;
 }
 
 void CGameSequence::InitGameMode(GameMode* gameMode)
@@ -41,13 +42,18 @@ CGameSequence::StateType CGameSequence::StateBoot(const EventType& e)
     switch (e.getSignal())
     {
     case SIGNAL_MESSAGE:
-        if (e.getMessage().ID == ADVANCE_SEQUENCE)
+        switch (e.getMessage().id)
         {
+        case MESSAGE_ADVANCE_SEQUENCE:
             ChangeState(&CGameSequence::StateProduct);
-            e.getMessage().Received = true;
+            e.getMessage().received = true;
             return nullptr;
+
+        default:
+            break;
         }
-        break;
+
+        return FSM_TOP();
 
     case SIGNAL_LEAVE:
         ShutdownGameMode();
@@ -56,9 +62,10 @@ CGameSequence::StateType CGameSequence::StateBoot(const EventType& e)
     case SIGNAL_ENTER:
         InitGameMode(new GameModeStartUp());
         return nullptr;
-    }
 
-    return FSM_TOP();
+    default:
+        return FSM_TOP();
+    }
 }
 
 CGameSequence::StateType CGameSequence::StateProduct(const EventType& e)
@@ -78,14 +85,19 @@ CGameSequence::StateType CGameSequence::StateSegaLogo(const EventType& e)
     switch (e.getSignal())
     {
     case SIGNAL_MESSAGE:
-        if (e.getMessage().ID == ADVANCE_SEQUENCE)
+        switch (e.getMessage().id)
         {
+        case MESSAGE_ADVANCE_SEQUENCE:
             // TODO: Un-comment this line:
             //ChangeState(&CGameSequence::StateSaveInit);
-            e.getMessage().Received = true;
+            e.getMessage().received = true;
             return nullptr;
+
+        default:
+            break;
         }
-        break;
+
+        return &CGameSequence::StateProduct;
 
     case SIGNAL_LEAVE:
         ShutdownGameMode();
@@ -95,9 +107,10 @@ CGameSequence::StateType CGameSequence::StateSegaLogo(const EventType& e)
         StartLeakChecker();
         InitGameMode(new GameModeSegalogo());
         return nullptr;
-    }
 
-    return &CGameSequence::StateProduct;
+    default:
+        return &CGameSequence::StateProduct;
+    }
 }
 
 void CGameSequence::ChangeState(EventFunc state)

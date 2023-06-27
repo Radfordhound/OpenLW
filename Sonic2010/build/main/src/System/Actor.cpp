@@ -45,8 +45,8 @@ void CActor::SetParent(CActor* parent)
 
 void CActor::MessageSetup(unsigned int receiverID, Message& msg)
 {
-    msg.Receiver = receiverID;
-    msg.Sender = m_ID;
+    msg.receiver = receiverID;
+    msg.sender = m_ID;
 }
 
 void CActor::BroadcastMessageImm(unsigned int param_1, Message& msg)
@@ -59,7 +59,7 @@ void CActor::BroadcastMessage(unsigned int receiverID, Message& msg)
     if ((m_allowedMessageFlags & msg.mask) != 0)
     {
         MessageSetup(receiverID, msg);
-        msg.Broadcasted = true;
+        msg.broadcasted = true;
         m_msgMgr->AddMessage(msg);
     }
 }

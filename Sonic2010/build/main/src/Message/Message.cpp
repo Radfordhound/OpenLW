@@ -13,14 +13,12 @@ Message* Message::Clone() const
 Message::~Message() {}
 
 Message::Message(const int id) :
-    ID(id)
-{
-    Sender = 0;
-    Receiver = 0;
-    Received = false;
-    Broadcasted = false;
-    Mask = UINT_MAX;
-}
-}
-}
+    id(id),
+    sender(0),
+    receiver(0),
+    received(false),
+    broadcasted(false),
+    mask(UINT_MAX) {}
+} // fnd
+} // app
 

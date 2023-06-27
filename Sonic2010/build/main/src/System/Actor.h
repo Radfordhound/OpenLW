@@ -13,7 +13,7 @@ namespace app
 {
 namespace fnd
 {
-struct Message;
+class Message;
 class MessageManager;
 class CActorTraverser;
 

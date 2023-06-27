@@ -5,7 +5,7 @@ namespace app
 {
 namespace fnd
 {
-struct Message;
+class Message;
 } // fnd
 
 template<typename T, typename _EventType>

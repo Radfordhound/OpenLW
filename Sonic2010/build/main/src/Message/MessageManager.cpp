@@ -55,11 +55,11 @@ void MessageManager::Update()
         for (auto it = m_executingMessages.begin(); it != m_executingMessages.end(); ++it)
         {
             Message* msg = *it;
-            CActor* receiver = GetActor(msg->Receiver);
+            CActor* receiver = GetActor(msg->receiver);
 
             if (receiver)
             {
-                receiver->ActorProc(msg->Broadcasted, msg);
+                receiver->ActorProc(msg->broadcasted, msg);
             }
             
             delete msg;

@@ -1,4 +1,4 @@
 #include "OpenLW/pch.h"
 
 #define MESSAGE_DEFINITION
-#include "MessageSystem.h"
+#include "MessageGameObject3D.h"

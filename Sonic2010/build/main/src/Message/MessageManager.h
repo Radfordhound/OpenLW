@@ -7,10 +7,11 @@ namespace app
 {
 namespace fnd
 {
-struct Message;
+class Message;
 class CActor;
 
-class MessageManager : public ReferencedObject, public csl::fnd::Singleton<MessageManager> // size == 0x4c
+class MessageManager : public ReferencedObject,
+    public csl::fnd::Singleton<MessageManager> // size == 0x4c
 {
 OPENLW_PRIVATE
     DECLARE_SINGLETON

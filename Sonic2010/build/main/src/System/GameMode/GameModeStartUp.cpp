@@ -1,6 +1,6 @@
 #include "OpenLW/pch.h"
 #include "GameModeStartUp.h"
-#include "Message/Message.h"
+#include "Message/MessageSystem.h"
 #include "System/UpdateInfo.h"
 #include "System/FileSystem.h"
 #include "System/FileLoader.h"
@@ -44,19 +44,21 @@ bool GameModeStartUp::ProcessMessage(CGame& game, fnd::Message& msg)
     if (PreProcessMessage(game, msg))
         return true;
 
-    if (msg.ID == WARNING_END)
+    switch (msg.id)
     {
+    case MESSAGE_WARNING_END:
         ProcMsgWarningEnd(game, reinterpret_cast<MsgWarningEnd&>(msg));
         return true;
+
+    default:
+        return GameMode::ProcessMessage(game, msg);
     }
-    
-    return GameMode::ProcessMessage(game, msg);
 }
 
 bool GameModeStartUp::PreProcessMessage(CGame& game, fnd::Message& msg)
 {
     DispatchFSM(EventType::CreateMessage(msg));
-    return msg.Received;
+    return msg.received;
 }
 
 void GameModeStartUp::ProcMsgWarningEnd(CGame& game, xgame::MsgWarningEnd& msg)

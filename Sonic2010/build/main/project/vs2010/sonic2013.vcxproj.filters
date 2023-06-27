@@ -658,6 +658,15 @@
     <Filter Include="Sound">
       <UniqueIdentifier>{3ae786c0-a5c0-423d-98e8-23a99aad87a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Message\System">
+      <UniqueIdentifier>{8e10eddb-0ac1-4f9a-8c2c-146a4e94836b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message\Camera">
+      <UniqueIdentifier>{c24a7a5d-33db-44d0-80e3-3935da674fa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message\GameObject3D">
+      <UniqueIdentifier>{d94c4f59-83aa-4e09-a861-17b905c01e58}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp">
@@ -896,6 +905,12 @@
     </ClCompile>
     <ClCompile Include="..\..\src\System\Property.cpp">
       <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Message\MessageCamera.cpp">
+      <Filter>Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Message\MessageGameObject3D.cpp">
+      <Filter>Message</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1159,6 +1174,36 @@
     </ClInclude>
     <ClInclude Include="..\..\src\System\Property.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\MessageCamera.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\MessageGameObject3D.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\MessageGameObject3DID.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\MessageCameraID.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\MessageSystemID.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\GameObject3D\MsgIs2DMode.h">
+      <Filter>Message\GameObject3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\System\MsgAdvanceSequence.h">
+      <Filter>Message\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\System\MsgWarningEnd.h">
+      <Filter>Message\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\Camera\MsgBeginBoost.h">
+      <Filter>Message\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Message\Camera\MsgEndBoost.h">
+      <Filter>Message\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

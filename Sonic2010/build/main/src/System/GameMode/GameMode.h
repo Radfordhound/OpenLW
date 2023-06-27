@@ -11,7 +11,7 @@ class CGame;
 namespace fnd
 {
 struct SUpdateInfo;
-struct Message;
+class Message;
 struct FileLoaderParam;
 }
 

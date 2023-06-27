@@ -12,7 +12,7 @@ class GameDocument;
 
 namespace fnd
 {
-struct Message;
+class Message;
 struct SUpdateInfo;
 } // fnd
 
