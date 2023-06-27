@@ -55,7 +55,7 @@ class MsgEndBoost;
 
 namespace Camera
 {
-struct CCameraController;
+class CCameraController;
 
 enum EPlayerCamera
 {
@@ -74,18 +74,6 @@ OPENLW_PRIVATE
     {
         CCameraController* controller;
         EInterpolateType interpolation;
-    };
-
-    struct SCinfo
-    {
-        unsigned int unknown1;
-        unsigned int viewport;
-        float nearClipPlane;
-        float farClipPlane;
-        float fov;
-        unsigned int unknown2;
-        unsigned int flags;
-        unsigned int unknown3;
     };
 
     csl::ut::MoveArray<SCameraListUnit> field_0xD0;
@@ -110,12 +98,24 @@ OPENLW_PRIVATE
     csl::math::Vector3 field_0x1E0;
     csl::math::Vector3 field_0x1F0;
     char padding3[60];
-    unsigned int padding4; // Only exists to align the next Vector3 to 16.
+    float m_unknown1;
     csl::math::Vector3 field_0x240;
     char padding5[12];
     bool m_isBattle;
 
 public:
+    struct SCinfo
+    {
+        unsigned int unknown1;
+        unsigned int viewport;
+        float nearClipPlane;
+        float farClipPlane;
+        float fov;
+        unsigned int unknown2;
+        unsigned int flags;
+        unsigned int unknown3;
+    };
+
     LWAPI(0x02031C1C, TODO)
     ~CCamera();
 
@@ -297,5 +297,7 @@ public:
     LWAPI(0x02035678, NONE)
     void ProcMsgEndBoost(xgame::MsgEndBoost& param_1);
 };
+
+LWAPI_STATIC_ASSERT_SIZE(CCamera, 0x260)
 } // Camera
 } // app

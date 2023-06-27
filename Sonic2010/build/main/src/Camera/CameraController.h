@@ -29,8 +29,9 @@ struct EnterEventArgs;
 struct SPlayer3DCameraParam;
 struct SPlayer3DCameraParamDashMode;
 
-struct CCameraController : hh::base::CRefCountObject
+class CCameraController : public hh::base::CRefCountObject
 {
+OPENLW_PRIVATE
     CCamera* m_camera;
     float m_fovy;
     csl::math::Vector3 m_pos;
@@ -44,118 +45,119 @@ struct CCameraController : hh::base::CRefCountObject
     csl::ut::Bitset<unsigned int> m_flags;
     char padding1[8]; // TODO
 
-    // Wii U: 0x02035DD0, PC: TODO
+public:
+    LWAPI(0x02035DD0, TODO)
     static void* operator new(std::size_t size);
 
-    // Wii U: 0x02035E0C, PC: TODO
+    LWAPI(0x02035E0C, TODO)
     static void operator delete(void* ptr);
 
-    // Wii U: 0x02035E44, PC: TODO
+    LWAPI(0x02035E44, TODO)
     static void* operator new(std::size_t size, const CHedgehogMemoryAllocatorFileLine& param_2, CHedgehogMemoryAllocatorHeap param_3);
 
-    // Wii U: 0x02035EC8, PC: TODO
+    LWAPI(0x02035EC8, TODO)
     CCameraController();
 
-    // Wii U: 0x02035FB4, PC: TODO
+    LWAPI(0x02035FB4, TODO)
     ~CCameraController();
 
-    // Wii U: 0x02036008, PC: TODO
+    LWAPI(0x02036008, TODO)
     virtual void ResetCamera(csl::math::Vector3& param_1, csl::math::Vector3& param_2);
 
-    // Wii U: 0x0203600C, PC: TODO
+    LWAPI(0x0203600C, TODO)
     virtual void RestartCamera();
 
-    // Wii U: 0x02036010, PC: TODO
+    LWAPI(0x02036010, TODO)
     virtual void Update(const fnd::SUpdateInfo& param_1);
 
-    // Wii U: 0x02036014, PC: TODO
+    LWAPI(0x02036014, TODO)
     void SetActive(bool param_1);
 
-    // Wii U: 0x0203601C, PC: 0x00419BA0
+    LWAPI(0x0203601C, 0x00419BA0)
     virtual void OnEnter(EnterEventArgs& param_1);
 
-    // Wii U: 0x02036024, PC: TODO
+    LWAPI(0x02036024, TODO)
     virtual void OnLeave();
 
-    // Wii U: 0x0203602C, PC: TODO
+    LWAPI(0x0203602C, TODO)
     virtual void BeginBoostCamera();
 
-    // Wii U: 0x02036030, PC: TODO
+    LWAPI(0x02036030, TODO)
     virtual void EndBoostCamera();
 
-    // Wii U: 0x02036034, PC: TODO
+    LWAPI(0x02036034, TODO)
     virtual void BeginQuickStep();
 
-    // Wii U: 0x02036038, PC: TODO
+    LWAPI(0x02036038, TODO)
     virtual void EndQuickStep();
 
-    // Wii U: 0x0203603C, PC: TODO
+    LWAPI(0x0203603C, TODO)
     virtual void Set3DCameraParam(const SPlayer3DCameraParam& param_1);
 
-    // Wii U: 0x02036040, PC: TODO
+    LWAPI(0x02036040, TODO)
     virtual void Set3DCameraParamDashMode(const SPlayer3DCameraParamDashMode& param_1);
 
-    // Wii U: 0x02036044, PC: TODO
+    LWAPI(0x02036044, TODO)
     virtual void SetCameraReset(const csl::math::Vector3& param_1, const csl::math::Vector3& param_2);
 
-    // Wii U: 0x02036048, PC: TODO
+    LWAPI(0x02036048, TODO)
     virtual bool IsDistFar();
 
-    // Wii U: 0x02036050, PC: TODO
+    LWAPI(0x02036050, TODO)
     virtual void FocusChange();
 
-    // Wii U: 0x02036054, PC: TODO
+    LWAPI(0x02036054, TODO)
     void GetFovy() const;
 
-    // Wii U: 0x0203605C, PC: TODO
+    LWAPI(0x0203605C, TODO)
     void GetCameraParam(csl::math::Vector3& param_1, csl::math::Vector3& param_2, csl::math::Vector3& param_3);
 
-    // Wii U: 0x020360D0, PC: TODO
+    LWAPI(0x020360D0, TODO)
     void SetCollisionEnable(bool param_1);
 
-    // Wii U: 0x02036104, PC: TODO
+    LWAPI(0x02036104, TODO)
     void IsCollisionEnable() const;
 
-    // Wii U: 0x02036110, PC: TODO
+    LWAPI(0x02036110, TODO)
     void SetPhantomCamera();
 
-    // Wii U: 0x0203611C, PC: TODO
+    LWAPI(0x0203611C, TODO)
     void IsPhantomCamera() const;
 
-    // Wii U: 0x02036128, PC: TODO
+    LWAPI(0x02036128, TODO)
     void SetDebugCamera();
 
-    // Wii U: 0x02036134, PC: TODO
+    LWAPI(0x02036134, TODO)
     void IsDebugCamera() const;
 
-    // Wii U: 0x02036140, PC: TODO
+    LWAPI(0x02036140, TODO)
     void SetMultiCamera();
 
-    // Wii U: 0x0203614C, PC: TODO
+    LWAPI(0x0203614C, TODO)
     void IsMultiCamera() const;
 
-    // Wii U: 0x02036158, PC: TODO
+    LWAPI(0x02036158, TODO)
     void SetPreview();
 
-    // Wii U: 0x02036164, PC: TODO
+    LWAPI(0x02036164, TODO)
     void IsPreview() const;
 
-    // Wii U: 0x02036170, PC: TODO
+    LWAPI(0x02036170, TODO)
     virtual bool ProcessMessage(fnd::Message& param_1);
 
-    // Wii U: 0x02036178, PC: TODO
+    LWAPI(0x02036178, TODO)
     void SetFovy(float param_1);
 
-    // Wii U: 0x02036180, PC: TODO
+    LWAPI(0x02036180, TODO)
     void SetCameraParam(const csl::math::Vector3& param_1, const csl::math::Vector3& param_2, const csl::math::Vector3& param_3);
 
-    // Wii U: 0x020361C0, PC: TODO
+    LWAPI(0x020361C0, TODO)
     void GetCameraTargetPositionForPlayer(bool param_1);
 
-    // Wii U: 0x02036220, PC: TODO
+    LWAPI(0x02036220, TODO)
     void GetCameraVelocityForPlayer(csl::math::Vector3& param_1);
 
-    // Wii U: 0x02036238, PC: TODO
+    LWAPI(0x02036238, TODO)
     void GetCameraDirectionForPlayer(csl::math::Vector3& param_1, csl::math::Vector3& param_2, csl::math::Vector3& param_3);
 };
 } // Camera
