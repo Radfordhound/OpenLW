@@ -20,10 +20,10 @@ OPENLW_PROTECTED
     std::size_t m_flags;
     fnd::IAllocator* m_allocator;
 
-    MoveArray(T* data, std::size_t count,
+    MoveArray(void* data, std::size_t count,
         std::size_t capacityAndFlags,
         fnd::IAllocator* allocator) :
-        m_data(data),
+        m_data(static_cast<T*>(data)),
         m_count(count),
         m_flags(capacityAndFlags),
         m_allocator(allocator) {}
@@ -280,7 +280,7 @@ template<typename T, std::size_t BufferSize>
 class InplaceMoveArray : public MoveArray<T>
 {
 OPENLW_PRIVATE
-    T m_buffer[BufferSize];
+    unsigned char m_buffer[sizeof(T) * BufferSize];
 
 public:
     InplaceMoveArray(std::size_t count = 0) :
@@ -299,9 +299,9 @@ OPENLW_PROTECTED
     std::size_t m_flags;
     fnd::IAllocator* m_allocator;
 
-    ObjectMoveArray(T* data, std::size_t count,
+    ObjectMoveArray(void* data, std::size_t count,
         std::size_t capacityAndFlags, fnd::IAllocator* allocator) :
-        m_data(data),
+        m_data(static_cast<T*>(data)),
         m_count(count),
         m_flags(capacityAndFlags),
         m_allocator(allocator) {}
