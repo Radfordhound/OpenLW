@@ -31,10 +31,9 @@ OPENLW_PRIVATE
     unsigned char m_category;
     GameDocument* m_owner;
     std::size_t field_0x24;
-    GameObjectTableEntry m_objTableEntry;
+    GameObjectTableEntry* m_objTableEntry;
     csl::ut::InplaceMoveArray<fnd::GOComponent*, 8> m_components;
-    csl::ut::VariableString* m_name;
-    csl::fnd::IAllocator* m_objAllocator;
+    csl::ut::VariableString m_name;
     csl::ut::InplaceMoveArray<fnd::Property, 2> m_properties;
     unsigned int m_componentFlags;
     csl::ut::LinkList<fnd::GOComponent> m_visualComponents;
@@ -177,4 +176,6 @@ public:
     LWAPI(0x02360A74, TODO)
     bool HasProperty(unsigned int param_1) const;
 };
+
+LWAPI_STATIC_ASSERT_SIZE(GameObject, 0xD0)
 } // app
