@@ -59,7 +59,7 @@ void CBranchActor::UpdateChildren(const csl::ut::MoveArray<CActor*>& children,
 {
     for (auto it = children.begin(); it != children.end(); ++it)
     {
-        if ((*it)->GetField0xE())
+        if ((*it)->GetFlags())
         {
             (*it)->ActorProc(param_2, param_3);
         }
@@ -73,7 +73,7 @@ bool CBranchActor::ActorProc(int param_1, void* param_2)
     case SIGNAL_UPDATE:
     {
         Message* msg = static_cast<Message*>(param_2);
-        return (field_0xf && ProcessMessage(*msg));
+        return (m_enabled && ProcessMessage(*msg));
     }
 
     case SIGNAL_MESSAGE:
@@ -83,7 +83,7 @@ bool CBranchActor::ActorProc(int param_1, void* param_2)
 
         for (auto it = m_childActors.begin(); it != m_childActors.end(); ++it)
         {
-            if (((*it)->GetField0x10() & msg->Mask) != 0)
+            if (((*it)->GetAllowedMessageFlags() & msg->mask) != 0)
             {
                 (*it)->ActorProc(SIGNAL_MESSAGE, msg);
             }
@@ -92,7 +92,7 @@ bool CBranchActor::ActorProc(int param_1, void* param_2)
     }
 
     case 3: // TODO: What is this signal type??
-        if (!field_0xe)
+        if (!m_flags)
         {
             return false;
         }
@@ -102,7 +102,7 @@ bool CBranchActor::ActorProc(int param_1, void* param_2)
         break;
 
     case 4: // TODO: What is this signal type??
-        if (!field_0xe)
+        if (!m_flags)
         {
             return false;
         }
@@ -111,7 +111,7 @@ bool CBranchActor::ActorProc(int param_1, void* param_2)
         break;
 
     case 5: // TODO: What is this signal type??
-        if (!field_0xe)
+        if (!m_flags)
         {
             return false;
         }
