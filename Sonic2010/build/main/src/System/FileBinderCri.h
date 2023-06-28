@@ -1,17 +1,23 @@
 // TODO: The name of this file is correct, but the path was guessed!
 #pragma once
-#ifdef USE_CRIWARE
 #include "FileBinder.h"
 #include <csl/ut/array.h>
+
+#if OPENLW_USE_CRIWARE == 1
 #include <cri_file_system.h> // TODO: Replace Criware with an open-source library!!
+#else
+#ifndef CriFsBinderHn
+#define CriFsBinderHn void*
+#endif
+#endif
 
 namespace csl
 {
 namespace fnd
 {
 struct IAllocator;
-}
-}
+} // fnd
+} // csl
 
 namespace app
 {
@@ -83,7 +89,6 @@ namespace file
 */
 LWAPI(0x0218eed0, TODO)
 void ConvertPath(char* path);
-}
-}
-}
-#endif
+} // file
+} // fnd
+} // app

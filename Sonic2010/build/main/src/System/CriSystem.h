@@ -1,6 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
 #pragma once
-#ifdef USE_CRIWARE
 #include "ReferencedObject.h"
 #include "Singleton.h"
 
@@ -46,4 +45,3 @@ public:
     CriSystem();
 };
 }
-#endif

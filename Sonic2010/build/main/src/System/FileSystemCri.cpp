@@ -1,6 +1,7 @@
 // TODO: The name of this file is correct, but the path was guessed!
 #include "OpenLW/pch.h"
-#ifdef USE_CRIWARE
+
+#if OPENLW_USE_CRIWARE == 1
 #include "FileSystemCri.h"
 #include "FileReaderCri.h"
 #include <new>

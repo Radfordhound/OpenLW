@@ -1,10 +1,22 @@
 // TODO: The name of this file is correct, but the path was guessed!
 #pragma once
-#ifdef USE_CRIWARE
 #include "FileReader.h"
 #include <csl/ut/string.h>
 #include <csl/ut/string_map.h>
+
+#if OPENLW_USE_CRIWARE == 1
 #include <cri_file_system.h> // TODO: Replace Criware with an open-source library!!
+#else
+
+#ifndef CriFsLoaderHn
+#define CriFsLoaderHn void*
+#endif
+
+#ifndef CRIAPI
+#define CRIAPI
+#endif
+
+#endif
 
 namespace app
 {
@@ -20,7 +32,7 @@ namespace file
 */
 LWAPI(0x0218fb4c, TODO)
 void CRIAPI CriLoadEndCbFunc(void* obj, CriFsLoaderHn loader);
-}
+} // file
 
 class FileReaderCri : public FileReader
 {
@@ -157,7 +169,6 @@ namespace file
 */
 LWAPI(0x02192bc0, TODO)
 FileHandleObj* CreateHandle(csl::fnd::IAllocator* allocator);
-}
-}
-}
-#endif
+} // file
+} // fnd
+} // app

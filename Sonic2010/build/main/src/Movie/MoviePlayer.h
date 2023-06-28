@@ -4,7 +4,16 @@
 #include <Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h>
 #include <csl/ut/string.h>
 #include <csl/ut/bitset.h>
+
+#if OPENLW_USE_CRIWARE == 1
 #include <cri_mana.h>
+#else
+
+#ifndef CriManaPlayerHn
+#define CriManaPlayerHn void*
+#endif
+
+#endif
 
 namespace app
 {
@@ -78,5 +87,5 @@ public:
     LWAPI(0x021a399c, 0x0049c030)
     void Draw(bool param_1);
 };
-}
-}
+} // fnd
+} // app

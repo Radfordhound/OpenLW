@@ -1,6 +1,5 @@
 // TODO: The name of this file is correct, but the path was guessed!
 #pragma once
-#ifdef USE_CRIWARE
 #include "FileSystem.h"
 #include "FileBinderCri.h"
 
@@ -27,6 +26,5 @@ struct FileSystemCri : FileSystem
     LWAPI(0x0219320c, 0x004940d0)
     FileSystemCri();
 };
-}
-}
-#endif
+} // fnd
+} // app
