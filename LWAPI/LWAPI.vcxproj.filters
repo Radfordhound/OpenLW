@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\sonic2013">
+      <UniqueIdentifier>{ab8742b4-f9b6-4773-99c0-48400980e239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\dev">
+      <UniqueIdentifier>{7435e7c7-8702-45a9-9fd0-cb4034ab2c94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\dev\seteditor">
+      <UniqueIdentifier>{3bea6c87-5509-4e8d-be75-c27811b5c760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\HUD">
+      <UniqueIdentifier>{28a231c9-700d-4e9a-8276-4c1131cbe6c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Input">
+      <UniqueIdentifier>{5a85a545-db4b-4e69-b3ef-6112bb3a7f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\math">
+      <UniqueIdentifier>{8fb7d228-8a35-4444-be63-511de5853b98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Memory">
+      <UniqueIdentifier>{1fbdb5f1-8937-4a3e-bc82-ec5d79124b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Message">
+      <UniqueIdentifier>{5215f80b-630f-4a3b-8321-0bd5d5812b93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Movie">
+      <UniqueIdentifier>{ab805e2c-8dc3-4bbb-93b7-3df34af0d7ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Camera">
+      <UniqueIdentifier>{d8f677f3-ca63-4ac1-afcf-fcc6154a6fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Platforms">
+      <UniqueIdentifier>{ef048ef8-c058-4b99-94c8-1cc2b7620358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Platforms\Win">
+      <UniqueIdentifier>{9d15b5bd-9234-4a6d-971e-4126024266b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Render">
+      <UniqueIdentifier>{e716e367-b430-41c9-89a1-d67953704336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\SaveData">
+      <UniqueIdentifier>{10335343-ca49-4151-a7ed-02e09bc03784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\System">
+      <UniqueIdentifier>{a35160b2-5fd1-4ddb-9591-c2d9815abbd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\System\Component">
+      <UniqueIdentifier>{03432ac4-5eef-446e-9227-b1d53de8525c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\System\GameMode">
+      <UniqueIdentifier>{83ea2d2b-bef3-43dd-9e9d-097714dafced}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\System\Resource">
+      <UniqueIdentifier>{16c865e9-b8bf-41ec-9459-dbd2f6e23aa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Utility">
+      <UniqueIdentifier>{7d1a22d3-e819-443e-aeba-77b156d299e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\xgame">
+      <UniqueIdentifier>{c6c19ebe-e404-452e-8ce0-bbdf00bd64b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\xgame\system">
+      <UniqueIdentifier>{529ef9bc-1ba4-4f55-a276-553cc1ea35e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library">
+      <UniqueIdentifier>{fec545c3-d762-4834-944d-eed6aa619591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog">
+      <UniqueIdentifier>{e5ea04bb-db19-42db-a886-00588d078691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\cslib">
+      <UniqueIdentifier>{fce0aa6f-cffd-4cf2-a587-970473720565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\cslib\dbg">
+      <UniqueIdentifier>{d3f2eebf-ae8c-4742-9cf9-c2d21275dac5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\cslib\fnd">
+      <UniqueIdentifier>{11c8dacf-daf9-4fb2-b05c-be28ca101bbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\cslib\hio">
+      <UniqueIdentifier>{2370746c-9293-4a67-8459-0b7330921be3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\cslib\math">
+      <UniqueIdentifier>{79c237af-ab3e-45b4-ab3c-7823a806cc08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\cslib\ut">
+      <UniqueIdentifier>{fd65c0db-8942-4f21-af07-a5a07bec6443}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Base">
+      <UniqueIdentifier>{e6d20057-7c7a-4536-9265-b2eca327e0a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Base\Platform">
+      <UniqueIdentifier>{a742e18e-1d47-462b-8ecf-0b07439f5cd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Base\Platform\D3d9">
+      <UniqueIdentifier>{0f97d16e-c81a-4f9b-8718-2c5791f1bdf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Base\System">
+      <UniqueIdentifier>{9ddd6e9c-841d-4eae-b9cf-b4972fde67cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Base\Thread">
+      <UniqueIdentifier>{a3568691-9130-4be6-aeb0-779ee1534422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Database">
+      <UniqueIdentifier>{4cb9f1b6-5e2b-4555-b3fb-cc3d9d52acd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Graphics">
+      <UniqueIdentifier>{fd90291f-dd69-4918-a1d2-2269e672048f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Graphics\Resource">
+      <UniqueIdentifier>{27222b50-b37e-4b7f-b36a-da8978fb1aa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\MirageCore">
+      <UniqueIdentifier>{22ad8698-6998-4333-8528-0cec81a3d439}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\MirageCore\Misc">
+      <UniqueIdentifier>{e9cfa53e-651d-4d46-9c2f-cf29c9c039b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\MirageCore\Resource">
+      <UniqueIdentifier>{0ff46913-b99c-4cab-ac04-255a16701656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\MirageDebug">
+      <UniqueIdentifier>{793a8404-a422-412e-af21-5521cdb75049}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\MTBase">
+      <UniqueIdentifier>{2746257c-c3e6-409b-8ed4-01b38256dd5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\MTBase\Thread">
+      <UniqueIdentifier>{a3b66633-137d-4be0-9d91-d6d76e32a7a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx">
+      <UniqueIdentifier>{55b0e421-5696-421f-bd2e-7e8c0fb5d3a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx\Graphics">
+      <UniqueIdentifier>{12cf69fa-d6f3-4d27-875a-82d61a38c7f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx\Graphics\Device">
+      <UniqueIdentifier>{fcf1e7c3-face-4103-b7b8-00300030d698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx\Graphics\Shader">
+      <UniqueIdentifier>{9adebdfa-d935-4b71-95fd-4a1edc2c20c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx\Graphics\Stream">
+      <UniqueIdentifier>{4c169578-7aec-4f9c-899c-26b5b36e43cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx\HeapMemory">
+      <UniqueIdentifier>{3a7cfdfd-596b-42d5-a76d-8f7b19cefa20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx\HeapMemory\Allocator">
+      <UniqueIdentifier>{c5c8b6eb-991d-48e9-a81d-039ef499fe2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Rsdx\System">
+      <UniqueIdentifier>{f1c1bdc4-f24b-474f-a92e-d6313afb5086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Utility">
+      <UniqueIdentifier>{21ded837-1846-4f96-89ca-d581e8893f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Extra">
+      <UniqueIdentifier>{dc517afa-97f8-4740-a160-889013b20901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Extra\fx">
+      <UniqueIdentifier>{94f8d835-3dc6-4d5a-94f6-be076c843955}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Extra\fx\Schedule">
+      <UniqueIdentifier>{8831d021-2c07-4044-84b6-836537a27d36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Extra\fx\System">
+      <UniqueIdentifier>{8974c565-10dd-4874-8b96-84f441228a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hedgehog\Extra\fx\Util">
+      <UniqueIdentifier>{88c52b70-96c5-44fb-9798-00b0eb09829b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\vs2010_std">
+      <UniqueIdentifier>{c2802457-868e-4128-95d7-da13a38000ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\sonicusa">
+      <UniqueIdentifier>{ad9314a4-0048-435d-8ee0-0df5c6ef42f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Library\sonicusa\system">
+      <UniqueIdentifier>{31579c6d-ce8d-4a1c-8ad4-73a63d203d30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Camera\Controller">
+      <UniqueIdentifier>{49e06114-72ef-4d02-9164-a65dda9d9fcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Player">
+      <UniqueIdentifier>{b4abd07b-321b-4ab5-bfc7-384a2358c1a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Player\Base">
+      <UniqueIdentifier>{7fa56cc6-2bfb-4a25-a153-52c3029683db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Sound">
+      <UniqueIdentifier>{29246bd4-fbba-4804-ac21-a49d53f18015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sonic2013">
+      <UniqueIdentifier>{a6ea9e5f-9bf7-4e44-b270-c9d379d2ed82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sonic2013\Message">
+      <UniqueIdentifier>{6ceb5e09-deb8-4260-ae15-a9667a6d7993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sonic2013\Message\Camera">
+      <UniqueIdentifier>{c023ec39-04fd-4f5d-a3ff-d0f2db3bb7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Player\State">
+      <UniqueIdentifier>{2704d71a-b97b-4557-938f-ea58dbd13d12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Message\Camera">
+      <UniqueIdentifier>{13bbbdae-f61d-4fff-9a19-899bbbe72b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Message\GameObject3D">
+      <UniqueIdentifier>{7afabea7-d888-4be0-825c-894894c00519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sonic2013\Message\System">
+      <UniqueIdentifier>{7adc97e6-f6b4-4164-865d-2b9449246058}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\dev\seteditor\SetEdDataAc.h">
+      <Filter>Header Files\sonic2013\dev\seteditor</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\HUD\SurfRidePlatformMIRAGE.h">
+      <Filter>Header Files\sonic2013\HUD</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceBase.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceData.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceManager.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceManagerImpl.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DevicePadKB.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DevicePadWin.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DevicePlatformBase.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceTouchWin.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceWin.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\math\Angle3.h">
+      <Filter>Header Files\sonic2013\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\math\Matrix34.h">
+      <Filter>Header Files\sonic2013\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\math\Quaternion.h">
+      <Filter>Header Files\sonic2013\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Memory\GlobalAllocator.h">
+      <Filter>Header Files\sonic2013\Memory</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Memory\MemoryRouter.h">
+      <Filter>Header Files\sonic2013\Memory</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Memory\PooledAllocator.h">
+      <Filter>Header Files\sonic2013\Memory</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageSystem.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\Message.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageManager.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Movie\MoviePlayer.h">
+      <Filter>Header Files\sonic2013\Movie</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Movie\MovieSystem.h">
+      <Filter>Header Files\sonic2013\Movie</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Platforms\Win\ApplicationWin.h">
+      <Filter>Header Files\sonic2013\Platforms\Win</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\gfx_Renderable.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\gfx_RenderableEvent.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\gfx_ResourceCallback.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderableContainer.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderManager.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderManagerImpl.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderSceneView.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderSceneViewImpl.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderScheduler.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderSynchronizer.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RMSceneViewImpl.h">
+      <Filter>Header Files\sonic2013\Render</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\SaveData\SaveAuto.h">
+      <Filter>Header Files\sonic2013\SaveData</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameMode\GameMode.h">
+      <Filter>Header Files\sonic2013\System\GameMode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameMode\GameModeSegaLogo.h">
+      <Filter>Header Files\sonic2013\System\GameMode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameMode\GameModeStartUp.h">
+      <Filter>Header Files\sonic2013\System\GameMode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\TinyFsm.h">
+      <Filter>Header Files\sonic2013\System\Component</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceCallbackBase.h">
+      <Filter>Header Files\sonic2013\System\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceCustom.h">
+      <Filter>Header Files\sonic2013\System\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceManager.h">
+      <Filter>Header Files\sonic2013\System\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceSysCustom.h">
+      <Filter>Header Files\sonic2013\System\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Actor.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ActorTraverser.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Application.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ApplicationProperty.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ApplicationPropertyImpl.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Atomic.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\BaseObject.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\BranchActor.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Constants.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\CriSystem.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileBinder.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileBinderCri.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileCache.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileHandle.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileLoader.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileReader.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileReaderCri.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileSystem.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileSystemCri.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Game.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameBase.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameDocument.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameObject.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameSequence.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\LeafActor.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ReferencedObject.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Singleton.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\SyncTimer.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\UpdateInfo.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\WorldHH.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Freelist.h">
+      <Filter>Header Files\sonic2013\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\RefPtr.h">
+      <Filter>Header Files\sonic2013\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\xgame\system\DlcManager.h">
+      <Filter>Header Files\sonic2013\xgame\system</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhThreadImpD3D9.h">
+      <Filter>Header Files\Hedgehog\Base\Platform\D3d9</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhBaseD3D9.h">
+      <Filter>Header Files\Hedgehog\Base\Platform\D3d9</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhCCriticalSectionD3D9.h">
+      <Filter>Header Files\Hedgehog\Base\Platform\D3d9</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhEventWaitD3D9.h">
+      <Filter>Header Files\Hedgehog\Base\Platform\D3d9</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhSharedString.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhAllocator.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhCSymbol.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhEventWait.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhHash.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhMemory.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhMemoryAllocator.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhObject.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhPluginable.h">
+      <Filter>Header Files\Hedgehog\Base\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Thread\hhThread.h">
+      <Filter>Header Files\Hedgehog\Base\Thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\hhBaseCommon.h">
+      <Filter>Header Files\Hedgehog\Base</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\hhMap.h">
+      <Filter>Header Files\Hedgehog\Base</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\memory.h">
+      <Filter>Header Files\Library\cslib\fnd</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\singleton.h">
+      <Filter>Header Files\Library\cslib\fnd</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\thread.h">
+      <Filter>Header Files\Library\cslib\fnd</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\tick.h">
+      <Filter>Header Files\Library\cslib\fnd</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\math\algorithm.h">
+      <Filter>Header Files\Library\cslib\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\math\matrix34.h">
+      <Filter>Header Files\Library\cslib\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\math\quaternion.h">
+      <Filter>Header Files\Library\cslib\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\math\vector2.h">
+      <Filter>Header Files\Library\cslib\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\math\vector3.h">
+      <Filter>Header Files\Library\cslib\math</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\array.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\bitset.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\hash_map.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\noncopyable.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\number.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\string.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\string_map.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Goc.h">
+      <Filter>Header Files\sonic2013\System\Component</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Database\hhSampleChunk.h">
+      <Filter>Header Files\Hedgehog\Database</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Database\hhDatabaseData.h">
+      <Filter>Header Files\Hedgehog\Database</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResFragmentShader.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMapChannelFixed.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMaterial.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMaterialAcTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCode.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCodeTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameter.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameterTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCode.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCodeTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameter.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameterTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResNameData.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResParameter.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderAc.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderAcTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderConstant.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderSampler.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsage.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResTechnique.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResTexture.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResUserData.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResVertexShader.h">
+      <Filter>Header Files\Hedgehog\Graphics\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\hhGraphics.h">
+      <Filter>Header Files\Hedgehog\Graphics</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\hhRenderEvent.h">
+      <Filter>Header Files\Hedgehog\Graphics</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Misc\hhRenderingDevice.h">
+      <Filter>Header Files\Hedgehog\MirageCore\Misc</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Misc\hhRenderingInfrastructure.h">
+      <Filter>Header Files\Hedgehog\MirageCore\Misc</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Resource\hhShaderResource.h">
+      <Filter>Header Files\Hedgehog\MirageCore\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\hhMirageCore.h">
+      <Filter>Header Files\Hedgehog\MirageCore</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Resource\hhMaterialResource.h">
+      <Filter>Header Files\Hedgehog\MirageCore\Resource</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\Thread\hhMTJobThreadFactory.h">
+      <Filter>Header Files\Hedgehog\MTBase\Thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhEventHolder.h">
+      <Filter>Header Files\Hedgehog\MTBase</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhJob.h">
+      <Filter>Header Files\Hedgehog\MTBase</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhJobJoint.h">
+      <Filter>Header Files\Hedgehog\MTBase</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhListExecutor.h">
+      <Filter>Header Files\Hedgehog\MTBase</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhMTJobMemorySystemUtil.h">
+      <Filter>Header Files\Hedgehog\MTBase</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhMTSimpleJob.h">
+      <Filter>Header Files\Hedgehog\MTBase</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevCore.h">
+      <Filter>Header Files\Hedgehog\Rsdx\Graphics\Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevice.h">
+      <Filter>Header Files\Hedgehog\Rsdx\Graphics\Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\Graphics\Shader\RsdxDeviceShader.h">
+      <Filter>Header Files\Hedgehog\Rsdx\Graphics\Shader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\HeapMemory\Allocator\hhRsdxMemoryMain.h">
+      <Filter>Header Files\Hedgehog\Rsdx\HeapMemory\Allocator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\HeapMemory\hhRsdxMemoryUtil.h">
+      <Filter>Header Files\Hedgehog\Rsdx\HeapMemory</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxAtomic.h">
+      <Filter>Header Files\Hedgehog\Rsdx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxEvent.h">
+      <Filter>Header Files\Hedgehog\Rsdx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxIntrusivePtr.h">
+      <Filter>Header Files\Hedgehog\Rsdx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxMutex.h">
+      <Filter>Header Files\Hedgehog\Rsdx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxObject.h">
+      <Filter>Header Files\Hedgehog\Rsdx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxResource.h">
+      <Filter>Header Files\Hedgehog\Rsdx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxThread.h">
+      <Filter>Header Files\Hedgehog\Rsdx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhComPtr.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhComRefcounterStrategyForRendering.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhPackfile.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResCommon.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResDependTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResDictionary.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResGeneralTypeInfo.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResource.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResourceTypeInfoRegistry.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhScopedComPtr.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhUtility.h">
+      <Filter>Header Files\Hedgehog\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhGPUInstanceMapper.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhGroupStartEndPair.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhRenderOneCallback.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhRenderParam.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhRenderScratchBuffer.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhStackAllocator.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\System\hhFxObject.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Schedule\hhFxPipelineCommandUtil.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Schedule</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Schedule\hhFxPipelineScheduler.h">
+      <Filter>Header Files\Hedgehog\Extra\fx\Schedule</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Camera\Camera.h">
+      <Filter>Header Files\sonic2013\Camera</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Camera\CameraController.h">
+      <Filter>Header Files\sonic2013\Camera</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h">
+      <Filter>Header Files\sonic2013\System\Component</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\sonicusa\include\sonicusa\system\Random.h">
+      <Filter>Header Files\Library\sonicusa\system</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Camera\Controller\Player3DNormalCamera.h">
+      <Filter>Header Files\sonic2013\Camera\Controller</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerState.h">
+      <Filter>Header Files\sonic2013\Player\Base</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\GOComponent.h">
+      <Filter>Header Files\sonic2013\System\Component</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Sound\SoundHandle.h">
+      <Filter>Header Files\sonic2013\Sound</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Handle.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Property.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageCamera.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\LevelInfo.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameService.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameServiceClass.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtil.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilEffect.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilGravity.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilParkour.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilSound.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilSuperSonic.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilVisual.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameObject3D.h">
+      <Filter>Header Files\sonic2013\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\Player.h">
+      <Filter>Header Files\sonic2013\Player\Base</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageGameObject3D.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageCameraID.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageSystemID.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageGameObject3DID.h">
+      <Filter>Header Files\sonic2013\Message</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\System\MsgWarningEnd.h">
+      <Filter>Header Files\sonic2013\Message\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\System\MsgAdvanceSequence.h">
+      <Filter>Header Files\sonic2013\Message\System</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\GameObject3D\MsgIs2DMode.h">
+      <Filter>Header Files\sonic2013\Message\GameObject3D</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\LWAPI.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\sonic2013\Message\Camera\MsgEndBoost.asm">
+      <Filter>Source Files\sonic2013\Message\Camera</Filter>
+    </MASM>
+    <MASM Include="src\sonic2013\Message\Camera\MsgBeginBoost.asm">
+      <Filter>Source Files\sonic2013\Message\Camera</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\LWAPI.inc">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\LWAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vs2010_std\vs2010_vector.h">
+      <Filter>Header Files\vs2010_std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\cslib\include\csl\ut\linklist.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\cslib\include\csl\ut\variablestring.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LWAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

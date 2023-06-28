@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\Message.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageManager.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\dev\seteditor\SetEdDataAc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\HUD\SurfRidePlatformMIRAGE.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceBase.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceData.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceManager.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceManagerImpl.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DevicePadKB.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DevicePadWin.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DevicePlatformBase.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceTouchWin.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\DeviceWin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\math\Angle3.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\math\Matrix34.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\math\Quaternion.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Memory\GlobalAllocator.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Memory\MemoryRouter.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Memory\PooledAllocator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Movie\MoviePlayer.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Movie\MovieSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Platforms\Win\ApplicationWin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\gfx_Renderable.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\gfx_RenderableEvent.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\gfx_ResourceCallback.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderableContainer.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderManager.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderManagerImpl.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderSceneView.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderSceneViewImpl.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderScheduler.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RenderSynchronizer.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Render\RMSceneViewImpl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\SaveData\SaveAuto.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Actor.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ActorTraverser.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Application.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ApplicationProperty.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ApplicationPropertyImpl.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Atomic.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\BaseObject.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\BranchActor.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\TinyFsm.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Constants.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\CriSystem.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileBinder.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileBinderCri.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileCache.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileHandle.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileLoader.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileReader.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileReaderCri.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileSystem.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\FileSystemCri.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Game.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameBase.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameDocument.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameMode\GameMode.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameMode\GameModeSegaLogo.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameMode\GameModeStartUp.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameObject.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameSequence.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\LeafActor.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\ReferencedObject.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceCallbackBase.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceCustom.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceManager.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Resource\ResourceSysCustom.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Singleton.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\SyncTimer.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\UpdateInfo.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\WorldHH.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Freelist.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\RefPtr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\xgame\system\DlcManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\LWAPI.asm">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(FileName)_asm.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(FileName)_asm.obj</ObjectFileName>
+    </MASM>
+    <MASM Include="src\sonic2013\Message\Camera\MsgBeginBoost.asm" />
+    <MASM Include="src\sonic2013\Message\Camera\MsgEndBoost.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\LWAPI.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtil.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilEffect.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilGravity.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilParkour.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilSound.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilSuperSonic.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateUtilVisual.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameObject3D.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\Player.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageGameObject3D.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageCameraID.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageGameObject3DID.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageSystemID.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\GameObject3D\MsgIs2DMode.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\System\MsgAdvanceSequence.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\System\MsgWarningEnd.h" />
+    <ClInclude Include="src\pch.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h" />
+    <CustomBuild Include="..\Library\sonicusa\include\sonicusa\system\Random.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Camera\Controller\Player3DNormalCamera.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerState.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\GOComponent.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Sound\SoundHandle.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Handle.h" />
+    <ClInclude Include="..\Library\cslib\include\csl\ut\linklist.h" />
+    <ClInclude Include="..\Library\cslib\include\csl\ut\variablestring.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Property.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Message\MessageCamera.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\LevelInfo.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameService.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\GameServiceClass.h" />
+    <ClInclude Include="include\vs2010_std\vs2010_vector.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\memory.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\singleton.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\thread.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\fnd\tick.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\math\algorithm.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\math\matrix34.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\math\quaternion.h">
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDirFullPath)csl_%(Filename).asm</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDirFullPath)csl_%(Filename).asm</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(LWAPI_BINDING_GENERATOR_DIR)\LWAPIBindingGenerator.exe" "%(FullPath)" "$(IntDirFullPath)csl_%(Filename).asm" "$(ProjectDir)..\Sonic2013\Hedgehog\include" "$(ProjectDir)..\Sonic2013\Hedgehog\Extra\include" "$(ProjectDir)..\Library\cslib\include" "$(ProjectDir)..\depends\boost\include" "$(DXSDK_DIR)Include" "$(ProjectDir)..\Sonic2010\build\main\src"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(LWAPI_BINDING_GENERATOR_DIR)\LWAPIBindingGenerator.exe" "%(FullPath)" "$(IntDirFullPath)csl_%(Filename).asm" "$(ProjectDir)..\Sonic2013\Hedgehog\include" "$(ProjectDir)..\Sonic2013\Hedgehog\Extra\include" "$(ProjectDir)..\Library\cslib\include" "$(ProjectDir)..\depends\boost\include" "$(DXSDK_DIR)Include" "$(ProjectDir)..\Sonic2010\build\main\src"</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\math\vector2.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\math\vector3.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\array.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\bitset.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\hash_map.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\noncopyable.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\number.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\string.h" />
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\string_map.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Goc.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\hhBaseCommon.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\hhMap.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhBaseD3D9.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhCCriticalSectionD3D9.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhEventWaitD3D9.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Platform\D3d9\hhThreadImpD3D9.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhAllocator.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhCSymbol.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhEventWait.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhHash.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhMemory.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhMemoryAllocator.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhObject.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhPluginable.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\System\hhSharedString.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Base\Thread\hhThread.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Database\hhDatabaseData.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Database\hhSampleChunk.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\hhGraphics.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\hhRenderEvent.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResFragmentShader.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMapChannelFixed.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMaterial.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMaterialAcTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCode.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderCodeTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameter.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMiragePixelShaderParameterTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCode.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderCodeTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameter.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResMirageVertexShaderParameterTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResNameData.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResParameter.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderAc.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderAcTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderCommonData.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderConstant.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderConstantUsage.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderSampler.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResShaderSamplerUsage.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResTechnique.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResTexture.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResUserData.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Graphics\Resource\hhResVertexShader.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\hhMirageCore.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Misc\hhRenderingDevice.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Misc\hhRenderingInfrastructure.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Resource\hhMaterialResource.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MirageCore\Resource\hhShaderResource.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhEventHolder.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhJob.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhJobJoint.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhListExecutor.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhMTJobMemorySystemUtil.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\hhMTSimpleJob.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\MTBase\Thread\hhMTJobThreadFactory.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevCore.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\Graphics\Device\RsdxDevice.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\Graphics\Shader\RsdxDeviceShader.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\HeapMemory\Allocator\hhRsdxMemoryMain.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\HeapMemory\hhRsdxMemoryUtil.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxAtomic.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxEvent.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxIntrusivePtr.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxMutex.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxObject.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxResource.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Rsdx\System\RsdxThread.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhComPtr.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhComRefcounterStrategyForRendering.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhPackfile.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResCommon.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResDependTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResDictionary.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResGeneralTypeInfo.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResource.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhResourceTypeInfoRegistry.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhScopedComPtr.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\include\Hedgehog\Utility\hhUtility.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Schedule\hhFxPipelineCommandUtil.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Schedule\hhFxPipelineScheduler.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\System\hhFxObject.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhGPUInstanceMapper.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhGroupStartEndPair.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhRenderOneCallback.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhRenderParam.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhRenderScratchBuffer.h" />
+    <CustomBuild Include="..\Sonic2013\Hedgehog\Extra\include\Extra\Util\hhStackAllocator.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Camera\Camera.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Camera\CameraController.h" />
+    <ClInclude Include="include\LWAPI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\LWAPI.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{8d204d82-51ea-48cf-9066-4e3530a70964}</ProjectGuid>
+    <RootNamespace>LWAPI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\depends\boost\include;$(ProjectDir)..\depends\criware\include;$(ProjectDir)..\Library\cslib\include;$(ProjectDir)..\Sonic2013\Hedgehog\include;$(ProjectDir)..\Sonic2013\Hedgehog\Extra\include;$(ProjectDir)..\Sonic2010\build\main\src;$(ProjectDir)include;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuild>
+      <Command>"$(LWAPI_BINDING_GENERATOR_DIR)\LWAPIBindingGenerator.exe" "%(FullPath)" "$(IntDirFullPath)%(Filename).asm" "$(ProjectDir)..\Sonic2013\Hedgehog\include" "$(ProjectDir)..\Sonic2013\Hedgehog\Extra\include" "$(ProjectDir)..\Library\cslib\include" "$(ProjectDir)..\depends\boost\include" "$(DXSDK_DIR)Include" "$(ProjectDir)..\Sonic2010\build\main\src"</Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>Generating bindings for %(Filename)%(Extension)...</Message>
+    </CustomBuild>
+    <CustomBuild>
+      <Outputs>$(IntDirFullPath)%(Filename).asm</Outputs>
+      <OutputItemType>MASM</OutputItemType>
+      <BuildInParallel>true</BuildInParallel>
+      <LinkObjects>false</LinkObjects>
+    </CustomBuild>
+    <MASM>
+      <IncludePaths>$(ProjectDir)src;%(IncludePaths)</IncludePaths>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\depends\boost\include;$(ProjectDir)..\depends\criware\include;$(ProjectDir)..\Library\cslib\include;$(ProjectDir)..\Sonic2013\Hedgehog\include;$(ProjectDir)..\Sonic2013\Hedgehog\Extra\include;$(ProjectDir)..\Sonic2010\build\main\src;$(ProjectDir)include;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuild>
+      <Command>"$(LWAPI_BINDING_GENERATOR_DIR)\LWAPIBindingGenerator.exe" "%(FullPath)" "$(IntDirFullPath)%(Filename).asm" "$(ProjectDir)..\Sonic2013\Hedgehog\include" "$(ProjectDir)..\Sonic2013\Hedgehog\Extra\include" "$(ProjectDir)..\Library\cslib\include" "$(ProjectDir)..\depends\boost\include" "$(DXSDK_DIR)Include" "$(ProjectDir)..\Sonic2010\build\main\src"</Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>Generating bindings for %(Filename)%(Extension)...</Message>
+    </CustomBuild>
+    <CustomBuild>
+      <Outputs>$(IntDirFullPath)%(Filename).asm</Outputs>
+      <OutputItemType>MASM</OutputItemType>
+      <BuildInParallel>true</BuildInParallel>
+      <LinkObjects>false</LinkObjects>
+    </CustomBuild>
+    <MASM>
+      <IncludePaths>$(ProjectDir)src;%(IncludePaths)</IncludePaths>
+      <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+    </MASM>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
