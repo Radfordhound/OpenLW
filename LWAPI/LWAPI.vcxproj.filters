@@ -876,6 +876,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Parameter\PlayerParameter.h">
       <Filter>Header Files\sonic2013\Player\Parameter</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerCollision.h">
+      <Filter>Header Files\sonic2013\Player\Base</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\LWAPI.asm">

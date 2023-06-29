@@ -121,6 +121,7 @@
     <ClCompile Include="..\..\src\Platforms\Win\ApplicationWin.cpp" />
     <ClCompile Include="..\..\src\Platforms\Win\MainWin.cpp" />
     <ClCompile Include="..\..\src\Player\Base\Player.cpp" />
+    <ClCompile Include="..\..\src\Player\Base\PlayerCollision.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerPath.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerPosture.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerState.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="..\..\src\OpenLW\pch.h" />
     <ClInclude Include="..\..\src\Platforms\Win\ApplicationWin.h" />
     <ClInclude Include="..\..\src\Player\Base\Player.h" />
+    <ClInclude Include="..\..\src\Player\Base\PlayerCollision.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerPath.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerPosture.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerState.h" />

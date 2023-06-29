@@ -960,6 +960,9 @@
     <ClCompile Include="..\..\src\Player\Parameter\PlayerParameter.cpp">
       <Filter>Player\Parameter</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\Base\PlayerCollision.cpp">
+      <Filter>Player\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1297,6 +1300,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Parameter\PlayerParameter.h">
       <Filter>Player\Parameter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Base\PlayerCollision.h">
+      <Filter>Player\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
