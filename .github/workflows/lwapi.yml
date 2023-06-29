@@ -34,6 +34,12 @@ jobs:
         Invoke-WebRequest -URI https://dl.dropbox.com/s/az782o7gr5lr3o3/include.zip -OutFile "include.zip"
         mkdir "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A/Include"
         Expand-Archive -Path "include.zip" -DestinationPath "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A/Include"
+        Invoke-WebRequest -URI https://dl.dropbox.com/s/zu1bl7zj0jwzvtb/include2.zip -OutFile "include2.zip"
+        mkdir "C:/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include"
+        Expand-Archive -Path "include2.zip" -DestinationPath "C:/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include"
+        Invoke-WebRequest -URI https://dl.dropbox.com/s/vh6eipm5psfwmp7/include3.zip -OutFile "include3.zip"
+        mkdir "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Include"
+        Expand-Archive -Path "include3.zip" -DestinationPath "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Include"
 
     - uses: actions/checkout@v3
 
