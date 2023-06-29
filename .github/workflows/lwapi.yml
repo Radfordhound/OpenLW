@@ -29,8 +29,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Download and install Visual C++ Express 2010
-      run: choco install vsexpress2010
+    - name: Download and install Visual C++ Express 2010 headers
+      run: |
+        Invoke-WebRequest -URI https://dl.dropbox.com/s/az782o7gr5lr3o3/include.zip -OutFile "include.zip"
+        mkdir "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A/Include"
+        Expand-Archive -Path "include.zip" -DestinationPath "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A/Include"
 
     - uses: actions/checkout@v3
 
