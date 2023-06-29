@@ -951,6 +951,9 @@
     <ClCompile Include="..\..\src\Message\MessageGameObject3D.cpp">
       <Filter>Message</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\Base\PlayerPosture.cpp">
+      <Filter>Player\Base</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\Player\Base\PlayerPath.cpp">
       <Filter>Player\Base</Filter>
     </ClCompile>
@@ -1285,6 +1288,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Message\Camera\MsgEndBoost.h">
       <Filter>Message\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Base\PlayerPosture.h">
+      <Filter>Player\Base</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\PlayerPath.h">
       <Filter>Player\Base</Filter>
