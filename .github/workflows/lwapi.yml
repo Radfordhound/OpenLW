@@ -29,8 +29,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Download and install Visual C++ Express 2010
+      run: choco install vsexpress2010
+
     - uses: actions/checkout@v3
-    
+
     - name: Download latest release of LWAPIBindingGenerator
       run: |
         mkdir "${{env.LWAPI_BINDING_GENERATOR_DIR}}"
