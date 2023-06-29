@@ -226,6 +226,9 @@
     <Filter Include="Header Files\sonic2013\Message\System">
       <UniqueIdentifier>{7adc97e6-f6b4-4164-865d-2b9449246058}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\sonic2013\Player\Parameter">
+      <UniqueIdentifier>{ccf77afb-8577-48f9-bc2f-ddd3789c9cc6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\Sonic2010\build\main\src\dev\seteditor\SetEdDataAc.h">
@@ -863,6 +866,15 @@
     </CustomBuild>
     <CustomBuild Include="..\Sonic2010\build\main\src\Message\GameObject3D\MsgIs2DMode.h">
       <Filter>Header Files\sonic2013\Message\GameObject3D</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerPath.h">
+      <Filter>Header Files\sonic2013\Player\Base</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerPosture.h">
+      <Filter>Header Files\sonic2013\Player\Base</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Parameter\PlayerParameter.h">
+      <Filter>Header Files\sonic2013\Player\Parameter</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

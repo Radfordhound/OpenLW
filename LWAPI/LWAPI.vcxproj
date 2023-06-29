@@ -140,6 +140,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Message\GameObject3D\MsgIs2DMode.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Message\System\MsgAdvanceSequence.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Message\System\MsgWarningEnd.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerPath.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerPosture.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Parameter\PlayerParameter.h" />
     <ClInclude Include="src\pch.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h" />
     <CustomBuild Include="..\Library\sonicusa\include\sonicusa\system\Random.h" />
