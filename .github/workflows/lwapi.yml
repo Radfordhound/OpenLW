@@ -21,6 +21,9 @@ env:
   # Path to LWAPIBindingGenerator.exe
   LWAPI_BINDING_GENERATOR_DIR: C:/LWAPIBindingGenerator
 
+  # Path to VS2010 tools
+  VS100COMNTOOLS: C:/Program Files (x86)/Microsoft Visual Studio 10.0/Common7/Tools
+
   # Path to DX9 SDK
   DXSDK_DIR: C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Include
 
