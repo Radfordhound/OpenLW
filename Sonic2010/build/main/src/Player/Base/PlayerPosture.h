@@ -2,6 +2,7 @@
 #pragma once
 #include "PlayerPath.h"
 #include "Player/Parameter/PlayerParameter.h"
+#include "System/ReferencedObject.h"
 
 namespace csl
 {
@@ -23,8 +24,10 @@ namespace Player
 {
 class CPhysics;
 
-class CBasePosture
+class CBasePosture : public fnd::ReferencedObject
 {
+    // TODO: Members
+
 public:
     LWAPI(0x0292a790, TODO)
     ~CBasePosture();
