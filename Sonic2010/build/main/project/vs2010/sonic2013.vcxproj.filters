@@ -667,6 +667,9 @@
     <Filter Include="Message\GameObject3D">
       <UniqueIdentifier>{d94c4f59-83aa-4e09-a861-17b905c01e58}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Player\Parameter">
+      <UniqueIdentifier>{1af362c8-3162-4138-a8a5-49ad6ec6bb4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp">
@@ -950,6 +953,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Player\Base\PlayerPath.cpp">
       <Filter>Player\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\Parameter\PlayerParameter.cpp">
+      <Filter>Player\Parameter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1282,6 +1288,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\PlayerPath.h">
       <Filter>Player\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Parameter\PlayerParameter.h">
+      <Filter>Player\Parameter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
