@@ -68,4 +68,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: LWAPI
-        path: ${{env.GITHUB_WORKSPACE}}/LWAPI/bin/Release/
+        path: ${{github.workspace}}/LWAPI/bin/Release/
