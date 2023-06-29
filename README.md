@@ -27,23 +27,17 @@ This repository also hosts a separate project: "LWAPI".
 
 Based on Sajid's project of the same name, LWAPI is a library that aims to drastically simplify the process of creating DLL mods for Sonic Lost World!
 
-### Building
+### Download
 
-1. Download [the latest release of LWAPIBindingGenerator](https://github.com/Radfordhound/LWAPIBindingGenerator/releases/latest) and save it somewhere.
+This repository uses GitHub Actions to automatically build a new version of the LWAPI library after every commit!
 
-2. Set the `LWAPI_BINDING_GENERATOR_DIR` environment variable in Windows to the directory you placed `LWAPIBindingGenerator.exe` in.
+To use LWAPI in your project, **just [click here to download the latest build](https://nightly.link/Radfordhound/OpenLW/workflows/lwapi/master/LWAPI.zip)**, link against the .lib file, and include LWAPI.h and the OpenLW headers from this repository that contain the classes/functions/etc. you wish to use in your project.
 
-3. Open [LWAPI.sln](LWAPI/LWAPI.sln) and hit build.
-
-You should get a .lib file in the `LWAPI/bin/$(Configuration)` directory, where `$(Configuration)` is either `Debug` or `Release` depending on the configuration you used to build.
-
-This .lib file contains auto-generated assembly bindings for every function from the game that is supported by LWAPI.
-
-In your dll mod, you can simply link against this .lib file, include LWAPI.h and the OpenLW headers, and build your dll.
+The .lib file contains auto-generated assembly bindings for every function from the game that is supported by LWAPI.
 
 The compiler will automatically optimize-out the bindings that are not used in your dll mod, leaving only the ones which are used.
 
-All of this enables you to write very simple/readable code for your dll mods, similar to what Sonic Team's actual codebase would have looked like!
+All of this enables you to write very simple/readable code for your dll mods that's similar to what Sonic Team's actual codebase would have looked like!
 
 ### Example
 
@@ -117,4 +111,23 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     return TRUE;
 }
 ```
+
+### Manually Building
+
+We recommend just downloading the latest GitHub Actions build, but if you'd like to manually build LWAPI instead, just follow the following instructions:
+
+1. **Download/Install Visual C++ 2010 Express** (or a paid non-Express version if you have it) **and the June 2010 DirectX SDK**, so that you have all of the header files required for LWAPIBindingGenerator.
+
+    * **NOTE**: **You must use the 2010 versions** as stated above, as these are the versions that Sonic Team used to build slw.exe, which LWAPI wants to bind to!
+    * **NOTE**: If you run into issues with LWAPIBindingGenerator, make sure that both the `VS100COMNTOOLS` and `DXSDK_DIR` Windows environment variables are correctly set (they should be set automatically by the Visual C++ 2010 and DirectX SDK installers), and that the following directory exists on your C drive: `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Include`.
+
+2. **Download [the latest release of LWAPIBindingGenerator](https://github.com/Radfordhound/LWAPIBindingGenerator/releases/latest)** and save it somewhere.
+
+3. **Set the `LWAPI_BINDING_GENERATOR_DIR` Windows environment variable to the directory you placed `LWAPIBindingGenerator.exe` in** (example: `C:\LWAPIBindingGenerator`)
+
+4. **Open [LWAPI.sln](LWAPI/LWAPI.sln) in modern Visual Studio** (2022 or higher) **and hit build.**
+
+Modern Visual Studio will build LWAPI's (limited) C++ code, execute LWAPIBindingGenerator on the OpenLW headers (which, in turn, will use the vs2010 and june 2010 Dxsdk headers) to generate .asm bindings for slw.exe, which Modern Visual Studio will then assemble using MASM and link in with the C++ code.
+
+The end result of all of this should be a `LWAPI.lib` file in the `LWAPI/bin/$(Configuration)` directory, where `$(Configuration)` is either `Debug` or `Release` depending on the configuration you used to build.
 
