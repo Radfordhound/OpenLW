@@ -44,7 +44,7 @@ public:
     virtual void OnLeave(CPhysics& param_1);
 
     LWAPI(0x0292a804, TODO)
-    virtual void ProcessMessage(CPhysics& param_1, fnd::Message& param_2);
+    virtual bool ProcessMessage(CPhysics& param_1, fnd::Message& param_2);
 
     LWAPI(0x0292a80c, TODO)
     virtual void SetupForChangeDimension(bool param_1, CPhysics& param_2);
