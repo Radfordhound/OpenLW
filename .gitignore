@@ -19,20 +19,24 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
+Library/cslib/project/vs2010/Win32/
+Library/sonicusa/project/vs2010/Win32/
+Sonic2010/build/main/project/vs2010/Win32/
+Sonic2013/Hedgehog/build/Base/Win32/
+Sonic2013/Hedgehog/build/Database/Win32/
+Sonic2013/Hedgehog/build/Graphics/Win32/
+Sonic2013/Hedgehog/build/MirageCore/Win32/
+Sonic2013/Hedgehog/build/MirageDebug/Win32/
+Sonic2013/Hedgehog/build/MTBase/Win32/
+Sonic2013/Hedgehog/build/Rsdx/Win32/
+Sonic2013/Hedgehog/build/Utility/Win32/
+Sonic2013/Hedgehog/Extra/build/fx/Win32/
 x64/
 x86/
 bld/
 bin/
 [Bb]in/
 [Oo]bj/
-
-# Exceptions for "Debug" folders in source code
-!*/Sonic2010/build/main/src/Debug/
-!*/Sonic2010/build/main/src/Player/Debug/
 
 # Visual Studio 2015 cache/options directory
 .vs/
