@@ -35,6 +35,8 @@ jobs:
       run: |
         mkdir "${{env.LWAPI_BINDING_GENERATOR_DIR}}"
         gh release download --repo Radfordhound/LWAPIBindingGenerator --pattern "*.exe" --dir "${{env.LWAPI_BINDING_GENERATOR_DIR}}"
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
