@@ -670,6 +670,9 @@
     <Filter Include="Player\Parameter">
       <UniqueIdentifier>{1af362c8-3162-4138-a8a5-49ad6ec6bb4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Player\Posture">
+      <UniqueIdentifier>{ff3d57ec-e2f7-4669-bbd0-e66bda562d1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp">
@@ -959,6 +962,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Player\Parameter\PlayerParameter.cpp">
       <Filter>Player\Parameter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Player\Posture\PlayerPostureCommon.cpp">
+      <Filter>Player\Posture</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Player\Base\PlayerCollision.cpp">
       <Filter>Player\Base</Filter>
@@ -1300,6 +1306,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Parameter\PlayerParameter.h">
       <Filter>Player\Parameter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPostureCommon.h">
+      <Filter>Player\Posture</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\PlayerCollision.h">
       <Filter>Player\Base</Filter>

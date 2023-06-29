@@ -229,6 +229,9 @@
     <Filter Include="Header Files\sonic2013\Player\Parameter">
       <UniqueIdentifier>{ccf77afb-8577-48f9-bc2f-ddd3789c9cc6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\sonic2013\Player\Posture">
+      <UniqueIdentifier>{0d5d5a3b-de03-41c1-b717-3c208b2d9adc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\Sonic2010\build\main\src\dev\seteditor\SetEdDataAc.h">
@@ -878,6 +881,9 @@
     </CustomBuild>
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerCollision.h">
       <Filter>Header Files\sonic2013\Player\Base</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPostureCommon.h">
+      <Filter>Header Files\sonic2013\Player\Posture</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
