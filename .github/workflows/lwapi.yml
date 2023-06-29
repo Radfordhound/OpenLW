@@ -21,6 +21,9 @@ env:
   # Path to LWAPIBindingGenerator.exe
   LWAPI_BINDING_GENERATOR_DIR: C:/LWAPIBindingGenerator
 
+  # Path to DX9 SDK
+  DXSDK_DIR: C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Include
+
 permissions:
   contents: read
 
