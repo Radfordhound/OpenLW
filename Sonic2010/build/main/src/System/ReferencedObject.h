@@ -81,5 +81,17 @@ struct ThreadSafeReferencedObject : public ReferencedObject
     inline ThreadSafeReferencedObject() :
         m_safeRefCount(0) {} // TODO: uhh it seems the game doesn't actually initialize this to 0?? what
 };
+
+// TODO: Is this correct?
+inline void intrusive_ptr_add_ref(ReferencedObject* obj)
+{
+    obj->AddRef();
+}
+
+// TODO: Is this correct?
+inline void intrusive_ptr_release(ReferencedObject* obj)
+{
+    obj->Release();
+}
 } // fnd
 } // app
