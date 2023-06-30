@@ -236,6 +236,7 @@
     <ClInclude Include="..\..\src\Player\Parameter\PlayerParameter.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureBridge.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureCommon.h" />
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPostureFactory.h" />
     <ClInclude Include="..\..\src\Player\State\PlayerStateUtil.h" />
     <ClInclude Include="..\..\src\Player\State\PlayerStateUtilEffect.h" />
     <ClInclude Include="..\..\src\Player\State\PlayerStateUtilGravity.h" />

@@ -1319,6 +1319,9 @@
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureBridge.h">
       <Filter>Player\Posture</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPostureFactory.h">
+      <Filter>Player\Posture</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\Input\KBACTION.inl">

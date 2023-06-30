@@ -146,6 +146,7 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerCollision.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPostureCommon.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPostureBridge.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPostureFactory.h" />
     <ClInclude Include="src\pch.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h" />
     <CustomBuild Include="..\Library\sonicusa\include\sonicusa\system\Random.h" />
