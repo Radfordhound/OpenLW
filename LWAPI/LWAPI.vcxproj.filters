@@ -924,6 +924,9 @@
     <ClInclude Include="src\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPostureManager.h">
+      <Filter>Header Files\sonic2013\Player\Posture</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
