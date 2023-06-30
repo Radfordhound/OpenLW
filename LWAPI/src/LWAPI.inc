@@ -8,24 +8,29 @@ EXTERN ?ModuleAddress@lwapi@@3IB : DWORD
 BINDING MACRO address:REQ, name:REQ
     .DATA
         ; Define a pointer in the DATA section for the function/variable.
-        &name& dd ?
+        __imp_&name& dd ?
 
         ; Make this pointer a public symbol (so others can link to it).
-        PUBLIC &name&
+        PUBLIC __imp_&name&
 
     .CODE
         ; Initializer function for our pointer.
         ; Sets the pointer value to (?ModuleAddress@lwapi@@3IB + (address - BASE_ADDRESS)).
-        Init&name& PROC
+        Init__imp_&name& PROC
             mov eax, ?ModuleAddress@lwapi@@3IB
             add eax, &address& - BASE_ADDRESS
-            mov &name&, eax
+            mov __imp_&name&, eax
             ret
-        Init&name& ENDP
+        Init__imp_&name& ENDP
+
+        ; Thunk function - sometimes needed by the linker.
+        &name& PROC
+            jmp __imp_&name&
+        &name& ENDP
 
     STATIC_INITIALIZERS_2 SEGMENT ALIAS(".CRT$XCU")
         ; Put a pointer to our initializer function in the CRT static initializers list, level "2" (smaller levels execute first).
-        DD OFFSET Init&name&
+        DD OFFSET Init__imp_&name&
     STATIC_INITIALIZERS_2 ENDS
 ENDM
 
