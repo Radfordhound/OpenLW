@@ -129,6 +129,7 @@
     <ClCompile Include="..\..\src\Player\Posture\PlayerPostureBridge.cpp" />
     <ClCompile Include="..\..\src\Player\Posture\PlayerPostureCommon.cpp" />
     <ClCompile Include="..\..\src\Player\Posture\PlayerPostureManager.cpp" />
+    <ClCompile Include="..\..\src\Player\Posture\PlayerPostureMoveManager.cpp" />
     <ClCompile Include="..\..\src\Player\State\PlayerStateUtil.cpp" />
     <ClCompile Include="..\..\src\Player\State\PlayerStateUtilEffect.cpp" />
     <ClCompile Include="..\..\src\Player\State\PlayerStateUtilGravity.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureCommon.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureFactory.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureManager.h" />
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPostureMoveManager.h" />
     <ClInclude Include="..\..\src\Player\State\PlayerStateUtil.h" />
     <ClInclude Include="..\..\src\Player\State\PlayerStateUtilEffect.h" />
     <ClInclude Include="..\..\src\Player\State\PlayerStateUtilGravity.h" />
