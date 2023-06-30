@@ -62,7 +62,7 @@ public:
     LWAPI(0x0292B550, TODO)
     void SetupForChangeDimension(bool param_1);
 
-    LWAPI(0x0292B738, TODO)
+    LWAPI(0x0292B738, 0x008592f0)
     void RegisterFactory(boost::intrusive_ptr<CPostureFactoryBase> postureFactory);
 
     LWAPI(0x0292B7BC, TODO)

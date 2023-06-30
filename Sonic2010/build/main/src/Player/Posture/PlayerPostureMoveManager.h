@@ -21,7 +21,7 @@ public:
     LWAPI(0x0292BAA0, TODO)
     CPostureMoveManager(CPlayer* player, CPhysics* physics);
 
-    LWAPI(0x0292C0DC, TODO)
+    LWAPI(0x0292C0DC, 0x00859360)
     void RegisterCommonPosture();
 
     LWAPI(0x0292CF7C, TODO)

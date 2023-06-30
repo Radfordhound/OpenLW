@@ -11,8 +11,8 @@ class CBasePosture;
 class CPostureFactoryBase : public fnd::ReferencedObject
 {
 public:
-    LWAPI(0x0292B074, TODO)
-    ~CPostureFactoryBase();
+    LWAPI(0x0292B074, 0x0048d450)
+    ~CPostureFactoryBase() {}
 };
 
 template<class T>

@@ -28,7 +28,7 @@ class CCollision;
 class CPostureCommon : public CBasePosture
 {
 public:
-    LWAPI(0x029630f0, TODO)
+    LWAPI(0x029630f0, 0x0048d450)
     ~CPostureCommon();
 
     LWAPI(0x02962660, 0x00871d70)
