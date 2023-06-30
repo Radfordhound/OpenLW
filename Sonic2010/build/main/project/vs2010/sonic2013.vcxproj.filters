@@ -969,6 +969,9 @@
     <ClCompile Include="..\..\src\Player\Base\PlayerCollision.cpp">
       <Filter>Player\Base</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\Posture\PlayerPostureBridge.cpp">
+      <Filter>Player\Posture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1312,6 +1315,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\PlayerCollision.h">
       <Filter>Player\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPostureBridge.h">
+      <Filter>Player\Posture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
