@@ -39,8 +39,8 @@ public:
     template<class T>
     T* GetInnerPosture()
     {
-        // TODO
-        return nullptr;
+        return (m_innerPosture && m_innerPosture->GetGroupID() == T::GroupID) ?
+            m_innerPosture.get() : nullptr;
     }
 
     LWAPI(0x0295d970, TODO)
