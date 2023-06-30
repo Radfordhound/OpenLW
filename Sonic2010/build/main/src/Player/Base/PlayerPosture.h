@@ -6,6 +6,11 @@
 
 namespace csl
 {
+namespace fnd
+{
+struct IAllocator;
+} // fnd
+
 namespace math
 {
 struct Vector2;
@@ -23,40 +28,44 @@ class Message;
 namespace Player
 {
 class CPhysics;
+class CPlayer;
 
 class CBasePosture : public fnd::ReferencedObject
 {
-    // TODO: Members
+    CPlayer* m_owner;
 
 public:
-    LWAPI(0x0292a790, TODO)
+    LWAPI(0x102ffcd0, 0x00faeaf8)
+    static const char* GroupID;
+
+    LWAPI(0x0292a790, 0x00873cc0)
     ~CBasePosture();
 
-    LWAPI(0x0292a768, TODO)
+    LWAPI(0x0292a768, 0x00858330)
     virtual const char* GetGroupID();
 
     virtual void Calculate(CPhysics& param_1, float dt) = 0;
 
-    LWAPI(0x0292a7e4, TODO)
+    LWAPI(0x0292a7e4, 0x0085b2f0)
     virtual void OnEnter(CPhysics& param_1);
 
-    LWAPI(0x0292a7e8, TODO)
+    LWAPI(0x0292a7e8, 0x0085b2f0)
     virtual void OnLeave(CPhysics& param_1);
 
-    LWAPI(0x0292a804, TODO)
+    LWAPI(0x0292a804, 0x005dd780)
     virtual bool ProcessMessage(CPhysics& param_1, fnd::Message& param_2);
 
-    LWAPI(0x0292a80c, TODO)
+    LWAPI(0x0292a80c, 0x0070a480)
     virtual void SetupForChangeDimension(bool param_1, CPhysics& param_2);
 
-    LWAPI(0x0292a774, TODO)
+    LWAPI(0x0292a774, 0x00858310)
     CBasePosture();
 
     LWAPI(0x0292a7ec, TODO)
-    void GetOwner();
+    CPlayer* GetOwner();
 
     LWAPI(0x0292a7f8, TODO)
-    void GetOwner() const;
+    const CPlayer* GetOwner() const;
 
     LWAPI(0x0292a818, TODO)
     void GetBlackBoard();
@@ -155,7 +164,7 @@ public:
     void OnCollisionFilterForOneway();
 
     LWAPI(0x0292b068, TODO)
-    void GetOwnerAllocator() const;
+    csl::fnd::IAllocator* GetOwnerAllocator() const;
 };
 } // Player
 } // app
