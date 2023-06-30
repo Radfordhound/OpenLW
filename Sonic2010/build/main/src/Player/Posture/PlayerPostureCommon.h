@@ -31,7 +31,7 @@ public:
     LWAPI(0x029630f0, TODO)
     ~CPostureCommon();
 
-    LWAPI(0x02962660, TODO)
+    LWAPI(0x02962660, 0x00871d70)
     void Calculate(CPhysics& param_1, float param_2);
 
     LWAPI(0x0295ef6c, TODO)
