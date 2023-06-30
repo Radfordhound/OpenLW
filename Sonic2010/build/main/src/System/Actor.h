@@ -28,7 +28,7 @@ OPENLW_PROTECTED
     unsigned char m_flags;
     bool m_enabled;
     unsigned int m_allowedMessageFlags; // TODO: Is this type correct?
-    void* field_0x14; // TODO: Is this type correct?
+    void* m_owner; // TODO: Is this type correct?
 
 public:
     // TODO: Is this function actually a thing?

@@ -23,7 +23,7 @@ CActor::CActor() :
     m_flags(1),
     m_enabled(true),
     m_allowedMessageFlags(UINT_MAX),
-    field_0x14(nullptr)
+    m_owner(nullptr)
 {
     SetUpdateFlag(PHASE_ONE, true);
 }
