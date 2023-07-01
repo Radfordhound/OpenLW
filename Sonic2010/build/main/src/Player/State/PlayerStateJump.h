@@ -62,7 +62,7 @@ public:
     LWAPI(0x029ca19c, TODO)
     bool ProcessMessage(CStateGOC& goc, fnd::Message& msg);
 
-    LWAPI(0x029ca1bc, TODO)
+    LWAPI(0x029ca1bc, 0x008ac7c0)
     void OnEnter(CStateGOC& goc, int param_2);
 
     LWAPI(0x029ca5a0, TODO)
