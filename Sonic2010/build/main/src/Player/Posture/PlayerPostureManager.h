@@ -68,7 +68,7 @@ public:
     LWAPI(0x0292B7BC, TODO)
     void Renew();
 
-    LWAPI(0x0292B8E8, TODO)
+    LWAPI(0x0292B8E8, 0x00859120)
     CBasePosture* ChangePosture(const char* groupID);
 
     template<class T>
