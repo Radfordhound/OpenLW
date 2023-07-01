@@ -69,7 +69,13 @@ public:
     void Renew();
 
     LWAPI(0x0292B8E8, TODO)
-    void ChangePosture(const char* param_1);
+    CBasePosture* ChangePosture(const char* groupID);
+
+    template<class T>
+    T* ChangePosture()
+    {
+        return static_cast<T*>(ChangePosture(T::GroupID));
+    }
 };
 
 LWAPI_STATIC_ASSERT_SIZE(CPostureManager, 0x38)
