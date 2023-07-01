@@ -155,6 +155,7 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateBase.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\StateBase.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Hsm.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPosture2DAir.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\game\GameDefs.h" />
     <ClInclude Include="src\pch.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h" />

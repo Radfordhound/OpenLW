@@ -918,6 +918,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Hsm.h">
       <Filter>Header Files\sonic2013\Utility</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPosture2DAir.h">
+      <Filter>Header Files\sonic2013\Player\Posture</Filter>
+    </CustomBuild>
     <CustomBuild Include="..\Sonic2010\build\main\src\game\GameDefs.h">
       <Filter>Header Files\sonic2013\game</Filter>
     </CustomBuild>
