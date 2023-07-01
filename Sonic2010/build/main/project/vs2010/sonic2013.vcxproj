@@ -131,6 +131,7 @@
     <ClCompile Include="..\..\src\Player\Parameter\PlayerParameter.cpp" />
     <ClCompile Include="..\..\src\Player\Posture\PlayerPosture2DAir.cpp" />
     <ClCompile Include="..\..\src\Player\Posture\PlayerPosture3DAir.cpp" />
+    <ClCompile Include="..\..\src\Player\Posture\PlayerPostureAir.cpp" />
     <ClCompile Include="..\..\src\Player\Posture\PlayerPostureAirCommon.cpp" />
     <ClCompile Include="..\..\src\Player\Posture\PlayerPostureBridge.cpp" />
     <ClCompile Include="..\..\src\Player\Posture\PlayerPostureCommon.cpp" />
@@ -250,6 +251,7 @@
     <ClInclude Include="..\..\src\Player\Parameter\PlayerParameter.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPosture2DAir.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPosture3DAir.h" />
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPostureAir.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureAirCommon.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureBridge.h" />
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureCommon.h" />
