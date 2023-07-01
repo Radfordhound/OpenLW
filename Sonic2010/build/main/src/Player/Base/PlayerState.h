@@ -602,7 +602,7 @@ public:
     template<typename T>
     T* ChangePosture()
     {
-        return GetPostureManager()->ChangePosture(T::GroupID);
+        return static_cast<T*>(GetPostureManager()->ChangePosture(T::GroupID));
     }
 
     template<typename T>
