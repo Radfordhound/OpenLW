@@ -900,6 +900,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerInput.h">
       <Filter>Header Files\sonic2013\Player\Base</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerPhysicalBehavior.h">
+      <Filter>Header Files\sonic2013\Player\Base</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\LWAPI.asm">

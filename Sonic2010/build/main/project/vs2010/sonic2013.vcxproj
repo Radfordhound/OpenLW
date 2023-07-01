@@ -124,6 +124,7 @@
     <ClCompile Include="..\..\src\Player\Base\PlayerCollision.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerInput.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerPath.cpp" />
+    <ClCompile Include="..\..\src\Player\Base\PlayerPhysicalBehavior.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerPosture.cpp" />
     <ClCompile Include="..\..\src\Player\Base\PlayerState.cpp" />
     <ClCompile Include="..\..\src\Player\Parameter\PlayerParameter.cpp" />
@@ -235,6 +236,7 @@
     <ClInclude Include="..\..\src\Player\Base\PlayerCollision.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerInput.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerPath.h" />
+    <ClInclude Include="..\..\src\Player\Base\PlayerPhysicalBehavior.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerPosture.h" />
     <ClInclude Include="..\..\src\Player\Base\PlayerState.h" />
     <ClInclude Include="..\..\src\Player\Parameter\PlayerParameter.h" />
