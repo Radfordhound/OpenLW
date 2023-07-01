@@ -996,6 +996,9 @@
     <ClCompile Include="..\..\src\game\GameDefs.cpp">
       <Filter>game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\Posture\PlayerPostureAirCommon.cpp">
+      <Filter>Player\Posture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1372,6 +1375,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\game\GameDefs.h">
       <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPostureAirCommon.h">
+      <Filter>Player\Posture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
