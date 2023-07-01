@@ -21,8 +21,7 @@ class MsgActivateObjectDebugWindow;
 class GameObject3D : public GameObject
 {
 OPENLW_PROTECTED
-    // TODO
-    unsigned char m_padding1[0x110];
+    unsigned char m_padding1[0x250];
 
 public:
     LWAPI(0x02220894, TODO)
@@ -47,5 +46,5 @@ public:
     GameObject3D();
 };
 
-LWAPI_STATIC_ASSERT_SIZE(GameObject3D, 0x1e0)
+LWAPI_STATIC_ASSERT_SIZE(GameObject3D, 0x320)
 } // app
