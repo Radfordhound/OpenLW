@@ -72,12 +72,6 @@ enum EAttackType
 };
 
 // TODO: Move this to another header?
-enum BodyCollisionType
-{
-    // TODO
-};
-
-// TODO: Move this to another header?
 enum EDisableTimer
 {
     // TODO

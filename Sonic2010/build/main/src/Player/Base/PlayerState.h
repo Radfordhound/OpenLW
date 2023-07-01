@@ -62,13 +62,7 @@ enum BodyMode
     PhantomRhythm,
     PhantomBomb,
     PhantomHover,
-    PhantomQuake
-};
-
-// TODO: Should this be in another header?
-enum BodyCollisionType
-{
-    // TODO
+    PhantomQuake,
 };
 
 class CStateGOC : public CGOComponent
