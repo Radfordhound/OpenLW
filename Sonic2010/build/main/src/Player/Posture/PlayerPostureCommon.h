@@ -22,7 +22,6 @@ class PathEvaluator;
 namespace Player
 {
 class CPhysics;
-class SGroundInfo;
 class CCollision;
 
 class CPostureCommon : public CBasePosture
