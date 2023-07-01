@@ -1349,6 +1349,9 @@
     <ClInclude Include="..\..\src\Player\Base\PlayerPhysicalBehavior.h">
       <Filter>Player\Base</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Utility\StateBase.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\Utility\Hsm.h">
       <Filter>Utility</Filter>
     </ClInclude>

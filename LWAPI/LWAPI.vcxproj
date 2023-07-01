@@ -151,6 +151,7 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Posture\PlayerPostureMoveManager.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerInput.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerPhysicalBehavior.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\StateBase.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Hsm.h" />
     <ClInclude Include="src\pch.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h" />

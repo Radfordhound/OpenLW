@@ -316,6 +316,7 @@
     <ClInclude Include="..\..\src\Utility\Freelist.h" />
     <ClInclude Include="..\..\src\Utility\Hsm.h" />
     <ClInclude Include="..\..\src\Utility\RefPtr.h" />
+    <ClInclude Include="..\..\src\Utility\StateBase.h" />
     <ClInclude Include="..\..\src\xgame\system\DlcManager.h" />
   </ItemGroup>
   <ItemGroup>
