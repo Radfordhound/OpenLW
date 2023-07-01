@@ -32,7 +32,7 @@ void CPosture3DAir::SetInternalForceMode(CPhysics& physics, int param_2)
     // TODO
 }
 
-void CPosture3DAir::RotateFrontDirection(CPhysics& physics, float param_2, csl::math::Vector3 const& param_3, float param_4, float param_5);
+void CPosture3DAir::RotateFrontDirection(CPhysics& physics, float param_2, csl::math::Vector3 const& param_3, float param_4, float param_5)
 {
     // TODO
 }
