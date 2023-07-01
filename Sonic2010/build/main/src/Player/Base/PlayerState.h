@@ -2,6 +2,7 @@
 #pragma once
 #include "PlayerPath.h"
 #include "PlayerInput.h"
+#include "PlayerCollision.h"
 #include "Player/Posture/PlayerPostureManager.h"
 #include "System/Component/Goc.h"
 #include "Sound/SoundHandle.h"
