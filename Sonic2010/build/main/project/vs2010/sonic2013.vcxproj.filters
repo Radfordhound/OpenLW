@@ -993,6 +993,9 @@
     <ClCompile Include="..\..\src\Utility\Hsm.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\game\GameDefs.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1366,6 +1369,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Utility\Hsm.h">
       <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\game\GameDefs.h">
+      <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

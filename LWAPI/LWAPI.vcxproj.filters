@@ -232,6 +232,9 @@
     <Filter Include="Header Files\sonic2013\Player\Posture">
       <UniqueIdentifier>{0d5d5a3b-de03-41c1-b717-3c208b2d9adc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\sonic2013\game">
+      <UniqueIdentifier>{e2588dbe-6772-4014-9be2-ab47576c0bcc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\Sonic2010\build\main\src\dev\seteditor\SetEdDataAc.h">
@@ -914,6 +917,9 @@
     </CustomBuild>
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Hsm.h">
       <Filter>Header Files\sonic2013\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\game\GameDefs.h">
+      <Filter>Header Files\sonic2013\game</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

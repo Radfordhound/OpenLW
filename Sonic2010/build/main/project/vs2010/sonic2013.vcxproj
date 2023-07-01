@@ -91,6 +91,7 @@
     <ClCompile Include="..\..\src\Camera\CameraController.cpp" />
     <ClCompile Include="..\..\src\Camera\Controller\Player3DNormalCamera.cpp" />
     <ClCompile Include="..\..\src\dev\seteditor\SetEdDataAc.cpp" />
+    <ClCompile Include="..\..\src\game\GameDefs.cpp" />
     <ClCompile Include="..\..\src\HUD\SurfRidePlatformMIRAGE.cpp" />
     <ClCompile Include="..\..\src\Input\DeviceBase.cpp" />
     <ClCompile Include="..\..\src\Input\DeviceData.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="..\..\src\Camera\CameraController.h" />
     <ClInclude Include="..\..\src\Camera\Controller\Player3DNormalCamera.h" />
     <ClInclude Include="..\..\src\dev\seteditor\SetEdDataAc.h" />
+    <ClInclude Include="..\..\src\game\GameDefs.h" />
     <ClInclude Include="..\..\src\HUD\SurfRidePlatformMIRAGE.h" />
     <ClInclude Include="..\..\src\Input\DeviceBase.h" />
     <ClInclude Include="..\..\src\Input\DeviceData.h" />
