@@ -6,6 +6,7 @@
 #include "Player/Posture/PlayerPostureManager.h"
 #include "System/Component/Goc.h"
 #include "Sound/SoundHandle.h"
+#include "Utility/StateBase.h"
 
 namespace csl
 {
@@ -35,7 +36,7 @@ namespace Player
 {
 class CPlayer;
 struct SStateParameter;
-class CState;
+class CStateGOC;
 
 // TODO: Should this be in another header?
 enum EAbility
@@ -59,6 +60,46 @@ enum BodyMode
     PhantomBomb,
     PhantomHover,
     PhantomQuake,
+};
+
+class CState : public ut::StateBase<CStateGOC>
+{
+public:
+    LWAPI(0x029307d4, TODO)
+    ~CState();
+
+    LWAPI(0x029308bc, TODO)
+    void Enter(CStateGOC& goc, int param_2);
+
+    LWAPI(0x02930914, TODO)
+    void Leave(CStateGOC& goc, int param_2);
+
+    LWAPI(0x02930924, TODO)
+    bool Update(CStateGOC& goc, float dt);
+
+    LWAPI(0x02930828, TODO)
+    virtual void OnEnter(CStateGOC& goc, int param_2);
+
+    LWAPI(0x0293082c, TODO)
+    virtual void OnLeave(CStateGOC& goc, int param_2);
+
+    LWAPI(0x02930830, TODO)
+    virtual void Transit(CStateGOC& goc);
+
+    LWAPI(0x02930838, TODO)
+    virtual bool Step(CStateGOC& goc, float dt);
+
+    LWAPI(0x02930764, TODO)
+    CState();
+
+    LWAPI(0x02930840, TODO)
+    void GotoSeq(int param_1);
+
+    LWAPI(0x02930848, TODO)
+    void Sleep(float param_1, int param_2);
+
+    LWAPI(0x02930880, TODO)
+    void SetAlarm(float param_1);
 };
 
 class CStateGOC : public CGOComponent
@@ -344,7 +385,7 @@ public:
     void SendMessageToGame(fnd::Message& param_1, unsigned int param_2);
 
     LWAPI(0x02931E58, TODO)
-    void SendMessageImm(GameObject* param_1, app::fnd::Message& param_2);
+    void SendMessageImm(GameObject* param_1, fnd::Message& param_2);
 
     LWAPI(0x02931E60, TODO)
     void SendMessageToRival(fnd::Message& param_1);
