@@ -396,20 +396,20 @@ public:
     LWAPI(0x02932648, TODO)
     void ChangeVisual(BodyMode param_1);
 
-    LWAPI(0x02932934, TODO)
-    void ChangeAnimation(const char* param_1, float param_2);
+    LWAPI(0x02932934, 0x0085b7b0)
+    void ChangeAnimation(const char* animName, float blendTime);
 
     LWAPI(0x02932968, TODO)
-    void SetAnimation(const char* param_1);
+    void SetAnimation(const char* animName);
 
     LWAPI(0x029329A0, TODO)
-    void PushAnimation(const char* param_1);
+    void PushAnimation(const char* animName);
 
     LWAPI(0x029329D4, TODO)
     void GetCurrentAnimationName() const;
 
     LWAPI(0x029329F8, TODO)
-    void IsCurrentAnimation(const char* param_1) const;
+    bool IsCurrentAnimation(const char* animName) const;
 
     LWAPI(0x02932A2C, TODO)
     void SetAnimationProportionRate(float param_1);
