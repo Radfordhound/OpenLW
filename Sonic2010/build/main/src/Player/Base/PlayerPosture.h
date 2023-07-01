@@ -28,11 +28,13 @@ class Message;
 namespace Player
 {
 class CPhysics;
+class CPostureManager;
 class CPlayer;
 
 class CBasePosture : public fnd::ReferencedObject
 {
-    CPlayer* m_owner;
+OPENLW_PROTECTED
+    CPostureManager* m_owner;
 
 public:
     LWAPI(0x102ffcd0, 0x00faeaf8)
