@@ -993,6 +993,9 @@
     <ClCompile Include="..\..\src\Utility\Hsm.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\Posture\PlayerPosture3DAir.cpp">
+      <Filter>Player\Posture</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\Player\Posture\PlayerPosture2DAir.cpp">
       <Filter>Player\Posture</Filter>
     </ClCompile>
@@ -1375,6 +1378,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Utility\Hsm.h">
       <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\Posture\PlayerPosture3DAir.h">
+      <Filter>Player\Posture</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Posture\PlayerPosture2DAir.h">
       <Filter>Player\Posture</Filter>
