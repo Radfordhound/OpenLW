@@ -41,7 +41,7 @@ public:
     static const char* GroupID;
 
     LWAPI(0x0292a790, 0x00873cc0)
-    ~CBasePosture();
+    ~CBasePosture() {}
 
     LWAPI(0x0292a768, 0x00858330)
     virtual const char* GetGroupID();
