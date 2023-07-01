@@ -984,6 +984,9 @@
     <ClCompile Include="..\..\src\Player\Base\PlayerPhysicalBehavior.cpp">
       <Filter>Player\Base</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Utility\Hsm.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1345,6 +1348,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\PlayerPhysicalBehavior.h">
       <Filter>Player\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Utility\Hsm.h">
+      <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
