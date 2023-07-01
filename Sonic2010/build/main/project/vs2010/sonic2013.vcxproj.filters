@@ -984,6 +984,9 @@
     <ClCompile Include="..\..\src\Player\Base\PlayerPhysicalBehavior.cpp">
       <Filter>Player\Base</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Player\State\PlayerStateJump.cpp">
+      <Filter>Player\State</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\Player\State\PlayerStateBase.cpp">
       <Filter>Player\State</Filter>
     </ClCompile>
@@ -1351,6 +1354,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Base\PlayerPhysicalBehavior.h">
       <Filter>Player\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Player\State\PlayerStateJump.h">
+      <Filter>Player\State</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Player\State\PlayerStateBase.h">
       <Filter>Player\State</Filter>

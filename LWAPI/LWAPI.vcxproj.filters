@@ -903,6 +903,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\Base\PlayerPhysicalBehavior.h">
       <Filter>Header Files\sonic2013\Player\Base</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateJump.h">
+      <Filter>Header Files\sonic2013\Player\State</Filter>
+    </CustomBuild>
     <CustomBuild Include="..\Sonic2010\build\main\src\Player\State\PlayerStateBase.h">
       <Filter>Header Files\sonic2013\Player\State</Filter>
     </CustomBuild>
