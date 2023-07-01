@@ -539,8 +539,8 @@ void IsEnableDoubleJump(CStateGOC& param_1, bool param_2);
 LWAPI(0x02a1a738, TODO)
 void GetLockOnPlugin(CStateGOC& param_1);
 
-LWAPI(0x02a1a73c, TODO)
-void EnableHoming(CStateGOC& param_1, bool param_2);
+LWAPI(0x02a1a73c, 0x008d79d0)
+void EnableHoming(CStateGOC& goc, bool param_2);
 
 LWAPI(0x02a1a784, TODO)
 void EnableHomingSearch(CStateGOC& param_1, bool param_2);
