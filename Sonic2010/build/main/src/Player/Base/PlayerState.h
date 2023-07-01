@@ -612,8 +612,7 @@ public:
     template<typename T>
     T* ChangePosture()
     {
-        __debugbreak();
-        return nullptr; // TODO!!!
+        return GetPostureManager()->ChangePosture(T::GroupID);
     }
 
     template<typename T>
