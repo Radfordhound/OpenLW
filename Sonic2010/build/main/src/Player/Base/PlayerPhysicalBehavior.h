@@ -270,8 +270,8 @@ public:
     LWAPI(0x029283a8, TODO)
     void SetInputForce(csl::math::Vector3 const& param_1);
 
-    LWAPI(0x029283b0, TODO)
-    void AddVelocity(csl::math::Vector3 const& param_1);
+    LWAPI(0x029283b0, 0x00855a20)
+    void AddVelocity(csl::math::Vector3 const& val);
 
     LWAPI(0x0292841c, TODO)
     void AddInternalForce(csl::math::Vector3 const& param_1, float param_2);
