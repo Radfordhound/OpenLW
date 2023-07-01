@@ -32,6 +32,22 @@ public:
         m_refObjPtr = nullptr;
     }
 
+    void reset(T* refObjPtr)
+    {
+        if (refObjPtr)
+        {
+            refObjPtr->AddRef();
+        }
+
+        const auto oldRefObjPtr = m_refObjPtr;
+        m_refObjPtr = refObjPtr;
+
+        if (oldRefObjPtr)
+        {
+            oldRefObjPtr->Release();
+        }
+    }
+
     const T* operator->() const
     {
         return m_refObjPtr;
