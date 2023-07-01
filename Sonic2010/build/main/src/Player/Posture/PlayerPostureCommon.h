@@ -28,7 +28,7 @@ class CPostureCommon : public CBasePosture
 {
 public:
     LWAPI(0x029630f0, 0x0048d450)
-    ~CPostureCommon();
+    ~CPostureCommon() {}
 
     LWAPI(0x02962660, 0x00871d70)
     void Calculate(CPhysics& param_1, float param_2);
