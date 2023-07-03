@@ -456,8 +456,8 @@ public:
     LWAPI(0x02932D38, TODO)
     void IsEnableMaterialEffect() const;
 
-    LWAPI(0x02932D6C, TODO)
-    void PlaySE(const char* param_1, bool param_2);
+    LWAPI(0x02932D6C, 0x0085c420)
+    fnd::SoundHandle PlaySE(const char* param_1, bool param_2);
 
     LWAPI(0x02932EEC, TODO)
     void PlaySE(const char* param_1, fnd::SoundDeviceTag param_2);
