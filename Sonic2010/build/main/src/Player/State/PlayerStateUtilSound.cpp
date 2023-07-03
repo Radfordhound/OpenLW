@@ -1,6 +1,7 @@
 // TODO: The name of this file is correct, but the path was guessed!
 #include "OpenLW/pch.h"
 #include "PlayerStateUtilSound.h"
+#include "Player/Base/PlayerState.h"
 
 namespace app
 {
@@ -20,9 +21,10 @@ void GetVoiceName(VoiceID param_1)
 } // <unnamed>
 #endif
 
-void PlaySE(CStateGOC& param_1, const char* param_2)
+fnd::SoundHandle PlaySE(CStateGOC& goc, const char* soundName)
 {
-    // TODO
+    return fnd::SoundHandle(); // TODO: Remove this line and un-comment the below!
+    //return goc.PlaySE(soundName, false);
 }
 
 void PlaySE3D(CStateGOC& param_1, const char* param_2)
