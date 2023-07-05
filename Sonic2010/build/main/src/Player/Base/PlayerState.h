@@ -67,7 +67,6 @@ enum BodyMode
 class CState : public ut::StateBase<CStateGOC>
 {
 OPENLW_PROTECTED
-    unsigned char padding1[8];
     csl::ut::Bitset<unsigned int> field_0x14;
     int m_curSeq;
     int m_nextSeq;

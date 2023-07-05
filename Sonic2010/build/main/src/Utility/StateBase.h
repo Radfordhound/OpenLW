@@ -14,16 +14,18 @@ namespace ut
 {
 namespace internal
 {
-class StateImpl : public fnd::ReferencedObject
+struct StateImpl : public fnd::ReferencedObject
 {
-    // TODO: This seems to be empty, is this correct?
+    int stateID;
+    const char* className;
 };
+
+LWAPI_STATIC_ASSERT_SIZE(StateImpl, 0x14)
 } // internal
 
 template<class T>
-class StateBase : public internal::StateImpl
+struct StateBase : public internal::StateImpl
 {
-public:
     virtual bool Trigger(void* param_1, int param_2, internal::HsmEvent& param_3)
     {
         switch (param_2)
