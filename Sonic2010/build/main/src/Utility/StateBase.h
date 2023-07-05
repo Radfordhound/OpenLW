@@ -26,6 +26,8 @@ LWAPI_STATIC_ASSERT_SIZE(StateImpl, 0x14)
 template<class T>
 struct StateBase : public internal::StateImpl
 {
+    typedef T context_type;
+
     virtual bool Trigger(void* param_1, int param_2, internal::HsmEvent& param_3)
     {
         switch (param_2)
@@ -69,6 +71,15 @@ struct StateBase : public internal::StateImpl
     virtual bool ProcessMessage(T& obj, fnd::Message& msg)
     {
         return false;
+    }
+};
+
+template<class StateType>
+struct StateCreatorFuncTemplate
+{
+    static StateBase<typename StateType::context_type>* Create(csl::fnd::IAllocator* allocator)
+    {
+        return new (allocator) StateType();
     }
 };
 } // ut
