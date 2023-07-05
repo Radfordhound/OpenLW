@@ -146,8 +146,8 @@ void DoneAirOnceAction(CStateGOC& param_1);
 LWAPI(0x02a178c0, TODO)
 void IsAirOnceActionEnable(const CStateGOC& param_1);
 
-LWAPI(0x02a178ec, TODO)
-void ResetOnGround(CStateGOC& param_1);
+LWAPI(0x02a178ec, 0x008d6490)
+void ResetOnGround(CStateGOC& goc);
 
 LWAPI(0x02a17910, TODO)
 void GetCenterPosition(CStateGOC& param_1);
@@ -176,8 +176,8 @@ void IsButtonPress(const CStateGOC& param_1, game::InputButtonID param_2);
 LWAPI(0x02a17b10, TODO)
 void IsButtonDown(const CStateGOC& param_1, game::InputButtonID param_2);
 
-LWAPI(0x02a17b54, TODO)
-void IsButtonUp(const CStateGOC& param_1, game::InputButtonID param_2);
+LWAPI(0x02a17b54, 0x008d6590)
+bool IsButtonUp(const CStateGOC& goc, game::InputButtonID btnID);
 
 LWAPI(0x02a17ba0, TODO)
 void IsButtonRelease(const CStateGOC& param_1, game::InputButtonID param_2);

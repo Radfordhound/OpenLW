@@ -75,8 +75,8 @@ void SetVisualToBodyMain(CStateGOC& param_1);
 LWAPI(0x02a286cc, TODO)
 void SetDrawBall(CStateGOC& param_1, bool param_2);
 
-LWAPI(0x02a2873c, TODO)
-void SetDrawJumpBall(CStateGOC& param_1, bool param_2);
+LWAPI(0x02a2873c, 0x008df830)
+void SetDrawJumpBall(CStateGOC& goc, bool val);
 
 LWAPI(0x02a287ac, TODO)
 void SetDrawChargeBall(CStateGOC& param_1, bool param_2);
