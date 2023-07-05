@@ -29,6 +29,7 @@ class ColliShape;
 // TODO: Move this to another header?
 enum InputButtonID
 {
+    INPUT_BUTTON_JUMP = 0,
     // TODO
 };
 } // game
