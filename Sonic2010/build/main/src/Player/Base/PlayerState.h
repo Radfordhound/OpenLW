@@ -7,6 +7,7 @@
 #include "System/Component/Goc.h"
 #include "Sound/SoundHandle.h"
 #include "Utility/StateBase.h"
+#include <csl/ut/bitset.h>
 
 namespace csl
 {
@@ -37,6 +38,7 @@ namespace Player
 class CPlayer;
 struct SStateParameter;
 class CStateGOC;
+class CPhysics;
 
 // TODO: Should this be in another header?
 enum EAbility
@@ -64,6 +66,15 @@ enum BodyMode
 
 class CState : public ut::StateBase<CStateGOC>
 {
+OPENLW_PROTECTED
+    unsigned char padding1[8];
+    csl::ut::Bitset<unsigned int> field_0x14;
+    int m_curSeq;
+    int m_nextSeq;
+    float m_alarmTimer;
+    float field_0x24;
+    float field_0x28;
+
 public:
     LWAPI(0x029307d4, TODO)
     ~CState();
@@ -92,7 +103,7 @@ public:
     LWAPI(0x02930764, TODO)
     CState();
 
-    LWAPI(0x02930840, TODO)
+    LWAPI(0x02930840, 0x0085aa50)
     void GotoSeq(int param_1);
 
     LWAPI(0x02930848, TODO)
@@ -101,6 +112,8 @@ public:
     LWAPI(0x02930880, TODO)
     void SetAlarm(float param_1);
 };
+
+LWAPI_STATIC_ASSERT_SIZE(CState, 0x2C)
 
 class CStateGOC : public CGOComponent
 {
@@ -132,8 +145,8 @@ public:
     LWAPI(0x02931210, TODO)
     void PausePlugin(bool param_1);
 
-    LWAPI(0x02931234, TODO)
-    void GetParameter(unsigned int param_1) const;
+    LWAPI(0x02931234, 0x0085aa60)
+    float GetParameter(unsigned int paramType) const;
 
     LWAPI(0x02931244, 0x0085b6d0)
     CPostureManager* GetPostureManager();
@@ -183,8 +196,8 @@ public:
     LWAPI(0x02931488, TODO)
     void SetEnableTouchPanel(bool param_1);
 
-    LWAPI(0x02931498, TODO)
-    void GetPhysics();
+    LWAPI(0x02931498, 0x0085b490)
+    CPhysics* GetPhysics();
 
     LWAPI(0x029314A4, TODO)
     void GetPhysics() const;
@@ -402,7 +415,7 @@ public:
     LWAPI(0x02932968, TODO)
     void SetAnimation(const char* animName);
 
-    LWAPI(0x029329A0, TODO)
+    LWAPI(0x029329A0, 0x0085b780)
     void PushAnimation(const char* animName);
 
     LWAPI(0x029329D4, TODO)
@@ -460,13 +473,13 @@ public:
     fnd::SoundHandle PlaySE(const char* param_1, bool param_2);
 
     LWAPI(0x02932EEC, TODO)
-    void PlaySE(const char* param_1, fnd::SoundDeviceTag param_2);
+    fnd::SoundHandle PlaySE(const char* param_1, fnd::SoundDeviceTag param_2);
 
     LWAPI(0x02932FAC, TODO)
     void PlaySE_3D(const char* param_1);
 
     LWAPI(0x02932FBC, TODO)
-    void PlaySE(const char* param_1, float param_2, bool param_3);
+    fnd::SoundHandle PlaySE(const char* param_1, float param_2, bool param_3);
 
     LWAPI(0x029330C0, TODO)
     void StopSE(fnd::SoundHandle param_1);
