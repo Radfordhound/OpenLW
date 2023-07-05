@@ -185,9 +185,10 @@ void IsButtonDown(const CStateGOC& param_1, game::InputButtonID param_2)
     // TODO
 }
 
-void IsButtonUp(const CStateGOC& param_1, game::InputButtonID param_2)
+bool IsButtonUp(const CStateGOC& param_1, game::InputButtonID param_2)
 {
     // TODO
+    return false;
 }
 
 void IsButtonRelease(const CStateGOC& param_1, game::InputButtonID param_2)
