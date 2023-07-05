@@ -200,6 +200,8 @@
     <ClCompile Include="..\..\src\System\SyncTimer.cpp" />
     <ClCompile Include="..\..\src\System\WorldHH.cpp" />
     <ClCompile Include="..\..\src\Utility\Hsm.cpp" />
+    <ClCompile Include="..\..\src\Utility\StateDesc.cpp" />
+    <ClCompile Include="..\..\src\Utility\StateManager.cpp" />
     <ClCompile Include="..\..\src\xgame\system\DlcManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -331,6 +333,8 @@
     <ClInclude Include="..\..\src\Utility\Hsm.h" />
     <ClInclude Include="..\..\src\Utility\RefPtr.h" />
     <ClInclude Include="..\..\src\Utility\StateBase.h" />
+    <ClInclude Include="..\..\src\Utility\StateDesc.h" />
+    <ClInclude Include="..\..\src\Utility\StateManager.h" />
     <ClInclude Include="..\..\src\xgame\system\DlcManager.h" />
   </ItemGroup>
   <ItemGroup>

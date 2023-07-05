@@ -1008,6 +1008,12 @@
     <ClCompile Include="..\..\src\Player\Posture\PlayerPostureAirCommon.cpp">
       <Filter>Player\Posture</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Utility\StateManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Utility\StateDesc.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1396,6 +1402,12 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Player\Posture\PlayerPostureAirCommon.h">
       <Filter>Player\Posture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Utility\StateManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Utility\StateDesc.h">
+      <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

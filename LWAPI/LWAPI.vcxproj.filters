@@ -933,6 +933,12 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\game\GameDefs.h">
       <Filter>Header Files\sonic2013\game</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\StateManager.h">
+      <Filter>Header Files\sonic2013\Utility</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\StateDesc.h">
+      <Filter>Header Files\sonic2013\Utility</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\LWAPI.asm">
