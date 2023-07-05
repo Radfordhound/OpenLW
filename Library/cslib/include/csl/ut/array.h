@@ -168,6 +168,22 @@ public:
         m_data[m_count++] = value;
     }
 
+    void assign(size_type count, const T& value)
+    {
+        if (count != 0)
+        {
+            count = 0;
+        }
+
+        reserve(count);
+
+        for (size_type i = 0; i < count; ++i)
+        {
+            m_data[i] = value;
+            ++m_count;
+        }
+    }
+
     void clear()
     {
         if (!m_count) m_count = 0;
