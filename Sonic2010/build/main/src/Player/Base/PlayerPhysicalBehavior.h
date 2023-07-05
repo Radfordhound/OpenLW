@@ -65,12 +65,12 @@ OPENLW_PRIVATE
     csl::math::Vector3 field_0xc0;
     csl::math::Vector3 m_drawnForce;
     csl::math::Vector3 m_drawnPosition;
-    csl::math::Vector3 field_0xf0;
+    csl::math::Vector3 m_upDir;
     unsigned char padding2[0x10];
-    csl::math::Vector3 field_0x110[256];
-    csl::math::Quaternion field_0x1110[256];
-    csl::math::Vector3 field_0x2110[256];
-    float field_0x3110[256];
+    csl::math::Vector3 m_historyPosition[256];
+    csl::math::Quaternion m_historyRotation[256];
+    csl::math::Vector3 m_historyScale[256];
+    float m_historyTime[256];
     csl::ut::Bitset<unsigned int> field_0x3510;
     unsigned char padding3[0xc];
     csl::math::Matrix34 field_0x3520;
@@ -144,8 +144,8 @@ public:
     LWAPI(0x02926e28, TODO)
     void SetVelocity(csl::math::Vector3 const& param_1);
 
-    LWAPI(0x02926e30, TODO)
-    void GetVelocity() const;
+    LWAPI(0x02926e30, 0x00934470)
+    const csl::math::Vector3& GetVelocity() const;
 
     LWAPI(0x02926e38, TODO)
     void GetHorzVelocity() const;
@@ -174,8 +174,8 @@ public:
     LWAPI(0x0292726c, TODO)
     void GetSpeedParameter() const;
 
-    LWAPI(0x02927274, TODO)
-    void CalcUpDirectionByVelocity(csl::math::Vector3 const& param_1) const;
+    LWAPI(0x02927274, 0x00855c80)
+    csl::math::Vector3 CalcUpDirectionByVelocity(csl::math::Vector3 const& param_1) const;
 
     LWAPI(0x029273d0, TODO)
     void GetGravityDirection() const;
@@ -258,7 +258,7 @@ public:
     LWAPI(0x029280bc, TODO)
     void GetGravityUpDirection(csl::math::Vector3 const& param_1, bool param_2);
 
-    LWAPI(0x0292822c, TODO)
+    LWAPI(0x0292822c, 0x00856ef0)
     void UpdateGravity(csl::math::Vector3 const& param_1, bool param_2);
 
     LWAPI(0x02928310, TODO)
