@@ -26,7 +26,7 @@ GetModuleHandleW PROTO STDCALL :DWORD
         ret
     InitModuleAddress ENDP
 
-STATIC_INITIALIZERS_1 SEGMENT ALIAS(".CRT$XCT")
+STATIC_INITIALIZERS_1 SEGMENT ALIAS(".CRT$XCS")
     ; Put a pointer to InitModuleAddress in the CRT static initializers list, level "1" (smaller levels execute first).
     DD OFFSET InitModuleAddress
 STATIC_INITIALIZERS_1 ENDS

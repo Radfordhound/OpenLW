@@ -28,7 +28,7 @@ BINDING MACRO address:REQ, name:REQ
             jmp __imp_&name&
         &name& ENDP
 
-    STATIC_INITIALIZERS_2 SEGMENT ALIAS(".CRT$XCU")
+    STATIC_INITIALIZERS_2 SEGMENT ALIAS(".CRT$XCT")
         ; Put a pointer to our initializer function in the CRT static initializers list, level "2" (smaller levels execute first).
         DD OFFSET Init__imp_&name&
     STATIC_INITIALIZERS_2 ENDS
