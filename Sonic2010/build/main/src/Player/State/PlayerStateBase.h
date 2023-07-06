@@ -112,20 +112,29 @@ class MsgNotifyFinishAutoRun;
 class CStateBase : public CState
 {
 public:
-    LWAPI(0x029a3d30, TODO)
-    ~CStateBase();
+    LWAPI(0x029a3d30, NONE)
+    ~CStateBase() {}
 
-    LWAPI(0x029a3648, TODO)
+    LWAPI(0x029a3648, 0x008981a0)
     bool ProcessMessage(CStateGOC& goc, fnd::Message& msg);
 
-    LWAPI(0x029a0e9c, TODO)
-    virtual bool ProcMsgStartPhantomSign(CStateGOC& goc, xgame::MsgStartPhantomSign& msg);
+    LWAPI(0x029a0e9c, NONE)
+    virtual bool ProcMsgStartPhantomSign(CStateGOC& goc, xgame::MsgStartPhantomSign& msg)
+    {
+        return true;
+    }
 
-    LWAPI(0x029a0f14, TODO)
-    virtual bool ProcMsgHudStartHoming(CStateGOC& goc, xgame::MsgHudStartHoming& msg);
+    LWAPI(0x029a0f14, NONE)
+    virtual bool ProcMsgHudStartHoming(CStateGOC& goc, xgame::MsgHudStartHoming& msg)
+    {
+        return true;
+    }
 
-    LWAPI(0x029a0f0c, TODO)
-    virtual bool ProcMsgHudStartStomping(CStateGOC& goc, xgame::MsgHudStartStomping& msg);
+    LWAPI(0x029a0f0c, NONE)
+    virtual bool ProcMsgHudStartStomping(CStateGOC& goc, xgame::MsgHudStartStomping& msg)
+    {
+        return true;
+    }
 
     LWAPI(0x029a0ea4, TODO)
     void ProcMsgEndSign(CStateGOC& goc, xgame::MsgEndSign& msg);
@@ -296,10 +305,10 @@ public:
 class CStateActionBase : public CStateBase
 {
 public:
-    LWAPI(0x029a53cc, TODO)
-    ~CStateActionBase();
+    LWAPI(0x029a53cc, NONE)
+    ~CStateActionBase() {}
 
-    LWAPI(0x029a52c0, TODO)
+    LWAPI(0x029a52c0, 0x00898660)
     bool ProcessMessage(CStateGOC& goc, fnd::Message& msg);
 
     LWAPI(0x029a3d84, TODO)
@@ -372,28 +381,28 @@ public:
 class CStateSonicBase : public CStateActionBase
 {
 public:
-    LWAPI(0x029a72e4, TODO)
-    ~CStateSonicBase();
+    LWAPI(0x029a72e4, NONE)
+    ~CStateSonicBase() {}
 
-    LWAPI(0x029a6788, TODO)
+    LWAPI(0x029a6788, 0x00898960)
     bool ProcessMessage(CStateGOC& goc, fnd::Message& msg);
 
-    LWAPI(0x029a6d84, TODO)
+    LWAPI(0x029a6d84, 0x00893f90)
     bool ProcMsgStartPhantomSign(CStateGOC& goc, xgame::MsgStartPhantomSign& msg);
 
-    LWAPI(0x029a6de8, TODO)
+    LWAPI(0x029a6de8, 0x00893fd0)
     bool ProcMsgHudStartHoming(CStateGOC& goc, xgame::MsgHudStartHoming& msg);
 
-    LWAPI(0x029a6e28, TODO)
+    LWAPI(0x029a6e28, 0x00893fd0)
     bool ProcMsgHudStartStomping(CStateGOC& goc, xgame::MsgHudStartStomping& msg);
 
-    LWAPI(0x029a6e68, TODO)
+    LWAPI(0x029a6e68, 0x00896990)
     virtual bool ProcMsgOnGroundImpulse(CStateGOC& goc, xgame::MsgOnGroundImpulse& msg);
 
-    LWAPI(0x029a70ec, TODO)
+    LWAPI(0x029a70ec, 0x00895fe0)
     virtual bool ProcMsgSpringImpulse(CStateGOC& goc, xgame::MsgSpringImpulse& msg);
 
-    LWAPI(0x029a7280, TODO)
+    LWAPI(0x029a7280, 0x008974b0)
     virtual bool ProcMsgPLCheckPhantomStart(CStateGOC& goc, MsgPLCheckPhantomStart& msg);
 
     LWAPI(0x029a5420, TODO)
