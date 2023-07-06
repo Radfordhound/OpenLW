@@ -28,8 +28,8 @@ class MsgSetupDamageAndBonus;
 class CStateJumpCommon : public CStateSonicBase
 {
 public:
-    LWAPI(0x029ca030, TODO)
-    ~CStateJumpCommon();
+    LWAPI(0x029ca030, NONE)
+    ~CStateJumpCommon() {}
 
     LWAPI(0x029c9b7c, TODO)
     void CheckChangeState(CStateGOC& goc, bool param_2, bool param_3, bool param_4);
