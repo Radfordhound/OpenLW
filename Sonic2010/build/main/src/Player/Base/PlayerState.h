@@ -109,7 +109,7 @@ public:
     LWAPI(0x02930848, TODO)
     void Sleep(float param_1, int param_2);
 
-    LWAPI(0x02930880, TODO)
+    LWAPI(0x02930880, 0x0085c230)
     void SetAlarm(float param_1);
 };
 
@@ -144,7 +144,7 @@ public:
     LWAPI(0x02930CA4, TODO)
     CStateGOC(CPlayer* param_1);
 
-    LWAPI(0x02931130, TODO)
+    LWAPI(0x02931130, 0x0085b400)
     void ChangeState(int param_1);
 
     LWAPI(0x029311A8, TODO)
