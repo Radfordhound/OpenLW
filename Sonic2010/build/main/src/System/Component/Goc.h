@@ -18,11 +18,11 @@ OPENLW_PRIVATE
     const char* m_familyID;
 
 public:
-    LWAPI(0x02930224, NONE)
-    virtual void Update(float delta) {}
-
-    LWAPI(0x02930228, NONE)
+    LWAPI(0x02930228, 0x0085b2f0)
     virtual void Update(const fnd::SUpdateInfo& updateInfo) {}
+
+    LWAPI(0x02930224, 0x0085b2f0)
+    virtual void Update(float delta) {}
 
     LWAPI(0x0293022C, 0x006f2210)
     ~CGOComponent() {}
