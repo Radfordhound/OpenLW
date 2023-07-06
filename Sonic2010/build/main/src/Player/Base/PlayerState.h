@@ -7,6 +7,7 @@
 #include "System/Component/Goc.h"
 #include "Sound/SoundHandle.h"
 #include "Utility/StateBase.h"
+#include "Utility/StateManager.h"
 #include <csl/ut/bitset.h>
 
 namespace csl
@@ -75,31 +76,31 @@ OPENLW_PROTECTED
     float field_0x28;
 
 public:
-    LWAPI(0x029307d4, TODO)
+    LWAPI(0x029307d4, 0x0085c1e0)
     ~CState();
 
-    LWAPI(0x029308bc, TODO)
+    LWAPI(0x029308bc, 0x0085c250)
     void Enter(CStateGOC& goc, int param_2);
 
-    LWAPI(0x02930914, TODO)
+    LWAPI(0x02930914, 0x006f8ac0)
     void Leave(CStateGOC& goc, int param_2);
 
-    LWAPI(0x02930924, TODO)
+    LWAPI(0x02930924, 0x0085c280)
     bool Update(CStateGOC& goc, float dt);
 
-    LWAPI(0x02930828, TODO)
+    LWAPI(0x02930828, 0x0070a480)
     virtual void OnEnter(CStateGOC& goc, int param_2);
 
-    LWAPI(0x0293082c, TODO)
+    LWAPI(0x0293082c, 0x0070a480)
     virtual void OnLeave(CStateGOC& goc, int param_2);
 
-    LWAPI(0x02930830, TODO)
+    LWAPI(0x02930830, 0x004a34e0)
     virtual void Transit(CStateGOC& goc);
 
-    LWAPI(0x02930838, TODO)
+    LWAPI(0x02930838, 0x005dd780)
     virtual bool Step(CStateGOC& goc, float dt);
 
-    LWAPI(0x02930764, TODO)
+    LWAPI(0x02930764, 0x0085d3c0)
     CState();
 
     LWAPI(0x02930840, 0x0085aa50)
@@ -119,18 +120,29 @@ class CStateGOC : public CGOComponent
 OPENLW_PRIVATE
     void* field_0x10;
     void* field_0x14;
-    char padding1[40];
-    char padding2[12];
+    unsigned char padding1[40];
+    unsigned char padding2[12];
     fnd::SoundHandle m_soundHnd;
     CPlayer* m_player;
-    char padding3[96];
+    unsigned char padding3[4];
+    ut::StateManager<CStateGOC>* m_stateManager;
+    unsigned char padding4[88];
 
 public:
+    LWAPI(0x02931034, 0x0085e110)
+    ~CStateGOC();
+
+    LWAPI(0x02934464, 0x0085e140)
+    void Update(float param_1);
+
+    LWAPI(0x029333F4, 0x0085c320)
+    virtual void Initialize();
+
+    LWAPI(0x02933494, 0x0085b3e0)
+    virtual void Finalize();
+
     LWAPI(0x02930CA4, TODO)
     CStateGOC(CPlayer* param_1);
-
-    LWAPI(0x02931034, TODO)
-    ~CStateGOC();
 
     LWAPI(0x02931130, TODO)
     void ChangeState(int param_1);
@@ -495,7 +507,7 @@ public:
     LWAPI(0x029331F8, TODO)
     void ProcessMessageToCurrentPosture(fnd::Message& param_1);
 
-    LWAPI(0x02933290, TODO)
+    LWAPI(0x02933290, 0x0085b620)
     void RegisterCommonStates();
 
     LWAPI(0x029332FC, TODO)
@@ -503,12 +515,6 @@ public:
 
     LWAPI(0x02933340, TODO)
     void RegisterCommonPluginBefore();
-
-    LWAPI(0x029333F4, TODO)
-    void Initialize();
-
-    LWAPI(0x02933494, TODO)
-    void Finalize();
 
     LWAPI(0x029334E8, TODO)
     void GetCurrentState() const;
@@ -533,9 +539,6 @@ public:
 
     LWAPI(0x0293445C, TODO)
     void ClearDamagedShapeList();
-
-    LWAPI(0x02934464, TODO)
-    void Update(float param_1);
 
     LWAPI(0x0293450C, TODO)
     void GetContextParameter();
@@ -679,5 +682,7 @@ public:
         return nullptr; // TODO!!!
     }
 };
+
+LWAPI_STATIC_ASSERT_SIZE(CStateGOC, 0xbc)
 } // Player
 } // app
