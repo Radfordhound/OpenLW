@@ -70,8 +70,7 @@ jobs:
         Copy-Item -Path "${{github.workspace}}/Library/cslib/include/*" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
         Copy-Item -Path "${{github.workspace}}/Library/sonicusa/include/*" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
         Copy-Item -Path "${{github.workspace}}/Sonic2013/Hedgehog/include/*" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
-        Copy-Item -Path "${{github.workspace}}/Sonic2010/build/main/src/*" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse -Filter *.h
-        Copy-Item -Path "${{github.workspace}}/Sonic2010/build/main/src/Input/KBACTION.inl" -Destination "${{github.workspace}}/LWAPI/bin/Release/include/Input/KBACTION.inl"
+        Copy-Item -Path "${{github.workspace}}/Sonic2010/build/main/src/*" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
         Remove-Item "${{github.workspace}}/LWAPI/bin/Release/include/OpenLW" -Recurse
         Remove-Item -Path "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse -Include *.cpp
 
