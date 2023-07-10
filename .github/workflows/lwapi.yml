@@ -73,6 +73,8 @@ jobs:
         Copy-Item -Path "${{github.workspace}}/Sonic2010/build/main/src/*" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
         Remove-Item "${{github.workspace}}/LWAPI/bin/Release/include/OpenLW" -Recurse
         Remove-Item -Path "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse -Include *.cpp
+        Copy-Item -Path "${{github.workspace}}/depends/boost/include/*" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
+        Copy-Item -Path "${{github.workspace}}/ThirdPartyLicenses.txt" -Destination "${{github.workspace}}/LWAPI/bin/Release/ThirdPartyLicenses.txt"
 
     - uses: actions/upload-artifact@v3
       with:
