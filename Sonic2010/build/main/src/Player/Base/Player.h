@@ -183,8 +183,8 @@ public:
     LWAPI(0x029198cc, TODO)
     void UpdateTransform();
 
-    LWAPI(0x02919ce0, TODO)
-    void GetParameter(unsigned int param_1) const;
+    LWAPI(0x02919ce0, 0x00850c70)
+    float GetParameter(unsigned int param_1) const;
 
     LWAPI(0x02919d14, TODO)
     void UpdatePlayerInformation();
