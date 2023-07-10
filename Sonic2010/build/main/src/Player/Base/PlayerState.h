@@ -72,7 +72,7 @@ OPENLW_PROTECTED
     int m_curSeq;
     int m_nextSeq;
     float m_alarmTimer;
-    float field_0x24;
+    float m_sleepTimer;
     float field_0x28;
 
 public:
@@ -147,7 +147,7 @@ public:
     LWAPI(0x02931130, 0x0085b400)
     void ChangeState(int param_1);
 
-    LWAPI(0x029311A8, TODO)
+    LWAPI(0x029311A8, 0x0085b450)
     void ChangeStateAlways(int param_1);
 
     LWAPI(0x02931208, TODO)
@@ -303,8 +303,8 @@ public:
     LWAPI(0x029317C4, TODO)
     void IsControlMode2D() const;
 
-    LWAPI(0x029317F4, TODO)
-    void IsOnGround() const;
+    LWAPI(0x029317F4, 0x0085bb50)
+    bool IsOnGround() const;
 
     LWAPI(0x02931818, TODO)
     void IsSpinDash() const;
