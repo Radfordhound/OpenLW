@@ -153,8 +153,8 @@ public:
     LWAPI(0x02926ee8, TODO)
     void SetVertVelocity(csl::math::Vector3 const& param_1);
 
-    LWAPI(0x02926f70, TODO)
-    void GetHorzVelocityLength() const;
+    LWAPI(0x02926f70, 0x00855920)
+    float GetHorzVelocityLength() const;
 
     LWAPI(0x02927070, TODO)
     void GetHorzVelocityDir() const;
