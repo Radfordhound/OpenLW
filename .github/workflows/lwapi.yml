@@ -64,6 +64,14 @@ jobs:
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+      run: |
+        Copy-Item -Path "${{github.workspace}}/LWAPI" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
+        Copy-Item -Path "${{github.workspace}}/Library/cslib/include" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
+        Copy-Item -Path "${{github.workspace}}/Library/sonicusa/include" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
+        Copy-Item -Path "${{github.workspace}}/Sonic2013/Hedgehog/include" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse
+        Copy-Item -Path "${{github.workspace}}/Sonic2010/build/main/src" -Destination "${{github.workspace}}/LWAPI/bin/Release/include" -Recurse -Filter *.h
+        Copy-Item -Path "${{github.workspace}}/Sonic2010/build/main/src/Input/KBACTION.inl" -Destination "${{github.workspace}}/LWAPI/bin/Release/include/Input/KBACTION.inl"
+        Remove-Item "${{github.workspace}}/LWAPI/bin/Release/include/OpenLW" -Recurse
 
     - uses: actions/upload-artifact@v3
       with:
