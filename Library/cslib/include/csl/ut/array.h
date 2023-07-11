@@ -155,7 +155,7 @@ public:
     void push_back(const T& value)
     {
         std::size_t cap = capacity();
-        if (m_count > cap)
+        if (cap <= m_count)
         {
             reserve((cap) ? cap * 2 : 1);
         }
