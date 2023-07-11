@@ -1014,6 +1014,9 @@
     <ClCompile Include="..\..\src\Utility\StateDesc.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Sound\SoundPlayer.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h">
@@ -1408,6 +1411,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Utility\StateDesc.h">
       <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Sound\SoundPlayer.h">
+      <Filter>Sound</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

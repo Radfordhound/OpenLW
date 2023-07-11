@@ -942,6 +942,9 @@
     <CustomBuild Include="..\Library\cslib\include\csl\ut\iterator.h">
       <Filter>Header Files\Library\cslib\ut</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Sound\SoundPlayer.h">
+      <Filter>Header Files\sonic2013\Sound</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\LWAPI.asm">

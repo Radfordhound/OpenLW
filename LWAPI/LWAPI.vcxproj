@@ -163,6 +163,7 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\StateManager.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\StateDesc.h" />
     <CustomBuild Include="..\Library\cslib\include\csl\ut\iterator.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Sound\SoundPlayer.h" />
     <ClInclude Include="src\pch.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h" />
     <CustomBuild Include="..\Library\sonicusa\include\sonicusa\system\Random.h" />

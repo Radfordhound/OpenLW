@@ -158,6 +158,7 @@
     <ClCompile Include="..\..\src\Render\RMSceneViewImpl.cpp" />
     <ClCompile Include="..\..\src\SaveData\SaveAuto.cpp" />
     <ClCompile Include="..\..\src\Sound\SoundHandle.cpp" />
+    <ClCompile Include="..\..\src\Sound\SoundPlayer.cpp" />
     <ClCompile Include="..\..\src\System\Actor.cpp" />
     <ClCompile Include="..\..\src\System\Application.cpp" />
     <ClCompile Include="..\..\src\System\ApplicationProperty.cpp" />
@@ -282,6 +283,7 @@
     <ClInclude Include="..\..\src\Render\RMSceneViewImpl.h" />
     <ClInclude Include="..\..\src\SaveData\SaveAuto.h" />
     <ClInclude Include="..\..\src\Sound\SoundHandle.h" />
+    <ClInclude Include="..\..\src\Sound\SoundPlayer.h" />
     <ClInclude Include="..\..\src\System\Actor.h" />
     <ClInclude Include="..\..\src\System\ActorTraverser.h" />
     <ClInclude Include="..\..\src\System\Application.h" />
