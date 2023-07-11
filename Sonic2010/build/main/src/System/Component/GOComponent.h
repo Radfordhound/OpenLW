@@ -27,7 +27,7 @@ class GOComponent : public RefByHandleObject
 OPENLW_PRIVATE
     GameObject* m_activeObject;
     unsigned short m_unknown1;
-    csl::ut::Bitset<char> m_flags;
+    csl::ut::Bitset<unsigned char> m_flags;
     char m_componentType; // TODO: Is this an enum?
     unsigned int m_unknown2;
     csl::ut::LinkListNode m_visualComponentNode;
