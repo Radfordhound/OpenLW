@@ -1,4 +1,6 @@
 #pragma once
+#include "System/Component/Goc.h"
+#include <csl/ut/linklist.h>
 
 namespace app
 {
@@ -30,9 +32,22 @@ enum ELevel__
 } // Level
 } // Param
 
-class CParameterGOC
+struct ParameterNode
 {
-    // TODO
+    float* values[0x8d];
+    csl::ut::LinkListNode linkListNode;
+};
+
+LWAPI_STATIC_ASSERT_SIZE(ParameterNode, 0x23c)
+
+class CParameterGOC : public CGOComponent
+{
+OPENLW_PROTECTED
+    unsigned int field_0x10;
+    unsigned char field_0x14;
+    CPlayer* m_player;
+    ParameterNode m_paramNodeBuffer[6];
+    csl::ut::LinkList<ParameterNode> m_paramNodes;
 
 public:
     LWAPI(0x0294e3f0, TODO)
@@ -65,5 +80,7 @@ public:
     LWAPI(0x0294ebdc, TODO)
     void GetParamType(Param::Level::ELevel__ param_1) const;
 };
+
+LWAPI_STATIC_ASSERT_SIZE(CParameterGOC, 0xd94)
 } // Player
 } // app
