@@ -939,6 +939,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Utility\StateDesc.h">
       <Filter>Header Files\sonic2013\Utility</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Library\cslib\include\csl\ut\iterator.h">
+      <Filter>Header Files\Library\cslib\ut</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\LWAPI.asm">

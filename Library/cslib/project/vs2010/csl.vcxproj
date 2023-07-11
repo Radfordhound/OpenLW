@@ -22,6 +22,7 @@
     <ClInclude Include="..\..\include\csl\math\vector3.h" />
     <ClInclude Include="..\..\include\csl\ut\bitset.h" />
     <ClInclude Include="..\..\include\csl\ut\array.h" />
+    <ClInclude Include="..\..\include\csl\ut\iterator.h" />
     <ClInclude Include="..\..\include\csl\ut\linklist.h" />
     <ClInclude Include="..\..\include\csl\ut\noncopyable.h" />
     <ClInclude Include="..\..\include\csl\ut\number.h" />

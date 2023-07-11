@@ -95,6 +95,9 @@
     <ClInclude Include="..\..\include\csl\ut\variablestring.h">
       <Filter>Header Files\ut</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\csl\ut\iterator.h">
+      <Filter>Header Files\ut</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\csl\fnd\tick_win32.cpp">
