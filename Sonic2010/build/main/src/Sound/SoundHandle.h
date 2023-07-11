@@ -15,9 +15,9 @@ namespace app
 {
 namespace fnd
 {
-struct SoundPlayer;
-struct SoundHandleObj;
-struct SoundListenerHandle;
+class SoundPlayer;
+class SoundHandleObj;
+class SoundListenerHandle;
 
 // TODO: Should this be in another header?
 struct SoundDeviceTag
@@ -91,5 +91,7 @@ public:
     LWAPI(0x021B5664, TODO)
     void DetachAisacAll();
 };
+
+LWAPI_STATIC_ASSERT_SIZE(SoundHandle, 0xc)
 } // fnd
 } // app
