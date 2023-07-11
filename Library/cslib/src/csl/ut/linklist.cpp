@@ -11,24 +11,24 @@ LinkListImpl::iterator LinkListImpl::insert(iterator it, LinkListNode* node)
 {
     ++m_count;
 
-    LinkListNode* prev = it.Node->Prev;
-    node->Next = it.Node;
-    node->Prev = prev;
+    LinkListNode* prev = it.node->prev;
+    node->next = it.node;
+    node->prev = prev;
 
-    it.Node->Prev = node;
-    prev->Next = node;
+    it.node->prev = node;
+    prev->next = node;
 
     return iterator(node, m_nodeOffset);
 }
 
 LinkListImpl::iterator LinkListImpl::erase(LinkListNode* node)
 {
-    LinkListNode* next = node->Next;
-    node->Next->Prev = node->Prev;
-    node->Prev->Next = next;
+    LinkListNode* next = node->next;
+    node->next->prev = node->prev;
+    node->prev->next = next;
 
-    node->Next = nullptr;
-    node->Prev = nullptr;
+    node->next = nullptr;
+    node->prev = nullptr;
     --m_count;
 
     return iterator(next, m_nodeOffset);
@@ -36,9 +36,9 @@ LinkListImpl::iterator LinkListImpl::erase(LinkListNode* node)
 
 LinkListImpl::iterator LinkListImpl::erase(iterator first, iterator last)
 {
-    for (LinkListNode* curNode = first.Node;
-        curNode != last.Node;
-        curNode = curNode->Next)
+    for (LinkListNode* curNode = first.node;
+        curNode != last.node;
+        curNode = curNode->next)
     {
         erase(curNode);
     }
@@ -48,7 +48,7 @@ LinkListImpl::iterator LinkListImpl::erase(iterator first, iterator last)
 
 LinkListImpl::iterator LinkListImpl::erase(iterator it)
 {
-    return erase(it, iterator(it.Node->Next, it.NodeOffset));
+    return erase(it, iterator(it.node->next, it.nodeOffset));
 }
 
 void LinkListImpl::init(int nodeOffset)
@@ -65,18 +65,18 @@ void LinkListImpl::reverse()
 {
     if (m_count != 0)
     {
-        LinkListNode* curNode = m_root.Next;
-        m_root.Prev = &m_root;
-        m_root.Next = &m_root;
+        LinkListNode* curNode = m_root.next;
+        m_root.prev = &m_root;
+        m_root.next = &m_root;
 
         m_count = 0;
         while (curNode != &m_root)
         {
-            LinkListNode* next = curNode->Next;
-            curNode->Prev = nullptr;
-            curNode->Next = nullptr;
+            LinkListNode* next = curNode->next;
+            curNode->prev = nullptr;
+            curNode->next = nullptr;
 
-            insert(iterator(m_root.Next, m_nodeOffset), curNode);
+            insert(iterator(m_root.next, m_nodeOffset), curNode);
 
             curNode = next;
         }
