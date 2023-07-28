@@ -7,6 +7,7 @@
 #include "Input/DeviceManager.h"
 #include "Memory/GlobalAllocator.h"
 #include "Render/RenderManager.h"
+#include "Movie/MovieSystem.h"
 #include <Hedgehog/MirageCore/hhMirageCore.h>
 #include <Hedgehog/Utility/hhUtility.h>
 
@@ -67,7 +68,8 @@ void Application::InitializeMain()
 
     renderInfrs->GetDevice()->SetHandle(RsdxDevice);
 
-    // TODO
+    // Create CMovieSystem instance and use it as the CMovieSystem.
+    CMovieSystem::ReplaceInstance(CMovieSystem::Create(allocator));
 }
 
 void Application::ShutdownMain()
@@ -137,6 +139,9 @@ void Application::InitializeCommon()
     renderMgr.Setup(setupInfo);
 
     // TODO
+
+    // Setup CMovieSystem.
+    CMovieSystem::GetInstance().Setup("movie");
 
     // Setup DeviceManager.
     DeviceManager& deviceMgr = DeviceManager::GetInstance();
@@ -221,4 +226,4 @@ Application::Application()
     UpdateInfo.DeltaTime = (1 / 60.0f);
     UpdateInfo.field_0x8 = 1;
 }
-}
+} // app
