@@ -82,7 +82,7 @@ public:
     rsdx::RsdxPixelShader9* CreatePixelShader(const void* data);
 
     LWAPI(0x036d6970, 0x00c2bed0)
-    void CreateVertexDeclaration(const rsdx::D3DVERTEXELEMENT9* param_1,
+    bool CreateVertexDeclaration(const rsdx::D3DVERTEXELEMENT9* vtxElements,
         CVertexDeclarationPtr* param_2, const u8* param_3);
 
     LWAPI(0x036d6cbc, TODO)

@@ -259,11 +259,11 @@ end:
     return (vtxDeclPtr == nullptr);
 }
 
-void CRenderingInfrastructure::CreateVertexDeclaration(
-    const rsdx::D3DVERTEXELEMENT9* param_1,
+bool CRenderingInfrastructure::CreateVertexDeclaration(
+    const rsdx::D3DVERTEXELEMENT9* vtxElements,
     CVertexDeclarationPtr* param_2, const u8* param_3)
 {
-    // TODO
+    return field_0x534->CreateVertexDeclaration(vtxElements, param_2, param_3);
 }
 
 void CRenderingInfrastructureInternal::ReleaseVertexDeclaration(
