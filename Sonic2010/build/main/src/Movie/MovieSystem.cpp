@@ -1,6 +1,7 @@
 #include "OpenLW/pch.h"
 #include "MovieSystem.h"
 #include "MoviePlayer.h"
+#include "System/FileSystem.h"
 
 using namespace csl::ut;
 using namespace csl::fnd;
@@ -35,6 +36,11 @@ CMovieSystem::CMovieSystem() :
     SetRootDirectory("");
 }
 
+CMovieSystem* CMovieSystem::Create(csl::fnd::IAllocator* allocator)
+{
+    return new (allocator) CMovieSystem();
+}
+
 void CMovieSystem::Finalize()
 {
     if (m_players.size() != 0)
@@ -63,5 +69,19 @@ CMoviePlayer* CMovieSystem::CreatePlayer()
     
     return player;
 }
+
+void CMovieSystem::Setup(const char* movieDirectory)
+{
+    m_players.Reset(nullptr, 0, 0, m_playerAllocator, false);
+    m_players.reserve(2);
+
+    // Set root directory.
+    auto& fileSystem = FileSystem::GetInstance();
+    csl::ut::StringBuf<256> rootDirectory(fileSystem.RootDirectory);
+
+    rootDirectory += movieDirectory;
+
+    SetRootDirectory(rootDirectory);
 }
-}
+} // fnd
+} // app

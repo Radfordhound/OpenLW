@@ -28,6 +28,9 @@ public:
     LWAPI(0x021a43ec, TODO)
     CMovieSystem();
 
+    LWAPI(0x021a4468, TODO)
+    static CMovieSystem* Create(csl::fnd::IAllocator* allocator);
+
     LWAPI(0x021a4530, TODO)
     void Finalize();
 
@@ -36,6 +39,9 @@ public:
 
     LWAPI(0x021a4a68, TODO)
     CMoviePlayer* CreatePlayer();
+
+    LWAPI(0x021a493c, TODO)
+    void Setup(const char* movieDirectory);
 };
-}
-}
+} // fnd
+} // app
