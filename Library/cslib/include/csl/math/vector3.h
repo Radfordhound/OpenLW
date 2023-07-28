@@ -117,7 +117,7 @@ struct Vector3
 #ifdef _WIN32
         // TODO: Is this correct?
         result.Data = DXMATH_NAMESPACE XMVectorScale(
-			Data, 1 / scale);
+            Data, 1 / scale);
 #else
         // TODO
         //result.Data = PSVECScale(1 / scale);
@@ -133,7 +133,7 @@ struct Vector3
 #ifdef _WIN32
         // TODO: Is this correct?
         result.Data = DXMATH_NAMESPACE XMVectorAdd(
-			Data, other.Data);
+            Data, other.Data);
 #else
         // TODO
 #endif
@@ -148,7 +148,7 @@ struct Vector3
 #ifdef _WIN32
         // TODO: Is this correct?
         result.Data = DXMATH_NAMESPACE XMVectorSubtract(
-			Data, other.Data);
+            Data, other.Data);
 #else
         // TODO
 #endif
