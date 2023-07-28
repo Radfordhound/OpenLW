@@ -32,6 +32,9 @@ public:
     LWAPI(0x02add314, 0x00930ba0)
     void OnEnter(CGame& game);
 
+    LWAPI(0x02add4a8, TODO)
+    void Update(CGame& game, const fnd::SUpdateInfo& updateInfo);
+
     LWAPI(0x02add578, TODO)
     void LoadData();
 

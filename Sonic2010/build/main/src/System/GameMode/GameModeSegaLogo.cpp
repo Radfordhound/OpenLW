@@ -40,6 +40,14 @@ void GameModeSegalogo::OnEnter(CGame& game)
     }
 }
 
+void GameModeSegalogo::Update(CGame& game, const fnd::SUpdateInfo& updateInfo)
+{
+    field_0x40 = updateInfo.DeltaTime;
+    GameMode::Update(game, updateInfo);
+
+    DispatchFSM(EventType::CreateUpdate(updateInfo.DeltaTime));
+}
+
 void GameModeSegalogo::LoadData()
 {
     FileLoaderParam param;
@@ -141,4 +149,4 @@ void GameModeSegalogo::MyRenderable::Render(const hh::gfx::RenderEventParam* par
 {
     GameMode->Draw();
 }
-}
+} // app
