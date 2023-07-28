@@ -55,6 +55,10 @@ public:
     void ReleaseVertexDeclaration(RsdxVertexDeclaration9** vtxDecl);
 };
 
+CVertexDeclarationPtr::CVertexDeclarationPtr() :
+    m_vtxDecl(nullptr),
+    m_renderInfra(nullptr) {}
+
 void CVertexDeclarationPtr::clear()
 {
     if (m_renderInfra)
@@ -351,5 +355,5 @@ void CRenderingInfrastructure::Present()
 
     // TODO
 }
-}
-}
+} // mr
+} // hh

@@ -23,6 +23,9 @@ public:
         return m_vtxDecl;
     }
 
+    LWAPI(0x02170bf4, TODO)
+    CVertexDeclarationPtr();
+
     LWAPI(0x036c7a4c, TODO)
     void clear();
 
