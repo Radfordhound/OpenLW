@@ -57,7 +57,7 @@ public:
         unsigned int param_2, Extra::fx::SGroupStartEndPair* param_3,
         unsigned int param_4, const hh::MTBase::SMTUpdateHint& param_5);
 
-    LWAPI(0x02261a1c, TODO)
+    LWAPI(0x02261a1c, 0x004ebe00)
     static void Update_ComamndBuffer(CRenderSceneViewImpl** param_1,
         unsigned int param_2, Extra::fx::SGroupStartEndPair* param_3,
         unsigned int param_4, const hh::MTBase::SMTUpdateHint& param_5);
