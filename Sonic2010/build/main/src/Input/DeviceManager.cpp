@@ -81,6 +81,18 @@ void DeviceManager::Setup()
     }
 }
 
+void* DeviceManager::GetDeviceData(unsigned int port, unsigned int dataTypeID)
+{
+    if (!m_impl)
+    {
+        return nullptr;
+    }
+
+    // TODO
+
+    return nullptr; // TODO
+}
+
 void* DeviceManager_init()
 {
     DeviceManager* dmgr = new (fnd::GetSingletonAllocator()) DeviceManager();

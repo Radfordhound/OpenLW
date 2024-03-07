@@ -39,6 +39,15 @@ public:
     
     LWAPI(0x022795f4, 0x004f66a0)
     void Setup();
+
+    LWAPI(0x02279F9C, TODO)
+    void* GetDeviceData(unsigned int port, unsigned int dataTypeID);
+
+    template<class T>
+    T GetDevice(unsigned int port)
+    {
+        return T(GetDeviceData(port, T::DataTypeID));
+    }
 };
 
 /**
