@@ -16,6 +16,8 @@
 
 namespace app
 {
+class CRenderEffectUpdateEntityCasinoLight;
+
 namespace gfx
 {
 struct IRenderScheduler;
@@ -31,7 +33,7 @@ struct RenderManager::Impl : public Extra::fx::CFxPipelineExecutor, // size == 0
     // TODO: Other data members.
 
     boost::intrusive_ptr<Extra::fx::CGPUInstanceMapper> field_0x68;
-    // TODO: Other data members.
+    CRenderEffectUpdateEntityCasinoLight* field_0x6c;
     IRenderScheduler* RenderSchedulers[3];
 
     // TODO: Other data members.
