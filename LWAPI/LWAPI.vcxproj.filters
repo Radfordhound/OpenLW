@@ -945,6 +945,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Sound\SoundPlayer.h">
       <Filter>Header Files\sonic2013\Sound</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Input\ResDevice.h">
+      <Filter>Header Files\sonic2013\Input</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\LWAPI.asm">

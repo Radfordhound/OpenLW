@@ -102,6 +102,7 @@
     <ClCompile Include="..\..\src\Input\DevicePlatformBase.cpp" />
     <ClCompile Include="..\..\src\Input\DeviceTouchWin.cpp" />
     <ClCompile Include="..\..\src\Input\DeviceWin.cpp" />
+    <ClCompile Include="..\..\src\Input\ResDevice.cpp" />
     <ClCompile Include="..\..\src\math\Angle3.cpp" />
     <ClCompile Include="..\..\src\math\Matrix34.cpp" />
     <ClCompile Include="..\..\src\math\Quaternion.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="..\..\src\Input\DevicePlatformBase.h" />
     <ClInclude Include="..\..\src\Input\DeviceTouchWin.h" />
     <ClInclude Include="..\..\src\Input\DeviceWin.h" />
+    <ClInclude Include="..\..\src\Input\ResDevice.h" />
     <ClInclude Include="..\..\src\math\Angle3.h" />
     <ClInclude Include="..\..\src\math\Matrix34.h" />
     <ClInclude Include="..\..\src\math\Quaternion.h" />
