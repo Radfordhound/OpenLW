@@ -3,6 +3,7 @@
 #include "MovieSystem.h"
 #include "Render/RenderManager.h"
 #include "HUD/SurfRidePlatformMIRAGE.h"
+#include "System/CriSystem.h"
 
 using namespace app::gfx;
 using namespace app::HUD;
@@ -69,6 +70,47 @@ void CMoviePlayer::Play(const char* movieResName, int param_2,
     field_0x1f8.Set(MOVIE_PLAYER_FLAG_UNKNOWN7, true);
 }
 
+CMoviePlayer::CMoviePlayer() :
+    m_renderInfra(nullptr),
+    // TODO
+    m_maxPosX(640.0f),
+    m_height(720.0f),
+    // TODO
+    // TODO: Un-comment this
+    //m_isHeadPhone(false),
+    m_width(1280.0f),
+    // TODO
+    m_maxPosY(360.0f),
+    // TODO
+    m_posY(0.0f),
+    field_0x1f4(0),
+    // TODO
+    field_0x194(-1),
+    // TODO
+    m_posX(0.0f),
+    field_0x1f8(0)
+{
+    // Initialize textures.
+    for (int i = 0; i < 2; ++i)
+    {
+        for (int i2 = 0; i2 < 4; ++i2)
+        {
+            field_0x1d0[i][i2] = nullptr;
+        }
+    }
+
+    // Initialize vertex declaration.
+    std::memset(m_vtxData, 0, sizeof(m_vtxData));
+
+    // Set default CriSystem server thread.
+    auto& criSystem = CriSystem::GetInstance();
+    criSystem.SetDefaultServerThread();
+
+    // Set whether or not we are outputting audio to headphones.
+    // TODO: Un-comment this
+    //m_isHeadPhone = IsHeadPhone();
+}
+
 void CMoviePlayer::DestroyImmediately()
 {
     if (m_playerHandle)
@@ -89,7 +131,7 @@ void CMoviePlayer::DestroyImmediately()
 
 hh::rsdx::RsdxBaseTexture9* CMoviePlayer::GetTexture(int index)
 {
-    return field_0x1d0[field_0x1f0 * 4 + index];
+    return field_0x1d0[field_0x1f0][index];
 }
 
 void CMoviePlayer::DrawPrepare()
@@ -237,5 +279,5 @@ void CMoviePlayer::Draw(bool param_1)
         device->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, m_vtxData, MovieVertexStride);
     }
 }
-}
-}
+} // fnd
+} // app

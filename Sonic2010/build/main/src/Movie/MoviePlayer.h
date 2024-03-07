@@ -1,5 +1,7 @@
 #pragma once
 #include "System/ReferencedObject.h"
+#include "Input/DeviceManager.h"
+#include "Input/ResDevice.h"
 #include <Hedgehog/MirageCore/Resource/hhShaderResource.h>
 #include <Hedgehog/MirageCore/Misc/hhRenderingInfrastructure.h>
 #include <csl/ut/string.h>
@@ -14,6 +16,20 @@
 #endif
 
 #endif
+
+/**
+ * @brief Whether or not the user is outputting audio to headphones.
+ *
+ * NOTE: This function appears to be static, but it's been exposed in
+ * this header anyway for LWAPI/modding purposes.
+*/
+LWAPI(0x021a1a1c, NONE)
+inline bool IsHeadPhone()
+{
+    auto& deviceManager = app::hid::DeviceManager::GetInstance();
+    auto device = deviceManager.GetDevice<app::hid::ResPadDevice>(0);
+    return device.ref().field_0x2d;
+}
 
 namespace app
 {
@@ -61,7 +77,7 @@ OPENLW_PRIVATE
     float m_posX;
     float m_posY;
     // TODO: Other data members.
-    hh::rsdx::RsdxBaseTexture9* field_0x1d0[8];
+    hh::rsdx::RsdxBaseTexture9* field_0x1d0[2][4];
     std::size_t field_0x1f0;
     unsigned int field_0x1f4;
     csl::ut::Bitset<unsigned int> field_0x1f8;
@@ -74,6 +90,9 @@ public:
     LWAPI(0x021a1c24, TODO)
     void Play(const char* movieResName, int param_2,
         bool param_3, bool param_4, bool param_5);
+
+    LWAPI(0x021a1e70, 0x0049b110)
+    CMoviePlayer();
 
     LWAPI(0x021a30b8, TODO)
     void DestroyImmediately();
