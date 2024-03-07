@@ -58,18 +58,24 @@ OPENLW_PRIVATE
     csl::math::Vector3 m_position;
     csl::math::Quaternion m_rotation;
     csl::math::Matrix34 m_matrix;
+    /** @brief Current velocity of the player. */
     csl::math::Vector3 m_velocity;
-    csl::math::Vector3 field_0x90;
-    csl::math::Vector3 field_0xa0;
+    /** @brief Velocity from the previous frame. */
+    csl::math::Vector3 m_previousVelocity;
+    /** @brief Which direction gravity is facing (usually down). */
+    csl::math::Vector3 m_gravityDirection;
     csl::math::Vector3 m_inputForce;
-    csl::math::Vector3 field_0xc0;
+    /** @brief The sum of all external forces currently being applied
+      * to the player's movement (e.g. dash panel or spring velocity).
+    */
+    csl::math::Vector3 m_externalMoveForce;
     csl::math::Vector3 m_drawnForce;
     csl::math::Vector3 m_drawnPosition;
     csl::math::Vector3 m_upDir;
     unsigned char padding2[0x10];
     csl::math::Vector3 m_historyPosition[256];
     csl::math::Quaternion m_historyRotation[256];
-    csl::math::Vector3 m_historyScale[256];
+    csl::math::Vector3 m_historyVelocity[256];
     float m_historyTime[256];
     csl::ut::Bitset<unsigned int> field_0x3510;
     unsigned char padding3[0xc];
