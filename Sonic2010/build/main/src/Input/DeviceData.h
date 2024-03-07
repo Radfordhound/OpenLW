@@ -98,5 +98,5 @@ struct ResDeviceData // sizeof == 0xC0
     LWAPI(0x022790f0, 0x004f5d90)
     void Init(bool hasRepeat);
 };
-}
-}
+} // hid
+} // app

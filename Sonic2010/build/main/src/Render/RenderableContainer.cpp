@@ -34,5 +34,5 @@ void RenderableContainer::RemoveObject(Renderable* obj)
 {
     Renderables.erase(obj);
 }
-}
-}
+} // gfx
+} // app

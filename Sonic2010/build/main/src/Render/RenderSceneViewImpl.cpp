@@ -144,5 +144,5 @@ void CRenderSceneViewImpl::StartRenderContainerOne(
     void* data = param_3->Allocator.AllocateMemory(0x4970);
     // TODO
 }
-}
-}
+} // gfx
+} // app
