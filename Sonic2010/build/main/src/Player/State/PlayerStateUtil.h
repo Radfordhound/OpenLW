@@ -534,8 +534,8 @@ void SinkInWater(CStateGOC& param_1, unsigned int* param_2);
 LWAPI(0x02a1a624, TODO)
 void GetRippleInfo(CStateGOC& param_1, csl::math::Vector3* param_2, csl::math::Vector3* param_3, int* param_4);
 
-LWAPI(0x02a1a6ac, TODO)
-void IsEnableDoubleJump(CStateGOC& param_1, bool param_2);
+LWAPI(0x02a1a6ac, 0x008d6b90)
+bool IsEnableDoubleJump(CStateGOC& goc, bool ignoreOutOfControl);
 
 LWAPI(0x02a1a738, TODO)
 void GetLockOnPlugin(CStateGOC& param_1);

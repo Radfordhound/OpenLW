@@ -27,15 +27,18 @@ class MsgSetupDamageAndBonus;
 
 class CStateJumpCommon : public CStateSonicBase
 {
+OPENLW_PROTECTED
+    // TODO
+
 public:
     LWAPI(0x029ca030, NONE)
     ~CStateJumpCommon() {}
 
     LWAPI(0x029c9b7c, TODO)
-    void CheckChangeState(CStateGOC& goc, bool param_2, bool param_3, bool param_4);
+    bool CheckChangeState(CStateGOC& goc, bool param_2, bool param_3, bool param_4);
 
     LWAPI(0x029c9d08, TODO)
-    void CheckGoOutWaterJump(CStateGOC& goc);
+    bool CheckGoOutWaterJump(CStateGOC& goc);
 
     LWAPI(0x029c9d10, TODO)
     void GetJumpParameter(CStateGOC& goc);
@@ -44,7 +47,7 @@ public:
     void GetJumpParameter(CStateGOC& goc) const;
 
     LWAPI(0x029c9d20, TODO)
-    void CheckAddUpForce(CStateGOC& goc, float param_2);
+    bool CheckAddUpForce(CStateGOC& goc, float param_2);
 
     LWAPI(0x029c9e5c, 0x008ac640)
     void DoJump(CStateGOC& goc, csl::math::Vector3 const* param_2);
