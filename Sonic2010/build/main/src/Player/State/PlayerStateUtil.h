@@ -597,7 +597,7 @@ void EndDash(CStateGOC& param_1);
 LWAPI(0x02a1ac50, TODO)
 void IsNowAutoRun(const CStateGOC& param_1);
 
-LWAPI(0x02a1ac7c, TODO)
+LWAPI(0x02a1ac7c, 0x008d8e10)
 void SetActionNowJumping(CStateGOC& param_1, bool param_2, bool param_3);
 
 LWAPI(0x02a1ad14, TODO)
