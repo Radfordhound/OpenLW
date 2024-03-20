@@ -180,5 +180,18 @@ struct Vector3
 };
 
 LWAPI_STATIC_ASSERT_SIZE(Vector3, 16)
+
+// TODO: Are these functions in the right header?
+inline float Vector3Dot(const Vector3& a, const Vector3& b)
+{
+#ifdef _WIN32
+    // TODO: Is this correct?
+    return DXMATH_NAMESPACE XMVectorGetX(
+        DXMATH_NAMESPACE XMVector3Dot(a.Data, b.Data)
+    );
+#else
+    // TODO
+#endif
+}
 } // math
 } // csl

@@ -11,5 +11,5 @@ struct Angle3
     float Y;
     float Z;
 };
-}
-}
+} // math
+} // app
