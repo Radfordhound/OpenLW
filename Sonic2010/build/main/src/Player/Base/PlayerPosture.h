@@ -30,6 +30,7 @@ namespace Player
 class CPhysics;
 class CPostureManager;
 class CPlayer;
+class CCollisionGOC;
 
 class CBasePosture : public fnd::ReferencedObject
 {
@@ -81,8 +82,8 @@ public:
     LWAPI(0x0292a898, TODO)
     void GetPathService() const;
 
-    LWAPI(0x0292a8d0, TODO)
-    void GetCollision();
+    LWAPI(0x0292a8d0, 0x00858360)
+    CCollisionGOC* GetCollision();
 
     LWAPI(0x0292a904, TODO)
     void GetCollision() const;
@@ -105,7 +106,7 @@ public:
     LWAPI(0x0292aa2c, TODO)
     bool IsDisableUpdateYaw() const;
 
-    LWAPI(0x0292aa60, TODO)
+    LWAPI(0x0292aa60, 0x00858e80)
     bool IsOutOfControl() const;
 
     LWAPI(0x0292aa8c, TODO)
