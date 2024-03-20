@@ -102,8 +102,8 @@ public:
     LWAPI(0x02962be4, TODO)
     void CalculateSimple(CPhysics& param_1, float param_2, bool param_3);
 
-    LWAPI(0x02962c74, TODO)
-    void CalculateFor3DCommon(CPhysics& param_1, float param_2);
+    LWAPI(0x02962c74, 0x00871ef0)
+    void CalculateFor3DCommon(CPhysics& physics, float deltaTime);
 
     LWAPI(0x02962d30, TODO)
     void UpdateVelocityAlong2DPath(CPhysics& param_1, float param_2, const csl::math::Vector3& param_3);
@@ -117,8 +117,8 @@ public:
     LWAPI(0x02962e7c, TODO)
     void GetCollisionSurfaceNum() const;
 
-    LWAPI(0x02962ea4, TODO)
-    void CheckReversedVelocityByHitWall(CPhysics& param_1, const csl::math::Vector3& param_2, const csl::math::Vector3& param_3, const csl::math::Vector3& param_4, float param_5);
+    LWAPI(0x02962ea4, 0x0086f690)
+    bool CheckReversedVelocityByHitWall(CPhysics& physics, const csl::math::Vector3& param_2, const csl::math::Vector3& param_3, const csl::math::Vector3& param_4, float deltaTime);
 };
 } // Player
 } // app
