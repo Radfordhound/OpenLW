@@ -336,8 +336,8 @@ public:
     LWAPI(0x02931A08, TODO)
     void EndOutOfControl(unsigned int param_1);
 
-    LWAPI(0x02931A10, TODO)
-    void IsOutOfControl() const;
+    LWAPI(0x02931A10, 0x0085ab00)
+    bool IsOutOfControl() const;
 
     LWAPI(0x02931A3C, TODO)
     void ClearOutOfControl();
@@ -495,8 +495,8 @@ public:
     LWAPI(0x029330C0, TODO)
     void StopSE(fnd::SoundHandle param_1);
 
-    LWAPI(0x029330D0, TODO)
-    void ChangeBodyCollision(BodyCollisionType param_1);
+    LWAPI(0x029330D0, 0x0085ba50)
+    void ChangeBodyCollision(BodyCollisionType type);
 
     LWAPI(0x02933100, TODO)
     void ProcessMessage(fnd::Message& param_1);
