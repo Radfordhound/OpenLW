@@ -147,8 +147,8 @@ public:
     LWAPI(0x02926da0, TODO)
     void SetHorzVelocity(csl::math::Vector3 const& param_1);
 
-    LWAPI(0x02926e28, TODO)
-    void SetVelocity(csl::math::Vector3 const& param_1);
+    LWAPI(0x02926e28, 0x004cf110)
+    void SetVelocity(csl::math::Vector3 const& velocity);
 
     LWAPI(0x02926e30, 0x00934470)
     const csl::math::Vector3& GetVelocity() const;
@@ -162,8 +162,8 @@ public:
     LWAPI(0x02926f70, 0x00855920)
     float GetHorzVelocityLength() const;
 
-    LWAPI(0x02927070, TODO)
-    void GetHorzVelocityDir() const;
+    LWAPI(0x02927070, 0x00856b10)
+    csl::math::Vector3 GetHorzVelocityDir() const;
 
     LWAPI(0x029270f4, TODO)
     void GetVertVelocityDir() const;
@@ -297,8 +297,8 @@ public:
     LWAPI(0x029284b4, TODO)
     void UpdateExternalMoveForce(float param_1);
 
-    LWAPI(0x029285ac, TODO)
-    void ApplyExternalForceToMove(float param_1, float param_2);
+    LWAPI(0x029285ac, 0x00856f70)
+    void ApplyExternalForceToMove(float deltaTime, float param_2);
 
     LWAPI(0x0292862c, TODO)
     void GetUp() const;
