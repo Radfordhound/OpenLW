@@ -525,8 +525,8 @@ void IsInWater(CStateGOC& param_1);
 LWAPI(0x02a1a55c, TODO)
 void ChangeStateOutWater(CStateGOC& param_1);
 
-LWAPI(0x02a1a5a0, TODO)
-void RequestWaterGravityChange(CStateGOC& param_1);
+LWAPI(0x02a1a5a0, 0x00632a90)
+void RequestWaterGravityChange(CStateGOC& goc);
 
 LWAPI(0x02a1a5a4, TODO)
 void SinkInWater(CStateGOC& param_1, unsigned int* param_2);
