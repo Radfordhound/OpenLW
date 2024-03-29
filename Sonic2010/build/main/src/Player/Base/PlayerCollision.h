@@ -56,7 +56,7 @@ struct SGroundInfo
 {
     bool isGrounded;
     unsigned char padding1[0xf];
-    csl::math::Vector3 field_0x10;
+    csl::math::Vector3 groundNormal;
     csl::math::Vector3 field_0x20;
     game::ColliShape* field_0x30;
     unsigned int field_0x34;

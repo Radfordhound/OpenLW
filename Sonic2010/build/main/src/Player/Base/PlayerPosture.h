@@ -35,7 +35,7 @@ class CCollisionGOC;
 class CBasePosture : public fnd::ReferencedObject
 {
 OPENLW_PROTECTED
-    CPostureManager* m_owner;
+    CPostureManager* m_postureManager;
 
 public:
     LWAPI(0x102ffcd0, 0x00faeaf8)

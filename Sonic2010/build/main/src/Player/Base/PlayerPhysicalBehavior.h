@@ -71,7 +71,11 @@ OPENLW_PRIVATE
     csl::math::Vector3 m_externalMoveForce;
     csl::math::Vector3 m_drawnForce;
     csl::math::Vector3 m_drawnPosition;
-    csl::math::Vector3 m_upDir;
+
+public:
+    csl::math::Vector3 upDir;
+
+OPENLW_PRIVATE
     unsigned char padding2[0x10];
     csl::math::Vector3 m_historyPosition[256];
     csl::math::Quaternion m_historyRotation[256];
@@ -80,7 +84,11 @@ OPENLW_PRIVATE
     csl::ut::Bitset<unsigned int> field_0x3510;
     unsigned char padding3[0xc];
     csl::math::Matrix34 field_0x3520;
-    SGroundInfo field_0x3560;
+
+public:
+    SGroundInfo groundInfo;
+
+OPENLW_PRIVATE
     unsigned char padding4[0x1A0];
 
 public:
