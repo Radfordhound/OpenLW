@@ -102,11 +102,25 @@ struct Vector3
     {
 #ifdef _WIN32
         // TODO: Is this correct?
+        // TODO: Should XMVector3Length be used instead??
         return DXMATH_NAMESPACE XMVectorGetX(
             DXMATH_NAMESPACE XMVector3ReciprocalLength(Data));
 #else
         // TODO: It basically works like this on Wii U, but doesn't actually use this exact code at all:
         //return std::sqrt((X * X) + (Y * Y) + (Z * Z));
+#endif
+    }
+
+    //LWAPI(0x026625A4, TODO)
+    inline float LengthSq() const
+    {
+#ifdef _WIN32
+        // TODO: Is this correct?
+        return DXMATH_NAMESPACE XMVectorGetX(
+            DXMATH_NAMESPACE XMVector3LengthSq(Data));
+#else
+        // TODO: It basically works like this on Wii U, but doesn't actually use this exact code at all:
+        //return ((X * X) + (Y * Y) + (Z * Z));
 #endif
     }
 
@@ -191,6 +205,17 @@ inline float Vector3Dot(const Vector3& a, const Vector3& b)
     );
 #else
     // TODO
+#endif
+}
+
+inline void Vector3Normalize(const Vector3& src, Vector3* dst)
+{
+#ifdef _WIN32
+    // TODO: Is this correct?
+    dst->Data = DXMATH_NAMESPACE XMVector3Normalize(src.Data);
+#else
+    // TODO: Is this correct?
+    dst->Copy(src / src.Length());
 #endif
 }
 } // math
