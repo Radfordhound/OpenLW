@@ -948,6 +948,9 @@
     <CustomBuild Include="..\Sonic2010\build\main\src\Input\ResDevice.h">
       <Filter>Header Files\sonic2013\Input</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Array.h">
+      <Filter>Header Files\sonic2013\Utility</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\LWAPI.asm">
@@ -980,9 +983,6 @@
     </ClInclude>
     <ClInclude Include="src\pch.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Sonic2010\build\main\src\Utility\Array.h">
-      <Filter>Header Files\sonic2013\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

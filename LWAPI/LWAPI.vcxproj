@@ -165,7 +165,7 @@
     <CustomBuild Include="..\Library\cslib\include\csl\ut\iterator.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Sound\SoundPlayer.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\Input\ResDevice.h" />
-    <ClInclude Include="..\Sonic2010\build\main\src\Utility\Array.h" />
+    <CustomBuild Include="..\Sonic2010\build\main\src\Utility\Array.h" />
     <ClInclude Include="src\pch.h" />
     <CustomBuild Include="..\Sonic2010\build\main\src\System\Component\Fsm.h" />
     <CustomBuild Include="..\Library\sonicusa\include\sonicusa\system\Random.h" />
