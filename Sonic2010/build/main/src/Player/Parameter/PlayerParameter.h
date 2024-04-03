@@ -78,7 +78,7 @@ public:
     void ResetParam(Param::Type::EType__ param_1);
 
     LWAPI(0x0294ebdc, TODO)
-    void GetParamType(Param::Level::ELevel__ param_1) const;
+    Param::Type::EType__ GetParamType(Param::Level::ELevel__ level) const;
 };
 
 LWAPI_STATIC_ASSERT_SIZE(CParameterGOC, 0xd94)
