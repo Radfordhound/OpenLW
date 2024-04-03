@@ -1421,6 +1421,9 @@
     <ClInclude Include="..\..\src\Input\ResDevice.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Utility\Array.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\Input\KBACTION.inl">

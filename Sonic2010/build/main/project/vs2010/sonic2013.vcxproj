@@ -333,6 +333,7 @@
     <ClInclude Include="..\..\src\System\SyncTimer.h" />
     <ClInclude Include="..\..\src\System\UpdateInfo.h" />
     <ClInclude Include="..\..\src\System\WorldHH.h" />
+    <ClInclude Include="..\..\src\Utility\Array.h" />
     <ClInclude Include="..\..\src\Utility\Freelist.h" />
     <ClInclude Include="..\..\src\Utility\Hsm.h" />
     <ClInclude Include="..\..\src\Utility\RefPtr.h" />
