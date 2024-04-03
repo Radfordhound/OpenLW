@@ -31,6 +31,7 @@ class CPhysics;
 class CPostureManager;
 class CPlayer;
 class CCollisionGOC;
+class CBlackBoard;
 
 class CBasePosture : public fnd::ReferencedObject
 {
@@ -70,11 +71,12 @@ public:
     LWAPI(0x0292a7f8, TODO)
     const CPlayer* GetOwner() const;
 
-    LWAPI(0x0292a818, TODO)
-    void GetBlackBoard();
+    LWAPI(0x0292a818, 0x00858340)
+    CBlackBoard* GetBlackBoard();
 
-    LWAPI(0x0292a840, TODO)
-    void GetBlackBoard() const;
+    // NOTE: This is actually inlined on PC
+    LWAPI(0x0292a840, 0x00858340)
+    const CBlackBoard* GetBlackBoard() const;
 
     LWAPI(0x0292a870, TODO)
     void GetPathService();
