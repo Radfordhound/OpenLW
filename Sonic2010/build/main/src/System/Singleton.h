@@ -26,7 +26,7 @@ struct SingletonInitNode
     LWAPI(0x102e78f0, 0x00fd4218)
     static SingletonInitNode* CurNode;
 
-	SingletonInitNode() {}
+    SingletonInitNode() {}
 
     SingletonInitNode(SingletonInitFunc initPtr,
         SingletonDestroyFunc destroyPtr, void** instPtr) :
@@ -47,5 +47,5 @@ void DestroySingletons();
 
 LWAPI(0x02185818, 0x0048d510)
 csl::fnd::IAllocator* GetSingletonAllocator();
-}
-}
+} // fnd
+} // app
