@@ -122,7 +122,7 @@ public:
     LWAPI(0x0293d018, TODO)
     void ReorientRotation(csl::math::Quaternion const& param_1, csl::math::Quaternion* param_2);
 
-    LWAPI(0x0293d044, TODO)
+    LWAPI(0x0293d044, 0x00861eb0)
     void SetMaxSlope(float param_1);
 
     LWAPI(0x0293d074, TODO)
