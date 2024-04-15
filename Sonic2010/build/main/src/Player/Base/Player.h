@@ -2,6 +2,7 @@
 #pragma once
 #include "System/Component/Goc.h"
 #include "System/GameObject3D.h"
+#include "Utility/RefPtr.h"
 
 namespace csl
 {
@@ -76,7 +77,7 @@ OPENLW_PROTECTED
     CPostureInputManager* m_postureInputManager;
     CPostureMoveManager* m_postureMoveManager;
     CPhysics* m_physics;
-    CBlackBoard* m_blackBoard;
+    ut::RefPtr<CBlackBoard> m_blackBoard;
 
     // TODO
 
@@ -84,13 +85,13 @@ public:
     template<typename T>
     T* GetPlayerGOC()
     {
-        return m_components.GetGOC(T::TypeName);
+        return static_cast<T*>(m_components.GetGOC(T::ID));
     }
 
     template<typename T>
     const T* GetPlayerGOC() const
     {
-        return m_components.GetGOC(T::TypeName);
+        return static_cast<const T*>(m_components.GetGOC(T::ID));
     }
 
     LWAPI(0x02918478, 0x00850c90)
