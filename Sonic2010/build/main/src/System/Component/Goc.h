@@ -42,11 +42,11 @@ public:
     LWAPI(0x02A925E4, TODO)
     void SetGOC(CGOComponent* param_1);
 
-    LWAPI(0x02A926C0, TODO)
-    void id_equal(const boost::intrusive_ptr<CGOComponent>& param_1, const char* param_2);
+    LWAPI(0x02A926C0, 0x00914310)
+    void id_equal(const boost::intrusive_ptr<CGOComponent>& component, const char* id);
 
-    LWAPI(0x02A92748, TODO)
-    void GetGOC(const char* param_1) const;
+    LWAPI(0x02A92748, 0x00914370)
+    void* GetGOC(const char* id) const;
 
     LWAPI(0x02A92810, NONE)
     std::size_t GetNumGOCs() const
