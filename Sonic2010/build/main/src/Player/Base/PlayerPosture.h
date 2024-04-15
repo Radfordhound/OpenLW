@@ -102,7 +102,7 @@ public:
     LWAPI(0x0292a9cc, TODO)
     bool IsNowSuperSonic() const;
 
-    LWAPI(0x0292aa00, TODO)
+    LWAPI(0x0292aa00, 0x008583d0)
     bool IsOnGround() const;
 
     LWAPI(0x0292aa2c, TODO)
@@ -139,7 +139,7 @@ public:
     void GetPhysicsWorld() const;
 
     LWAPI(0x0292ac78, TODO)
-    void GetParameter(Param::Index param_1) const;
+    float GetParameter(Param::Index param_1) const;
 
     LWAPI(0x0292aca4, TODO)
     void GetHomingService();
