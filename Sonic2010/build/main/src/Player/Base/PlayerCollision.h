@@ -255,6 +255,9 @@ OPENLW_PRIVATE
     // TODO
 
 public:
+    LWAPI(0x102ffe70, 0x00fb0330)
+    static const char* ID;
+
     LWAPI(0x0293fe00, TODO)
     CCollisionGOC(CPlayer* param_1);
 
