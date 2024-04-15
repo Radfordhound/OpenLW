@@ -104,8 +104,8 @@ public:
     LWAPI(0x02925f6c, TODO)
     void SetMatrix(csl::math::Matrix34 const& param_1);
 
-    LWAPI(0x02926008, TODO)
-    void SetPosition(csl::math::Vector3 const& param_1);
+    LWAPI(0x02926008, 0x00855650)
+    void SetPosition(csl::math::Vector3 const& pos);
 
     LWAPI(0x02926224, TODO)
     void NormalizeRotationMatrix();
@@ -134,7 +134,7 @@ public:
     LWAPI(0x02926c00, TODO)
     void ResetGroundInfo();
 
-    LWAPI(0x02926c6c, TODO)
+    LWAPI(0x02926c6c, 0x00854dd0)
     bool IsOnGround() const;
 
     LWAPI(0x02926c74, TODO)
@@ -335,7 +335,7 @@ public:
     LWAPI(0x02928c64, TODO)
     bool IsLandEnableGround(csl::math::Vector3 const& param_1, csl::math::Vector3 const& param_2) const;
 
-    LWAPI(0x02928d60, TODO)
+    LWAPI(0x02928d60, 0x00855fb0)
     bool IsLandEnableGroundToGravityWorldUp(csl::math::Vector3 const& param_1);
 
     LWAPI(0x02928dcc, TODO)
@@ -386,8 +386,8 @@ public:
     LWAPI(0x029294f0, TODO)
     void GetMaxDesiredVelocity() const;
 
-    LWAPI(0x02929514, TODO)
-    void GetMaxAirVelocity() const;
+    LWAPI(0x02929514, 0x00855280)
+    float GetMaxAirVelocity() const;
 
     LWAPI(0x02929538, TODO)
     void GetAccelerationRate() const;
